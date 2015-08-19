@@ -2007,7 +2007,7 @@
 						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 					<control type="progress">
-						<bottom>15</bottom>
+						<bottom>0</bottom>
 						<height>8</height>
 						<info>ListItem.PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
@@ -2029,7 +2029,7 @@
 						<animation effect="zoom" start="100" end="96" time="100" reversible="false" center="auto">Focus</animation>
 					</control>
 					<control type="progress">
-						<bottom>15</bottom>
+						<bottom>0</bottom>
 						<height>8</height>
 						<info>ListItem.PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
@@ -2038,6 +2038,19 @@
 						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<visible>ListItem.IsResumable</visible>
+						<visible>!Control.HasFocus(3016)</visible>
+					</control>
+					<control type="progress">
+						<bottom>7</bottom>
+						<height>8</height>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
+						<visible>Control.HasFocus(3016)</visible>
 					</control>
 					<control type="image">
 						<left>0</left>
@@ -2521,7 +2534,7 @@
 						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 					<control type="progress">
-						<bottom>8</bottom>
+						<bottom>0</bottom>
 						<height>8</height>
 						<info>ListItem.PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
