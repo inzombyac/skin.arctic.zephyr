@@ -426,6 +426,7 @@
 		<top>-40</top>
 		<!-- Widget Info -->
 		<control type="group">
+			<animation effect="slide" start="0" end="-341,0" condition="Control.HasFocus(9017)" time="200">Conditional</animation>
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
@@ -543,7 +544,7 @@
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
 				<orientation>horizontal</orientation>
-				<autoscroll time="10000">!Control.HasFocus(301)</autoscroll>
+				<autoscroll time="10000">!Control.HasFocus(6012)</autoscroll>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -585,9 +586,9 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 			</control>
 			<control type="label">
-				<left>535</left>
+				<left>515</left>
 				<posy>712</posy>
-				<width>350</width>
+				<width>370</width>
 				<right>84</right>
 				<aligny>center</aligny>
 				<height>64</height>
@@ -2188,7 +2189,7 @@
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
 				<orientation>horizontal</orientation>
-				<autoscroll time="10000">!Control.HasFocus(301)</autoscroll>
+				<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -2229,9 +2230,9 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
 			<control type="label">
-				<left>715</left>
+				<left>685</left>
 				<posy>712</posy>
-				<width>170</width>
+				<width>200</width>
 				<right>45</right>
 				<aligny>center</aligny>
 				<height>64</height>
@@ -2756,7 +2757,7 @@
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
 				<orientation>horizontal</orientation>
-				<autoscroll time="10000">!Control.HasFocus(301)</autoscroll>
+				<autoscroll time="10000">!Control.HasFocus(5012)</autoscroll>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -3041,6 +3042,7 @@
 				<onright>5017</onright>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
+				<autoscroll time="3000">!Control.HasFocus(5016)</autoscroll>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
