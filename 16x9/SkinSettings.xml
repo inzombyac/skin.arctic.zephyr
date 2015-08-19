@@ -554,7 +554,6 @@
 						<label>Replace widget with global fanart</label>
 						<selected>Skin.HasSetting(home.dontshowfanart)</selected>
 						<onclick>Skin.ToggleSetting(home.dontshowfanart)</onclick>
-						<visible>System.HasAddon(script.grab.fanart)</visible>
 					</control>
 					<control type="button" id="9246" description="Custom Widget 1">
 						<width>1310</width>
