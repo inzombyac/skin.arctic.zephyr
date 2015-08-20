@@ -986,7 +986,7 @@
 					<top>0</top>
 					<width>153</width>
 					<height>230</height>
-					<texture>$INFO[Container(9017).Listitem(1).Icon]</texture>
+					<texture fallback="empty.png">$INFO[Container(9017).Listitem(1).Icon]</texture>
 					<fadetime>100</fadetime>
 				</control>
 				<control type="image">
@@ -994,7 +994,7 @@
 					<top>0</top>
 					<width>153</width>
 					<height>230</height>
-					<texture>$INFO[Container(9017).Listitem(2).Icon]</texture>
+					<texture fallback="empty.png">$INFO[Container(9017).Listitem(2).Icon]</texture>
 					<fadetime>100</fadetime>
 				</control>
 				<control type="image">
@@ -1002,7 +1002,7 @@
 					<top>235</top>
 					<width>153</width>
 					<height>230</height>
-					<texture>$INFO[Container(9017).Listitem(3).Icon]</texture>
+					<texture fallback="empty.png">$INFO[Container(9017).Listitem(3).Icon]</texture>
 					<fadetime>100</fadetime>
 				</control>
 				<control type="image">
@@ -1010,7 +1010,7 @@
 					<top>235</top>
 					<width>153</width>
 					<height>230</height>
-					<texture>$INFO[Container(9017).Listitem(4).Icon]</texture>
+					<texture fallback="empty.png">$INFO[Container(9017).Listitem(4).Icon]</texture>
 					<fadetime>100</fadetime>
 				</control>
 				<control type="image">
@@ -1018,7 +1018,7 @@
 					<top>470</top>
 					<width>153</width>
 					<height>230</height>
-					<texture>$INFO[Container(9017).Listitem(5).Icon]</texture>
+					<texture fallback="empty.png">$INFO[Container(9017).Listitem(5).Icon]</texture>
 					<fadetime>100</fadetime>
 				</control>
 				<control type="image">
@@ -1026,7 +1026,7 @@
 					<top>470</top>
 					<width>153</width>
 					<height>230</height>
-					<texture>$INFO[Container(9017).Listitem(6).Icon]</texture>
+					<texture fallback="empty.png">$INFO[Container(9017).Listitem(6).Icon]</texture>
 					<fadetime>100</fadetime>
 				</control>
 				<control type="image">
@@ -1034,7 +1034,7 @@
 					<top>470</top>
 					<width>153</width>
 					<height>230</height>
-					<texture>$INFO[Container(9017).Listitem(7).Icon]</texture>
+					<texture fallback="empty.png">$INFO[Container(9017).Listitem(7).Icon]</texture>
 					<fadetime>100</fadetime>
 				</control>
 				<control type="image">
@@ -1042,7 +1042,7 @@
 					<top>470</top>
 					<width>153</width>
 					<height>230</height>
-					<texture>$INFO[Container(9017).Listitem(8).Icon]</texture>
+					<texture fallback="empty.png">$INFO[Container(9017).Listitem(8).Icon]</texture>
 					<fadetime>100</fadetime>
 				</control>
 				<!-- main box -->
@@ -1058,7 +1058,7 @@
 						<top>0</top>
 						<width>311</width>
 						<height>465</height>
-						<texture>$INFO[Container(9017).Listitem(0).Icon]</texture>
+						<texture fallback="empty.png">$INFO[Container(9017).Listitem(0).Icon]</texture>
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
@@ -1081,7 +1081,7 @@
 						<font>SmallBold</font>
 						<textcolor>PanelWhite70</textcolor>
 						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[Container(9017).ListItem.Rating]$INFO[Container(9017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
+						<label fallback="N/A">$INFO[Container(9017).ListItem.Rating]$INFO[Container(9017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
 					</control>
 				</control>
 				<control type="image">
@@ -3079,9 +3079,9 @@
 			<control type="list" id="5016">
 				<description>Widget</description>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
-				<top>327</top>
+				<top>330</top>
 				<left>980</left>
-				<width>230</width>
+				<width>235</width>
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>5016</ondown>
@@ -3105,12 +3105,12 @@
 				<scrolltime tween="quadratic">100</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<itemlayout width="230" height="235">
+				<itemlayout width="235" height="235">
 					<control type="image">
-						<top>3</top>
+						<top>0</top>
 						<aspectratio>stretch</aspectratio>
-						<height>225</height>
-						<width>225</width>
+						<height>230</height>
+						<width>230</width>
 						<texture background="true">$VAR[PosterImage]</texture>
 					</control>
 					<control type="progress">
@@ -3125,14 +3125,14 @@
 						<visible>ListItem.IsResumable</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout width="230" height="235">
+				<focusedlayout width="235" height="235">
 					<control type="group">
 						<animation effect="zoom" start="100" end="108" time="100" reversible="false" center="auto">Focus</animation>
 						<control type="image">
-							<top>3</top>
+							<top>0</top>
 							<aspectratio>stretch</aspectratio>
-							<height>225</height>
-							<width>225</width>
+							<height>230</height>
+							<width>230</width>
 							<texture background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="progress">
@@ -3147,10 +3147,10 @@
 							<visible>ListItem.IsResumable</visible>
 						</control>
 						<control type="image">
-							<left>0</left>
-							<top>0</top>
-							<right>5</right>
-							<bottom>5</bottom>
+							<left>-1</left>
+							<top>-1</top>
+							<right>4</right>
+							<bottom>4</bottom>
 							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 							<visible>Control.HasFocus(5016)</visible>
 						</control>
@@ -3160,7 +3160,7 @@
 			</control>
 			<!-- Latest Albums -->
 			<control type="label">
-				<left>1385</left>
+				<left>1380</left>
 				<top>290</top>
 				<width>410</width>
 				<align>left</align>
@@ -3174,9 +3174,9 @@
 			<control type="panel" id="5017">
 				<description>Widget</description>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
-				<top>327</top>
-				<left>1385</left>
-				<width>460</width>
+				<top>330</top>
+				<left>1380</left>
+				<width>470</width>
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>5017</ondown>
@@ -3196,12 +3196,12 @@
 				<scrolltime tween="quadratic">100</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<itemlayout width="230" height="235">
+				<itemlayout width="235" height="235">
 					<control type="image">
-						<top>3</top>
+						<top>0</top>
 						<aspectratio>stretch</aspectratio>
-						<height>225</height>
-						<width>225</width>
+						<height>230</height>
+						<width>230</width>
 						<texture background="true">$VAR[PosterImage]</texture>
 					</control>
 					<control type="progress">
@@ -3216,12 +3216,12 @@
 						<visible>ListItem.IsResumable</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout width="230" height="235">
+				<focusedlayout width="235" height="235">
 					<control type="image">
 						<aspectratio>stretch</aspectratio>
-						<top>3</top>
-						<height>225</height>
-						<width>225</width>
+						<top>0</top>
+						<height>230</height>
+						<width>230</width>
 						<texture background="true">$VAR[PosterImage]</texture>
 					</control>
 					<control type="progress">
@@ -3236,10 +3236,10 @@
 						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<right>5</right>
-						<bottom>5</bottom>
+						<left>-1</left>
+						<top>-1</top>
+						<right>4</right>
+						<bottom>4</bottom>
 						<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 						<visible>Control.HasFocus(5017)</visible>
 					</control>
