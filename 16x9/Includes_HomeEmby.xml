@@ -1771,13 +1771,13 @@
 				<itemlayout width="820" height="460">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[FanartImage]</texture>
+						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout width="820" height="460">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[FanartImage]</texture>
+						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 				</focusedlayout>
 				<content target="video">$VAR[DefWidget6Content]</content>
@@ -2209,13 +2209,13 @@
 				<itemlayout width="820" height="460">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
+						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout width="820" height="460">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
+						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 				</focusedlayout>
 				<content target="video">$VAR[DefWidget9Content]</content>
