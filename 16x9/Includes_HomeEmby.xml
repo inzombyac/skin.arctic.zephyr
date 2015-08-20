@@ -3165,7 +3165,7 @@
 			</control>
 			<!-- Latest Albums -->
 			<control type="label">
-				<left>1380</left>
+				<left>1290</left>
 				<top>290</top>
 				<width>410</width>
 				<align>left</align>
@@ -3180,7 +3180,7 @@
 				<description>Widget</description>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
 				<top>330</top>
-				<left>1380</left>
+				<left>1290</left>
 				<width>470</width>
 				<height>705</height>
 				<onup>300</onup>
