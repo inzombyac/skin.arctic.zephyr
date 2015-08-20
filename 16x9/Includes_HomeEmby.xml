@@ -2618,6 +2618,7 @@
 						<control type="label">
 							<bottom>10</bottom>
 							<left>15</left>
+							<right>15</right>
 							<align>left</align>
 							<height>30</height>
 							<font>Small</font>
