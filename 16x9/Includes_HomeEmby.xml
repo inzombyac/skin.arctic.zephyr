@@ -886,6 +886,7 @@
 						<aspectratio>keep</aspectratio>
 						<height>230</height>
 						<texture background="true">$VAR[PosterImage]</texture>
+						<animation effect="zoom" start="100" end="96" time="50" tween="quadratic" reversible="false" center="auto">Focus</animation>
 					</control>
 					<control type="image">
 						<description>Title overlay</description>
@@ -2182,6 +2183,7 @@
 						<aspectratio>keep</aspectratio>
 						<height>230</height>
 						<texture background="true">$VAR[PosterImage]</texture>
+						<animation effect="zoom" start="100" end="96" time="50" tween="quadratic" reversible="false" center="auto">Focus</animation>
 					</control>
 					<control type="progress">
 						<bottom>7</bottom>
@@ -2724,6 +2726,7 @@
 						<aspectratio>keep</aspectratio>
 						<height>230</height>
 						<texture background="true">$VAR[PosterImage]</texture>
+						<animation effect="zoom" start="100" end="96" time="50" tween="quadratic" reversible="false" center="auto">Focus</animation>
 					</control>
 					<control type="image">
 						<description>Title overlay</description>
@@ -3135,6 +3138,7 @@
 							<height>230</height>
 							<width>230</width>
 							<texture background="true">$VAR[PosterImage]</texture>
+							<animation effect="zoom" start="100" end="96" time="100" reversible="false" center="auto">Focus</animation>
 						</control>
 						<control type="progress">
 							<bottom>7</bottom>
@@ -3148,10 +3152,10 @@
 							<visible>ListItem.IsResumable</visible>
 						</control>
 						<control type="image">
-							<left>-1</left>
-							<top>-1</top>
-							<right>4</right>
-							<bottom>4</bottom>
+							<left>0</left>
+							<top>0</top>
+							<right>5</right>
+							<bottom>5</bottom>
 							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 							<visible>Control.HasFocus(5016)</visible>
 						</control>
@@ -3224,6 +3228,7 @@
 						<height>230</height>
 						<width>230</width>
 						<texture background="true">$VAR[PosterImage]</texture>
+						<animation effect="zoom" start="100" end="96" time="50" tween="quadratic" reversible="false" center="auto">Focus</animation>
 					</control>
 					<control type="progress">
 						<bottom>7</bottom>
@@ -3237,10 +3242,10 @@
 						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
-						<left>-1</left>
-						<top>-1</top>
-						<right>4</right>
-						<bottom>4</bottom>
+							<left>0</left>
+							<top>0</top>
+							<right>5</right>
+							<bottom>5</bottom>
 						<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 						<visible>Control.HasFocus(5017)</visible>
 					</control>
