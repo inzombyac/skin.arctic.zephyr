@@ -536,7 +536,7 @@
 				<onback>SetProperty(Dialog.18.BuiltIn,Skin.SetString(widget2,Custom9))</onback>
 				<onback>SetProperty(Dialog.19.Label,Custom10)</onback>
 				<onback>SetProperty(Dialog.19.BuiltIn,Skin.SetString(widget2,Custom10))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>301</onleft>
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
@@ -745,7 +745,7 @@
 				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget1,AiringShows))</onback>
 				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31137])</onback>
 				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget1,PremiereShows))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>6012</onleft>
 				<onright>6017</onright>
 				<preloaditems>2</preloaditems>
@@ -855,7 +855,7 @@
 				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget3,OnAirTvShows))</onback>
 				<onback>SetProperty(Dialog.9.Label,$LOCALIZE[31229])</onback>
 				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget3,AiringTodayTvShows))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onright condition="Control.IsVisible(9017)">9017</onright>
 				<onleft condition="Control.IsVisible(6016)">6016</onleft>
 				<onleft condition="!Control.IsVisible(6016)">6012</onleft>
@@ -963,7 +963,7 @@
 				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget15,OnAirTvShows))</onback>
 				<onback>SetProperty(Dialog.9.Label,$LOCALIZE[31229])</onback>
 				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget15,AiringTodayTvShows))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft condition="Control.IsVisible(6017)">6017</onleft>
 				<onleft condition="!Control.IsVisible(6017)">6012</onleft>
 				<preloaditems>2</preloaditems>
@@ -1815,7 +1815,7 @@
 				<onback>SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget6,Custom9))</onback>
 				<onback>SetProperty(Dialog.13.Label,Custom10)</onback>
 				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget6,Custom10))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>301</onleft>
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
@@ -1827,13 +1827,13 @@
 				<itemlayout width="820" height="460">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[FanartImage]</texture>
+						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout width="820" height="460">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[FanartImage]</texture>
+						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 				</focusedlayout>
 				<content target="video">$VAR[DefWidget6Content]</content>
@@ -2044,7 +2044,7 @@
 				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget7,RecentMovies))</onback>
 				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31123])</onback>
 				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget7,RecommendedMovies))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>3012</onleft>
 				<onright>3017</onright>
 				<preloaditems>2</preloaditems>
@@ -2148,7 +2148,7 @@
 				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget8,RecentMovies))</onback>
 				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31123])</onback>
 				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget8,RecommendedMovies))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft condition="Control.IsVisible(3016)">3016</onleft>
 				<onleft condition="!Control.IsVisible(3016)">3012</onleft>
 				<preloaditems>2</preloaditems>
@@ -2250,7 +2250,7 @@
 				<onback>SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget9,Custom9))</onback>
 				<onback>SetProperty(Dialog.13.Label,Custom10)</onback>
 				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget9,Custom10))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>301</onleft>
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
@@ -2262,13 +2262,13 @@
 				<itemlayout width="820" height="460">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
+						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 				</itemlayout>
 				<focusedlayout width="820" height="460">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
-						<texture background="true">$INFO[ListItem.Art(tvshow.landscape)]</texture>
+						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 				</focusedlayout>
 				<content target="video">$VAR[DefWidget9Content]</content>
@@ -2566,7 +2566,7 @@
 				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget10,RecentEpisodes))</onback>
 				<onback>SetProperty(Dialog.3.Label,Next Up)</onback>
 				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget10,RecommendedEpisodes))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
 				<preloaditems>2</preloaditems>
@@ -2693,7 +2693,7 @@
 				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget11,RecentEpisodes))</onback>
 				<onback>SetProperty(Dialog.3.Label,Next Up)</onback>
 				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget11,RecommendedEpisodes))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>4016</onleft>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="quadratic">100</scrolltime>
@@ -2812,7 +2812,7 @@
 				<onback>SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget12,Custom9))</onback>
 				<onback>SetProperty(Dialog.15.Label,Custom10)</onback>
 				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget12,Custom10))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>301</onleft>
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
@@ -3092,7 +3092,7 @@
 				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget13,RecentPlayedMusic))</onback>
 				<onback>SetProperty(Dialog.5.Label,Top 100 Albums)</onback>
 				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget13,Top100Music))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>5012</onleft>
 				<onright>5017</onright>
 				<preloaditems>2</preloaditems>
@@ -3295,7 +3295,7 @@
 				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget4,Custom9))</onback>
 				<onback>SetProperty(Dialog.15.Label,Custom10)</onback>
 				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget4,Custom10))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>301</onleft>
 				<onright>301</onright>
 				<preloaditems>2</preloaditems>
@@ -3556,7 +3556,7 @@
 				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget5,LiveTV))</onback>
 				<onback>SetProperty(Dialog.2.Label,Recordings)</onback>
 				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget5,Recordings))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>7012</onleft>
 				<onright>7016</onright>
 				<preloaditems>2</preloaditems>
