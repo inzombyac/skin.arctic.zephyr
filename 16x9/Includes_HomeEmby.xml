@@ -1056,29 +1056,35 @@
 					<texture>$INFO[Container(9017).Listitem(0).Icon]</texture>
 					<fadetime>100</fadetime>
 				</control>
-				<control type="image">
-					<description>Title overlay</description>
+				<control type="group">
+					<left>0</left>
+					<top>0</top>
+					<width>311</width>
+					<height>465</height>
 					<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onnext]" center="auto">conditional</animation>
 					<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onprevious]" center="auto">conditional</animation>
-					<left>0</left>
-					<top>390</top>
-					<width>311</width>
-					<height>80</height>
-					<texture border="15" colordiffuse="df000000">common/white.png</texture>
-				</control>
-				<control type="textbox">
-					<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onnext]" center="auto">conditional</animation>
-					<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onprevious]" center="auto">conditional</animation>
-					<left>0</left>
-					<top>390</top>
-					<width>311</width>
-					<height>64</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>SmallBold</font>
-					<textcolor>PanelWhite70</textcolor>
-					<selectedcolor>PanelWhite70</selectedcolor>
-					<label>$INFO[Container(9017).ListItem.Rating]$INFO[Container(9017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
+					<control type="image">
+						<description>Title overlay</description>
+						<left>0</left>
+						<top>390</top>
+						<width>311</width>
+						<height>80</height>
+						<texture border="15" colordiffuse="df000000">common/white.png</texture>
+					</control>
+					<control type="textbox">
+						<!--<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onnext]" center="auto">conditional</animation>
+						<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onprevious]" center="auto">conditional</animation>-->
+						<left>0</left>
+						<top>390</top>
+						<width>311</width>
+						<height>64</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>SmallBold</font>
+						<textcolor>PanelWhite70</textcolor>
+						<selectedcolor>PanelWhite70</selectedcolor>
+						<label>$INFO[Container(9017).ListItem.Rating]$INFO[Container(9017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
+					</control>
 				</control>
 				<control type="image">
 					<left>-3</left>
