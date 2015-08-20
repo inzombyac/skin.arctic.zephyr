@@ -1046,16 +1046,6 @@
 					<fadetime>100</fadetime>
 				</control>
 				<!-- main box -->
-				<control type="image">
-					<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onnext]" center="auto">conditional</animation>
-					<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onprevious]" center="auto">conditional</animation>
-					<left>0</left>
-					<top>0</top>
-					<width>311</width>
-					<height>465</height>
-					<texture>$INFO[Container(9017).Listitem(0).Icon]</texture>
-					<fadetime>100</fadetime>
-				</control>
 				<control type="group">
 					<left>0</left>
 					<top>0</top>
@@ -1063,6 +1053,14 @@
 					<height>465</height>
 					<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onnext]" center="auto">conditional</animation>
 					<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(9017).onprevious]" center="auto">conditional</animation>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>311</width>
+						<height>465</height>
+						<texture>$INFO[Container(9017).Listitem(0).Icon]</texture>
+						<fadetime>100</fadetime>
+					</control>
 					<control type="image">
 						<description>Title overlay</description>
 						<left>0</left>
