@@ -1440,14 +1440,14 @@
 				<width>440</width>
 				<label>$INFO[ListItem.Label2]</label>
 				<font>Small</font>
-				<textcolor>Light1</textcolor>
+				<textcolor>$VAR[ColourSelected]</textcolor>
 			</control>
 			<control type="image">
 				<posx>280</posx>
 				<posy>218</posy>
 				<width>130</width>
 				<height>30</height>
-				<texture colordiffuse="Light1">$INFO[ListItem.Rating,stars/,.png]</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">$INFO[ListItem.Rating,stars/,.png]</texture>
 			</control>
 			<control type="textbox">
 				<posx>20</posx>
@@ -1459,7 +1459,7 @@
 				<animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
 				<animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
 				<font>Small</font>
-				<textcolor>Light2</textcolor>
+				<textcolor>$VAR[ColourSelected]</textcolor>
 			</control>
 			<control type="label">
 				<posx>30</posx>
@@ -1469,7 +1469,7 @@
 				<align>center</align>
 				<label>$INFO[ListItem.Date]</label>
 				<font>Tiny</font>
-				<textcolor>Light3</textcolor>
+				<textcolor>$VAR[ColourSelected]</textcolor>
 			</control>
 		</control>
 	</include>
