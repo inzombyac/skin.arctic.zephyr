@@ -176,6 +176,7 @@
 		<value condition="Stringcompare(Skin.String(widget1),TrendingShows)">$LOCALIZE[31135]</value>
 		<value condition="Stringcompare(Skin.String(widget1),AiringShows)">$LOCALIZE[31136]</value>
 		<value condition="Stringcompare(Skin.String(widget1),PremiereShows)">$LOCALIZE[31137]</value>
+		<value condition="Stringcompare(Skin.String(widget1),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value>$LOCALIZE[31135]</value>
 	</variable>
 	<variable name="EmbyWidget2Label">
@@ -188,6 +189,7 @@
 		<value condition="Stringcompare(Skin.String(widget2),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget2),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget2),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget2),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom2)">Custom 2</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom3)">Custom 3</value>
@@ -210,6 +212,7 @@
 		<value condition="Stringcompare(Skin.String(widget3),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget3),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget3),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget3),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value>$LOCALIZE[31224]</value>
 	</variable>
 	<variable name="EmbyWidget4Label">
@@ -239,6 +242,7 @@
 		<value condition="Stringcompare(Skin.String(widget6),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget6),RecentMovies)">$LOCALIZE[31124]</value>
 		<value condition="Stringcompare(Skin.String(widget6),RecommendedMovies)">Continue Watching</value>
+		<value condition="Stringcompare(Skin.String(widget6),SimilarMovies)">$LOCALIZE[31782]</value>
 		<value condition="Stringcompare(Skin.String(widget6),Custom1)">Custom 1</value>
 		<value condition="Stringcompare(Skin.String(widget6),Custom2)">Custom 2</value>
 		<value condition="Stringcompare(Skin.String(widget6),Custom3)">Custom 3</value>
@@ -255,12 +259,14 @@
 		<value condition="Stringcompare(Skin.String(widget7),RecommendedMovies)">Continue Watching</value>
 		<value condition="Stringcompare(Skin.String(widget7),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget7),RecentMovies)">$LOCALIZE[31124]</value>
+		<value condition="Stringcompare(Skin.String(widget7),SimilarMovies)">$LOCALIZE[31782]</value>
 		<value>Continue Watching</value>
 	</variable>
 	<variable name="EmbyWidget8Label">
 		<value condition="Stringcompare(Skin.String(widget8),RecentMovies)">$LOCALIZE[31124]</value>
 		<value condition="Stringcompare(Skin.String(widget8),RandomMovies)">$LOCALIZE[31127]</value>
 		<value condition="Stringcompare(Skin.String(widget8),RecommendedMovies)">Continue Watching</value>
+		<value condition="Stringcompare(Skin.String(widget8),SimilarMovies)">$LOCALIZE[31782]</value>
 		<value>$LOCALIZE[31124]</value>
 	</variable>
 	<variable name="EmbyWidget9Label">
@@ -335,7 +341,15 @@
 		<value condition="Stringcompare(Skin.String(widget15),TopRatedTvShows)">$LOCALIZE[31227]</value>
 		<value condition="Stringcompare(Skin.String(widget15),OnAirTvShows)">$LOCALIZE[31228]</value>
 		<value condition="Stringcompare(Skin.String(widget15),AiringTodayTvShows)">$LOCALIZE[31229]</value>
+		<value condition="Stringcompare(Skin.String(widget15),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value>$LOCALIZE[31224]</value>
+	</variable>
+	<variable name="EmbyWidget16Label">
+		<value condition="Stringcompare(Skin.String(widget16),RecentMovies)">$LOCALIZE[31124]</value>
+		<value condition="Stringcompare(Skin.String(widget16),RandomMovies)">$LOCALIZE[31127]</value>
+		<value condition="Stringcompare(Skin.String(widget16),RecommendedMovies)">Continue Watching</value>
+		<value condition="Stringcompare(Skin.String(widget16),SimilarMovies)">$LOCALIZE[31782]</value>
+		<value>$LOCALIZE[31782]</value>
 	</variable>
 	<variable name="WidgetTitle">
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.Title]</value>

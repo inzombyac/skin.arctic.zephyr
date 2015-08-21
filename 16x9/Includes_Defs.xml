@@ -97,6 +97,7 @@
 		<value condition="Stringcompare(Skin.String(widget1),TrendingShows)">plugin://script.extendedinfo?info=trendingshows</value>
 		<value condition="Stringcompare(Skin.String(widget1),AiringShows)">plugin://script.extendedinfo?info=airingshows</value>
 		<value condition="Stringcompare(Skin.String(widget1),PremiereShows)">plugin://script.extendedinfo?info=premiereshows</value>
+		<value condition="Stringcompare(Skin.String(widget1),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&limit=[18]</value>
 		<value>plugin://script.extendedinfo?info=trendingshows</value>
 	</variable>
 
@@ -110,6 +111,7 @@
 		<value condition="Stringcompare(Skin.String(widget2),TopRatedTvShows)">plugin://script.extendedinfo?info=topratedtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget2),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget2),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
+		<value condition="Stringcompare(Skin.String(widget2),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&limit=[18]</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom3)">$INFO[Skin.String(CustomWidget3)]</value>
@@ -133,6 +135,7 @@
 		<value condition="Stringcompare(Skin.String(widget3),TopRatedTvShows)">plugin://script.extendedinfo?info=topratedtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget3),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget3),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
+		<value condition="Stringcompare(Skin.String(widget3),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&limit=[18]</value>
 		<value>plugin://script.extendedinfo?info=popularmovies</value>
 	</variable>
 
@@ -165,6 +168,7 @@
 		<value condition="Stringcompare(Skin.String(widget6),RandomMovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 		<value condition="Stringcompare(Skin.String(widget6),RecentMovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
 		<value condition="Stringcompare(Skin.String(widget6),RecommendedMovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</value>
+		<value condition="Stringcompare(Skin.String(widget6),SimilarMovies)">plugin://script.skin.helper.service/?action=similarmovies&limit=[18]</value>
 		<value condition="Stringcompare(Skin.String(widget6),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
 		<value condition="Stringcompare(Skin.String(widget6),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
 		<value condition="Stringcompare(Skin.String(widget6),Custom3)">$INFO[Skin.String(CustomWidget3)]</value>
@@ -182,6 +186,7 @@
 		<value condition="Stringcompare(Skin.String(widget7),RandomMovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 		<value condition="Stringcompare(Skin.String(widget7),RecentMovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
 		<value condition="Stringcompare(Skin.String(widget7),RecommendedMovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</value>
+		<value condition="Stringcompare(Skin.String(widget7),SimilarMovies)">plugin://script.skin.helper.service/?action=similarmovies&limit=[18]</value>
 		<value>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</value>
 	</variable>
 
@@ -189,6 +194,7 @@
 		<value condition="Stringcompare(Skin.String(widget8),RandomMovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 		<value condition="Stringcompare(Skin.String(widget8),RecentMovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
 		<value condition="Stringcompare(Skin.String(widget8),RecommendedMovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),SimilarMovies)">plugin://script.skin.helper.service/?action=similarmovies&limit=[18]</value>
 		<value>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
 	</variable>
 
@@ -268,7 +274,16 @@
 		<value condition="Stringcompare(Skin.String(widget15),TopRatedTvShows)">plugin://script.extendedinfo?info=topratedtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget15),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget15),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
+		<value condition="Stringcompare(Skin.String(widget15),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&limit=[18]</value>
 		<value>plugin://script.extendedinfo?info=trendingmovies</value>
+	</variable>
+
+	<variable name="DefWidget16Content">
+		<value condition="Stringcompare(Skin.String(widget16),RandomMovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
+		<value condition="Stringcompare(Skin.String(widget16),RecentMovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
+		<value condition="Stringcompare(Skin.String(widget16),RecommendedMovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</value>
+		<value condition="Stringcompare(Skin.String(widget16),SimilarMovies)">plugin://script.skin.helper.service/?action=similarmovies&limit=[18]</value>
+		<value>plugin://script.skin.helper.service/?action=similarmovies&limit=[18]</value>
 	</variable>
 
 

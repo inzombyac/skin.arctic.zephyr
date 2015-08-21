@@ -796,3 +796,15 @@ msgstr ""
 msgctxt "#31781"
 msgid "Big Screen Move"
 msgstr ""
+
+msgctxt "#31782"
+msgid "Because you watched"
+msgstr ""
+
+msgctxt "#31783"
+msgid "Similar Movies"
+msgstr ""
+
+msgctxt "#31784"
+msgid "Recommended Media"
+msgstr ""
