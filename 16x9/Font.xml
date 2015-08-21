@@ -339,12 +339,6 @@
 	</fontset>
 	<fontset id="Large" unicode="true">
 		<font>
-			<name>symbolview</name>
-			<filename>symbol.ttf</filename>
-			<size>28</size>
-			<style />
-		</font>
-		<font>
 			<name>DurationFontSmall</name>
 			<filename>Gotham-Light.ttf</filename>
 			<size>29</size>
@@ -371,6 +365,12 @@
 			<name>symbolbig</name>
 			<filename>symbol.ttf</filename>
 			<size>54</size>
+			<style />
+		</font>
+		<font>
+			<name>symbolbiggest</name>
+			<filename>symbol.ttf</filename>
+			<size>112</size>
 			<style />
 		</font>
 		<font>
