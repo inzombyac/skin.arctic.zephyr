@@ -8,6 +8,14 @@
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
 	<onload condition="System.HasAddon(script.duration)">RunScript(script.duration,backend=True)</onload>
 	<onload condition="!Skin.String(SkinHelper.RandomFanartDelay)">Skin.SetString(SkinHelper.RandomFanartDelay,15)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(osd.usetheme)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(global.hidecirles)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetString(SkinHelper.ShowInfoAtPlaybackStart, 6)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SmartShortcuts.playlists)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(SmartShortcuts.emby)</onload>
+	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.plexbmc) ">Skin.SetBool(global.plex)</onload>
+	<onload condition="!Skin.HasSetting(startup.init) + System.HasAddon(plugin.video.netflix)">Skin.SetBool(global.netflix)</onload>
+	<onload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(home.netflix) + !Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include condition="Skin.HasSetting(home.netflix) + System.HasAddon(plugin.video.netflixbmc) + !Skin.HasSetting(lights.out)">NetflixBackground</include>
