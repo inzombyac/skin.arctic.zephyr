@@ -803,7 +803,7 @@
 							<font>Tiny</font>
 							<textcolor>PanelWhite70</textcolor>
 							<selectedcolor>PanelWhite70</selectedcolor>
-							<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
+							<label>$INFO[Window(Home).Property(SkinHelper.ListItemDuration)]$INFO[ListItem.Rating, ]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
 							<visible>Control.HasFocus(6016)</visible>
 						</control>
 						<control type="image">
@@ -3241,7 +3241,15 @@
 						<height>460</height>
 						<control type="image">
 							<width>1000</width>
-							
+							<top>-300</top>
+							<align>bottom</align>
+							<aspectratio>scale</aspectratio>
+							<texture background="true" flipx="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<control type="image">
+							<width>1000</width>
+							<top>262</top>
+						<height>120</height>
 							<align>bottom</align>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[Listitem.Thumb]</texture>
