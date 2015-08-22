@@ -7,6 +7,7 @@
 	<onload condition="IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
 	<onload condition="System.HasAddon(script.duration)">RunScript(script.duration,backend=True)</onload>
+	<onload condition="!Skin.String(SkinHelper.RandomFanartDelay)">Skin.SetString(SkinHelper.RandomFanartDelay,15)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(home.netflix) + !Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include condition="Skin.HasSetting(home.netflix) + System.HasAddon(plugin.video.netflixbmc) + !Skin.HasSetting(lights.out)">NetflixBackground</include>

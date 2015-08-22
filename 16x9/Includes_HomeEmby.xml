@@ -171,7 +171,7 @@
 					<onright>3634</onright>
 					<onup>303</onup>
 					<ondown>300</ondown>
-					<onclick>RunScript(script.globalsearch)</onclick>
+					<onclick>RunScript(script.skin.helper.service,action=videosearch)</onclick>
 					<font>Button</font>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
