@@ -1220,4 +1220,13 @@
 		<value condition="SubString(Container(301).ListItem.Mpaa,gb-r18)">R18</value>
 		<value>$INFO[Container(301).ListItem.Mpaa]</value>
 	</variable>
+	<variable name="DefaultMusicLabel">
+		<value condition="Stringcompare(ListItem.Icon,DefaultAddonMusic.png)"></value>
+		<value condition="Stringcompare(ListItem.Icon,DefaultAlbumCover.png)"></value>
+		<value condition="Stringcompare(ListItem.Icon,DefaultMusicRecentlyPlayed.png)"></value>
+		<value condition="Stringcompare(ListItem.Icon,DefaultMusicSongs.png)"></value>
+		<value condition="Stringcompare(ListItem.Icon,xxDefaultAlbumCover.png)">PG</value>
+		<value condition="Substring(ListItem.Icon,Default,left) | [IsEmpty(ListItem.Title) + IsEmpty(ListItem.Icon)]"></value>
+		<value></value>
+	</variable>
 </includes>

@@ -3558,10 +3558,10 @@
 						<height>230</height>
 						<width>230</width>
 						<font>symbolbiggest</font>
-						<label></label>
+						<label>$VAR[DefaultMusicLabel]</label>
 						<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
 						<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
-						<visible>IsEmpty(ListItem.Title)</visible>
+						<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
 					</control>
 					<control type="group">
 						<control type="image">
@@ -3593,10 +3593,10 @@
 							<height>230</height>
 							<width>230</width>
 							<font>symbolbiggest</font>
-							<label></label>
+							<label>$VAR[DefaultMusicLabel]</label>
 							<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
 							<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
-							<visible>IsEmpty(ListItem.Title)</visible>
+							<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
 						</control>
 						<control type="group">
 							<control type="image">
@@ -3692,10 +3692,10 @@
 						<height>230</height>
 						<width>230</width>
 						<font>symbolbiggest</font>
-						<label></label>
+						<label>$VAR[DefaultMusicLabel]</label>
 						<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
 						<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
-						<visible>IsEmpty(ListItem.Title)</visible>
+						<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
 					</control>
 					<control type="group">
 						<control type="image">
@@ -3720,6 +3720,11 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="235" height="235">
+					<!-- silent broken in jarvis :/
+					<control type="button" id="50171">
+						<onfocus>CancelAlarm(musicScroll,silent)</onfocus>
+						<onunfocus>AlarmClock(musicScroll,Control.Move(5017,6),00:10,silent,loop)</onunfocus>
+					</control> -->
 					<control type="image">
 						<aspectratio>stretch</aspectratio>
 						<top>0</top>
@@ -3736,10 +3741,10 @@
 						<height>230</height>
 						<width>230</width>
 						<font>symbolbiggest</font>
-						<label></label>
+						<label>$VAR[DefaultMusicLabel]</label>
 						<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
 						<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
-						<visible>IsEmpty(ListItem.Title)</visible>
+						<visible>IsEmpty(ListItem.Title) | substring(ListItem.Icon,Default,left)</visible>
 					</control>
 					<control type="group">
 						<control type="image">
