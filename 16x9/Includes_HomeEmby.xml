@@ -426,8 +426,8 @@
 		<top>-40</top>
 		<!-- Widget Info -->
 		<control type="group">
-			<animation effect="slide" start="0" end="-356,0" condition="Control.HasFocus(6017) | Control.HasFocus(3017)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-657,0" condition="Control.HasFocus(9017) | Control.HasFocus(10017)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-356,0" condition="Control.HasFocus(6017) | Control.HasFocus(3017) | Control.HasFocus(5017) | Control.HasFocus(4017)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-657,0" condition="Control.HasFocus(9017) | Control.HasFocus(10017) | Control.HasFocus(15017) | Control.HasFocus(14017)" time="200">Conditional</animation>
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
@@ -2887,6 +2887,7 @@
 				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget11,RecommendedEpisodes))</onback>
 				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>4016</onleft>
+				<onright>14017</onright>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<include>Animation.FadeIn</include>
@@ -2952,6 +2953,174 @@
 				</focusedlayout>
 				<content target="video">$VAR[DefWidget11Content]</content>
 			</control>
+			<!-- Latest TV XBMC -->
+			<control type="label">
+				<left>1865</left>
+				<top>290</top>
+				<width>410</width>
+				<align>left</align>
+				<height>40</height>
+				<font>Small</font>
+				<textcolor>PanelWhite70</textcolor>
+				<selectedcolor>PanelWhite70</selectedcolor>
+				<label>$VAR[EmbyWidget18Label]</label>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			</control>
+			<control type="wraplist" id="14017">
+				<focusposition>0</focusposition>
+				<orientation>horizontal</orientation>
+				<description>Widget</description>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<top>-330</top>
+				<left>1860</left>
+				<width>491</width>
+				<height>705</height>
+				<onup>300</onup>
+				<ondown>4017</ondown>
+				<onback>SetProperty(Dialog.NumItems,5)</onback>
+				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31226])</onback>
+				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget18,PopularTvShows))</onback>
+				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31227])</onback>
+				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget18,TopRatedTvShows))</onback>
+				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31228])</onback>
+				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget18,OnAirTvShows))</onback>
+				<onback>SetProperty(Dialog.4.Label,$LOCALIZE[31229])</onback>
+				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget18,AiringTodayTvShows))</onback>
+				<onback>SetProperty(Dialog.5.Label,$LOCALIZE[31784])</onback>
+				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget18,RecommendedShows))</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017)">4012</onleft>
+				<preloaditems>2</preloaditems>
+				<scrolltime tween="quadratic">100</scrolltime>
+				<autoscroll time="5000">!Control.HasFocus(14017)</autoscroll>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<itemlayout width="158" height="235"/>
+				<focusedlayout width="158" height="235"/>
+				<content target="video">$VAR[DefWidget18Content]</content>
+			</control>
+			<control type="group">
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<top>330</top>
+				<left>1865</left>
+				<width>688</width>
+				<height>705</height>
+				<control type="image">
+					<left>316</left>
+					<top>0</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(14017).Listitem(1).Icon]</texture>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>474</left>
+					<top>0</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(14017).Listitem(2).Icon]</texture>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>316</left>
+					<top>235</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(14017).Listitem(3).Icon]</texture>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>474</left>
+					<top>235</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(14017).Listitem(4).Icon]</texture>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>470</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(14017).Listitem(5).Icon]</texture>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>158</left>
+					<top>470</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(14017).Listitem(6).Icon]</texture>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>316</left>
+					<top>470</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(14017).Listitem(7).Icon]</texture>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>474</left>
+					<top>470</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(14017).Listitem(8).Icon]</texture>
+					<fadetime>100</fadetime>
+				</control>
+				<!-- main box -->
+				<control type="group">
+					<left>0</left>
+					<top>0</top>
+					<width>311</width>
+					<height>465</height>
+					<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(14017).onnext]" center="auto">conditional</animation>
+					<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(14017).onprevious]" center="auto">conditional</animation>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>311</width>
+						<height>465</height>
+						<texture fallback="empty.png">$INFO[Container(14017).Listitem(0).Icon]</texture>
+						<fadetime>100</fadetime>
+					</control>
+					<control type="image">
+						<description>Title overlay</description>
+						<left>0</left>
+						<top>390</top>
+						<width>311</width>
+						<height>80</height>
+						<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					</control>
+					<control type="textbox">
+						<!--<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(14017).onnext]" center="auto">conditional</animation>
+						<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(14017).onprevious]" center="auto">conditional</animation>-->
+						<left>0</left>
+						<top>390</top>
+						<width>311</width>
+						<height>64</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>SmallBold</font>
+						<textcolor>PanelWhite70</textcolor>
+						<selectedcolor>PanelWhite70</selectedcolor>
+						<label fallback="N/A">$INFO[Container(14017).ListItem.Rating]$INFO[Container(14017).ListItem.Votes, (, $LOCALIZE[20350])]</label>
+					</control>
+				</control>
+				<control type="image">
+					<left>-3</left>
+					<top>-3</top>
+					<width>317</width>
+					<height>471</height>
+					<fadetime>100</fadetime>
+					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+					<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(14017).onnext]" center="auto">conditional</animation>
+					<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(14017).onprevious]" center="auto">conditional</animation>
+					<visible>Control.HasFocus(14017)</visible>
+				</control>
+			</control>
 			<!-- Music menu item -->
 			<control type="label">
 				<left>SidePad</left>
@@ -2974,7 +3143,7 @@
 				<height>460</height>
 				<onup>300</onup>
 				<ondown>5013</ondown>
-				<onback>SetProperty(Dialog.NumItems,15)</onback>
+				<onback>SetProperty(Dialog.NumItems,17)</onback>
 				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31187])</onback>
 				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget12,RandomMusic))</onback>
 				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31188])</onback>
@@ -2985,26 +3154,30 @@
 				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget12,RecentPlayedMusic))</onback>
 				<onback>SetProperty(Dialog.5.Label,Top 100 Albums)</onback>
 				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget12,Top100Music))</onback>
-				<onback>SetProperty(Dialog.6.Label,Custom1)</onback>
-				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget12,Custom1))</onback>
-				<onback>SetProperty(Dialog.7.Label,Custom2)</onback>
-				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget12,Custom2))</onback>
-				<onback>SetProperty(Dialog.8.Label,Custom3)</onback>
-				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget12,Custom3))</onback>
-				<onback>SetProperty(Dialog.9.Label,Custom4)</onback>
-				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget12,Custom4))</onback>
-				<onback>SetProperty(Dialog.10.Label,Custom5)</onback>
-				<onback>SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget12,Custom5))</onback>
-				<onback>SetProperty(Dialog.11.Label,Custom6)</onback>
-				<onback>SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget12,Custom6))</onback>
-				<onback>SetProperty(Dialog.12.Label,Custom7)</onback>
-				<onback>SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget12,Custom7))</onback>
-				<onback>SetProperty(Dialog.13.Label,Custom8)</onback>
-				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget12,Custom8))</onback>
-				<onback>SetProperty(Dialog.14.Label,Custom9)</onback>
-				<onback>SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget12,Custom9))</onback>
-				<onback>SetProperty(Dialog.15.Label,Custom10)</onback>
-				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget12,Custom10))</onback>
+				<onback>SetProperty(Dialog.6.Label,Popular Artists)</onback>
+				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget12,PopularArtists))</onback>
+				<onback>SetProperty(Dialog.7.Label,Hyped Artists)</onback>
+				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget12,HypedArtists))</onback>
+				<onback>SetProperty(Dialog.8.Label,Custom1)</onback>
+				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget12,Custom1))</onback>
+				<onback>SetProperty(Dialog.9.Label,Custom2)</onback>
+				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget12,Custom2))</onback>
+				<onback>SetProperty(Dialog.10.Label,Custom3)</onback>
+				<onback>SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget12,Custom3))</onback>
+				<onback>SetProperty(Dialog.11.Label,Custom4)</onback>
+				<onback>SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget12,Custom4))</onback>
+				<onback>SetProperty(Dialog.12.Label,Custom5)</onback>
+				<onback>SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget12,Custom5))</onback>
+				<onback>SetProperty(Dialog.13.Label,Custom6)</onback>
+				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget12,Custom6))</onback>
+				<onback>SetProperty(Dialog.14.Label,Custom7)</onback>
+				<onback>SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget12,Custom7))</onback>
+				<onback>SetProperty(Dialog.15.Label,Custom8)</onback>
+				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget12,Custom8))</onback>
+				<onback>SetProperty(Dialog.16.Label,Custom9)</onback>
+				<onback>SetProperty(Dialog.16.BuiltIn,Skin.SetString(widget12,Custom9))</onback>
+				<onback>SetProperty(Dialog.17.Label,Custom10)</onback>
+				<onback>SetProperty(Dialog.17.BuiltIn,Skin.SetString(widget12,Custom10))</onback>
 				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>301</onleft>
 				<onright>301</onright>
@@ -3018,12 +3191,84 @@
 					<control type="image">
 						<aspectratio>keep</aspectratio>
 						<texture background="true">$VAR[FanartImage]</texture>
+						<visible>!Stringcompare(Skin.String(widget12),PopularArtists)</visible>
+						<visible>!Stringcompare(Skin.String(widget12),HypedArtists)</visible>
+					</control>
+					<control type="group">
+						<width>820</width>
+						<height>460</height>
+						<control type="image">
+							<width>1000</width>
+							
+							<align>bottom</align>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<width>500</width>
+							<height>230</height>
+							
+							<aspectratio>center</aspectratio>
+							<texture background="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>130</top>
+							<width>295</width>
+							<height>330</height>
+							
+							<aspectratio>center</aspectratio>
+							<texture background="true" flipx="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<control type="image">
+							<align>right</align>
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<visible>Stringcompare(Skin.String(widget12),PopularArtists) | Stringcompare(Skin.String(widget12),HypedArtists)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout width="820" height="460">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
 						<texture background="true">$VAR[FanartImage]</texture>
+						<visible>!Stringcompare(Skin.String(widget12),PopularArtists)</visible>
+						<visible>!Stringcompare(Skin.String(widget12),HypedArtists)</visible>
+					</control>
+					<control type="group">
+						<width>820</width>
+						<height>460</height>
+						<control type="image">
+							<width>1000</width>
+							
+							<align>bottom</align>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<width>500</width>
+							<height>230</height>
+							
+							<aspectratio>center</aspectratio>
+							<texture background="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>130</top>
+							<width>295</width>
+							<height>330</height>
+							
+							<aspectratio>center</aspectratio>
+							<texture background="true" flipx="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<control type="image">
+							<align>right</align>
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<visible>Stringcompare(Skin.String(widget12),PopularArtists) | Stringcompare(Skin.String(widget12),HypedArtists)</visible>
 					</control>
 				</focusedlayout>
 				<content target="video">$VAR[DefWidget12Content]</content>
@@ -3274,7 +3519,7 @@
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>5016</ondown>
-				<onback>SetProperty(Dialog.NumItems,5)</onback>
+				<onback>SetProperty(Dialog.NumItems,7)</onback>
 				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31187])</onback>
 				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget13,RandomMusic))</onback>
 				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31188])</onback>
@@ -3285,6 +3530,10 @@
 				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget13,RecentPlayedMusic))</onback>
 				<onback>SetProperty(Dialog.5.Label,Top 100 Albums)</onback>
 				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget13,Top100Music))</onback>
+				<onback>SetProperty(Dialog.6.Label,Popular Artists)</onback>
+				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget13,PopularArtists))</onback>
+				<onback>SetProperty(Dialog.7.Label,Hyped Artists)</onback>
+				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget13,HypedArtists))</onback>
 				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>5012</onleft>
 				<onright>5017</onright>
@@ -3301,22 +3550,34 @@
 						<height>230</height>
 						<width>230</width>
 						<texture background="true">$VAR[PosterImage]</texture>
+						<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
+						<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
 					</control>
-					<control type="progress">
-						<bottom>5</bottom>
-						<height>8</height>
-						<info>ListItem.PercentPlayed</info>
-						<overlaytexture>-</overlaytexture>
-						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
-						<visible>ListItem.IsResumable</visible>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>center</align>
+						<height>230</height>
+						<width>230</width>
+						<font>symbolbiggest</font>
+						<label></label>
+						<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
+						<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
+						<visible>IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="group">
+						<control type="image">
+							<height>230</height>
+							<width>230</width>
+							<align>center</align>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<visible>Stringcompare(Skin.String(widget13),PopularArtists) | Stringcompare(Skin.String(widget13),HypedArtists)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout width="235" height="235">
 					<control type="group">
-						<animation effect="zoom" start="100" end="108" time="100" reversible="false" center="auto">Focus</animation>
+						<animation effect="zoom" start="100" end="109" time="100" reversible="false" center="auto">Focus</animation>
 						<control type="image">
 							<top>0</top>
 							<aspectratio>stretch</aspectratio>
@@ -3324,6 +3585,30 @@
 							<width>230</width>
 							<texture background="true">$VAR[PosterImage]</texture>
 							<animation effect="zoom" start="100" end="96" time="100" reversible="false" center="auto">Focus</animation>
+							<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
+							<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
+						</control>
+						<control type="label">
+							<aligny>center</aligny>
+							<align>center</align>
+							<height>230</height>
+							<width>230</width>
+							<font>symbolbiggest</font>
+							<label></label>
+							<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
+							<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
+							<visible>IsEmpty(ListItem.Title)</visible>
+						</control>
+						<control type="group">
+							<control type="image">
+								<height>230</height>
+								<width>230</width>
+								<align>center</align>
+								<aspectratio>scale</aspectratio>
+								<texture background="true">$INFO[Listitem.Thumb]</texture>
+								<animation effect="zoom" start="100" end="96" time="100" reversible="false" center="auto">Focus</animation>
+							</control>
+							<visible>Stringcompare(Skin.String(widget13),PopularArtists) | Stringcompare(Skin.String(widget13),HypedArtists)</visible>
 						</control>
 						<control type="progress">
 							<bottom>7</bottom>
@@ -3370,7 +3655,7 @@
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>5017</ondown>
-				<onback>SetProperty(Dialog.NumItems,5)</onback>
+				<onback>SetProperty(Dialog.NumItems,7)</onback>
 				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31187])</onback>
 				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget14,RandomMusic))</onback>
 				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31188])</onback>
@@ -3381,7 +3666,13 @@
 				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget14,RecentPlayedMusic))</onback>
 				<onback>SetProperty(Dialog.5.Label,Top 100 Albums)</onback>
 				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget14,Top100Music))</onback>
+				<onback>SetProperty(Dialog.6.Label,Popular Artists)</onback>
+				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget14,PopularArtists))</onback>
+				<onback>SetProperty(Dialog.7.Label,Hyped Artists)</onback>
+				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget14,HypedArtists))</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>5016</onleft>
+				<onright>15017</onright>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="quadratic">100</scrolltime>
 				<include>Animation.FadeIn</include>
@@ -3393,6 +3684,29 @@
 						<height>230</height>
 						<width>230</width>
 						<texture background="true">$VAR[PosterImage]</texture>
+						<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
+						<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>center</align>
+						<height>230</height>
+						<width>230</width>
+						<font>symbolbiggest</font>
+						<label></label>
+						<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
+						<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
+						<visible>IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="group">
+						<control type="image">
+							<height>230</height>
+							<width>230</width>
+							<align>center</align>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[Listitem.Thumb]</texture>
+						</control>
+						<visible>Stringcompare(Skin.String(widget14),PopularArtists) | Stringcompare(Skin.String(widget14),HypedArtists)</visible>
 					</control>
 					<control type="progress">
 						<bottom>5</bottom>
@@ -3414,6 +3728,30 @@
 						<width>230</width>
 						<texture background="true">$VAR[PosterImage]</texture>
 						<animation effect="zoom" start="100" end="96" time="50" tween="quadratic" reversible="false" center="auto">Focus</animation>
+						<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
+						<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
+					</control>
+					<control type="label">
+						<aligny>center</aligny>
+						<align>center</align>
+						<height>230</height>
+						<width>230</width>
+						<font>symbolbiggest</font>
+						<label></label>
+						<visible>!Stringcompare(Skin.String(widget14),PopularArtists)</visible>
+						<visible>!Stringcompare(Skin.String(widget14),HypedArtists)</visible>
+						<visible>IsEmpty(ListItem.Title)</visible>
+					</control>
+					<control type="group">
+						<control type="image">
+							<height>230</height>
+							<width>230</width>
+							<align>center</align>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$INFO[Listitem.Thumb]</texture>
+							<animation effect="zoom" start="100" end="96" time="100" reversible="false" center="auto">Focus</animation>
+						</control>
+						<visible>Stringcompare(Skin.String(widget14),PopularArtists) | Stringcompare(Skin.String(widget14),HypedArtists)</visible>
 					</control>
 					<control type="progress">
 						<bottom>7</bottom>
@@ -3437,6 +3775,178 @@
 				</focusedlayout>
 				<content target="video">$VAR[DefWidget14Content]</content>
 			</control>
+
+			<!-- Latest Music XBMC -->
+			<control type="label">
+				<left>1865</left>
+				<top>290</top>
+				<width>810</width>
+				<align>left</align>
+				<height>40</height>
+				<font>Small</font>
+				<textcolor>PanelWhite70</textcolor>
+				<selectedcolor>PanelWhite70</selectedcolor>
+				<label>$VAR[EmbyWidget17Label]</label>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+			</control>
+			<control type="wraplist" id="15017">
+				<focusposition>0</focusposition>
+				<orientation>horizontal</orientation>
+				<description>Widget</description>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				<top>-330</top>
+				<left>1860</left>
+				<width>491</width>
+				<height>705</height>
+				<onup>300</onup>
+				<ondown>5017</ondown>
+				<onback>SetProperty(Dialog.NumItems,6)</onback>
+				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31187])</onback>
+				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget17,RandomMusic))</onback>
+				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31188])</onback>
+				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget17,RecentMusic))</onback>
+				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31189])</onback>
+				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget17,RecommendedMusic))</onback>
+				<onback>SetProperty(Dialog.4.Label,Recently Played Albums)</onback>
+				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget17,RecentPlayedMusic))</onback>
+				<onback>SetProperty(Dialog.5.Label,Popular Artists)</onback>
+				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget17,PopularArtists))</onback>
+				<onback>SetProperty(Dialog.6.Label,Hyped Artists)</onback>
+				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget17,HypedArtists))</onback>
+				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+				<onleft condition="Control.IsVisible(5017)">5017</onleft>
+				<onleft condition="!Control.IsVisible(5017)">5012</onleft>
+				<preloaditems>2</preloaditems>
+				<scrolltime tween="quadratic">100</scrolltime>
+				<autoscroll time="5000">!Control.HasFocus(15017)</autoscroll>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<itemlayout width="158" height="235"/>
+				<focusedlayout width="158" height="235"/>
+				<content target="video">$VAR[DefWidget17Content]</content>
+			</control>
+			<control type="group">
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				<top>330</top>
+				<left>1865</left>
+				<width>688</width>
+				<height>705</height>
+				<control type="image">
+					<left>316</left>
+					<top>0</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(15017).Listitem(1).Icon]</texture><aspectratio>scale</aspectratio>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>474</left>
+					<top>0</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(15017).Listitem(2).Icon]</texture><aspectratio>scale</aspectratio>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>316</left>
+					<top>235</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(15017).Listitem(3).Icon]</texture><aspectratio>scale</aspectratio>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>474</left>
+					<top>235</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(15017).Listitem(4).Icon]</texture><aspectratio>scale</aspectratio>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>470</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(15017).Listitem(5).Icon]</texture><aspectratio>scale</aspectratio>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>158</left>
+					<top>470</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(15017).Listitem(6).Icon]</texture><aspectratio>scale</aspectratio>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>316</left>
+					<top>470</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(15017).Listitem(7).Icon]</texture><aspectratio>scale</aspectratio>
+					<fadetime>100</fadetime>
+				</control>
+				<control type="image">
+					<left>474</left>
+					<top>470</top>
+					<width>153</width>
+					<height>230</height>
+					<texture fallback="empty.png">$INFO[Container(15017).Listitem(8).Icon]</texture><aspectratio>scale</aspectratio>
+					<fadetime>100</fadetime>
+				</control>
+				<!-- main box -->
+				<control type="group">
+					<left>0</left>
+					<top>0</top>
+					<width>311</width>
+					<height>465</height>
+					<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(15017).onnext]" center="auto">conditional</animation>
+					<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(15017).onprevious]" center="auto">conditional</animation>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>311</width>
+						<height>465</height>
+						<texture fallback="empty.png">$INFO[Container(15017).Listitem(0).Icon]</texture><aspectratio>scale</aspectratio>
+						<fadetime>100</fadetime>
+					</control>
+					<control type="image">
+						<description>Title overlay</description>
+						<left>0</left>
+						<top>390</top>
+						<width>311</width>
+						<height>80</height>
+						<texture border="15" colordiffuse="af000000">common/white.png</texture>
+					</control>
+					<control type="textbox">
+						<!--<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(15017).onnext]" center="auto">conditional</animation>
+						<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(15017).onprevious]" center="auto">conditional</animation>-->
+						<left>0</left>
+						<top>390</top>
+						<width>311</width>
+						<height>64</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>SmallBold</font>
+						<textcolor>PanelWhite70</textcolor>
+						<selectedcolor>PanelWhite70</selectedcolor>
+						<label fallback="N/A">$INFO[Container(15017).ListItem.Title]</label>
+					</control>
+				</control>
+				<control type="image">
+					<left>-3</left>
+					<top>-3</top>
+					<width>317</width>
+					<height>471</height>
+					<fadetime>100</fadetime>
+					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+					<animation effect="zoom" start="105" end="100" time="200" tween="quadratic" reversible="false" condition="![container(15017).onnext]" center="auto">conditional</animation>
+					<animation effect="zoom" start="95" end="100" time="200" tween="quadratic" reversible="false" condition="![container(15017).onprevious]" center="auto">conditional</animation>
+					<visible>Control.HasFocus(15017)</visible>
+				</control>
+			</control>
+
 			<!-- Live TV menu item -->
 			<control type="label">
 				<left>SidePad</left>
