@@ -522,22 +522,20 @@
 				<onback>SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget2,Custom1))</onback>
 				<onback>SetProperty(Dialog.12.Label,Custom2)</onback>
 				<onback>SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget2,Custom2))</onback>
-				<onback>SetProperty(Dialog.13.Label,Custom3)</onback>
-				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget2,Custom3))</onback>
-				<onback>SetProperty(Dialog.14.Label,Custom4)</onback>
-				<onback>SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget2,Custom4))</onback>
-				<onback>SetProperty(Dialog.15.Label,Custom5)</onback>
-				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget2,Custom5))</onback>
-				<onback>SetProperty(Dialog.16.Label,Custom6)</onback>
-				<onback>SetProperty(Dialog.16.BuiltIn,Skin.SetString(widget2,Custom6))</onback>
-				<onback>SetProperty(Dialog.17.Label,Custom7)</onback>
-				<onback>SetProperty(Dialog.17.BuiltIn,Skin.SetString(widget2,Custom7))</onback>
-				<onback>SetProperty(Dialog.18.Label,Custom8)</onback>
-				<onback>SetProperty(Dialog.18.BuiltIn,Skin.SetString(widget2,Custom8))</onback>
-				<onback>SetProperty(Dialog.19.Label,Custom9)</onback>
-				<onback>SetProperty(Dialog.19.BuiltIn,Skin.SetString(widget2,Custom9))</onback>
-				<onback>SetProperty(Dialog.20.Label,Custom10)</onback>
-				<onback>SetProperty(Dialog.20.BuiltIn,Skin.SetString(widget2,Custom10))</onback>
+				<onback>SetProperty(Dialog.13.Label,$INFO[Window(Home).Property(emby.nodes.1.title)])</onback>
+				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget2,embynode1))</onback>
+				<onback>SetProperty(Dialog.14.Label,$INFO[Window(Home).Property(emby.nodes.0.title)])</onback>
+				<onback>SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget2,embynode0))</onback>
+				<onback>SetProperty(Dialog.15.Label,$INFO[Window(Home).Property(emby.nodes.0.recent.title)])</onback>
+				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget2,embynode0recent))</onback>
+				<onback>SetProperty(Dialog.16.Label,$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.title)])</onback>
+				<onback>SetProperty(Dialog.16.BuiltIn,Skin.SetString(widget2,embynode1recentepisodes))</onback>
+				<onback>SetProperty(Dialog.17.Label,$INFO[Window(Home).Property(emby.nodes.0.inprogress.title)])</onback>
+				<onback>SetProperty(Dialog.17.BuiltIn,Skin.SetString(widget2,embynode0inprogress))</onback>
+				<onback>SetProperty(Dialog.18.Label,$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.title)])</onback>
+				<onback>SetProperty(Dialog.18.BuiltIn,Skin.SetString(widget2,embynode1inprogressepisodes))</onback>
+				<onback>SetProperty(Dialog.19.Label,$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.title)])</onback>
+				<onback>SetProperty(Dialog.19.BuiltIn,Skin.SetString(widget2,embynode1nextepisodes))</onback>
 				<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>301</onleft>
 				<onright>301</onright>
