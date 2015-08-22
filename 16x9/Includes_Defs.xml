@@ -24,13 +24,8 @@
 	</variable>
 	<variable name="DefWidgetContent">
 		<!-- Individual Widget Paths -->
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Playlist)">$INFO[Container(300).ListItem.Property(widgetPlaylist)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),RandomMovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),RandomEpisodes)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),RecentEpisodes)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),RecentMovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),RecommendedEpisodes)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),RecommendedMovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Custom3)">$INFO[Skin.String(CustomWidget3)]</value>
@@ -41,29 +36,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),TrendingMovies)">plugin://script.extendedinfo?info=trendingmovies</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),TrendingShows)">plugin://script.extendedinfo?info=trendingshows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),AiringShows)">plugin://script.extendedinfo?info=airingshows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),PremiereShows)">plugin://script.extendedinfo?info=premiereshows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),InCinemas)">plugin://script.extendedinfo?info=incinemas</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),Upcoming)">plugin://script.extendedinfo?info=upcoming</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),PopularMovies)">plugin://script.extendedinfo?info=popularmovies</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),TopRatedMovies)">plugin://script.extendedinfo?info=topratedmovies</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),PopularTvShows)">plugin://script.extendedinfo?info=populartvshows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),TopRatedTvShows)">plugin://script.extendedinfo?info=topratedtvshows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
 		<value condition="[Skin.HasSetting(home.vertical) | !Skin.HasSetting(home.classicwidgets)] + substring(Container(300).ListItem.Property(widget),Albums)">$VAR[DefWidgetContentAlbums]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Weather) + !IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">pvr://channels/tv/All&amp;channels/</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),bbc.popular)">plugin://plugin.video.bbciplayer/?IPID&amp;description&amp;iconimage&amp;mode=10&amp;name=Most%20Popular&amp;url=http%3a%2f%2fwww.bbc.co.uk%2fiplayer%2fgroup%2fmost-popular</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),bbc.sport)">plugin://plugin.video.bbciplayer/?IPID&amp;description&amp;iconimage&amp;mode=8&amp;name=%5bCOLOR%20blue%5d%3e%3e%20Next%20Page%20%3e%3e%5b%2fCOLOR%5d&amp;url=http%3a%2f%2fwww.bbc.co.uk%2fiplayer%2fcategories%2fsport%2fall%3fsort%3ddateavailable%26</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),bbc.scifi)">plugin://plugin.video.bbciplayer/?IPID&amp;description&amp;iconimage&amp;mode=8&amp;name=Science&amp;url=http%3a%2f%2fwww.bbc.co.uk%2fiplayer%2fcategories%2fscience-and-nature%2fall%3fsort%3ddateavailable%26</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),bbc.documentaries)">plugin://plugin.video.bbciplayer/?IPID&amp;description&amp;iconimage&amp;mode=8&amp;name=%5bCOLOR%20blue%5d%3e%3e%20Next%20Page%20%3e%3e%5b%2fCOLOR%5d&amp;url=http%3a%2f%2fwww.bbc.co.uk%2fiplayer%2fcategories%2fdocumentaries%2fall%3fsort%3ddateavailable%26</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),bbc.music)">plugin://plugin.video.bbciplayer/?IPID&amp;description&amp;iconimage&amp;mode=8&amp;name=%5bCOLOR%20blue%5d%3e%3e%20Next%20Page%20%3e%3e%5b%2fCOLOR%5d&amp;url=http%3a%2f%2fwww.bbc.co.uk%2fiplayer%2fcategories%2fmusic%2fall%3fsort%3ddateavailable%26</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),extendedinfo.eurogamer)">plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Eurogamer</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),extendedinfo.engadget)">plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(widget),extendedinfo.mobiletechreview)">plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=MobileTechReview</value>
 		<!-- Background -->
 		<value condition="!IsEmpty(Container(300).ListItem.Property(Background))">$INFO[Container(300).ListItem.Property(Background)]</value>
 		<!-- Slideshow -->
@@ -296,7 +270,7 @@
 		<value condition="Stringcompare(Skin.String(widget18),TopRatedTvShows)">plugin://script.extendedinfo?info=topratedtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget18),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value condition="Stringcompare(Skin.String(widget18),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
-		<value condition="Stringcompare(Skin.String(widget18),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&limit=[18]</value>
+		<value condition="Stringcompare(Skin.String(widget18),RecommendedShows)">plugin://script.skin.helper.service/?action=recommendedmedia&amp;limit=[18]</value>
 		<value>plugin://script.extendedinfo?info=populartvshows</value>
 	</variable>
 	<include name="DefSideBrowserButton">

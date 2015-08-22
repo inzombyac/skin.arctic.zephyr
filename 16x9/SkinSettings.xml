@@ -563,6 +563,54 @@
 						<selected>Skin.HasSetting(home.dontshowfanart)</selected>
 						<onclick>Skin.ToggleSetting(home.dontshowfanart)</onclick>
 					</control>
+					<control type="radiobutton" id="92431" description="SmartShortcuts Playlists">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31785</label>
+						<onclick>Skin.ToggleSetting(SmartShortcuts.playlists)</onclick>
+						<selected>Skin.HasSetting(SmartShortcuts.playlists)</selected>
+						<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
+					</control>
+					<control type="radiobutton" id="92432" description="SmartShortcuts Favourites">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31786</label>
+						<onclick>Skin.ToggleSetting(SmartShortcuts.favorites)</onclick>
+						<selected>Skin.HasSetting(SmartShortcuts.favorites)</selected>
+						<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
+					</control>
+					<control type="radiobutton" id="92433" description="SmartShortcuts Emby">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31787</label>
+						<selected>Skin.HasSetting(SmartShortcuts.emby) + System.HasAddon(plugin.video.emby)</selected>
+						<visible>System.HasAddon(plugin.video.emby)</visible>
+						<onclick>Skin.ToggleSetting(SmartShortcuts.emby)</onclick>
+						<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
+					</control>
+					<control type="radiobutton" id="92434" description="SmartShortcuts Plex">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31788</label>
+						<onclick>Skin.ToggleSetting(SmartShortcuts.plex)</onclick>
+						<selected>Skin.HasSetting(SmartShortcuts.plex) + System.HasAddon(plugin.video.plexbmc)</selected>
+						<visible>System.HasAddon(plugin.video.plexbmc)</visible>
+						<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
+					</control>
+					<control type="radiobutton" id="92435" description="SmartShortcuts Netflix">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9104)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31789</label>
+						<onclick>Skin.ToggleSetting(SmartShortcuts.netflix)</onclick>
+						<selected>Skin.HasSetting(SmartShortcuts.netflix) + System.HasAddon(plugin.video.netflixbmc)</selected>
+						<visible>System.HasAddon(plugin.video.netflixbmc)</visible>
+						<onclick>Notification($LOCALIZE[24074],$LOCALIZE[31790])</onclick>
+					</control>
 					<control type="button" id="9246" description="Custom Widget 1">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9104)</visible>
