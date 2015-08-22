@@ -485,6 +485,14 @@
 						<selected>Skin.HasSetting(osd.hidespoilers)</selected>
 						<onclick>Skin.ToggleSetting(osd.hidespoilers)</onclick>
 					</control>
+					<control type="radiobutton" id="9244" description="Hide Now Playing Dialog">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9103)</visible>
+						<include>DefSettingsButton2</include>
+						<label>Hide Now Playing Dialog</label>
+						<selected>Skin.HasSetting(osd.hidenowplaying)</selected>
+						<onclick>Skin.ToggleSetting(osd.hidenowplaying)</onclick>
+					</control>
 					<!-- Widgets -->
 					<control type="radiobutton" id="924111" description="landscape widgets">
 						<width>1310</width>
