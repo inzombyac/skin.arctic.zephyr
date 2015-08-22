@@ -3558,7 +3558,7 @@
 						<height>230</height>
 						<width>230</width>
 						<font>symbolbiggest</font>
-						<label></label>
+						<label></label>
 						<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
 						<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
 						<visible>IsEmpty(ListItem.Title)</visible>
@@ -3593,7 +3593,7 @@
 							<height>230</height>
 							<width>230</width>
 							<font>symbolbiggest</font>
-							<label></label>
+							<label></label>
 							<visible>!Stringcompare(Skin.String(widget13),PopularArtists)</visible>
 							<visible>!Stringcompare(Skin.String(widget13),HypedArtists)</visible>
 							<visible>IsEmpty(ListItem.Title)</visible>
