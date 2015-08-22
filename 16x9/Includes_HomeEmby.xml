@@ -1169,21 +1169,21 @@
 							<visible>!Skin.HasSetting(weather.useflaticons)</visible>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>162</top>
 							<height>40</height>
 							<font>MediumBold</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label fallback="161">$LOCALIZE[33006]</label>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>207</top>
 							<height>30</height>
 							<font>Tiny</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label>$INFO[Window(Weather).Property(Day0.Outlook)]</label>
@@ -1250,21 +1250,21 @@
 							<visible>!Skin.HasSetting(weather.useflaticons)</visible>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>162</top>
 							<height>40</height>
 							<font>MediumBold</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label fallback="161">$LOCALIZE[33007]</label>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>207</top>
 							<height>30</height>
 							<font>Tiny</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label>$INFO[Window(Weather).Property(Day1.Outlook)]</label>
@@ -1331,21 +1331,21 @@
 							<visible>!Skin.HasSetting(weather.useflaticons)</visible>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>162</top>
 							<height>40</height>
 							<font>MediumBold</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label fallback="161">$INFO[Window(Weather).Property(Day2.Title)]</label>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>207</top>
 							<height>30</height>
 							<font>Tiny</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label>$INFO[Window(Weather).Property(Day2.Outlook)]</label>
@@ -1412,21 +1412,21 @@
 							<visible>!Skin.HasSetting(weather.useflaticons)</visible>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>162</top>
 							<height>40</height>
 							<font>MediumBold</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label fallback="161">$INFO[Window(Weather).Property(Day3.Title)]</label>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>207</top>
 							<height>30</height>
 							<font>Tiny</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label>$INFO[Window(Weather).Property(Day3.Outlook)]</label>
@@ -1493,21 +1493,21 @@
 							<visible>!Skin.HasSetting(weather.useflaticons)</visible>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>162</top>
 							<height>40</height>
 							<font>MediumBold</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label fallback="161">$INFO[Window(Weather).Property(Day4.Title)]</label>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>207</top>
 							<height>30</height>
 							<font>Tiny</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label>$INFO[Window(Weather).Property(Day4.Outlook)]</label>
@@ -1574,21 +1574,21 @@
 							<visible>!Skin.HasSetting(weather.useflaticons)</visible>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>162</top>
 							<height>40</height>
 							<font>MediumBold</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label fallback="161">$INFO[Window(Weather).Property(Day5.Title)]</label>
 						</control>
 						<control type="label">
-							<left>50</left>
+							<left>0</left>
 							<top>207</top>
 							<height>30</height>
 							<font>Tiny</font>
-							<align>left</align>
+							<align>center</align>
 							<aligny>center</aligny>
 							<textcolor>PanelWhite100</textcolor>
 							<label>$INFO[Window(Weather).Property(Day5.Outlook)]</label>
@@ -3199,7 +3199,6 @@
 						<height>460</height>
 						<control type="image">
 							<width>1000</width>
-							
 							<align>bottom</align>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[Listitem.Thumb]</texture>
@@ -3241,15 +3240,7 @@
 						<height>460</height>
 						<control type="image">
 							<width>1000</width>
-							<top>-300</top>
-							<align>bottom</align>
-							<aspectratio>scale</aspectratio>
-							<texture background="true" flipx="true">$INFO[Listitem.Thumb]</texture>
-						</control>
-						<control type="image">
-							<width>1000</width>
-							<top>262</top>
-						<height>120</height>
+							
 							<align>bottom</align>
 							<aspectratio>scale</aspectratio>
 							<texture background="true">$INFO[Listitem.Thumb]</texture>
