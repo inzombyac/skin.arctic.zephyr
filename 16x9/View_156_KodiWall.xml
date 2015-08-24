@@ -303,7 +303,6 @@
 						<visible>!stringcompare(ListItem.Label,..)</visible>
 						<visible>!Skin.HasSetting(views.156.showtick)</visible>
 						<visible>!Container.Content(episodes) + [Container.Column(11) | Container.Column(12) | Container.Column(13) | Container.Column(14)]</visible>
-
 					</control>
 					<control type="label">
 						<centerright>274</centerright>

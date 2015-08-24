@@ -796,3 +796,39 @@ msgstr ""
 msgctxt "#31781"
 msgid "Big Screen Move"
 msgstr ""
+
+msgctxt "#31782"
+msgid "Because you watched"
+msgstr ""
+
+msgctxt "#31783"
+msgid "Similar Movies"
+msgstr ""
+
+msgctxt "#31784"
+msgid "Recommended Media"
+msgstr ""
+
+msgctxt "#31785"
+msgid "Enable smart shortcuts for playlists"
+msgstr ""
+
+msgctxt "#31786"
+msgid "Enable smart shortcuts for favourites"
+msgstr ""
+
+msgctxt "#31787"
+msgid "Enable smart shortcuts for Emby"
+msgstr ""
+
+msgctxt "#31788"
+msgid "Enable smart shortcuts for Plex"
+msgstr ""
+
+msgctxt "#31789"
+msgid "Enable smart shortcuts for Netflix"
+msgstr ""
+
+msgctxt "#31790"
+msgid "You may need to restart Kodi for the changes to take effect"
+msgstr ""
