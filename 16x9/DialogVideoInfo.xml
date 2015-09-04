@@ -326,85 +326,6 @@
 					<label>$VAR[CastList]</label>
 				</control>
 			</control>
-			<control type="group">
-				<visible>!Skin.HasSetting(furniture.flags)</visible>
-				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
-				<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-				<visible>!stringcompare(ListItem.Label,..)</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<left>1956</left>
-				<top>120</top>
-				<width>1920</width>
-				<height>120</height>
-				<align>left</align>
-				<animation condition="true" easing="inout" effect="rotate" end="-90" center="1956,0" time="300">conditional</animation>
-				<control type="grouplist">
-					<orientation>vertical</orientation>
-					<usecontrolcoords>true</usecontrolcoords>
-					<control type="grouplist" id="11000">
-						<posy>6</posy>
-						<width>600</width>
-						<height>24</height>
-						<align>left</align>
-						<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-						<itemgap>2</itemgap>
-						<orientation>horizontal</orientation>
-						<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
-						<control type="label">
-							<width>auto</width>
-							<height>24</height>
-							<align>right</align>
-							<label></label>
-							<font>symbolview</font>
-							<textcolor>Black700</textcolor>
-						</control>
-						 <control type="label">
-							<width min="20" max="150">auto</width>
-							<height>48</height>
-							<align>left</align>
-							<aligny>bottom</aligny>
-							<label>N/A</label>
-							<textcolor>Black300</textcolor>
-							<font>Button</font>
-							<visible>IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
-						</control>
-					   <include>LanguageFlags</include>
-					</control>
-					<control type="grouplist" id="12000">
-						<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-						<posy>3</posy>
-						<width>600</width>
-						<height>32</height>
-						<align>left</align>
-						<itemgap>2</itemgap>
-						<visible>Control.IsVisible(11000)</visible>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width>auto</width>
-							<posy>3</posy>
-							<height>32</height>
-							<align>right</align>
-							<aligny>bottom</aligny>
-							<label></label>
-							<font>symbolview</font>
-							<textcolor>Black700</textcolor>
-						</control>
-						<control type="label">
-							<textoffsety>-2</textoffsety>
-							<width min="20" max="150">auto</width>
-							<height>48</height>
-							<align>left</align>
-							<aligny>bottom</aligny>
-							<label>N/A</label>
-							<textcolor>Black300</textcolor>
-							<font>EPGTimeline</font>
-							<visible>IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) + IsEmpty(Window(movieinformation).Property(SubtitleLanguage.2))</visible>
-						</control>
-						<include>SubtitleFlags</include>
-					</control>
-				</control>
-			</control>
 			<!-- Button grouplist -->
 			<control id="9000" type="grouplist">
 				<left>566</left>
@@ -541,8 +462,7 @@
 					<animation condition="Control.HasFocus(8)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(8)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
-				<!-- Cinema Experience Button <control id="21" type="button"><width>222</width><height>116</height><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible><font>EPGTimeline</font><label>Cine Exp</label><textcolor>White70</textcolor><textoffsetx>0</textoffsetx><animation condition="Control.HasFocus(21)" effect="fade" end="100" start="0" time="10">Conditional</animation><animation condition="!Control.HasFocus(21)" effect="fade" end="0" start="100" time="10">Conditional</animation></control> -->
-				<control id="1003" type="button">
+				<!-- Cinema Experience Button <control id="21" type="button"><width>222</width><height>116</height><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible><font>EPGTimeline</font><label>Cine Exp</label><textcolor>White70</textcolor><textoffsetx>0</textoffsetx><animation condition="Control.HasFocus(21)" effect="fade" end="100" start="0" time="10">Conditional</animation><animation condition="!Control.HasFocus(21)" effect="fade" end="0" start="100" time="10">Conditional</animation></control> --><control id="1003" type="button">
 					<width>222</width>
 					<height>116</height>
 					<textcolor>White70</textcolor>
@@ -644,24 +564,7 @@
 					<label>Similar Titles</label>
 					<include>DefDialogInfoButtons</include>
 				</control>
-				<control id="7002" type="button">
-					<top>557</top>
-					<width>222</width>
-					<height>66</height>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-					<onup>9000</onup>
-					<ondown condition="Control.IsVisible(5000)">5000</ondown>
-					<ondown condition="Control.IsVisible(50)">50</ondown>
-					<font>EPGTimeline</font>
-					<textcolor>Black700</textcolor>
-					<label>Search YouTube</label>
-					<include>DefDialogInfoButtons</include>
-					<onclick condition="!IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.TVShowTitle],home)</onclick>
-					<onclick condition="IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.Title],home)</onclick>
-					<onclick>ActivateWindow(1168)</onclick>
-				</control>
-				<control id="6" type="button">
+				<!-- Cinema Experience Button <control id="21" type="button"><top>557</top><width>222</width><height>66</height><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><onup>9000</onup><ondown condition="Control.IsVisible(5000)">5000</ondown><ondown condition="Control.IsVisible(50)">50</ondown><onclick>Dialog.Close(MovieInformation)</onclick><onclick>RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick><font>EPGTimeline</font><textcolor>Black700</textcolor><label>Cinema Experience</label><include>DefDialogInfoButtons</include><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible></control> --><control id="6" type="button">
 					<top>557</top>
 					<width>222</width>
 					<height>66</height>

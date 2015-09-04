@@ -2064,9 +2064,9 @@
 		<value condition="Control.HasFocus(794)">$INFO[Container(794).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(795)">$INFO[Container(795).ListItem.Art(fanart)]</value>
 		<value condition="Control.HasFocus(796)">$INFO[Container(796).ListItem.Art(fanart)]</value>
-		<value condition="Control.HasFocus(776)">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
+		<value condition="Control.HasFocus(776)">$INFO[Window(Home).Property(script.grab.fanart.Global.FanArt)]</value>
 		<value condition="Control.HasFocus(775)">$INFO[Container(775).ListItem.Art(fanart)]</value>
-		<value condition="ControlGroup(770).HasFocus()">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
+		<value condition="ControlGroup(770).HasFocus()">$INFO[Window(Home).Property(script.grab.fanart.Global.FanArt)]</value>
 	</variable>
 	<variable name="NetflixXbmcLogo">
 		<value condition="Control.HasFocus(776)">$INFO[Container(776).ListItem.Icon]</value>

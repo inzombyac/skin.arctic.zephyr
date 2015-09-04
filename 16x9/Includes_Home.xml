@@ -48,7 +48,6 @@
 			<include>Animation.FadeIn.Slide</include>
 			<include>Animation.FadeOut</include>
 			<visible>Player.HasMedia</visible>
-			<visible>!Skin.HasSetting(furniture.nowplaying)</visible>
 			<visible>!SubString(Window(10025).Property(PlayingBackgroundMedia),True)</visible>
 				<animation effect="zoom" start="100" end="85" condition="true">Conditional</animation>
 			<control type="image">
@@ -816,7 +815,7 @@
 				<visible>Skin.HasSetting(home.showheader)</visible>
 				<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
 			</control>
-			<include>Furniture_Clock</include>
+			<include condition="!Skin.HasSetting(home.showheader)">Furniture_Clock_Bottom</include>
 		</control>
 	</include>
 	<include name="HomeSubMenu">
@@ -2008,7 +2007,6 @@
 						<visible>Skin.HasSetting(furniture.logo)</visible>
 						<visible>Control.HasFocus(301)</visible>
 						<visible>!Player.HasMedia</visible>
-						<animation effect="slide" start="0,0" end="0,-911" time="0" condition="!Skin.HasSetting(home.showheader)">Conditional</animation>
 						<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
 					</control>
 					<control type="image">
@@ -2025,7 +2023,6 @@
 						<visible>Control.HasFocus(301)</visible>
 						<visible>!Player.HasMedia</visible>
 						<visible>substring(Container(300).ListItem.Property(widget),Albums)</visible>
-						<animation effect="slide" start="0,0" end="0,-911" time="0" condition="!Skin.HasSetting(home.showheader)">Conditional</animation>
 						<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
 					</control>
 					<control type="image">
@@ -2041,7 +2038,6 @@
 						<visible>Skin.HasSetting(furniture.logo)</visible>
 						<visible>!Control.HasFocus(301)</visible>
 						<visible>!Player.HasMedia</visible>
-						<animation effect="slide" start="0,0" end="0,-911" time="0" condition="!Skin.HasSetting(home.showheader)">Conditional</animation>
 						<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
 					</control>
 					<control type="image">
