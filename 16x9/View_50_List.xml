@@ -39,7 +39,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>[!Control.HasFocus(50) | Window.IsVisible(DialogVideoInfo.xml)]</visible>
+							<visible>!Control.HasFocus(50) | Window.IsVisible(DialogVideoInfo.xml)</visible>
 							<include>50itemlayout</include>
 							<control type="textbox">
 								<height>68</height>
@@ -142,29 +142,15 @@
 				<width>PosterW</width>
 				<height>48</height>
 				<aspectratio>keep</aspectratio>
-				<texture>diffuse/shadowspot.png</texture>		
+				<texture>diffuse/shadowspot.png</texture>
 			</control>
-			<!--<control type="image">
-				<width>PosterW</width>
-				<height>PosterH</height>
-				<texture border="5" colordiffuse="FF181818">common/box.png</texture>
-				<visible>!Skin.Hassetting(views.cases)</visible>
-			</control>-->
 			<control type="image">
 				<width>PosterW</width>
 				<height>PosterH</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-				<texture background="true">$VAR[PosterImage]</texture>	
-			</control>	
-			<!--<control type="image">
-				<left>-24</left>
-				<top>-24</top>
-				<width>PosterShadowW</width>
-				<height>PosterShadowH</height>
-				<texture border="32">common/shadow-24.png</texture>
-				<visible>!Skin.Hassetting(views.cases)</visible>
-			</control> -->
+				<texture background="true">$VAR[PosterImage]</texture>
+			</control>
 		</control>
 	</include>
 	<include name="View_50_SidePoster_Square">
@@ -195,13 +181,6 @@
 				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
 			</control>
-			<!--<control type="image">
-				<left>-24</left>
-				<top>-24</top>
-				<width>PosterShadowH</width>
-				<height>PosterShadowH</height>
-				<texture border="32">common/shadow-24.png</texture>
-			</control>-->
 		</control>
 	</include>
 	<include name="View_50_List_Square">
@@ -297,7 +276,6 @@
 					<aspectratio>keep</aspectratio>
 					<texture>diffuse/shadowspot.png</texture>
 				</control>
-				
 				<control type="image">
 					<width>PosterH</width>
 					<height>PosterH</height>
