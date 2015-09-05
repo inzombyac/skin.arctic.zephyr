@@ -10,8 +10,8 @@
     <constant name="PosterW">427</constant>
     <constant name="PosterShadowH">628</constant>
     <constant name="PosterShadowW">475</constant>
-    <constant name="ListX">539</constant>
-    <constant name="ListW">1301</constant>
+    <constant name="ListX">540</constant>
+    <constant name="ListW">1300</constant>
     <constant name="ListSquareX">752</constant>
     <constant name="ListSquareW">1088</constant>
 

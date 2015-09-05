@@ -33,7 +33,7 @@
 									<posy>4</posy>
 									<width>200</width>
 									<height>282</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem9Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -43,7 +43,7 @@
 									<posy>264</posy>
 									<width>160</width>
 									<height>242</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem9Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -74,7 +74,7 @@
 									<posy>8</posy>
 									<width>234</width>
 									<height>331</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -84,7 +84,7 @@
 									<posy>318</posy>
 									<width>194</width>
 									<height>290</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -115,7 +115,7 @@
 									<posy>13</posy>
 									<width>266</width>
 									<height>380</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -125,7 +125,7 @@
 									<posy>372</posy>
 									<width>226</width>
 									<height>339</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -156,7 +156,7 @@
 									<posy>19</posy>
 									<width>300</width>
 									<height>427</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -166,7 +166,7 @@
 									<posy>426</posy>
 									<width>260</width>
 									<height>387</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -197,7 +197,7 @@
 									<posy>24</posy>
 									<width>332</width>
 									<height>478</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -207,7 +207,7 @@
 									<posy>480</posy>
 									<width>292</width>
 									<height>438</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -238,7 +238,7 @@
 									<posy>28</posy>
 									<width>366</width>
 									<height>528</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -248,7 +248,7 @@
 									<posy>534</posy>
 									<width>326</width>
 									<height>488</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -279,7 +279,7 @@
 									<posy>32</posy>
 									<width>398</width>
 									<height>577</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -289,7 +289,7 @@
 									<posy>588</posy>
 									<width>358</width>
 									<height>537</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -320,7 +320,7 @@
 									<posy>37</posy>
 									<width>432</width>
 									<height>626</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -330,7 +330,7 @@
 									<posy>642</posy>
 									<width>392</width>
 									<height>586</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -361,7 +361,7 @@
 									<posy>42</posy>
 									<width>466</width>
 									<height>676</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -371,7 +371,7 @@
 									<posy>698</posy>
 									<width>426</width>
 									<height>636</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -405,17 +405,17 @@
 									<posy>42</posy>
 									<width>466</width>
 									<height>676</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>	
+									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>74</posx>
 									<posy>698</posy>
 									<width>426</width>
 									<height>636</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -453,7 +453,7 @@
 									<posy>4</posy>
 									<width>200</width>
 									<height>282</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -463,7 +463,7 @@
 									<posy>264</posy>
 									<width>160</width>
 									<height>242</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -498,7 +498,7 @@
 									<posy>4</posy>
 									<width>200</width>
 									<height>282</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -508,7 +508,7 @@
 									<posy>264</posy>
 									<width>160</width>
 									<height>242</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -539,17 +539,17 @@
 									<posy>8</posy>
 									<width>234</width>
 									<height>331</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
-								<control type="image">
+								<control type="image">					
 									<posx>33</posx>
 									<posy>318</posy>
 									<width>194</width>
 									<height>290</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -580,7 +580,7 @@
 									<posy>13</posy>
 									<width>266</width>
 									<height>380</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -590,7 +590,7 @@
 									<posy>372</posy>
 									<width>226</width>
 									<height>339</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -621,7 +621,7 @@
 									<posy>19</posy>
 									<width>300</width>
 									<height>427</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -631,7 +631,7 @@
 									<posy>426</posy>
 									<width>260</width>
 									<height>387</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -662,7 +662,7 @@
 									<posy>24</posy>
 									<width>332</width>
 									<height>478</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -672,7 +672,7 @@
 									<posy>480</posy>
 									<width>292</width>
 									<height>438</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -703,7 +703,7 @@
 									<posy>28</posy>
 									<width>366</width>
 									<height>528</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -713,7 +713,7 @@
 									<posy>534</posy>
 									<width>326</width>
 									<height>488</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -744,7 +744,7 @@
 									<posy>32</posy>
 									<width>398</width>
 									<height>577</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -754,7 +754,7 @@
 									<posy>588</posy>
 									<width>358</width>
 									<height>537</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -785,7 +785,7 @@
 									<posy>37</posy>
 									<width>432</width>
 									<height>626</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -795,7 +795,7 @@
 									<posy>642</posy>
 									<width>392</width>
 									<height>586</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -829,10 +829,10 @@
 									<posy>-20</posy>
 									<width>466</width>
 									<height>676</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
 									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
+									<fadetime>0</fadetime>									
 								</control>
 								<!--<control type="image"> <posx>500</posx> <posy>88</posy> <width>100</width> <height>588</height> <texture flipx="true" border="1">side_shadow.png</texture> </control> -->
 								<control type="image">
@@ -840,7 +840,7 @@
 									<posy>636</posy>
 									<width>426</width>
 									<height>636</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -886,17 +886,17 @@
 									<posy>4</posy>
 									<width>200</width>
 									<height>282</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
+									<fadetime>0</fadetime>	
 								</control>
 								<control type="image">
 									<posx>27</posx>
 									<posy>264</posy>
 									<width>160</width>
 									<height>242</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -942,7 +942,7 @@
 									<posy>8</posy>
 									<width>234</width>
 									<height>331</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -952,7 +952,7 @@
 									<posy>318</posy>
 									<width>194</width>
 									<height>290</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -998,17 +998,17 @@
 									<posy>13</posy>
 									<width>266</width>
 									<height>380</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
+									<fadetime>0</fadetime>					
 								</control>
 								<control type="image">
 									<posx>39</posx>
 									<posy>372</posy>
 									<width>226</width>
 									<height>339</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -1054,7 +1054,7 @@
 									<posy>19</posy>
 									<width>300</width>
 									<height>427</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -1064,7 +1064,7 @@
 									<posy>426</posy>
 									<width>260</width>
 									<height>387</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -1110,7 +1110,7 @@
 									<posy>24</posy>
 									<width>332</width>
 									<height>478</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -1120,7 +1120,7 @@
 									<posy>480</posy>
 									<width>292</width>
 									<height>438</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -1166,7 +1166,7 @@
 									<posy>28</posy>
 									<width>366</width>
 									<height>528</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -1176,7 +1176,7 @@
 									<posy>534</posy>
 									<width>326</width>
 									<height>488</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -1222,7 +1222,7 @@
 									<posy>32</posy>
 									<width>398</width>
 									<height>577</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -1232,7 +1232,7 @@
 									<posy>588</posy>
 									<width>358</width>
 									<height>537</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -1278,7 +1278,7 @@
 									<posy>37</posy>
 									<width>432</width>
 									<height>626</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -1288,7 +1288,7 @@
 									<posy>642</posy>
 									<width>392</width>
 									<height>586</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -1336,7 +1336,7 @@
 									<posx>80</posx>
 									<posy>-100</posy>
 									<texture background="true">$INFO[ListItem.Art(discart)]</texture>
-									<aspectratio keepdiffuse="false" align="center" aligny="center">keep</aspectratio>
+									<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
 									<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="1800" condition="!IsEmpty(ListItem.Art(discart))">Conditional</animation>
 									<animation effect="rotate" end="-360" center="auto" time="12000" loop="true" reversible="false" condition="Skin.HasSetting(AnimateDiscArt)">Conditional</animation>
 									<visible>!IsEmpty(ListItem.Art(discart))</visible>
@@ -1404,17 +1404,17 @@
 									<posy>42</posy>
 									<width>466</width>
 									<height>676</height>
-									<aspectratio keepdiffuse="false">keep</aspectratio>
+									<aspectratio scalediffuse="false">keep</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>			
+									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>74</posx>
 									<posy>698</posy>
 									<width>426</width>
 									<height>636</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
@@ -1423,7 +1423,7 @@
 									<posy>698</posy>
 									<width>426</width>
 									<height>636</height>
-									<aspectratio aligny="top" align="right" keepdiffuse="false">keep</aspectratio>
+									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<fadetime>0</fadetime>
 								</control>
