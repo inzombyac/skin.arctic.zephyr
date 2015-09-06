@@ -2703,7 +2703,6 @@
 								<right>0</right>
 								<bottom>0</bottom>
 								<texture border="10">common/nofocus-shadow10.png</texture>
-								<visible>!Skin.Hassetting(widgets.cases)</visible>
 							</control>
 							<control type="image">
 								<left>10</left>
@@ -2712,45 +2711,6 @@
 								<bottom>10</bottom>
 								<aspectratio scalediffuse="false">scale</aspectratio>
 								<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
-								<visible>!Skin.Hassetting(widgets.cases)</visible>
-							</control>
-							<control type="image">
-								<left>21</left>
-								<top>21</top>
-								<right>21</right>
-								<bottom>21</bottom>
-								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
-								<visible>Skin.Hassetting(widgets.cases) + !Skin.Hassetting(widgets.clearcases)</visible>
-							</control>
-							<control type="image">
-								<left>10</left>
-								<top>10</top>
-								<right>10</right>
-								<bottom>10</bottom>
-								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
-								<visible>Skin.Hassetting(widgets.cases) + Skin.Hassetting(widgets.clearcases)</visible>
-							</control>
-							<control type="image">
-								<left>-40</left>
-								<top>-40</top>
-								<right>-5</right>
-								<bottom>-5</bottom>
-								<texture background="true">boxes/$VAR[WidgetsCasePathVar]/$VAR[GlobalCaseVar]</texture>
-								<aspectratio align="center" aligny="top">stretch</aspectratio>
-								<bordersize>2</bordersize>
-								<visible>Skin.Hassetting(widgets.cases) + Skin.Hassetting(widgets.clearcases)</visible>
-							</control>
-							<control type="image">
-								<left>-20</left>
-								<top>0</top>
-								<right>0</right>
-								<bottom>0</bottom>
-								<texture background="true">boxes/$VAR[WidgetsCasePathVar]/$VAR[GlobalCaseVar]</texture>
-								<aspectratio align="center" aligny="top">stretch</aspectratio>
-								<bordersize>2</bordersize>
-								<visible>Skin.Hassetting(widgets.cases) + !Skin.Hassetting(widgets.clearcases)</visible>
 							</control>
 							<control type="image">
 								<centerright>32</centerright>
@@ -3044,7 +3004,6 @@
 								<right>0</right>
 								<bottom>0</bottom>
 								<texture border="10">common/nofocus-shadow10.png</texture>
-								<visible>!Skin.Hassetting(widgets.cases)</visible>
 							</control>
 							<control type="image">
 								<left>10</left>
@@ -3053,45 +3012,6 @@
 								<bottom>10</bottom>
 								<aspectratio scalediffuse="false">scale</aspectratio>
 								<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
-								<visible>!Skin.Hassetting(widgets.cases)</visible>
-							</control>
-							<control type="image">
-								<left>21</left>
-								<top>21</top>
-								<right>21</right>
-								<bottom>21</bottom>
-								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
-								<visible>Skin.Hassetting(widgets.cases) + !Skin.Hassetting(widgets.clearcases)</visible>
-							</control>
-							<control type="image">
-								<left>10</left>
-								<top>10</top>
-								<right>10</right>
-								<bottom>10</bottom>
-								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="diffuse/wall.png" background="true" fallback="DefaultMovies.png">$VAR[PosterImage]</texture>
-								<visible>Skin.Hassetting(widgets.cases) + Skin.Hassetting(widgets.clearcases)</visible>
-							</control>
-							<control type="image">
-								<left>-40</left>
-								<top>-40</top>
-								<right>-5</right>
-								<bottom>-5</bottom>
-								<texture background="true">boxes/$VAR[WidgetsCasePathVar]/$VAR[GlobalCaseVar]</texture>
-								<aspectratio align="center" aligny="top">stretch</aspectratio>
-								<bordersize>2</bordersize>
-								<visible>Skin.Hassetting(widgets.cases) + Skin.Hassetting(widgets.clearcases)</visible>
-							</control>
-							<control type="image">
-								<left>-20</left>
-								<top>0</top>
-								<right>0</right>
-								<bottom>0</bottom>
-								<texture background="true">boxes/$VAR[WidgetsCasePathVar]/$VAR[GlobalCaseVar]</texture>
-								<aspectratio align="center" aligny="top">stretch</aspectratio>
-								<bordersize>2</bordersize>
-								<visible>Skin.Hassetting(widgets.cases) + !Skin.Hassetting(widgets.clearcases)</visible>
 							</control>
 							<control type="image">
 								<centerright>32</centerright>
@@ -3203,42 +3123,7 @@
 									<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
 									<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
 								</animation>
-								<visible>!Skin.Hassetting(widgets.cases)</visible>
-							</control>
-							<control type="image">
-								<left>-4</left>
-								<top>0</top>
-								<right>0</right>
-								<bottom>0</bottom>
-								<texture colordiffuse="$VAR[ColourHighlight]" border="40">common/selectbox.png</texture>
-								<visible>Control.HasFocus(301)</visible>
-								<animation type="Focus">
-									<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
-									<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
-								</animation>
-								<animation type="Unfocus">
-									<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
-									<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
-								</animation>
-								<visible>Skin.Hassetting(widgets.cases) + Skin.Hassetting(widgets.clearcases)</visible>
-							</control>
-							<control type="image">
-								<left>6</left>
-								<top>0</top>
-								<right>6</right>
-								<bottom>5</bottom>
-								<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-								<visible>Control.HasFocus(301)</visible>
-								<animation type="Focus">
-									<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
-									<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />
-								</animation>
-								<animation type="Unfocus">
-									<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
-									<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
-								</animation>
-								<visible>Skin.Hassetting(widgets.cases) + !Skin.Hassetting(widgets.clearcases)</visible>
-							</control>
+							</control>	
 						</focusedlayout>
 						<focusedlayout height="325" width="325" condition="substring(Container(300).ListItem.Property(widget),Albums)">
 							<control type="image">
