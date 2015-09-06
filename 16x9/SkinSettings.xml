@@ -494,50 +494,6 @@
 						<selected>Skin.HasSetting(widgets.landscape)</selected>
 						<onclick>Skin.ToggleSetting(widgets.landscape)</onclick>
 					</control>
-					<control type="radiobutton" id="9241" description="Cases on widgets">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9104)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Show cases in widgets</label>
-						<selected>Skin.HasSetting(widgets.cases)</selected>
-						<onclick>Skin.ToggleSetting(widgets.cases)</onclick>
-					</control>
-					<control type="radiobutton" id="92411" description="Clear Cases">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9104)</visible>
-						<include>DefSettingsButton2</include>
-						<label> - Clear Cases</label>
-						<selected>Skin.HasSetting(widgets.clearcases)</selected>
-						<onclick>Skin.Reset(widgets.bddvdcases)</onclick>
-						<onclick>Skin.Reset(widgets.colourcases)</onclick>
-						<onclick>Skin.ToggleSetting(widgets.clearcases)</onclick>
-						<visible>ControlGroup(9100).HasFocus(9104)</visible>
-						<visible>Skin.HasSetting(widgets.cases)</visible>
-					</control>
-					<control type="radiobutton" id="92412" description="Colour Cases">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9104)</visible>
-						<include>DefSettingsButton2</include>
-						<label> - Colour Cases</label>
-						<selected>Skin.HasSetting(widgets.colourcases)</selected>
-						<onclick>Skin.Reset(widgets.bddvdcases)</onclick>
-						<onclick>Skin.Reset(widgets.clearcases)</onclick>
-						<onclick>Skin.ToggleSetting(widgets.colourcases)</onclick>
-						<visible>ControlGroup(9100).HasFocus(9104)</visible>
-						<visible>Skin.HasSetting(widgets.cases)</visible>
-					</control>
-					<control type="radiobutton" id="92413" description="BD/DVD Cases">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9104)</visible>
-						<include>DefSettingsButton2</include>
-						<label> - BD/DVD Cases</label>
-						<selected>Skin.HasSetting(widgets.bddvdcases)</selected>
-						<onclick>Skin.Reset(widgets.colourcases)</onclick>
-						<onclick>Skin.Reset(widgets.clearcases)</onclick>
-						<onclick>Skin.ToggleSetting(widgets.bddvdcases)</onclick>
-						<visible>ControlGroup(9100).HasFocus(9104)</visible>
-						<visible>Skin.HasSetting(widgets.cases)</visible>
-					</control>
 					<control type="radiobutton" id="9242" description="Classic Widget Auto show">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9104)</visible>

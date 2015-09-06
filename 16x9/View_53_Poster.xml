@@ -3,7 +3,7 @@
 <includes>
 	<include name="53Content">
 		<height>1080</height>
-		<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)</visible>
+		<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons) | SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
 		<posy>96</posy>
 		<posx>-190</posx>
 		<width>2300</width>
@@ -27,7 +27,7 @@
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+					<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
 					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
 					<visible>Skin.HasSetting(show.reflections)</visible>
 				</control>
@@ -35,62 +35,15 @@
 					<centertop>PosterH</centertop>
 					<width>PosterW</width>
 					<height>48</height>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio aligny="bottom">stretch</aspectratio>
 					<texture>diffuse/shadowspot.png</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
-				</control>
-				<control type="image">
-					<width>PosterW</width>
-					<height>PosterH</height>
-					<texture border="5" colordiffuse="Dark1">common/box.png</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
 				</control>
 				<control type="image">
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
 					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
-				</control>
-				<control type="image">
-					<left>11</left>
-					<top>11</top>
-					<width>411</width>
-					<height>627</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" diffuse="diffuse/listposter.png">$VAR[PosterImage]</texture>
-					<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<width>PosterW</width>
-					<height>PosterH</height>
-					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" diffuse="diffuse/listposter.png">$VAR[PosterImage]</texture>
-					<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<posx>-75</posx>
-					<posy>-50</posy>
-					<width>527</width>
-					<height>730</height>
-					<fadetime>100</fadetime>
-					<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-					<aspectratio align="center" aligny="top">stretch</aspectratio>
-					<bordersize>2</bordersize>
-					<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<posx>-70</posx>
-					<posy>0</posy>
-					<width>527</width>
-					<height>680</height>
-					<fadetime>100</fadetime>
-					<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-					<aspectratio align="center" aligny="top">stretch</aspectratio>
-					<bordersize>2</bordersize>
-					<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
 				</control>
 				<control type="group">
 					<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -161,14 +114,6 @@
 						<textcolor>$VAR[NewColourHighlight]</textcolor>
 						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 					</control>
-				</control>
-				<control type="image">
-					<left>-24</left>
-					<top>-24</top>
-					<width>PosterShadowW</width>
-					<height>PosterShadowH</height>
-					<texture border="32">common/shadow-24.png</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
 				</control>
 			</control>
 		</itemlayout>
@@ -188,7 +133,7 @@
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+					<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
 					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
 					<visible>Skin.HasSetting(show.reflections)</visible>
 				</control>
@@ -196,62 +141,15 @@
 					<centertop>PosterH</centertop>
 					<width>PosterW</width>
 					<height>48</height>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio aligny="bottom">stretch</aspectratio>
 					<texture>diffuse/shadowspot.png</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
-				</control>
-				<control type="image">
-					<width>PosterW</width>
-					<height>PosterH</height>
-					<texture border="5" colordiffuse="Dark1">common/box.png</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
 				</control>
 				<control type="image">
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
 					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
-				</control>
-				<control type="image">
-					<left>11</left>
-					<top>11</top>
-					<width>411</width>
-					<height>627</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" diffuse="diffuse/listposter.png">$VAR[PosterImage]</texture>
-					<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<width>PosterW</width>
-					<height>PosterH</height>
-					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" diffuse="diffuse/listposter.png">$VAR[PosterImage]</texture>
-					<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<posx>-75</posx>
-					<posy>-50</posy>
-					<width>527</width>
-					<height>730</height>
-					<fadetime>100</fadetime>
-					<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-					<aspectratio align="center" aligny="top">stretch</aspectratio>
-					<bordersize>2</bordersize>
-					<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<posx>-70</posx>
-					<posy>-50</posy>
-					<width>527</width>
-					<height>730</height>
-					<fadetime>100</fadetime>
-					<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-					<aspectratio align="center" aligny="top">stretch</aspectratio>
-					<bordersize>2</bordersize>
-					<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
 				</control>
 				<control type="group">
 					<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -322,14 +220,6 @@
 						<textcolor>$VAR[NewColourHighlight]</textcolor>
 						<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
 					</control>
-				</control>
-				<control type="image">
-					<left>-24</left>
-					<top>-24</top>
-					<width>PosterShadowW</width>
-					<height>PosterShadowH</height>
-					<texture border="32">common/shadow-24.png</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
 				</control>
 			</control>
 		</focusedlayout>

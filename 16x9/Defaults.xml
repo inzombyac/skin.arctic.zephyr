@@ -6,9 +6,9 @@
     <constant name="SidePad">80</constant>
     <constant name="TopPad">60</constant>
     <constant name="PosterPad">216</constant>
-    <constant name="PosterH">580</constant>
+    <constant name="PosterH">560</constant>
     <constant name="PosterW">427</constant>
-    <constant name="PosterShadowH">628</constant>
+    <constant name="PosterShadowH">608</constant>
     <constant name="PosterShadowW">475</constant>
     <constant name="ListX">540</constant>
     <constant name="ListW">1300</constant>

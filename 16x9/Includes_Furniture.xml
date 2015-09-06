@@ -1107,6 +1107,93 @@
 			</control>
 		</control>
 	</include>
+	<include name="Furniture_Adv_Launcher">
+		<control type="group">
+			<visible>Container.Content(Addons)</visible>
+			<left>SidePad</left>
+			<centerbottom>NavBarPad</centerbottom>
+			<width>1920</width>
+			<height>120</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>10</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<control type="group">
+				<centertop>50%</centertop>
+				<height>50</height>
+				<control type="label">
+					<width min="128">auto</width>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Flag</font>
+					<textcolor>White</textcolor>
+					<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>SubString(Container.FolderPath,plugin://plugin.program.advanced.launcher,left)</visible>
+			<left>SidePad</left>
+			<centerbottom>NavBarPad</centerbottom>
+			<width>1920</width>
+			<height>120</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>10</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<control type="group">
+				<centertop>50%</centertop>
+				<height>50</height>
+				<control type="label">
+					<width min="128">auto</width>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Genre] · [COLOR gray]$INFO[ListItem.Studio][/COLOR]</label>
+					<font>Flag</font>
+					<textcolor>White</textcolor>
+					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(500)] + !IsEmpty(ListItem.Genre) + !IsEmpty(ListItem.Studio)</visible>
+				</control>
+				<control type="label">
+					<width min="128">auto</width>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Genre]</label>
+					<font>Flag</font>
+					<textcolor>White</textcolor>
+					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(500)] + !IsEmpty(ListItem.Genre) + IsEmpty(ListItem.Studio)</visible>
+				</control>
+				<control type="label">
+					<width min="128">auto</width>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>[COLOR gray]$INFO[ListItem.Studio][/COLOR]</label>
+					<font>Flag</font>
+					<textcolor>White</textcolor>
+					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(500)] + IsEmpty(ListItem.Genre) + !IsEmpty(ListItem.Studio)</visible>
+				</control>
+				<control type="label">
+					<width min="128">auto</width>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<font>Flag</font>
+					<textcolor>White</textcolor>
+					<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
+				</control>
+			</control>
+		</control>
+	</include>
 	<variable name="HeaderIcon">
 		<value condition="Window.IsVisible(DialogMuteBug.xml)">special://skin/extras/icons/mute.png</value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">special://skin/extras/icons/power.png</value>

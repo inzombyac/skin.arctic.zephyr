@@ -272,16 +272,6 @@
 		<value condition="SubString(ListItem.Filename, 4K.) | SubString(ListItem.Filename, 4k.)">common/discart/4khandcolor.png</value>
 		<value>common/discart/$INFO[ListItem.VideoResolution]phandcolor.png</value>
 	</variable>
-	<variable name="ShowcaseCasePathVar">
-		<value condition="Skin.HasSetting(views.bddvdcases)">tvshows</value>
-		<value condition="Skin.HasSetting(views.colourcases)">colorcases</value>
-		<value>movies</value>
-	</variable>
-	<variable name="WidgetsCasePathVar">
-		<value condition="Skin.HasSetting(widgets.bddvdcases)">tvshows</value>
-		<value condition="Skin.HasSetting(widgets.colourcases)">colorcases</value>
-		<value>movies</value>
-	</variable>
 	<variable name="GlobalCaseVar">
 		<value condition="SubString(ListItem.Filename,.3D.)">3d.png</value>
 		<value condition="SubString(ListItem.Filename,hdtv)">hdtv.png</value>
