@@ -483,7 +483,7 @@
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -722,7 +722,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -736,7 +736,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<top>330</top>
 				<left>980</left>
-				<width>410</width>
+				<width>450</width>
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>6016</ondown>
@@ -810,7 +810,7 @@
 			<control type="label">
 				<left>1470</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -1592,7 +1592,7 @@
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -1843,7 +1843,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -1857,7 +1857,7 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 				<top>330</top>
 				<left>980</left>
-				<width>410</width>
+				<width>450</width>
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>3016</ondown>
@@ -1926,7 +1926,7 @@
 			<control type="label">
 				<left>1470</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2009,7 +2009,7 @@
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2350,7 +2350,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2364,7 +2364,7 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 				<top>330</top>
 				<left>980</left>
-				<width>410</width>
+				<width>450</width>
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>4016</ondown>
@@ -2470,7 +2470,7 @@
 			<control type="label">
 				<left>1470</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2562,7 +2562,7 @@
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2866,7 +2866,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2953,7 +2953,7 @@
 			<control type="label">
 				<left>1385</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -3038,7 +3038,7 @@
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -3328,7 +3328,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>410</width>
+				<width>450</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
