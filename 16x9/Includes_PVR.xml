@@ -1134,8 +1134,8 @@
 			</control>
 			<control type="image">
 				<posx>50</posx>
-				<posy>1</posy>
-				<height>69</height>
+				<posy>2</posy>
+				<height>68</height>
 				<texture>common/selected.png</texture>
 				<aspectratio aligny="top">center</aspectratio>
 				<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
@@ -1150,13 +1150,12 @@
 			</control>
 			<control type="label">
 				<description>Label</description>
-				<left>145</left>
-				<width>315</width>
+				<left>175</left>
 				<height>70</height>
 				<align>left</align>
 				<label>$INFO[ListItem.ChannelName]</label>
 				<textcolor>PanelWhite100</textcolor>
-				<visible>IsEmpty($INFO[ListItem.Icon])</visible>
+				<visible>IsEmpty(ListItem.Icon)</visible>
 				<scroll>false</scroll>
 			</control>
 			<control type="label">
@@ -1172,9 +1171,9 @@
 		<focusedchannellayout height="70" width="380">
 			<control type="image">
 				<posx>50</posx>
-				<posy>1</posy>
+				<posy>2</posy>
 				<width>375</width>
-				<height>69</height>
+				<height>68</height>
 				<texture>common/selected.png</texture>
 				<aspectratio aligny="top">center</aspectratio>
 				<animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
@@ -1182,8 +1181,8 @@
 			</control>
 			<control type="image">
 				<posx>50</posx>
-				<posy>0</posy>
-				<height>69</height>
+				<posy>2</posy>
+				<height>68</height>
 				<texture border="12" colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
 				<visible>Control.HasFocus(10)</visible>
 			</control>
@@ -1196,13 +1195,12 @@
 			</control>
 			<control type="label">
 				<description>Label</description>
-				<left>145</left>
-				<width>315</width>
-				<height>70</height>
+				<left>175</left>
+				<height>68</height>
 				<align>left</align>
 				<label>$INFO[ListItem.ChannelName]</label>
 				<textcolor>$VAR[ColourSelected]</textcolor>
-				<visible>IsEmpty($INFO[ListItem.Icon])</visible>
+				<visible>IsEmpty(ListItem.Icon)</visible>
 				<scroll>false</scroll>
 				<animation effect="fade" start="100" end="64" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(10) + ![ListItem.IsSelected | ListItem.IsPlaying]">Conditional</animation>
 			</control>
@@ -1210,7 +1208,7 @@
 				<description>ChannelNumber</description>
 				<left>57</left>
 				<width>88</width>
-				<height>70</height>
+				<height>68</height>
 				<label>$INFO[ListItem.ChannelNumberLabel]</label>
 				<textcolor>$VAR[ColourSelected]</textcolor>
 				<scroll>false</scroll>
