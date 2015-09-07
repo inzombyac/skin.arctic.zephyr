@@ -483,7 +483,7 @@
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -722,7 +722,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -736,7 +736,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<top>330</top>
 				<left>980</left>
-				<width>450</width>
+				<width>410</width>
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>6016</ondown>
@@ -810,7 +810,7 @@
 			<control type="label">
 				<left>1470</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -1592,7 +1592,7 @@
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -1843,7 +1843,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -1857,7 +1857,7 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 				<top>330</top>
 				<left>980</left>
-				<width>450</width>
+				<width>410</width>
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>3016</ondown>
@@ -1926,7 +1926,7 @@
 			<control type="label">
 				<left>1470</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2004,12 +2004,11 @@
 				</focusedlayout>
 				<content target="video">$VAR[DefWidget8Content]</content>
 			</control>
-
 			<!-- TV menu item -->
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2149,7 +2148,7 @@
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4012)</visible>
 			</control>
-
+			<!-- TV Blue tile-->
 			<control type="button" id="4013">
 				<onup>4012</onup>
 				<onright>4015</onright>
@@ -2157,7 +2156,7 @@
 			</control>
 			<control type="image">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<description>All music</description>
+				<description>All TV</description>
 				<left>SidePad</left>
 				<posy>800</posy>
 				<width>255</width>
@@ -2166,7 +2165,7 @@
 			</control>
 			<control type="label">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<description>All music</description>
+				<description>All TV</description>
 				<left>SidePad</left>
 				<posy>800</posy>
 				<width>255</width>
@@ -2217,7 +2216,7 @@
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4013)</visible>
 			</control>
-
+			<!-- Green icon Next Aired -->
 			<control type="button" id="4015">
 				<onup>4012</onup>
 				<onleft>4013</onleft>
@@ -2235,12 +2234,12 @@
 			</control>
 			<control type="label">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<description>All music</description>
+				<description>Next Aired</description>
 				<left>360</left>
 				<posy>810</posy>
 				<width>255</width>
 				<height>230</height>
-				<label></label>
+				<label></label>
 				<font>symbolbiggest</font>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -2286,13 +2285,12 @@
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4015)</visible>
 			</control>
-
-
+			<!-- TV Genres -->
 			<control type="button" id="4014">
 				<onup>4012</onup>
 				<onleft>4015</onleft>
 				<onright>4016</onright>
-				<onclick>ActivateWindow(VideoLibrary,TVShowGenres,return)</onclick>
+				<onclick>ActivateWindow(10025,&quot;plugin://script.extendedinfo?info=trendingshows&quot;,return)</onclick>
 			</control>
 			<control type="image">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -2310,7 +2308,7 @@
 				<posy>800</posy>
 				<width>255</width>
 				<height>230</height>
-				<label></label>
+				<label></label>
 				<font>symbolbiggest</font>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -2334,7 +2332,7 @@
 				<font>Small</font>
 				<textcolor>PanelWhite70</textcolor>
 				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>135</label>
+				<label>Trending Shows</label>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
 			<control type="image">
@@ -2345,12 +2343,11 @@
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4014)</visible>
 			</control>
-
 			<!-- Next Up/In progress  -->
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2364,7 +2361,7 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 				<top>330</top>
 				<left>980</left>
-				<width>450</width>
+				<width>410</width>
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>4016</ondown>
@@ -2389,6 +2386,38 @@
 						<height>230</height>
 						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
+					<control type="image">
+						<description>Title overlay</description>
+						<bottom>0</bottom>
+						<height>40</height>
+						<texture border="15" colordiffuse="df000000">common/white.png</texture>
+					</control>
+					<control type="label">
+						<bottom>10</bottom>
+						<left>5</left>
+						<align>left</align>
+						<height>30</height>
+						<font>Small</font>
+						<textcolor>PanelWhite70</textcolor>
+						<selectedcolor>PanelWhite70</selectedcolor>
+						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Title]</label>
+					</control>
+					<control type="image">
+						<centerright>32</centerright>
+						<centertop>32</centertop>
+						<width>32</width>
+						<height>32</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
+					</control>
+					<control type="image">
+						<centerright>32</centerright>
+						<centertop>32</centertop>
+						<width>32</width>
+						<height>32</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture>$VAR[PosterPercentWatched]</texture>
+					</control>
 					<control type="progress">
 						<bottom>0</bottom>
 						<height>8</height>
@@ -2412,7 +2441,6 @@
 						<bottom>0</bottom>
 						<height>40</height>
 						<texture border="15" colordiffuse="df000000">common/white.png</texture>
-						<visible>Control.HasFocus(4016)</visible>
 					</control>
 					<control type="label">
 						<bottom>10</bottom>
@@ -2422,8 +2450,7 @@
 						<font>Small</font>
 						<textcolor>PanelWhite70</textcolor>
 						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</label>
-						<visible>Control.HasFocus(4016)</visible>
+						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Title]</label>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -2432,7 +2459,6 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-						<visible>Control.HasFocus(4016)</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -2441,7 +2467,6 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
-						<visible>Control.HasFocus(4016)</visible>
 					</control>
 					<control type="progress">
 						<bottom>0</bottom>
@@ -2453,7 +2478,6 @@
 						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<visible>ListItem.IsResumable</visible>
-						<visible>!Control.HasFocus(4016)</visible>
 					</control>
 					<control type="image">
 						<left>-3</left>
@@ -2470,7 +2494,7 @@
 			<control type="label">
 				<left>1470</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2479,12 +2503,12 @@
 				<label>$VAR[EmbyWidget11Label]</label>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
-			<control type="panel" id="4017">
+			<control type="wraplist" id="4017">
 				<description>Widget</description>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 				<top>330</top>
 				<left>1470</left>
-				<width>316</width>
+				<width>410</width>
 				<height>705</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
@@ -2498,45 +2522,66 @@
 				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>4016</onleft>
 				<preloaditems>2</preloaditems>
-				<scrolltime tween="quadratic">0</scrolltime>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">100</scrolltime>
+				<autoscroll time="5000">!Control.HasFocus(4017)</autoscroll>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<itemlayout width="158" height="235">
+				<itemlayout width="410" height="235">
 					<control type="image">
 						<aspectratio>keep</aspectratio>
 						<height>230</height>
-						<texture background="true">$VAR[PosterImage]</texture>
-					</control>
-					<control type="image">
-						<centerright>32</centerright>
-						<centertop>32</centertop>
-						<width>32</width>
-						<height>32</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatched]</texture>
-					</control>
-				</itemlayout>
-				<focusedlayout width="158" height="235">
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<height>230</height>
-						<texture background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[LandscapeImage]</texture>
 					</control>
 					<control type="image">
 						<description>Title overlay</description>
+						<bottom>0</bottom>
+						<height>40</height>
 						<texture border="15" colordiffuse="df000000">common/white.png</texture>
 					</control>
-					<control type="textbox">
+					<control type="label">
+						<bottom>10</bottom>
 						<left>5</left>
-						<right>5</right>
-						<top>30</top>
-						<bottom>30</bottom>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>Tiny</font>
+						<align>left</align>
+						<height>30</height>
+						<font>Small</font>
 						<textcolor>PanelWhite70</textcolor>
 						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ][CR][B]$INFO[ListItem.Title][/B]</label>
+						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Title]</label>
+					</control>
+					<control type="progress">
+						<bottom>0</bottom>
+						<height>8</height>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout width="410" height="235">
+					<control type="image">
+						<aspectratio>keep</aspectratio>
+						<height>230</height>
+						<texture background="true">$VAR[LandscapeImage]</texture>
+					</control>
+					<control type="image">
+						<description>Title overlay</description>
+						<bottom>0</bottom>
+						<height>40</height>
+						<texture border="15" colordiffuse="df000000">common/white.png</texture>
+					</control>
+					<control type="label">
+						<bottom>10</bottom>
+						<left>5</left>
+						<align>left</align>
+						<height>30</height>
+						<font>Small</font>
+						<textcolor>PanelWhite70</textcolor>
+						<selectedcolor>PanelWhite70</selectedcolor>
+						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Title]</label>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -2544,7 +2589,26 @@
 						<width>32</width>
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatched]</texture>
+						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
+					</control>
+					<control type="image">
+						<centerright>32</centerright>
+						<centertop>32</centertop>
+						<width>32</width>
+						<height>32</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture>$VAR[PosterPercentWatched]</texture>
+					</control>
+					<control type="progress">
+						<bottom>0</bottom>
+						<height>8</height>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<left>-3</left>
@@ -2562,7 +2626,7 @@
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2866,7 +2930,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -2953,7 +3017,7 @@
 			<control type="label">
 				<left>1385</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -3038,7 +3102,7 @@
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -3328,7 +3392,7 @@
 			<control type="label">
 				<left>980</left>
 				<top>290</top>
-				<width>450</width>
+				<width>410</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>

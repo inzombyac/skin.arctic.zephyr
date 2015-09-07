@@ -21,7 +21,7 @@
 			</animation>
 			<include condition="Skin.HasSetting(home.vertical)">HomeVerticalMenu</include>
 			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeHeader</include>
-			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeNextRecording</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)">HomeNextRecording</include>
 			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeWeatherWidget</include>
 			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)">Furniture_NowPlaying</include>
 			<include condition="!Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeWidgetSelector</include>
