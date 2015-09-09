@@ -227,6 +227,10 @@
 				<scrolltime>200</scrolltime>
 				<include>HomeEmbyContentNoIcon</include>
 			</control>
+			<!--- TV Container to test content counts-->
+			<control id="8999" type="list">
+				<content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</content>
+			</control>
 		</control>
 	</include>
 	<include name="HomeEmbySubMenu">
@@ -2327,7 +2331,7 @@
 				<font>Small</font>
 				<textcolor>PanelWhite70</textcolor>
 				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget10Label]</label>
+				<label>$VAR[EmbyHomeWidget1Label]</label>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
 			<control type="panel" id="4016">
@@ -2346,86 +2350,9 @@
 				<scrolltime tween="quadratic">0</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<itemlayout width="300" height="200">
-					<control type="image">
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture background="true">$VAR[LandscapeImage]</texture>
-						<left>10</left>
-					</control>
-					<control type="image">
-						<description>Title overlay</description>
-						<bottom>0</bottom>
-						<height>40</height>
-						<left>10</left>
-						<texture border="15" colordiffuse="df000000">common/white.png</texture>
-					</control>
-					<control type="label">
-						<bottom>10</bottom>
-						<left>15</left>
-						<align>left</align>
-						<height>30</height>
-						<font>Tiny</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[ListItem.TVShowTitle]</label>
-					</control>
-					<control type="progress">
-						<bottom>40</bottom>
-						<height>8</height>
-						<left>10</left>
-						<info>ListItem.PercentPlayed</info>
-						<overlaytexture>-</overlaytexture>
-						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
-						<visible>ListItem.IsResumable</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout width="300" height="200">
-					<control type="image">
-						<left>10</left>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture background="true">$VAR[ThumbImage]</texture>
-					</control>
-					<control type="image">
-						<description>Title overlay</description>
-						<bottom>0</bottom>
-						<height>40</height>
-						<left>10</left>
-						<texture border="15" colordiffuse="df000000">common/white.png</texture>
-						<visible>Control.HasFocus(4016)</visible>
-					</control>
-					<control type="label">
-						<bottom>10</bottom>
-						<left>15</left>
-						<align>left</align>
-						<height>30</height>
-						<font>Tiny</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Title]</label>
-						<visible>Control.HasFocus(4016)</visible>
-					</control>
-					<control type="progress">
-						<bottom>40</bottom>
-						<height>8</height>
-						<left>10</left>
-						<info>ListItem.PercentPlayed</info>
-						<overlaytexture>-</overlaytexture>
-						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
-						<visible>ListItem.IsResumable</visible>
-					</control>
-					<control type="image">
-						<left>5</left>
-						<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
-						<visible>Control.HasFocus(4016)</visible>
-					</control>
-				</focusedlayout>
-				<content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</content>
+				<include>EmbyWidget1Content</include>
+				<include condtion="IntegerGreaterThan(Container(8999).NumItems,0)+StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetNextUp</include>
+				<include condtion="IntegerGreaterThan(Container(8999).NumItems,0)+StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetRecent</include>
 			</control>
 			<!-- TV Widget 2 - Recent Episodes -->
 			<control type="label">
@@ -3423,4 +3350,98 @@
 			</control>
 		</control>
 	</include>
+	<include name="EmbyWidget1Content">
+		<itemlayout width="300" height="200">
+			<control type="image">
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[ThumbImage]</texture>
+				<left>10</left>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<height>40</height>
+				<left>10</left>
+				<texture border="15" colordiffuse="df000000">common/white.png</texture>
+			</control>
+			<control type="label">
+				<bottom>10</bottom>
+				<left>15</left>
+				<align>left</align>
+				<height>30</height>
+				<font>Tiny</font>
+				<textcolor>PanelWhite70</textcolor>
+				<selectedcolor>PanelWhite70</selectedcolor>
+				<label>$INFO[ListItem.TVShowTitle]</label>
+			</control>
+			<control type="progress">
+				<bottom>40</bottom>
+				<height>8</height>
+				<left>10</left>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout width="300" height="200">
+			<control type="image">
+				<left>10</left>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[ThumbImage]</texture>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<height>40</height>
+				<left>10</left>
+				<texture border="15" colordiffuse="df000000">common/white.png</texture>
+				<visible>Control.HasFocus(4016)</visible>
+			</control>
+			<control type="label">
+				<bottom>10</bottom>
+				<left>15</left>
+				<align>left</align>
+				<height>30</height>
+				<font>Tiny</font>
+				<textcolor>PanelWhite70</textcolor>
+				<selectedcolor>PanelWhite70</selectedcolor>
+				<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Label]</label>
+				<visible>Control.HasFocus(4016)</visible>
+			</control>
+			<control type="progress">
+				<bottom>40</bottom>
+				<height>8</height>
+				<left>10</left>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+			<control type="image">
+				<left>5</left>
+				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
+				<visible>Control.HasFocus(4016)</visible>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="TVWidgetNextUp">
+		<content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</content>
+	</include>
+	<include name="TVWidgetRecent">
+		<content>plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</content>
+	</include>
+	<variable name="NextUpCount">
+		<value>$INFO[Container(8999).NumItems]</value>
+	</variable>
+	<variable name="TVWidget1Width">
+		<value condition="IntegerGreaterThan(Container(8999).NumItems,0)+!IntegerGreaterThan(Container(8999).NumItems,0)">310</value>
+		<value>620</value>
+	</variable>
 </includes>

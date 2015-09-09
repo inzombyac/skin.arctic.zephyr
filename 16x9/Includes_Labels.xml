@@ -288,7 +288,7 @@
 		<value>$LOCALIZE[31124]</value>
 	</variable>
 	<variable name="EmbyWidget9Label">
-		<value condition="Stringcompare(Skin.String(widget9),RandomShows)">Random Shows</value>
+		<value condition="Stringcompare(Skin.String(widget9),RandomShows)">All Shows</value>
 		<value condition="Stringcompare(Skin.String(widget9),RandomEpisodes)">$LOCALIZE[31126]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecommendedEpisodes)">Next Up</value>
@@ -302,13 +302,7 @@
 		<value condition="Stringcompare(Skin.String(widget9),Custom8)">Custom 8</value>
 		<value condition="Stringcompare(Skin.String(widget9),Custom9)">Custom 9</value>
 		<value condition="Stringcompare(Skin.String(widget9),Custom10)">Custom 10</value>
-		<value>$LOCALIZE[31126]</value>
-	</variable>
-	<variable name="EmbyWidget10Label">
-		<value condition="Stringcompare(Skin.String(widget10),RecommendedEpisodes)">Next Up</value>
-		<value condition="Stringcompare(Skin.String(widget10),RandomEpisodes)">$LOCALIZE[31126]</value>
-		<value condition="Stringcompare(Skin.String(widget10),RecentEpisodes)">$LOCALIZE[31125]</value>
-		<value>Next Up</value>
+		<value>All Shows</value>
 	</variable>
 	<variable name="EmbyWidget11Label">
 		<value condition="Stringcompare(Skin.String(widget11),RecentEpisodes)">$LOCALIZE[31125]</value>
@@ -924,7 +918,7 @@
 		<value>paris green</value>
 	</variable>
 	<variable name="EmbyEndTimeSymbol">
-		<value condition="!Skin.HasSetting(furniture.hideendtime) + [[!IsEmpty(Container(3012).ListItem.EndTime) + Control.HasFocus(3012)] | [!IsEmpty(Container(3016).ListItem.EndTime) + Control.HasFocus(3016)] | [!IsEmpty(Container(3017).ListItem.EndTime) + Control.HasFocus(3017)] | [!IsEmpty(Container(4012).ListItem.EndTime) + Control.HasFocus(4012)] | [!IsEmpty(Container(4016).ListItem.EndTime) + Control.HasFocus(4016)] | [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(4017)] | [!IsEmpty(Container(9017).ListItem.EndTime) + Control.HasFocus(9017)] | [!IsEmpty(Container(10017).ListItem.EndTime) + Control.HasFocus(10017)] | [!IsEmpty(Container(14017).ListItem.EndTime) + Control.HasFocus(14017)] | [!IsEmpty(Container(15017).ListItem.EndTime) + Control.HasFocus(15017)]]">?</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [[!IsEmpty(Container(3012).ListItem.EndTime) + Control.HasFocus(3012)] | [!IsEmpty(Container(3016).ListItem.EndTime) + Control.HasFocus(3016)] | [!IsEmpty(Container(3017).ListItem.EndTime) + Control.HasFocus(3017)] | [!IsEmpty(Container(4012).ListItem.EndTime) + Control.HasFocus(4012)] | [!IsEmpty(Container(4016).ListItem.EndTime) + Control.HasFocus(4016)] | [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(4017)] | [!IsEmpty(Container(9017).ListItem.EndTime) + Control.HasFocus(9017)] | [!IsEmpty(Container(10017).ListItem.EndTime) + Control.HasFocus(10017)] | [!IsEmpty(Container(14017).ListItem.EndTime) + Control.HasFocus(14017)] | [!IsEmpty(Container(15017).ListItem.EndTime) + Control.HasFocus(15017)]]"></value>
 	</variable>
 	<variable name="EmbyEndTimeLabel">
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(3012).ListItem.EndTime) + Control.HasFocus(3012)]">$INFO[Container(3012).ListItem.EndTime(hh:mm)]</value>
@@ -937,6 +931,16 @@
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(10017)]">$INFO[Container(10017).ListItem.EndTime(hh:mm)]</value>
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(14017)]">$INFO[Container(14017).ListItem.EndTime(hh:mm)]</value>
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(15017)]">$INFO[Container(15017).ListItem.EndTime(hh:mm)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget1Label">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)+IntegerGreaterThan(Container(4016).NumItems,0)">Recent Episodes</value>
+		<value></value>
+	</variable>
+	<variable name="EmbyHomeWidget2Label">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Recent Episodes</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)">Upcoming</value>
+		<value>What what</value>
 	</variable>
 	<variable name="PercentWatchedLabel-19">
 		<value condition="Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(-19).IsPlaying">?</value>

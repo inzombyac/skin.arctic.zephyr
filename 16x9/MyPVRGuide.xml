@@ -119,8 +119,8 @@
 					<rulerunit>6</rulerunit>
 					<rulerlayout height="40" width="40">
 						<control type="label" id="2">
-							<left>50</left>
-							<width>35</width>
+							<left>0</left>
+							<width>425</width>
 							<height>40</height>
 							<font>EPGTimeline</font>
 							<label>$INFO[ListItem.Label]</label>
