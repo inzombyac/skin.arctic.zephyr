@@ -193,7 +193,7 @@
 		<value>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
 	</variable>
 	<variable name="DefWidget9Content">
-		<value condition="Stringcompare(Skin.String(widget9),RandomShows)">videodb://tvshows/titles</value>
+		<value condition="Stringcompare(Skin.String(widget9),AllShows)">videodb://tvshows/titles</value>
 		<value condition="Stringcompare(Skin.String(widget9),RandomEpisodes)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecentEpisodes)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecommendedEpisodes)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</value>

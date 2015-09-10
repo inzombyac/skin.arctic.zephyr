@@ -431,7 +431,7 @@
 		<!-- Widget Info -->
 		<control type="group">
 			<!--<animation effect="slide" start="0" end="-356,0" condition="Control.HasFocus(4017)" time="200">Conditional</animation>-->
-			<animation effect="slide" start="0" end="-280,0" condition="Control.HasFocus(4016) | Control.HasFocus(4017)" time="200">Conditional</animation>
+			<!--<animation effect="slide" start="0" end="-280,0" condition="Control.HasFocus(4016) | Control.HasFocus(4017)" time="200">Conditional</animation>-->
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
@@ -2010,7 +2010,7 @@
 				</focusedlayout>
 				<content target="video">$VAR[DefWidget8Content]</content>
 			</control>
-			<!-- TV menu item -->
+			<!-- Main menu item -->
 			<control type="label">
 				<left>SidePad</left>
 				<top>290</top>
@@ -2023,117 +2023,14 @@
 				<label>$VAR[EmbyWidget9Label]</label>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
-			<control type="wraplist" id="4012">
-				<description>Widget</description>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<top>330</top>
-				<left>SidePad</left>
-				<width>820</width>
-				<height>460</height>
-				<onup>300</onup>
-				<ondown>4013</ondown>
-				<onleft>301</onleft>
-				<onright>301</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>horizontal</orientation>
-				<autoscroll time="10000">!Control.HasFocus(301)</autoscroll>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<itemlayout width="820" height="460">
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[LandscapeImage]</texture>
-						<visible>Stringcompare(Skin.String(widget9),RandomShows)</visible>
-					</control>
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[ThumbImage]</texture>
-						<visible>!Stringcompare(Skin.String(widget9),RandomShows)</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout width="820" height="460">
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[LandscapeImage]</texture>
-						<visible>Stringcompare(Skin.String(widget9),RandomShows)</visible>
-					</control>
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[ThumbImage]</texture>
-						<visible>!Stringcompare(Skin.String(widget9),RandomShows)</visible>
-					</control>
-				</focusedlayout>
-				<content target="video">$VAR[DefWidget9Content]</content>
-			</control>
-			<control type="image">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<description>Title overlay</description>
-				<left>SidePad</left>
-				<posy>712</posy>
-				<width>820</width>
-				<height>80</height>
-				<texture border="15" colordiffuse="df000000">common/white.png</texture>
-			</control>
-			<control type="label">
-				<left>100</left>
-				<posy>712</posy>
-				<width>635</width>
-				<align>left</align>
-				<aligny>center</aligny>
-				<height>64</height>
-				<font>SmallBold</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$INFO[Container(4012).ListItem.TVShowTitle,, - ]$INFO[Container(4012).ListItem.Season,,x]$INFO[Container(4012).ListItem.Episode,,. ]$INFO[Container(4012).ListItem.Title]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<visible>!Stringcompare(Skin.String(widget9),RandomShows)</visible>
-			</control>
-			<control type="label">
-				<left>100</left>
-				<posy>712</posy>
-				<width>635</width>
-				<align>left</align>
-				<aligny>center</aligny>
-				<height>64</height>
-				<font>SmallBold</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$INFO[Container(4012).ListItem.TVShowTitle,,]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<visible>Stringcompare(Skin.String(widget9),RandomShows)</visible>
-			</control>
-			<control type="label">
-				<left>735</left>
-				<posy>712</posy>
-				<width>160</width>
-				<right>45</right>
-				<aligny>center</aligny>
-				<height>64</height>
-				<align>right</align>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$INFO[Container(4012).ListItem.Duration,, $LOCALIZE[31102]]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Container(4012).ListItem.Duration)</visible>
-			</control>
-			<control type="image">
-				<left>76</left>
-				<width>828</width>
-				<top>326</top>
-				<height>468</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4012)</visible>
-			</control>
-			<!-- TV Blue tile-->
+			<include>EmbyMainWidgetContent</include>
+			<!-- Bottom tile 1-->
 			<control type="button" id="4013">
 				<onup>4012</onup>
 				<onright>4015</onright>
-				<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">ActivateWindow(Videos,TVShowTitles,return)</onclick>
 			</control>
 			<control type="image">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<description>All TV</description>
 				<left>SidePad</left>
 				<posy>800</posy>
 				<width>255</width>
@@ -2141,13 +2038,12 @@
 				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 			</control>
 			<control type="label">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 				<description>All TV</description>
 				<left>SidePad</left>
 				<posy>800</posy>
 				<width>255</width>
 				<height>230</height>
-				<label></label>
+				<label>$VAR[EmbyBottomWidgetLabel1]</label>
 				<font>symbolbiggest</font>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -2193,7 +2089,7 @@
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4013)</visible>
 			</control>
-			<!-- Green icon Next Aired -->
+			<!-- Bottom tile 2-->
 			<control type="button" id="4015">
 				<onup>4012</onup>
 				<onleft>4013</onleft>
@@ -2262,7 +2158,7 @@
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4015)</visible>
 			</control>
-			<!-- Red Icon -->
+			<!-- Bottom tile 3-->
 			<control type="button" id="4014">
 				<onup>4012</onup>
 				<onleft>4015</onleft>
@@ -2352,19 +2248,19 @@
 				<include>Animation.FadeOut</include>
 				<include>EmbyWidget1Content</include>
 				<include condtion="IntegerGreaterThan(Container(8999).NumItems,0)+StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetNextUp</include>
-				<include condtion="IntegerGreaterThan(Container(8999).NumItems,0)+StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetRecent</include>
+				<include condtion="!IntegerGreaterThan(Container(8999).NumItems,0)+StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetRecent</include>
 			</control>
 			<!-- TV Widget 2 - Recent Episodes -->
 			<control type="label">
 				<left>1550</left>
 				<top>290</top>
-				<width>600</width>
+				<width>310</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
 				<textcolor>PanelWhite70</textcolor>
 				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget11Label]</label>
+				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
 			<control type="panel" id="4017">
@@ -2372,114 +2268,20 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 				<top>330</top>
 				<left>1550</left>
-				<width>600</width>
+				<width>310</width>
 				<height>600</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onback>SetProperty(Dialog.NumItems,3)</onback>
-				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31126])</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget11,RandomEpisodes))</onback>
-				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31125])</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget11,RecentEpisodes))</onback>
-				<onback>SetProperty(Dialog.3.Label,Next Up)</onback>
-				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget11,RecommendedEpisodes))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 				<onleft>4016</onleft>
+				<onright>4017</onright>
 				<preloaditems>2</preloaditems>
-				<scrolltime tween="quadratic">100</scrolltime>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<itemlayout width="300" height="200">
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[LandscapeImage]</texture>
-					</control>
-					<control type="image">
-						<description>Title overlay</description>
-						<bottom>0</bottom>
-						<height>35</height>
-						<texture border="15" colordiffuse="df000000">common/white.png</texture>
-					</control>
-					<control type="label">
-						<bottom>10</bottom>
-						<left>5</left>
-						<align>left</align>
-						<height>30</height>
-						<font>Small</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Title]</label>
-					</control>
-					<control type="progress">
-						<bottom>0</bottom>
-						<height>8</height>
-						<info>ListItem.PercentPlayed</info>
-						<overlaytexture>-</overlaytexture>
-						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
-						<visible>ListItem.IsResumable</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout width="300" height="200">
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[ThumbImage]</texture>
-					</control>
-					<control type="image">
-						<description>Title overlay</description>
-						<bottom>0</bottom>
-						<height>35</height>
-						<texture border="15" colordiffuse="df000000">common/white.png</texture>
-					</control>
-					<control type="label">
-						<bottom>10</bottom>
-						<left>5</left>
-						<align>left</align>
-						<height>30</height>
-						<font>Small</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Title]</label>
-					</control>
-					<control type="image">
-						<centerright>32</centerright>
-						<centertop>32</centertop>
-						<width>32</width>
-						<height>32</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-					</control>
-					<control type="image">
-						<centerright>32</centerright>
-						<centertop>32</centertop>
-						<width>32</width>
-						<height>32</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PosterPercentWatched]</texture>
-					</control>
-					<control type="progress">
-						<bottom>0</bottom>
-						<height>8</height>
-						<info>ListItem.PercentPlayed</info>
-						<overlaytexture>-</overlaytexture>
-						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
-						<visible>ListItem.IsResumable</visible>
-					</control>
-					<control type="image">
-						<left>-3</left>
-						<top>-3</top>
-						<right>-3</right>
-						<bottom>0</bottom>
-						<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-						<visible>Control.HasFocus(4017)</visible>
-					</control>
-				</focusedlayout>
-				<content target="video">$VAR[DefWidget11Content]</content>
+				<include>EmbyWidget2Content</include>
+				<include condtion="IntegerGreaterThan(Container(8999).NumItems,0)+StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetRecent</include>
+				<include condtion="!IntegerGreaterThan(Container(8999).NumItems,0)+StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetAiring</include>
 			</control>
 
 			<!-- Music menu item -->
@@ -3350,11 +3152,166 @@
 			</control>
 		</control>
 	</include>
+	<include name="EmbyMainWidgetContent">
+		<control type="list" id="4012">
+			<description>Widget</description>
+			<top>330</top>
+			<left>SidePad</left>
+			<width>820</width>
+			<height>460</height>
+			<onup>300</onup>
+			<ondown>4013</ondown>
+			<onleft>4012</onleft>
+			<onright>4016</onright>
+			<!-- Movie Options -->
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.NumItems,3)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.1.Label,$LOCALIZE[31127])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget8,RandomMovies))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.2.Label,$LOCALIZE[31124])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget8,RecentMovies))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.3.Label,$LOCALIZE[31123])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget8,RecommendedMovies))</onback>
+			<!-- TV Options -->
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.NumItems,13)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.1.Label,$LOCALIZE[31126])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget9,RandomEpisodes))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.2.Label,$LOCALIZE[31125])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget9,RecentEpisodes))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.3.Label,Next Up)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget9,RecommendedEpisodes))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.4.Label,All Shows)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget9,AllShows))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.5.Label,Custom1)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget9,Custom1))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.6.Label,Custom2)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget9,Custom2))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.7.Label,Custom3)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget9,Custom3))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.8.Label,Custom4)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget9,Custom4))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.9.Label,Custom5)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget9,Custom5))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.10.Label,Custom6)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget9,Custom6))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.11.Label,Custom7)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget9,Custom7))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.12.Label,Custom8)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget9,Custom8))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.13.Label,Custom9)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget9,Custom9))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.14.Label,Custom10)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget9,Custom10))</onback>
+			<!-- Only change if not in kiosk mode -->
+			<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
+			<preloaditems>2</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(301)</autoscroll>
+			<scrolltime tween="quadratic">0</scrolltime>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<itemlayout width="820" height="460">
+				<control type="image">
+					<top>0</top>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$VAR[LandscapeImage]</texture>
+					<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+Stringcompare(Skin.String(widget9),AllShows)] | !StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				</control>
+				<control type="image">
+					<top>0</top>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$VAR[ThumbImage]</texture>
+					<visible>!Stringcompare(Skin.String(widget9),AllShows)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout width="820" height="460">
+				<control type="image">
+					<top>0</top>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$VAR[LandscapeImage]</texture>
+					<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+Stringcompare(Skin.String(widget9),AllShows)] | !StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				</control>
+				<control type="image">
+					<top>0</top>
+					<aspectratio>keep</aspectratio>
+					<texture background="true">$VAR[ThumbImage]</texture>
+					<visible>!Stringcompare(Skin.String(widget9),AllShows)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				</control>
+			</focusedlayout>
+			<include condtion="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetMain</include>
+		</control>
+		<control type="image">
+			<description>Title overlay</description>
+			<left>SidePad</left>
+			<posy>712</posy>
+			<width>820</width>
+			<height>80</height>
+			<texture border="15" colordiffuse="df000000">common/white.png</texture>
+		</control>
+		<control type="label">
+			<left>100</left>
+			<posy>712</posy>
+			<width>635</width>
+			<align>left</align>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>PanelWhite70</textcolor>
+			<selectedcolor>PanelWhite70</selectedcolor>
+			<label>$INFO[Container(4012).ListItem.TVShowTitle,, - ]$INFO[Container(4012).ListItem.Season,,x]$INFO[Container(4012).ListItem.Episode,,. ]$INFO[Container(4012).ListItem.Title]</label>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			<visible>!Stringcompare(Skin.String(widget9),AllShows)</visible>
+		</control>
+		<control type="label">
+			<left>100</left>
+			<posy>712</posy>
+			<width>635</width>
+			<align>left</align>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>PanelWhite70</textcolor>
+			<selectedcolor>PanelWhite70</selectedcolor>
+			<label>$INFO[Container(4012).ListItem.TVShowTitle,,]</label>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			<visible>Stringcompare(Skin.String(widget9),AllShows)</visible>
+		</control>
+		<control type="label">
+			<left>735</left>
+			<posy>712</posy>
+			<width>160</width>
+			<right>45</right>
+			<aligny>center</aligny>
+			<height>64</height>
+			<align>right</align>
+			<font>Small</font>
+			<textcolor>PanelWhite70</textcolor>
+			<selectedcolor>PanelWhite70</selectedcolor>
+			<label>$INFO[Container(4012).ListItem.Duration,, $LOCALIZE[31102]]</label>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Container(4012).ListItem.Duration)</visible>
+		</control>
+		<control type="image">
+			<left>76</left>
+			<width>828</width>
+			<top>326</top>
+			<height>468</height>
+			<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+			<visible>Control.HasFocus(4012)</visible>
+		</control>
+	</include>
 	<include name="EmbyWidget1Content">
 		<itemlayout width="300" height="200">
 			<control type="image">
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[ThumbImage]</texture>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<left>10</left>
+			</control>
+			<control type="image">
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[ThumbImage]</texture>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 				<left>10</left>
 			</control>
 			<control type="image">
@@ -3372,7 +3329,7 @@
 				<font>Tiny</font>
 				<textcolor>PanelWhite70</textcolor>
 				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$INFO[ListItem.TVShowTitle]</label>
+				<label>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Label]</label>
 			</control>
 			<control type="progress">
 				<bottom>40</bottom>
@@ -3392,6 +3349,13 @@
 				<left>10</left>
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[ThumbImage]</texture>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[ThumbImage]</texture>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
@@ -3409,8 +3373,9 @@
 				<font>Tiny</font>
 				<textcolor>PanelWhite70</textcolor>
 				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Label]</label>
+				<label>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Label]</label>
 				<visible>Control.HasFocus(4016)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
 			<control type="progress">
 				<bottom>40</bottom>
@@ -3431,17 +3396,112 @@
 			</control>
 		</focusedlayout>
 	</include>
+	<include name="EmbyWidget2Content">
+		<itemlayout width="300" height="200">
+			<control type="image">
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[ThumbImage]</texture>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<left>10</left>
+			</control>
+			<control type="image">
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[ThumbImage]</texture>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<left>10</left>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<height>40</height>
+				<left>10</left>
+				<texture border="15" colordiffuse="df000000">common/white.png</texture>
+			</control>
+			<control type="label">
+				<bottom>10</bottom>
+				<left>15</left>
+				<align>left</align>
+				<height>30</height>
+				<font>Tiny</font>
+				<textcolor>PanelWhite70</textcolor>
+				<selectedcolor>PanelWhite70</selectedcolor>
+				<label>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Label]</label>
+			</control>
+			<control type="progress">
+				<bottom>40</bottom>
+				<height>8</height>
+				<left>10</left>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout width="300" height="200">
+			<control type="image">
+				<left>10</left>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[ThumbImage]</texture>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[ThumbImage]</texture>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<height>40</height>
+				<left>10</left>
+				<texture border="15" colordiffuse="df000000">common/white.png</texture>
+				<visible>Control.HasFocus(4017)</visible>
+			</control>
+			<control type="label">
+				<bottom>10</bottom>
+				<left>15</left>
+				<align>left</align>
+				<height>30</height>
+				<font>Tiny</font>
+				<textcolor>PanelWhite70</textcolor>
+				<selectedcolor>PanelWhite70</selectedcolor>
+				<label>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Season,,x]$INFO[ListItem.Episode,, ]$INFO[ListItem.Label]</label>
+				<visible>Control.HasFocus(4017)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			</control>
+			<control type="progress">
+				<bottom>40</bottom>
+				<height>8</height>
+				<left>10</left>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+			<control type="image">
+				<left>5</left>
+				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
+				<visible>Control.HasFocus(4017)</visible>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="TVWidgetMain">
+		<content target="video">$VAR[DefWidget9Content]</content>
+	</include>
 	<include name="TVWidgetNextUp">
 		<content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</content>
 	</include>
 	<include name="TVWidgetRecent">
 		<content>plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</content>
 	</include>
-	<variable name="NextUpCount">
-		<value>$INFO[Container(8999).NumItems]</value>
-	</variable>
-	<variable name="TVWidget1Width">
-		<value condition="IntegerGreaterThan(Container(8999).NumItems,0)+!IntegerGreaterThan(Container(8999).NumItems,0)">310</value>
-		<value>620</value>
-	</variable>
+	<include name="TVWidgetAiring">
+		<content>plugin://script.extendedinfo?info=airingtodaytvshows</content>
+	</include>
 </includes>

@@ -288,7 +288,7 @@
 		<value>$LOCALIZE[31124]</value>
 	</variable>
 	<variable name="EmbyWidget9Label">
-		<value condition="Stringcompare(Skin.String(widget9),RandomShows)">All Shows</value>
+		<value condition="Stringcompare(Skin.String(widget9),AllShows)">All Shows</value>
 		<value condition="Stringcompare(Skin.String(widget9),RandomEpisodes)">$LOCALIZE[31126]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecentEpisodes)">$LOCALIZE[31125]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecommendedEpisodes)">Next Up</value>
@@ -387,6 +387,17 @@
 		<value condition="Stringcompare(Skin.String(widget18),AiringTodayTvShows)">$LOCALIZE[31229]</value>
 		<value condition="Stringcompare(Skin.String(widget18),RecommendedShows)">$LOCALIZE[31784]</value>
 		<value>$LOCALIZE[31226]</value>
+	</variable>
+	<variable name="EmbyWidgetLabel">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$VAR[EmbyWidget9Label]</value>
+		<value></value>
+	</variable>
+	<variable name="EmbyBottomWidgetLabel1">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)"></value>
+		<value></value>
+	</variable>
+	<variable name="NextUpCount">
+		<value>$INFO[Container(8999).NumItems]</value>
 	</variable>
 	<variable name="WidgetTitle">
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.Title]</value>
@@ -939,8 +950,8 @@
 	</variable>
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Recent Episodes</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)">Upcoming</value>
-		<value>What what</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)+IntegerGreaterThan(Container(4017).NumItems,0)">Upcoming</value>
+		<value></value>
 	</variable>
 	<variable name="PercentWatchedLabel-19">
 		<value condition="Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(-19).IsPlaying">?</value>
