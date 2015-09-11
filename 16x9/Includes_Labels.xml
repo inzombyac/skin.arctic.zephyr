@@ -40,9 +40,11 @@
 		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[570])">$INFO[ListItem.DateAdded]</value>
 		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[567])">$INFO[ListItem.PlayCount]</value>
 		<value condition="!IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, $LOCALIZE[31102]]</value>
-		<value condition="!IsEmpty(Container(3012).ListItem.Duration)">$INFO[Container(3012).ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="!IsEmpty(Container(4012).ListItem.Duration)">$INFO[Container(4012).ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="!IsEmpty(Container(4012).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4012).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
 		<value condition="[Container.Content(tvshows) + !Control.IsVisible(54)] | Container.Content(episodes)">$VAR[LabelYear]</value>
 	</variable>
+	
 	<variable name="LabelPlotBox">
 		<value condition="!IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
 		<value condition="!IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
@@ -390,6 +392,7 @@
 	</variable>
 	<variable name="EmbyWidgetLabel">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$VAR[EmbyWidget9Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$VAR[EmbyWidget6Label]</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyBottomWidgetLabel1">
@@ -398,6 +401,10 @@
 	</variable>
 	<variable name="NextUpCount">
 		<value>$INFO[Container(8999).NumItems]</value>
+	</variable>
+	<variable name="EmbyWidget1Width">
+		<value condition="IntegerGreaterThan(Container(8999).NumItems,0)+!IntegerGreaterThan(Container(8999).NumItems,3)">310</value>
+		<value>620</value>
 	</variable>
 	<variable name="WidgetTitle">
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.Title]</value>
@@ -947,6 +954,11 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)+IntegerGreaterThan(Container(4016).NumItems,0)">Recent Episodes</value>
 		<value></value>
+	</variable>
+	<variable name="EmbyHomeWidget1Source">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">TVWidgetNextUp</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)+IntegerGreaterThan(Container(4016).NumItems,0)">TVWidgetRecent</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetNextUp</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Recent Episodes</value>
