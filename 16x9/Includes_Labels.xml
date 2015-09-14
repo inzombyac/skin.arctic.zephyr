@@ -175,11 +175,11 @@
 		<value>$LOCALIZE[31105]</value>
 	</variable>
 	<variable name="EmbyWidget1Label">
-		<value condition="Stringcompare(Skin.String(widget1),TrendingShows)">$LOCALIZE[31135]</value>
-		<value condition="Stringcompare(Skin.String(widget1),AiringShows)">$LOCALIZE[31136]</value>
-		<value condition="Stringcompare(Skin.String(widget1),PremiereShows)">$LOCALIZE[31137]</value>
-		<value condition="Stringcompare(Skin.String(widget1),RecommendedShows)">$LOCALIZE[31784]</value>
-		<value>$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget1),TrendingShows) + StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31135]</value>
+		<value condition="Stringcompare(Skin.String(widget1),AiringShows) + StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31136]</value>
+		<value condition="Stringcompare(Skin.String(widget1),PremiereShows) + StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31137]</value>
+		<value condition="Stringcompare(Skin.String(widget1),RecommendedShows) + StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31784]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31135]</value>
 	</variable>
 	<variable name="EmbyWidget2Label">
 		<value condition="Stringcompare(Skin.String(widget2),TrendingMovies)">$LOCALIZE[31134]</value>
@@ -405,6 +405,18 @@
 	<variable name="EmbyWidget1Width">
 		<value condition="IntegerGreaterThan(Container(8999).NumItems,0)+!IntegerGreaterThan(Container(8999).NumItems,3)">310</value>
 		<value>620</value>
+	</variable>
+	<variable name="EmbyButton1Label">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[20343]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Movies</value>
+	</variable>
+	<variable name="EmbyButton2Label">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31220]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Genres</value>
+	</variable>
+	<variable name="EmbyButton3Label">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">Trending</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Random</value>
 	</variable>
 	<variable name="WidgetTitle">
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.Title]</value>
@@ -952,7 +964,7 @@
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)+IntegerGreaterThan(Container(4016).NumItems,0)">Recent Episodes</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$LOCALIZE[31124]</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeWidget1Source">
@@ -961,8 +973,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetNextUp</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Label">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Recent Episodes</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)+IntegerGreaterThan(Container(4017).NumItems,0)">Upcoming</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$LOCALIZE[31125]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
 		<value></value>
 	</variable>
 	<variable name="PercentWatchedLabel-19">
