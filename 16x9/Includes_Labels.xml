@@ -43,6 +43,8 @@
 		<value condition="!IsEmpty(Container(4012).ListItem.Duration)">$INFO[Container(4012).ListItem.Duration,, $LOCALIZE[31102]]</value>
 		<value condition="!IsEmpty(Container(4012).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4012).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
 		<value condition="[Container.Content(tvshows) + !Control.IsVisible(54)] | Container.Content(episodes)">$VAR[LabelYear]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)">$INFO[Container(4012).ListItem.Property(Rating)]</value>
+		<value></value>
 	</variable>
 	
 	<variable name="LabelPlotBox">
@@ -236,9 +238,9 @@
 		<value>$LOCALIZE[31224]</value>
 	</variable>
 	<variable name="EmbyWidget4Label">
-		<value condition="Stringcompare(Skin.String(widget4),Engadget)">Engadget</value>
-		<value condition="Stringcompare(Skin.String(widget4),Eurogamer)">Eurogamer</value>
-		<value condition="Stringcompare(Skin.String(widget4),MobileTech)">MobileTech Review</value>
+		<value condition="Stringcompare(Skin.String(widget4),AiringToday)">Airing Today</value>
+		<value condition="Stringcompare(Skin.String(widget4),TrendingShows)">Trending Shows</value>
+		<value condition="Stringcompare(Skin.String(widget4),PremiereShows)">Premiering Shows</value>
 		<value condition="Stringcompare(Skin.String(widget4),LiveTV)">Channels</value>
 		<value condition="Stringcompare(Skin.String(widget4),Recordings)">Recordings</value>
 		<value condition="Stringcompare(Skin.String(widget4),Custom1)">Custom 1</value>
@@ -393,6 +395,14 @@
 	<variable name="EmbyWidgetLabel">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$VAR[EmbyWidget9Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$VAR[EmbyWidget6Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">$VAR[EmbyWidget4Label]</value>
+		<value></value>
+	</variable>
+	<variable name="EmbyWidgetContentLabel">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)+!Stringcompare(Skin.String(widget9),AllShows)">$INFO[Container(4012).ListItem.TVShowTitle,, - ]$INFO[Container(4012).ListItem.Season,,x]$INFO[Container(4012).ListItem.Episode,,. ]$INFO[Container(4012).ListItem.Title]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)+Stringcompare(Skin.String(widget9),AllShows)">$INFO[Container(4012).ListItem.TVShowTitle,,]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$INFO[Container(4012).ListItem.Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)">$INFO[Container(4012).ListItem.Label]</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyBottomWidgetLabel1">
@@ -409,14 +419,17 @@
 	<variable name="EmbyButton1Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[20343]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Movies</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">TV Guide</value>
 	</variable>
 	<variable name="EmbyButton2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31220]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Genres</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Channels</value>
 	</variable>
 	<variable name="EmbyButton3Label">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">Trending</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">Unwatched Shows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Random</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Recorded TV</value>
 	</variable>
 	<variable name="WidgetTitle">
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.Title]</value>
@@ -487,6 +500,8 @@
 		<value condition="IntegerGreaterThan(Container(9500).ListItem.VideoResolution,719)">HD</value>
 		<value condition="IntegerGreaterThan(Container(301).ListItem.VideoResolution,719)">HD</value>
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">HD</value>
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,4016)">HD</value>
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,4017)">HD</value>
 		<value>SD</value>
 	</variable>
 	<variable name="PlayerTitle">
@@ -965,6 +980,7 @@
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$LOCALIZE[31124]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">Recorded TV</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeWidget1Source">
@@ -975,6 +991,7 @@
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$LOCALIZE[31125]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),AiringToday)">Airing Today</value>
 		<value></value>
 	</variable>
 	<variable name="PercentWatchedLabel-19">
@@ -1260,6 +1277,10 @@
 	<variable name="DurationHomeLong">
 		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(home).Property(Duration), ,min]</value>
 		<value>$INFO[Container(301).ListItem.Duration,,min]</value>
+	</variable>
+	<variable name="EmbyDurationHomeLong">
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Duration,,min]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Duration,,min]</value>
 	</variable>
 	<variable name="MPAA">
 		<value condition="SubString(ListItem.Mpaa,gb-pg)">PG</value>

@@ -138,9 +138,9 @@
 	</variable>
 
 	<variable name="DefWidget4Content">
-		<value condition="Stringcompare(Skin.String(widget4),Engadget)">plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget</value>
-		<value condition="Stringcompare(Skin.String(widget4),Eurogamer)">plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Eurogamer</value>
-		<value condition="Stringcompare(Skin.String(widget4),MobileTech)">plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=MobileTechReview</value>
+		<value condition="Stringcompare(Skin.String(widget4),AiringToday)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
+		<value condition="Stringcompare(Skin.String(widget4),TrendingShows)">plugin://script.extendedinfo?info=trendingshows</value>
+		<value condition="Stringcompare(Skin.String(widget4),PremiereShows)">plugin://script.extendedinfo?info=premiereshows</value>
 		<value condition="Stringcompare(Skin.String(widget4),LiveTV)">pvr://channels/tv/All&amp;channels/</value>
 		<value condition="Stringcompare(Skin.String(widget4),Recordings)">pvr://recordings/</value>
 		<value condition="Stringcompare(Skin.String(widget4),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
@@ -153,7 +153,7 @@
 		<value condition="Stringcompare(Skin.String(widget4),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
 		<value condition="Stringcompare(Skin.String(widget4),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
 		<value condition="Stringcompare(Skin.String(widget4),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
-		<value>plugin://script.extendedinfo?info=youtubeusersearch&amp;&amp;id=Engadget</value>
+		<value>pvr://channels/tv/All&amp;channels/</value>
     </variable>
 
 	<variable name="DefWidget5Content">
@@ -253,6 +253,7 @@
 	<variable name="DefWidgetMainContent">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[DefWidget9Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$VAR[DefWidget6Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$VAR[DefWidget4Content]</value>
 	</variable>
 
 	<include name="DefSideBrowserButton">
