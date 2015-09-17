@@ -423,12 +423,12 @@
 	</variable>
 	<variable name="EmbyButton2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31220]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Genres</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Collections</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Channels</value>
 	</variable>
 	<variable name="EmbyButton3Label">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">Unwatched Shows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Random</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31193]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$LOCALIZE[31192]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Recorded TV</value>
 	</variable>
 	<variable name="WidgetTitle">
@@ -980,7 +980,7 @@
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$LOCALIZE[31124]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">Recorded TV</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">Recorded TV</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeWidget1Source">
