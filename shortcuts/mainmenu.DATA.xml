@@ -28,7 +28,7 @@
         <label2>Common Shortcut</label2>
         <defaultID>music</defaultID>
         <icon>special://skin/extras/icons/songs.png</icon>
-        <action>ActivateWindow(Music)</action>
+        <action>ActivateWindow(MusicLibrary)</action>
     </shortcut>
     <shortcut>
         <label>31103</label>

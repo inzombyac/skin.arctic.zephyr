@@ -396,6 +396,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$VAR[EmbyWidget9Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$VAR[EmbyWidget6Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">$VAR[EmbyWidget4Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">$VAR[EmbyWidget12Label]</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
@@ -403,6 +404,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)+Stringcompare(Skin.String(widget9),AllShows)">$INFO[Container(4012).ListItem.TVShowTitle,,]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$INFO[Container(4012).ListItem.Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)">$INFO[Container(4012).ListItem.Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyBottomWidgetLabel1">
@@ -420,16 +422,19 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[20343]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">TV Guide</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">Albums</value>
 	</variable>
 	<variable name="EmbyButton2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31220]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Collections</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Channels</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">Artists</value>
 	</variable>
 	<variable name="EmbyButton3Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31193]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$LOCALIZE[31192]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Recorded TV</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">Genres</value>
 	</variable>
 	<variable name="WidgetTitle">
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.Title]</value>
@@ -981,6 +986,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$LOCALIZE[31124]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">Recorded TV</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">Recent Albums</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeWidget1Source">
@@ -992,6 +998,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$LOCALIZE[31125]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),AiringToday)">Airing Today</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">Recommended Albums</value>
 		<value></value>
 	</variable>
 	<variable name="PercentWatchedLabel-19">

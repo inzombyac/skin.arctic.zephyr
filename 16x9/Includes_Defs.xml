@@ -254,6 +254,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[DefWidget9Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$VAR[DefWidget6Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$VAR[DefWidget4Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">$VAR[DefWidget12Content]</value>
 	</variable>
 
 	<include name="DefSideBrowserButton">

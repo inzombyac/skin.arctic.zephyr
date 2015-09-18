@@ -18,11 +18,10 @@
             <include>GlobalOverlay</include>
         </control>
         <control type="group">
-            <include>Def9000Background</include>
-            <include>Def9000Arrows</include>
+			<include>Def9000SideBladeLeft</include>
             <control type="grouplist" id="9000">
-                <include>Def9000GroupList</include>
                 <include>Def9000MusicSide</include>
+				<include>Def9000GroupList</include>
                 <control type="button" id="9001" description="Library">
                     <visible>Library.HasContent(music) | Library.HasContent(musicvideos)</visible>
                     <include>DefContextButton</include>
