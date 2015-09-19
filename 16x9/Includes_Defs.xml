@@ -121,7 +121,7 @@
 		<value condition="Stringcompare(Skin.String(widget2),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
 		<value condition="Stringcompare(Skin.String(widget2),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
-		<value>plugin://script.extendedinfo?info=trendingmovies</value>
+		<value>plugin://script.extendedinfo?info=incinemas</value>
 	</variable>
 
 	<variable name="DefWidget3Content">
@@ -190,10 +190,21 @@
 		<value condition="Stringcompare(Skin.String(widget8),RandomMovies)">plugin://service.library.data.provider?type=randommovies&amp;reload=$INFO[Window.Property(randommovies)]</value>
 		<value condition="Stringcompare(Skin.String(widget8),RecentMovies)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
 		<value condition="Stringcompare(Skin.String(widget8),RecommendedMovies)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Collections)">videodb://movies/sets/</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom3)">$INFO[Skin.String(CustomWidget3)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom4)">$INFO[Skin.String(CustomWidget4)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom5)">$INFO[Skin.String(CustomWidget5)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom6)">$INFO[Skin.String(CustomWidget6)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom7)">$INFO[Skin.String(CustomWidget7)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
+		<value condition="Stringcompare(Skin.String(widget8),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
 		<value>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</value>
 	</variable>
 	<variable name="DefWidget9Content">
-		<value condition="Stringcompare(Skin.String(widget9),AllShows)">videodb://tvshows/titles</value>
+		<value condition="Stringcompare(Skin.String(widget9),AllShows)">special://skin/extras/playlists/RandomShows.xsp</value>
 		<value condition="Stringcompare(Skin.String(widget9),RandomEpisodes)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecentEpisodes)">plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</value>
 		<value condition="Stringcompare(Skin.String(widget9),RecommendedEpisodes)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</value>
@@ -207,7 +218,7 @@
 		<value condition="Stringcompare(Skin.String(widget9),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
 		<value condition="Stringcompare(Skin.String(widget9),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
 		<value condition="Stringcompare(Skin.String(widget9),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
-		<value>videodb://tvshows/titles</value>
+		<value>special://skin/extras/playlists/RandomShows.xsp</value>
 	</variable>
 	<variable name="DefWidget11Content">
 		<value condition="Stringcompare(Skin.String(widget11),RandomEpisodes)">plugin://service.library.data.provider?type=randomepisodes&amp;reload=$INFO[Window.Property(randomepisodes)]</value>
@@ -252,9 +263,18 @@
 	</variable>
 	<variable name="DefWidgetMainContent">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[DefWidget9Content]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$VAR[DefWidget6Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$VAR[DefWidget8Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">$VAR[DefWidget8Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$VAR[DefWidget4Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">$VAR[DefWidget12Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),musicvideos)">$VAR[DefWidget12Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">$VAR[DefWidget12Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">$VAR[DefWidget2Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)"></value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)"></value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)"></value>
+		<value condition="isEmpty(Container(300).ListItem.Property(defaultid)">$VAR[DefWidget2Content]</value>
 	</variable>
 
 	<include name="DefSideBrowserButton">

@@ -8,8 +8,8 @@
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + Skin.HasSetting(furniture.unwatched) + stringcompare(ListItem.Overlay,OverlayUnwatched.png)">indicator/unwatched.png</value>
 	</variable>
 	<variable name="PercentWatched4012">
-		<value condition="Container(4012).ListItem.IsResumable">indicator/inprogress.png</value>
-		<value condition="IntegerGreaterThan(Container(4012).ListItem.PlayCount,0)">indicator/checkmark.png</value>
+		<value condition="ListItem.IsResumable">indicator/inprogress.png</value>
+		<value condition="IntegerGreaterThan(ListItem.PlayCount,0)">indicator/checkmark.png</value>
    </variable>
 	<variable name="PosterPercentWatched">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem.IsResumable">indicator/poster-inprogress.png</value>
@@ -384,4 +384,27 @@
 		<value condition="SubString(Window.Property(movie.mpaa),Nl-AL)">rated_nl_AL</value>
 		<value condition="SubString(Window.Property(movie.mpaa),Nl-mg6)">rated_nl_mg6</value>
 	</variable>
+	<variable name="HDSDImage">
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)"></value>
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>
+		<value condition="IntegerGreaterThan(Container(9500).ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>
+		<value condition="IntegerGreaterThan(Container(301).ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>
+		<value condition="IntegerGreaterThan(Container(9500).ListItem.VideoResolution,1079)">flags/resolution/1080.png</value>
+		<value condition="IntegerGreaterThan(Container(301).ListItem.VideoResolution,1079)">flags/resolution/1080.png</value>
+		<value condition="IntegerGreaterThan(Container(9500).ListItem.VideoResolution,719)">flags/resolution/720.png</value>
+		<value condition="IntegerGreaterThan(Container(301).ListItem.VideoResolution,719)">flags/resolution/720.png</value>
+		<value condition="IntegerGreaterThan(Container(9500).ListItem.VideoResolution,575)">flags/resolution/576.png</value>
+		<value condition="IntegerGreaterThan(Container(301).ListItem.VideoResolution,575)">flags/resolution/576.png</value>
+		<value condition="IntegerGreaterThan(Container(9500).ListItem.VideoResolution,539)">flags/resolution/540.png</value>
+		<value condition="IntegerGreaterThan(Container(301).ListItem.VideoResolution,539)">flags/resolution/540.png</value>
+		<value condition="!IsEmpty(Container(301).ListItem.VideoResolution)">flags/resolution/480.png</value>
+		<value condition="!IsEmpty(Container(9500).ListItem.VideoResolution)">flags/resolution/480.png</value>
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,1079)">flags/resolution/1080.png</value>
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">flags/resolution/720.png</value>
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,575)">flags/resolution/576.png</value>
+		<value condition="IntegerGreaterThan(ListItem.VideoResolution,539)">flags/resolution/540.png</value>
+		<value condition="!IsEmpty(ListItem.VideoResolution)">flags/resolution/480.png</value>
+	</variable>
+	
 </includes>

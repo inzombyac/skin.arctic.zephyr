@@ -53,7 +53,7 @@
 			<onback>50</onback>
 			<left>SidePad</left>
 			<width>1760</width>
-			<bottom>200</bottom>
+			<bottom>55</bottom>
 			<orientation>horizontal</orientation>
 			<height>8</height>
 			<onup>50</onup>
@@ -198,16 +198,10 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>0</left>
-			<centerbottom>NavBarPad</centerbottom>
+			<centerbottom>30</centerbottom>
 			<width>120</width>
 			<height>120</height>
-			<control type="label">
-				<align>right</align>
-				<label>[B]$INFO[ListItem.VideoResolution]p[/B]</label>
-				<font>MiniSystem</font>
-				<textcolor>Dark1</textcolor>
-				<visible>!IsEmpty(ListItem.VideoResolution)</visible>
-			</control>
+			
 			<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
 		</control>
 		<control type="grouplist">
@@ -218,7 +212,7 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>SidePad</left>
-			<centerbottom>NavBarPad</centerbottom>
+			<centerbottom>30</centerbottom>
 			<width>1920</width>
 			<height>120</height>
 			<orientation>horizontal</orientation>
@@ -240,19 +234,16 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>[B]$VAR[HDSD][/B]</label>
-					<font>FlagHD</font>
-					<textcolor>Dark1</textcolor>
-					<visible>!substring(ListItem.Path,videodb://movies/sets,left) + !Skin.HasSetting(furniture.flags.colour)</visible>
+					<font>Medium</font>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
 				</control>
-				<control type="label">
-					<width>73</width>
-					<height>46</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>[B]$VAR[HDSD][/B]</label>
-					<font>FlagHD</font>
-					<textcolor>$VAR[ColourHighlight2]</textcolor>
-					<visible>!substring(ListItem.Path,videodb://movies/sets,left) + Skin.HasSetting(furniture.flags.colour)</visible>
+					<control type="image">
+					<width>130</width>
+					<height>50</height>
+					<centertop>50%</centertop>
+					<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
+					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
 				</control>
 				<control type="image">
 					<width>73</width>
@@ -263,6 +254,7 @@
 				</control>
 			</control>
 			<control type="image">
+				<posx>50</posx>
 				<width>64</width>
 				<height>64</height>
 				<centertop>50%</centertop>
@@ -437,26 +429,14 @@
 				<visible>!IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))</visible>
 			</control>
 			<include>lib_Rating_TV</include>
-			<include condition="IsEmpty(Skin.String(RatingCountry))">lib_Rating_BBFC</include>
-			<include condition="Stringcompare(Skin.String(RatingCountry),US)">lib_Rating_MPAA</include>
-			<include condition="Stringcompare(Skin.String(RatingCountry),UK)">lib_Rating_BBFC</include>
-			<include condition="Stringcompare(Skin.String(RatingCountry),Germany)">lib_Rating_FSK</include>
-			<include condition="Stringcompare(Skin.String(RatingCountry),NL)">lib_Rating_NL</include>
+			<include>lib_Rating_MPAA</include>
 			<control type="image">
 				<width>108</width>
 				<height>50</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
 				<aspectratio align="left">keep</aspectratio>
-				<visible>!IsEmpty(ListItem.VideoAspect) + !Skin.HasSetting(furniture.flags.colour)</visible>
-			</control>
-			<control type="image">
-				<width>110</width>
-				<height>60</height>
-				<centertop>51%</centertop>
-				<texture>$INFO[ListItem.VideoAspect,colored/aspectratio/,.png]</texture>
-				<aspectratio align="center">stretch</aspectratio>
-				<visible>!IsEmpty(ListItem.VideoAspect) + Skin.HasSetting(furniture.flags.colour)</visible>
+				<visible>!IsEmpty(ListItem.VideoAspect)</visible>
 			</control>
 			<control type="image">
 				<width>130</width>
@@ -739,7 +719,7 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>SidePad</left>
-			<centerbottom>NavBarPad</centerbottom>
+			<centerbottom>30</centerbottom>
 			<width>1400</width>
 			<height>120</height>
 			<orientation>horizontal</orientation>
@@ -761,8 +741,15 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>$VAR[HDSD]</label>
-					<font>FlagHD</font>
-					<textcolor>Dark1</textcolor>
+					<font>Medium</font>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
+				</control>
+				<control type="image">
+					<width>130</width>
+					<height>50</height>
+					<centertop>50%</centertop>
+					<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
 					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
 				</control>
 				<control type="image">
@@ -1111,7 +1098,7 @@
 		<control type="group">
 			<visible>Container.Content(Addons)</visible>
 			<left>SidePad</left>
-			<centerbottom>NavBarPad</centerbottom>
+			<centerbottom>30</centerbottom>
 			<width>1920</width>
 			<height>120</height>
 			<orientation>horizontal</orientation>
@@ -1137,7 +1124,7 @@
 		<control type="group">
 			<visible>SubString(Container.FolderPath,plugin://plugin.program.advanced.launcher,left)</visible>
 			<left>SidePad</left>
-			<centerbottom>NavBarPad</centerbottom>
+			<centerbottom>30</centerbottom>
 			<width>1920</width>
 			<height>120</height>
 			<orientation>horizontal</orientation>
@@ -1818,16 +1805,10 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>146</left>
-			<centerbottom>NavBarPad</centerbottom>
+			<centerbottom>30</centerbottom>
 			<width>120</width>
 			<height>120</height>
-			<control type="label">
-				<align>right</align>
-				<label>[B]$INFO[Container(301).ListItem.VideoResolution]p[/B]</label>
-				<font>MiniSystem</font>
-				<textcolor>Dark1</textcolor>
-				<visible>!IsEmpty(Container(301).ListItem.VideoResolution)</visible>
-			</control>
+			
 			<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
 			<visible>!StringCompare(Container(300).ListItem.Property(widget),LiveTV) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(widget),NextAired) + !StringCompare(Container(300).ListItem.Property(widget),Favourites) + !substring(Container(300).ListItem.Property(widget),Albums)</visible>
 		</control>
@@ -1837,7 +1818,7 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>226</left>
-			<centerbottom>NavBarPad</centerbottom>
+			<centerbottom>30</centerbottom>
 			<width>1400</width>
 			<height>120</height>
 			<orientation>horizontal</orientation>
@@ -1859,36 +1840,23 @@
 					<height>46</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label>[B]$VAR[HDSD][/B]</label>
-					<font>FlagHD</font>
-					<textcolor>Dark1</textcolor>
-					<visible>!Skin.HasSetting(furniture.flags.colour)</visible>
-				</control>
-				<control type="label">
-					<width>73</width>
-					<height>46</height>
-					<align>center</align>
-					<aligny>center</aligny>
 					<label>[B]$VAR[HDSD][B]</label>
-					<font>FlagHD</font>
-					<textcolor>$VAR[ColourHighlight2]</textcolor>
-					<visible>Skin.HasSetting(furniture.flags.colour)</visible>
+					<font>Medium</font>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+				</control>
+					<control type="image">
+					<width>130</width>
+					<height>50</height>
+					<centertop>50%</centertop>
+					<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
 				</control>
 			</control>
 			<control type="image">
 				<width>64</width>
 				<height>64</height>
+				<posx>50</posx>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[HomeFlagstar1].png</texture>
-				<visible>!Skin.HasSetting(furniture.flags.colour)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(widget),LiveTV) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !substring(Container(300).ListItem.Property(widget),Albums)</visible>
-			</control>
-			<control type="image">
-				<width>64</width>
-				<height>64</height>
-				<centertop>50%</centertop>
-				<texture colordiffuse="$VAR[ColourHighlight]">flags/$VAR[HomeFlagstar1].png</texture>
-				<visible>Skin.HasSetting(furniture.flags.colour)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(widget),LiveTV) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !substring(Container(300).ListItem.Property(widget),Albums)</visible>
 			</control>
 			<control type="image">
@@ -1983,12 +1951,7 @@
 				<textcolor>Dark1</textcolor>
 				<visible>Skin.HasSetting(furniture.numericrating) + !substring(Container(300).ListItem.Property(widget),Albums)</visible>
 			</control>
-			<!--<include>lib_Rating_TV</include>-->
-			<include condition="IsEmpty(Skin.String(RatingCountry))">lib_Rating_BBFC_home</include>
-			<include condition="Stringcompare(Skin.String(RatingCountry),US)">lib_Rating_MPAA_home</include>
-			<include condition="Stringcompare(Skin.String(RatingCountry),UK)">lib_Rating_BBFC_home</include>
-			<include condition="Stringcompare(Skin.String(RatingCountry),Germany)">lib_Rating_FSK_home</include>
-			<include condition="Stringcompare(Skin.String(RatingCountry),NL)">lib_Rating_NL_home</include>
+			<include>lib_Rating_MPAA_home</include>
 			<include>lib_Rating_TV_home</include>
 			<control type="image">
 				<width>108</width>

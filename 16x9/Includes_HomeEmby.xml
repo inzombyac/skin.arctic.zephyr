@@ -118,10 +118,11 @@
 				</control>
 				<control type="button" id="3634">
 					<onleft>3635</onleft>
-					<onright>3635</onright>
+					<onright condition="System.HasAddon(plugin.video.emby)">3636</onright>
+					<onright condition="!System.HasAddon(plugin.video.emby)">3635</onright>
 					<onup>303</onup>
 					<ondown>300</ondown>
-					<onclick>RunPlugin("plugin://plugin.video.emby?mode=userprefs")</onclick>
+					<onclick>System.LogOff</onclick>
 					<font>Button</font>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
@@ -151,8 +152,22 @@
 					<visible>Control.HasFocus(3635)</visible>
 				</control>
 				<control type="image">
+					<width>50</width>
+					<height>50</height>
+					<texture colordiffuse="$VAR[ColourHighlight]" border="1">special://skin/extras/icons/emby2.png</texture>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<visible>Control.HasFocus(3636)</visible>
+				</control>
+				<control type="image">
+					<width>50</width>
+					<height>50</height>
+					<texture >special://skin/extras/icons/emby2.png</texture>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<visible>!Control.HasFocus(3636)</visible>
+				</control>
+				<control type="image">
 					<top>-14</top>
-					<left>-14</left>
+					<left>50</left>
 					<width>78</width>
 					<height>78</height>
 					<texture colordiffuse="PanelWhite100" border="8">special://skin/extras/icons/search.png</texture>
@@ -160,15 +175,26 @@
 				</control>
 				<control type="image">
 					<top>-14</top>
-					<left>-14</left>
+					<left>50</left>
 					<width>78</width>
 					<height>78</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/search.png</texture>
 					<visible>Control.HasFocus(3635)</visible>
 				</control>
-				<control type="button" id="3635">
+				<control type="button" id="3636">
 					<onleft>3634</onleft>
-					<onright>3634</onright>
+					<onright>3635</onright>
+					<onup>303</onup>
+					<ondown>300</ondown>
+					<onclick>ActivateWindow(10001,"plugin://plugin.video.emby",return)</onclick>
+					<font>Button</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+				</control>
+				<control type="button" id="3635">
+					<onleft condition="System.HasAddon(plugin.video.emby)">3636</onleft>
+					<onleft condition="!System.HasAddon(plugin.video.emby)">3635</onleft>
+					<onright>3636</onright>
 					<onup>303</onup>
 					<ondown>300</ondown>
 					<onclick>RunScript(script.globalsearch)</onclick>
@@ -213,14 +239,14 @@
 				<description>Home Wraplist</description>
 				<left>SidePad</left>
 				<right>SidePad</right>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">4016</ondown>
+				<ondown condition="!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4016</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">4016</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)">4017</ondown>
 				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">4016</ondown>
-				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">4016</ondown>
-				<ondown condition="!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)">6016</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv +!IntegerGreaterThan(Container(4016).NumItems,0))">4017</ondown>
+				<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv +IntegerGreaterThan(Container(4016).NumItems,0))">4016</ondown>
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
-				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3634</onup>
+				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3635</onup>
 				<onleft>300</onleft>
 				<onright>300</onright>
 				<orientation>horizontal</orientation>
@@ -243,7 +269,7 @@
 				<left>SidePad</left>
 				<right>SidePad</right>
 				<top>122</top>
-				<onup>3634</onup>
+				<onup>3635</onup>
 				<ondown>300</ondown>
 				<onleft>302</onleft>
 				<onright>302</onright>
@@ -436,444 +462,6 @@
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
-			<!-- Default Widget -->
-			<control type="label">
-				<left>SidePad</left>
-				<top>290</top>
-				<width>410</width>
-				<align>left</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget2Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="wraplist" id="6012">
-				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<top>330</top>
-				<left>SidePad</left>
-				<width>820</width>
-				<height>460</height>
-				<onup>300</onup>
-				<ondown>6013</ondown>
-				<onback>SetProperty(Dialog.NumItems,19)</onback>
-				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31134])</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget2,TrendingMovies))</onback>
-				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31208])</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget2,InCinemas))</onback>
-				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31223])</onback>
-				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget2,Upcoming))</onback>
-				<onback>SetProperty(Dialog.4.Label,$LOCALIZE[31224])</onback>
-				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget2,PopularMovies))</onback>
-				<onback>SetProperty(Dialog.5.Label,$LOCALIZE[31225])</onback>
-				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget2,TopRatedMovies))</onback>
-				<onback>SetProperty(Dialog.6.Label,$LOCALIZE[31226])</onback>
-				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget2,PopularTvShows))</onback>
-				<onback>SetProperty(Dialog.7.Label,$LOCALIZE[31227])</onback>
-				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget2,TopRatedTvShows))</onback>
-				<onback>SetProperty(Dialog.8.Label,$LOCALIZE[31228])</onback>
-				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget2,OnAirTvShows))</onback>
-				<onback>SetProperty(Dialog.9.Label,$LOCALIZE[31229])</onback>
-				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget2,AiringTodayTvShows))</onback>
-				<onback>SetProperty(Dialog.10.Label,Custom1)</onback>
-				<onback>SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget2,Custom1))</onback>
-				<onback>SetProperty(Dialog.11.Label,Custom2)</onback>
-				<onback>SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget2,Custom2))</onback>
-				<onback>SetProperty(Dialog.12.Label,Custom3)</onback>
-				<onback>SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget2,Custom3))</onback>
-				<onback>SetProperty(Dialog.13.Label,Custom4)</onback>
-				<onback>SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget2,Custom4))</onback>
-				<onback>SetProperty(Dialog.14.Label,Custom5)</onback>
-				<onback>SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget2,Custom5))</onback>
-				<onback>SetProperty(Dialog.15.Label,Custom6)</onback>
-				<onback>SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget2,Custom6))</onback>
-				<onback>SetProperty(Dialog.16.Label,Custom7)</onback>
-				<onback>SetProperty(Dialog.16.BuiltIn,Skin.SetString(widget2,Custom7))</onback>
-				<onback>SetProperty(Dialog.17.Label,Custom8)</onback>
-				<onback>SetProperty(Dialog.17.BuiltIn,Skin.SetString(widget2,Custom8))</onback>
-				<onback>SetProperty(Dialog.18.Label,Custom9)</onback>
-				<onback>SetProperty(Dialog.18.BuiltIn,Skin.SetString(widget2,Custom9))</onback>
-				<onback>SetProperty(Dialog.19.Label,Custom10)</onback>
-				<onback>SetProperty(Dialog.19.BuiltIn,Skin.SetString(widget2,Custom10))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
-				<onleft>301</onleft>
-				<onright>301</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>horizontal</orientation>
-				<autoscroll time="10000">!Control.HasFocus(301)</autoscroll>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<itemlayout width="820" height="460">
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[FanartImage]</texture>
-					</control>
-				</itemlayout>
-				<focusedlayout width="820" height="460">
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<texture background="true">$VAR[FanartImage]</texture>
-					</control>
-				</focusedlayout>
-				<content target="video">$VAR[DefWidget2Content]</content>
-			</control>
-			<control type="image">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<description>Title overlay</description>
-				<left>SidePad</left>
-				<posy>712</posy>
-				<width>820</width>
-				<height>80</height>
-				<texture border="15" colordiffuse="df000000">common/white.png</texture>
-			</control>
-			<control type="label">
-				<left>200</left>
-				<posy>712</posy>
-				<width>400</width>
-				<aligny>center</aligny>
-				<height>64</height>
-				<font>SmallBold</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$INFO[Container(6012).ListItem.Label]</label>
-				<animation effect="slide" start="0" end="-90" time="0" condition="![Container.Content(movies) | Container.Content(episodes)]">Conditional</animation>
-				<animation effect="slide" start="0" end="70" time="0" condition="Container.Content(episodes)">Conditional</animation>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="label">
-				<left>600</left>
-				<posy>712</posy>
-				<width>295</width>
-				<right>84</right>
-				<aligny>center</aligny>
-				<height>64</height>
-				<align>right</align>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$INFO[Container(6012).ListItem.Year,, • ]$INFO[Container(6012).ListItem.Rating]$INFO[Container(6012).ListItem.Votes, (, $LOCALIZE[20350])]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="image">
-				<left>76</left>
-				<width>828</width>
-				<top>326</top>
-				<height>468</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(6012)</visible>
-			</control>
-			<control type="button" id="6013">
-				<onup>6012</onup>
-				<onright>6014</onright>
-				<onclick>ActivateWindow(videos,addons,return)</onclick>
-			</control>
-			<control type="image">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<description>All Movies</description>
-				<left>SidePad</left>
-				<posy>800</posy>
-				<width>400</width>
-				<height>230</height>
-				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-			</control>
-			<control type="label">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<description>Video Addons</description>
-				<left>SidePad</left>
-				<posy>800</posy>
-				<width>400</width>
-				<height>230</height>
-				<label></label>
-				<font>symbolbiggest</font>
-				<align>center</align>
-				<aligny>center</aligny>
-			</control>
-			<control type="image">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<description>Title overlay</description>
-				<left>SidePad</left>
-				<posy>990</posy>
-				<width>400</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="df000000">common/white.png</texture>
-			</control>
-			<control type="label">
-				<left>SidePad</left>
-				<posy>990</posy>
-				<width>400</width>
-				<align>center</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>1037</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="image">
-				<left>76</left>
-				<width>408</width>
-				<posy>796</posy>
-				<height>238</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(6013)</visible>
-			</control>
-			<control type="button" id="6014">
-				<onup>6012</onup>
-				<onleft>6013</onleft>
-				<onright condition="Control.IsVisible(6016)">6016</onright>
-				<onright condition="!Control.IsVisible(6016)">6017</onright>
-				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.emby/&quot;,return)</onclick>
-			</control>
-			<control type="image">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<description>Emby</description>
-				<left>500</left>
-				<posy>800</posy>
-				<width>400</width>
-				<height>230</height>
-				<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-				<texture diffuse="common/circle.png">special://skin/extras/icons/emby2.png</texture>
-			</control>
-			<control type="label">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<description>Emby</description>
-				<left>500</left>
-				<posy>800</posy>
-				<width>400</width>
-				<height>230</height>
-				<texture colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
-			</control>
-			<control type="image">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<description>Title overlay</description>
-				<left>500</left>
-				<posy>990</posy>
-				<width>400</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="df000000">common/white.png</texture>
-			</control>
-			<control type="label">
-				<left>500</left>
-				<posy>990</posy>
-				<width>400</width>
-				<align>center</align>
-				<height>40</height>
-				<align>right</align>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>Emby</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="image">
-				<left>496</left>
-				<width>408</width>
-				<posy>796</posy>
-				<height>238</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(6014)</visible>
-			</control>
-			<control type="label">
-				<left>980</left>
-				<top>290</top>
-				<width>410</width>
-				<align>left</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget1Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="list" id="6016">
-				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<top>330</top>
-				<left>980</left>
-				<width>410</width>
-				<height>705</height>
-				<onup>300</onup>
-				<ondown>6016</ondown>
-				<onback>SetProperty(Dialog.NumItems,3)</onback>
-				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31135])</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget1,TrendingShows))</onback>
-				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31136])</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget1,AiringShows))</onback>
-				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31137])</onback>
-				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget1,PremiereShows))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
-				<onleft>6012</onleft>
-				<onright>6017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<itemlayout width="410" height="117.5">
-					<control type="image">
-						<height>110</height>
-						<texture background="true">$VAR[BannerImage]</texture>
-					</control>
-					<control type="progress">
-						<bottom>5</bottom>
-						<height>8</height>
-						<info>ListItem.PercentPlayed</info>
-						<overlaytexture>-</overlaytexture>
-						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
-						<visible>ListItem.IsResumable</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout width="410" height="117.5">
-					<control type="image">
-						<height>110</height>
-						<texture background="true">$VAR[BannerImage]</texture>
-					</control>
-					<control type="image">
-						<description>Title overlay</description>
-						<texture border="15" colordiffuse="df000000">common/white.png</texture>
-						<visible>Control.HasFocus(6016)</visible>
-					</control>
-					<control type="textbox">
-						<left>5</left>
-						<right>5</right>
-						<top>3</top>
-						<bottom>5</bottom>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>Tiny</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
-						<visible>Control.HasFocus(6016)</visible>
-					</control>
-					<control type="image">
-						<left>-3</left>
-						<top>-3</top>
-						<right>-3</right>
-						<bottom>0</bottom>
-						<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-						<visible>Control.HasFocus(6016)</visible>
-					</control>
-				</focusedlayout>
-				<content target="video">$VAR[DefWidget1Content]</content>
-			</control>
-			<!-- Latest Movies -->
-			<control type="label">
-				<left>1470</left>
-				<top>290</top>
-				<width>410</width>
-				<align>left</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyWidget3Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="panel" id="6017">
-				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),movies) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<top>330</top>
-				<left>1470</left>
-				<width>316</width>
-				<height>705</height>
-				<onup>300</onup>
-				<ondown>6017</ondown>
-				<onback>SetProperty(Dialog.NumItems,9)</onback>
-				<onback>SetProperty(Dialog.1.Label,$LOCALIZE[31224])</onback>
-				<onback>SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget3,PopularMovies))</onback>
-				<onback>SetProperty(Dialog.2.Label,$LOCALIZE[31208])</onback>
-				<onback>SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget3,InCinemas))</onback>
-				<onback>SetProperty(Dialog.3.Label,$LOCALIZE[31223])</onback>
-				<onback>SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget3,Upcoming))</onback>
-				<onback>SetProperty(Dialog.4.Label,$LOCALIZE[31134])</onback>
-				<onback>SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget3,TrendingMovies))</onback>
-				<onback>SetProperty(Dialog.5.Label,$LOCALIZE[31225])</onback>
-				<onback>SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget3,TopRatedMovies))</onback>
-				<onback>SetProperty(Dialog.6.Label,$LOCALIZE[31226])</onback>
-				<onback>SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget3,PopularTvShows))</onback>
-				<onback>SetProperty(Dialog.7.Label,$LOCALIZE[31227])</onback>
-				<onback>SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget3,TopRatedTvShows))</onback>
-				<onback>SetProperty(Dialog.8.Label,$LOCALIZE[31228])</onback>
-				<onback>SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget3,OnAirTvShows))</onback>
-				<onback>SetProperty(Dialog.9.Label,$LOCALIZE[31229])</onback>
-				<onback>SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget3,AiringTodayTvShows))</onback>
-				<onback>RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
-				<onleft condition="Control.IsVisible(6016)">6016</onleft>
-				<onleft condition="!Control.IsVisible(6016)">6012</onleft>
-				<preloaditems>2</preloaditems>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<itemlayout width="158" height="235">
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<height>230</height>
-						<texture background="true">$VAR[PosterImage]</texture>
-					</control>
-					<control type="progress">
-						<bottom>5</bottom>
-						<height>8</height>
-						<info>ListItem.PercentPlayed</info>
-						<overlaytexture>-</overlaytexture>
-						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
-						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
-						<visible>ListItem.IsResumable</visible>
-					</control>
-				</itemlayout>
-				<focusedlayout width="158" height="235">
-					<control type="image">
-						<aspectratio>keep</aspectratio>
-						<height>230</height>
-						<texture background="true">$VAR[PosterImage]</texture>
-					</control>
-					<control type="image">
-						<description>Title overlay</description>
-						<texture border="15" colordiffuse="df000000">common/white.png</texture>
-						<visible>Control.HasFocus(6017)</visible>
-					</control>
-					<control type="textbox">
-						<left>5</left>
-						<right>5</right>
-						<top>30</top>
-						<bottom>30</bottom>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>Tiny</font>
-						<textcolor>PanelWhite70</textcolor>
-						<selectedcolor>PanelWhite70</selectedcolor>
-						<label>$INFO[ListItem.Rating]$INFO[ListItem.Votes,[CR](, $LOCALIZE[20350])]</label>
-						<visible>Control.HasFocus(6017)</visible>
-					</control>
-					<control type="image">
-						<left>-3</left>
-						<top>-3</top>
-						<right>-3</right>
-						<bottom>0</bottom>
-						<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-						<visible>Control.HasFocus(6017)</visible>
-					</control>
-				</focusedlayout>
-				<content target="video">$VAR[DefWidget3Content]</content>
-			</control>
-			<!-- Fallback image -->
-			<control type="image">
-				<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-				<texture background="true">clear/emby.png</texture>
-				<visible>[!IntegerGreaterThan(Window(Home).Property(TVShows.Count),0)+StringCompare(Container(300).ListItem.Property(defaultID),tvshows)] | [!IntegerGreaterThan(Window(Home).Property(Movies.Count),0)+StringCompare(Container(300).ListItem.Property(defaultID),movies)] | [!IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0)+StringCompare(Container(300).ListItem.Property(defaultID),muisc)]</visible>
-				<visible>Container(4012).IsUpdating</visible>
-				<height>320</height>
-				<top>420</top>
-				<centerbottom>100</centerbottom>
-			</control>
 			<!-- Main menu item -->
 			<control type="label">
 				<left>SidePad</left>
@@ -888,7 +476,6 @@
 				<visible>!Container(4012).IsUpdating</visible>
 			</control>
 			<include>EmbyMainWidgetContent</include>
-			
 			<!-- Bottom tile 1-->
 			<control type="button" id="4013">
 				<onup>4012</onup>
@@ -1179,7 +766,7 @@
 		</control>
 	</include>
 	<include name="EmbyMainWidgetContent">
-		<control type="list" id="4012">
+		<control type="panel" id="4012">
 			<description>Widget</description>
 			<top>330</top>
 			<left>SidePad</left>
@@ -1192,13 +779,35 @@
 			<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">4016</onright>
 			<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)">4017</onright>
 			<!-- Movie Options -->
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.NumItems,3)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.NumItems,14)</onback>
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.1.Label,$LOCALIZE[31127])</onback>
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget8,RandomMovies))</onback>
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.2.Label,$LOCALIZE[31124])</onback>
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget8,RecentMovies))</onback>
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.3.Label,$LOCALIZE[31123])</onback>
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget8,RecommendedMovies))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.4.Label,Collections)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget8,Collections))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.5.Label,Custom1)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget8,Custom1))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.6.Label,Custom2)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget8,Custom2))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.7.Label,Custom3)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget8,Custom3))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.8.Label,Custom4)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget8,Custom4))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.9.Label,Custom5)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget8,Custom5))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.10.Label,Custom6)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget8,Custom6))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.11.Label,Custom7)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget8,Custom7))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.12.Label,Custom8)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget8,Custom8))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.13.Label,Custom9)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget8,Custom9))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.14.Label,Custom10)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget8,Custom10))</onback>
 			<!-- TV Options -->
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.NumItems,13)</onback>
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">SetProperty(Dialog.1.Label,$LOCALIZE[31126])</onback>
@@ -1261,37 +870,77 @@
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">SetProperty(Dialog.15.Label,Custom10)</onback>
 			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget4,Custom10))</onback>
 			<!-- Music items -->
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.NumItems,15)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.1.Label,$LOCALIZE[31187])</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget12,RandomMusic))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.2.Label,$LOCALIZE[31188])</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget12,RecentMusic))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.3.Label,$LOCALIZE[31189])</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget12,RecommendedMusic))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.4.Label,Recently Played Albums)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget12,RecentPlayedMusic))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.5.Label,Top 100 Albums)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget12,Top100Music))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.6.Label,Custom1)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget12,Custom1))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.7.Label,Custom2)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget12,Custom2))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.8.Label,Custom3)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget12,Custom3))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.9.Label,Custom4)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget12,Custom4))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.10.Label,Custom5)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget12,Custom5))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.11.Label,Custom6)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget12,Custom6))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.12.Label,Custom7)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget12,Custom7))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.13.Label,Custom8)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget12,Custom8))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.14.Label,Custom9)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget12,Custom9))</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.15.Label,Custom10)</onback>
-			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget12,Custom10))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.NumItems,15)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.1.Label,$LOCALIZE[31187])</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget12,RandomMusic))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.2.Label,$LOCALIZE[31188])</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget12,RecentMusic))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.3.Label,$LOCALIZE[31189])</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget12,RecommendedMusic))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.4.Label,Recently Played Albums)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget12,RecentPlayedMusic))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.5.Label,Top 100 Albums)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget12,Top100Music))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.6.Label,Custom1)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget12,Custom1))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.7.Label,Custom2)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget12,Custom2))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.8.Label,Custom3)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget12,Custom3))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.9.Label,Custom4)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget12,Custom4))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.10.Label,Custom5)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget12,Custom5))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.11.Label,Custom6)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget12,Custom6))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.12.Label,Custom7)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget12,Custom7))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.13.Label,Custom8)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget12,Custom8))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.14.Label,Custom9)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget12,Custom9))</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.15.Label,Custom10)</onback>
+			<onback condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget12,Custom10))</onback>
+			<!-- Default Widget -->
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.NumItems,19)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.1.Label,$LOCALIZE[31134])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.1.BuiltIn,Skin.SetString(widget2,TrendingMovies))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.2.Label,$LOCALIZE[31208])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.2.BuiltIn,Skin.SetString(widget2,InCinemas))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.3.Label,$LOCALIZE[31223])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.3.BuiltIn,Skin.SetString(widget2,Upcoming))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.4.Label,$LOCALIZE[31224])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.4.BuiltIn,Skin.SetString(widget2,PopularMovies))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.5.Label,$LOCALIZE[31225])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.5.BuiltIn,Skin.SetString(widget2,TopRatedMovies))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.6.Label,$LOCALIZE[31226])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.6.BuiltIn,Skin.SetString(widget2,PopularTvShows))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.7.Label,$LOCALIZE[31227])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.7.BuiltIn,Skin.SetString(widget2,TopRatedTvShows))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.8.Label,$LOCALIZE[31228])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.8.BuiltIn,Skin.SetString(widget2,OnAirTvShows))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.9.Label,$LOCALIZE[31229])</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.9.BuiltIn,Skin.SetString(widget2,AiringTodayTvShows))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.10.Label,Custom1)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.10.BuiltIn,Skin.SetString(widget2,Custom1))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.11.Label,Custom2)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.11.BuiltIn,Skin.SetString(widget2,Custom2))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.12.Label,Custom3)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.12.BuiltIn,Skin.SetString(widget2,Custom3))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.13.Label,Custom4)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.13.BuiltIn,Skin.SetString(widget2,Custom4))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.14.Label,Custom5)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.14.BuiltIn,Skin.SetString(widget2,Custom5))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.15.Label,Custom6)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.15.BuiltIn,Skin.SetString(widget2,Custom6))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.16.Label,Custom7)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.16.BuiltIn,Skin.SetString(widget2,Custom7))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.17.Label,Custom8)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.17.BuiltIn,Skin.SetString(widget2,Custom8))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.18.Label,Custom9)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.18.BuiltIn,Skin.SetString(widget2,Custom9))</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.19.Label,Custom10)</onback>
+			<onback condition="StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)">SetProperty(Dialog.19.BuiltIn,Skin.SetString(widget2,Custom10))</onback>
 			<!-- Only change if not in kiosk mode -->
 			<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 			<preloaditems>2</preloaditems>
@@ -1314,11 +963,6 @@
 				<control type="image">
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>stretch</aspectratio>
-					<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)</visible>
 				</control>
@@ -1326,7 +970,18 @@
 				<control type="image">
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
+				</control>
+				<control type="progress">
+					<bottom>80</bottom>
+					<height>8</height>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
 				</control>
 			</itemlayout>
 			<focusedlayout width="856" height="496">
@@ -1343,7 +998,7 @@
 				<control type="image">
 					<aspectratio>stretch</aspectratio>
 					<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-					<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+					<visible>StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>stretch</aspectratio>
@@ -1351,9 +1006,20 @@
 					<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)</visible>
 				</control>
+				<control type="progress">
+					<bottom>80</bottom>
+					<height>8</height>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[PercentColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
 				<include>PVRChannelWidget</include>
 			</focusedlayout>
-			<content>$VAR[DefWidgetMainContent]</content>
+			<content target="video">$VAR[DefWidgetMainContent]</content>
 		</control>
 		<control type="image">
 			<description>Title overlay</description>
@@ -1363,7 +1029,7 @@
 			<height>80</height>
 			<texture border="15" colordiffuse="df000000">common/white.png</texture>
 			<visible>!Container(4012).IsUpdating</visible>
-			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)| Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | isEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 		</control>
 		<control type="image">
 			<description>Title overlay</description>
@@ -1387,6 +1053,7 @@
 			<textcolor>PanelWhite70</textcolor>
 			<selectedcolor>PanelWhite70</selectedcolor>
 			<label>$VAR[EmbyWidgetContentLabel]</label>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 		</control>
 		<control type="label">
 			<left>736</left>
@@ -1415,15 +1082,6 @@
 			<selectedcolor>PanelWhite70</selectedcolor>
 			<label>$VAR[LabelDuration]</label>
 			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-		</control>
-		<control type="image">
-			<posy>766</posy>
-			<left>865</left>
-			<width>32</width>
-			<height>32</height>
-			<aspectratio aligny="top">keep</aspectratio>
-			<texture>$VAR[PercentWatched4012]</texture>
-			<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 		</control>
 		<control type="image">
 			<left>76</left>
@@ -1821,9 +1479,11 @@
 				<textcolor>PanelWhite70</textcolor>
 				<selectedcolor>PanelWhite70</selectedcolor>
 				<label>$VAR[EmbyHomeWidget1Label]</label>
+				<visible>!Container(4012).IsUpdating</visible>
 			</control>
 			<control type="panel" id="4016">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>!Container(4012).IsUpdating</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -1842,6 +1502,7 @@
 			</control>
 			<control type="panel" id="4016">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				<visible>!Container(4012).IsUpdating</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -1860,6 +1521,7 @@
 			</control>
 			<control type="panel" id="4016">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<visible>!Container(4012).IsUpdating</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -1877,7 +1539,7 @@
 				<include>LiveTVWidgetRecent</include>
 			</control>
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+				<visible>Substring(Container(300).ListItem.Property(defaultID),music,left)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -1893,6 +1555,25 @@
 				<include>Animation.FadeOut</include>
 				<include>EmbyWidget1ContentSquare</include>
 				<include>MusicWidgetRecent</include>
+			</control>
+			<control type="panel" id="4016">
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID))</visible>
+				<visible>!Container(4012).IsUpdating</visible>
+				<top>330</top>
+				<left>944</left>
+				<width>620</width>
+				<height>600</height>
+				<onup>300</onup>
+				<ondown>4016</ondown>
+				<onleft>4012</onleft>
+				<onright>4017</onright>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>EmbyWidget1Content</include>
+				<include>TrendingMoviesWidget</include>
 			</control>
 		</definition>
 	</include>
@@ -2019,6 +1700,12 @@
 	</include>
 	<include name="MusicWidgetRecommended">
 		<content>plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</content>
+	</include>
+	<include name="TrendingMoviesWidget">
+		<content>plugin://script.extendedinfo?info=trendingmovies</content>
+	</include>
+	<include name="InCinemasWidget">
+		<content>plugin://script.extendedinfo?info=incinemas</content>
 	</include>
 	<variable name="EmbyHomeFlagstar1">
 		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,1)">star10</value>
