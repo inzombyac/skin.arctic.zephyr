@@ -804,7 +804,7 @@
 		<control type="image">
 			<centertop>50%</centertop>
 			<width>118</width>
-			<height>50</height>
+			<height>60</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>info/rating/MPAA_NC-17_Certificate_US.png</texture>
 			<visible>Container.Content(movies) + !IsEmpty(ListItem.Mpaa) + SubString(ListItem.mpaa,NC-17) + !Skin.HasSetting(furniture.flags.colour)</visible>
@@ -896,7 +896,7 @@
 		<control type="image">
 			<centertop>50%</centertop>
 			<width>118</width>
-			<height>50</height>
+			<height>60</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>info/rating/MPAA_NC-17_Certificate_US.png</texture>
 			<visible>!IsEmpty(Container(301).ListItem.Mpaa) + SubString(Container(301).ListItem.mpaa,NC-17) + !Skin.HasSetting(furniture.flags.colour)</visible>
@@ -989,7 +989,7 @@
 		<control type="image">
 			<centertop>50%</centertop>
 			<width>118</width>
-			<height>50</height>
+			<height>60</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>info/rating/MPAA_NC-17_Certificate_US.png</texture>
 			<visible>Container.Content(movies) + !IsEmpty(ListItem.Mpaa) + SubString(ListItem.mpaa,NC-17) + !Skin.HasSetting(furniture.flags.colour)</visible>

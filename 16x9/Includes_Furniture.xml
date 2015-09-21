@@ -238,13 +238,6 @@
 					<textcolor>$VAR[ColourHighlight]</textcolor>
 					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
 				</control>
-					<control type="image">
-					<width>130</width>
-					<height>50</height>
-					<centertop>50%</centertop>
-					<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
-					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
-				</control>
 				<control type="image">
 					<width>73</width>
 					<height>50</height>
@@ -430,6 +423,13 @@
 			</control>
 			<include>lib_Rating_TV</include>
 			<include>lib_Rating_MPAA</include>
+			<control type="image">
+				<width>130</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
+				<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
+			</control>
 			<control type="image">
 				<width>108</width>
 				<height>50</height>
@@ -1844,12 +1844,6 @@
 					<font>Medium</font>
 					<textcolor>$VAR[ColourHighlight]</textcolor>
 				</control>
-					<control type="image">
-					<width>130</width>
-					<height>50</height>
-					<centertop>50%</centertop>
-					<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
-				</control>
 			</control>
 			<control type="image">
 				<width>64</width>
@@ -1953,6 +1947,12 @@
 			</control>
 			<include>lib_Rating_MPAA_home</include>
 			<include>lib_Rating_TV_home</include>
+			<control type="image">
+				<width>130</width>
+				<height>50</height>
+				<centertop>50%</centertop>
+				<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
+			</control>
 			<control type="image">
 				<width>108</width>
 				<height>50</height>
