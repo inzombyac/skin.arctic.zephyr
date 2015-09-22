@@ -412,7 +412,7 @@
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">$VAR[EmbyWidget12Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">$VAR[EmbyWidget12Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">$VAR[EmbyWidget2Label]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),pictures)">Pictures</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),pictures)">Random Pictures</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)">Weather</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs)">Add-ons</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">System Information</value>
@@ -464,6 +464,9 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">TV Guide</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">Albums</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),pictures)">Pictures</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">Channels</value>
+		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Channels</value>
 	</variable>
 	<variable name="EmbyButton2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31220]</value>

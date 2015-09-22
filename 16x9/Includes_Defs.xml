@@ -141,7 +141,8 @@
 		<value condition="Stringcompare(Skin.String(widget4),AiringToday)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
 		<value condition="Stringcompare(Skin.String(widget4),TrendingShows)">plugin://script.extendedinfo?info=trendingshows</value>
 		<value condition="Stringcompare(Skin.String(widget4),PremiereShows)">plugin://script.extendedinfo?info=premiereshows</value>
-		<value condition="Stringcompare(Skin.String(widget4),LiveTV)">pvr://channels/tv/All&amp;channels/</value>
+		<!--<value condition="Stringcompare(Skin.String(widget4),LiveTV)">pvr://channels/tv/All&amp;channels/</value>-->
+		<value condition="Stringcompare(Skin.String(widget4),LiveTV)">pvr://channels/tv/Most&amp;Viewed</value>
 		<value condition="Stringcompare(Skin.String(widget4),Recordings)">pvr://recordings/</value>
 		<value condition="Stringcompare(Skin.String(widget4),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
 		<value condition="Stringcompare(Skin.String(widget4),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
@@ -270,7 +271,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),musicvideos)">$VAR[DefWidget12Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">$VAR[DefWidget12Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">$VAR[DefWidget2Content]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)"></value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)"></value>
