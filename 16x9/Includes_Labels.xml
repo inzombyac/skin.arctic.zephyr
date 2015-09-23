@@ -473,6 +473,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Collections</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Channels</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">Artists</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),pictures)">Picture Add-Ons</value>
 	</variable>
 	<variable name="EmbyButton3Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31193]</value>

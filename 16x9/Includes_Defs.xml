@@ -95,10 +95,18 @@
 	</variable>
 
 	<variable name="DefWidget1Content">
-		<value condition="Stringcompare(Skin.String(widget1),TrendingShows)">plugin://script.extendedinfo?info=trendingshows</value>
-		<value condition="Stringcompare(Skin.String(widget1),AiringShows)">plugin://script.extendedinfo?info=airingshows</value>
-		<value condition="Stringcompare(Skin.String(widget1),PremiereShows)">plugin://script.extendedinfo?info=premiereshows</value>
-		<value>plugin://script.extendedinfo?info=trendingshows</value>
+		<value condition="Stringcompare(Skin.String(widget1),Programs)">addons://sources/executable</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom3)">$INFO[Skin.String(CustomWidget3)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom4)">$INFO[Skin.String(CustomWidget4)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom5)">$INFO[Skin.String(CustomWidget5)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom6)">$INFO[Skin.String(CustomWidget6)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom7)">$INFO[Skin.String(CustomWidget7)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom8)">$INFO[Skin.String(CustomWidget8)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom9)">$INFO[Skin.String(CustomWidget9)]</value>
+		<value condition="Stringcompare(Skin.String(widget1),Custom10)">$INFO[Skin.String(CustomWidget10)]</value>
+		<value>addons://sources/executable</value>
 	</variable>
 
 	<variable name="DefWidget2Content">
@@ -273,7 +281,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">$VAR[DefWidget2Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)"></value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)">$VAR[DefWidget1Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)"></value>
 		<value condition="isEmpty(Container(300).ListItem.Property(defaultid)">$VAR[DefWidget2Content]</value>
 	</variable>

@@ -11,7 +11,7 @@
 				<control type="list" id="50">
 					<top>PosterPad</top>
 					<height>PosterH</height>
-					<left>ListX</left>
+					<left>ListSquareX</left>
 					<right>SidePad</right>
 					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 					<onright>60</onright>
@@ -80,7 +80,7 @@
 				<control type="fixedlist" id="50">
 					<top>PosterPad</top>
 					<height>320</height>
-					<left>ListX</left>
+					<left>ListSquareX</left>
 					<right>SidePad</right>
 					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 					<onright>60</onright>
@@ -130,7 +130,7 @@
 			<visible>!IsEmpty(ListItem.Icon)</visible>
 			<control type="image">
 				<top>PosterH</top>
-				<width>PosterW</width>
+				<width>PosterH</width>
 				<height>PosterH</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
@@ -145,7 +145,7 @@
 				<texture aligny="bottom">diffuse/shadowspot.png</texture>
 			</control>
 			<control type="image">
-				<width>PosterW</width>
+				<width>PosterH</width>
 				<height>PosterH</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
@@ -160,7 +160,7 @@
 			<visible>!IsEmpty(ListItem.Icon)</visible>
 			<control type="image">
 				<top>PosterH</top>
-				<width>PosterW</width>
+				<width>PosterH</width>
 				<height>PosterH</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
@@ -271,7 +271,7 @@
 				</control>
 				<control type="image">
 					<centertop>PosterH</centertop>
-					<width>PosterW</width>
+					<width>PosterH</width>
 					<height>48</height>
 					<aspectratio>stretch</aspectratio>
 					<texture aligny="bottom">diffuse/shadowspot.png</texture>
