@@ -95,7 +95,8 @@
 	</variable>
 
 	<variable name="DefWidget1Content">
-		<value condition="Stringcompare(Skin.String(widget1),Programs)">addons://sources/executable</value>
+		<value condition="Stringcompare(Skin.String(widget1),Addons)">addons://sources/executable</value>
+		<value condition="Stringcompare(Skin.String(widget1),Launcher)+System.HasAddon(plugin.program.advanced.launcher)">plugin://plugin.program.advanced.launcher/?default</value>
 		<value condition="Stringcompare(Skin.String(widget1),Custom1)">$INFO[Skin.String(CustomWidget1)]</value>
 		<value condition="Stringcompare(Skin.String(widget1),Custom2)">$INFO[Skin.String(CustomWidget2)]</value>
 		<value condition="Stringcompare(Skin.String(widget1),Custom3)">$INFO[Skin.String(CustomWidget3)]</value>
@@ -133,16 +134,7 @@
 	</variable>
 
 	<variable name="DefWidget3Content">
-		<value condition="Stringcompare(Skin.String(widget3),TrendingMovies)">plugin://script.extendedinfo?info=trendingmovies</value>
-		<value condition="Stringcompare(Skin.String(widget3),InCinemas)">plugin://script.extendedinfo?info=incinemas</value>
-		<value condition="Stringcompare(Skin.String(widget3),Upcoming)">plugin://script.extendedinfo?info=upcoming</value>
-		<value condition="Stringcompare(Skin.String(widget3),PopularMovies)">plugin://script.extendedinfo?info=popularmovies</value>
-		<value condition="Stringcompare(Skin.String(widget3),TopRatedMovies)">plugin://script.extendedinfo?info=topratedmovies</value>
-		<value condition="Stringcompare(Skin.String(widget3),PopularTvShows)">plugin://script.extendedinfo?info=populartvshows</value>
-		<value condition="Stringcompare(Skin.String(widget3),TopRatedTvShows)">plugin://script.extendedinfo?info=topratedtvshows</value>
-		<value condition="Stringcompare(Skin.String(widget3),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
-		<value condition="Stringcompare(Skin.String(widget3),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
-		<value>plugin://script.extendedinfo?info=popularmovies</value>
+		<value>SysInfoWidgetMain</value>
 	</variable>
 
 	<variable name="DefWidget4Content">
@@ -282,7 +274,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)">$VAR[DefWidget1Content]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)"></value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">$VAR[DefWidget3Content]</value>
 		<value condition="isEmpty(Container(300).ListItem.Property(defaultid)">$VAR[DefWidget2Content]</value>
 	</variable>
 
