@@ -686,23 +686,6 @@
 						<selected>Skin.HasSetting(furniture.alternate.duration)</selected>
 						<onclick>Skin.ToggleSetting(furniture.alternate.duration)</onclick>
 					</control>
-					<control type="button" id="9269" description="Country Rating">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<label>$LOCALIZE[31753]</label>
-						<label2 fallback="UK">[COLOR=$VAR[ColourHighlight2]]$VAR[MovieMPAALangLabel][/COLOR]</label2>
-						<onclick>SetProperty(Dialog.NumItems,4)</onclick>
-						<onclick>SetProperty(Dialog.1.Label,Default - UK)</onclick>
-						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RatingCountry,UK))</onclick>
-						<onclick>SetProperty(Dialog.2.Label,US)</onclick>
-						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(RatingCountry,US))</onclick>
-						<onclick>SetProperty(Dialog.3.Label,Germany)</onclick>
-						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(RatingCountry,Germany))</onclick>
-						<onclick>SetProperty(Dialog.4.Label,NL)</onclick>
-						<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(RatingCountry,NL))</onclick>
-						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Rating Country)</onclick>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-					</control>
 					<control type="radiobutton" id="9266" description="Numeric Rating">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9106)</visible>
@@ -769,14 +752,6 @@
 						<label>Do not show DiscArt</label>
 						<selected>Skin.HasSetting(furniture.nodiscart)</selected>
 						<onclick>Skin.ToggleSetting(furniture.nodiscart)</onclick>
-					</control>
-					<control type="radiobutton" id="92702" description="Colour icons">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Use colour flags</label>
-						<selected>Skin.HasSetting(furniture.flags.colour)</selected>
-						<onclick>Skin.ToggleSetting(furniture.flags.colour)</onclick>
 					</control>
 					<control type="radiobutton" id="92703" description="Fanart Dialog Info">
 						<width>1310</width>

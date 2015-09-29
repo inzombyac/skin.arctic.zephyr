@@ -453,25 +453,8 @@
 						<posy>12</posy>
 						<height>38</height>
 						<align>center</align>
-						<label fallback="?">$INFO[Window.Property(movie.Budget),£]</label>
-						<font>MediumSmallBold</font>
-						<visible>IsEmpty(Skin.String(RatingCountry)) | Stringcompare(Skin.String(RatingCountry),UK)</visible>
-					</control>
-					<control type="label">
-						<posy>12</posy>
-						<height>38</height>
-						<align>center</align>
 						<label fallback="?">$INFO[Window.Property(movie.Budget),$]</label>
 						<font>MediumSmallBold</font>
-						<visible>Stringcompare(Skin.String(RatingCountry),US)</visible>
-					</control>
-					<control type="label">
-						<posy>12</posy>
-						<height>38</height>
-						<align>center</align>
-						<label fallback="?">$INFO[Window.Property(movie.Budget),€]</label>
-						<font>MediumSmallBold</font>
-						<visible>Stringcompare(Skin.String(RatingCountry),Germany) | Stringcompare(Skin.String(RatingCountry),NL)</visible>
 					</control>
 					<control type="label">
 						<posy>37</posy>
@@ -496,25 +479,8 @@
 						<posy>12</posy>
 						<height>38</height>
 						<align>center</align>
-						<label fallback="?">$INFO[Window.Property(movie.Revenue),£]</label>
-						<font>MediumSmallBold</font>
-						<visible>IsEmpty(Skin.String(RatingCountry)) | Stringcompare(Skin.String(RatingCountry),UK)</visible>
-					</control>
-					<control type="label">
-						<posy>12</posy>
-						<height>38</height>
-						<align>center</align>
 						<label fallback="?">$INFO[Window.Property(movie.Revenue),$]</label>
 						<font>MediumSmallBold</font>
-						<visible>Stringcompare(Skin.String(RatingCountry),US)</visible>
-					</control>
-					<control type="label">
-						<posy>12</posy>
-						<height>38</height>
-						<align>center</align>
-						<label fallback="?">$INFO[Window.Property(movie.Revenue),€]</label>
-						<font>MediumSmallBold</font>
-						<visible>Stringcompare(Skin.String(RatingCountry),Germany) | Stringcompare(Skin.String(RatingCountry),NL)</visible>
 					</control>
 					<control type="label">
 						<posy>37</posy>

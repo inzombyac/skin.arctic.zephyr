@@ -139,10 +139,10 @@
 			</control>
 			<control type="image">
 				<centertop>PosterH</centertop>
-				<width>PosterW</width>
+				<width>PosterH</width>
 				<height>48</height>
 				<align>center</align>
-				<aspectratio>stretch</aspectratio>
+				<aspectratio>center</aspectratio>
 				<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
 			</control>
 			<control type="image">
@@ -173,7 +173,7 @@
 				<width>PosterH</width>
 				<height>48</height>
 				<align>center</align>
-				<aspectratio>stretch</aspectratio>
+				<aspectratio>center</aspectratio>
 				<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
 			</control>
 			<control type="image">
@@ -276,7 +276,7 @@
 					<width>PosterH</width>
 					<height>48</height>
 					<align>center</align>
-					<aspectratio>stretch</aspectratio>
+					<aspectratio>center</aspectratio>
 					<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
 				</control>
 				<control type="image">

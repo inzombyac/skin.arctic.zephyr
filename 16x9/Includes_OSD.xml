@@ -115,7 +115,7 @@
 			<description>Progress Back</description>
 			<width>100%</width>
 			<bottom>10</bottom>
-			<height>8</height>
+			<height>10</height>
 			<texture colordiffuse="Black12">common/white.png</texture>
 			<visible>Skin.HasSetting(osd.usetheme)</visible>
 		</control>
@@ -123,7 +123,7 @@
 			<description>Progress Bar</description>
 			<width>100%</width>
 			<bottom>10</bottom>
-			<height>8</height>
+			<height>10</height>
 			<info>Player.ProgressCache</info>
 			<visible>true</visible>
 			<texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
@@ -135,9 +135,19 @@
 			<description>Progress Bar</description>
 			<width>100%</width>
 			<bottom>10</bottom>
-			<height>8</height>
+			<height>10</height>
 			<info>Player.Progress</info>
 			<visible>true</visible>
+		</control>
+		<control type="slider" id="401">
+			<description>Progress Bar</description>
+			<width>100%</width>
+			<bottom>10</bottom>
+			<height>8</height>
+			<lefttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+			<visible>Player.Seeking</visible>
 		</control>
 	</include>
 	<include name="DefOSDButtons">
@@ -152,10 +162,10 @@
 		<width>226</width>
 	</include>
 	<include name="DefOSDUpDown">
-		<onup condition="IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</onup>
+		<!--<onup condition="IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</onup>
 		<onup condition="!IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</onup>
 		<ondown condition="IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</ondown>
-		<ondown condition="!IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</ondown>
+		<ondown condition="!IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</ondown>-->
 		<onup condition="Window.IsVisible(MusicOSD.xml)">3</onup>
 		<ondown condition="Window.IsVisible(MusicOSD.xml)">3</ondown>
 	</include>

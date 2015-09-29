@@ -89,13 +89,47 @@
 				<control type="image">
 					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
 				</control>
+				<control type="image">
+					<top>-14</top>
+					<left>-14</left>
+					<width>78</width>
+					<height>78</height>
+					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/search.png</texture>
+					<visible>Control.HasFocus(3635)</visible>
+				</control>
+				<control type="image">
+					<top>-14</top>
+					<left>-14</left>
+					<width>78</width>
+					<height>78</height>
+					<texture colordiffuse="PanelWhite100" border="8">special://skin/extras/icons/search.png</texture>
+					<visible>!Control.HasFocus(3635)</visible>
+				</control>
+				<control type="button" id="3635">
+					<onright>3634</onright>
+					<onleft condition="System.HasAddon(plugin.video.emby)">3636</onleft>
+					<onleft condition="!System.HasAddon(plugin.video.emby)">3634</onleft>
+					<onleft>3635</onleft>
+					<onup>303</onup>
+					<ondown>300</ondown>
+					<onclick>RunScript(script.globalsearch)</onclick>
+					<font>Button</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+				</control>
+			</control>
+			<control type="group" description="iconbox">
+				<width>50</width>
+				<height>50</height>
+				<left>100</left>
+				<control type="image">
+					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
+				</control>
 				<control id="8308" type="image">
 					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
 					<visible>false</visible>
 				</control>
 				<control type="image">
-					<top>-14</top>
-					<left>-14</left>
 					<width>78</width>
 					<height>78</height>
 					<texture diffuse="common/circle.png" colordiffuse="PanelWhite100">$VAR[HeaderIcon]</texture>
@@ -133,7 +167,7 @@
 					<left>-14</left>
 					<width>78</width>
 					<height>78</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/configure.png</texture>
+					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/logout.png</texture>
 					<visible>Control.HasFocus(3634)</visible>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 				</control>
@@ -149,37 +183,21 @@
 				<height>50</height>
 				<control type="image">
 					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
-					<visible>Control.HasFocus(3635)</visible>
 				</control>
 				<control type="image">
 					<width>50</width>
 					<height>50</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="1">special://skin/extras/icons/emby2.png</texture>
-					<visible>System.HasAddon(plugin.video.emby)</visible>
-					<visible>Control.HasFocus(3636)</visible>
-				</control>
-				<control type="image">
-					<width>50</width>
-					<height>50</height>
-					<texture >special://skin/extras/icons/emby2.png</texture>
+					<texture border="1">special://skin/extras/icons/emby2.png</texture>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 					<visible>!Control.HasFocus(3636)</visible>
+					<visible>!Container(4016).IsUpdating</visible>
 				</control>
 				<control type="image">
-					<top>-14</top>
-					<left>50</left>
-					<width>78</width>
-					<height>78</height>
-					<texture colordiffuse="PanelWhite100" border="8">special://skin/extras/icons/search.png</texture>
-					<visible>!Control.HasFocus(3635)</visible>
-				</control>
-				<control type="image">
-					<top>-14</top>
-					<left>50</left>
-					<width>78</width>
-					<height>78</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/search.png</texture>
-					<visible>Control.HasFocus(3635)</visible>
+					<width>50</width>
+					<height>50</height>
+					<texture colordiffuse="$VAR[ColourHighlight]" border="1">special://skin/extras/icons/emby_diff.png</texture>
+					<visible>Control.HasFocus(3636)</visible>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
 				</control>
 				<control type="button" id="3636">
 					<onleft>3634</onleft>
@@ -187,17 +205,6 @@
 					<onup>303</onup>
 					<ondown>300</ondown>
 					<onclick>ActivateWindow(10001,"plugin://plugin.video.emby",return)</onclick>
-					<font>Button</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-				</control>
-				<control type="button" id="3635">
-					<onleft condition="System.HasAddon(plugin.video.emby)">3636</onleft>
-					<onleft condition="!System.HasAddon(plugin.video.emby)">3635</onleft>
-					<onright>3636</onright>
-					<onup>303</onup>
-					<ondown>300</ondown>
-					<onclick>RunScript(script.globalsearch)</onclick>
 					<font>Button</font>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
@@ -1172,7 +1179,7 @@
 			<include>EmbyMainWidgetItemLayout</include>
 			<content target="video">$VAR[DefWidgetMainContent]</content>
 		</control>
-		<control type="wraplist" id="4012">
+		<control type="list" id="4012">
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),settings)</visible>
 			<top>330</top>
 			<left>SidePad</left>
@@ -1269,17 +1276,20 @@
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+Stringcompare(Skin.String(widget9),AllShows)]</visible>
+				<visible>!Container(4016).IsUpdating</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[ThumbImage]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!Stringcompare(Skin.String(widget9),AllShows)</visible>
+				<visible>!Container(4016).IsUpdating</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)</visible>
+				<visible>!Container(4016).IsUpdating</visible>
 			</control>
 			<include>PVRChannelWidget</include>
 			<control type="image">
@@ -2198,7 +2208,7 @@
 				<font>Tiny</font>
 				<selectedcolor>PanelWhite70</selectedcolor>
 				<label>$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) + !Container(4012).IsUpdating</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) + !Container(4016).IsUpdating</visible>
 			</control>
 			<control type="label">
 				<height>64</height>
@@ -2206,7 +2216,7 @@
 				<font>Tiny</font>
 				<selectedcolor>PanelWhite70</selectedcolor>
 				<label>$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)  + !Container(4012).IsUpdating</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)  + !Container(4016).IsUpdating</visible>
 				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
 			</control>
 			<control type="label">
@@ -2215,7 +2225,7 @@
 				<font>Tiny</font>
 				<selectedcolor>PanelWhite70</selectedcolor>
 				<label>$INFO[Pvr.BackendChannels] channels • [COLOR=$VAR[ColourHighlight]]$INFO[Pvr.BackendRecordings] recordings[/COLOR]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)  + !Container(4012).IsUpdating</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)  + !Container(4016).IsUpdating</visible>
 				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
 			</control>
 			<control type="label">
@@ -2224,7 +2234,7 @@
 				<font>Tiny</font>
 				<selectedcolor>PanelWhite70</selectedcolor>
 				<label>$INFO[Window(Home).Property(Music.ArtistsCount)] artists • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Music.AlbumsCount)] albums[/COLOR] • $INFO[Window(Home).Property(Music.SongsCount)] songs</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)  + !Container(4012).IsUpdating</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)  + !Container(4016).IsUpdating</visible>
 				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
 			</control>
 		</control>

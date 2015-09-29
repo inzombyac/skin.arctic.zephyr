@@ -4,6 +4,7 @@
 	<include condition="!Player.PauseEnabled">OSDFocusStop</include>
 	<include condition="Player.PauseEnabled">OSDFocusPause</include>
 	<allowoverlay>yes</allowoverlay>
+	<onload>SetProperty(osdshowinfo,1,home)</onload>
 	<onunload>ClearProperty(osdshowinfo,home)</onunload>
 	<controls>
 		<control type="group">
