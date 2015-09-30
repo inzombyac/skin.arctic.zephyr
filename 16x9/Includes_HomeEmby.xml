@@ -110,7 +110,7 @@
 					<onleft condition="System.HasAddon(plugin.video.emby)">3636</onleft>
 					<onleft condition="!System.HasAddon(plugin.video.emby)">3634</onleft>
 					<onleft>3635</onleft>
-					<onup>303</onup>
+					<onup>7788</onup>
 					<ondown>300</ondown>
 					<onclick>RunScript(script.globalsearch)</onclick>
 					<font>Button</font>
@@ -154,7 +154,7 @@
 					<onleft>3635</onleft>
 					<onright condition="System.HasAddon(plugin.video.emby)">3636</onright>
 					<onright condition="!System.HasAddon(plugin.video.emby)">3635</onright>
-					<onup>303</onup>
+					<onup>7788</onup>
 					<ondown>300</ondown>
 					<onclick>System.LogOff</onclick>
 					<font>Button</font>
@@ -202,7 +202,7 @@
 				<control type="button" id="3636">
 					<onleft>3634</onleft>
 					<onright>3635</onright>
-					<onup>303</onup>
+					<onup>7788</onup>
 					<ondown>300</ondown>
 					<onclick>ActivateWindow(10001,"plugin://plugin.video.emby",return)</onclick>
 					<font>Button</font>

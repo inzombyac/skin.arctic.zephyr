@@ -41,7 +41,7 @@
 	<include name="Furniture_NowPlaying">
 		<!-- Next Recording -->
 		<control type="group">
-			<bottom>-13</bottom>
+			<top>40</top>
 			<left>680</left>
 			<width>660</width>
 			<height>100</height>
@@ -64,7 +64,7 @@
 				<centerleft>52</centerleft>
 				<height>100</height>
 				<width>100</width>
-				<control type="image" description="Back">
+				<!-- <control type="image" description="Back">
 					<left>0</left>
 					<centertop>50%</centertop>
 					<width>100</width>
@@ -72,7 +72,7 @@
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture>progress/back.png</texture>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
+				</control> -->
 				<control type="image" description="Play">
 					<left>0</left>
 					<centertop>50%</centertop>
@@ -106,7 +106,7 @@
 					<centertop>50%</centertop>
 					<width>100</width>
 					<height>100</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">$INFO[Control.GetLabel(9666),progress/circle/p,.png]</texture>
+					<texture >$INFO[Control.GetLabel(9666),dialog/progress/p,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 					<visible>!IsEmpty(Player.Duration)</visible>
 				</control>
@@ -132,18 +132,30 @@
 					<label>$INFO[VideoPlayer.TvShowTitle,, ]$INFO[MusicPlayer.Artist,, ]$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
 				</control>
 				<control type="image">
-					<centertop>20</centertop>
-					<width>auto</width>
-					<height>auto</height>
+					<right>0</right>
+					<bottom>10</bottom>
+					<width>100</width>
 					<texture colordiffuse="$VAR[ColourHighlight]">equaliser.gif</texture>
 					<visible>!Player.Paused</visible>
 				</control>
 				<control type="image">
-					<centertop>20</centertop>
-					<width>auto</width>
-					<height>auto</height>
+					<right>0</right>
+					<bottom>10</bottom>
+					<width>100</width>
 					<texture colordiffuse="$VAR[ColourHighlight]">equaliser_stop.gif</texture>
 					<visible>Player.Paused</visible>
+				</control>
+				<control type="button" id="7788">
+					<ondown>3635</ondown>
+					<left>-100</left>
+					<width>660</width>
+					<height>90</height>
+					<disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
+					<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+					<texturefocus colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texturefocus>
+					<width>226</width>
+					<onclick>FullScreen</onclick>
 				</control>
 			</control>
 		</control>
