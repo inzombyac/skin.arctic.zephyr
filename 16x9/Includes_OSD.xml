@@ -139,16 +139,6 @@
 			<info>Player.Progress</info>
 			<visible>true</visible>
 		</control>
-		<control type="slider" id="401">
-			<description>Progress Bar</description>
-			<width>100%</width>
-			<bottom>10</bottom>
-			<height>8</height>
-			<lefttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</lefttexture>
-			<midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-			<righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
-			<visible>Player.Seeking</visible>
-		</control>
 	</include>
 	<include name="DefOSDButtons">
 		<aligny>center</aligny>
@@ -266,7 +256,6 @@
 		<value>PanelWhite30</value>
 	</variable>
 	<variable name="Music3OSDPanelWhite30">
-		<value condition="!Skin.HasSetting(osd.showtwitter)">Red</value>
 		<value condition="[Skin.HasSetting(osd.usetheme)] | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
 		<value>PanelWhite30</value>
 	</variable>

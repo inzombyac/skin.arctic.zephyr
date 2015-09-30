@@ -16,7 +16,23 @@
                 <effect type="slide" end="0,60" start="0" time="200"/>
                 <effect type="fade" end="0" start="100" time="150"/>
             </animation>
-
+			<control type="group">
+				<zorder>0</zorder>
+				<left>810</left>
+				<right>SidePad</right>
+				<height>20</height>
+				<top>95r</top>
+				<width>1030</width>
+				<control type="slider" id="401">
+					<description>Seek Slider</description>
+					<width>100%</width>
+					<height>20</height>
+					<texturesliderbar colordiffuse="00ffffff">osd/progress-end.png</texturesliderbar>
+					<textureslidernib>osd/progress-end.png</textureslidernib>
+					<textureslidernibfocus>osd/progress-end.png</textureslidernibfocus>
+					<action>seek</action>
+				</control>
+			</control>
             <control type="grouplist" id="101">
                 <top>64</top>
                 <width>100%</width>
@@ -80,21 +96,6 @@
                     <texturefocus>noop</texturefocus>
                     <label>Visual Text</label>
                     <onclick>Skin.ToggleSetting(osd.showvisualtext)</onclick>
-                </control>
-
-                <control type="button" id="9">
-                    <description>Twitter</description>
-                    <width>160</width>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <height>48</height>
-                    <font>Tiny</font>
-                    <disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
-                    <textcolor>$VAR[Music3OSDPanelWhite30]</textcolor>
-                    <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-                    <texturefocus>noop</texturefocus>
-                    <label>Twitter</label>
-                    <onclick>Skin.ToggleSetting(osd.showtwitter)</onclick>
                 </control>
             </control>
 

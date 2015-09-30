@@ -107,7 +107,8 @@
 	<variable name="PlayerPoster">
 		<value condition="!IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 		<value condition="!IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
-		<value>$INFO[Player.Art(thumb)]</value>
+		<value condition="!IsEmpty(VideoPlayer.Cover)">$INFO[VideoPlayer.Cover]</value>
+		
 	</variable>
 	<variable name="BannerImage">
 		<value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>

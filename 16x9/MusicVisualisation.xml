@@ -252,8 +252,8 @@
                         <control type="image">
                             <description>Progress Back</description>
                             <width>100%</width>
-                            <bottom>10</bottom>
-                            <height>8</height>
+                            <bottom>5</bottom>
+                            <height>10</height>
                             <texture colordiffuse="Black12">common/white.png</texture>
                             <visible>Skin.HasSetting(osd.usetheme)</visible>
                         </control>
@@ -261,8 +261,8 @@
                         <control type="progress" description="cache">
                             <description>Progress Bar</description>
                             <width>100%</width>
-                            <bottom>10</bottom>
-                            <height>8</height>
+                            <bottom>5</bottom>
+                            <height>10</height>
                             <info>Player.ProgressCache</info>
                             <visible>true</visible>
                             <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
@@ -274,8 +274,8 @@
                         <control type="progress" id="23">
                             <description>Progress Bar</description>
                             <width>100%</width>
-                            <bottom>10</bottom>
-                            <height>8</height>
+                            <bottom>5</bottom>
+                            <height>10</height>
                             <info>Player.Progress</info>
                             <visible>true</visible>
                         </control>
@@ -366,35 +366,6 @@
                     <scrollsuffix>
                     </scrollsuffix>
                 </control>
-            </control>
-        </control>
-
-        <control type="group">
-            <visible>Skin.HasSetting(osd.showtwitter)</visible>
-            <bottom>-5</bottom>
-            <height>36</height>
-            <width>100%</width>
-            <control type="label">
-                <width>100</width>
-                <height>36</height>
-                <font>Tiny</font>
-                <textcolor>Dark1</textcolor>
-                <label>[B]Twitter[/B]</label>
-                <aligny>center</aligny>
-            </control>
-            <control type="label">
-                <left>100</left>
-                <top>6</top>
-                <width>100%</width>
-                <height>24</height>
-                <font>Tiny</font>
-                <textcolor>Dark2</textcolor>
-                <scroll>true</scroll>
-                <wrapmultiline>false</wrapmultiline>
-                <scrollspeed>40</scrollspeed>
-                <scrollsuffix> ••</scrollsuffix>
-                <label fallback="19055">$INFO[Container(9301).ListItem.Property(author),[B],[/B]]$INFO[Container(9301).ListItem.Property(date), ,]$INFO[Container(9301).ListItem.Property(comment), - ","]$INFO[Container(9301).ListItem(1).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(1).Property(date), ,]$INFO[Container(9301).ListItem(1).Property(comment), - ","]$INFO[Container(9301).ListItem(2).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(2).Property(date), ,]$INFO[Container(9301).ListItem(2).Property(comment), - ","]$INFO[Container(9301).ListItem(3).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(3).Property(date), ,]$INFO[Container(9301).ListItem(3).Property(comment), - ","]$INFO[Container(9301).ListItem(4).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(4).Property(date), ,]$INFO[Container(9301).ListItem(4).Property(comment), - ","]$INFO[Container(9301).ListItem(5).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(5).Property(date), ,]$INFO[Container(9301).ListItem(5).Property(comment), - ","]$INFO[Container(9301).ListItem(6).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(6).Property(date), ,]$INFO[Container(9301).ListItem(6).Property(comment), - ","]$INFO[Container(9301).ListItem(7).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(7).Property(date), ,]$INFO[Container(9301).ListItem(7).Property(comment), - ","]$INFO[Container(9301).ListItem(8).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(8).Property(date), ,]$INFO[Container(9301).ListItem(8).Property(comment), - ","]$INFO[Container(9301).ListItem(9).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(9).Property(date), ,]$INFO[Container(9301).ListItem(9).Property(comment), - ","]$INFO[Container(9301).ListItem(10).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(10).Property(date), ,]$INFO[Container(9301).ListItem(10).Property(comment), - ","]$INFO[Container(9301).ListItem(11).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(11).Property(date), ,]$INFO[Container(9301).ListItem(11).Property(comment), - ","]$INFO[Container(9301).ListItem(12).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(12).Property(date), ,]$INFO[Container(9301).ListItem(12).Property(comment), - ","]$INFO[Container(9301).ListItem(13).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(13).Property(date), ,]$INFO[Container(9301).ListItem(13).Property(comment), - ","]$INFO[Container(9301).ListItem(14).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(14).Property(date), ,]$INFO[Container(9301).ListItem(14).Property(comment), - ","]$INFO[Container(9301).ListItem(15).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(15).Property(date), ,]$INFO[Container(9301).ListItem(15).Property(comment), - ","]$INFO[Container(9301).ListItem(16).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(16).Property(date), ,]$INFO[Container(9301).ListItem(16).Property(comment), - ","]$INFO[Container(9301).ListItem(17).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(17).Property(date), ,]$INFO[Container(9301).ListItem(17).Property(comment), - ","]$INFO[Container(9301).ListItem(18).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(18).Property(date), ,]$INFO[Container(9301).ListItem(18).Property(comment), - ","]$INFO[Container(9301).ListItem(19).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(19).Property(date), ,]$INFO[Container(9301).ListItem(19).Property(comment), - ","]</label>
-                <aligny>center</aligny>
             </control>
         </control>
 

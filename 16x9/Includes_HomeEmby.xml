@@ -2455,7 +2455,7 @@
 				<onclick>ActivateWindow(systeminfo)</onclick>
 			</item>
 			<item>
-				<label>$LOCALIZE[13271] $INFO[System.CpuUsage] • $INFO[System.CpuFrequency]</label>
+				<label>CPU: $INFO[System.CpuUsage] • $INFO[System.CpuFrequency]</label>
 				<thumb>special://skin/extras/defaulticonswide/cpu.png</thumb>
 				<property name="poster">special://skin/extras/defaulticonswide/cpu.png</property>
 				<property name="episodethumb">special://skin/extras/defaulticonswide/cpu2.png</property>
