@@ -135,14 +135,14 @@
 			<texture>$INFO[Window.Property(movie.still_original)]</texture>
 			<aspectratio aligny="center">scale</aspectratio>
 		</control>
-		<control type="image">
+		<!--<control type="image">
 			<top>3</top>
 			<left>287</left>
 			<width>32</width>
 			<height>32</height>
-			<texture>indicator/inlibrary.png</texture>
+			<texture>special://skin/extras/icons/emby2.png</texture>
 			<visible>!IsEmpty(Window.Property(movie.DBID))</visible>
-		</control>
+		</control>-->
 		<control id="7000" type="button">
 			<top>518</top>
 			<width>320</width>
@@ -325,10 +325,10 @@
 					<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
 				</control>
 				<control type="image">
-					<posy>5</posy>
-					<width>135</width>
-					<height>67</height>
-					<aspectratio align="center">scale</aspectratio>
+					<aligny>center</aligny>
+					<width>155</width>
+					<height>79</height>
+					<aspectratio align="center">keep</aspectratio>
 					<visible>!StringCompare(Window.Property(type),Season) + !StringCompare(Window.Property(type),episode)</visible>
 
 					<texture colordiffuse="Black100" fallback="info/rating/MPAA_NR_Certificate_US.png">$VAR[ExtendedRatingFlagVar,info/rating/,.png]</texture>
@@ -641,13 +641,12 @@
 				<ondown condition="Control.IsVisible(850)">850</ondown>
 				<ondown condition="Control.IsVisible(950)">950</ondown>
 				<ondown condition="Control.IsVisible(1000)">1000</ondown>
-				<label></label>
 				<onclick>dialog.close(all,true)</onclick>
-				<textcolor>Black700</textcolor>
 				<textoffsetx>20</textoffsetx>
-				<texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="5">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
-				<font>symbol</font>
+				<texturefocus>dialogvideo/watchnow.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
+				<alttexturefocus >dialogvideo/watchnow.png</alttexturefocus>
+				<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/watchnow.png</alttexturenofocus>
 				<visible>!IsEmpty(Window.Property(movie.DBID)) + !Stringcompare(Window.Property(Type),tvshow)</visible>
 			</control>
 			<control id="120" type="button">
@@ -659,13 +658,12 @@
 				<ondown condition="Control.IsVisible(850)">850</ondown>
 				<ondown condition="Control.IsVisible(950)">950</ondown>
 				<ondown condition="Control.IsVisible(1000)">1000</ondown>
-				<label></label>
 				<onclick>dialog.close(all,true)</onclick>
-				<textcolor>Black700</textcolor>
-				<textoffsetx>0</textoffsetx>
-				<texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="5">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
-				<font>symbol</font>
+				<textoffsetx>20</textoffsetx>
+				<texturefocus>dialogvideo/watchnow.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
+				<alttexturefocus >dialogvideo/watchnow.png</alttexturefocus>
+				<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/watchnow.png</alttexturenofocus>
 				<visible>!IsEmpty(Window.Property(movie.DBID)) + Stringcompare(Window.Property(Type),tvshow)</visible>
 			</control>
 			<control id="206" type="button">
@@ -677,14 +675,12 @@
 				<ondown condition="Control.IsVisible(850)">850</ondown>
 				<ondown condition="Control.IsVisible(950)">950</ondown>
 				<ondown condition="Control.IsVisible(1000)">1000</ondown>
-				<onclick>dialog.close(all,true)</onclick>
-				<label></label>
-				<textcolor>Black700</textcolor>
-				<textoffsetx>0</textoffsetx>
-				<texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="5">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
-				<font>symbol</font>
-				<visible>IntegerGreaterThan(Container(1150).NumItems,0)</visible>
+				<onclick>dialog.close(all,true)</onclick>				
+				<texturefocus>dialogvideo/trailer.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
+				<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
+				<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
+			<visible>IntegerGreaterThan(Container(1150).NumItems,0)</visible>
 			</control>
 			<control id="445" type="button" description="manage">
 				<width>222</width>
@@ -696,12 +692,10 @@
 				<ondown condition="Control.IsVisible(950)">950</ondown>
 				<ondown condition="Control.IsVisible(1000)">1000</ondown>
 				<onclick>dialog.close(all,true)</onclick>
-				<label></label>
-				<textcolor>Black700</textcolor>
-				<textoffsetx>0</textoffsetx>
-				<texturefocus colordiffuse="$INFO[Window(home).Property(ImageColor)]" border="5">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
-				<font>symbol</font>
+				<texturefocus>dialogvideo/manage.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">dialogvideo/manage.png</texturenofocus>
+				<alttexturefocus >dialogvideo/manage.png</alttexturefocus>
+				<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/manage.png</alttexturenofocus>
 			</control>
 		</control>
 		<control id="9002" type="grouplist">
@@ -729,7 +723,7 @@
 			<control id="8" type="button">
 				<width>222</width>
 				<height>116</height>
-				<textcolor>White70</textcolor>
+				<textcolor>White</textcolor>
 				<textoffsetx>0</textoffsetx>
 				<font>EPGTimeline</font>
 				<label>Watch Now</label>
@@ -747,7 +741,7 @@
 			<control id="120" type="button">
 				<width>222</width>
 				<height>116</height>
-				<textcolor>White70</textcolor>
+				<textcolor>White</textcolor>
 				<textoffsetx>0</textoffsetx>
 				<font>EPGTimeline</font>
 				<label>Watch Now</label>
@@ -774,7 +768,7 @@
 				<animation condition="!Control.HasFocus(206)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				<label>Watch Trailer</label>
 				<textoffsetx>0</textoffsetx>
-				<textcolor>White70</textcolor>
+				<textcolor>White</textcolor>
 				<textoffsetx>0</textoffsetx>
 				<font>EPGTimeline</font>
 				<visible>IntegerGreaterThan(Container(1150).NumItems,0)</visible>
@@ -791,7 +785,7 @@
 				<animation condition="!Control.HasFocus(445)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				<label>Manage</label>
 				<textoffsetx>0</textoffsetx>
-				<textcolor>White70</textcolor>
+				<textcolor>White</textcolor>
 				<textoffsetx>0</textoffsetx>
 				<font>EPGTimeline</font>
 			</control>

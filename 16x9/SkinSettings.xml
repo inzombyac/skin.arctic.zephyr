@@ -594,15 +594,6 @@
 						<selected>Skin.HasSetting(furniture.alternateindicators)</selected>
 						<onclick>Skin.ToggleSetting(furniture.alternateindicators)</onclick>
 					</control>
-					<control type="radiobutton" id="92611" description="Watched/Unwatched">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Show unwatched indicator</label>
-						<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
-						<selected>Skin.HasSetting(furniture.unwatched)</selected>
-						<onclick>Skin.ToggleSetting(furniture.unwatched)</onclick>
-					</control>
 					<control type="radiobutton" id="92612" description="Resume indicator">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9106)</visible>

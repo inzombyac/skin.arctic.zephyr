@@ -292,7 +292,7 @@
 							<left>287</left>
 							<width>32</width>
 							<height>32</height>
-							<texture>indicator/inlibrary.png</texture>
+							<texture>special://skin/extras/icons/emby2.png</texture>
 							<visible>!IsEmpty(ListItem.Property(DBID))</visible>
 						</control>
 						<control type="image">
@@ -341,7 +341,7 @@
 							<left>287</left>
 							<width>32</width>
 							<height>32</height>
-							<texture>indicator/inlibrary.png</texture>
+							<texture>special://skin/extras/icons/emby2.png</texture>
 							<visible>!IsEmpty(ListItem.Property(DBID))</visible>
 						</control>
 						<control type="image">
@@ -423,7 +423,7 @@
 						<left>287</left>
 						<width>32</width>
 						<height>32</height>
-						<texture>indicator/inlibrary.png</texture>
+						<texture>special://skin/extras/icons/emby2.png</texture>
 						<visible>!IsEmpty(Container(150).ListItemNoWrap(1).Property(DBID))</visible>
 					</control>
 					<control type="image">
@@ -461,7 +461,7 @@
 						<left>287</left>
 						<width>32</width>
 						<height>32</height>
-						<texture>indicator/inlibrary.png</texture>
+						<texture>special://skin/extras/icons/emby2.png</texture>
 						<visible>!IsEmpty(Container(150).ListItemNoWrap(2).Property(DBID))</visible>
 					</control>
 					<control type="image">
@@ -499,7 +499,7 @@
 						<left>287</left>
 						<width>32</width>
 						<height>32</height>
-						<texture>indicator/inlibrary.png</texture>
+						<texture>special://skin/extras/icons/emby2.png</texture>
 						<visible>!IsEmpty(Container(150).ListItemNoWrap(3).Property(DBID))</visible>
 					</control>
 					<control type="image">
@@ -537,7 +537,7 @@
 						<left>287</left>
 						<width>32</width>
 						<height>32</height>
-						<texture>indicator/inlibrary.png</texture>
+						<texture>special://skin/extras/icons/emby2.png</texture>
 						<visible>!IsEmpty(Container(150).ListItemNoWrap(4).Property(DBID))</visible>
 					</control>
 					<control type="image">
@@ -575,7 +575,7 @@
 						<left>287</left>
 						<width>32</width>
 						<height>32</height>
-						<texture>indicator/inlibrary.png</texture>
+						<texture>special://skin/extras/icons/emby2.png</texture>
 						<visible>!IsEmpty(Container(150).ListItemNoWrap(5).Property(DBID))</visible>
 					</control>
 					<control type="image">
