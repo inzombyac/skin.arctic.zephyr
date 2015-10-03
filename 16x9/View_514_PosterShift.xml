@@ -5,14 +5,25 @@
 			<posx>-12</posx>
 			<posy>130</posy>
 			<width>340</width>
-			<height>490</height>
+			<height>510</height>
 			<aspectratio scalediffuse="false" aligny="bottom">keep</aspectratio>
 			<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
 			<bordersize>20</bordersize>
+			<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+		</control>
+		<control type="image">
+			<posx>-12</posx>
+			<posy>130</posy>
+			<width>340</width>
+			<height>510</height>
+			<aspectratio scalediffuse="false" aligny="bottom">stretch</aspectratio>
+			<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+			<bordersize>20</bordersize>
+			<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
 		</control>
 		<control type="image">
 			<posx>8</posx>
-			<posy>601</posy>
+			<posy>621</posy>
 			<width>300</width>
 			<height>450</height>
 			<aspectratio aligny="top" scalediffuse="false">keep</aspectratio>
@@ -28,7 +39,7 @@
 				<height>29</height>
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-				<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
+				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			</control>
 			<control type="image">
 				<right>10</right>
@@ -37,6 +48,31 @@
 				<height>29</height>
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture>$VAR[PosterPercentWatched]</texture>
+				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			</control>
+			<control type="group">
+				<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<control type="image">
+					<right>10</right>
+					<top>152</top>
+					<height>29</height>
+					<width>29</width>
+					<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				</control>
+				<control type="label">
+					<right>9</right>
+					<top>152</top>
+					<height>29</height>
+					<width>30</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+					<font>Micro</font>
+					<size>18</size>
+					<scroll>false</scroll>
+					<textcolor>White</textcolor>
+				</control>
 			</control>
 		</control>
 	</include>
@@ -64,7 +100,7 @@
 					<itemlayout width="315" height="750">
 						<include>ShiftPosterThumbs</include>
 					</itemlayout>
-					<focusedlayout width="315" height="750">
+					<focusedlayout width="315" height="770">
 						<control type="group">
 							<control type="button">
 								<texturefocus>-</texturefocus>
@@ -97,7 +133,7 @@
 								<visible>Skin.HasSetting(views.discart)</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
 								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + IsEmpty(ListItem.Art(discart))</visible>
 							</control>
 							<control type="image">
 								<width>290</width>
@@ -109,7 +145,7 @@
 								<visible>Skin.HasSetting(views.discart)</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
 								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + [IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))]</visible>
 							</control>
 							<control type="image">
 								<width>290</width>
@@ -121,7 +157,7 @@
 								<visible>Skin.HasSetting(views.discart)</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
 								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)]  + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))</visible>
 							</control>
 							<control type="textbox">
 								<width>190</width>
@@ -132,7 +168,7 @@
 								<align>center</align>
 								<aligny>top</aligny>
 								<visible>Skin.HasSetting(views.discart)</visible>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(clearlogo))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(clearlogo))</visible>
 								<label> $INFO[ListItem.Label]</label>
 								<textcolor>Black</textcolor>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
@@ -140,7 +176,7 @@
 							</control>
 							<control type="group">
 								<visible>Skin.HasSetting(views.discart)</visible>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
 								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
 								<control type="image">

@@ -153,6 +153,11 @@
 			<size>24</size>
 		</font>
 		<font>
+			<name>Micro</name>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>20</size>
+		</font>
+		<font>
 			<name>Button</name>
 			<style>uppercase</style>
 			<filename>RobotoCondensed-Regular.ttf</filename>
@@ -496,6 +501,11 @@
 			<size>24</size>
 		</font>
 		<font>
+			<name>Micro</name>
+			<filename>segoe-media-center.ttf</filename>
+			<size>18</size>
+		</font>
+		<font>
 			<name>Button</name>
 			<style>uppercase</style>
 			<filename>segoe-media-center.ttf</filename>
@@ -798,6 +808,11 @@
 			<name>Mini</name>
 			<filename>arial.ttf</filename>
 			<size>24</size>
+		</font>
+		<font>
+			<name>Micro</name>
+			<filename>arial.ttf</filename>
+			<size>20</size>
 		</font>
 		<font>
 			<name>Button</name>

@@ -247,6 +247,7 @@
 		<value>common/discart/$INFO[ListItem.VideoResolution]p.png</value>
 	</variable>
 	<variable name="FakeDischandcolor">
+		<value condition="container.content(tvshows) | container.content(episodes) | container.content(seasons)">common/discart/hdtvhand.png</value>
 		<value condition="SubString(ListItem.Filename,.3D.) | SubString(ListItem.Filename,.3d.)">common/discart/3dhandcolor.png</value>
 		<value condition="SubString(ListItem.Filename, 3D.) | SubString(ListItem.Filename, 3d.)">common/discart/3dhandcolor.png</value>
 		<value condition="SubString(ListItem.Filename,.3DBD.) | SubString(ListItem.Filename,.3dbd.)">common/discart/3dhandcolor.png</value>
