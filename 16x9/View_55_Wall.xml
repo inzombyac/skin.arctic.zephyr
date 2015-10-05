@@ -43,7 +43,6 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-						<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -52,6 +51,31 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
+						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					</control>
+					<control type="group">
+						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>Micro</font>
+							<size>18</size>
+							<scroll>false</scroll>
+							<textcolor>White</textcolor>
+						</control>
 					</control>
 				</itemlayout>
 				<focusedlayout height="335" width="222">
@@ -83,7 +107,6 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-						<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -92,6 +115,31 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
+						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					</control>
+					<control type="group">
+						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>Micro</font>
+							<size>18</size>
+							<scroll>false</scroll>
+							<textcolor>White</textcolor>
+						</control>
 					</control>
 					<control type="image">
 						<left>5</left>
@@ -190,6 +238,31 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
+						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					</control>
+					<control type="group">
+						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>Micro</font>
+							<size>18</size>
+							<scroll>false</scroll>
+							<textcolor>White</textcolor>
+						</control>
 					</control>
 				</itemlayout>
 				<focusedlayout height="330" width="227">
@@ -229,7 +302,32 @@
 							<height>32</height>
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture>$VAR[PosterPercentWatched]</texture>
+							<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 						</control>
+						<control type="group">
+						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>Micro</font>
+							<size>18</size>
+							<scroll>false</scroll>
+							<textcolor>White</textcolor>
+						</control>
+					</control>
 						<control type="image">
 							<left>3</left>
 							<top>3</top>
@@ -369,6 +467,31 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
+						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					</control>
+					<control type="group">
+						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>Micro</font>
+							<size>18</size>
+							<scroll>false</scroll>
+							<textcolor>White</textcolor>
+						</control>
 					</control>
 				</itemlayout>
 				<focusedlayout height="337" width="222">
@@ -409,6 +532,31 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
+						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					</control>
+					<control type="group">
+						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<centerright>32</centerright>
+							<centertop>32</centertop>
+							<height>32</height>
+							<width>32</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>Micro</font>
+							<size>18</size>
+							<scroll>false</scroll>
+							<textcolor>White</textcolor>
+						</control>
 					</control>
 					<control type="image">
 						<left>3</left>
