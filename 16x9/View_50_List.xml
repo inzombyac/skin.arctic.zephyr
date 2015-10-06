@@ -363,17 +363,17 @@
 		<control type="image">
 			<centerright>110</centerright>
 			<centertop>32</centertop>
-			<width>35</width>
-			<height>35</height>
+			<width>40</width>
+			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
-			<texture colordiffuse="EmbyGreen">$VAR[PercentWatchedBacking]</texture>
+			<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
 			<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 		</control>
 		<control type="image">
 			<centerright>110</centerright>
 			<centertop>32</centertop>
-			<width>35</width>
-			<height>35</height>
+			<width>40</width>
+			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
 			<texture>$VAR[PercentWatched]</texture>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -381,17 +381,25 @@
 		</control>
 		<control type="group">
 			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<control type="image">
+				<centerright>110</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+			</control>
 			<control type="label">
 				<centerright>110</centerright>
 				<centertop>32</centertop>
-				<height>64</height>
+				<height>40</height>
 				<width>45</width>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
-				<font>Small</font>
+				<font>Tiny</font>
 				<scroll>false</scroll>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<textcolor>White</textcolor>
 			</control>
 		</control>
 		<control type="label">
@@ -470,17 +478,17 @@
 		<control type="image">
 			<centerright>110</centerright>
 			<centertop>32</centertop>
-			<width>35</width>
-			<height>35</height>
+			<width>40</width>
+			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
-			<texture colordiffuse="EmbyGreen">$VAR[PercentWatchedBacking]</texture>
+			<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
 			<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 		</control>
 		<control type="image">
 			<centerright>110</centerright>
 			<centertop>32</centertop>
-			<width>35</width>
-			<height>35</height>
+			<width>40</width>
+			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
 			<texture>$VAR[PercentWatched]</texture>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -488,17 +496,25 @@
 		</control>
 		<control type="group">
 			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<control type="image">
+				<centerright>110</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+			</control>
 			<control type="label">
 				<centerright>110</centerright>
 				<centertop>32</centertop>
-				<height>64</height>
+				<height>40</height>
 				<width>45</width>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
-				<font>Small</font>
+				<font>Tiny</font>
 				<scroll>false</scroll>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<textcolor>White</textcolor>
 			</control>
 		</control>
 		<control type="label">
