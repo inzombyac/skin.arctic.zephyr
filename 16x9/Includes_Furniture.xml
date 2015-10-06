@@ -211,7 +211,7 @@
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<left>SidePad</left>
+			<left>0</left>
 			<centerbottom>30</centerbottom>
 			<width>1920</width>
 			<height>120</height>
@@ -219,7 +219,7 @@
 			<align>left</align>
 			<itemgap>10</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
-			<control type="group">
+			<!-- <control type="group">
 				<centertop>50%</centertop>
 				<width>73</width>
 				<height>50</height>
@@ -245,7 +245,7 @@
 					<texture colordiffuse="Dark1">flags/sets.png</texture>
 					<visible>substring(ListItem.Path,videodb://movies/sets,left)</visible>
 				</control>
-			</control>
+			</control> -->
 			<control type="image">
 				<posx>50</posx>
 				<width>64</width>
@@ -495,7 +495,7 @@
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<left>SidePad</left>
+			<left>0</left>
 			<centerbottom>60</centerbottom>
 			<width>1920</width>
 			<height>120</height>
@@ -517,7 +517,7 @@
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<left>SidePad</left>
+			<left>0</left>
 			<centerbottom>30</centerbottom>
 			<width>1400</width>
 			<height>120</height>
@@ -525,7 +525,7 @@
 			<align>left</align>
 			<itemgap>24</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
-			<control type="group">
+			<!-- <control type="group">
 				<centertop>50%</centertop>
 				<width>73</width>
 				<height>50</height>
@@ -558,7 +558,7 @@
 					<texture colordiffuse="Dark1">flags/sets.png</texture>
 					<visible>substring(ListItem.Path,videodb://movies/sets,left)</visible>
 				</control>
-			</control>
+			</control> -->
 			<control type="image">
 				<width>48</width>
 				<height>64</height>
@@ -925,10 +925,21 @@
 					<height>64</height>
 					<align>left</align>
 					<aligny>center</aligny>
+					<label>$INFO[ListItem.Year,, ·][COLOR gray]$INFO[ListItem.Studio, ,][/COLOR]</label>
+					<font>Flag</font>
+					<textcolor>White</textcolor>
+					<visible>Control.IsVisible(53) + !IsEmpty(ListItem.Year)</visible>
+				</control>
+				<control type="label">
+					<width min="128">auto</width>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
 					<label>$INFO[ListItem.Genre] · [COLOR gray]$INFO[ListItem.Studio][/COLOR]</label>
 					<font>Flag</font>
 					<textcolor>White</textcolor>
-					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(500)] + !IsEmpty(ListItem.Genre) + !IsEmpty(ListItem.Studio)</visible>
+					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52)  | Control.IsVisible(500)] + !IsEmpty(ListItem.Genre) + !IsEmpty(ListItem.Studio)</visible>
 				</control>
 				<control type="label">
 					<width min="128">auto</width>
@@ -950,7 +961,7 @@
 					<label>[COLOR gray]$INFO[ListItem.Studio][/COLOR]</label>
 					<font>Flag</font>
 					<textcolor>White</textcolor>
-					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(500)] + IsEmpty(ListItem.Genre) + !IsEmpty(ListItem.Studio)</visible>
+					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52)  | Control.IsVisible(500)] + IsEmpty(ListItem.Genre) + !IsEmpty(ListItem.Studio)</visible>
 				</control>
 				<control type="label">
 					<width min="128">auto</width>
@@ -1499,7 +1510,7 @@
 			<align>left</align>
 			<itemgap>10</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
-			<control type="group">
+			<!-- <control type="group">
 				<visible>!StringCompare(Container(300).ListItem.Property(widget),LiveTV) + !StringCompare(Container(300).ListItem.Property(widget),Weather) + !StringCompare(Container(300).ListItem.Property(widget),NextAired) + !StringCompare(Container(300).ListItem.Property(widget),Favourites) + !substring(Container(300).ListItem.Property(widget),Albums)</visible>
 				<centertop>50%</centertop>
 				<width>73</width>
@@ -1518,7 +1529,7 @@
 					<font>Medium</font>
 					<textcolor>$VAR[ColourHighlight]</textcolor>
 				</control>
-			</control>
+			</control> -->
 			<control type="image">
 				<width>64</width>
 				<height>64</height>
