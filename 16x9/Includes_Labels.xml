@@ -10,6 +10,7 @@
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered]</value>
 		<value condition="!IsEmpty(Container(3012).ListItem.Year)">$INFO[Container(3012).ListItem.Year]</value>
 		<value condition="!IsEmpty(ListItem.Year)">$INFO[ListItem.Year]</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(episodes)| Container.Content(seasons)]">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
 	</variable>
 	<variable name="LabelEpisodeZero">
 		<value condition="!IntegerGreaterThan(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
