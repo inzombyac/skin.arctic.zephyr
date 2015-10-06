@@ -100,7 +100,6 @@
 								<height>40</height>
 								<aspectratio aligny="top">keep</aspectratio>
 								<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-								<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 							</control>
 							<control type="image">
 								<left>647</left>
@@ -252,7 +251,6 @@
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-							<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 						</control>
 						<control type="image">
 							<right>124</right>
@@ -463,7 +461,6 @@
 								<height>40</height>
 								<aspectratio aligny="top">keep</aspectratio>
 								<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-								<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 							</control>
 							<control type="image">
 								<left>647</left>

@@ -44,7 +44,6 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
 						<visible>!stringcompare(ListItem.Label,..)</visible>
-						<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -110,7 +109,6 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
 						<visible>!stringcompare(ListItem.Label,..)</visible>
-						<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>

@@ -61,7 +61,6 @@
 				<height>32</height>
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-				<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 			</control>
 			<control type="image">
 				<top>8</top>
