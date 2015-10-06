@@ -15,7 +15,7 @@
 				<include>Animation.Common</include>
 				<left>SidePad</left>
 				<right>SidePad</right>
-				<top>PosterPad</top>
+				<top>190</top>
 				<height>650</height>
 				<control type="image">
 					<left>-8</left>
@@ -38,23 +38,23 @@
 					</control>
 					<control type="image">
 						<top>0</top>
-						<left>100</left>
-						<width>200</width>
-						<height>170</height>
+						<left>0</left>
+						<width>300</width>
+						<height>200</height>
 						<texture background="true" fallback="windows/pvr/defaultchannel.png">$INFO[ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!Player.HasVideo + Skin.HasSetting(EPGArt.Enabled)</visible>
 					</control>
 					<control type="videowindow">
 						<top>5</top>
-						<left>-27</left>
-						<width>460</width>
-						<height>155</height>
+						<left>-50</left>
+						<width>400</width>
+						<height>200</height>
 						<visible>Player.HasVideo</visible>
 					</control>
 					<control type="label">
 						<top>-10</top>
-						<left>425</left>
+						<left>310</left>
 						<aligny>center</aligny>
 						<height>32</height>
 						<font>SmallBold</font>
@@ -65,7 +65,7 @@
 					</control>
 					<control type="label">
 						<top>-10</top>
-						<left>425</left>
+						<left>310</left>
 						<aligny>center</aligny>
 						<height>32</height>
 						<font>SmallBold</font>
@@ -76,7 +76,7 @@
 					</control>
 					<control type="label">
 						<top>26</top>
-						<left>425</left>
+						<left>310</left>
 						<aligny>center</aligny>
 						<height>26</height>
 						<font>TinyBold</font>
@@ -85,7 +85,7 @@
 						<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]$INFO[ListItem.Genre, • ]</label>
 					</control>
 					<control type="label">
-						<top>130</top>
+						<top>160</top>
 						<right>0</right>
 						<align>right</align>
 						<aligny>center</aligny>
@@ -97,10 +97,10 @@
 					</control>
 					<control type="textbox">
 						<top>50</top>
-						<left>425</left>
-						<height>105</height>
+						<left>310</left>
+						<height>110</height>
 						<align>justify</align>
-						<font>Tiny</font>
+						<font>Small</font>
 						<textcolor>PanelWhite100</textcolor>
 						<selectedcolor>PanelWhite100</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
@@ -119,10 +119,10 @@
 					<rulerunit>6</rulerunit>
 					<rulerlayout height="40" width="40">
 						<control type="label" id="2">
-							<left>0</left>
+							<left>55</left>
 							<width>425</width>
 							<height>40</height>
-							<font>EPGTimeline</font>
+							<font>Small</font>
 							<label>$INFO[ListItem.Label]</label>
 							<textcolor>Dark2</textcolor>
 							<shadowcolor>55000000</shadowcolor>
