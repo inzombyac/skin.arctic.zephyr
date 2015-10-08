@@ -72,7 +72,7 @@
                     </control>  
                     <control type="group">
                         <left>290</left>
-                        <visible>VideoPlayer.Content(LiveTV) + IsEmpty(Player.Art(thumb))</visible>
+                        <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb))</visible>
                         <include>OSDInfoContent</include>
                     </control> 
                     <control type="group">

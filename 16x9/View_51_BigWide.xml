@@ -142,7 +142,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PercentWatchedBacking]</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
 						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="image">
@@ -242,7 +242,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PercentWatchedBacking]</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
 						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="image">
@@ -885,7 +885,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PercentWatchedBacking]</texture>
+						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
 						<!-- <visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible> -->
 					</control>
 					<control type="image">

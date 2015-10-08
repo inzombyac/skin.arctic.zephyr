@@ -690,7 +690,7 @@
 									<width>32</width>
 									<height>32</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay8VarOrigWatchedBacking]</texture>
+									<texture colordiffuse="$VAR[ColourHighlight]">$VAR[IconOverlay8VarOrigWatchedBacking]</texture>
 								</control>
 								<control type="image">
 									<posx>154</posx>
@@ -747,7 +747,7 @@
 									<width>33</width>
 									<height>33</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay7VarOrigWatchedBacking]</texture>
+									<texture colordiffuse="$VAR[ColourHighlight]">$VAR[IconOverlay7VarOrigWatchedBacking]</texture>
 								</control>
 								<control type="image">
 									<posx>193</posx>
@@ -804,7 +804,7 @@
 									<width>34</width>
 									<height>34</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay6VarOrigWatchedBacking]</texture>
+									<texture colordiffuse="$VAR[ColourHighlight]">$VAR[IconOverlay6VarOrigWatchedBacking]</texture>
 								</control>
 								<control type="image">
 									<posx>230</posx>
@@ -861,7 +861,7 @@
 									<width>35</width>
 									<height>35</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay5VarOrigWatchedBacking]</texture>
+									<texture colordiffuse="$VAR[ColourHighlight]">$VAR[IconOverlay5VarOrigWatchedBacking]</texture>
 								</control>
 								<control type="image">
 									<posx>268</posx>
@@ -918,7 +918,7 @@
 									<width>36</width>
 									<height>36</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay4VarOrigWatchedBacking]</texture>
+									<texture colordiffuse="$VAR[ColourHighlight]">$VAR[IconOverlay4VarOrigWatchedBacking]</texture>
 								</control>
 								<control type="image">
 									<posx>304</posx>
@@ -975,7 +975,7 @@
 									<width>37</width>
 									<height>37</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay3VarOrigWatchedBacking]</texture>
+									<texture colordiffuse="$VAR[ColourHighlight]">$VAR[IconOverlay3VarOrigWatchedBacking]</texture>
 								</control>
 								<control type="image">
 									<posx>343</posx>
@@ -1032,7 +1032,7 @@
 									<width>39</width>
 									<height>39</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay2VarOrigWatchedBacking]</texture>
+									<texture colordiffuse="$VAR[ColourHighlight]">$VAR[IconOverlay2VarOrigWatchedBacking]</texture>
 								</control>
 								<control type="image">
 									<posx>378</posx>
@@ -1089,7 +1089,7 @@
 									<width>40</width>
 									<height>40</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay1VarOrigWatchedBacking]</texture>
+									<texture colordiffuse="$VAR[ColourHighlight]">$VAR[IconOverlay1VarOrigWatchedBacking]</texture>
 								</control>
 								<control type="image">
 									<posx>418</posx>
@@ -1216,7 +1216,7 @@
 									<width>42</width>
 									<height>42</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay0VarOrigWatchedBacking]</texture>
+									<texture colordiffuse="$VAR[ColourHighlight]">$VAR[IconOverlay0VarOrigWatchedBacking]</texture>
 									<visible>!IntegerGreaterThan(ListItem(0).Property(UnwatchedEpisodes),0)</visible>
 								</control>
 								<control type="image">

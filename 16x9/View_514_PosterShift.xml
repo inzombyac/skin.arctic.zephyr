@@ -38,7 +38,7 @@
 				<width>29</width>
 				<height>29</height>
 				<aspectratio aligny="top">keep</aspectratio>
-				<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
+				<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
 				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			</control>
 			<control type="image">
