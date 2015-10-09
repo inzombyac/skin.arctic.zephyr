@@ -2353,6 +2353,10 @@
 		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,0)">star5</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,1)">star10</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,0)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,1)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,2)">star10</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,1)">star5</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,2)">star10</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeFlagstar2">
@@ -2360,6 +2364,10 @@
 		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,2)">star5</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,3)">star10</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,2)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,3)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,4)">star10</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,3)">star5</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,4)">star10</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeFlagstar3">
@@ -2367,6 +2375,10 @@
 		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,4)">star5</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,5)">star10</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,4)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,5)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,6)">star10</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,5)">star5</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,6)">star10</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeFlagstar4">
@@ -2374,6 +2386,10 @@
 		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,6)">star5</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,7)">star10</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,6)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,7)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,8)">star10</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,7)">star5</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,8)">star10</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeFlagstar5">
@@ -2381,15 +2397,19 @@
 		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,8)">star5</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,9)">star10</value>
 		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,8)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,9)">star5</value>
+		<value condition="Control.HasFocus(4016)+StringCompare(Container(4016).ListItem.StarRating,10)">star10</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,9)">star5</value>
+		<value condition="Control.HasFocus(4017)+StringCompare(Container(4017).ListItem.StarRating,10)">star10</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
-		<value condition="Control.HasFocus(4016) +StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4016).ListItem.TVShowTitle,, •] $INFO[Container(4016).ListItem.Premiered,, •] $INFO[Container(4016).ListItem.Season,,x]$INFO[Container(4016).ListItem.Episode,, ] $INFO[Container(4016).ListItem.Label,• ,]</value>
-		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4017).ListItem.TVShowTitle,, •] $INFO[Container(4017).ListItem.Premiered,, •] $INFO[Container(4017).ListItem.Season,,x]$INFO[Container(4017).ListItem.Episode,, ] $INFO[Container(4017).ListItem.Label,• ,]</value>
+		<value condition="Control.HasFocus(4016) +StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4016).ListItem.TVShowTitle,, •] $INFO[Container(4016).ListItem.Premiered,, •] $VAR[LabelSeasonZero]$INFO[Container(4016).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4016).ListItem.Episode,, • ]$INFO[Container(4016).ListItem.Title]</value>
+		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4017).ListItem.TVShowTitle,, •] $INFO[Container(4017).ListItem.Premiered,, •] $VAR[LabelSeasonZero]$INFO[Container(4017).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4017).ListItem.Episode,, • ]$INFO[Container(4017).ListItem.Title]</value>
 		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(4016).ListItem.Label,, •] $INFO[Container(4016).ListItem.Year]</value>
 		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(4017).ListItem.Label,, •] $INFO[Container(4017).ListItem.Year]</value>
-		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4017).ListItem.Artist,, •] $INFO[Container(4017).ListItem.Label,, •]$INFO[Container(4017).ListItem.Year]</value>
-		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4016).ListItem.Artist,, •] $INFO[Container(4016).ListItem.Label,, •]$INFO[Container(4016).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4017).ListItem.Artist,, •] $INFO[Container(4017).ListItem.Label,,]$INFO[Container(4017).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4016).ListItem.Artist,, •] $INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
 	</variable>
 	
 	<include name="EmbyFooter">
@@ -2411,6 +2431,7 @@
 				<selectedcolor>PanelWhite70</selectedcolor>
 				<label>$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</label>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) + !Container(4016).IsUpdating</visible>
+				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
 			</control>
 			<control type="label">
 				<height>64</height>
@@ -2476,7 +2497,7 @@
 			<visible>Control.HasFocus(4016) | Control.HasFocus(4017) </visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<left>928</left>
+			<left>SidePad</left>
 			<centerbottom>30</centerbottom>
 			<width>1400</width>
 			<height>40</height>
@@ -2489,7 +2510,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar1].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID))</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2497,7 +2518,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar2].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID))</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2505,7 +2526,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar3].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID))</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2513,7 +2534,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar4].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID))</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2521,7 +2542,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar5].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID))</visible>
 			</control>
 			<control type="group">
 				<centertop>50%</centertop>

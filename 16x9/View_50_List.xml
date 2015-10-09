@@ -346,8 +346,19 @@
 			<font>SmallBold</font>
 			<textcolor>Light1</textcolor>
 			<selectedcolor>Light1</selectedcolor>
-			<label>$INFO[ListItem.Label]</label>
-			<visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
+			<label>$INFO[ListItem.TVShowTitle]</label>
+			<visible>Container.Content(tvshows)</visible>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Light1</textcolor>
+			<selectedcolor>Light1</selectedcolor>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, : ]$INFO[ListItem.Title]</label>
+			<visible>Container.Content(episodes)</visible>
 		</control>
 		<control type="label">
 			<right>154</right>
@@ -459,10 +470,21 @@
 			<aligny>center</aligny>
 			<height>64</height>
 			<font>SmallBold</font>
-			<label>$INFO[ListItem.Label]</label>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
-			<visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
+			<label>$INFO[ListItem.TVShowTitle]</label>
+			<visible>Container.Content(tvshows)</visible>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, : ]$INFO[ListItem.Title]</label>
+			<visible>Container.Content(episodes)</visible>
 		</control>
 		<control type="label">
 			<right>154</right>

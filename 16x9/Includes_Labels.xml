@@ -13,9 +13,25 @@
 		<value condition="[Container.Content(tvshows) | Container.Content(episodes)| Container.Content(seasons)]">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
 	</variable>
 	<variable name="LabelEpisodeZero">
-		<value condition="!IntegerGreaterThan(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
-		<value condition="IsEmpty(ListItem.Episode)">$NUMBER[0]$NUMBER[0]</value>
-	</variable>
+        <value condition="!IntegerGreaterThan(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
+        <value condition="IsEmpty(ListItem.Episode)">$NUMBER[0]$NUMBER[0]</value>
+    </variable>      
+    <variable name="LabelEpisodeZero2">
+        <value condition="!IntegerGreaterThan(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
+        <value condition="!IntegerGreaterThan(Container(301).ListItem.Episode,9) + !substring(Container(301).ListItem.Episode,S) + !IsEmpty(Container(301).ListItem.Episode)">$NUMBER[0]</value>
+        <value condition="!IntegerGreaterThan(Container(9500).ListItem.Episode,9) + !substring(Container(9500).ListItem.Episode,S) + !IsEmpty(Container(9500).ListItem.Episode)">$NUMBER[0]</value>
+		<value condition="!IntegerGreaterThan(Container(4016).ListItem.Episode,9) + !substring(Container(4016).ListItem.Episode,S) + !IsEmpty(Container(4016).ListItem.Episode)">$NUMBER[0]</value>		
+		<value condition="!IntegerGreaterThan(Container(4017).ListItem.Episode,9) + !substring(Container(4017).ListItem.Episode,S) + !IsEmpty(Container(4017).ListItem.Episode)">$NUMBER[0]</value>	
+        <value condition="!IntegerGreaterThan(VideoPlayer.Episode,9) + !substring(VideoPlayer.Episode,S) + !IsEmpty(VideoPlayer.Episode)">$NUMBER[0]</value>
+    </variable>  
+    <variable name="LabelSeasonZero">
+        <value condition="!IntegerGreaterThan(ListItem.Season,9) + !substring(ListItem.Season,S) + !IsEmpty(ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="!IntegerGreaterThan(Container(301).ListItem.Season,9) + !substring(Container(301).ListItem.Season,S) + !IsEmpty(Container(301).ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="!IntegerGreaterThan(Container(9500).ListItem.Season,9) + !substring(Container(9500).ListItem.Season,S) + !IsEmpty(Container(9500).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="!IntegerGreaterThan(Container(4016).ListItem.Season,9) + !substring(Container(4016).ListItem.Season,S) + !IsEmpty(Container(4016).ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="!IntegerGreaterThan(Container(4017).ListItem.Season,9) + !substring(Container(4017).ListItem.Season,S) + !IsEmpty(Container(4017).ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="!IntegerGreaterThan(VideoPlayer.Season,9) + !substring(VideoPlayer.Season,S) + !IsEmpty(VideoPlayer.Season)">S$NUMBER[0]</value>
+    </variable>    
 	<variable name="LabelDirector">
 		<value condition="Container.Content(songs)">$INFO[ListItem.Label]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
@@ -592,6 +608,11 @@
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="ColourHighlight">
+		<value condition="Skin.HasSetting(ColourHighlight)">$INFO[Skin.String(focuscolor.name)]</value>
+		<value condition="!Skin.HasSetting(ColourHighlight)">Highlight</value>
+	</variable>
+	<variable name="ColourPosterHighlight">
+		<value condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">Red</value>
 		<value condition="Skin.HasSetting(ColourHighlight)">$INFO[Skin.String(focuscolor.name)]</value>
 		<value condition="!Skin.HasSetting(ColourHighlight)">Highlight</value>
 	</variable>

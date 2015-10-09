@@ -63,6 +63,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
+						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
@@ -141,6 +142,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
+						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
@@ -153,8 +155,8 @@
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 						<control type="label">
-							<left>373</left>
-							<centertop>40</centertop>
+							<left>374</left>
+							<centertop>39</centertop>
 							<height>40</height>
 							<width>50</width>
 							<align>center</align>
@@ -216,7 +218,7 @@
 					<font>MediumSmall</font>
 					<label>$VAR[LabelPlotBox]</label>
 					<textcolor>Dark2</textcolor>
-					<height>164</height>
+					<height>171</height>
 					<align>justify</align>
 				</control>
 			</control>
