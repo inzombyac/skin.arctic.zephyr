@@ -693,19 +693,19 @@
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1622</left>
-			<top>950</top>
+			<top>960</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<control type="image">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<texture>$VAR[ClearLogo]</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -718,7 +718,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -731,7 +731,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -744,7 +744,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -757,7 +757,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -770,7 +770,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -788,12 +788,12 @@
 			<visible>!Player.HasMedia</visible>
 			<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible>
 			<left>1622</left>
-			<top>931</top>
+			<top>960</top>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<control id="8308" type="image">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<texture fallback="empty.png">$VAR[MusicClearLogo]</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
@@ -801,7 +801,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -814,7 +814,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -827,7 +827,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -840,7 +840,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -853,7 +853,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -866,7 +866,7 @@
 			</control>
 			<control type="textbox">
 				<width>258</width>
-				<height>130</height>
+				<height>120</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>

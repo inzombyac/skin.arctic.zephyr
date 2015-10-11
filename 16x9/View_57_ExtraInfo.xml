@@ -103,7 +103,7 @@
             <left>70</left>
             <width>587</width>
             <top>206</top>
-            <height>660</height>
+            <height>900</height>
             <control type="group">
                 <height>330</height>
                 <visible>!Skin.HasSetting(57list.low)</visible>
@@ -144,13 +144,13 @@
                 <left>20</left>
                 <right>20</right>
                 <posy>330</posy>
-                <height>330</height>
+                <height>430</height>
                 
                 <control type="label">
                     <top>10</top>
                     <aligny>center</aligny>
                     <height>64</height>
-                    <font>SmallBold</font>
+                    <font>MediumBold</font>
                     <textcolor>Dark1</textcolor>
                     <selectedcolor>Dark1</selectedcolor>
                     <label>$VAR[LabelDirector]</label>
@@ -159,16 +159,15 @@
                     <top>50</top>
                     <height>64</height>
                     <aligny>center</aligny>
-                    <font>Tiny</font>
+                    <font>TwentyEight</font>
                     <textcolor>Dark1</textcolor>
                     <selectedcolor>Dark1</selectedcolor>
                     <label>$VAR[LabelGenre]</label>
                 </control>
                 <control type="textbox">
-                    <top>125</top>
-                    <bottom>19</bottom>
+                    <top>125</top>			
                     <align>justify</align>
-                    <font>Tiny</font>
+                    <font>TwentyEight</font>
                     <textcolor>Dark1</textcolor>
                     <selectedcolor>Dark1</selectedcolor>
                     <label>$VAR[LabelPlotBox]</label>

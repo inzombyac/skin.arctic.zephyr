@@ -130,27 +130,69 @@
 			<visible>!IsEmpty(ListItem.Icon)</visible>
 			<control type="image">
 				<top>PosterH</top>
+				<width>PosterW</width>
+				<height>PosterH</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+				<visible>Skin.HasSetting(show.reflections)</visible>
+				<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+			</control>
+				<control type="image">
+				<top>PosterH</top>
 				<width>PosterH</width>
 				<height>PosterH</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
 				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
 				<visible>Skin.HasSetting(show.reflections)</visible>
+				<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
 			</control>
-			<control type="image">
+				<control type="image">
 				<centertop>PosterH</centertop>
 				<width>PosterH</width>
 				<height>48</height>
 				<align>center</align>
 				<aspectratio>center</aspectratio>
 				<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
+				<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
 			</control>
 			<control type="image">
+				<centertop>PosterH</centertop>
+				<width>PosterW</width>
+				<height>48</height>
+				<align>center</align>
+				<aspectratio>stretch</aspectratio>
+				<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
+				<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+			</control>
+			<control type="image">
+				<width>PosterW</width>
+				<height>PosterH</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+				<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+			</control>
+				<control type="image">
 				<width>PosterH</width>
 				<height>PosterH</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
+				<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+			</control>
+			<control type="progress">
+				<centertop>PosterH</centertop>
+				<width>PosterW</width>
+				<height>10</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
 			</control>
 		</control>
 	</include>
@@ -357,7 +399,7 @@
 			<font>SmallBold</font>
 			<textcolor>Light1</textcolor>
 			<selectedcolor>Light1</selectedcolor>
-			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, : ]$INFO[ListItem.Title]</label>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
 			<visible>Container.Content(episodes)</visible>
 		</control>
 		<control type="label">
@@ -371,7 +413,21 @@
 			<selectedcolor>Light1</selectedcolor>
 			<label>$VAR[LabelDuration]</label>
 		</control>
-		<control type="image">
+		<control type="progress">
+			<centerright>110</centerright>
+			<centertop>32</centertop>
+			<width>67</width>
+			<height>19</height>
+			<reveal>true</reveal>
+			<texturebg>pvr/progress-back.png</texturebg>
+			<lefttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</lefttexture>
+			<midtexture colordiffuse="EmbyGreen">pvr/progress-mid.png</midtexture>
+			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
+			<info>ListItem.PercentPlayed</info>
+			<colordiffuse>Light1</colordiffuse>
+			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+		</control>
+		<!-- <control type="image">
 			<centerright>110</centerright>
 			<centertop>32</centertop>
 			<width>40</width>
@@ -389,7 +445,7 @@
 			<texture>$VAR[PercentWatched]</texture>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 			<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
-		</control>
+		</control> -->
 		<control type="group">
 			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			<control type="image">
@@ -462,7 +518,42 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<animation effect="slide" start="0" end="-90" time="0" condition="!Container.Content(movies)">Conditional</animation>
-			<visible>!Container.Content(episodes) + !Container.Content(tvshows)</visible>
+			<visible>Container.Content(seasons)+!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+		</control>
+			<control type="label">
+			<posx>120</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<label>$INFO[ListItem.Label]</label>
+			<textcolor>Dark3</textcolor>
+			<selectedcolor>Dark3</selectedcolor>
+			<animation effect="slide" start="0" end="-90" time="0" condition="!Container.Content(movies)">Conditional</animation>
+			<visible>Container.Content(seasons)+stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+		</control>
+		<control type="label">
+			<posx>120</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<label>$INFO[ListItem.Label]</label>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<animation effect="slide" start="0" end="-90" time="0" condition="!Container.Content(movies)">Conditional</animation>
+			<visible>!Container.Content(episodes) + !Container.Content(tvshows)+ !Container.Content(seasons)</visible>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Dark3</textcolor>
+			<selectedcolor>Dark3</selectedcolor>
+			<label>$INFO[ListItem.TVShowTitle]</label>
+			<visible>Container.Content(tvshows)+stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>30</posx>
@@ -473,7 +564,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$INFO[ListItem.TVShowTitle]</label>
-			<visible>Container.Content(tvshows)</visible>
+			<visible>Container.Content(tvshows)+!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>30</posx>
@@ -483,8 +574,19 @@
 			<font>SmallBold</font>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
-			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, : ]$INFO[ListItem.Title]</label>
-			<visible>Container.Content(episodes)</visible>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<visible>Container.Content(episodes) + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Dark3</textcolor>
+			<selectedcolor>Dark3</selectedcolor>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<visible>Container.Content(episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<right>154</right>
@@ -497,7 +599,7 @@
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[LabelDuration]</label>
 		</control>
-		<control type="image">
+		<!-- <control type="image">
 			<centerright>110</centerright>
 			<centertop>32</centertop>
 			<width>40</width>
@@ -515,6 +617,20 @@
 			<texture>$VAR[PercentWatched]</texture>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 			<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+		</control> -->
+		<control type="progress">
+			<centerright>110</centerright>
+			<centertop>32</centertop>
+			<width>67</width>
+			<height>19</height>
+			<reveal>true</reveal>
+			<texturebg>pvr/progress-back.png</texturebg>
+			<lefttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</lefttexture>
+			<midtexture colordiffuse="EmbyGreen">pvr/progress-mid.png</midtexture>
+			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
+			<info>ListItem.PercentPlayed</info>
+			<colordiffuse>Dark1</colordiffuse>
+			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
 		</control>
 		<control type="group">
 			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>

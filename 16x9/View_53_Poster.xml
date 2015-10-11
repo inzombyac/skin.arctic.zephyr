@@ -209,7 +209,7 @@
 				</control>
 				<control type="label">
 					<font>Small</font>
-					<label>$INFO[ListItem.Genre]</label>
+					<label>$INFO[ListItem.Year,,]$INFO[ListItem.Genre, • ,]</label>
 					<textcolor>Dark1</textcolor>
 					<height>42</height>
 					<aligny>top</aligny>
@@ -218,7 +218,7 @@
 					<font>MediumSmall</font>
 					<label>$VAR[LabelPlotBox]</label>
 					<textcolor>Dark2</textcolor>
-					<height>171</height>
+					<height>175</height>
 					<align>justify</align>
 				</control>
 			</control>
