@@ -179,7 +179,7 @@
 			<left>70</left>
 			<width>645</width>
 			<top>206</top>
-			<height>660</height>
+			<height>680</height>
 			<control type="group">
 				<height>330</height>
 				<control type="image">
@@ -242,7 +242,7 @@
 					<top>125</top>
 					<bottom>17</bottom>
 					<align>justify</align>
-					<font>Tiny</font>
+					<font>TwentyEight</font>
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
 					<label fallback="19055">$INFO[ListItem.Plot]</label>
@@ -757,7 +757,7 @@
 								<top>70</top>
 								<height>128</height>
 								<align>justify</align>
-								<font>Tiny</font>
+								<font>TwentyEight</font>
 								<textcolor>Dark1</textcolor>
 								<selectedcolor>Dark1</selectedcolor>
 								<label>$INFO[ListItem.Plot]</label>
@@ -851,7 +851,7 @@
 								<top>120</top>
 								<height>128</height>
 								<align>justify</align>
-								<font>Tiny</font>
+								<font>TwentyEight</font>
 								<textcolor>Dark1</textcolor>
 								<selectedcolor>Dark1</selectedcolor>
 								<autoscroll>false</autoscroll>
@@ -906,7 +906,7 @@
 								<top>70</top>
 								<height>128</height>
 								<align>justify</align>
-								<font>Tiny</font>
+								<font>TwentyEight</font>
 								<textcolor>Light1</textcolor>
 								<selectedcolor>Light1</selectedcolor>
 								<label>$INFO[ListItem.Plot]</label>
@@ -999,7 +999,7 @@
 								<top>120</top>
 								<height>128</height>
 								<align>justify</align>
-								<font>Tiny</font>
+								<font>TwentyEight</font>
 								<textcolor>Light1</textcolor>
 								<selectedcolor>Light1</selectedcolor>
 								<label>$INFO[ListItem.Plot]</label>
@@ -1170,12 +1170,6 @@
 			</control>
 		</focusedchannellayout>
 	</include>
-
-	<variable name="PVRChannelZero">
-		<value condition="!IntegerGreaterThan(ListItem.ChannelNumber,9)">$NUMBER[0]$NUMBER[0]</value>
-		<value condition="!IntegerGreaterThan(ListItem.ChannelNumber,99)">$NUMBER[0]</value>
-	</variable>
-
 	<include name="PVRView_52">
 		<control type="group">
 			<visible>Control.IsVisible(52)</visible>
@@ -1375,7 +1369,7 @@
 			</control>
 			<control type="group">
 				<top>701</top>
-				<height>165</height>
+				<height>300</height>
 				<left>70</left>
 				<right>70</right>
 				<control type="image">
@@ -1387,7 +1381,7 @@
 				</control>
 				<control type="image">
 					<right>20</right>
-					<top>20</top>
+					<bottom>20</bottom>
 					<width>250</width>
 					<height>125</height>
 					<aspectratio align="right">keep</aspectratio>
@@ -1421,10 +1415,10 @@
 					<left>30</left>
 					<right>280</right>
 					<top>70</top>
-					<height>65</height>
+					<height>200</height>
 					<align>left</align>
 					<aligny>top</aligny>
-					<font>Tiny</font>
+					<font>TwentyEight</font>
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
 					<label>$INFO[ListItem.Plot]</label>
@@ -1433,4 +1427,8 @@
 			<include>Furniture_Scrollbar</include>
 		</control>
 	</include>
+	<variable name="PVRChannelZero">
+		<value condition="!IntegerGreaterThan(ListItem.ChannelNumber,9)">$NUMBER[0]$NUMBER[0]</value>
+		<value condition="!IntegerGreaterThan(ListItem.ChannelNumber,99)">$NUMBER[0]</value>
+	</variable>
 </includes>

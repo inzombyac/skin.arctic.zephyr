@@ -100,7 +100,7 @@
 						<left>310</left>
 						<height>110</height>
 						<align>justify</align>
-						<font>Small</font>
+						<font>TwentyEight</font>
 						<textcolor>PanelWhite100</textcolor>
 						<selectedcolor>PanelWhite100</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
