@@ -82,6 +82,18 @@
 					<align>left</align>
 					<include>DefContextButton2</include>
 				</control>
+				<control type="radiobutton" id="7">
+					<description>Hide foreign</description>
+					<align>left</align>
+					<label>25001</label>
+					<include>DefContextButton2</include>
+				</control>
+				<control type="radiobutton" id="8">
+					<description>Hide broken</description>
+					<align>left</align>
+					<label>24999</label>
+					<include>DefContextButton2</include>
+				</control>
 				<control type="label" id="202">
 					<height>42</height>
 					<textoffsetx>15</textoffsetx>
