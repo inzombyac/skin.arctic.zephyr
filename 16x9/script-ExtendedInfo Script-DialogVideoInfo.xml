@@ -66,54 +66,14 @@
 	</control>
 	<control type="image">
 		<include>DialogVideoInfoAnimation</include>
-		<texture>moviedb.png</texture>
-		<top>35</top>
-		<right>37</right>
-		<width>258</width>
-		<height>130</height>
-		<aspectratio align="center" aligny="top">keep</aspectratio>
-		<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
-		<visible>IsEmpty(Window.Property(movie.Logo)) + !Skin.HasSetting(furniture.logo.animate)</visible>
-	</control>
-	<control type="image">
-		<include>DialogVideoInfoAnimation</include>
-		<texture>moviedb.png</texture>
-		<top>35</top>
-		<right>37</right>
-		<width>258</width>
-		<height>130</height>
-		<aspectratio align="center" aligny="top">keep</aspectratio>
-		<animation type="WindowOpen" reversible="false">
-			<effect type="slide" start="0,-1000" end="0,0" delay="0" tween="sine" time="1000" />
-			<effect type="fade" start="0" end="100" delay="0" tween="sine" time="2000" />
-			<effect type="rotate" end="10" delay="1500" center="auto" tween="sine" time="750" />
-		</animation>
-		<animation type="WindowClose" reversible="false">
-			<effect type="fade" start="100" end="0" delay="0" tween="sine" time="100" />
-		</animation>
-		<visible>IsEmpty(Window.Property(movie.Logo)) + Skin.HasSetting(furniture.logo.animate)</visible>
-	</control>
-	<control type="image">
-		<include>DialogVideoInfoAnimation</include>
 		<texture>$INFO[Window.Property(movie.Logo)]</texture>
 		<top>38</top>
 		<right>37</right>
 		<width>258</width>
 		<height>130</height>
 		<aspectratio align="center" aligny="top">keep</aspectratio>
-		<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
-		<visible>!IsEmpty(Window.Property(movie.Logo)) + !Skin.HasSetting(furniture.logo.animate)</visible>
-	</control>
-	<control type="image">
-		<include>DialogVideoInfoAnimation</include>
-		<texture>$INFO[Window.Property(movie.Logo)]</texture>
-		<top>38</top>
-		<right>37</right>
-		<width>258</width>
-		<height>130</height>
-		<aspectratio align="center" aligny="top">keep</aspectratio>
-		<animation effect="rotate" end="10" delay="1500" center="auto" condition="true" time="750">conditional</animation>
-		<visible>!IsEmpty(Window.Property(movie.Logo)) + Skin.HasSetting(furniture.logo.animate)</visible>
+		<animation end="10" delay="1500" center="auto" condition="true" time="750">conditional</animation>
+		<visible>!IsEmpty(Window.Property(movie.Logo))</visible>
 	</control>
 	<include>ExtendedFurniture_Header</include>
 	<control type="group">
@@ -135,14 +95,14 @@
 			<texture>$INFO[Window.Property(movie.still_original)]</texture>
 			<aspectratio aligny="center">scale</aspectratio>
 		</control>
-		<!--<control type="image">
+		<control type="image">
 			<top>3</top>
 			<left>287</left>
 			<width>32</width>
 			<height>32</height>
 			<texture>special://skin/extras/icons/emby2.png</texture>
 			<visible>!IsEmpty(Window.Property(movie.DBID))</visible>
-		</control>-->
+		</control>
 		<control id="7000" type="button">
 			<top>518</top>
 			<width>320</width>

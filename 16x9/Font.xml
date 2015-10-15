@@ -9,6 +9,11 @@
 			<style />
 		</font>
 		<font>
+			<name>ThirtySix</name>
+			<filename>segoe-media-center.ttf</filename>
+			<size>36</size>
+		</font>
+		<font>
 			<name>symbolview</name>
 			<filename>symbol.ttf</filename>
 			<size>28</size>
@@ -308,12 +313,6 @@
 			<size>38</size>
 		</font>
 		<font>
-			<name>font_terminator</name>
-			<filename>Terminat.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
 			<name>FakeLogo</name>
 			<filename>Assassins_Dub.ttf</filename>
 			<style>uppercase</style>
@@ -354,6 +353,11 @@
 			<filename>segoe-media-center.ttf</filename>
 			<size>28</size>
 			<style />
+		</font>
+		<font>
+			<name>ThirtySix</name>
+			<filename>segoe-media-center.ttf</filename>
+			<size>36</size>
 		</font>
 		<font>
 			<name>symbolview</name>
@@ -660,18 +664,6 @@
 			<filename>Assassins_Dub.ttf</filename>
 			<style>uppercase</style>
 			<size>38</size>
-		</font>
-		<font>
-			<name>font_terminator</name>
-			<filename>Terminat.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>FakeLogo</name>
-			<filename>Assassins_Dub.ttf</filename>
-			<style>uppercase</style>
-			<size>50</size>
 		</font>
 		<font>
 			<name>DurationFont</name>

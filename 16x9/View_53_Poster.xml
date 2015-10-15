@@ -27,9 +27,20 @@
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+					<visible>Skin.HasSetting(show.reflections)</visible>
+					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<top>PosterH</top>
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
 					<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
 					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
 					<visible>Skin.HasSetting(show.reflections)</visible>
+					<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
 				</control>
 				<control type="image">
 					<centertop>PosterH</centertop>
@@ -42,8 +53,29 @@
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">stretch</aspectratio>
+					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
 					<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
 					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+					<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+				</control>
+				<control type="progress">
+					<centertop>PosterH</centertop>
+					<width>PosterW</width>
+					<height>10</height>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
 				</control>
 				<control type="group">
 					<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -72,7 +104,7 @@
 							<centertop>40</centertop>
 							<height>40</height>
 							<width>40</width>
-							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<texture colordiffuse="$VAR[ColourHighlight]">common/circle.png</texture>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 						<control type="label">
@@ -106,9 +138,20 @@
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+					<visible>Skin.HasSetting(show.reflections)</visible>
+					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<top>PosterH</top>
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
 					<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
 					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
 					<visible>Skin.HasSetting(show.reflections)</visible>
+					<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
 				</control>
 				<control type="image">
 					<centertop>PosterH</centertop>
@@ -123,6 +166,27 @@
 					<fadetime>100</fadetime>
 					<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
 					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+					<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+				</control>
+				<control type="image">
+					<width>PosterW</width>
+					<height>PosterH</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">stretch</aspectratio>
+					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+				</control>
+				<control type="progress">
+					<centertop>PosterH</centertop>
+					<width>PosterW</width>
+					<height>10</height>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
 				</control>
 				<control type="group">
 					<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -151,7 +215,7 @@
 							<centertop>40</centertop>
 							<height>40</height>
 							<width>40</width>
-							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<texture colordiffuse="$VAR[ColourHighlight]">common/circle.png</texture>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 						<control type="label">
@@ -215,10 +279,10 @@
 					<aligny>top</aligny>
 				</control>
 				<control type="textbox">
-					<font>MediumSmall</font>
+					<font>TwentyEight</font>
 					<label>$VAR[LabelPlotBox]</label>
 					<textcolor>Dark2</textcolor>
-					<height>175</height>
+					<height>165</height>
 					<align>justify</align>
 				</control>
 			</control>

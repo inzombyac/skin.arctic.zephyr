@@ -101,7 +101,7 @@
 				<aligny>center</aligny>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
 				<shadowcolor>Black</shadowcolor>
-				<font>font_terminator</font>
+				<font>font_SimplerE3D_bold</font>
 				<label>[B]$VAR[LabelTitle][/B]</label>
 				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
 				<visible>[Container.Content(movies) | Container.Content(sets) + IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>

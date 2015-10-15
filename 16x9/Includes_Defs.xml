@@ -275,7 +275,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)">$VAR[DefWidget1Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">$VAR[DefWidget3Content]</value>
-		<value condition="isEmpty(Container(300).ListItem.Property(defaultid)">$VAR[DefWidget2Content]</value>
+		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">$VAR[DefWidget2Content]</value>
 	</variable>
 
 	<include name="DefSideBrowserButton">
