@@ -14,6 +14,7 @@
 	</variable>
 	<variable name="LabelEpisodeZero">
         <value condition="!IntegerGreaterThan(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
+		<value condition="!IntegerGreaterThan(VideoPlayer.Episode,9) + !substring(VideoPlayer.Episode,S) + !IsEmpty(VideoPlayer.Episode)">$NUMBER[0]</value>
         <value condition="IsEmpty(ListItem.Episode)">$NUMBER[0]$NUMBER[0]</value>
     </variable>      
     <variable name="LabelEpisodeZero2">
@@ -571,7 +572,7 @@
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.TrackNumber,,. ]$INFO[MusicPlayer.Title]</value>
 		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</value>
 		<value condition="VideoPlayer.Content(movies) + !IsEmpty(VideoPlayer.Tagline)">$INFO[VideoPlayer.Tagline]</value>
-		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[Player.Title]$INFO[VideoPlayer.Premiered, (,)]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TVShowTitle,, •] $INFO[VideoPlayer.Premiered,, •] $VAR[LabelSeasonZero]$INFO[VideoPlayer.Season,,E]$VAR[LabelEpisodeZero]$INFO[VideoPlayer.Episode,, • ]$INFO[Player.Title]</value>
 		<value condition="substring(Player.Filenameandpath,http)">$LOCALIZE[31107]</value>
 		<value>$LOCALIZE[291]</value>
 	</variable>

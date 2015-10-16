@@ -151,7 +151,7 @@
 				<itemgap>16</itemgap>
 				<orientation>horizontal</orientation>
 				<align>center</align>
-				<onleft>3</onleft>
+				<onleft>2</onleft>
 				<onright>4</onright>
 				<ondown>noop</ondown>
 				<include condition="!Skin.HasSetting(osd.usetheme)">OSDVideoControls</include>

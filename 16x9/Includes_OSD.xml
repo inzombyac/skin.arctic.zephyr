@@ -90,8 +90,9 @@
 			<height>68</height>
 			<font>Tiny</font>
 			<align>justify</align>
-			<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
 			<label>$VAR[PlayerPlotBox]</label>
+			<scroll>false</scroll>
 		</control>
 		<control type="label" description="Elapsed Time">
 			<width>400</width>
