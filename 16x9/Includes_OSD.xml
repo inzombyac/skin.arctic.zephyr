@@ -84,7 +84,7 @@
 			<label>$VAR[PlayerBigTitle]</label>
 			<visible>!VideoPlayer.Content(episodes) | !Player.HasVideo</visible>
 		</control>
-		<control type="textbox" description="Plot">
+		<control type="label" description="Plot">
 			<width>100%</width>
 			<top>105</top>
 			<height>68</height>

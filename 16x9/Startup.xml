@@ -27,7 +27,7 @@
             <label>Arctic [COLOR=EmbyGreen]Emby[/COLOR]</label>
             <font>EpisodeNumber</font>
             <textcolor>Dark1</textcolor>
-            <animation effect="fade" start="100" end="0" time="1500" tween="quadratic">WindowClose</animation>
+            <animation effect="fade" start="100" end="0" time="3500" tween="quadratic">WindowClose</animation>
             <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
         </control>
     </controls>

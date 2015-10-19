@@ -248,7 +248,18 @@
 						<selectedcolor>PanelWhite70</selectedcolor>
 						<label>$VAR[LabelDuration]</label>
 					</control>
-						<control type="progress">
+					<control type="label">
+						<right>140</right>
+						<align>right</align>
+						<width>425</width>
+						<font>Tiny</font>
+						<aligny>center</aligny>
+						<textcolor>PanelWhite70</textcolor>
+						<selectedcolor>PanelWhite70</selectedcolor>
+						<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]</label>
+						<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+					</control>
+					<control type="progress">
 						<bottom>70</bottom>
 						<width>100%</width>
 						<height>16</height>
@@ -259,47 +270,6 @@
 						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<visible>ListItem.IsResumable</visible>
-					</control>
-					<control type="image">
-						<centerright>110</centerright>
-						<centertop>32</centertop>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
-						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
-					</control>
-					<control type="image">
-						<centerright>110</centerright>
-						<centertop>32</centertop>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatched]</texture>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
-					</control>
-					<control type="group">
-						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
-						<control type="image">
-							<centerright>110</centerright>
-							<centertop>32</centertop>
-							<height>40</height>
-							<width>40</width>
-							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
-							<aspectratio align="center" aligny="center">keep</aspectratio>
-						</control>
-						<control type="label">
-							<centerright>110</centerright>
-							<centertop>31</centertop>
-							<height>40</height>
-							<width>40</width>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
-							<font>Tiny</font>
-							<scroll>false</scroll>
-							<textcolor>White</textcolor>
-						</control>
 					</control>
 					<control type="label">
 						<right>30</right>
@@ -375,7 +345,6 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedN3Backing]</texture>
 						<visible>!stringcompare(ListItem(-3).Label,..)</visible>
-						<visible>!IntegerGreaterThan(ListItem(-3).Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="image">
 						<centerleft>50%</centerleft>
@@ -386,6 +355,20 @@
 						<texture>$VAR[PercentWatchedN3]</texture>
 						<visible>!stringcompare(ListItem(-3).Label,..)</visible>
 						<visible>!IntegerGreaterThan(ListItem(-3).Property(UnwatchedEpisodes),0)</visible>
+					</control>
+					<control type="progress">
+						<bottom>303</bottom>
+						<right>-276</right>
+						<width>565</width>
+						<height>14</height>
+						<info>ListItem(-3).PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
+						<visible>ListItem(-3).IsResumable</visible>
 					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem(-3).Property(UnwatchedEpisodes),0)</visible>
@@ -460,6 +443,20 @@
 						<texture>$VAR[PercentWatchedN2]</texture>
 						<visible>!stringcompare(ListItem(-2).Label,..)</visible>
 					</control>
+					<control type="progress">
+						<bottom>303</bottom>
+						<right>-276</right>
+						<width>565</width>
+						<height>14</height>
+						<info>ListItem(-2).PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
+						<visible>ListItem(-2).IsResumable</visible>
+					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem(-2).Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
@@ -533,6 +530,20 @@
 						<texture>$VAR[PercentWatchedN1]</texture>
 						<visible>!stringcompare(ListItem(-1).Label,..)</visible>
 					</control>
+					<control type="progress">
+						<bottom>303</bottom>
+						<right>-276</right>
+						<width>565</width>
+						<height>14</height>
+						<info>ListItem(-1).PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
+						<visible>ListItem(-1).IsResumable</visible>
+					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem(-1).Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
@@ -596,7 +607,7 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedP3Backing]</texture>
 						<visible>!stringcompare(ListItem(3).Label,..)</visible>
-					</control>
+					</control>					
 					<control type="image">
 						<centerleft>50%</centerleft>
 						<centertop>32</centertop>
@@ -605,6 +616,20 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PercentWatchedP3]</texture>
 						<visible>!stringcompare(ListItem(3).Label,..)</visible>
+					</control>
+					<control type="progress">
+						<bottom>303</bottom>
+						<right>-276</right>
+						<width>565</width>
+						<height>14</height>
+						<info>ListItem(3).PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
+						<visible>ListItem(3).IsResumable</visible>
 					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem(3).Property(UnwatchedEpisodes),0)</visible>
@@ -679,6 +704,20 @@
 						<texture>$VAR[PercentWatchedP2]</texture>
 						<visible>!stringcompare(ListItem(2).Label,..)</visible>
 					</control>
+					<control type="progress">
+						<bottom>303</bottom>
+						<right>-276</right>
+						<width>565</width>
+						<height>14</height>
+						<info>ListItem(2).PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
+						<visible>ListItem(2).IsResumable</visible>
+					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem(2).Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
@@ -751,6 +790,20 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PercentWatchedP1]</texture>
 						<visible>!stringcompare(ListItem(1).Label,..)</visible>
+					</control>
+					<control type="progress">
+						<bottom>303</bottom>
+						<right>-276</right>
+						<width>565</width>
+						<height>14</height>
+						<info>ListItem(1).PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
+						<visible>ListItem(1).IsResumable</visible>
 					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem(1).Property(UnwatchedEpisodes),0)</visible>
@@ -843,6 +896,48 @@
 							<texture background="true">$VAR[FanartImage]</texture>
 							<visible>Skin.HasSetting(views.51.showfanart)</visible>
 						</control>
+						<control type="image">
+							<centerright>40</centerright>
+							<centertop>32</centertop>
+							<width>40</width>
+							<height>40</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
+						</control>
+						<control type="image">
+							<centerright>40</centerright>
+							<centertop>32</centertop>
+							<width>40</width>
+							<height>40</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture>$VAR[PercentWatched]</texture>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<animation effect="slide" start="0" end="64" time="0" condition="Container.Content(Seasons)">Conditional</animation>
+						</control>
+						<control type="group">
+							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<control type="image">
+								<centerright>40</centerright>
+								<centertop>32</centertop>
+								<height>40</height>
+								<width>40</width>
+								<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+							</control>
+							<control type="label">
+								<centerright>40</centerright>
+								<centertop>31</centertop>
+								<height>32</height>
+								<width>45</width>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+								<font>Tiny</font>
+								<scroll>false</scroll>
+								<align>center</align>
+								<textcolor>White</textcolor>
+							</control>
+						</control>
 					</focusedlayout>
 				</control>
 				<control type="group">
@@ -871,10 +966,9 @@
 					<control type="label">
 						<right>140</right>
 						<align>right</align>
-						<width>375</width>
-						<font>Small</font>
+						<width>425</width>
+						<font>Tiny</font>
 						<aligny>center</aligny>
-						<height>64</height>
 						<textcolor>PanelWhite70</textcolor>
 						<selectedcolor>PanelWhite70</selectedcolor>
 						<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]</label>
@@ -903,48 +997,18 @@
 						<selectedcolor>PanelWhite70</selectedcolor>
 						<label>$VAR[LabelDuration]</label>
 					</control>
-					<control type="image">
-						<centerright>110</centerright>
-						<centertop>32</centertop>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
-						<!-- <visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible> -->
+					<control type="progress">
+						<bottom>60</bottom>
+						<width>100%</width>
+						<height>14</height>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
 					</control>
-					<control type="image">
-						<centerright>110</centerright>
-						<centertop>32</centertop>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatched]</texture>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
-						<animation effect="slide" start="0" end="64" time="0" condition="Container.Content(Seasons)">Conditional</animation>
-					</control>
-					<!-- <control type="group">
-						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
-						<control type="image">
-							<centerright>110</centerright>
-							<centertop>32</centertop>
-							<height>40</height>
-							<width>40</width>
-							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
-							<aspectratio align="center" aligny="center">keep</aspectratio>
-						</control>
-						<control type="label">
-							<centerright>110</centerright>
-							<centertop>31</centertop>
-							<height>40</height>
-							<width>40</width>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
-							<font>Tiny</font>
-							<scroll>false</scroll>
-							<textcolor>White</textcolor>
-						</control>
-					</control> -->
 					<control type="label">
 						<right>30</right>
 						<width>500</width>
@@ -1033,6 +1097,46 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<texture background="true" diffuse="diffuse/lovefilm.png">$VAR[FanartImage]</texture>
 					<visible>Skin.HasSetting(views.51.showfanart)</visible>
+				</control>
+				<control type="image">
+					<centerright>40</centerright>
+					<centertop>32</centertop>
+					<width>40</width>
+					<height>40</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
+				</control>
+				<control type="image">
+					<centerright>40</centerright>
+					<centertop>32</centertop>
+					<width>40</width>
+					<height>40</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture>$VAR[PercentWatched]</texture>
+					<visible>!stringcompare(ListItem.Label,..)</visible>
+				</control>
+				<control type="group">
+					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					<control type="image">
+						<centerright>40</centerright>
+						<centertop>32</centertop>
+						<height>40</height>
+						<width>40</width>
+						<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+					</control>
+					<control type="label">
+						<centerright>40</centerright>
+						<centertop>31</centertop>
+						<height>40</height>
+						<width>40</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+						<font>Tiny</font>
+						<scroll>false</scroll>
+						<textcolor>White</textcolor>
+					</control>
 				</control>
 			</focusedlayout>
 		</control>
