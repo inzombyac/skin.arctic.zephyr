@@ -3,6 +3,12 @@
 <fonts>
 	<fontset id="Default" unicode="true">
 		<font>
+			<name>TwentySix</name>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>26</size>
+			<style />
+		</font>
+		<font>
 			<name>TwentyEight</name>
 			<filename>RobotoCondensed-Regular.ttf</filename>
 			<size>28</size>
@@ -348,6 +354,12 @@
 		</font>
 	</fontset>
 	<fontset id="Media Center" unicode="true">
+		<font>
+			<name>TwentySix</name>
+			<filename>segoe-media-center.ttf</filename>
+			<size>26</size>
+			<style />
+		</font>
 		<font>
 			<name>TwentyEight</name>
 			<filename>segoe-media-center.ttf</filename>

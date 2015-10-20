@@ -78,24 +78,24 @@
 	<include name="View_52_BigList_ItemLayout">
 		<control type="image">
 			<left>10</left>
-			<top>10</top>
-			<width>100</width>
-			<height>100</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
+			<top>0</top>
+			<width>120</width>
+			<height>120</height>
+			<aspectratio scalediffuse="true">stretch</aspectratio>
 			<texture diffuse="common/circle.png" background="true">$INFO[ListItem.Icon]</texture>
 			<visible>!Skin.HasSetting(global.hidecirles)</visible>
 		</control>
 		<control type="image">
 			<left>10</left>
-			<top>10</top>
+			<top>0</top>
 			<width>100</width>
-			<height>100</height>
+			<height>120</height>
 			<aspectratio scalediffuse="false">keep</aspectratio>
 			<texture background="true">$INFO[ListItem.Icon]</texture>
 			<visible>Skin.HasSetting(global.hidecirles)</visible>
 		</control>
 		<control type="label">
-			<left>130</left>
+			<left>140</left>
 			<top>10</top>
 			<right>40</right>
 			<height>100</height>
@@ -155,6 +155,20 @@
 				<scroll>false</scroll>
 				<textcolor>White</textcolor>
 			</control>
+		</control>
+		<control type="progress">
+			<centerright>200</centerright>
+			<centertop>60</centertop>
+			<width>67</width>
+			<height>19</height>
+			<reveal>true</reveal>
+			<texturebg>pvr/progress-back.png</texturebg>
+			<lefttexture colordiffuse="$VAR[ColourHighlight]">pvr/progress-leftright.png</lefttexture>
+			<midtexture colordiffuse="$VAR[ColourHighlight]">pvr/progress-mid.png</midtexture>
+			<righttexture colordiffuse="$VAR[ColourHighlight]">pvr/progress-leftright.png</righttexture>
+			<info>ListItem.PercentPlayed</info>
+			<colordiffuse>Dark1</colordiffuse>
+			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
 		</control>
 	</include>
 	<include name="View_52_BigList_FocusLayout">
@@ -181,24 +195,24 @@
 		</control>
 		<control type="image">
 			<left>10</left>
-			<top>10</top>
-			<width>100</width>
-			<height>100</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
+			<top>0</top>
+			<width>120</width>
+			<height>120</height>
+			<aspectratio scalediffuse="true">stretch</aspectratio>
 			<texture diffuse="common/circle.png" background="true">$INFO[ListItem.Icon]</texture>
 			<visible>!Skin.HasSetting(global.hidecirles)</visible>
 		</control>
 		<control type="image">
 			<left>10</left>
-			<top>10</top>
+			<top>0</top>
 			<width>100</width>
-			<height>100</height>
+			<height>120</height>
 			<aspectratio scalediffuse="false">keep</aspectratio>
 			<texture background="true">$INFO[ListItem.Icon]</texture>
 			<visible>Skin.HasSetting(global.hidecirles)</visible>
 		</control>
 		<control type="label">
-			<left>130</left>
+			<left>140</left>
 			<top>10</top>
 			<right>40</right>
 			<height>100</height>
@@ -258,6 +272,20 @@
 				<scroll>false</scroll>
 				<textcolor>White</textcolor>
 			</control>
+		</control>
+		<control type="progress">
+			<centerright>200</centerright>
+			<centertop>60</centertop>
+			<width>67</width>
+			<height>19</height>
+			<reveal>true</reveal>
+			<texturebg>pvr/progress-back.png</texturebg>
+			<lefttexture colordiffuse="$VAR[ColourHighlight]">pvr/progress-leftright.png</lefttexture>
+			<midtexture colordiffuse="$VAR[ColourHighlight]">pvr/progress-mid.png</midtexture>
+			<righttexture colordiffuse="$VAR[ColourHighlight]">pvr/progress-leftright.png</righttexture>
+			<info>ListItem.PercentPlayed</info>
+			<colordiffuse>Light1</colordiffuse>
+			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
 		</control>
 	</include>
 </includes>
