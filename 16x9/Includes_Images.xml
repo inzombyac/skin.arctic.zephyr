@@ -343,4 +343,41 @@
 		<value condition="!IsEmpty(ListItem.VideoResolution)">flags/resolution/480.png</value>
 	</variable>
 	
+	<!-- Home Weather -->
+	<variable name="HomeWeatherToday">
+		<value condition="!IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]/$INFO[Window(weather).Property(Current.FanartCode),weather/,.png]</value>
+		<value condition="Skin.HasSetting(weather.useflaticons)">$INFO[Window(weather).Property(Current.FanartCode),weather/,.png]</value>
+        <value>$INFO[Window(weather).Property(Current.ConditionIcon)]</value>
+	</variable>
+	<variable name="HomeWeather1">
+		<value condition="!IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]/$INFO[Window(weather).Property(Day1.FanartCode),weather/,.png]</value>
+		<value condition="Skin.HasSetting(weather.useflaticons)">$INFO[Window(weather).Property(Day1.FanartCode),weather/,.png]</value>
+        <value>$INFO[Window(weather).Property(Day1.OutlookIcon)]</value>
+	</variable>
+	<variable name="HomeWeather2">
+		<value condition="!IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]/$INFO[Window(weather).Property(Day2.FanartCode),weather/,.png]</value>
+		<value condition="Skin.HasSetting(weather.useflaticons)">$INFO[Window(weather).Property(Day2.FanartCode),weather/,.png]</value>
+        <value>$INFO[Window(weather).Property(Day2.OutlookIcon)]</value>
+	</variable>
+	<variable name="HomeWeather3">
+		<value condition="!IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]/$INFO[Window(weather).Property(Day3.FanartCode),weather/,.png]</value>
+		<value condition="Skin.HasSetting(weather.useflaticons)">$INFO[Window(weather).Property(Day3.FanartCode),weather/,.png]</value>
+        <value>$INFO[Window(weather).Property(Day3.OutlookIcon)]</value>
+	</variable>
+	<variable name="HomeWeather4">
+		<value condition="!IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]/$INFO[Window(weather).Property(Day4.FanartCode),weather/,.png]</value>
+		<value condition="Skin.HasSetting(weather.useflaticons)">$INFO[Window(weather).Property(Day4.FanartCode),weather/,.png]</value>
+        <value>$INFO[Window(weather).Property(Day4.OutlookIcon)]</value>
+	</variable>
+	<variable name="HomeWeather5">
+		<value condition="!IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]/$INFO[Window(weather).Property(Day5.FanartCode),weather/,.png]</value>
+		<value condition="Skin.HasSetting(weather.useflaticons)">$INFO[Window(weather).Property(Day5.FanartCode),weather/,.png]</value>
+        <value>$INFO[Window(weather).Property(Day5.OutlookIcon)]</value>
+	</variable>
+	<variable name="HomeWeather6">
+		<value condition="!IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]/$INFO[Window(weather).Property(Day6.FanartCode),weather/,.png]</value>
+		<value condition="Skin.HasSetting(weather.useflaticons)">$INFO[Window(weather).Property(Day6.FanartCode),weather/,.png]</value>
+        <value>$INFO[Window(weather).Property(Day6.OutlookIcon)]</value>
+	</variable>
+	
 </includes>

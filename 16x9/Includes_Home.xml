@@ -132,17 +132,17 @@
 					<label>$INFO[VideoPlayer.TvShowTitle,, ]$INFO[MusicPlayer.Artist,, ]$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
 				</control>
 				<control type="image">
-					<right>0</right>
+					<right>10</right>
 					<bottom>10</bottom>
 					<width>100</width>
-					<texture colordiffuse="$VAR[ColourHighlight]">equaliser.gif</texture>
+					<texture colordiffuse="$VAR[ColourHighlight2]">equaliser.gif</texture>
 					<visible>!Player.Paused</visible>
 				</control>
 				<control type="image">
-					<right>0</right>
+					<right>10</right>
 					<bottom>10</bottom>
 					<width>100</width>
-					<texture colordiffuse="$VAR[ColourHighlight]">equaliser_stop.gif</texture>
+					<texture colordiffuse="$VAR[ColourHighlight2]">equaliser_stop.gif</texture>
 					<visible>Player.Paused</visible>
 				</control>
 				<control type="button" id="7788">

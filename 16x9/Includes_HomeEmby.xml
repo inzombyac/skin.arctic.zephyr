@@ -488,7 +488,8 @@
 			<control type="button" id="4013">
 				<onup condition="!StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4012</onup>
 				<onup condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4012</onup>
-				<onright>4015</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">4016</onright>
+				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),weather)">4015</onright>
 				<!-- <ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4015</ondown> -->
 				<!-- <onleft condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4012</onleft> -->
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">ActivateWindow(Videos,TVShowTitles,return)</onclick>
@@ -500,6 +501,7 @@
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)">ActivateWindow(Programs,Addpms,return)</onclick>
 				<onclick condition="IsEmpty(Container(300).ListItem.Property(defaultid))">ActivateWindow(10001,"library://video/emby_channels.xml",return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">ActivateWindow(Settings)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">ActivateWindow(Weather)</onclick>
 			</control>
 			<control type="image">
 				<left>SidePad</left>
@@ -507,19 +509,9 @@
 				<width>280</width>
 				<height>180</height>
 				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 				<visible>!Container(4012).IsUpdating</visible>
 			</control>
-			<!-- Side Version -->
-			<!-- <control type="image">
-				<left>1560</left>
-				<top>330</top>
-				<width>280</width>
-				<height>180</height>
-				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
-			</control> -->
 			<control type="list" id="8013">				  
 				<content limit="1">plugin://service.library.data.provider?type=randomepisodes</content>
 			</control>
@@ -615,17 +607,16 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 				<visible>!Container(4012).IsUpdating</visible>
 			</control>
-			<!-- Side Version -->
-			<!-- <control type="image">
-				<left>1560</left>
-				<posy>330</posy>
+			<control type="image">
+				<left>SidePad</left>
+				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture>clear/pictures.png</texture>
+				<texture>clear/weather.png</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 				<visible>!Container(4012).IsUpdating</visible>
-			</control> -->
+			</control>
 			<control type="image">
 				<description>Title overlay</description>
 				<left>SidePad</left>
@@ -636,17 +627,6 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | StringCompare(Container(300).ListItem.Property(defaultID),music)  | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 				<visible>!Container(4012).IsUpdating</visible>
 			</control>
-			<!-- Side Version -->
-			<!-- <control type="image">
-				<description>Title overlay</description>
-				<left>1560</left>
-				<posy>510</posy>
-				<width>280</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="df000000">common/white.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
-			</control> -->
 			<control type="label">
 				<left>SidePad</left>
 				<posy>1016</posy>
@@ -659,19 +639,6 @@
 				<label>$VAR[EmbyButton1Label]</label>
 				<visible>!Container(4012).IsUpdating</visible>
 			</control>
-			<!-- Side Version -->
-			<!-- <control type="label">
-				<left>1560</left>
-				<posy>510</posy>
-				<width>280</width>
-				<align>center</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyButton1Label]</label>
-				<visible>!Container(4012).IsUpdating+StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-			</control> -->
 			<control type="image">
 				<left>76</left>
 				<width>288</width>
@@ -680,15 +647,7 @@
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4013)</visible>
 			</control>
-			<!-- Side Version -->
-			<!-- <control type="image">
-				<left>1556</left>
-				<width>288</width>
-				<posy>330</posy>
-				<height>224</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4013)+StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-			</control> -->
+			
 			<!-- Bottom tile 2-->
 			<control type="button" id="4015">
 				<onup condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4012</onup>
@@ -706,6 +665,7 @@
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">ActivateWindow(shutdownmenu)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">RunAddon(script.extendedinfo,info=intheaters)</onclick>
 				<onclick condition="IsEmpty(Container(300).ListItem.Property(defaultid))">RunAddon(script.extendedinfo,info=intheaters)</onclick>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 			</control>
 			<control type="image">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),pictures)| IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),videos)</visible>
@@ -716,16 +676,6 @@
 				<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
 				<visible>!Container(4012).IsUpdating</visible>
 			</control>
-			<!-- Side Version -->
-		<!-- 	<control type="image">
-				<left>1560</left>
-				<top>570</top>
-				<width>280</width>
-				<height>180</height>
-				<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
-			</control> -->
 			<control type="image">
 				<left>368</left>
 				<posy>836</posy>
@@ -806,17 +756,6 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid))</visible>
 				<visible>!Container(4012).IsUpdating</visible>
 			</control>
-			<!-- Side Version -->
-			<!-- <control type="image">
-				<description>Title overlay</description>
-				<left>1560</left>
-				<posy>750</posy>
-				<width>280</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="df000000">common/white.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
-			</control> -->
 			<control type="image">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),settings) |  StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid))</visible>
 				<description>Title overlay</description>
@@ -827,17 +766,6 @@
 				<texture border="15" colordiffuse="df000000">common/white.png</texture>
 				<visible>!Container(4012).IsUpdating</visible>
 			</control>
-			<!-- Side Version -->
-			<!-- <control type="image">
-				<left>1560</left>
-				<posy>570</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/addons.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
-			</control> -->
 			<control type="label">
 				<left>368</left>
 				<posy>1016</posy>
@@ -850,20 +778,6 @@
 				<label>$VAR[EmbyButton2Label]</label>
 				<visible>!Container(4012).IsUpdating</visible>
 			</control>
-			<!-- Side Version -->
-		<!-- 	<control type="label">
-				<left>1560</left>
-				<posy>750</posy>
-				<width>280</width>
-				<align>center</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>PanelWhite70</textcolor>
-				<selectedcolor>PanelWhite70</selectedcolor>
-				<label>$VAR[EmbyButton2Label]</label>
-				<visible>!Container(4012).IsUpdating</visible>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-			</control> -->
 			<control type="image">
 				<left>364</left>
 				<width>288</width>
@@ -871,17 +785,9 @@
 				<height>224</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4015)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 			</control>
-			<!-- Side Version -->
-			<!-- <control type="image">
-				<left>1555</left>
-				<width>288</width>
-				<posy>565</posy>
-				<height>224</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				<visible>Control.HasFocus(4015)</visible>
-			</control> -->
+			
 			<!-- Bottom tile 3-->
 			<control type="button" id="4014">
 				<onup>4012</onup>
@@ -896,6 +802,7 @@
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">ActivateWindow(SystemInfo)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">RunAddon(script.extendedinfo,info=comingsoon)</onclick>
 				<onclick condition="IsEmpty(Container(300).ListItem.Property(defaultid))">RunAddon(script.extendedinfo,info=comingsoon)</onclick>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 			</control>
 			<control type="image">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | StringCompare(Container(300).ListItem.Property(defaultID),music)  | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid))</visible>
@@ -997,6 +904,7 @@
 				<height>224</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4014)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 			</control>
 			
 			<!-- Side Widgets  -->
@@ -1292,6 +1200,22 @@
 				</item>
 			</content>	
 		</control>
+		<control type="panel" id="4012">
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+			<top>330</top>
+			<left>SidePad</left>
+			<width>1198</width>
+			<height>724</height>
+			<onup>300</onup>
+			<ondown>4013</ondown>
+			<onright>4016</onright>
+			<orientation>horizontal</orientation>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<include>EmbyMainWidgetItemLayout</include>
+			<!--weather widgets -->
+			<include>WeatherWidgetToday</include>
+		</control>
 		<include>EmbyMainWidgetOverlay</include>
 	</include>
 	<include name="EmbyMainWidgetItemLayout">
@@ -1301,12 +1225,14 @@
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+Stringcompare(Skin.String(widget9),AllShows)]</visible>
 				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[ThumbImage]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!Stringcompare(Skin.String(widget9),AllShows)</visible>
 				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
@@ -1314,13 +1240,16 @@
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)</visible>
 				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<include>PVRChannelWidget</include>
+			<include>WeatherTodayMainWidget</include>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),settings)</visible>
 				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="progress">
 				<bottom>80</bottom>
@@ -1333,6 +1262,7 @@
 				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
 				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 		</itemlayout>
 		<focusedlayout width="856" height="496">
@@ -1340,22 +1270,30 @@
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+Stringcompare(Skin.String(widget9),AllShows)]</visible>
+				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[ThumbImage]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!Stringcompare(Skin.String(widget9),AllShows)</visible>
+				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),settings)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),settings) </visible>
+				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)</visible>
+				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="progress">
 				<bottom>80</bottom>
@@ -1367,8 +1305,11 @@
 				<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
+				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<include>PVRChannelWidget</include>
+			<include>WeatherTodayMainWidget</include>
 		</focusedlayout>
 	</include>
 	<include name="EmbyMainWidgetOverlay">
@@ -1381,17 +1322,9 @@
 			<texture border="15" colordiffuse="df000000">common/white.png</texture>
 			<visible>!Container(4012).IsUpdating</visible>
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)| Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs)  | StringCompare(Container(300).ListItem.Property(defaultID),settings)</visible>
-		</control>
-		<!-- <control type="image">
-			<description>Title overlay</description>
-			<left>SidePad</left>
-			<posy>976</posy>
-			<width>1198</width>
-			<height>80</height>
-			<texture border="15" colordiffuse="df000000">common/white.png</texture>
 			<visible>!Container(4012).IsUpdating</visible>
-			<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures) </visible>
-		</control> -->
+			<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+		</control>
 		<control type="image">
 			<description>Title overlay</description>
 			<left>SidePad</left>
@@ -1400,6 +1333,7 @@
 			<height>80</height>
 			<texture border="15" colordiffuse="df000000">common/white.png</texture>
 			<visible>!Container(4012).IsUpdating</visible>
+			<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 			<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)</visible>
 		</control>
@@ -1414,7 +1348,9 @@
 			<textcolor>PanelWhite70</textcolor>
 			<selectedcolor>PanelWhite70</selectedcolor>
 			<label>$VAR[EmbyWidgetContentLabel]</label>
-			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+			<visible>!Container(4012).IsUpdating</visible>
+			<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 		</control>
 		<control type="label">
 			<left>736</left>
@@ -1429,20 +1365,9 @@
 			<selectedcolor>PanelWhite70</selectedcolor>
 			<label>$INFO[Container(4012).ListItem.Year]</label>
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)</visible>
+			<visible>!Container(4012).IsUpdating</visible>
+			<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 		</control>
-		<!-- <control type="label">
-			<left>100</left>
-			<posy>976</posy>
-			<width>1198</width>
-			<aligny>center</aligny>
-			<height>80</height>
-			<align>left</align>
-			<font>SmallBold</font>
-			<textcolor>PanelWhite70</textcolor>
-			<selectedcolor>PanelWhite70</selectedcolor>
-			<label>$INFO[Container(4012).ListItem.Label]</label>
-			<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-		</control> -->
 		<control type="label">
 			<left>736</left>
 			<posy>748</posy>
@@ -1456,6 +1381,8 @@
 			<selectedcolor>PanelWhite70</selectedcolor>
 			<label>$VAR[LabelDuration]</label>
 			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+			<visible>!Container(4012).IsUpdating</visible>
+			<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 		</control>
 		<control type="image">
 			<left>76</left>
@@ -1465,14 +1392,6 @@
 			<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 			<visible>Control.HasFocus(4012)</visible>
 		</control>
-		<!-- <control type="image">
-			<left>76</left>
-			<width>1206</width>
-			<top>326</top>
-			<height>732</height>
-			<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-			<visible>Control.HasFocus(4012)+StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-		</control> -->
 	</include>
 	<include name="EmbyWidget1Content">
 		<param name="EmbyWidgetSource"/>
@@ -1487,11 +1406,19 @@
 				<left>10</left>
 			</control>
 			<control type="image">
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[FanartImage]</texture>
+				<height>180</height>
+				<width>290</width>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+				<left>10</left>
+			</control>
+			<control type="image">
 				<aspectratio aligny="top">stretch</aspectratio>
 				<texture background="true">$VAR[FanartImage]</texture>
 				<height>180</height>
 				<width>290</width>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)+!StringCompare(ListItem.Label, Get more...)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)+!StringCompare(ListItem.Label, Get more...)</visible>
 				<left>10</left>
 			</control>
 			<control type="image">
@@ -1538,6 +1465,7 @@
 				<width>32</width>
 				<height>32</height>
 				<texture>special://skin/extras/icons/emby2.png</texture>
+				<visible>!Container(4012).IsUpdating</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 				<visible>!IsEmpty(ListItem.Property(DBID))</visible>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid))</visible>
@@ -1551,9 +1479,10 @@
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 				<visible>IsEmpty(ListItem.Property(DBID))</visible>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid))</visible>
+				<visible>!Container(4012).IsUpdating</visible>
 			</control>
 			<control type="progress">
-				<bottom>70</bottom>
+				<bottom>72</bottom>
 				<height>8</height>
 				<left>10</left>
 				<info>ListItem.PercentPlayed</info>
@@ -1578,9 +1507,17 @@
 				<left>10</left>
 				<height>180</height>
 				<width>290</width>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[FanartImage]</texture>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<height>180</height>
+				<width>290</width>
 				<aspectratio aligny="top">stretch</aspectratio>
 				<texture background="true">$VAR[FanartImage]</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)+!StringCompare(ListItem.Label, Get more...)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)+!StringCompare(ListItem.Label, Get more...)</visible>
 			</control>
 			<control type="image">
 				<left>10</left>
@@ -1624,7 +1561,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)+!StringCompare(ListItem.Label, Get more...)</visible>
 			</control>
 			<control type="progress">
-				<bottom>70</bottom>
+				<bottom>72</bottom>
 				<height>8</height>
 				<left>10</left>
 				<info>ListItem.PercentPlayed</info>
@@ -1806,7 +1743,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
 			<control type="progress">
-				<bottom>70</bottom>
+				<bottom>72</bottom>
 				<height>8</height>
 				<left>10</left>
 				<info>ListItem.PercentPlayed</info>
@@ -1876,7 +1813,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
 			<control type="progress">
-				<bottom>70</bottom>
+				<bottom>72</bottom>
 				<height>8</height>
 				<left>10</left>
 				<info>ListItem.PercentPlayed</info>
@@ -2167,6 +2104,24 @@
 				<include>PicturesWidget</include>
 			</control>
 			<control type="panel" id="4016">
+				<description>Widget</description>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+				<top>330</top>
+				<left>944</left>
+				<width>620</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4016</ondown>
+				<onleft>4012</onleft>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>EmbyWidget1Content</include>
+				<include>WeatherWidget</include>
+			</control>
+			<control type="panel" id="4016">
 				<visible>Substring(Container(300).ListItem.Property(defaultID),programs)</visible>
 				<top>330</top>
 				<left>944</left>
@@ -2320,25 +2275,6 @@
 				<include>EmbyWidget2Content</include>
 				<include>WidgetTVPopular</include>
 			</control>
-			<!-- <control type="panel" id="4017">
-				<description>Widget</description>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				<top>330</top>
-				<left>1550</left>
-				<width>310</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4017</ondown>
-				<onleft>4016</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget2Content</include>
-				<include>WeatherWidget</include>
-			</control> -->
 		</definition>
 	</include>
 	<include name="TVWidgetNextUp">
@@ -2381,69 +2317,54 @@
 		<content type="static">
 			<!--weather widgets -->
 			<item>
-				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)][/UPPERCASE]</label>
-				<label2>$INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</label2>
-				<property name="fanart">weather/$INFO[Window(Weather).Property(Day0.fanartCode)].png</property>
-				<thumb>weather/$INFO[Window(Weather).Property(Day0.fanartCode)].png</thumb>
-				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
-				<property name="plot">$INFO[Window(Weather).Property(Day0.Outlook)]</property>
-				<onclick>ActivateWindow(weather)</onclick>
-				</item>
-			<item>
-				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day1.Title)][/UPPERCASE]</label>
-				<label2>$INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits]</label2>
-				<property name="fanart">weather/$INFO[Window(Weather).Property(Day1.fanartCode)].png</property>
-				<thumb>weather/$INFO[Window(Weather).Property(Day1.fanartCode)].png</thumb>
-				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day1.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits]</label>
+				<thumb>$VAR[HomeWeather1]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day1.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
 			</item>
 			<item>
-				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day2.Title)][/UPPERCASE]</label>
-				<label2>$INFO[Window(Weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits]</label2>
-				<property name="fanart">weather/$INFO[Window(Weather).Property(Day2.fanartCode)].png</property>
-				<thumb>weather/$INFO[Window(Weather).Property(Day2.fanartCode)].png</thumb>
-				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day2.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits]</label>
+				<thumb>$VAR[HomeWeather2]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day2.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
 			</item>
 			<item>
-				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day3.Title)][/UPPERCASE]</label>
-				<label2>$INFO[Window(Weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits]</label2>
-				<property name="fanart">weather/$INFO[Window(Weather).Property(Day3.fanartCode)].png</property>
-				<thumb>weather/$INFO[Window(Weather).Property(Day3.fanartCode)].png</thumb>
-				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day3.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits]</label>
+				<thumb>$VAR[HomeWeather3]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day3.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
 			</item>
 			<item>
-				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day4.Title)][/UPPERCASE]</label>
-				<label2>$INFO[Window(Weather).Property(Day4.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day4.LowTemp)] $INFO[System.TemperatureUnits]</label2>
-				<property name="fanart">weather/$INFO[Window(Weather).Property(Day4.fanartCode)].png</property>
-				<thumb>weather/$INFO[Window(Weather).Property(Day4.fanartCode)].png</thumb>
-				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day4.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day4.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day4.LowTemp)] $INFO[System.TemperatureUnits]</label>
+				<thumb>$VAR[HomeWeather4]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day4.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
 			</item>
 			<item>
-				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day5.Title)][/UPPERCASE]</label>
-				<label2>$INFO[Window(Weather).Property(Day5.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day5.LowTemp)] $INFO[System.TemperatureUnits]</label2>
-				<property name="fanart">weather/$INFO[Window(Weather).Property(Day5.fanartCode)].png</property>
-				<thumb>weather/$INFO[Window(Weather).Property(Day5.fanartCode)].png</thumb>
-				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day5.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day5.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day5.LowTemp)] $INFO[System.TemperatureUnits]</label>
+				<thumb>$VAR[HomeWeather5]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day5.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
 				<visible>!IsEmpty(Window(Weather).Property(Day5.Title))</visible>
 			</item>
 			<item>
-				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day6.Title)][/UPPERCASE]</label>
-				<label2>$INFO[Window(Weather).Property(Day6.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day6.LowTemp)] $INFO[System.TemperatureUnits]</label2>
-				<property name="fanart">weather/$INFO[Window(Weather).Property(Day6.fanartCode)].png</property>
-				<thumb>weather/$INFO[Window(Weather).Property(Day6.fanartCode)].png</thumb>
-				<property name="poster">$INFO[Window(Weather).Property(WeatherProviderLogo)]</property>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day6.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day6.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day6.LowTemp)] $INFO[System.TemperatureUnits]</label>
+				<thumb>$VAR[HomeWeather6]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day6.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
 				<visible>!IsEmpty(Window(Weather).Property(Day6.Title))</visible>
+			</item>
+		</content>		
+	</include>
+	<include name="WeatherWidgetToday">
+		<content type="static">
+			<!--weather widgets -->
+			<item>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColourHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR]</label>
+				<label2>High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</label2>
+				<thumb>$VAR[HomeWeatherToday]</thumb>
+				<property name="plot">Outlook: $INFO[Window(Weather).Property(Day0.Outlook)][CR]Current Condition: $INFO[Window(Weather).Property(Current.Condition)][CR]Feels Like: $INFO[Window(Weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits][CR]Humidity:  $INFO[Window(Weather).Property(Current.Humidity)][CR]Wind: $INFO[Window(Weather).Property(Current.Wind)][CR]Dew Point:  $INFO[Window(Weather).Property(Current.DewPoint)][CR]Provided By: $INFO[Window(Weather).Property(WeatherProvider)]</property>
+				<onclick>ActivateWindow(weather)</onclick>
 			</item>
 		</content>		
 	</include>
@@ -2666,9 +2587,68 @@
 			</control>
 		</control>
 	</include>
+	<include name="WeatherTodayMainWidget">
+		<control type="group">
+		<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+		<visible>!Container(4012).IsUpdating</visible>
+		<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">backgrounds/space.jpg</texture>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<posy>0</posy>
+				<width>856</width>
+				<height>496</height>
+				<texture border="15" colordiffuse="df000000">common/opaque.png</texture>	
+			</control>
+			<control type="image">
+				<top>100</top>
+				<right>10</right>
+				<height>400</height>
+				<width>500</width>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$VAR[LandscapeImage]</texture>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<height>100</height>
+				<aligny>center</aligny>
+				<font>SmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<right>4</right>
+				<width>460</width>
+				<aligny>center</aligny>
+				<height>100</height>
+				<align>right</align>
+				<font>Mini</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="textbox">
+				<left>12</left>
+				<top>200</top>
+				<right>12</right>
+				<bottom>10</bottom>
+				<align>left</align>
+				<font>TwentySix</font>
+				<textcolor>PanelWhite70</textcolor>
+				<selectedcolor>PanelWhite70</selectedcolor>
+				<label>$INFO[ListItem.Property(plot)]</label>
+			</control>
+		</control>
+	</include>
 	<include name="PVRChannelWidget">
 		<control type="group">
 		<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+		<visible>!Container(4012).IsUpdating</visible>
+		<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 		<visible>Stringcompare(Skin.String(widget4),LiveTV) | Stringcompare(Skin.String(widget4),Recordings)</visible>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
@@ -2712,8 +2692,8 @@
 				<label>$INFO[ListItem.ChannelNumber]</label>
 			</control>
 			<control type="progress">
-				<left>325</left>
-				<width>67</width>
+				<left>350</left>
+				<width>90</width>
 				<height>19</height>
 				<posy>42</posy>
 				<aligny>center</aligny>
@@ -2753,7 +2733,7 @@
 				<right>12</right>
 				<bottom>10</bottom>
 				<align>left</align>
-				<font>Small</font>
+				<font>TwentySix</font>
 				<textcolor>PanelWhite70</textcolor>
 				<selectedcolor>PanelWhite70</selectedcolor>
 				<label>$INFO[ListItem.Title,[B],[/B]]$INFO[ListItem.EpisodeName, (,)]$INFO[ListItem.Plot,[CR],]</label>
