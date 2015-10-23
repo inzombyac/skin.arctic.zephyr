@@ -1002,6 +1002,15 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(52)</visible>
 		</control>
+		<control type="radiobutton" id="9015" description="Big List Circles (52)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Circle Icons</label>
+			<selected>!Skin.HasSetting(global.hidecirles)</selected>
+			<onclick>Skin.ToggleSetting(global.hidecirles)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(52)</visible>
+		</control>
 		<control type="radiobutton" id="9016" description="Discart (513,514)">
 			<include>DefContextButton2</include>
 			<align>left</align>
@@ -1082,15 +1091,6 @@
 			<selected>Skin.HasSetting(views.156.showtick)</selected>
 			<onclick>Skin.ToggleSetting(views.156.showtick)</onclick>
 			<visible>Control.IsVisible(156)</visible>
-		</control>
-		<control type="radiobutton" id="9029" description="Big List Circles (52)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>Circle Icons</label>
-			<selected>!Skin.HasSetting(global.hidecirles)</selected>
-			<onclick>Skin.ToggleSetting(global.hidecirles)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(52)</visible>
 		</control>
 	</include>
 	<include name="Def9000MusicSide">

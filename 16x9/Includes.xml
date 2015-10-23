@@ -87,7 +87,7 @@
 			<include>Animation.FadeIn</include>
 			<include condition="!Window.IsVisible(DialogButtonMenu.xml)">Animation.FadeOut</include>
 			<include>Dimensions_Fullscreen</include>
-			<texture border="2">common/black-back.png</texture>
+			<texture colordiffuse="Background" border="2">common/home-back.png</texture>
 		</control>
 	</include>
 	<variable name="GlobalFanart">
