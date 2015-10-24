@@ -102,8 +102,8 @@
         <control type="group">
             <left>70</left>
             <width>587</width>
-            <top>206</top>
-            <height>900</height>
+            <top>150</top>
+            <height>950</height>
             <control type="group">
                 <height>330</height>
                 <visible>!Skin.HasSetting(57list.low)</visible>
@@ -144,7 +144,7 @@
                 <left>20</left>
                 <right>20</right>
                 <posy>330</posy>
-                <height>430</height>
+                <height>478</height>
                 
                 <control type="label">
                     <top>10</top>

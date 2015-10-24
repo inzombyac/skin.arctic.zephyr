@@ -85,14 +85,6 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-					</control>
-					<control type="image">
-						<left>378</left>
-						<centertop>40</centertop>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
 					</control>
 					<control type="group">
@@ -194,14 +186,6 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-					</control>
-					<control type="image">
-						<left>378</left>
-						<centertop>40</centertop>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
 					</control>
 					<control type="group">
@@ -211,7 +195,7 @@
 							<centertop>40</centertop>
 							<height>40</height>
 							<width>40</width>
-							<texture colordiffuse="$VAR[ColourHighlight]">common/circle.png</texture>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 						<control type="label">

@@ -310,14 +310,6 @@
 							<width>40</width>
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-						</control>
-						<control type="image">
-							<right>124</right>
-							<top>29</top>
-							<width>40</width>
-							<height>40</height>
-							<aspectratio aligny="top">keep</aspectratio>
 							<texture>$VAR[PosterPercentWatched]</texture>
 						</control>
 						<control type="group">
@@ -448,14 +440,6 @@
 							<width>40</width>
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-						</control>
-						<control type="image">
-							<right>32</right>
-							<top>32</top>
-							<width>40</width>
-							<height>40</height>
-							<aspectratio aligny="top">keep</aspectratio>
 							<texture>$VAR[PosterPercentWatched]</texture>
 						</control>
 						<control type="label">
@@ -533,14 +517,6 @@
 								<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
 								<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 								<visible>ListItem.IsResumable</visible>
-							</control>
-							<control type="image">
-								<left>450</left>
-								<centertop>50</centertop>
-								<width>40</width>
-								<height>40</height>
-								<aspectratio aligny="top">keep</aspectratio>
-								<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
 							</control>
 							<control type="image">
 								<left>450</left>

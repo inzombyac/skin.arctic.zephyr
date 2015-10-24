@@ -154,7 +154,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
+						<texture colordiffuse="EmbyGreen">common/circle.png</texture>
 						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="image">
@@ -902,7 +902,7 @@
 							<width>40</width>
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
 						</control>
 						<control type="image">
 							<centerright>40</centerright>
@@ -1097,14 +1097,6 @@
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<texture background="true" diffuse="diffuse/lovefilm.png">$VAR[FanartImage]</texture>
 					<visible>Skin.HasSetting(views.51.showfanart)</visible>
-				</control>
-				<control type="image">
-					<centerright>40</centerright>
-					<centertop>32</centertop>
-					<width>40</width>
-					<height>40</height>
-					<aspectratio aligny="top">keep</aspectratio>
-					<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedBacking]</texture>
 				</control>
 				<control type="image">
 					<centerright>40</centerright>

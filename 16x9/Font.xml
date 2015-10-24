@@ -103,6 +103,11 @@
 			<size>100</size>
 		</font>
 		<font>
+			<name>FakeLogo</name>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>100</size>
+		</font>
+		<font>
 			<name>Medium</name>
 			<filename>RobotoCondensed-Regular.ttf</filename>
 			<size>38</size>
@@ -454,6 +459,11 @@
 		<font>
 			<name>EpisodeNumber</name>
 			<filename>segoe-media-center.ttf</filename>
+			<size>100</size>
+		</font>
+		<font>
+			<name>FakeLogo</name>
+			<filename>RobotoCondensed-Bold.ttf</filename>
 			<size>100</size>
 		</font>
 		<font>

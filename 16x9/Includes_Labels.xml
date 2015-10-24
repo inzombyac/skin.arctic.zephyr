@@ -34,6 +34,7 @@
         <value condition="!IntegerGreaterThan(VideoPlayer.Season,9) + !substring(VideoPlayer.Season,S) + !IsEmpty(VideoPlayer.Season)">S$NUMBER[0]</value>
     </variable>    
 	<variable name="LabelDirector">
+		<value condition="Container.Content(movies)">$INFO[ListItem.Label]$INFO[ListItem.Director, • ,]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.Label]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Artist]</value>
