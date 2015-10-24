@@ -126,7 +126,7 @@
                         <height>8</height>
                         <info>Player.CacheLevel</info>
                         <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-                        <lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+                        <lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
                         <midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
                         <righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
                         <visible>Player.Seeking</visible>
@@ -192,7 +192,7 @@
                         <height>8</height>
                         <info>Player.CacheLevel</info>
                         <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-                        <lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
+                        <lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
                         <midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
                         <righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
                         <visible>Player.Seeking</visible>

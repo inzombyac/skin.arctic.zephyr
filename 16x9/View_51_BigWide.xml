@@ -86,8 +86,8 @@
 							<info>ListItem.PercentPlayed</info>
 							<overlaytexture>-</overlaytexture>
 							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-							<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-							<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+							<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 							<visible>ListItem.IsResumable</visible>
 						</control>
@@ -266,8 +266,8 @@
 						<info>ListItem.PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
 						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<visible>ListItem.IsResumable</visible>
 					</control>
@@ -364,8 +364,8 @@
 						<info>ListItem(-3).PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
 						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
 						<visible>ListItem(-3).IsResumable</visible>
@@ -451,8 +451,8 @@
 						<info>ListItem(-2).PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
 						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
 						<visible>ListItem(-2).IsResumable</visible>
@@ -538,8 +538,8 @@
 						<info>ListItem(-1).PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
 						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
 						<visible>ListItem(-1).IsResumable</visible>
@@ -625,8 +625,8 @@
 						<info>ListItem(3).PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
 						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
 						<visible>ListItem(3).IsResumable</visible>
@@ -712,8 +712,8 @@
 						<info>ListItem(2).PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
 						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
 						<visible>ListItem(2).IsResumable</visible>
@@ -799,8 +799,8 @@
 						<info>ListItem(1).PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
 						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<animation effect="rotate" end="90" center="auto" time="0" condition="True">Conditional</animation>
 						<visible>ListItem(1).IsResumable</visible>
@@ -1004,8 +1004,8 @@
 						<info>ListItem.PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
 						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<visible>ListItem.IsResumable</visible>
 					</control>
