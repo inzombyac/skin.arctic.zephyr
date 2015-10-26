@@ -34,7 +34,20 @@
 						<right>10</right>
 						<bottom>20</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
+					</control>
+					<control type="progress">
+						<left>10</left>
+						<height>12</height>
+						<width>207</width>
+						<bottom>10</bottom>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -90,7 +103,20 @@
 						<right>10</right>
 						<bottom>20</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
+					</control>
+					<control type="progress">
+						<left>10</left>
+						<height>12</height>
+						<width>207</width>
+						<bottom>10</bottom>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -204,7 +230,20 @@
 						<right>10</right>
 						<bottom>10</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
+					</control>
+					<control type="progress">
+						<left>10</left>
+						<height>12</height>
+						<width>207</width>
+						<bottom>10</bottom>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -259,7 +298,20 @@
 							<right>10</right>
 							<bottom>10</bottom>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+							<texture background="true">$VAR[PosterImage]</texture>
+						</control>
+						<control type="progress">
+							<left>10</left>
+							<height>12</height>
+							<width>207</width>
+							<bottom>10</bottom>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture>-</overlaytexture>
+							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
 						</control>
 						<control type="image">
 							<centerright>32</centerright>
@@ -350,7 +402,7 @@
 					<left>20</left>
 					<right>20</right>
 					<posy>330</posy>
-					<height>330</height>
+					<height>500</height>
 					<control type="label">
 						<top>10</top>
 						<aligny>center</aligny>
@@ -364,7 +416,7 @@
 						<top>50</top>
 						<height>64</height>
 						<aligny>center</aligny>
-						<font>Tiny</font>
+						<font>TwentySix</font>
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$INFO[ListItem.Genre]</label>
@@ -373,7 +425,7 @@
 						<top>125</top>
 						<bottom>19</bottom>
 						<align>justify</align>
-						<font>Tiny</font>
+						<font>TwentySix</font>
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelPlotBox]</label>
@@ -415,7 +467,20 @@
 						<right>10</right>
 						<bottom>22</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
+					</control>
+					<control type="progress">
+						<left>10</left>
+						<height>12</height>
+						<width>207</width>
+						<bottom>22</bottom>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>
@@ -471,7 +536,20 @@
 						<right>10</right>
 						<bottom>22</bottom>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<texture diffuse="diffuse/wall.png" background="true">$VAR[PosterImage]</texture>
+						<texture background="true">$VAR[PosterImage]</texture>
+					</control>
+					<control type="progress">
+						<left>10</left>
+						<height>12</height>
+						<width>207</width>
+						<bottom>22</bottom>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="image">
 						<centerright>32</centerright>

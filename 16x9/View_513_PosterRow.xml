@@ -40,7 +40,7 @@
 								</control>
 								<control type="image">
 									<posx>27</posx>
-									<posy>264</posy>
+									<posy>304</posy>
 									<width>160</width>
 									<height>240</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -71,7 +71,7 @@
 								</control>
 								<control type="image">
 									<posx>33</posx>
-									<posy>318</posy>
+									<posy>359</posy>
 									<width>194</width>
 									<height>291</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -102,7 +102,7 @@
 								</control>
 								<control type="image">
 									<posx>39</posx>
-									<posy>372</posy>
+									<posy>412</posy>
 									<width>226</width>
 									<height>339</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -133,7 +133,7 @@
 								</control>
 								<control type="image">
 									<posx>45</posx>
-									<posy>426</posy>
+									<posy>469</posy>
 									<width>260</width>
 									<height>390</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -164,7 +164,7 @@
 								</control>
 								<control type="image">
 									<posx>50</posx>
-									<posy>480</posy>
+									<posy>522</posy>
 									<width>292</width>
 									<height>438</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -195,7 +195,7 @@
 								</control>
 								<control type="image">
 									<posx>56</posx>
-									<posy>534</posy>
+									<posy>577</posy>
 									<width>326</width>
 									<height>489</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -226,7 +226,7 @@
 								</control>
 								<control type="image">
 									<posx>62</posx>
-									<posy>588</posy>
+									<posy>629</posy>
 									<width>358</width>
 									<height>537</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -257,7 +257,7 @@
 								</control>
 								<control type="image">
 									<posx>68</posx>
-									<posy>642</posy>
+									<posy>696</posy>
 									<width>392</width>
 									<height>588</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -288,7 +288,7 @@
 								</control>
 								<control type="image">
 									<posx>74</posx>
-									<posy>698</posy>
+									<posy>741</posy>
 									<width>426</width>
 									<height>639</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -323,13 +323,13 @@
 								</control>
 								<control type="image">
 									<posx>74</posx>
-									<posy>698</posy>
+									<posy>741</posy>
 									<width>426</width>
 									<height>639</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<fadetime>0</fadetime>
-								</control>s
+								</control>
 							</control>
 						</control>
 					</control>
@@ -362,7 +362,7 @@
 								</control>
 								<control type="image">
 									<posx>27</posx>
-									<posy>264</posy>
+									<posy>304</posy>
 									<width>160</width>
 									<height>240</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -393,7 +393,7 @@
 								</control>
 								<control type="image">
 									<posx>27</posx>
-									<posy>264</posy>
+									<posy>307</posy>
 									<width>160</width>
 									<height>240</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -424,7 +424,7 @@
 								</control>
 								<control type="image">					
 									<posx>33</posx>
-									<posy>318</posy>
+									<posy>359</posy>
 									<width>194</width>
 									<height>291</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -455,7 +455,7 @@
 								</control>
 								<control type="image">
 									<posx>39</posx>
-									<posy>372</posy>
+									<posy>412</posy>
 									<width>226</width>
 									<height>339</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -486,7 +486,7 @@
 								</control>
 								<control type="image">
 									<posx>45</posx>
-									<posy>426</posy>
+									<posy>469</posy>
 									<width>260</width>
 									<height>390</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -517,7 +517,7 @@
 								</control>
 								<control type="image">
 									<posx>50</posx>
-									<posy>480</posy>
+									<posy>522</posy>
 									<width>292</width>
 									<height>438</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -548,7 +548,7 @@
 								</control>
 								<control type="image">
 									<posx>56</posx>
-									<posy>534</posy>
+									<posy>577</posy>
 									<width>326</width>
 									<height>489</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -579,7 +579,7 @@
 								</control>
 								<control type="image">
 									<posx>62</posx>
-									<posy>588</posy>
+									<posy>629</posy>
 									<width>358</width>
 									<height>537</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -610,7 +610,7 @@
 								</control>
 								<control type="image">
 									<posx>68</posx>
-									<posy>642</posy>
+									<posy>685</posy>
 									<width>392</width>
 									<height>588</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -644,7 +644,7 @@
 								</control>
 								<control type="image">
 									<posx>30</posx>
-									<posy>636</posy>
+									<posy>679</posy>
 									<width>426</width>
 									<height>639</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -677,7 +677,7 @@
 								</control>
 								<control type="image">
 									<posx>27</posx>
-									<posy>264</posy>
+									<posy>304</posy>
 									<width>160</width>
 									<height>240</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -734,7 +734,7 @@
 								</control>
 								<control type="image">
 									<posx>33</posx>
-									<posy>318</posy>
+									<posy>364</posy>
 									<width>194</width>
 									<height>291</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -791,7 +791,7 @@
 								</control>
 								<control type="image">
 									<posx>39</posx>
-									<posy>372</posy>
+									<posy>412</posy>
 									<width>226</width>
 									<height>339</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -848,7 +848,7 @@
 								</control>
 								<control type="image">
 									<posx>45</posx>
-									<posy>426</posy>
+									<posy>469</posy>
 									<width>260</width>
 									<height>390</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -905,7 +905,7 @@
 								</control>
 								<control type="image">
 									<posx>50</posx>
-									<posy>480</posy>
+									<posy>522</posy>
 									<width>292</width>
 									<height>438</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -962,7 +962,7 @@
 								</control>
 								<control type="image">
 									<posx>56</posx>
-									<posy>534</posy>
+									<posy>577</posy>
 									<width>326</width>
 									<height>489</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -1019,7 +1019,7 @@
 								</control>
 								<control type="image">
 									<posx>62</posx>
-									<posy>588</posy>
+									<posy>629</posy>
 									<width>358</width>
 									<height>537</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -1076,7 +1076,7 @@
 								</control>
 								<control type="image">
 									<posx>68</posx>
-									<posy>642</posy>
+									<posy>685</posy>
 									<width>392</width>
 									<height>588</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -1203,7 +1203,7 @@
 								</control>
 								<control type="image">
 									<posx>74</posx>
-									<posy>698</posy>
+									<posy>741</posy>
 									<width>426</width>
 									<height>639</height>
 									<aspectratio aligny="top" align="right" scalediffuse="false">keep</aspectratio>
@@ -1237,6 +1237,19 @@
 									<textcolor>White</textcolor>
 									<align>center</align>
 									<visible>IntegerGreaterThan(ListItem(0).Property(UnwatchedEpisodes),0)</visible>
+								</control>
+								<control type="progress">
+									<width>426</width>
+									<left>74</left>
+									<height>16</height>
+									<top>705</top>
+									<info>ListItem(0).PercentPlayed</info>
+									<overlaytexture>-</overlaytexture>
+									<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+									<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+									<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+									<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+									<visible>ListItem(0).IsResumable</visible>
 								</control>
 							</control>
 						</control>

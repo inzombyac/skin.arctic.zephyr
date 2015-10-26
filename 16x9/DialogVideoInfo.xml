@@ -142,9 +142,9 @@
 					<top>-8</top>
 					<left>5</left>
 					<align>left</align>
-					<font>Small</font>
+					<font>TwentyEight</font>
 					<scroll>true</scroll>
-					<textcolor>White</textcolor>
+					<textcolor>Dark1</textcolor>
 					<label fallback="">$VAR[Plot]</label>
 					<include>DialogVideoInfoAnimation</include>
 					<visible>!ControlGroup(3444).HasFocus()</visible>
@@ -156,7 +156,7 @@
 					<align>left</align>
 					<font>Small</font>
 					<scroll>true</scroll>
-					<textcolor>White</textcolor>
+					<textcolor>Dark1</textcolor>
 					<label fallback="">$VAR[Plot]</label>
 					<include>DialogVideoInfoAnimation</include>
 					<visible>ControlGroup(3444).HasFocus()</visible>
@@ -390,7 +390,7 @@
 					<label>Similar Titles</label>
 					<include>DefDialogInfoButtons</include>
 				</control>
-			<control id="6" type="button">
+				<control id="6" type="button">
 					<top>557</top>
 					<width>222</width>
 					<height>66</height>
@@ -430,14 +430,14 @@
 				<width>1000</width>
 				<height>32</height>
 				<font>MediumSmall</font>
-				<textcolor>Black300</textcolor>
+				<textcolor>Dark1</textcolor>
 				<label>Cast and Role</label>
 				<visible>IsEmpty(Window(home).Property(Similar)) + !IsEmpty(Container(50).ListItem.Label) + !Control.HasFocus(50)</visible>
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			</control>
 			<!-- No similar videos -->
-			<control type="label">
+			<!-- <control type="label">
 				<top>544</top>
 				<left>600</left>
 				<width>1000</width>
@@ -449,7 +449,7 @@
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 				<animation condition="Control.HasFocus(5000)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(5000)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-			</control>
+			</control> -->
 			<!-- Cast -->
 			<control id="50" type="fixedlist">
 				<left>0</left>
@@ -507,9 +507,8 @@
 							<top>412</top>
 							<width>290</width>
 							<height>42</height>
-							<font>MediumBold</font>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<font>SmallBold</font>
+							<textcolor>Dark1</textcolor>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
@@ -519,8 +518,7 @@
 							<height>28</height>
 							<font>Small</font>
 							<scroll>false</scroll>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<textcolor>Dark2</textcolor>
 							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
 						</control>
 						<control type="image">
@@ -594,10 +592,10 @@
 							<top>412</top>
 							<width>290</width>
 							<height>42</height>
-							<font>MediumBold</font>
+							<font>SmallBold</font>
 							<scroll>false</scroll>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<textcolor>Dark1</textcolor>
+							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label]</label>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
@@ -609,8 +607,8 @@
 							<height>28</height>
 							<font>Small</font>
 							<scroll>false</scroll>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<textcolor>Dark2</textcolor>
+							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
@@ -707,9 +705,9 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(1).Label]</label>
 					</control>
 					<control type="label">
@@ -719,8 +717,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(1).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -754,8 +752,8 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
 						<shadowcolor>80000000</shadowcolor>
 						<label>$INFO[Container(50).ListItemNoWrap(2).Label]</label>
 					</control>
@@ -766,8 +764,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(2).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -801,9 +799,9 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(3).Label]</label>
 					</control>
 					<control type="label">
@@ -813,8 +811,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(3).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -848,9 +846,9 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+					<!-- 	<shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(4).Label]</label>
 					</control>
 					<control type="label">
@@ -860,8 +858,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(4).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -895,9 +893,9 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(5).Label]</label>
 					</control>
 					<control type="label">
@@ -907,8 +905,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(5).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -989,7 +987,7 @@
 							<height>42</height>
 							<font>MediumBold</font>
 							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label]</label>
 							<visible>IsEmpty(ListItem.Art(poster))</visible>
 						</control>
@@ -1074,7 +1072,7 @@
 							<height>42</height>
 							<font>MediumBold</font>
 							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label]</label>
 							<visible>IsEmpty(ListItem.Art(poster))</visible>
 						</control>
@@ -1283,7 +1281,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<font>SmallBold</font>
-					<textcolor>Black700</textcolor>
+					<textcolor>Dark1</textcolor>
 					<label>$INFO[Container(5000).ListItem.Property(Title)]</label>
 					<visible>Control.HasFocus(5000)</visible>
 				</control>
@@ -1294,7 +1292,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<font>Mini</font>
-					<textcolor>Black700</textcolor>
+					<textcolor>Dark2</textcolor>
 					<label>$INFO[Container(50).ListItem.Label2,$LOCALIZE[20347] ,]</label>
 					<visible>Control.HasFocus(50)</visible>
 				</control>

@@ -40,9 +40,10 @@
 				<include>Furniture_Scrollbar</include>
 			</control>
 			<include>56PosterView</include>
+			<include>56FanartView</include>
 			<control type="group" description="Plot et al">
 				<left>ListX</left>
-				<right>SidePad</right>
+				<width>900</width>
 				<control type="grouplist">
 					<left>30</left>
 					<right>30</right>
@@ -67,7 +68,7 @@
 						<font>TwentySix</font>
 						<label>$VAR[LabelPlotBoxLong]</label>
 						<textcolor>Dark2</textcolor>
-						<height>182</height>
+						<height>212</height>
 						<align>justify</align>
 					</control>
 				</control>
@@ -85,7 +86,7 @@
 					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://,left)] | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
 					<top>300</top>
 					<height>PosterH</height>
-					<left>SidePad</left>
+					<left>30</left>
 					<width>600</width>
 					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 					<onright>60</onright>
@@ -113,29 +114,13 @@
 				<include>Furniture_Scrollbar</include>
 			</control>
 			<control type="group" description="Poster">
-				<left>SidePad</left>
+				<left>50</left>
 				<top>150</top>
 				<control type="image">
-					<height>125</height>
+					<height>110</height>
 					<fadetime>100</fadetime>
 					<aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-					<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-					<visible>!IsEmpty(ListItem.Art(clearlogo))</visible>
-				</control>
-				<control type="image">
-					<height>125</height>
-					<fadetime>100</fadetime>
-					<aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-					<texture background="true">$INFO[ListItem.Art(banner)]</texture>
-					<visible>IsEmpty(ListItem.Art(clearlogo))</visible>
-				</control>
-				<control type="label">
-					<font>FakeLogo</font>
-					<height>125</height>
-					<fadetime>100</fadetime>
-					<label>$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
-					<visible>IsEmpty(ListItem.Art(clearlogo))+IsEmpty(ListItem.Art(banner))</visible>
-					<visible>Container.Content(episodes)</visible>
+					<texture background="true">$VAR[ClearLogoBanner]</texture>
 				</control>
 				<control type="label">
 					<font>FakeLogo</font>
@@ -146,59 +131,14 @@
 					<visible>!Container.Content(episodes)</visible>
 				</control>
 			</control>
+			<include>56FanartView</include>
 			<control type="group">
-				<bottom>10</bottom>
-				<height>330</height>
-				<right>10</right>
-				<width>578</width>
-				<control type="image">
-					<width>100%</width>
-					<height>100%</height>
-					<texture border="10">common/nofocus-shadow10.png</texture>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>10</top>
-					<right>10</right>
-					<bottom>10</bottom>
-					<fadetime>200</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[LandscapeImage]</texture>
-					<visible>!Skin.HasSetting(views.56.showfanart)</visible>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>10</top>
-					<right>10</right>
-					<bottom>10</bottom>
-					<fadetime>200</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[FanartImage]</texture>
-					<visible>Skin.HasSetting(views.56.showfanart)</visible>
-				</control>
-				<control type="progress">
-					<left>15</left>
-					<width>578</width>
-					<bottom>10</bottom>
-					<height>12</height>
-					<info>ListItem.PercentPlayed</info>
-					<overlaytexture>-</overlaytexture>
-					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-					<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-					<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
-					<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
-					<visible>ListItem.IsResumable</visible>
-				</control>
-			</control>
-			<control type="group">
-				<height>950</height>
-				<control type="group">	
-				</control>
 				<control type="group">
-					<left>700</left>
+					<left>650</left>
 					<right>30</right>
-					<top>300</top>
-					<height>432</height>
+					<top>600</top>
+					<height>405</height>
+					<width>780</width>
 					<control type="label">
 						<top>10</top>
 						<aligny>center</aligny>
@@ -209,7 +149,7 @@
 						<label>$VAR[LabelDirector]</label>
 					</control>
 					<control type="label">
-						<top>10</top>
+						<top>50</top>
 						<align>right</align>
 						<aligny>center</aligny>
 						<height>64</height>
@@ -220,6 +160,7 @@
 						<label>$INFO[ListItem.Duration,, $LOCALIZE[31102]]</label>
 					</control>
 					<control type="label">
+						<width>780</width>
 						<top>50</top>
 						<height>64</height>
 						<aligny>center</aligny>
@@ -229,6 +170,7 @@
 						<label>$VAR[LabelGenre]</label>
 					</control>
 					<control type="textbox">
+						<width>780</width>
 						<top>125</top>
 						<align>justify</align>
 						<font>TwentyEight</font>
@@ -550,6 +492,123 @@
 			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control> -->
 	</include>
+	<include name="56FanartView">
+		<control type="group">
+			<bottom>60</bottom>
+			<right>10</right>
+			<width>PosterW</width>
+			<height>PosterH</height>
+			<control type="image">
+				<bottom>5</bottom>
+				<width>PosterW</width>
+				<height>48</height>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<texture>diffuse/shadowspot.png</texture>
+				<visible>[Skin.HasSetting(56media.showinfo)|Skin.HasSetting(views.56.showfanart)|Container.Content(episodes)]</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<right>10</right>
+				<bottom>30</bottom>
+				<fadetime>200</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+				<visible>Skin.HasSetting(views.56.showfanart)</visible>
+				<visible>!Container.Content(episodes)</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<right>10</right>
+				<bottom>30</bottom>
+				<fadetime>200</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+				<visible>!Skin.HasSetting(views.56.showfanart)</visible>
+				<visible>!Container.Content(episodes)+Skin.HasSetting(56media.showinfo)</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<right>10</right>
+				<bottom>30</bottom>
+				<fadetime>200</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+				<visible>Skin.HasSetting(views.56.showfanart)</visible>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<right>10</right>
+				<bottom>30</bottom>
+				<fadetime>200</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture background="true">$VAR[LandscapeImage]</texture>
+				<visible>!Skin.HasSetting(views.56.showfanart)</visible>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			<control type="progress">
+				<left>10</left>
+				<width>408</width>
+				<bottom>30</bottom>
+				<height>12</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable+[Container.Content(episodes) | Skin.HasSetting(56media.showinfo)]</visible>
+			</control>
+			<control type="group">
+				<visible>[Container.Content(episodes) | Skin.HasSetting(56media.showinfo)]</visible>
+				<control type="image">
+					<right>20</right>
+					<centertop>40</centertop>
+					<width>40</width>
+					<height>40</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture>$VAR[PosterPercentWatched]</texture>
+					<visible>!Skin.HasSetting(views.56.showfanart) + !Container.Content(episodes)</visible>
+				</control>
+				<control type="image">
+					<right>20</right>
+					<centertop>410</centertop>
+					<width>40</width>
+					<height>40</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture>$VAR[PosterPercentWatched]</texture>
+					<visible>Container.Content(episodes) | Skin.HasSetting(views.56.showfanart)</visible>
+				</control>
+				<control type="group">
+					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					<visible>!Skin.HasSetting(views.56.showfanart)</visible>
+					<control type="image">
+						<right>20</right>
+						<centertop>40</centertop>
+						<height>40</height>
+						<width>40</width>
+						<texture colordiffuse="$VAR[ColourHighlight]">common/circle.png</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+					</control>
+					<control type="label">
+						<right>15</right>
+						<centertop>39</centertop>
+						<height>40</height>
+						<width>50</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+						<font>TwentySix</font>
+						<textcolor>White</textcolor>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
 	<include name="56PosterView">
 		<control type="group" description="Poster">
 			<left>SidePad</left>
@@ -604,6 +663,7 @@
 			</control>
 			<control type="group">
 				<visible>!stringcompare(ListItem.Label,..)</visible>
+				<visible>!Container.Content(episodes)</visible>
 				<control type="image">
 					<left>378</left>
 					<centertop>40</centertop>

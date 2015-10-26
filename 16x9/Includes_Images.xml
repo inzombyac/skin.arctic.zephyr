@@ -152,6 +152,13 @@
 		<value condition="!IsEmpty(MusicPlayer.AlbumArtist)">$INFO[Skin.String(cdartlocation)]$INFO[MusicPlayer.AlbumArtist]/logo.png</value>
 		<value>$INFO[Skin.String(cdartlocation)]$INFO[MusicPlayer.Artist]/logo.png</value>
 	</variable>
+	<variable name="ClearLogoBanner">
+		<value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+		<value condition="!IsEmpty(ListItem.Art(season.banner))">$INFO[ListItem.Art(season.banner)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
+		<value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+	</variable>
 	<variable name="ClearLogo">
 		<value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>

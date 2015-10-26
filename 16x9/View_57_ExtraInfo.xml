@@ -113,32 +113,68 @@
                     <texture border="10">common/nofocus-shadow10.png</texture>
                      <visible>!Container.Content(episodes)</visible>
                 </control>
-             
                 <control type="image">
-                    <left>10</left>
-                    <top>10</top>
-                    <right>10</right>
-                    <bottom>10</bottom>
                     <fadetime>200</fadetime>
                     <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-                    <texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[LandscapeImage]</texture>
+                    <texture background="true">$VAR[LandscapeImage]</texture>
                     <visible>!Container.Content(episodes) + !Skin.HasSetting(views.57.showfanart)</visible>
                 </control>
                 <control type="image">
-                    <left>10</left>
-                    <top>10</top>
-                    <right>10</right>
-                    <bottom>10</bottom>
                     <fadetime>200</fadetime>
                     <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-                    <texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[FanartImage]</texture>
+                    <texture background="true">$VAR[FanartImage]</texture>
                     <visible>!Container.Content(episodes) + Skin.HasSetting(views.57.showfanart)</visible>
                 </control>
                 <control type="image">
-                    <aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
-                    <texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[LandscapeImage]</texture>
+                    <aspectratio align="left" aligny="center" scalediffuse="false">stretch</aspectratio>
+                    <texture background="true">$VAR[LandscapeImage]</texture>
                     <visible>Container.Content(episodes)</visible>
                 </control>
+				<control type="progress">
+					<width>586</width>
+					<height>12</height>
+					<bottom>0</bottom>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
+				<control type="group">
+					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<control type="image">
+						<right>20</right>
+						<centertop>40</centertop>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture>$VAR[PosterPercentWatched]</texture>
+					</control>
+					<control type="group">
+						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<right>20</right>
+							<centertop>40</centertop>
+							<height>40</height>
+							<width>40</width>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<right>15</right>
+							<centertop>38</centertop>
+							<width>50</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>TwentySix</font>
+							<scroll>false</scroll>
+							<textcolor>White</textcolor>
+						</control>
+					</control>
+				</control>
             </control>
             <control type="group">
                 <left>20</left>
