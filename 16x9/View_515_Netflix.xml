@@ -215,7 +215,7 @@
 					<width>1750</width>
 					<height>177</height>
 					<textcolor>White</textcolor>
-					<font>Small</font>
+					<font>TwentySix</font>
 					<align>justify</align>
 					<autoscroll time="3000" delay="4000" repeat="5000"></autoscroll>
 				</control>
@@ -252,7 +252,19 @@
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture>$VAR[PosterPercentWatched]</texture>
-						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					</control>
+					<control type="progress">
+						<bottom>5</bottom>
+						<left>5</left>
+						<width>330</width>
+						<height>10</height>
+						<info>ListItem.PercentPlayed</info>
+						<overlaytexture>-</overlaytexture>
+						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+						<visible>ListItem.IsResumable</visible>
 					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
@@ -323,6 +335,19 @@
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture>$VAR[PosterPercentWatched]</texture>
 							<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						</control>
+						<control type="progress">
+							<bottom>5</bottom>
+							<left>5</left>
+							<width>330</width>
+							<height>10</height>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture>-</overlaytexture>
+							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
 						</control>
 						<control type="group">
 							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>

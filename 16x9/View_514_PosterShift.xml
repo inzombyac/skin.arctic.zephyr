@@ -32,6 +32,27 @@
 			<animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
 		</control>
 		<control type="group">
+			<control type="progress">
+				<width>300</width>
+				<height>14</height>
+				<left>8</left>
+				<top>607</top>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+			<control type="image">
+				<right>10</right>
+				<top>152</top>
+				<width>29</width>
+				<height>29</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture>$VAR[PosterPercentWatched]</texture>
+			</control>
 			<control type="image">
 				<right>10</right>
 				<top>152</top>
