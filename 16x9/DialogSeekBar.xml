@@ -149,7 +149,7 @@
                         <bottom>10</bottom>
                         <height>8</height>
                         <info>Player.Progress</info>
-                        <visible>!Player.Seeking</visible>
+                       <!--  <visible>!Player.Seeking</visible> -->
                     </control>
                 </control>
             </control>
