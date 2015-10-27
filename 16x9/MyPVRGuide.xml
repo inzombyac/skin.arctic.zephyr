@@ -91,7 +91,7 @@
 						<aligny>center</aligny>
 						<height>64</height>
 						<font>TinyBold</font>
-						<textcolor>Black30</textcolor>
+						<textcolor>Dark2</textcolor>
 						<label>First Aired - $INFO[ListItem.premiered]</label>
 					    <visible>Skin.HasSetting(Airdate.Enabled)</visible>
 					</control>
@@ -101,8 +101,8 @@
 						<height>110</height>
 						<align>justify</align>
 						<font>TwentyEight</font>
-						<textcolor>PanelWhite100</textcolor>
-						<selectedcolor>PanelWhite100</selectedcolor>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>
 				</control>
@@ -180,11 +180,13 @@
 							<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 						</control>
 						<control type="image">
-							<posx>2</posx>
-							<posy>0</posy>
-							<width>66</width>
-							<height>70</height>
-							<texture>special://skin/extras/icons/timer.png</texture>
+							<posx>0</posx>
+							<posy>18</posy>
+							<width>52</width>
+							<height>35</height>
+							<texture>indicator/recording.png</texture>
+							<aspectratio>keep</aspectratio>
+							<aligny>center</aligny>
 							<colordiffuse>PanelWhite70</colordiffuse>
 							<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
 						</control>
@@ -224,7 +226,6 @@
 							<width>0</width>
 							<height>68</height>
 							<aligny>center</aligny>
-							<textoffsetx>11</textoffsetx>
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<align>left</align>
 							<label>$INFO[ListItem.Label]</label>
@@ -232,11 +233,13 @@
 							<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 						</control>
 						<control type="image">
-							<posx>2</posx>
-							<posy>0</posy>
-							<width>66</width>
-							<height>70</height>
-							<texture>special://skin/extras/icons/timer.png</texture>
+							<posx>0</posx>
+							<posy>18</posy>
+							<width>52</width>
+							<height>35</height>
+							<texture>indicator/recording.png</texture>
+							<aspectratio>keep</aspectratio>
+							<aligny>center</aligny>
 							<colordiffuse>PanelWhite70</colordiffuse>
 							<visible>ListItem.HasTimer | ListItem.IsRecording</visible>
 						</control>

@@ -48,9 +48,18 @@
 			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
 			<visible>!IsEmpty(VideoPlayer.VideoAspect)</visible>
 		</control>
-		<control type="label" description="Title">
+		<control type="label" description="Show">
 			<width>1000</width>
 			<top>0</top>
+			<height>40</height>
+			<font>MediumBold</font>
+			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+			<label>$VAR[PlayerBigTitle]</label>
+			<visible>VideoPlayer.Content(episodes)</visible>
+		</control>
+		<control type="label" description="Title">
+			<width>100%</width>
+			<top>50</top>
 			<height>40</height>
 			<font>TinyBold</font>
 			<textcolor>$VAR[ColourHighlight]</textcolor>
@@ -65,15 +74,6 @@
 			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
 			<label>$VAR[PlayerTitle]</label>
 			<visible>!VideoPlayer.Content(episodes) | !Player.HasVideo</visible>
-		</control>
-		<control type="label" description="Show">
-			<width>100%</width>
-			<top>50</top>
-			<height>40</height>
-			<font>MediumBold</font>
-			<textcolor>$VAR[OSDPanelWhite70]</textcolor>
-			<label>$VAR[PlayerBigTitle]</label>
-			<visible>VideoPlayer.Content(episodes)</visible>
 		</control>
 		<control type="label" description="Show">
 			<width>100%</width>

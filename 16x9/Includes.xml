@@ -522,7 +522,7 @@
 			<centertop>50%</centertop>
 			<width>118</width>
 			<height>62</height>
-			<texture>colored/rating/Rated TV-G.png</texture>
+			<texture>info/rating/TV-G_Certificate_US.png</texture>
 			<visible>substring(ListItem.mpaa,TV-G)</visible>
 		</control>
 		<control type="image">

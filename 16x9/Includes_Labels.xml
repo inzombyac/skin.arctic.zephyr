@@ -459,7 +459,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),AiringToday)">Airing Today</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Popular TV</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)"></value>
 		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Popular TV</value>
 		<value></value>
 	</variable>
@@ -574,7 +574,7 @@
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.TrackNumber,,. ]$INFO[MusicPlayer.Title]</value>
 		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</value>
 		<value condition="VideoPlayer.Content(movies) + !IsEmpty(VideoPlayer.Tagline)">$INFO[VideoPlayer.Tagline]</value>
-		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TVShowTitle,, •] $INFO[VideoPlayer.Premiered,, •] $VAR[LabelSeasonZero]$INFO[VideoPlayer.Season,,E]$VAR[LabelEpisodeZero]$INFO[VideoPlayer.Episode,, • ]$INFO[Player.Title]</value>
+		<value condition="VideoPlayer.Content(episodes)">$VAR[LabelSeasonZero]$INFO[VideoPlayer.Season,,E]$VAR[LabelEpisodeZero]$INFO[VideoPlayer.Episode,, • ]$INFO[Player.Title]$INFO[VideoPlayer.Premiered, • ,] </value>
 		<value condition="substring(Player.Filenameandpath,http)">$LOCALIZE[31107]</value>
 		<value>$LOCALIZE[291]</value>
 	</variable>
