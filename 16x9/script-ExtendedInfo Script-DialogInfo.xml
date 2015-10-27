@@ -172,7 +172,7 @@
 					<!-- Biography -->
 					<control type="textbox">
 						<width>1192</width>
-						<height max="175">auto</height>
+						<height max="195">auto</height>
 						<align>left</align>
 						<font>TwentyEight</font>
 						<autoscroll>false</autoscroll>
@@ -183,7 +183,7 @@
 				</control>
 				<!-- Known for -->
 				<control type="group">
-					<top>328</top>
+					<top>340</top>
 					<height>36</height>
 					<itemgap>20</itemgap>
 					<include>DialogVideoInfoAnimation</include>

@@ -220,7 +220,7 @@
 		</control>
 		<control type="label">
 			<top>-7</top>
-			<width>1170</width>
+			<width>1400</width>
 			<height>48</height>
 			<font>Large</font>
 			<scroll>true</scroll>
@@ -236,21 +236,21 @@
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			<animation delay="200" effect="fade" end="100" start="0" time="80">Visible</animation>
 			<control type="image">
-				<width>1042</width>
+				<width>1400</width>
 				<height>1</height>
 				<texture>info/infopanel_line.png</texture>
 				<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
 			</control>
 			<control type="image">
 				<top>80</top>
-				<width>1042</width>
+				<width>1400</width>
 				<height>1</height>
 				<texture>info/infopanel_line.png</texture>
 				<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
 			</control>
 			<control type="grouplist">
 				<top>1</top>
-				<width>1200</width>
+				<width>1400</width>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="group">
@@ -287,10 +287,10 @@
 				<control type="image">
 					<aligny>center</aligny>
 					<width>155</width>
-					<height>79</height>
+					<height>60</height>
+					<top>10</top>
 					<aspectratio align="center">keep</aspectratio>
 					<visible>!StringCompare(Window.Property(type),Season) + !StringCompare(Window.Property(type),episode)</visible>
-
 					<texture colordiffuse="Black100" fallback="info/rating/MPAA_NR_Certificate_US.png">$VAR[ExtendedRatingFlagVar,info/rating/,.png]</texture>
 				</control>
 				<control type="image">
@@ -355,7 +355,7 @@
 				</control>
 				<control type="group">
 					<visible>!IsEmpty(Window.Property(movie.release_date))</visible>
-					<width>185</width>
+					<width>200</width>
 					<control type="label">
 						<posy>12</posy>
 						<height>38</height>
@@ -408,7 +408,7 @@
 
 				<control type="group">
 					<visible>!IsEmpty(Window.Property(movie.Budget))</visible>
-					<width>185</width>
+					<width>200</width>
 					<control type="label">
 						<posy>12</posy>
 						<height>38</height>
@@ -434,7 +434,7 @@
 
 				<control type="group">
 					<visible>!IsEmpty(Window.Property(movie.Revenue))</visible>
-					<width>185</width>
+					<width>200</width>
 					<control type="label">
 						<posy>12</posy>
 						<height>38</height>
@@ -457,89 +457,29 @@
 			<visible>!IsEmpty(Window.Property(Movie.Plot))</visible>
 			<visible>!Control.HasFocus(1000) + !Control.HasFocus(150) + !Control.HasFocus(350) + !Control.HasFocus(850) + !Control.HasFocus(950)</visible>
 			<top>154</top>
-			<width>1192</width>
-			<height>140</height>
-			<control type="radiobutton"  id="132">
-				<top>-8</top>
-				<width>1210</width>
-				<height>158</height>
-				<radioposx>1</radioposx>
-				<radioposy>12</radioposy>
-				<radiowidth>46</radiowidth>
-				<ondown>9000</ondown>
-				<textureradioonfocus colordiffuse="White70">-</textureradioonfocus>
-				<textureradioonnofocus colordiffuse="Black100">-</textureradioonnofocus>
-				<textureradioofffocus colordiffuse="White70">-</textureradioofffocus>
-				<textureradiooffnofocus colordiffuse="Black100">-</textureradiooffnofocus>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<align>left</align>
-				<aligny>top</aligny>
-				<textoffsetx>6</textoffsetx>
-				<textoffsety>4</textoffsety>
-				<font>symbol</font>
-				<label></label>
-			</control>
+			<width>1400</width>
+			<height>172</height>
+			
 			<!-- Plot -->
 			<control type="textbox">
-				<top>-8</top>
+				<height>157</height>
+				<top>-5</top>
 				<left>60</left>
 				<align>left</align>
-				<font>Small</font>
+				<font>TwentyEight</font>
 				<autoscroll>false</autoscroll>
 				<textcolor>Black700</textcolor>
 				<label fallback="">$INFO[Window.Property(movie.Plot)]</label>
 				<include>DialogVideoInfoAnimation</include>
-				<visible>!ControlGroup(3444).HasFocus()</visible>
 			</control>
-			<control type="textbox">
-				<top>-8</top>
-				<left>60</left>
-				<align>left</align>
-				<font>Small</font>
-				<autoscroll time="3000" repeat="10000"/>
-				<textcolor>White70</textcolor>
-				<label fallback="">$INFO[Window.Property(movie.Plot)]</label>
-				<include>DialogVideoInfoAnimation</include>
-				<visible>ControlGroup(3444).HasFocus()</visible>
-			</control>
-		</control>
-
-		<control type="grouplist">
-			<top>310</top>
-			<height>44</height>
-			<itemgap>10</itemgap>
-			<include>DialogVideoInfoAnimation</include>
-			<orientation>horizontal</orientation>
-			<usecontrolcoords>true</usecontrolcoords>
-			<visible>!IsEmpty(Container(1000).ListItemNoWrap(0).Label)</visible>
-			<animation condition="Control.HasFocus(1000) | Control.HasFocus(150) | Control.HasFocus(350)  | Control.HasFocus(850)  | Control.HasFocus(950)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-			<animation condition="!Control.HasFocus(1000) + !Control.HasFocus(150) + !Control.HasFocus(350)  + !Control.HasFocus(850) + !Control.HasFocus(950)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-			<control type="label">
-				<align>left</align>
-				<aligny>center</aligny>
-				<top>-14</top>
-				<posx>4</posx>
-				<width>44</width>
-				<font>symbol</font>
-				<label></label>
-			</control>
-			<control type="label">
-				<top>0</top>
-				<width max="1024">auto</width>
-				<height>34</height>
-				<font>Small</font>
-				<aligny>bottom</aligny>
-				<textcolor>Black700</textcolor>
-				<label>$VAR[CastList2]</label>
-			</control>
+			
 		</control>
 		<!-- Director -->
 
 		<control type="grouplist">
-			<top>354</top>
-			<width>1192</width>
-			<height>44</height>
+			<top>300</top>
+			<width>1400</width>
+			<height>50</height>
 			<itemgap>10</itemgap>
 			<include>DialogVideoInfoAnimation</include>
 			<orientation>horizontal</orientation>
@@ -547,26 +487,10 @@
 			<visible>!IsEmpty(Window.Property(movie.director))</visible>
 			<animation condition="Control.HasFocus(1000) | Control.HasFocus(150) | Control.HasFocus(350)  | Control.HasFocus(850) | Control.HasFocus(950)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 			<animation condition="!Control.HasFocus(1000) + !Control.HasFocus(150) + !Control.HasFocus(350)  + !Control.HasFocus(850) + !Control.HasFocus(950)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-			<control type="button" id="3443">
+			<control type="image" id="3443">
 				<width>50</width>
 				<height>50</height>
-				<radioposx>1</radioposx>
-				<radioposy>12</radioposy>
-				<radiowidth>50</radiowidth>
-				<textureradioonfocus colordiffuse="White70">-</textureradioonfocus>
-				<textureradioonnofocus colordiffuse="Black100">-</textureradioonnofocus>
-				<textureradioofffocus colordiffuse="White70">-</textureradioofffocus>
-				<textureradiooffnofocus colordiffuse="Black100">-</textureradiooffnofocus>
-				<texturefocus border="5" colordiffuse="$INFO[Window(home).Property(ImageColor)]">common/box.png</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<align>left</align>
-				<aligny>top</aligny>
-				<textoffsetx>6</textoffsetx>
-				<textoffsety>2</textoffsety>
-				<font>symbol</font>
-				<label></label>
-				<ondown>9009</ondown>
-				<onup>9009</onup>
+				<texture>special://skin/extras/icons/director.png</texture>
 			</control>
 			<control type="label">
 				<top>6</top>
@@ -753,7 +677,7 @@
 		<!-- Flags -->
 		<control type="image">
 			<top>541</top>
-			<width>1042</width>
+			<width>1400</width>
 			<height>1</height>
 			<texture>info/infopanel_line.png</texture>
 			<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
@@ -765,7 +689,7 @@
 			<animation condition="![ControlGroup(9000).HasFocus] + [Control.HasFocus(1000) | Control.HasFocus(150) | Control.HasFocus(350)  | Control.HasFocus(850) | Control.HasFocus(950)]" effect="fade" end="0" start="100" time="0">Conditional</animation>
 			<animation condition="!Control.HasFocus(1000) + !Control.HasFocus(150) + !Control.HasFocus(350)  + !Control.HasFocus(850) + !Control.HasFocus(950)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 			<top>541</top>
-			<width>1045</width>
+			<width>1400</width>
 			<height>90</height>
 			<orientation>horizontal</orientation>
 			<itemgap>25</itemgap>
@@ -789,8 +713,8 @@
 				<posy>5</posy>
 				<width>126</width>
 				<height>62</height>
-				<aspectratio>scale</aspectratio>
-				<texture colordiffuse="Black700">$INFO[Window.Property(movie.AudioCodec),info/audio/,.png]</texture>
+				<aspectratio>keep</aspectratio>
+				<texture colordiffuse="Black700">$INFO[Window.Property(movie.AudioCodec),flags/audio/,.png]</texture>
 				<visible>!IsEmpty(Control.GetLabel(900013))</visible>
 			</control>
 			<control type="image">
@@ -800,10 +724,10 @@
 			</control>
 			<control type="image" id="900014">
 				<posy>5</posy>
-				<width>80</width>
+				<width>126</width>
 				<height>62</height>
 				<aspectratio>keep</aspectratio>
-				<texture colordiffuse="Black700">$INFO[Window.Property(movie.VideoResolution),info/resolution/,.png]</texture>
+				<texture colordiffuse="Black700">$INFO[Window.Property(movie.VideoResolution),flags/resolution/,.png]</texture>
 				<visible>!IsEmpty(Control.GetLabel(900014))</visible>
 			</control>
 			<control type="image">
@@ -813,10 +737,10 @@
 			</control>
 			<control type="image" id="900015">
 				<posy>5</posy>
-				<width>80</width>
+				<width>104</width>
 				<height>62</height>
 				<aspectratio>keep</aspectratio>
-				<texture colordiffuse="Black700">$INFO[Window.Property(movie.VideoAspect),info/aspectratio/,.png]</texture>
+				<texture colordiffuse="Black700">$INFO[Window.Property(movie.VideoAspect),flags/aspectratio/,.png]</texture>
 				<visible>!IsEmpty(Control.GetLabel(900015))</visible>
 			</control>
 			<control type="image">
@@ -826,67 +750,51 @@
 			</control>
 
 			<!--Language flags-->
-			<control type="grouplist">
+		
+			<control type="grouplist" id="11000">
+				<posy>6</posy>
+				<width>260</width>
+				<height>62</height>
+				<align>left</align>
+				<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+				<itemgap>2</itemgap>
 				<orientation>vertical</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				<control type="grouplist" id="11000">
-                            <posy>4</posy>
-                            <width>600</width>
-                            <height>24</height>
-                            <align>left</align>
-					<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-					<itemgap>2</itemgap>
-					<orientation>horizontal</orientation>
-					<visible>!IsEmpty(Window.Property(movie.AudioLanguage.1)) | !IsEmpty(Window.Property(movie.AudioLanguage.2))</visible>
-					<control type="label">
-                                <width>auto</width>
-                                <height>24</height>
-                                <align>right</align>
-                                <posy>3</posy>
-                                <label></label>
-                                <font>symbolview</font>
-                                <textcolor>Black700</textcolor>
-					</control>
-					<include>LanguageFlagsExtraInfo</include>
+				<visible>!IsEmpty(Window.Property(movie.AudioLanguage.1)) | !IsEmpty(Window.Property(movie.AudioLanguage.2))</visible>
+				<control type="label">
+					<height>12</height>
+					<label>Language</label>
+					<font>Tiny</font>
+					<textcolor>Black700</textcolor>
 				</control>
+				<include>LanguageFlagsExtraInfo</include>
+			</control>
+			<control type="image">
+				<include>Furniture_FlagUpright</include>
+				<visible>!IsEmpty(Window.Property(movie.AudioLanguage.1)) | !IsEmpty(Window.Property(movie.AudioLanguage.2))</visible>
+				<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
+			</control>
 				<!--Subtitle flags-->
-				<control type="grouplist" id="12000">
-					<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-                            <posy>3</posy>
-                            <width>600</width>
-                            <height>32</height>
-                            <align>left</align>
-					<itemgap>2</itemgap>
-					<orientation>horizontal</orientation>
-					<visible>!IsEmpty(Window.Property(movie.AudioLanguage.1)) | !IsEmpty(Window.Property(movie.AudioLanguage.2))</visible>
-
-					<control type="label">
-                                <width>auto</width>
-                                <posy>3</posy>
-                                <height>32</height>
-                                <align>right</align>
-                                <aligny>bottom</aligny>
-                                <label></label>
-                                <font>symbolview</font>
-                                <textcolor>Black700</textcolor>
-					</control>
-					<control type="label">
-                                <width min="20" max="150">auto</width>
-                                <height>48</height>
-                                <align>left</align>
-                                <aligny>bottom</aligny>
-                                <label>N/A</label>
-                                <textcolor>Black300</textcolor>
-                                <font>Button</font>
-						<visible>IsEmpty(Window.Property(movie.SubtitleLanguage.1)) + IsEmpty(Window.Property(movie.SubtitleLanguage.2))</visible>
-					</control>
-					<include>SubtitleFlagsExtraInfo</include>
+			<control type="grouplist" id="12000">
+				<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
+				<posy>6</posy>
+				<width>260</width>
+				<height>62</height>
+				<align>left</align>
+				<itemgap>2</itemgap>
+				<orientation>vertical</orientation>
+				<visible>!IsEmpty(Window.Property(movie.AudioLanguage.1)) | !IsEmpty(Window.Property(movie.AudioLanguage.2))</visible>
+				<control type="label">
+					<height>12</height>
+					<label>Subtitles</label>
+					<font>Tiny</font>
+					<textcolor>Black700</textcolor>
 				</control>
+				<include>SubtitleFlagsExtraInfo</include>
 			</control>
 		</control>
 		<control type="image">
 			<top>612</top>
-			<width>1042</width>
+			<width>1400</width>
 			<height>1</height>
 			<texture>info/infopanel_line.png</texture>
 			<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
@@ -971,7 +879,7 @@
 						<height>42</height>
 						<font>MediumBold</font>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
@@ -982,7 +890,7 @@
 						<font>Small</font>
 						<scroll>false</scroll>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Property(character),$LOCALIZE[20347] ,]</label>
 					</control>
 					<control type="image">
@@ -1059,7 +967,7 @@
 						<font>MediumBold</font>
 						<scroll>false</scroll>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Label]</label>
 						<animation center="auto" condition="Control.HasFocus(1000)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
 						<animation center="auto" condition="Control.HasFocus(1000)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
@@ -1072,7 +980,7 @@
 						<font>Small</font>
 						<scroll>false</scroll>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Property(character),$LOCALIZE[20347] ,]</label>
 						<animation center="auto" condition="Control.HasFocus(1000)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
 						<animation center="auto" condition="Control.HasFocus(1000)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
@@ -1127,7 +1035,7 @@
 					<height>42</height>
 					<font>MediumBold</font>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(1).Label]</label>
 				</control>
 				<control type="label">
@@ -1138,7 +1046,7 @@
 					<font>Small</font>
 					<scroll>false</scroll>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(1).Property(character),$LOCALIZE[20347] ,]</label>
 				</control>
 			</control>
@@ -1174,7 +1082,7 @@
 					<height>42</height>
 					<font>MediumBold</font>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(2).Label]</label>
 				</control>
 				<control type="label">
@@ -1185,7 +1093,7 @@
 					<font>Small</font>
 					<scroll>false</scroll>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(2).Property(character),$LOCALIZE[20347] ,]</label>
 				</control>
 			</control>
@@ -1221,7 +1129,7 @@
 					<height>42</height>
 					<font>MediumBold</font>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(3).Label]</label>
 				</control>
 				<control type="label">
@@ -1232,7 +1140,7 @@
 					<font>Small</font>
 					<scroll>false</scroll>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(3).Property(character),$LOCALIZE[20347] ,]</label>
 				</control>
 			</control>
@@ -1268,7 +1176,7 @@
 					<height>42</height>
 					<font>MediumBold</font>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(4).Label]</label>
 				</control>
 				<control type="label">
@@ -1279,7 +1187,7 @@
 					<font>Small</font>
 					<scroll>false</scroll>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(4).Property(character),$LOCALIZE[20347] ,]</label>
 				</control>
 			</control>
@@ -1315,7 +1223,7 @@
 					<height>42</height>
 					<font>MediumBold</font>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(5).Label]</label>
 				</control>
 				<control type="label">
@@ -1326,7 +1234,7 @@
 					<font>Small</font>
 					<scroll>false</scroll>
 					<textcolor>Black700</textcolor>
-					<shadowcolor>80000000</shadowcolor>
+					<!--<shadowcolor>80000000</shadowcolor>-->
 					<label>$INFO[Container(1000).ListItemNoWrap(5).Property(character),$LOCALIZE[20347] ,]</label>
 				</control>
 			</control>
@@ -1407,7 +1315,7 @@
 						<height>42</height>
 						<font>MediumBold</font>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Label]</label>
 						<visible>IsEmpty(ListItem.Art(poster))</visible>
 					</control>
@@ -1474,7 +1382,7 @@
 						<height>42</height>
 						<font>MediumBold</font>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Label]</label>
 						<visible>IsEmpty(ListItem.Art(poster))</visible>
 					</control>
@@ -1944,7 +1852,7 @@
 						<aligny>center</aligny>
 						<font>MediumBoldCapital</font>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</control>
@@ -1970,7 +1878,7 @@
 						<aligny>center</aligny>
 						<font>MediumBoldCapital</font>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="image">
@@ -2066,7 +1974,7 @@
 						<aligny>center</aligny>
 						<font>MediumBoldCapital</font>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</control>
@@ -2092,7 +2000,7 @@
 						<aligny>center</aligny>
 						<font>MediumBoldCapital</font>
 						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<!--<shadowcolor>80000000</shadowcolor>-->
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="image">
