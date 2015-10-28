@@ -199,32 +199,6 @@
 	<variable name="Studio">
 		<value condition="!IsEmpty(ListItem.Studio)">resource://resource.images.studios.white/$INFO[Window(home).Property(ListItemStudioLabel),,.png]</value>
 	</variable>
-	<variable name="StarRating">
-		<value condition="IntegerGreaterThan(ListItem.Rating,9)">rating/rating10.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,8)">rating/rating9.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,7)">rating/rating8.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,6)">rating/rating7.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,5)">rating/rating6.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,4)">rating/rating5.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,3)">rating/rating4.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,2)">rating/rating3.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,1)">rating/rating2.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,0)">rating/rating1.png</value>
-		<value>rating/rating0.png</value>
-	</variable>
-	<variable name="SeasonStarRating">
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),9)">rating/rating10.png</value>
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),8)">rating/rating9.png</value>
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),7)">rating/rating8.png</value>
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),6)">rating/rating7.png</value>
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),5)">rating/rating6.png</value>
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),4)">rating/rating5.png</value>
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),3)">rating/rating4.png</value>
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),2)">rating/rating3.png</value>
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),1)">rating/rating2.png</value>
-		<value condition="IntegerGreaterThan(Window(home).Property(TVShowRating),0)">rating/rating1.png</value>
-		<value>rating/rating0.png</value>
-	</variable>
 	<variable name="MusicFanart">
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>

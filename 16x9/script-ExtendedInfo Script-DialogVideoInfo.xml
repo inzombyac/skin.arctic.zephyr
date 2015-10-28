@@ -291,7 +291,7 @@
 					<top>10</top>
 					<aspectratio align="center">keep</aspectratio>
 					<visible>!StringCompare(Window.Property(type),Season) + !StringCompare(Window.Property(type),episode)</visible>
-					<texture colordiffuse="Black100" fallback="info/rating/MPAA_NR_Certificate_US.png">$VAR[ExtendedRatingFlagVar,info/rating/,.png]</texture>
+					<texture colordiffuse="Black100" fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[ExtendedRatingFlagVar,flags/rating/,.png]</texture>
 				</control>
 				<control type="image">
 					<height>79</height>

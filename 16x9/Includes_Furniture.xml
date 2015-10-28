@@ -1524,7 +1524,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(furniture.flags)</visible>
+			<!-- <visible>!Skin.HasSetting(furniture.flags)</visible> -->
 			<visible>Control.HasFocus(301)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
