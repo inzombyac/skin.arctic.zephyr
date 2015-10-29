@@ -220,6 +220,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),musicvideos)">$VAR[DefWidget12Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">$VAR[DefWidget12Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">$VAR[DefWidget2Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">$VAR[DefWidget2Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)">$VAR[DefWidget1Content]</value>

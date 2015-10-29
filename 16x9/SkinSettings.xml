@@ -203,16 +203,16 @@
 						<label>31247</label>
 						<label2>[COLOR=$VAR[ColourHighlight2]]$VAR[LabelHomeWidgetStyle][/COLOR]</label2>
 						<onclick>SetProperty(Dialog.NumItems,5)</onclick>
-						<onclick>SetProperty(Dialog.1.Label,Default - Horizontal)</onclick>
-						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(home.vertical) || Skin.Reset(home.classicwidgets) || Skin.Reset(home.netflix) || Skin.Reset(home.emby) )</onclick>
-						<onclick>SetProperty(Dialog.2.Label,Vertical)</onclick>
-						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetBool(home.vertical) || Skin.Reset(home.classicwidgets) || Skin.Reset(home.netflix) || Skin.Reset(home.emby) )</onclick>
-						<onclick>SetProperty(Dialog.3.Label,Classic)</onclick>
-						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetBool(home.classicwidgets) || Skin.Reset(home.vertical) || Skin.Reset(home.netflix) || Skin.Reset(home.emby))</onclick>
-						<onclick>SetProperty(Dialog.4.Label,Emby)</onclick>
-						<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetBool(home.emby) || Skin.Reset(home.vertical) || Skin.Reset(home.classicwidgets) || Skin.Reset(home.netflix))</onclick>
+						<onclick>SetProperty(Dialog.1.Label,Default - Emby)</onclick>
+						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetBool(home.emby)|| Skin.Reset(home.horizontal) || Skin.Reset(home.vertical) || Skin.Reset(home.classicwidgets) || Skin.Reset(home.netflix))</onclick>
+						<onclick>SetProperty(Dialog.2.Label,Horizontal)</onclick>
+						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetBool(home.horizontal)||Skin.Reset(home.vertical) || Skin.Reset(home.classicwidgets) || Skin.Reset(home.netflix) || Skin.Reset(home.emby) )</onclick>
+						<onclick>SetProperty(Dialog.3.Label,Vertical)</onclick>
+						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetBool(home.vertical) || Skin.Reset(home.horizontal)|| Skin.Reset(home.classicwidgets) || Skin.Reset(home.netflix) || Skin.Reset(home.emby) )</onclick>
+						<onclick>SetProperty(Dialog.4.Label,Classic)</onclick>
+						<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetBool(home.classicwidgets) || Skin.Reset(home.horizontal)|| Skin.Reset(home.vertical) || Skin.Reset(home.netflix) || Skin.Reset(home.emby))</onclick>
 						<onclick>SetProperty(Dialog.5.Label,Netflix)</onclick>
-						<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetBool(home.netflix) || Skin.Reset(home.vertical) || Skin.Reset(home.classicwidgets) || Skin.Reset(home.emby))</onclick>
+						<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetBool(home.netflix) || Skin.Reset(home.horizontal)|| Skin.Reset(home.vertical) || Skin.Reset(home.classicwidgets) || Skin.Reset(home.emby))</onclick>
 						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Home Layout)</onclick>
 					</control>
 					<control type="button" id="9212" description="Customise Home">
@@ -914,7 +914,7 @@
 						<onclick>Skin.ToggleSetting(emby.left.colour)</onclick>
 						<label>Change left thumb colour emby screen</label>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-						<visible>Skin.HasSetting(home.emby)</visible>
+						<visible>!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)</visible>
 					</control>
 					<control type="button" id="92870">
 						<width>1310</width>
@@ -922,7 +922,7 @@
 						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,emby.left.colour.name)</onclick>
 						<label> - Set left colour</label>
 						<label2>[COLOR=$INFO[Skin.String(emby.left.colour.name)]]$INFO[Skin.String(emby.left.colour.name)][/COLOR]</label2>
-						<visible>Skin.HasSetting(emby.left.colour) + Skin.HasSetting(home.emby)</visible>
+						<visible>Skin.HasSetting(emby.left.colour) + !Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)</visible>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
 					<control type="radiobutton" id="92871">
@@ -932,7 +932,7 @@
 						<onclick>Skin.ToggleSetting(emby.right.colour)</onclick>
 						<label>Change right thumb colour emby</label>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-						<visible>Skin.HasSetting(home.emby)</visible>
+						<visible>!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)</visible>
 					</control>
 					<control type="button" id="92872">
 						<width>1310</width>
@@ -940,7 +940,7 @@
 						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,emby.right.colour.name)</onclick>
 						<label> - Set right colour</label>
 						<label2>[COLOR=$INFO[Skin.String(emby.right.colour.name)]]$INFO[Skin.String(emby.right.colour.name)][/COLOR]</label2>
-						<visible>Skin.HasSetting(emby.right.colour) + Skin.HasSetting(home.emby)</visible>
+						<visible>Skin.HasSetting(emby.right.colour) + !Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)</visible>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
 					<control type="radiobutton" id="92873">
@@ -950,7 +950,7 @@
 						<onclick>Skin.ToggleSetting(emby.middle.colour)</onclick>
 						<label>Change middle thumb colour emby screen</label>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-						<visible>Skin.HasSetting(home.emby)</visible>
+						<visible>!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)</visible>
 					</control>
 					<control type="button" id="92874">
 						<width>1310</width>
@@ -958,7 +958,7 @@
 						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,emby.middle.colour.name)</onclick>
 						<label> - Set middle colour</label>
 						<label2>[COLOR=$INFO[Skin.String(emby.middle.colour.name)]]$INFO[Skin.String(emby.middle.colour.name)][/COLOR]</label2>
-						<visible>Skin.HasSetting(emby.middle.colour) + Skin.HasSetting(home.emby)</visible>
+						<visible>Skin.HasSetting(emby.middle.colour) + !Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)</visible>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
 					<!-- Views -->

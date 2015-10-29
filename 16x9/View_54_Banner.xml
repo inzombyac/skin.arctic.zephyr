@@ -301,7 +301,7 @@
 								<top>29</top>
 								<width>40</width>
 								<height>40</height>
-								<texture colordiffuse="$VAR[ColourHighlight]">common/circle.png</texture>
+								<texture colordiffuse="EmbyGreen">common/circle.png</texture>
 								<aspectratio align="center" aligny="center">keep</aspectratio>
 							</control>
 							<control type="label">

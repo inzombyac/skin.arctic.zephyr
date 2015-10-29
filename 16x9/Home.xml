@@ -11,7 +11,7 @@
 	<controls>
 		<include condition="!Skin.HasSetting(home.netflix) + !Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include condition="Skin.HasSetting(home.netflix) + System.HasAddon(plugin.video.netflixbmc) + !Skin.HasSetting(lights.out)">NetflixBackground</include>
-		<include condition="Skin.HasSetting(home.emby)">GlobalOverlay</include>
+		<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)">GlobalOverlay</include>
 		<control type="group">
 			 <animation type="Conditional" condition="System.IdleTime(20) + Skin.HasSetting(home.fade)" reversible="false">
 				<!-- Broken Fade -->
@@ -20,25 +20,25 @@
 				<effect type="rotate" end="-1" time="1900" tween="elastic"/>
 			</animation>
 			<include condition="Skin.HasSetting(home.vertical)">HomeVerticalMenu</include>
-			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeHeader</include>
-			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)">HomeNextRecording</include>
-			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeWeatherWidget</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + [Skin.HasSetting(home.horizontal) | Skin.HasSetting(home.classicwidgets)]">HomeHeader</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ [Skin.HasSetting(home.horizontal) | Skin.HasSetting(home.classicwidgets)]">HomeNextRecording</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + [Skin.HasSetting(home.horizontal) | Skin.HasSetting(home.classicwidgets)]">HomeWeatherWidget</include>
 			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)">Furniture_NowPlaying</include>
-			<include condition="!Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeWidgetSelector</include>
-			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeBackgroundPlaylist</include>
-			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.classicwidgets) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeRow</include>
-			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.classicwidgets) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeWidgetInfo</include>
-			<include condition="!Skin.HasSetting(home.vertical) + Skin.HasSetting(home.classicwidgets) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeClassicWidgets</include>
-			<include condition="!Skin.HasSetting(home.vertical) + Skin.HasSetting(home.submenu2) + !Skin.HasSetting(home.showicons) + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeSubMenu2</include>
-			<include condition="!Skin.HasSetting(home.vertical) + [!Skin.HasSetting(home.submenu2) | Skin.HasSetting(home.showicons)] + !Skin.HasSetting(home.netflix) + !Skin.HasSetting(home.emby)">HomeSubMenu</include>
+			<include condition="!Skin.HasSetting(home.netflix) + [Skin.HasSetting(home.horizontal) | Skin.HasSetting(home.classicwidgets) | Skin.HasSetting(home.vertical)]">HomeWidgetSelector</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix) + [Skin.HasSetting(home.horizontal) | Skin.HasSetting(home.classicwidgets)]">HomeBackgroundPlaylist</include>
 			<include condition="Skin.HasSetting(home.netflix) + !System.HasAddon(plugin.video.netflixbmc)">HomeNetflix</include>
 			<include condition="Skin.HasSetting(home.netflix) + !System.HasAddon(plugin.video.netflixbmc)">NetflixWidgetSelector</include>
 			<include condition="Skin.HasSetting(home.netflix) + System.HasAddon(plugin.video.netflixbmc)">NetflixXbmcBackground</include>
 			<include condition="Skin.HasSetting(home.netflix) + System.HasAddon(plugin.video.netflixbmc)">HomeNetflixXbmc</include>
-			<include condition="Skin.HasSetting(home.emby)">HomeEmbyRow</include>
-			<include condition="Skin.HasSetting(home.emby)">HomeEmbyWidgetInfo</include>
-			<include condition="Skin.HasSetting(home.emby) + [!Skin.HasSetting(home.submenu2) | Skin.HasSetting(home.showicons)]">HomeEmbySubMenu</include>
-			<include condition="Skin.HasSetting(home.emby) + Skin.HasSetting(home.submenu2) + !Skin.HasSetting(home.showicons)">HomeEmbySubMenu2</include>
+			<include condition="Skin.HasSetting(home.horizontal)">HomeRow</include>
+			<include condition="Skin.HasSetting(home.horizontal) + !Skin.HasSetting(home.classicwidgets)">HomeWidgetInfo</include>
+			<include condition="Skin.HasSetting(home.horizontal) + Skin.HasSetting(home.classicwidgets)">HomeClassicWidgets</include>
+			<include condition="Skin.HasSetting(home.horizontal) + Skin.HasSetting(home.submenu2) + !Skin.HasSetting(home.showicons)">HomeSubMenu2</include>
+			<include condition="Skin.HasSetting(home.horizontal) + [!Skin.HasSetting(home.submenu2) | Skin.HasSetting(home.showicons)]">HomeSubMenu</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)">HomeEmbyRow</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)">HomeEmbyWidgetInfo</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets) + [!Skin.HasSetting(home.submenu2) | Skin.HasSetting(home.showicons)]">HomeEmbySubMenu</include>
+			<include condition="!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets) + Skin.HasSetting(home.submenu2) + !Skin.HasSetting(home.showicons)">HomeEmbySubMenu2</include>
 		</control>
 	</controls>
 </window>
