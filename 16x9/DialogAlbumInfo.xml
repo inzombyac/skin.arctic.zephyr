@@ -726,7 +726,7 @@
 					<left>930</left>
 					<width>160</width>
 					<height>196</height>
-					<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">equaliser.gif</texture>
+					<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">special://skin/extras/icons/equaliser.gif</texture>
 					<visible>!Player.Paused + Player.HasAudio</visible>
 				</control>
 				<control type="image">
@@ -734,7 +734,7 @@
 					<left>930</left>
 					<width>160</width>
 					<height>196</height>
-					<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">equaliser_stop.gif</texture>
+					<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">special://skin/extras/icons/equaliser_stop.gif</texture>
 					<visible>Player.Paused + Player.HasAudio</visible>
 				</control>
 				<control type="image">

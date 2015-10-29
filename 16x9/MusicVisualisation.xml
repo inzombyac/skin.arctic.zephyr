@@ -184,14 +184,14 @@
                                     <centertop>14</centertop>
                                     <width>120</width>
                                     <height>64</height>
-                                    <texture colordiffuse="$VAR[ColourHighlight]">equaliser.gif</texture>
+                                    <texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/equaliser.gif</texture>
                                     <visible>!Player.Paused</visible>
                                 </control>
                                 <control type="image">
                                     <centertop>14</centertop>
                                     <width>120</width>
                                     <height>64</height>
-                                    <texture colordiffuse="$VAR[ColourHighlight]">equaliser_stop.gif</texture>
+                                    <texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/equaliser_stop.gif</texture>
                                     <visible>Player.Paused</visible>
                                 </control>
                                 <control type="image">
