@@ -136,9 +136,9 @@
 				<control type="group">
 					<left>650</left>
 					<right>30</right>
-					<top>600</top>
-					<height>405</height>
-					<width>780</width>
+					<top>275</top>
+					<height>705</height>
+					<width>700</width>
 					<control type="label">
 						<top>10</top>
 						<aligny>center</aligny>
@@ -160,7 +160,7 @@
 						<label>$INFO[ListItem.Duration,, $LOCALIZE[31102]]</label>
 					</control>
 					<control type="label">
-						<width>780</width>
+						<width>700</width>
 						<top>50</top>
 						<height>64</height>
 						<aligny>center</aligny>
@@ -170,7 +170,7 @@
 						<label>$VAR[LabelGenre]</label>
 					</control>
 					<control type="textbox">
-						<width>780</width>
+						<width>700</width>
 						<top>125</top>
 						<align>justify</align>
 						<font>TwentyEight</font>
@@ -494,8 +494,8 @@
 	</include>
 	<include name="56FanartView">
 		<control type="group">
-			<bottom>60</bottom>
-			<right>10</right>
+			<bottom>140</bottom>
+			<right>60</right>
 			<width>PosterW</width>
 			<height>PosterH</height>
 			<control type="image">

@@ -475,7 +475,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>!Skin.HasSetting(furniture.flags)</visible>
+			<visible>!Skin.HasSetting(furniture.flags)+!Skin.HasSetting(furniture.logo)</visible>
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
@@ -485,14 +485,33 @@
 			<centerbottom>60</centerbottom>
 			<width>1920</width>
 			<height>120</height>
-			<align>left</align>
+			<align>right</align>
 			<control type="image">
-				<left>-15</left>
-				<centertop>50%</centertop>
-				<width>104</width>
-				<height>104</height>
+				<right>0</right>
+				<width>258</width>
+				<height>120</height>
 				<texture colordiffuse="Dark1">$VAR[Studio]</texture>
-				<aspectratio align="left">keep</aspectratio>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!Skin.HasSetting(furniture.flags)+Skin.HasSetting(furniture.logo)</visible>
+			<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+			<visible>!stringcompare(ListItem.Label,..)</visible>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>0</left>
+			<centerbottom>60</centerbottom>
+			<width>1920</width>
+			<height>120</height>
+			<align>right</align>
+			<control type="image">
+				<right>275</right>
+				<width>258</width>
+				<height>120</height>
+				<texture colordiffuse="Dark1">$VAR[Studio]</texture>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
 			</control>
 		</control>
 	</include>

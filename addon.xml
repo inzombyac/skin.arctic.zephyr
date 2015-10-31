@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
     id="skin.arctic.emby"
-    version="1.0.0.0"
+    version="1.1.0.0"
     name="Arctic: Emby"
     provider-name="jurialmunkey - im85288 - badaas - inzombyac">
     <requires>
@@ -10,7 +10,6 @@
         <import addon="service.library.data.provider" version="0.0.7"/>
         <import addon="script.extendedinfo" version="2.0.3"/>
 		<import addon="script.skin.info.service" version="1.0.0"/>
-		<import addon="script.arctic.zephyr.helper.jarvis" version="1.0.0"/>
         <import addon="script.skin.helper.service" version="1.0.0"/>
 		<import addon="script.toolbox" version="1.0.0"/>
 		<import addon="script.oscars.view" version="0.0.6"/>
@@ -30,23 +29,8 @@
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
 	</extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="de">Klar, minimalistisch, elegant, einfach, leicht</summary>
-        <summary lang="en">Clean, minimal, elegant, simple, light.</summary>
-        <summary lang="en_US">Clean, minimal, elegant, simple, light.</summary>
-        <summary lang="fr_CA">Propre, minimal, élégant, simple, léger.</summary>
-        <summary lang="lt">Švari, minimali, elegantiška, paprasta, lengva.</summary>
-        <summary lang="nl">Schoon, minimaal, elegant, simpel, licht.</summary>
-        <summary lang="pl">Prosta, minimalista, elegancka i lekka</summary>
-        <summary lang="pt_BR">Limpa, simplista, elegante, leve.</summary>
-        <summary lang="ro">Curat, minimalist, elegant, simplu, ușor</summary>
-        <description lang="de">Arctic: Emby ist die dritte Iteration des Arctic Skins von jurialmunkey und ein minimalistisches, klares und simples Interface für deine Medien mit dem gewissen Etwas.</description>
-        <description lang="en">Arctic: Emby is the third iteration of the Arctic skin created by jurialmunkey. Arctic focuses on being simple, clean and minimalistic with a light spin.</description>
-        <description lang="en_US">Arctic: Emby is the third iteration of the Arctic skin created by jurialmunkey. Arctic focuses on being simple, clean and minimalistic with a light spin.</description>
-        <description lang="fr_CA">Arctic : Emby est la troisième itération de l'habillage Arctic créé par jurialmunkey. Arctic focus à être simple, propre et minimaliste avec une légère touche de changement.</description>
-        <description lang="lt">Arctic: Emby yra trečia Arctic teminės išvaizdos, kurios autorius yra jurialmunkey, iteracija. Arctic sutelkia dėmesį ties paprastumu, švarumu ir minimalizmu su lengvu veikimu.</description>
-        <description lang="nl">Arctic: Emby is de derde herhaling van de arctic skin ge creëerd door jurialmunkey. Arctic focust zich op een eenvoudig zeinde, schoon en minimaal met een lichte twist.</description>
-        <description lang="pl">Arctic: Emby jest trzecią wersją oryginalnej skóry Arctic stworzonej przez jurialmunkey. Arctic skupia się na prostocie i minimalizmie z lekką dozą szaleństwa.</description>
-        <description lang="pt_BR">Arctic: Emby é a terceira iteração da interface Arctic criada por jurialmunkey. Arctic foi criada para ser simples, limpa e minimalistica.</description>
+        <summary lang="en">Emby mod theme for Arctic Zephyr</summary>
+        <description lang="en">Emby mod theme for Arctic Zephyr</description>
         <platform>all</platform>
     </extension>
 </addon>

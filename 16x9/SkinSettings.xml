@@ -832,7 +832,7 @@
 					<control type="button" id="9282">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,focuscolor.name)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor.name)</onclick>
 						<label> - Set main highlight colour</label>
 						<label2>[COLOR=$VAR[ColourHighlight]]$INFO[Skin.String(focuscolor.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(ColourHighlight)</visible>
@@ -858,7 +858,7 @@
 					<control type="button" id="9285">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,focuscolor2.name)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor2.name)</onclick>
 						<label> - Set second highlight colour</label>
 						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(ColourHighlight2)</visible>
@@ -884,7 +884,7 @@
 					<control type="button" id="9288">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,selectedcolor.name)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=selectedcolor.name)</onclick>
 						<label> - Set selected colour</label>
 						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(selectedcolor.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(ColourSelected)</visible>
@@ -901,7 +901,7 @@
 					<control type="button" id="92868">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,posterbacking.colour.name)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=posterbacking.colour.name)</onclick>
 						<label> - Set backing colour</label>
 						<label2>[COLOR=$INFO[Skin.String(posterbacking.colour.name)]]$INFO[Skin.String(posterbacking.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(PosterBackingColour)</visible>
@@ -919,7 +919,7 @@
 					<control type="button" id="92870">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,emby.left.colour.name)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.left.colour.name)</onclick>
 						<label> - Set left colour</label>
 						<label2>[COLOR=$INFO[Skin.String(emby.left.colour.name)]]$INFO[Skin.String(emby.left.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(emby.left.colour) + !Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)</visible>
@@ -937,7 +937,7 @@
 					<control type="button" id="92872">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,emby.right.colour.name)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.right.colour.name)</onclick>
 						<label> - Set right colour</label>
 						<label2>[COLOR=$INFO[Skin.String(emby.right.colour.name)]]$INFO[Skin.String(emby.right.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(emby.right.colour) + !Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)</visible>
@@ -955,7 +955,7 @@
 					<control type="button" id="92874">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,COLORPICKER,emby.middle.colour.name)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.middle.colour.name)</onclick>
 						<label> - Set middle colour</label>
 						<label2>[COLOR=$INFO[Skin.String(emby.middle.colour.name)]]$INFO[Skin.String(emby.middle.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(emby.middle.colour) + !Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.netflix)+ !Skin.HasSetting(home.horizontal)+ !Skin.HasSetting(home.classicwidgets)</visible>
@@ -965,7 +965,7 @@
 					<control type="button" id="9291" description="Enable or Disable views">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.arctic.zephyr.helper.jarvis,ENABLEVIEWS)</onclick>
+						<onclick>RunScript(script.skin.helper.service,action=enableviews)</onclick>
 						<label>31769</label>
 						<visible>ControlGroup(9100).HasFocus(9109)</visible>
 					</control>
