@@ -30,6 +30,10 @@
     <color name="Black700">B3000000</color>
     <color name="Black300">4D000000</color>
     <color name="Black12">1F000000</color>
+	
+	<color name="EmbyLeft">ff26619c</color>
+	<color name="EmbyCenter">ff50c878</color>
+	<color name="EmbyRight">ffe62020</color>
     
     
 </colors>
