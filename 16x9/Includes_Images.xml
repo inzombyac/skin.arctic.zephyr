@@ -198,7 +198,7 @@
 	</variable>
 	<variable name="Studio">
 		<value condition="!IsEmpty(ListItem.Studio)">resource://resource.images.studios.white/$INFO[Window(home).Property(ListItemStudioLabel),,.png]</value>
-		<value>$INFO[ListItem.Art(clearlogo)]</value>
+		<!-- <value>$INFO[ListItem.Art(clearlogo)]</value> -->
 	</variable>
 	<variable name="MusicFanart">
 		<value condition="!IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>

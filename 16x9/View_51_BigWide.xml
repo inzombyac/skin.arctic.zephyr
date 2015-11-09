@@ -902,14 +902,6 @@
 							<width>40</width>
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
-						</control>
-						<control type="image">
-							<centerright>40</centerright>
-							<centertop>32</centertop>
-							<width>40</width>
-							<height>40</height>
-							<aspectratio aligny="top">keep</aspectratio>
 							<texture>$VAR[PercentWatched]</texture>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
 							<animation effect="slide" start="0" end="64" time="0" condition="Container.Content(Seasons)">Conditional</animation>

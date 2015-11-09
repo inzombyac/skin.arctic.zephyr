@@ -2278,7 +2278,7 @@
 		</definition>
 	</include>
 	<include name="TVWidgetNextUp">
-		<content target="filebrowser">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</content>
+		<content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]&amp;id=$INFO[Container(9000).ListItem.Property(Path)]</content>
 	</include>
 	<include name="TVWidgetRecent">
 		<content>plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</content>
@@ -2439,6 +2439,12 @@
 		<value condition="Control.HasFocus(4016) + [StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID)) | StringCompare(Container(300).ListItem.Property(defaultID),files)]">$INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
 		<value condition="Control.HasFocus(4017) + [StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID)) | StringCompare(Container(300).ListItem.Property(defaultID),files)]">$INFO[Container(4017).ListItem.TVShowTitle,, •] $INFO[Container(4017).ListItem.Premiered,, •]</value>
 	</variable>
+	<variable name="EmbyHomeClearArt">
+		<value condition="Control.HasFocus(4016) +StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4016).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Art(clearlogo)]</value>
+		<value condition="Control.HasFocus(4017) +StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4017).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Art(clearlogo)]</value>
+	</variable>
 	
 	<include name="EmbyFooter">
 		<control type="group">
@@ -2528,8 +2534,8 @@
 			<include>Animation.FadeOut</include>
 			<left>SidePad</left>
 			<centerbottom>30</centerbottom>
-			<width>1400</width>
-			<height>40</height>
+			<width>1840</width>
+			<height>64</height>
 			<orientation>horizontal</orientation>
 			<align>left</align>
 			<itemgap>10</itemgap>
@@ -2576,6 +2582,7 @@
 			<control type="group">
 				<centertop>50%</centertop>
 				<height>64</height>
+				<width>1330</width>
 				<visible>Control.HasFocus(4016) | Control.HasFocus(4017)</visible>
 				<control type="label">
 					<left>10</left>
@@ -2584,6 +2591,12 @@
 					<selectedcolor>Dark1</selectedcolor>
 					<label>$VAR[EmbyHomeSelectedTitle]</label>
 				</control>
+			</control>
+			<control type="image">
+				<centertop>50%</centertop>
+				<width>200</width>
+				<texture colordiffuse="Dark1">$VAR[EmbyHomeClearArt]</texture>
+				<aspectratio align="right" aligny="center">keep</aspectratio>
 			</control>
 		</control>
 	</include>
