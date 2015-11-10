@@ -512,27 +512,12 @@
 				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),weather) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
 			</control>
-			<control type="list" id="8013">				  
-				<content limit="1">plugin://service.library.data.provider?type=randomepisodes</content>
-			</control>
-			<control type="list" id="8014">				  
-				<content limit="1">special://skin/extras/playlists/RandomMovies.xsp</content>
-			</control>
-			<control type="list" id="8015">				  
-				<content limit="1">special://skin/extras/playlists/unwatched_shows.xsp</content>
-			</control>
-			<control type="list" id="8016">				  
-				<content limit="1">special://skin/extras/playlists/RandomAlbums.xsp</content>
-			</control>
-			<control type="list" id="8017">				  
-				<content limit="1">plugin://script.extendedinfo?info=premiereshows</content>
-			</control>
 			<control type="image">
 				<left>SidePad</left>
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture fallback="clear/TV.png">$INFO[Container(8013).ListItem.Art(fanart)]</texture>
+				<texture fallback="clear/TV.png">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 			</control>
@@ -541,7 +526,7 @@
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture fallback="clear/liveTV.png">$INFO[Container(8017).ListItem.Art(fanart)]</texture>
+				<texture fallback="clear/liveTV.png">$INFO[Window.Property(NextAired.1.Art(fanart))]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 			</control>
@@ -550,7 +535,7 @@
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture fallback="clear/movie.png">$INFO[Container(8014).ListItem.Art(fanart)]</texture>
+				<texture fallback="clear/movie.png">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 			</control>
@@ -559,7 +544,7 @@
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture fallback="clear/music.png">$INFO[Container(8016).ListItem.Art(thumb)]</texture>
+				<texture fallback="clear/music.png">$INFO[Window(Home).Property(LatestAlbum.1.Thumb)]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left)</visible>
 			</control>
@@ -2281,7 +2266,7 @@
 		<content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]&amp;id=$INFO[Container(9000).ListItem.Property(Path)]</content>
 	</include>
 	<include name="TVWidgetRecent">
-		<content>plugin://service.library.data.provider?type=recentepisodes&amp;reload=$INFO[Window.Property(recentepisodes)]</content>
+		<content>videodb://recentlyaddedepisodes/</content>
 	</include>
 	<include name="TVWidgetAiring">
 		<content>plugin://script.extendedinfo?info=airingtodaytvshows</content>
@@ -2302,7 +2287,7 @@
 		<content target="albums">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</content>
 	</include>
 	<include name="MusicWidgetRecommended">
-		<content>plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</content>
+		<content target="albums">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</content>
 	</include>
 	<include name="TrendingMoviesWidget">
 		<content>plugin://script.extendedinfo?info=trendingmovies</content>
