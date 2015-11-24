@@ -426,6 +426,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs)">$VAR[EmbyWidget1Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Kodi Information</value>
 		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">$VAR[EmbyWidget2Label]</value>
+		<value>$INFO[Container(300).ListItem.Property(defaultid)]</value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)+!Stringcompare(Skin.String(widget9),AllShows)">$INFO[Container(4012).ListItem.TVShowTitle,, - ]$INFO[Container(4012).ListItem.Season,,x]$INFO[Container(4012).ListItem.Episode,,. ]$INFO[Container(4012).ListItem.Title]</value>
@@ -478,12 +479,12 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">TV Guide</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">Albums</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),pictures)">Pictures</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">Channels</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">Channels</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">Videos</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">Videos</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs)">Programs</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Settings</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)">Weather</value>
-		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Channels</value>
+		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Videos</value>
 	</variable>
 	<variable name="EmbyButton2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31220]</value>

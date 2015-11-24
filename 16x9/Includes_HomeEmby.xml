@@ -204,7 +204,7 @@
 					<onright>3635</onright>
 					<onup>7788</onup>
 					<ondown>300</ondown>
-					<onclick>ActivateWindow(10001,"plugin://plugin.video.emby",return)</onclick>
+					<onclick>ActivateWindow(10025,"plugin://plugin.video.emby",return)</onclick>
 					<font>Button</font>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
@@ -263,7 +263,8 @@
 			</control>
 			<!--- TV Container to test content counts-->
 			<control id="8999" type="list">
-				<content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</content>
+				<content limit="1">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]&amp;id=$INFO[Container(9000).ListItem.Property(Path)]</content>
+				<!-- <content limit="1">plugin://plugin.video.emby/?id=TV&amp;mode=nextup&amp;limit=1</content> -->
 			</control>
 		</control>
 	</include>
@@ -481,7 +482,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidgetLabel]</label>
-				<visible>!Container(4012).IsUpdating</visible>
+				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 			</control>
 			<include>EmbyMainWidgetContent</include>
 			<!-- Bottom tile 1-->
@@ -497,10 +498,10 @@
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">ActivateWindow(tvguide)</onclick>
 				<onclick condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">ActivateWindow(MusicLibrary,musicdb://albums/,return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">ActivateWindow(pictures,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">ActivateWindow(10001,"library://video/emby_channels.xml",return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">ActivateWindow(10001,"library://video/emby_channels.xml",return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">ActivateWindow(Videos,return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">ActivateWindow(Videos,return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)">ActivateWindow(Programs,Addpms,return)</onclick>
-				<onclick condition="IsEmpty(Container(300).ListItem.Property(defaultid))">ActivateWindow(10001,"library://video/emby_channels.xml",return)</onclick>
+				<onclick condition="IsEmpty(Container(300).ListItem.Property(defaultid))">ActivateWindow(Videos,return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">ActivateWindow(Settings)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">ActivateWindow(Weather)</onclick>
 			</control>
@@ -553,7 +554,7 @@
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture>clear/web.png</texture>
+				<texture>clear/channels.png</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
 			</control>
@@ -1082,7 +1083,7 @@
 		<onback condition="!Skin.HasSetting(global.kioskmode)">RunScript(script.toolbox,info=selectdialog,header=Select Widget)</onback>
 	</include>
 	<include name="EmbyMainWidgetContent">
-		<control type="wraplist" id="4012">
+		<control type="list" id="4012">
 			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),pictures)+!StringCompare(Container(300).ListItem.Property(defaultID),settings)+!StringCompare(Container(300).ListItem.Property(defaultID),programs)</visible>
 			<top>330</top>
 			<left>SidePad</left>
@@ -1350,7 +1351,7 @@
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$INFO[Container(4012).ListItem.Year]</label>
 			<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left)</visible>
-			<visible>!Container(4012).IsUpdating</visible>
+			<!-- <visible>!Container(4012).IsUpdating</visible> -->
 			<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 		</control>
 		<control type="label">
@@ -1366,7 +1367,7 @@
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[LabelDuration]</label>
 			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			<visible>!Container(4012).IsUpdating</visible>
+			<!-- <visible>!Container(4012).IsUpdating</visible> -->
 			<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 		</control>
 		<control type="image">
@@ -1450,7 +1451,7 @@
 				<width>32</width>
 				<height>32</height>
 				<texture>special://skin/extras/icons/emby2.png</texture>
-				<visible>!Container(4012).IsUpdating</visible>
+				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 				<visible>!IsEmpty(ListItem.Property(DBID))</visible>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
@@ -1464,7 +1465,7 @@
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 				<visible>IsEmpty(ListItem.Property(DBID))</visible>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
+				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 			</control>
 			<control type="progress">
 				<bottom>72</bottom>
@@ -1970,11 +1971,11 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget1Label]</label>
-				<visible>!Container(4012).IsUpdating</visible>
+				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 			</control>
 			<control type="panel" id="4016">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
+				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -1991,10 +1992,11 @@
 				<include>Animation.FadeOut</include>
 				<include>EmbyWidget1Content</include>
 				<include>TVWidgetNextUp</include>
+				<!-- <include condition="System.HasAddon(plugin.video.emby)">TVWidgetNextUp2</include> -->
 			</control>
 			<control type="panel" id="4016">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
+				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -2014,7 +2016,7 @@
 			</control>
 			<control type="panel" id="4016">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
+				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -2053,7 +2055,7 @@
 			</control>
 			<control type="panel" id="4016">
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
-				<visible>!Container(4012).IsUpdating</visible>
+				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -2263,16 +2265,22 @@
 		</definition>
 	</include>
 	<include name="TVWidgetNextUp">
-		<content>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]&amp;id=$INFO[Container(9000).ListItem.Property(Path)]</content>
+		<content limit="10">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]&amp;id=$INFO[Container(9000).ListItem.Property(Path)]</content>
+	</include>
+	<include name="TVWidgetNextUp2">
+		<content limit="10">plugin://plugin.video.emby/?id=TV&amp;mode=nextup</content>
+	</include>
+	<include name="TVWidgetNextUp3">
+		<content target="video">library://video/inprogressshows.xml</content>
 	</include>
 	<include name="TVWidgetRecent">
-		<content>videodb://recentlyaddedepisodes/</content>
+		<content limit="5">videodb://recentlyaddedepisodes/</content>
 	</include>
 	<include name="TVWidgetAiring">
-		<content>plugin://script.extendedinfo?info=airingtodaytvshows</content>
+		<content limit="5">plugin://script.extendedinfo?info=airingtodaytvshows</content>
 	</include>
 	<include name="MovieWidgetRecent">
-		<content>plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window.Property(recentmovies)]</content>
+		<content limit="5">videodb://recentlyaddedmovies/</content>
 	</include>
 	<include name="LiveTVWidgetRecent">
 		<content>pvr://recordings/</content>
@@ -2281,7 +2289,7 @@
 		<content>pvr://timers/</content>
 	</include>
 	<include name="MovieWidgetResume">
-		<content>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</content>
+		<content>special://skin/extras/playlists/InProgressMovies.xsp</content>
 	</include>
 	<include name="MusicWidgetRecent">
 		<content target="albums">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</content>
@@ -2644,7 +2652,7 @@
 	<include name="PVRChannelWidget">
 		<control type="group">
 		<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-		<visible>!Container(4012).IsUpdating</visible>
+		<!-- <visible>!Container(4012).IsUpdating</visible> -->
 		<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 		<visible>Stringcompare(Skin.String(widget4),LiveTV) | Stringcompare(Skin.String(widget4),Recordings)</visible>
 			<control type="image">
