@@ -212,6 +212,7 @@
 	</variable>
 	<!-- Main Widget Selection -->
 	<variable name="DefWidgetMainContent">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[DefWidget9Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$VAR[DefWidget8Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">$VAR[DefWidget8Content]</value>
@@ -222,8 +223,9 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">$VAR[DefWidget2Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">$VAR[DefWidget2Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">plugin://plugin.video.emby</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)">$VAR[DefWidget1Content]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">$VAR[DefWidget1Content]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">$VAR[DefWidget3Content]</value>
 		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">$VAR[DefWidget2Content]</value>
 	</variable>
