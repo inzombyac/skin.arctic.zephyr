@@ -250,8 +250,9 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">addons://sources/executable</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)"></value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">plugin://plugin.video.emby/?id=$INFO[Container(300).ListItem.label]&amp;mode=nextup&amp;limit=10</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">videodb://recentlyaddedmovies/?xsp={"order":{"method":"dateadded","direction":"descending"},"rules":{"and":[{"field":"tag","operator":"is","value":["$INFO[Container(300).ListItem.label]"]}]},"type":"movies"}</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0)">plugin://plugin.video.emby/?id=$INFO[Container(300).ListItem.label]&amp;mode=nextup&amp;limit=10</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">library://video/Emby - $INFO[Container(300).ListItem.label]/$INFO[Container(300).ListItem.label]_random.xml</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">library://video/Emby - $INFO[Container(300).ListItem.label]/$INFO[Container(300).ListItem.label]_recent.xml</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">plugin://plugin.video.emby</value>
 		<value>plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>

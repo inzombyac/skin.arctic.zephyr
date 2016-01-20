@@ -422,7 +422,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)">$INFO[Container(4012).ListItem.Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
-		<value condition="!StringCompare(Container(300).ListItem.Property(defaultID),pictures)">$INFO[Container(4012).ListItem.Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">$INFO[Container(4012).ListItem.Label]</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
@@ -438,7 +438,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Add-Ons</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">System Information</value>
 		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Trending Movies</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">Next Up</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0)">Next Up</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">Random</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">$LOCALIZE[31124]</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">Emby</value>
 		<value>Trending Movies</value>
@@ -449,17 +450,17 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetNextUp</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Label">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)"> </value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$LOCALIZE[31125]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),AiringToday)">Airing Today</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)"></value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)"> </value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">$LOCALIZE[31125]</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">Resume</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)"></value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)"></value>
-		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Popular TV</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"> </value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)"> </value>
+		<value condition="IsEmpty(Container(300).ListItem.Property(defaultID))">Popular TV</value>
 		<value>Popular TV</value>
 	</variable>
 	<variable name="NextUpCount">
