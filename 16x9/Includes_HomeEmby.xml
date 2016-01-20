@@ -257,6 +257,7 @@
 				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3635</onup>
 				<onleft>300</onleft>
 				<onright>300</onright>
+				<include>EmbyMainWidgetSelector</include>
 				<orientation>horizontal</orientation>
 				<scrolltime>200</scrolltime>
 				<include>HomeEmbyContentNoIcon</include>
@@ -482,30 +483,13 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidgetLabel]</label>
-				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 			</control>
 			<include>EmbyMainWidgetContent</include>
 			<!-- Bottom tile 1-->
 			<control type="button" id="4013">
-				<onup condition="!StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4012</onup>
-				<onup condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4012</onup>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">4016</onright>
-				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),weather)">4015</onright>
-				<!-- <ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4015</ondown> -->
-				<!-- <onleft condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4012</onleft> -->
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">ActivateWindow(Videos,TVShowTitles,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">ActivateWindow(Videos,MovieTitles,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">ActivateWindow(tvguide)</onclick>
-				<onclick condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">ActivateWindow(MusicLibrary,musicdb://albums/,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">ActivateWindow(pictures,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">ActivateWindow(Videos,return)</onclick>
-				<onclick condition="Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)">ActivateWindow(Videos,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">ActivateWindow(Videos,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">ActivateWindow(Programs,Addons,return)</onclick>
-				<onclick condition="Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">ActivateWindow(Programs,Addons,return)</onclick>
-				<onclick condition="IsEmpty(Container(300).ListItem.Property(defaultid))">ActivateWindow(Videos,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">ActivateWindow(Settings)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">ActivateWindow(Weather)</onclick>
+				<onup>4012</onup>
+				<onright>4015</onright>
+				<onclick>$VAR[EmbyBottomTileAction1]</onclick>
 			</control>
 			<control type="image">
 				<left>SidePad</left>
@@ -513,90 +497,14 @@
 				<width>280</width>
 				<height>180</height>
 				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) |
-				Substring(Container(300).ListItem.Property(defaultID),plugin,Left) |				StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),weather) | StringCompare(Container(300).ListItem.Property(defaultID),files) | 
-				Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)</visible>
 			</control>
 			<control type="image">
 				<left>SidePad</left>
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture fallback="clear/TV.png">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</texture>
+				<texture>$VAR[EmbyBottomTileImage1]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture fallback="clear/liveTV.png">$INFO[Window.Property(NextAired.1.Art(fanart))]</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture fallback="clear/movie.png">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture fallback="clear/music.png">$INFO[Window(Home).Property(LatestAlbum.1.Thumb)]</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left)</visible>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/channels.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)</visible>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/programs.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)</visible>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/addons.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),settings)</visible>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/pictures.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/weather.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
@@ -605,9 +513,6 @@
 				<width>280</width>
 				<height>40</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | Substring(Container(300).ListItem.Property(defaultID),music,Left)  | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | 
-				Substring(Container(300).ListItem.Property(defaultID),plugin,Left) | 
-				StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),weather) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)</visible>
 			</control>
 			<control type="label">
 				<left>SidePad</left>
@@ -618,7 +523,7 @@
 				<font>Small</font>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyButton1Label]</label>
+				<label>$VAR[EmbyBottomTileLabel1]</label>
 			</control>
 			<control type="image">
 				<left>76</left>
@@ -631,29 +536,13 @@
 			
 			<!-- Bottom tile 2-->
 			<control type="button" id="4015">
-				<onup condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4012</onup>
-				<onup condition="!StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4012</onup>
+				<onup>4012</onup>
 				<onleft>4013</onleft>
-				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),programs+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)+!Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">4014</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | StringCompare(Container(300).ListItem.Property(defaultID),pictures) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">4016</onright>
-			<!-- 	<ondown condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">300</ondown> -->
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">RunAddon(script.tv.show.next.aired)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">ActivateWindow(Videos,videodb://movies/sets/,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">ActivateWindow(tvchannels)</onclick>
-				<onclick condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">ActivateWindow(MusicLibrary,musicdb://artists/,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">ActivateWindow(Pictures,Addons,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">ActivateWindow(AddonBrowser)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">ActivateWindow(shutdownmenu)</onclick>
-				<onclick condition="Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)">RunAddon(script.extendedinfo,info=intheaters)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">RunAddon(script.extendedinfo,info=intheaters)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),files))">RunAddon(script.extendedinfo,info=intheaters)</onclick>
-				<onclick condition="IsEmpty(Container(300).ListItem.Property(defaultid))">RunAddon(script.extendedinfo,info=intheaters)</onclick>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4014</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),weather) | StringCompare(Container(300).ListItem.Property(defaultID),pictures)">4016</onright>
+				<onclick>$VAR[EmbyBottomTileAction2]</onclick>
 			</control>
 			<control type="image">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | 
-				Substring(Container(300).ListItem.Property(defaultID),plugin,Left) | 
-				StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),pictures)| IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)</visible>
 				<left>368</left>
 				<posy>836</posy>
 				<width>280</width>
@@ -665,92 +554,34 @@
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture>clear/collections.png</texture>
-				<aspectratio>keep</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-				
+				<texture border="15" colordiffuse="black">common/white.png</texture>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)+ [!IsEmpty(Pvr.NowRecordingChannelIcon) | !IsEmpty(Pvr.NextRecordingChannelIcon) | !IsEmpty(Container(4012).ListItem.Thumb)]</visible>
 			</control>
 			<control type="image">
 				<left>368</left>
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture>clear/channels.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture>$VAR[EmbyBottomTileImage2]</texture>
+				<aspectratio scalediffuse="true">scale</aspectratio>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+			</control>
+			<control type="image">
+				<left>368</left>
+				<posy>836</posy>
+				<width>280</width>
+				<height>180</height>
+				<texture>$VAR[EmbyBottomTileImage2]</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				
 			</control>
 			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture fallback="clear/airing.png">$INFO[Window.Property(NextAired.1.Art(fanart))]</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture fallback="clear/musicartists.png">$INFO[Container(8016).ListItem.Art(fanart)]</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left)</visible>
-				
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/addons.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)</visible>
-				
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/power.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),settings)</visible>
-				
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/addons.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/moviehub.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)</visible>
-				
-			</control>
-			<control type="image">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),programs) |
-				Substring(Container(300).ListItem.Property(defaultID),plugin,Left) |
-				StringCompare(Container(300).ListItem.Property(defaultID),settings) |  StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)</visible>
 				<description>Title overlay</description>
 				<left>368</left>
 				<posy>1016</posy>
 				<width>280</width>
 				<height>40</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				
 			</control>
 			<control type="label">
 				<left>368</left>
@@ -762,7 +593,6 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyButton2Label]</label>
-				
 			</control>
 			<control type="image">
 				<left>364</left>
@@ -771,105 +601,42 @@
 				<height>224</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4015)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 			</control>
 			
 			<!-- Bottom tile 3-->
 			<control type="button" id="4014">
 				<onup>4012</onup>
 				<onleft>4015</onleft>
-				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4016</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">4016</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)">4017</onright>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">ActivateWindow(1102)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">ActivateWindow(1101)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">ActivateWindow(tvrecordings)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">ActivateWindow(music,genres,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">ActivateWindow(SystemInfo)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">RunAddon(script.extendedinfo,info=comingsoon)</onclick>
-				<onclick condition="Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)">RunAddon(script.extendedinfo,info=comingsoon)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">RunAddon(script.extendedinfo,info=comingsoon)</onclick>
-				<onclick condition="IsEmpty(Container(300).ListItem.Property(defaultid))">RunAddon(script.extendedinfo,info=comingsoon)</onclick>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+				<onright condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onright>
+				<onright condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4017</onright>
+				<onclick>$VAR[EmbyBottomTileAction3]</onclick>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 			</control>
 			<control type="image">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)</visible>
 				<left>656</left>
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
 				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
-				
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 			</control>
 			<control type="image">
 				<left>656</left>
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<texture>clear/tvhub.png</texture>
+				<texture>$VAR[EmbyBottomTileImage3]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>				
 			</control>
 			<control type="image">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/recordings.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				
-			</control>
-			<control type="image">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/musicgenres.png</texture>
-				<aspectratio>stretch</aspectratio>
-				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left)</visible>
-				
-			</control>
-			<control type="image">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/moviehub.png</texture>
-				<aspectratio>stretch</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-				
-			</control>
-			<control type="image">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/sysinfo.png</texture>
-				<aspectratio>stretch</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),settings)</visible>
-				
-			</control>
-			<control type="image">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>clear/airing.png</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)</visible>
-				
-			</control>
-			<control type="image">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
 				<description>Title overlay</description>
 				<left>656</left>
 				<posy>1016</posy>
 				<width>280</width>
 				<height>40</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 			</control>
 			<control type="label">
 				<left>656</left>
@@ -882,8 +649,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyButton3Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),livetv) | Substring(Container(300).ListItem.Property(defaultID),music,Left)  | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(widgetPlaylist),Emby)</visible>
-				
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 			</control>
 			<control type="image">
 				<left>652</left>
@@ -892,7 +658,7 @@
 				<height>224</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4014)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 			</control>
 			
 			<!-- Side Widgets  -->
@@ -1096,29 +862,7 @@
 	</include>
 	<include name="EmbyMainWidgetContent">
 		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4016</onright>
-			<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">4016</onright>
-			<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)">4017</onright>
-			<include>EmbyMainWidgetSelector</include>
-			<preloaditems>2</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyWidgetItemLayout</include>
-			<content target="video">$VAR[DefWidgetMainContent]</content>
-		</control>
-		<control type="list" id="4012">
-			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),pictures)+!StringCompare(Container(300).ListItem.Property(defaultID),settings)+!StringCompare(Container(300).ListItem.Property(defaultID),programs)+!Substring(Container(300).ListItem.Property(defaultID),plugin,Left)+!StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),pictures) + !StringCompare(Container(300).ListItem.Property(defaultID),settings) +  !StringCompare(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),plugin,Left) + !StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 			<top>330</top>
 			<left>SidePad</left>
 			<width>856</width>
@@ -1138,9 +882,24 @@
 			<include>Animation.FadeOut</include>
 			<include>EmbyMainWidgetItemLayout</include>
 			<content target="video">$VAR[DefWidgetMainContent]</content>
+			<onclick condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">ActivateWindow(Pictures,return)</onclick>
 		</control>
+		<control type="list" id="9001">
+			<content limit="5" target="video">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[Container(300).ListItem.label]%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</content>
+		</control>
+		<control type="list" id="9002">
+			<content limit="1">plugin://plugin.video.emby/?id=Photos&amp;mode=browsecontent&amp;type=photos</content>
+		</control>
+		<control type="list" id="9003">
+			<content>videodb://movies/sets/?xsp={"order":{"method":"random","dateadded":"ascending"},"type":"movies","limit":1}</content>
+			<include>EmbyHiddenItemLayout</include>
+		</control>
+		<control type="list" id="9004">
+			<content limit="5" target="video">videodb://movies/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[Container(300).ListItem.label]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</content>
+		</control>
+		<!--Program widgets -->
 		<control type="list" id="4012">
-			<visible>[StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)]+!StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)</visible>
+			<visible>[StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)]</visible>
 			<top>330</top>
 			<left>SidePad</left>
 			<width>856</width>
@@ -1159,7 +918,6 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<include>EmbyMainWidgetItemLayout</include>
-			<!--Program widgets -->
 			<content target="programs">$VAR[DefWidgetMainContent]</content>
 		</control>
 		<control type="list" id="4012">
@@ -1185,30 +943,25 @@
 			<!--systeminfo widgets -->
 			<include>SysInfoWidgetMain</include>
 		</control>
-		<control type="panel" id="4012">
+		<control type="list" id="4012">
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),pictures)</visible>
 			<top>330</top>
 			<left>SidePad</left>
-			<width>1198</width>
-			<height>724</height>
+			<width>856</width>
+			<height>496</height>
 			<onup>300</onup>
 			<ondown>4013</ondown>
 			<onright>4016</onright>
 			<include>EmbyMainWidgetSelector</include>
-			<preloaditems>1</preloaditems>
+			<preloaditems>2</preloaditems>
 			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<include>EmbyMainWidgetItemLayout</include>
-			<content target="pictures">
-				<item id="1">
-					<label>$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</label>
-					<icon>$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</icon>
-					<thumb>$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</thumb>
-					<onclick>ActivateWindow(pictures,return)</onclick>
-					<visible>true</visible>
-				</item>
-			</content>	
+			<content type="plugin">$VAR[DefWidgetMainContent]</content>
+			<onclick>ActivateWindow(Pictures,return)</onclick>
 		</control>
 		<control type="panel" id="4012">
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
@@ -1254,12 +1007,28 @@
 			</control>
 		</focusedlayout>
 	</include>
+	<include name="EmbyHiddenItemLayout">
+		<itemlayout width="1" height="1">
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<texture background="true" fallback="diffuseoverlay.png">ListItem.fanart</texture>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout width="1" height="1">
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<texture background="true" fallback="diffuseoverlay.png">ListItem.fanart</texture>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+			</control>
+		</focusedlayout>
+	</include>
 	<include name="EmbyMainWidgetItemLayout">
 		<itemlayout width="856" height="496">
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-				<visible>!IsEmpty(Container(300).ListItem.Property(widget))</visible>
+				<visible>!IsEmpty(Container(300).ListItem.Property(widget)) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="image">
@@ -1267,20 +1036,18 @@
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+Stringcompare(Skin.String(widget9),AllShows)]</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[ThumbImage]</texture>
 				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!Stringcompare(Skin.String(widget9),AllShows)</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)</visible>
+				<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)+!IsEmpty(Skin.String(widget4))</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<include>PVRChannelWidget</include>
@@ -1288,9 +1055,7 @@
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-				<visible>[Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | 
-				Substring(Container(300).ListItem.Property(defaultID),plugin,Left) | 
-				StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),files)]+!StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="progress">
@@ -1320,7 +1085,7 @@
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-				<visible>!IsEmpty(Container(300).ListItem.Property(widget))</visible>
+				<visible>!IsEmpty(Container(300).ListItem.Property(widget)) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="image">
@@ -1328,28 +1093,26 @@
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+Stringcompare(Skin.String(widget9),AllShows)]</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[ThumbImage]</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!Stringcompare(Skin.String(widget9),AllShows)</visible>
-				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs) | 
-				Substring(Container(300).ListItem.Property(defaultID),plugin,Left) | 
-				StringCompare(Container(300).ListItem.Property(defaultID),pictures) | StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
+				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!Stringcompare(Skin.String(widget9),AllShows)</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)</visible>
+				<visible>!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)+!IsEmpty(Skin.String(widget4))</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+			</control>
+			<include>PVRChannelWidget</include>
+			<include>WeatherTodayMainWidget</include>
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<control type="progress">
@@ -1364,8 +1127,6 @@
 				<visible>ListItem.IsResumable</visible>
 				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
-			<include>PVRChannelWidget</include>
-			<include>WeatherTodayMainWidget</include>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">special://skin/extras/backgrounds/tv.jpg</texture>
@@ -1388,7 +1149,8 @@
 			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)| Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),programs)  | 
 			Substring(Container(300).ListItem.Property(defaultID),plugin,Left) | 
-			StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),files) | !IsEmpty(Container(300).ListItem.Property(widget))</visible>
+			StringCompare(Container(300).ListItem.Property(defaultID),settings) | StringCompare(Container(300).ListItem.Property(defaultID),files) | 
+			!IsEmpty(Container(300).ListItem.Property(widget)) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
 			<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 		</control>
 		<control type="image">
@@ -2049,11 +1811,9 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget1Label]</label>
-				<!-- <visible>!Container(4012).IsUpdating</visible> -->
 			</control>
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<!-- <visible>!Container(4012).IsUpdating</visible> -->
+				<visible>Substring(Container(300).ListItem.Property(defaultID),pictures)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -2062,19 +1822,17 @@
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
-				<include>EmbyMainWidgetSelector</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<include>EmbyWidget1Content</include>
-				<include>TVWidgetNextUp</include>
-				<!-- <include condition="System.HasAddon(plugin.video.emby)">TVWidgetNextUp2</include> -->
+				<content>$VAR[DefWidgetCenterContent]</content>
+				<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
 			</control>
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-				<!-- <visible>!Container(4012).IsUpdating</visible> -->
+				<visible>!Substring(Container(300).ListItem.Property(defaultID),pictures)+!Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -2083,18 +1841,16 @@
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
-				<include>EmbyMainWidgetSelector</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<include>EmbyWidget1Content</include>
-				<include>MovieWidgetRecent</include>
+				<content limit="10">$VAR[DefWidgetCenterContent]</content>
 			</control>
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<!-- <visible>!Container(4012).IsUpdating</visible> -->
+				<visible>Substring(Container(300).ListItem.Property(defaultid),music,Left)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>620</width>
@@ -2103,70 +1859,13 @@
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
-				<include>EmbyMainWidgetSelector</include>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1Content</include>
-				<include>LiveTVWidgetRecent</include>
-			</control>
-			<control type="panel" id="4016">
-				<visible>Substring(Container(300).ListItem.Property(defaultID),music,left)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4017</onright>
-				<include>EmbyMainWidgetSelector</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<include>EmbyWidget1ContentSquare</include>
-				<include>MusicWidgetRecent</include>
-			</control>
-			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
-				<!-- <visible>!Container(4012).IsUpdating</visible> -->
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4017</onright>
-				<include>EmbyMainWidgetSelector</include>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1Content</include>
-				<include>TrendingMoviesWidget</include>
-			</control>
-			<control type="panel" id="4016">
-				<visible>Substring(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>856</width>
-				<height>496</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1ContentBig</include>
-				<include>PicturesWidget</include>
+				<content limit="10">$VAR[DefWidgetCenterContent]</content>
 			</control>
 			<control type="panel" id="4016">
 				<description>Widget</description>
@@ -2187,44 +1886,6 @@
 				<include>WeatherWidget</include>
 			</control>
 			<control type="panel" id="4016">
-				<visible>Substring(Container(300).ListItem.Property(defaultID),plugin.video.emby)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4017</onright>
-				<include>EmbyMainWidgetSelector</include>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1Content</include>
-				<include>EmbyVideoWidget</include>
-			</control>
-			<control type="panel" id="4016">
-				<visible>[Substring(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)]+!Substring(Container(300).ListItem.Property(defaultID),plugin.video.emby)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4017</onright>
-				<include>EmbyMainWidgetSelector</include>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1Content</include>
-				<include>ProgramsWidget</include>
-			</control>
-			<control type="panel" id="4016">
 				<visible>Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
 				<top>330</top>
 				<left>944</left>
@@ -2242,25 +1903,6 @@
 				<include>EmbyWidget1Content</include>
 				<include>SysInfoWidget</include>
 			</control>
-			<control type="panel" id="4016">
-				<visible>Substring(Container(300).ListItem.Property(widgetplaylist),Emby)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1Content</include>
-				<content target="video">$INFO[Container(300).ListItem.Property(widgetplaylist)]</content>
-			</control>
-			<!-- videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22John%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d-->
 		</definition>
 	</include>
 	<include name="EmbyRightWidgetPanel2">
@@ -2279,7 +1921,7 @@
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>!Substring(Container(300).ListItem.Property(defaultID),pictures) + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs)</visible>
 				<top>330</top>
 				<left>1550</left>
 				<width>310</width>
@@ -2296,51 +1938,11 @@
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<include>EmbyWidget2Content</include>
-				<include>TVWidgetRecent</include>
+				<content limit="10">$VAR[DefWidgetRightContent]</content>
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
-				<top>330</top>
-				<left>1550</left>
-				<width>310</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget2Content</include>
-				<include>MovieWidgetResume</include>
-			</control>
-			<control type="panel" id="4017">
-				<description>Widget</description>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<top>330</top>
-				<left>1550</left>
-				<width>310</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget2Content</include>
-				<include condition="!Stringcompare(Skin.String(widget4),AiringToday)">TVWidgetAiring</include>
-			</control>
-			<control type="panel" id="4017">
-				<description>Widget</description>
-				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left)</visible>
+				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
 				<top>330</top>
 				<left>1550</left>
 				<width>253</width>
@@ -2356,68 +1958,12 @@
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<include>EmbyWidget2ContentSquare</include>
-				<include>MusicWidgetRecommended</include>
-			</control>
-			<control type="panel" id="4017">
-				<description>Widget</description>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
-				<top>330</top>
-				<left>1550</left>
-				<width>310</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget2Content</include>
-				<include>WidgetTVPopular</include>
+				<content limit="10">$VAR[DefWidgetRightContent]</content>
 			</control>
 		</definition>
 	</include>
-	<include name="TVWidgetNextUp">
-		<content limit="10">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]&amp;id=$INFO[Container(9000).ListItem.Property(Path)]</content>
-	</include>
-	<include name="TVWidgetNextUp2">
-		<content limit="10">plugin://plugin.video.emby/?id=TV&amp;mode=nextup</content>
-	</include>
-	<include name="TVWidgetNextUp3">
-		<content target="video">library://video/inprogressshows.xml</content>
-	</include>
-	<include name="TVWidgetRecent">
-		<content limit="5">videodb://recentlyaddedepisodes/</content>
-	</include>
-	<include name="TVWidgetAiring">
-		<content limit="5">plugin://script.extendedinfo?info=airingtodaytvshows</content>
-	</include>
-	<include name="MovieWidgetRecent">
-		<content limit="5">videodb://recentlyaddedmovies/</content>
-	</include>
-	<include name="LiveTVWidgetRecent">
-		<content>pvr://recordings/</content>
-	</include>
 	<include name="LiveTVWidgetSeries">
 		<content>pvr://timers/</content>
-	</include>
-	<include name="MovieWidgetResume">
-		<content>special://skin/extras/playlists/InProgressMovies.xsp</content>
-	</include>
-	<include name="MusicWidgetRecent">
-		<content target="albums">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</content>
-	</include>
-	<include name="MusicWidgetRecommended">
-		<content target="albums">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</content>
-	</include>
-	<include name="TrendingMoviesWidget">
-		<content>plugin://script.extendedinfo?info=trendingmovies</content>
-	</include>
-	<include name="WidgetTVPopular">
-		<content>plugin://script.extendedinfo?info=populartvshows</content>
 	</include>
 	<include name="PicturesWidget">
 		<content>plugin://script.extendedinfo?info=cyanide</content>
@@ -2477,15 +2023,6 @@
 			</item>
 		</content>		
 	</include>
-	<include name="ProgramsWidget">
-		<content target="programs">addons://sources/executable</content>
-	</include>
-	<include name="EmbyVideoWidget">
-		<content target="programs">plugin://plugin.video.emby</content>
-	</include>
-	<include name="InCinemasWidget">
-		<content target="programs">plugin://script.extendedinfo?info=incinemas</content>
-	</include>
 	<variable name="EmbyHomeFlagstar1">
 		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,1)">star10</value>
 		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,0)">star5</value>
@@ -2542,19 +2079,19 @@
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
-		<value condition="Control.HasFocus(4016) +StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4016).ListItem.TVShowTitle,, •] $INFO[Container(4016).ListItem.Premiered,, •] $VAR[LabelSeasonZero]$INFO[Container(4016).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4016).ListItem.Episode,, • ]$INFO[Container(4016).ListItem.Title]</value>
-		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4017).ListItem.TVShowTitle,, •] $INFO[Container(4017).ListItem.Premiered,, •] $VAR[LabelSeasonZero]$INFO[Container(4017).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4017).ListItem.Episode,, • ]$INFO[Container(4017).ListItem.Title]</value>
-		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(4016).ListItem.Label,, •] $INFO[Container(4016).ListItem.Year]</value>
-		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Container(4017).ListItem.Label,, •] $INFO[Container(4017).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4016) + [StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">$INFO[Container(4016).ListItem.TVShowTitle,, •] $INFO[Container(4016).ListItem.Premiered,, •] $VAR[LabelSeasonZero]$INFO[Container(4016).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4016).ListItem.Episode,, • ]$INFO[Container(4016).ListItem.Title]</value>
+		<value condition="Control.HasFocus(4017) + [StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">$INFO[Container(4017).ListItem.TVShowTitle,, •] $INFO[Container(4017).ListItem.Premiered,, •] $VAR[LabelSeasonZero]$INFO[Container(4017).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4017).ListItem.Episode,, • ]$INFO[Container(4017).ListItem.Title]</value>
+		<value condition="Control.HasFocus(4016) + [StringCompare(Container(300).ListItem.Property(defaultID),movies)|[Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]]">$INFO[Container(4016).ListItem.Label,, •] $INFO[Container(4016).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4017) + [StringCompare(Container(300).ListItem.Property(defaultID),movies)|[Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]]">$INFO[Container(4017).ListItem.Label,, •] $INFO[Container(4017).ListItem.Year]</value>
 		<value condition="Control.HasFocus(4017) + Substring(Container(300).ListItem.Property(defaultID),music,Left)">$INFO[Container(4017).ListItem.Artist,, •] $INFO[Container(4017).ListItem.Label,,]$INFO[Container(4017).ListItem.Year, • ,]</value>
 		<value condition="Control.HasFocus(4016) + Substring(Container(300).ListItem.Property(defaultID),music,Left)">$INFO[Container(4016).ListItem.Artist,, •] $INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
 		<value condition="Control.HasFocus(4016) + [StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID)) | StringCompare(Container(300).ListItem.Property(defaultID),files)]">$INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
 		<value condition="Control.HasFocus(4017) + [StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID)) | StringCompare(Container(300).ListItem.Property(defaultID),files)]">$INFO[Container(4017).ListItem.TVShowTitle,, •] $INFO[Container(4017).ListItem.Premiered,, •]</value>
 	</variable>
 	<variable name="EmbyHomeClearArt">
-		<value condition="Control.HasFocus(4016) +StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4016).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(4016) +[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">$INFO[Container(4016).ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Art(clearlogo)]</value>
-		<value condition="Control.HasFocus(4017) +StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4017).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(4017) +[StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">$INFO[Container(4017).ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Art(clearlogo)]</value>
 	</variable>
 	
@@ -2576,7 +2113,7 @@
 				<font>Tiny</font>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) + !Container(4016).IsUpdating</visible>
+				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) ]] + !Container(4016).IsUpdating</visible>
 				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
 			</control>
 			<control type="label">
@@ -2585,7 +2122,7 @@
 				<font>Tiny</font>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)  + !Container(4016).IsUpdating</visible>
+				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]  + !Container(4016).IsUpdating</visible>
 				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
 			</control>
 			<control type="label">
@@ -2603,7 +2140,7 @@
 				<font>Tiny</font>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Window(Home).Property(Music.ArtistsCount)] artists • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Music.AlbumsCount)] albums[/COLOR] • $INFO[Window(Home).Property(Music.SongsCount)] songs</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),music)  + !Container(4016).IsUpdating</visible>
+				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left)  + !Container(4016).IsUpdating</visible>
 				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
 			</control>
 		</control>
@@ -2657,7 +2194,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar1].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2665,7 +2202,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar2].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left)| StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left)| StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2673,7 +2210,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar3].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2681,7 +2218,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar4].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2689,7 +2226,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar5].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
 			</control>
 			<control type="group">
 				<centertop>50%</centertop>
@@ -2867,12 +2404,12 @@
 		<content>
 			<item>
 				<label>Kodi $INFO[System.BuildVersion]</label>
-				<thumb>special://skin/extras/backgrounds/Motherboard.jpg</thumb>
-				<property name="episodethumb">special://skin/extras/backgrounds/Motherboard.jpg</property>
-				<property name="poster">special://skin/extras/backgrounds/Motherboard.jpg</property>
+				<thumb>special://skin/extras/backgrounds/jarvis.png</thumb>
+				<property name="episodethumb">special://skin/extras/backgrounds/jarvis.png</property>
+				<property name="poster">special://skin/extras/backgrounds/jarvis.png</property>
 				<property name="special">systeminfo</property>
-				<property name="fanart">special://skin/extras/backgrounds/Motherboard.jpg</property>
-				<onclick>ActivateWindow(systeminfo)</onclick>
+				<property name="fanart">special://skin/extras/backgrounds/jarvis.png</property>
+				<onclick>ActivateWindow(Settings)</onclick>
 			</item>
 		</content>
 	</include>	

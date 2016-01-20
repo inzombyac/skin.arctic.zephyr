@@ -17,6 +17,8 @@
             <onfocus condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(NextAired.Update) + Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onfocus>
             <onfocus condition="!Player.HasVideo + !IsEmpty(Skin.String(StartupPlaylist))">ReplaceWindow(Home)</onfocus>
             <onfocus condition="IsEmpty(Skin.String(StartupPlaylist))">AlarmClock(GoHome,ReplaceWindow(home),00:01,silent,false)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetString(SkinHelper.RandomFanartDelay,10)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.ToggleSetting(SkinHelper.EnablePVRThumbs)</onfocus>
         </control>
         <control type="label">
             <description>Loading</description>
