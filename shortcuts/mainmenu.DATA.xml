@@ -38,13 +38,6 @@
         <action>ActivateWindow(tvguide)</action>
     </shortcut>
     <shortcut>
-        <label>1</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>pictures</defaultID>
-        <icon>special://skin/extras/icons/pictures.png</icon>
-        <action>ActivateWindow(Pictures)</action>
-    </shortcut>
-    <shortcut>
         <label>0</label>
         <label2>Common Shortcut</label2>
         <defaultID>programs</defaultID>

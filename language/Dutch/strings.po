@@ -570,8 +570,8 @@ msgid "Additional info"
 msgstr "Extra informatie"
 
 msgctxt "#31242"
-msgid "Provided by themoviedb.org"
-msgstr "Aangeleverd door themoviedb.org"
+msgid ""
+msgstr ""
 
 msgctxt "#31243"
 msgid "pages"

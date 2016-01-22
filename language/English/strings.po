@@ -569,7 +569,7 @@ msgid "Additional info"
 msgstr ""
 
 msgctxt "#31242"
-msgid "Provided by themoviedb.org"
+msgid ""
 msgstr ""
 
 msgctxt "#31243"

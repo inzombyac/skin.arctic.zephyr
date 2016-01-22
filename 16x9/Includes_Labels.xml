@@ -405,8 +405,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">$VAR[EmbyWidget12Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">$VAR[EmbyWidget2Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">$VAR[EmbyWidget2Label]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures) + IntegerGreaterThan(Container(9002).NumItems,0)">Emby Photos</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">Random Pictures</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">$INFO[Container(300).ListItem.label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)">Weather</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">$VAR[EmbyWidget1Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Kodi Information</value>
@@ -422,7 +421,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)">$INFO[Container(4012).ListItem.Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">$INFO[Container(4012).ListItem.Label]</value>
+		<value>$INFO[Container(4012).ListItem.Label]</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
@@ -433,8 +432,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">Recent Albums</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">Trending Movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">Trending Movies</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">Random</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)"> </value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">Random</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)">Extended Forecast</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Add-Ons</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">System Information</value>
 		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Trending Movies</value>
@@ -459,7 +458,8 @@
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">$LOCALIZE[31125]</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">Resume</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"> </value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)"> </value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)"> </value>
+				<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">Channels</value>
 		<value condition="IsEmpty(Container(300).ListItem.Property(defaultID))">Popular TV</value>
 		<value>Popular TV</value>
 	</variable>
@@ -476,7 +476,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">TV Guide</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">Artists</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">Artists</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),pictures)">Pictures</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">Pictures</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">Videos</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">Videos</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Programs</value>
@@ -492,7 +492,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Channels</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">Albums</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Albums</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),pictures)">Picture Add-Ons</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">Picture Add-Ons</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Emby</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Power Menu</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">In Theaters</value>
@@ -510,7 +510,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Recorded TV</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Genres</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Add-Ons</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">System Information</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Log Out</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">Upcoming Movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">Upcoming Movies</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">$LOCALIZE[31193]</value>
