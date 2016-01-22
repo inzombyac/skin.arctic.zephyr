@@ -592,7 +592,7 @@
 				<onclick>dialog.close(all,true)</onclick>
 				<texturefocus>dialogvideo/manage.png</texturefocus>
 				<texturenofocus colordiffuse="Light1" border="5">dialogvideo/manage.png</texturenofocus>
-				<alttexturefocus >dialogvideo/manage.png</alttexturefocus>
+				<alttexturefocus>dialogvideo/manage.png</alttexturefocus>
 				<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/manage.png</alttexturenofocus>
 			</control>
 		</control>
@@ -618,7 +618,7 @@
 				<visible>!Control.HasFocus(8) + !Control.HasFocus(120) + !Control.HasFocus(1150) + !Control.HasFocus(445)</visible>
 			</control>
 			<!-- Play/Browse Button -->
-			<control id="8" type="button">
+			<control  type="button">
 				<width>222</width>
 				<height>116</height>
 				<textcolor>White</textcolor>
@@ -635,8 +635,7 @@
 				<onclick>dialog.close(all,true)</onclick>
 				<visible>!IsEmpty(Window.Property(DBID)) + !Stringcompare(Window.Property(Type),tvshow)</visible>
 			</control>
-
-			<control id="120" type="button">
+			<control  type="button">
 				<width>222</width>
 				<height>116</height>
 				<textcolor>White</textcolor>
@@ -653,37 +652,12 @@
 				<onclick>dialog.close(all,true)</onclick>
 				<visible>!IsEmpty(Window.Property(DBID)) + Stringcompare(Window.Property(Type),tvshow)</visible>
 			</control>
-
-			<control id="1150" type="panel">
+			<control type="panel">
 				<visible>!Stringcompare(Window.Property(Type),tvshow)</visible>
 				<width>222</width>
 				<height>116</height>
-				<ondown condition="Control.IsVisible(150)">150</ondown>
-				<ondown condition="Control.IsVisible(350)">350</ondown>
-				<ondown condition="Control.IsVisible(850)">850</ondown>
-				<ondown condition="Control.IsVisible(950)">950</ondown>
-				<ondown condition="Control.IsVisible(1000)">1000</ondown>
-				<itemlayout width="222" height="116">
-					<control type="image">
-						<texture colordiffuse="Light1" border="5">dialogvideo/trailer.png</texture>
-					</control>
-				</itemlayout>
-				<focusedlayout width="222" height="116">
-					<control type="image">
-						<texture>dialogvideo/trailer.png</texture>
-					</control>
-					<control type="label">
-						<width>222</width>
-						<height>184</height>
-						<textcolor>White</textcolor>	
-						<font>EPGTimeline</font>
-						<label>Trailer</label>
-						<align>center</align>
-						<aligny>center</aligny>
-					</control>
-				</focusedlayout>
 			</control>
-			<control id="445" type="button">
+			<control  type="button">
 				<width>222</width>
 				<height>116</height>
 				<ondown condition="Control.IsVisible(150)">150</ondown>

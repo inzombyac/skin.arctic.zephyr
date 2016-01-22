@@ -494,7 +494,7 @@
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Albums</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">Picture Add-Ons</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Emby</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Power Menu</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Log Out</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">In Theaters</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">In Theaters</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)">Settings</value>
@@ -510,7 +510,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Recorded TV</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Genres</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Add-Ons</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Log Out</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Power Menu</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">Upcoming Movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">Upcoming Movies</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">$LOCALIZE[31193]</value>

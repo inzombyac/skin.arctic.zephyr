@@ -413,8 +413,10 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">clear/emby2.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">clear/addons.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">clear/addons.png</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">clear/power.png</value>
-		<!--<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">special://skin/extras/backgrounds/Power.jpg</value>-->
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)+!IsEmpty(Window(Home).Property(EmbyUserImage))">$INFO[Window(Home).Property(EmbyUserImage)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)+!IsEmpty(System.ProfileThumb)">$INFO[System.ProfileThumb]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">$INFO[System.ProfileThumb]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">clear/musicartists.png</value>
 		<value>special://skin/extras/backgrounds/Theater.jpg</value>
 	</variable>
 	<variable name="EmbyBottomTileImage3">
@@ -431,9 +433,7 @@
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">clear/tvhub.png</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">clear/moviehub.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">clear/addons.png</value>
-		<!--<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)+!IsEmpty(Window(Home).Property(EmbyUserImage))">$INFO[Window(Home).Property(EmbyUserImage)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)+!IsEmpty(System.ProfileThumb)">$INFO[System.ProfileThumb]</value>-->
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">clear/musicartists.png</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">clear/power.png</value>
 		<value>special://skin/extras/backgrounds/Trailers.jpg</value>
 	</variable>
 </includes>

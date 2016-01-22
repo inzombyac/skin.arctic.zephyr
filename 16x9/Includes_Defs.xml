@@ -303,7 +303,7 @@
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">ActivateWindow(1102)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files))">RunAddon(script.extendedinfo,info=intheaters)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">RunAddon(plugin.video.emby)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">ActivateWindow(shutdownmenu)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">System.LogOff</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">ActivateWindow(Weathersettings)</value>
 		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">RunAddon(script.extendedinfo,info=intheaters)</value>
 		<value>RunAddon(script.extendedinfo,info=intheaters)</value>
@@ -314,7 +314,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">ActivateWindow(tvrecordings)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">ActivateWindow(music,genres,return)</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">ActivateWindow(music,genres,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">System.LogOff</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">ActivateWindow(shutdownmenu)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">RunAddon(script.extendedinfo,info=comingsoon)</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">ActivateWindow(1102)</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">ActivateWindow(1101)</value>
