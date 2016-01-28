@@ -483,199 +483,202 @@
 				<label>$VAR[EmbyWidgetLabel]</label>
 			</control>
 			<include>EmbyMainWidgetContent</include>
-			<!-- Bottom tile 1-->
-			<control type="button" id="4013">
-				<onup>4012</onup>
-				<onright>4015</onright>
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<onclick>$VAR[EmbyBottomTileAction1]</onclick>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>$VAR[EmbyBottomTileImage1]</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<left>SidePad</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			</control>
-			<control type="label">
-				<left>SidePad</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<align>center</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyBottomTileLabel1]</label>
-			</control>
-			<control type="image">
-				<left>76</left>
-				<width>288</width>
-				<posy>832</posy>
-				<height>224</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4013)</visible>
-			</control>
-			
-			<!-- Bottom tile 2-->
-			<control type="button" id="4015">
-				<onup>4012</onup>
-				<onleft>4013</onleft>
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),weather) + ![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]">4014</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),weather) | [Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]">4016</onright>
-				<onclick>$VAR[EmbyBottomTileAction2]</onclick>
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture border="15" colordiffuse="black">common/white.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)+ [!IsEmpty(Pvr.NowRecordingChannelIcon) | !IsEmpty(Pvr.NextRecordingChannelIcon) | !IsEmpty(Container(4012).ListItem.Thumb)]</visible>
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>$VAR[EmbyBottomTileImage2]</texture>
-				<aspectratio scalediffuse="true">scale</aspectratio>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>$VAR[EmbyBottomTileImage2]</texture>
-				<aspectratio scalediffuse="false">keep</aspectratio>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<left>368</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			</control>
-			<control type="label">
-				<left>368</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<align>center</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyButton2Label]</label>
-			</control>
-			<control type="image">
-				<left>364</left>
-				<width>288</width>
-				<posy>832</posy>
-				<height>224</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4015)</visible>
-			</control>
-			
-			<!-- Bottom tile 3-->
-			<control type="button" id="4014">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<onup>4012</onup>
-				<onleft>4015</onleft>
-				<onright condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onright>
-				<onright condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4017</onright>
-				<onclick>$VAR[EmbyBottomTileAction3]</onclick>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
-			</control>
-			<control type="image">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
-			</control>
-			<control type="image">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture>$VAR[EmbyBottomTileImage3]</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>				
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<left>656</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
-			</control>
-			<control type="label">
-				<left>656</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<align>center</align>
-				<height>40</height>
-				<align>right</align>
-				<font>Small</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyButton3Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
-			</control>
-			<control type="image">
-				<left>652</left>
-				<width>288</width>
-				<posy>832</posy>
-				<height>224</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4014)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
-			</control>
 			
 			<!-- Side Widgets  -->
-			
-			<include name="EmbyRightWidgetPanel1"></include>
-			<include name="EmbyRightWidgetPanel2"></include>
+			<include>EmbyRightWidgetPanel1</include>
+			<include>EmbyRightWidgetPanel2</include>
+			<!-- Bottom Widgets -->
+			<include>EmbyBottomWidgetPanel</include>
 		</control>
+	</include>
+	<include name="EmbyBottomWidgetPanel">		
+		<!-- Bottom tile 1-->
+		<control type="button" id="4013">
+			<onup>4012</onup>
+			<onright>4015</onright>
+			<left>SidePad</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<onclick>$VAR[EmbyBottomTileAction1]</onclick>
+		</control>
+		<control type="image">
+			<left>SidePad</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+		</control>
+		<control type="image">
+			<left>SidePad</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture>$VAR[EmbyBottomTileImage1]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+		</control>
+		<control type="image">
+			<description>Title overlay</description>
+			<left>SidePad</left>
+			<posy>1016</posy>
+			<width>280</width>
+			<height>40</height>
+			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+		</control>
+		<control type="label">
+			<left>SidePad</left>
+			<posy>1016</posy>
+			<width>280</width>
+			<align>center</align>
+			<height>40</height>
+			<font>Small</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$VAR[EmbyBottomTileLabel1]</label>
+		</control>
+		<control type="image">
+			<left>76</left>
+			<width>288</width>
+			<posy>832</posy>
+			<height>224</height>
+			<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+			<visible>Control.HasFocus(4013)</visible>
+		</control>
+		
+		<!-- Bottom tile 2-->
+		<control type="button" id="4015">
+			<onup>4012</onup>
+			<onleft>4013</onleft>
+			<left>368</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),weather) + ![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]">4014</onright>
+			<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),weather) | [Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]">4016</onright>
+			<onclick>$VAR[EmbyBottomTileAction2]</onclick>
+		</control>
+		<control type="image">
+			<left>368</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+		</control>
+		<control type="image">
+			<left>368</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture border="15" colordiffuse="black">common/white.png</texture>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)+ [!IsEmpty(Pvr.NowRecordingChannelIcon) | !IsEmpty(Pvr.NextRecordingChannelIcon) | !IsEmpty(Container(4012).ListItem.Thumb)]</visible>
+		</control>
+		<control type="image">
+			<left>368</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture>$VAR[EmbyBottomTileImage2]</texture>
+			<aspectratio scalediffuse="true">scale</aspectratio>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+		</control>
+		<control type="image">
+			<left>368</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture>$VAR[EmbyBottomTileImage2]</texture>
+			<aspectratio scalediffuse="false">keep</aspectratio>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+		</control>
+		<control type="image">
+			<description>Title overlay</description>
+			<left>368</left>
+			<posy>1016</posy>
+			<width>280</width>
+			<height>40</height>
+			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+		</control>
+		<control type="label">
+			<left>368</left>
+			<posy>1016</posy>
+			<width>280</width>
+			<align>center</align>
+			<height>40</height>
+			<font>Small</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$VAR[EmbyButton2Label]</label>
+		</control>
+		<control type="image">
+			<left>364</left>
+			<width>288</width>
+			<posy>832</posy>
+			<height>224</height>
+			<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+			<visible>Control.HasFocus(4015)</visible>
+		</control>
+		
+		<!-- Bottom tile 3-->
+		<control type="button" id="4014">
+			<left>656</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<onup>4012</onup>
+			<onleft>4015</onleft>
+			<onright condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onright>
+			<onright condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4017</onright>
+			<onclick>$VAR[EmbyBottomTileAction3]</onclick>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+		</control>
+		<control type="image">
+			<left>656</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+		</control>
+		<control type="image">
+			<left>656</left>
+			<posy>836</posy>
+			<width>280</width>
+			<height>180</height>
+			<texture>$VAR[EmbyBottomTileImage3]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>				
+		</control>
+		<control type="image">
+			<description>Title overlay</description>
+			<left>656</left>
+			<posy>1016</posy>
+			<width>280</width>
+			<height>40</height>
+			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+		</control>
+		<control type="label">
+			<left>656</left>
+			<posy>1016</posy>
+			<width>280</width>
+			<align>center</align>
+			<height>40</height>
+			<align>right</align>
+			<font>Small</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$VAR[EmbyButton3Label]</label>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+		</control>
+		<control type="image">
+			<left>652</left>
+			<width>288</width>
+			<posy>832</posy>
+			<height>224</height>
+			<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+			<visible>Control.HasFocus(4014)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+		</control>		
 	</include>
 	<include name="EmbyMainWidgetContent">
 		<control type="list" id="4012">
@@ -776,7 +779,7 @@
 			<include>Animation.FadeOut</include>
 			<include>EmbyMainWidgetItemLayout</include>
 			<content type="plugin" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<onclick>ActivateWindow(Pictures,return)</onclick>
+			<onclick>ActivateWindow(10002,plugin://plugin.video.emby,return)</onclick>
 		</control>
 		<control type="panel" id="4012">
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
@@ -795,6 +798,182 @@
 			<include>WeatherWidgetToday</include>
 		</control>
 		<include>EmbyMainWidgetOverlay</include>
+	</include>
+	<include name="EmbyRightWidgetPanel1">
+		 <definition>
+			<control type="label">
+				<left>954</left>
+				<top>290</top>
+				<width>620</width>
+				<align>left</align>
+				<height>40</height>
+				<font>Small</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyHomeWidget1Label]</label>
+				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
+			</control>
+			<control type="panel" id="4016">
+				<visible>Substring(Container(300).ListItem.Property(defaultID),pictures)</visible>
+				<top>330</top>
+				<left>944</left>
+				<width>620</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4016</ondown>
+				<onleft>4012</onleft>
+				<onright>4017</onright>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>EmbyWidget1Content</include>
+				<content>$VAR[DefWidgetCenterContent]</content>
+				<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
+			</control>
+			<control type="panel" id="4016">
+				<visible>!Substring(Container(300).ListItem.Property(defaultID),pictures)+!Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<top>330</top>
+				<left>944</left>
+				<width>620</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4016</ondown>
+				<onleft>4012</onleft>
+				<onright>4017</onright>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>EmbyWidget1Content</include>
+				<content limit="10">$VAR[DefWidgetCenterContent]</content>
+			</control>
+			<control type="panel" id="4016">
+				<visible>Substring(Container(300).ListItem.Property(defaultid),music,Left)</visible>
+				<top>330</top>
+				<left>944</left>
+				<width>620</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4016</ondown>
+				<onleft>4012</onleft>
+				<onright>4017</onright>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<!--<include>EmbyWidget1ContentSquare</include>-->
+				<include name="EmbyWidget1Content">
+					<param name="widget_width">200</param>
+					<param name="item_width">180</param>
+					<param name="focusbox_height">221</param>
+					<param name="focusbox_width">190</param>
+				</include>
+				<content limit="10">$VAR[DefWidgetCenterContent]</content>
+			</control>
+			<control type="panel" id="4016">
+				<description>Widget</description>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
+				<top>330</top>
+				<left>944</left>
+				<width>620</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4016</ondown>
+				<onleft>4012</onleft>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>EmbyWidget1Content</include>
+				<include>WeatherWidget</include>
+			</control>
+			<control type="panel" id="4016">
+				<visible>Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
+				<top>330</top>
+				<left>944</left>
+				<width>620</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4016</ondown>
+				<onleft>4012</onleft>
+				<onright>4017</onright>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>EmbyWidget1Content</include>
+				<include>SysInfoWidget</include>
+			</control>
+		</definition>
+	</include>
+	<include name="EmbyRightWidgetPanel2">
+		<definition>
+			<control type="label">
+				<left>1560</left>
+				<top>290</top>
+				<width>310</width>
+				<align>left</align>
+				<height>40</height>
+				<font>Small</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyHomeWidget2Label]</label>
+				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
+				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
+			</control>
+			<control type="panel" id="4017">
+				<description>Widget</description>
+				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs)</visible>
+				<top>330</top>
+				<left>1550</left>
+				<width>310</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4017</ondown>
+				<onleft condition="!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4016</onleft>
+				<onleft condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">4016</onleft>
+				<onleft condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)">4012</onleft>
+				<onright>4017</onright>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include>EmbyWidget1Content</include>
+				<content limit="10">$VAR[DefWidgetRightContent]</content>
+			</control>
+			<control type="panel" id="4017">
+				<description>Widget</description>
+				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<top>330</top>
+				<left>1550</left>
+				<width>253</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4017</ondown>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
+				<onright>4017</onright>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include name="EmbyWidget1Content">
+					<param name="widget_width">200</param>
+					<param name="item_width">180</param>
+					<param name="focusbox_height">221</param>
+					<param name="focusbox_width">190</param>
+				</include>
+				<content limit="10">$VAR[DefWidgetRightContent]</content>
+			</control>
+		</definition>
 	</include>
 	<include name="EmbyWidgetItemLayout">
 		<itemlayout width="856" height="496">
@@ -839,21 +1018,21 @@
 		</focusedlayout>
 	</include>
 	<include name="EmbyMainWidgetItemLayout">
+		<animation effect="fade" start="0" end="25" time="100">VisibleChange</animation>
 		<itemlayout width="856" height="496">
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">special://skin/extras/backgrounds/tv.jpg</texture>
-				<visible>!Container(4012).IsUpdating</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!Container(4012).IsUpdating</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv) | [StringCompare(Container(300).ListItem.Property(defaultID),livetv) + [!IsEmpty(Container(300).ListItem.Property(widgetPath)) | !IsEmpty(Container(300).ListItem.Property(widget))]]</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<include>PVRChannelWidget</include>
 			<include>WeatherTodayMainWidget</include>
@@ -873,17 +1052,16 @@
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">special://skin/extras/backgrounds/tv.jpg</texture>
-				<visible>!Container(4012).IsUpdating</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!Container(4012).IsUpdating</visible>
 			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[LandscapeImage]</texture>
-				<visible>!Container(4012).IsUpdating</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv) | [StringCompare(Container(300).ListItem.Property(defaultID),livetv) + [!IsEmpty(Container(300).ListItem.Property(widgetPath)) | !IsEmpty(Container(300).ListItem.Property(widget))]]</visible>
+				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			</control>
 			<include>PVRChannelWidget</include>
 			<include>WeatherTodayMainWidget</include>
@@ -976,45 +1154,43 @@
 		</control>
 	</include>
 	<include name="EmbyWidget1Content">
-		<param name="EmbyWidgetSource"/>
-		<definition>
-		<itemlayout width="300" height="253">
+	  <param name="widget_width" default="300"/>
+	  <param name="item_width" default="290"/>
+	  <param name="widget_height" default="253"/>
+	  <param name="item_height" default="180"/>
+	  <param name="focusbox_height" default="221"/>
+	  <param name="focusbox_width" default="300"/>
+	  <definition>
+		<itemlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
 			<control type="image">
 				<aspectratio aligny="top">stretch</aspectratio>
-				<height>180</height>
-				<width>290</width>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
 				<texture background="true">$VAR[ThumbImage]</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultid),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
 				<left>10</left>
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[FanartImage]</texture>
-				<height>180</height>
-				<width>290</width>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 				<left>10</left>
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">stretch</aspectratio>
 				<texture background="true">$VAR[FanartImage]</texture>
-				<height>180</height>
-				<width>290</width>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]+!StringCompare(ListItem.Label, Get more...)</visible>
-				<left>10</left>
-			</control>
-			<control type="image">
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[FanartImage]</texture>
-				<height>220</height>
-				<width>290</width>
-				<visible>Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)</visible>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(ListItem.Label, Get more...) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
 				<left>10</left>
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
 				<bottom>33</bottom>
 				<height>40</height>
+				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
@@ -1024,48 +1200,29 @@
 				<left>15</left>
 				<align>left</align>
 				<height>30</height>
+				<width>$PARAM[item_width]</width>
 				<font>Tiny</font>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.TVShowTitle]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(ListItem.DBTYPE,episode)</visible>
 			</control>
 			<control type="label">
 				<bottom>40</bottom>
 				<left>15</left>
 				<align>left</align>
 				<height>30</height>
+				<width>$PARAM[item_width]</width>
 				<font>Tiny</font>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(ListItem.Label, Get more...)</visible>
-			</control>
-			<control type="image">
-				<top>11</top>
-				<right>10</right>
-				<width>32</width>
-				<height>32</height>
-				<texture>special://skin/extras/icons/emby2.png</texture>
-				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-				<visible>!IsEmpty(ListItem.Property(DBID))</visible>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
-				<visible>!Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/)</visible>
-			</control>
-			<control type="image">
-				<top>11</top>
-				<right>10</right>
-				<width>50</width>
-				<height>50</height>
-				<texture>special://skin/extras/icons/youtube.png</texture>
-				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-				<visible>IsEmpty(ListItem.Property(DBID))</visible>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
-				<visible>!Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(ListItem.Label, Get more...) + !StringCompare(ListItem.DBTYPE,episode)</visible>
 			</control>
 			<control type="progress">
 				<bottom>72</bottom>
 				<height>8</height>
+				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<info>ListItem.PercentPlayed</info>
 				<overlaytexture>-</overlaytexture>
@@ -1076,46 +1233,38 @@
 				<visible>ListItem.IsResumable</visible>
 			</control>
 		</itemlayout>
-		<focusedlayout width="300" height="253">
+		<focusedlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
 			<control type="image">
 				<left>10</left>
-				<height>180</height>
-				<width>290</width>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
 				<aspectratio aligny="top">stretch</aspectratio>
 				<texture background="true">$VAR[ThumbImage]</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultid),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
 			</control>
 			<control type="image">
 				<left>10</left>
-				<height>180</height>
-				<width>290</width>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[FanartImage]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
 			</control>
 			<control type="image">
 				<left>10</left>
-				<height>180</height>
-				<width>290</width>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
 				<aspectratio aligny="top">stretch</aspectratio>
 				<texture background="true">$VAR[FanartImage]</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]+!StringCompare(ListItem.Label, Get more...)</visible>
-			</control>
-			<control type="image">
-				<left>10</left>
-				<height>220</height>
-				<width>290</width>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[FanartImage]</texture>
-				<visible>Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !StringCompare(ListItem.Label, Get more...) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
 				<bottom>33</bottom>
 				<height>40</height>
+				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>Control.HasFocus(4016)</visible>
 				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
 			</control>
 			<control type="label">
@@ -1123,280 +1272,29 @@
 				<left>15</left>
 				<align>left</align>
 				<height>30</height>
+				<width>$PARAM[item_width]</width>
 				<font>Tiny</font>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.TVShowTitle]</label>
-				<visible>Control.HasFocus(4016)</visible>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | StringCompare(ListItem.DBTYPE,episode)</visible>
 			</control>
 			<control type="label">
 				<bottom>40</bottom>
 				<left>15</left>
 				<align>left</align>
 				<height>30</height>
+				<width>$PARAM[item_width]</width>
 				<font>Tiny</font>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.Label]</label>
-				<visible>Control.HasFocus(4016)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(ListItem.Label, Get more...)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(ListItem.Label, Get more...)+!StringCompare(ListItem.DBTYPE,episode)</visible>
 			</control>
 			<control type="progress">
 				<bottom>72</bottom>
 				<height>8</height>
-				<left>10</left>
-				<info>ListItem.PercentPlayed</info>
-				<overlaytexture>-</overlaytexture>
-				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
-				<visible>ListItem.IsResumable</visible>
-			</control>
-			<control type="image">
-				<top>11</top>
-				<right>10</right>
-				<width>32</width>
-				<height>32</height>
-				<texture>special://skin/extras/icons/emby2.png</texture>
-				<visible>!IsEmpty(ListItem.Property(DBID))</visible>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
-			</control>
-			<control type="image">
-				<top>11</top>
-				<right>10</right>
-				<width>50</width>
-				<height>50</height>
-				<texture>special://skin/extras/icons/youtube.png</texture>
-				<visible>IsEmpty(ListItem.Property(DBID))</visible>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files)</visible>
-			</control>
-			<control type="image">
-				<left>5</left>
-				<width>300</width>
-				<height>221</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4016) +!StringCompare(ListItem.Label, Get more...)</visible>
-			</control>
-		</focusedlayout>
-		</definition>
-	</include>
-	<include name="EmbyWidget1ContentBig">
-		<itemlayout width="856" height="496">
-			<control type="image">
-				<aspectratio aligny="top">stretch</aspectratio>
-				<left>5</left>
-				<height>496</height>
-				<width>856</width>
-				<texture background="true">$VAR[FanartImage]</texture>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<bottom>0</bottom>
-				<left>5</left>
-				<height>40</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			</control>
-			<control type="label">
-				<bottom>10</bottom>
-				<left>10</left>
-				<align>left</align>
-				<height>30</height>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-			<control type="progress">
-				<bottom>40</bottom>
-				<height>12</height>
-				<left>5</left>
-				<info>ListItem.PercentPlayed</info>
-				<overlaytexture>-</overlaytexture>
-				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
-				<visible>ListItem.IsResumable</visible>
-			</control>
-		</itemlayout>
-		<focusedlayout width="856" height="496">
-			<control type="image">
-				<aspectratio aligny="top">stretch</aspectratio>
-				<left>5</left>
-				<height>496</height>
-				<width>856</width>
-				<texture background="true">$VAR[FanartImage]</texture>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<left>5</left>
-				<bottom>0</bottom>
-				<height>40</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>Control.HasFocus(4016)</visible>
-			</control>
-			<control type="label">
-				<bottom>10</bottom>
-				<left>10</left>
-				<align>left</align>
-				<height>30</height>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>Control.HasFocus(4016)</visible>
-			</control>
-			<control type="progress">
-				<bottom>40</bottom>
-				<left>5</left>
-				<height>12</height>
-				<left>10</left>
-				<info>ListItem.PercentPlayed</info>
-				<overlaytexture>-</overlaytexture>
-				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
-				<visible>ListItem.IsResumable</visible>
-			</control>
-			<control type="image">
-				<width>856</width>
-				<height>496</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4016)</visible>
-			</control>
-		</focusedlayout>
-	</include>
-	<include name="EmbyWidget2Content">
-		<itemlayout width="300" height="253">
-			<control type="image">
-				<height>180</height>
-				<width>290</width>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[ThumbImage]</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-				<left>10</left>
-			</control>
-			<control type="image">
-				<height>180</height>
-				<width>290</width>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[FanartImage]</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<left>10</left>
-			</control>
-			<control type="image">
-				<height>180</height>
-				<width>290</width>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[FanartImage]</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<left>10</left>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<bottom>33</bottom>
-				<height>40</height>
-				<left>10</left>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			</control>
-			<control type="label">
-				<bottom>40</bottom>
-				<left>15</left>
-				<align>left</align>
-				<height>30</height>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.TVShowTitle]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-			</control>
-			<control type="label">
-				<bottom>40</bottom>
-				<left>15</left>
-				<align>left</align>
-				<height>30</height>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-			</control>
-			<control type="progress">
-				<bottom>72</bottom>
-				<height>8</height>
-				<left>10</left>
-				<info>ListItem.PercentPlayed</info>
-				<overlaytexture>-</overlaytexture>
-				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
-				<visible>ListItem.IsResumable</visible>
-			</control>
-		</itemlayout>
-		<focusedlayout width="300" height="253">
-			<control type="image">
-				<height>180</height>
-				<width>290</width>
-				<left>10</left>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[ThumbImage]</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-			</control>
-			<control type="image">
-				<height>180</height>
-				<width>290</width>
-				<left>10</left>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[FanartImage]</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control>
-			<control type="image">
-				<height>180</height>
-				<width>290</width>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[FanartImage]</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<left>10</left>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<bottom>33</bottom>
-				<height>40</height>
-				<left>10</left>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>Control.HasFocus(4017)</visible>
-			</control>
-			<control type="label">
-				<bottom>40</bottom>
-				<left>15</left>
-				<align>left</align>
-				<height>30</height>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.TVShowTitle]</label>
-				<visible>Control.HasFocus(4017)</visible>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-			</control>
-			<control type="label">
-				<bottom>40</bottom>
-				<left>15</left>
-				<align>left</align>
-				<height>30</height>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>Control.HasFocus(4017)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-			</control>
-			<control type="progress">
-				<bottom>72</bottom>
-				<height>8</height>
+				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<info>ListItem.PercentPlayed</info>
 				<overlaytexture>-</overlaytexture>
@@ -1408,316 +1306,12 @@
 			</control>
 			<control type="image">
 				<left>5</left>
-				<width>300</width>
-				<height>221</height>
+				<width>$PARAM[focusbox_width]</width>
+				<height>$PARAM[focusbox_height]</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4017)</visible>
+				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
 			</control>
 		</focusedlayout>
-	</include>
-	<include name="EmbyWidget1ContentSquare">
-		<param name="EmbyWidgetSource"/>
-		<definition>
-		<itemlayout width="200" height="253">
-			<control type="image">
-				<height>180</height>
-				<width>180</width>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[ThumbImage]</texture>
-				<left>10</left>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<bottom>33</bottom>
-				<height>40</height>
-				<left>10</left>
-				<width>180</width>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			</control>
-			<control type="label">
-				<width>180</width>
-				<bottom>40</bottom>
-				<left>15</left>
-				<align>left</align>
-				<height>30</height>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-		</itemlayout>
-		<focusedlayout width="200" height="253">
-			<control type="image">
-				<height>180</height>
-				<width>180</width>
-				<left>10</left>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[ThumbImage]</texture>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<bottom>33</bottom>
-				<height>40</height>
-				<left>10</left>
-				<width>180</width>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>Control.HasFocus(4016)</visible>
-			</control>
-			<control type="label">
-				<width>180</width>
-				<bottom>40</bottom>
-				<left>15</left>
-				<align>left</align>
-				<height>30</height>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>Control.HasFocus(4016)</visible>
-			</control>
-			<control type="image">
-				<left>5</left>
-				<height>221</height>
-				<width>190</width>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4016)</visible>
-			</control>
-		</focusedlayout>
-		</definition>
-	</include>
-	<include name="EmbyWidget2ContentSquare">
-		<param name="EmbyWidgetSource"/>
-		<definition>
-		<itemlayout width="200" height="253">
-			<control type="image">
-				<height>180</height>
-				<width>180</width>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[ThumbImage]</texture>
-				<left>10</left>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<width>180</width>
-				<bottom>33</bottom>
-				<height>40</height>
-				<left>10</left>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			</control>
-			<control type="label">
-				<bottom>40</bottom>
-				<left>15</left>
-				<align>left</align>
-				<height>30</height>
-				<width>180</width>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-		</itemlayout>
-		<focusedlayout width="200" height="253">
-			<control type="image">
-				<left>10</left>
-				<height>180</height>
-				<width>180</width>
-				<aspectratio aligny="top">stretch</aspectratio>
-				<texture background="true">$VAR[ThumbImage]</texture>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<bottom>33</bottom>
-				<height>40</height>
-				<left>10</left>
-				<width>180</width>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>Control.HasFocus(4017)</visible>
-			</control>
-			<control type="label">
-				<bottom>40</bottom>
-				<left>15</left>
-				<align>left</align>
-				<height>30</height>
-				<width>180</width>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Label]</label>
-				<visible>Control.HasFocus(4017)</visible>
-			</control>
-			<control type="image">
-				<left>5</left>
-				<width>190</width>
-				<height>221</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4017)</visible>
-			</control>
-		</focusedlayout>
-		</definition>
-	</include>
-	<include name="EmbyRightWidgetPanel1">
-		 <definition>
-			<control type="label">
-				<left>954</left>
-				<top>290</top>
-				<width>620</width>
-				<align>left</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyHomeWidget1Label]</label>
-				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
-			</control>
-			<control type="panel" id="4016">
-				<visible>Substring(Container(300).ListItem.Property(defaultID),pictures)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1Content</include>
-				<content>$VAR[DefWidgetCenterContent]</content>
-				<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
-			</control>
-			<control type="panel" id="4016">
-				<visible>!Substring(Container(300).ListItem.Property(defaultID),pictures)+!Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1Content</include>
-				<content limit="10">$VAR[DefWidgetCenterContent]</content>
-			</control>
-			<control type="panel" id="4016">
-				<visible>Substring(Container(300).ListItem.Property(defaultid),music,Left)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1ContentSquare</include>
-				<content limit="10">$VAR[DefWidgetCenterContent]</content>
-			</control>
-			<control type="panel" id="4016">
-				<description>Widget</description>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1Content</include>
-				<include>WeatherWidget</include>
-			</control>
-			<control type="panel" id="4016">
-				<visible>Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>620</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget1Content</include>
-				<include>SysInfoWidget</include>
-			</control>
-		</definition>
-	</include>
-	<include name="EmbyRightWidgetPanel2">
-		<definition>
-			<control type="label">
-				<left>1560</left>
-				<top>290</top>
-				<width>310</width>
-				<align>left</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
-				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
-			</control>
-			<control type="panel" id="4017">
-				<description>Widget</description>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs)</visible>
-				<top>330</top>
-				<left>1550</left>
-				<width>310</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4017</ondown>
-				<onleft condition="!StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">4016</onleft>
-				<onleft condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">4016</onleft>
-				<onleft condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)">4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget2Content</include>
-				<content limit="10">$VAR[DefWidgetRightContent]</content>
-			</control>
-			<control type="panel" id="4017">
-				<description>Widget</description>
-				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
-				<top>330</top>
-				<left>1550</left>
-				<width>253</width>
-				<height>730</height>
-				<onup>300</onup>
-				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4017</onright>
-				<preloaditems>2</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<include>EmbyWidget2ContentSquare</include>
-				<content limit="10">$VAR[DefWidgetRightContent]</content>
-			</control>
 		</definition>
 	</include>
 	<include name="WeatherWidget">
@@ -1863,35 +1457,8 @@
 				<align>left</align>
 				<font>Tiny</font>
 				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</label>
-				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) ]] + !Container(4016).IsUpdating</visible>
-				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
-			</control>
-			<control type="label">
-				<height>64</height>
-				<align>left</align>
-				<font>Tiny</font>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</label>
-				<visible>[StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]  + !Container(4016).IsUpdating</visible>
-				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
-			</control>
-			<control type="label">
-				<height>64</height>
-				<align>left</align>
-				<font>Tiny</font>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[Pvr.BackendChannels] channels • [COLOR=$VAR[ColourHighlight]]$INFO[Pvr.BackendRecordings] recordings[/COLOR]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)  + !Container(4016).IsUpdating</visible>
-				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
-			</control>
-			<control type="label">
-				<height>64</height>
-				<align>left</align>
-				<font>Tiny</font>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[Window(Home).Property(Music.ArtistsCount)] artists • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Music.AlbumsCount)] albums[/COLOR] • $INFO[Window(Home).Property(Music.SongsCount)] songs</label>
-				<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left)  + !Container(4016).IsUpdating</visible>
+				<label>$VAR[EmbyFooterLabel]</label>
+				<visible>!Container(4016).IsUpdating</visible>
 				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) </visible>
 			</control>
 		</control>
@@ -2057,6 +1624,7 @@
 	</include>
 	<include name="PVRChannelWidget">
 		<control type="group">
+		<animation effect="fade" start="0" end="25" time="100">VisibleChange</animation>
 		<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 		<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
 			<control type="image">
