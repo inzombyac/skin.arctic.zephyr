@@ -222,8 +222,10 @@
 		<value>$INFO[Container(4012).ListItem.Label]</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">Next Up</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">Resume</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$LOCALIZE[31124]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">Resume</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">$LOCALIZE[31124]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">Recorded TV</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Recent Albums</value>
@@ -249,7 +251,10 @@
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)"> </value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$LOCALIZE[31125]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">$LOCALIZE[31124]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">Recommended</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">$LOCALIZE[31124]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">Recommended</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)+!Stringcompare(Skin.String(widget4),AiringToday)">Airing Today</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">Recommended</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)"> </value>

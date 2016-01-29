@@ -117,8 +117,11 @@
 	</variable>
 	<!-- Center Widget Selection -->
 	<variable name="DefWidgetCenterContent">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]&amp;id=$INFO[Container(9000).ListItem.Property(Path)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]&amp;id=$INFO[Container(9000).ListItem.Property(Path)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">special://skin/extras/playlists/InProgressShows.xsp</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">special://skin/extras/playlists/InProgressMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">videodb://recentlyaddedmovies/</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">special://skin/extras/playlists/InProgressMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd)">videodb://recentlyaddedmovies/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">pvr://recordings/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</value>
@@ -143,8 +146,10 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">videodb://recentlyaddedepisodes/</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">special://skin/extras/playlists/InProgressMovies.xsp</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd)">special://skin/extras/playlists/InProgressMovies.xsp</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">videodb://recentlyaddedmovies/</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">special://skin/extras/playlists/RecommendedMovies.xsp</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">videodb://recentlyaddedmovies/</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd)">special://skin/extras/playlists/RecommendedMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
