@@ -16,7 +16,7 @@
         <label2>tvshows</label2>
         <label>Unwatched</label>
         <icon>special://skin/extras/icons/eye.png</icon>
-        <action>ActivateWindow(VideoLibrary,special://skin/extras/playlists/unwatched_shows.xsp,return)</action>
+        <action>ActivateWindow(VideoLibrary,special://skin/extras/playlists/UnwatchedShows.xsp,return)</action>
     </shortcut>
 	<shortcut>
         <label2>tvshows</label2>
