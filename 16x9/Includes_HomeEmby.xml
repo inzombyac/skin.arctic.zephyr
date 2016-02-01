@@ -731,6 +731,9 @@
 		<control type="list" id="9008">
 			<content target="video" limit="6">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(300).ListItem.label]%22%5D%7D%2C%7B%22field%22%3A%22inprogress%22%2C%22operator%22%3A%22true%22%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</content>
 		</control>
+		<control type="list" id="9009">
+			<content target="video" limit="6">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(300).ListItem.label]%22%5D%7D%2C%7B%22field%22%3A%22playcount%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</content>
+		</control>
 		
 		<!--Program widgets -->
 		<control type="list" id="4012">
@@ -1434,7 +1437,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.TVShowTitle]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]</visible>
+				<visible>!StringCompare(ListItem.Path,plugin://script.extendedinfo) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]</visible>
 			</control>
 			<control type="label">
 				<bottom>40</bottom>
@@ -1489,7 +1492,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.TVShowTitle]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]</visible>
+				<visible>!StringCompare(ListItem.Path,plugin://script.extendedinfo) + StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]</visible>
 			</control>
 			<control type="label">
 				<bottom>40</bottom>
