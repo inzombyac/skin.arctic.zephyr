@@ -322,6 +322,7 @@
 	<variable name="EmbyButton2Label">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31220]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Collections</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv) + System.HasAddon(script.hdhomerun.view)">HDHomeRun View</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Channels</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">Albums</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Albums</value>

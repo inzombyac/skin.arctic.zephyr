@@ -587,7 +587,7 @@
 				<height>180</height>
 				<texture>$VAR[EmbyBottomTileImage2]</texture>
 				<aspectratio scalediffuse="true">scale</aspectratio>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv) | [StringCompare(Container(300).ListItem.Property(defaultID),livetv) + System.HasAddon(script.hdhomerun.view)]</visible>
 			</control>
 			<control type="image">
 				<left>368</left>

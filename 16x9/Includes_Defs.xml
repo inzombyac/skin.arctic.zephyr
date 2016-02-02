@@ -92,16 +92,31 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),RecentlyPlayedAlbums)">musicdb://recentlyplayedalbums/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Top100Albums)">musicdb://top100/albums/</value>
 	</variable>
+	<variable name="EmbyHomeDBID">
+		<value condition="!IsEmpty(Container(4016).ListItem.Property(DBID) + IntegerGreaterThan(Container(4016).ListItem.Property(DBID),-1)">$INFO[Container(4016).ListItem.Property(DBID)]</value>
+		<value condition="!IsEmpty(Container(4016).ListItem.DBID)  + IntegerGreaterThan(Container(4016).ListItem.DBID,-1)">$INFO[Container(4016).ListItem.DBID]</value>
+	</variable>
 	<variable name="EmbyHomeContent">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">tvshows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">movies</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">tvshows</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">livetv</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),script.hdhomerun.view)">livetv</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">music</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">music</value>
-	
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">pictures</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">pictures</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">videos</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">videos</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">emby</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">weather</value>
+		<value condition="[StringCompare(Container(300).ListItem.Property(defaultID),programs)">programs</value>
+		<value condition="Substring(Container(300).ListItem.Property(defaultID),plugin://,Left)]">programs</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">settings</value>
+		<value>videos</value>
 	</variable>
-	
 	<!-- Main Widget Selection -->
 	<variable name="DefWidgetMainContent">
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
@@ -230,6 +245,7 @@
 	<variable name="EmbyBottomTileAction2">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">RunAddon(script.tv.show.next.aired)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">ActivateWindow(Videos,videodb://movies/sets/,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + System.HasAddon(script.hdhomerun.view)">RunAddon(script.hdhomerun.view)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">ActivateWindow(tvchannels)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">ActivateWindow(MusicLibrary,musicdb://albums/,return)</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">ActivateWindow(MusicLibrary,musicdb://albums/,return)</value>

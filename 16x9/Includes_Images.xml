@@ -305,32 +305,6 @@
 		<value condition="IntegerGreaterThan(ListItem.VideoResolution,539)">flags/resolution/540.png</value>
 		<value condition="!IsEmpty(ListItem.VideoResolution)">flags/resolution/480.png</value>
 	</variable>
-	<!-- Flags -->
-	<variable name="MovieFlagstar1">
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),1)">star10</value>
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),0)">star5</value>
-		<value>star0</value>
-	</variable>
-	<variable name="MovieFlagstar2">
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),3)">star10</value>
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),2)">star5</value>
-		<value>star0</value>
-	</variable>
-	<variable name="MovieFlagstar3">
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),5)">star10</value>
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),4)">star5</value>
-		<value>star0</value>
-	</variable>
-	<variable name="MovieFlagstar4">
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),7)">star10</value>
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),6)">star5</value>
-		<value>star0</value>
-	</variable>
-	<variable name="MovieFlagstar5">
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),9)">star10</value>
-		<value condition="IntegerGreaterThan(Window.Property(movie.rating),8)">star5</value>
-		<value>star0</value>
-	</variable>
 	<!-- Home Weather -->
 	<variable name="HomeWeatherToday">
 		<value condition="!IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]/$INFO[Window(weather).Property(Current.FanartCode),weather/,.png]</value>
@@ -443,6 +417,7 @@
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">clear/music.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio) + !IsEmpty(Container(4017).ListItem.Art(fanart))">$INFO[Container(4017).ListItem.Art(fanart)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">clear/music.png</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + System.HasAddon(script.hdhomerun.view)">special://skin/extras/backgrounds/HDHomeRun.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IsEmpty(Container(4012).ListItem(1).Thumb)">$INFO[Container(4012).ListItem(1).Thumb]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IsEmpty(Pvr.NowRecordingChannelIcon)">$INFO[Pvr.NowRecordingChannelIcon]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + !IsEmpty(Pvr.NextRecordingChannelIcon)">$INFO[Pvr.NextRecordingChannelIcon]</value>
