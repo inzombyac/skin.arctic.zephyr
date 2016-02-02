@@ -566,7 +566,7 @@ msgid "Use minimal busy loader in header"
 msgstr "Gebruik kleine bezigheids animatie in header "
 
 msgctxt "#31241"
-msgid "Additional info"
+msgid "Info"
 msgstr "Extra informatie"
 
 msgctxt "#31242"

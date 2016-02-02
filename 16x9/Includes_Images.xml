@@ -122,6 +122,7 @@
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="LandscapeImage">
+		<value condition="Window.IsVisible(Home.xml) + Substring(ListItem.path,pvr://,left)">diffuseoverlay.png</value>
 		<value condition="substring(Container.FolderPath,plugin://plugin.program.advanced.launcher/,left)">$INFO[ListItem.Icon]</value>
 		<value condition="Container.Content(episodes) + [!Skin.HasSetting(osd.hidespoilers) | [Skin.HasSetting(osd.hidespoilers) + stringcompare(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Icon]</value>
 		<value condition="Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
@@ -132,6 +133,13 @@
 		<value condition="!IsEmpty(ListItem.Thumb) + !Container.Content(episodes)">$INFO[ListItem.Thumb]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">resource://resource.images.musicgenreicons.text/$INFO[Listitem.Label,,.jpg]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+	<variable name="PVRChannelsImage">
+		<value condition="!IsEmpty(ListItem.Art(landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!IsEmpty(ListItem.Art(tvshow.landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="!IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!IsEmpty(ListItem.Thumb) + !Container.Content(episodes)">$INFO[ListItem.Thumb]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="MusicImage">
@@ -263,17 +271,17 @@
 	</variable>
 
 	<variable name="ExtendedRatingFlagVar">
-		<value condition="substring(Window.Property(movie.mpaa),TV-G)">TV-G_Certificate_US</value>
-		<value condition="substring(Window.Property(movie.mpaa),TV-PG)">TV-PG_Certificate_US</value>
-		<value condition="substring(Window.Property(movie.mpaa),TV-14)">TV-14_Certificate_US</value>
-		<value condition="substring(Window.Property(movie.mpaa),TV-MA)">TV-MA_Certificate_US</value>
-		<value condition="substring(Window.Property(movie.mpaa),TV-Y7)">tv-y7</value>
-		<value condition="substring(Window.Property(movie.mpaa),TV-Y)">tv-y</value>
-		<value condition="SubString(Window.Property(movie.mpaa),US:G) | SubString(Window.Property(movie.mpaa),USA:G) | SubString(Window.Property(movie.mpaa),Rated G)">MPAA_G_Certificate_US</value>
-		<value condition="SubString(Window.Property(movie.mpaa),PG-13)">MPAA_PG-13_Certificate_US</value>
-		<value condition="Substring(Window.Property(movie.mpaa),Rated PG) | StringCompare(Window.Property(movie.mpaa),PG)">MPAA_PG_Certificate_US</value>
-		<value condition="SubString(Window.Property(movie.mpaa),US:R) | SubString(Window.Property(movie.mpaa),USA:R) | SubString(Window.Property(movie.mpaa),Rated R) | [StringCompare(Window.Property(movie.mpaa),R)]">MPAA_R_Certificate_US</value>
-		<value condition="SubString(Window.Property(movie.mpaa),NC-17)">MPAA_NC-17_Certificate_US</value>
+		<value condition="substring(Window.Property(mpaa),TV-G)">TV-G_Certificate_US</value>
+		<value condition="substring(Window.Property(mpaa),TV-PG)">TV-PG_Certificate_US</value>
+		<value condition="substring(Window.Property(mpaa),TV-14)">TV-14_Certificate_US</value>
+		<value condition="substring(Window.Property(mpaa),TV-MA)">TV-MA_Certificate_US</value>
+		<value condition="substring(Window.Property(mpaa),TV-Y7)">tv-y7</value>
+		<value condition="substring(Window.Property(mpaa),TV-Y)">tv-y</value>
+		<value condition="SubString(Window.Property(mpaa),US:G) | SubString(Window.Property(mpaa),USA:G) | SubString(Window.Property(mpaa),Rated G)">MPAA_G_Certificate_US</value>
+		<value condition="SubString(Window.Property(mpaa),PG-13)">MPAA_PG-13_Certificate_US</value>
+		<value condition="Substring(Window.Property(mpaa),Rated PG) | StringCompare(Window.Property(mpaa),PG)">MPAA_PG_Certificate_US</value>
+		<value condition="SubString(Window.Property(mpaa),NC-17)">MPAA_NC-17_Certificate_US</value>
+		<value condition="SubString(Window.Property(mpaa),US:R) | SubString(Window.Property(mpaa),USA:R) | SubString(Window.Property(mpaa),Rated R) | [StringCompare(Window.Property(mpaa),R)]">MPAA_R_Certificate_US</value>
 	</variable>
 	<variable name="HDSDImage">
 		<value condition="Container.Content(tvshows) | Container.Content(seasons)"></value>

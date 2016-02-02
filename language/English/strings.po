@@ -565,11 +565,11 @@ msgid "Use minimal busy loader in header"
 msgstr ""
 
 msgctxt "#31241"
-msgid "Additional info"
+msgid "Info"
 msgstr ""
 
 msgctxt "#31242"
-msgid ""
+msgid "Extended Info"
 msgstr ""
 
 msgctxt "#31243"

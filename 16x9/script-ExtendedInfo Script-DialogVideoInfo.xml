@@ -210,7 +210,7 @@
 			<top>-7</top>
 			<width>1170</width>
 			<height>48</height>
-			<font>Large</font>
+			<font>Smal</font>
 			<scroll>true</scroll>
 			<textcolor>Black100</textcolor>
 			<scrollspeed>100</scrollspeed>
@@ -228,7 +228,7 @@
 			<scrollspeed>100</scrollspeed>
 			<label>$INFO[Window.Property(Title)]</label>
 			<include>DialogVideoInfoAnimation</include>
-			<visible>!IsEmpty(Window.Property(TagLine))</visible>
+			<visible>!IsEmpty(Window.Property(Title))</visible>
 		</control>
 		<control type="group">
 			<top>60</top>
@@ -405,7 +405,6 @@
 					<visible>!IsEmpty(Window.Property(Top250))</visible>
 					<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
 				</control>
-
 				<control type="group">
 					<visible>!IsEmpty(Window.Property(Budget))</visible>
 					<width>200</width>
@@ -431,7 +430,6 @@
 					<visible>!IsEmpty(Window.Property(Budget))</visible>
 					<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
 				</control>
-
 				<control type="group">
 					<visible>!IsEmpty(Window.Property(Revenue))</visible>
 					<width>200</width>
@@ -529,7 +527,7 @@
 				<textoffsetx>20</textoffsetx>
 				<texturefocus>dialogvideo/watchnow.png</texturefocus>
 				<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
-				<alttexturefocus >dialogvideo/watchnow.png</alttexturefocus>
+				<alttexturefocus>dialogvideo/watchnow.png</alttexturefocus>
 				<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/watchnow.png</alttexturenofocus>
 				<visible>!IsEmpty(Window.Property(DBID)) + !Stringcompare(Window.Property(Type),tvshow)</visible>
 			</control>
