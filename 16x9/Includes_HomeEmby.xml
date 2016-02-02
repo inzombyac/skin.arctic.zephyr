@@ -190,7 +190,6 @@
 					<texture border="1">special://skin/extras/icons/emby2.png</texture>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 					<visible>!Control.HasFocus(3636)</visible>
-					<visible>!Container(4016).IsUpdating</visible>
 				</control>
 				<control type="image">
 					<width>50</width>
@@ -1028,6 +1027,8 @@
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>4018</onright>
+				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4017).ListItem.DBID])</oninfo>
+				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4017).ListItem.DBID],name=$INFO[Container(4017).ListItem.TVShowTitle])</oninfo>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1053,6 +1054,8 @@
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>4018</onright>
+				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4017).ListItem.DBID])</oninfo>
+				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4017).ListItem.DBID],name=$INFO[Container(4017).ListItem.TVShowTitle])</oninfo>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1078,6 +1081,8 @@
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>4018</onright>
+				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4017).ListItem.DBID])</oninfo>
+				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4017).ListItem.DBID],name=$INFO[Container(4016).ListItem.TVShowTitle])</oninfo>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1102,6 +1107,8 @@
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>4018</onright>
+				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4017).ListItem.DBID])</oninfo>
+				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4017).ListItem.DBID],name=$INFO[Container(4017).ListItem.TVShowTitle])</oninfo>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1207,6 +1214,8 @@
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
+				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4018).ListItem.DBID])</oninfo>
+				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4018).ListItem.DBID],name=$INFO[Container(4018).ListItem.TVShowTitle])</oninfo>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1231,6 +1240,8 @@
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
+				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4018).ListItem.DBID])</oninfo>
+				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4018).ListItem.DBID],name=$INFO[Container(4018).ListItem.TVShowTitle])</oninfo>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1255,6 +1266,8 @@
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
+				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4018).ListItem.DBID])</oninfo>
+				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4018).ListItem.DBID],name=$INFO[Container(4018).ListItem.TVShowTitle])</oninfo>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>

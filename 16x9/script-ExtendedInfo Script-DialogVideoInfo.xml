@@ -673,20 +673,11 @@
 			</control>
 		</control>
 		<!-- Flags -->
-		<control type="image">
-			<top>541</top>
-			<width>1400</width>
-			<height>1</height>
-			<texture>info/infopanel_line.png</texture>
-			<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
-			<visible>!IsEmpty(Window.Property(VideoAspect))</visible>
-			<visible>Control.HasFocus(7000) | [ControlGroup(9000).HasFocus + IsEmpty(Window(home).Property(ExtendedYoutube)) + IsEmpty(Window(home).Property(ExtendedSimilar))]</visible>
-		</control>
 		<control type="grouplist">
 			<visible>Control.HasFocus(7000) | [ControlGroup(9000).HasFocus + IsEmpty(Window(home).Property(ExtendedYoutube)) + IsEmpty(Window(home).Property(ExtendedSimilar))]</visible>
 			<animation condition="![ControlGroup(9000).HasFocus] + [Control.HasFocus(1000) | Control.HasFocus(150) | Control.HasFocus(350)  | Control.HasFocus(850) | Control.HasFocus(950)]" effect="fade" end="0" start="100" time="0">Conditional</animation>
 			<animation condition="!Control.HasFocus(1000) + !Control.HasFocus(150) + !Control.HasFocus(350)  + !Control.HasFocus(850) + !Control.HasFocus(950)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-			<top>541</top>
+			<top>525</top>
 			<width>1400</width>
 			<height>90</height>
 			<orientation>horizontal</orientation>
@@ -701,12 +692,6 @@
 				<texture colordiffuse="Black700">$INFO[Window.Property(VideoCodec),flags/source/,.png]</texture>
 				<visible>!IsEmpty(Control.GetLabel(900012))</visible>
 			</control>
-			<control type="image">
-				<include>Furniture_FlagUpright</include>
-				<visible>!IsEmpty(Control.GetLabel(900012))</visible>
-				<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
-			</control>
-
 			<control type="image" id="900013">
 				<posy>5</posy>
 				<width>126</width>
@@ -714,11 +699,6 @@
 				<aspectratio>keep</aspectratio>
 				<texture colordiffuse="Black700">$INFO[Window.Property(AudioCodec),flags/audio/,.png]</texture>
 				<visible>!IsEmpty(Control.GetLabel(900013))</visible>
-			</control>
-			<control type="image">
-				<include>Furniture_FlagUpright</include>
-				<visible>!IsEmpty(Control.GetLabel(900013))</visible>
-				<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
 			</control>
 			<control type="image" id="900014">
 				<posy>5</posy>
@@ -728,11 +708,6 @@
 				<texture colordiffuse="Black700">$INFO[Window.Property(VideoResolution),flags/resolution/,.png]</texture>
 				<visible>!IsEmpty(Control.GetLabel(900014))</visible>
 			</control>
-			<control type="image">
-				<include>Furniture_FlagUpright</include>
-				<visible>!IsEmpty(Control.GetLabel(900014))</visible>
-				<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
-			</control>
 			<control type="image" id="900015">
 				<posy>5</posy>
 				<width>104</width>
@@ -741,12 +716,6 @@
 				<texture colordiffuse="Black700">$INFO[Window.Property(VideoAspect),flags/aspectratio/,.png]</texture>
 				<visible>!IsEmpty(Control.GetLabel(900015))</visible>
 			</control>
-			<control type="image">
-				<include>Furniture_FlagUpright</include>
-				<visible>!IsEmpty(Control.GetLabel(900015))</visible>
-				<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
-			</control>
-
 			<!--Language flags-->
 		
 			<control type="grouplist" id="11000">
@@ -766,12 +735,7 @@
 				</control>
 				<include>LanguageFlagsExtraInfo</include>
 			</control>
-			<control type="image">
-				<include>Furniture_FlagUpright</include>
-				<visible>!IsEmpty(Window.Property(AudioLanguage.1)) | !IsEmpty(Window.Property(AudioLanguage.2))</visible>
-				<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
-			</control>
-				<!--Subtitle flags-->
+			<!--Subtitle flags-->
 			<control type="grouplist" id="12000">
 				<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
 				<posy>6</posy>
@@ -790,15 +754,6 @@
 				<include>SubtitleFlagsExtraInfo</include>
 			</control>
 		</control>
-		<control type="image">
-			<top>612</top>
-			<width>1400</width>
-			<height>1</height>
-			<texture>info/infopanel_line.png</texture>
-			<visible>!Skin.HasSetting(furniture.info.dividers)</visible>
-			<visible>!IsEmpty(Window.Property(VideoAspect))</visible>
-			<visible>Control.HasFocus(7000) | [ControlGroup(9000).HasFocus + IsEmpty(Window(home).Property(ExtendedYoutube)) + IsEmpty(Window(home).Property(ExtendedSimilar))]</visible>
-		</control>
 	</control>
 	<control type="group">
 		<left>-67</left>
@@ -812,7 +767,7 @@
 			<font>MediumSmall</font>
 			<textcolor>Black300</textcolor>
 			<label>Cast and Role</label>
-			<visible>IsEmpty(Window.Property(VideoAspect))</visible>
+			
 			<visible>IsEmpty(Window(home).Property(ExtendedSimilar)) + IsEmpty(Window(home).Property(ExtendedYoutube)) + IsEmpty(Window(home).Property(ExtendedGenres)) + IsEmpty(Window(home).Property(ExtendedKeywords)) + !IsEmpty(Container(1000).ListItem.Label) + !Control.HasFocus(1000)</visible>
 			<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 			<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
@@ -823,7 +778,7 @@
 			<top>-271</top>
 			<width>2600</width>
 			<height>576</height>
-			<onup condition="!IsEmpty(Window.Property(DBID)) | IntegerGreaterThan(Container(1150).NumItems,0)">9009</onup>
+			<onup>7000</onup>
 			<onup>noop</onup>
 			<ondown>noop</ondown>
 			<onleft>7000</onleft>

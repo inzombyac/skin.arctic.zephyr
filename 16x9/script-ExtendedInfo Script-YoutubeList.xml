@@ -44,7 +44,7 @@
 			<texture>moviedb.png</texture>
 			<aspectratio align="center" aligny="top">keep</aspectratio>
 			<include>DialogVideoInfoAnimation</include>
-			<visible>IsEmpty(Window.Property(movie.Logo))</visible>
+			<visible>IsEmpty(Window.Property(Logo))</visible>
 			<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
 		</control>
 		<control type="group">
