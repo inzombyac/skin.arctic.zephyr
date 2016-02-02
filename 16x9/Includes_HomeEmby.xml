@@ -138,9 +138,10 @@
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
-					<texture diffuse="common/circle.png">special://skin/extras/icons/emby2.png</texture>
+					<texture diffuse="common/circle.png">special://skin/extras/icons/actor.png</texture>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<visible>!Control.HasFocus(3634)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
