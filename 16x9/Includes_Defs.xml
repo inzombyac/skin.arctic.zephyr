@@ -100,8 +100,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">tvshows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">movies</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">tvshows</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">movies</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">embytv</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">embymovies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">livetv</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),script.hdhomerun.view)">livetv</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">music</value>
@@ -112,8 +112,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">videos</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">emby</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">weather</value>
-		<value condition="[StringCompare(Container(300).ListItem.Property(defaultID),programs)">programs</value>
-		<value condition="Substring(Container(300).ListItem.Property(defaultID),plugin://,Left)]">programs</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)">programs</value>
+		<value condition="Substring(Container(300).ListItem.Property(defaultID),plugin://,Left)">programs</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">settings</value>
 		<value>videos</value>
 	</variable>
@@ -181,7 +181,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">special://skin/extras/playlists/RecommendedMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">videodb://recentlyaddedmovies/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd)">special://skin/extras/playlists/RecommendedMovies.xsp</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)"><include>DefNextAiredWidget</include></value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">plugin://script.extendedinfo?info=populartvshows</value>
@@ -299,7 +299,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.1.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.1.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.1.NextNumber)]$INFO[Window.Property(NextAired.1.NextTitle), ,]$INFO[Window.Property(NextAired.1.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.1.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.1.Label))</visible>
 		</item>
 		<item id="2">
 			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.2.Library)],return)</onclick>
@@ -309,7 +309,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.2.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.2.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.2.NextNumber)]$INFO[Window.Property(NextAired.2.NextTitle), ,]$INFO[Window.Property(NextAired.2.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.2.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.2.Label))</visible>
 		</item>
 		<item id="3">
 			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.3.Library)],return)</onclick>
@@ -319,7 +319,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.3.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.3.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.3.NextNumber)]$INFO[Window.Property(NextAired.3.NextTitle), ,]$INFO[Window.Property(NextAired.3.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.3.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.3.Label))</visible>
 		</item>
 		<item id="4">
 			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.4.Library)],return)</onclick>
@@ -329,7 +329,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.4.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.4.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.4.NextNumber)]$INFO[Window.Property(NextAired.4.NextTitle), ,]$INFO[Window.Property(NextAired.4.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.4.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.4.Label))</visible>
 		</item>
 		<item id="5">
 			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.5.Library)],return)</onclick>
@@ -339,7 +339,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.5.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.5.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.5.NextNumber)]$INFO[Window.Property(NextAired.5.NextTitle), ,]$INFO[Window.Property(NextAired.5.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.5.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.5.Label))</visible>
 		</item>
 		<item id="6">
 			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.6.Library)],return)</onclick>
@@ -349,7 +349,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.6.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.6.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.6.NextNumber)]$INFO[Window.Property(NextAired.6.NextTitle), ,]$INFO[Window.Property(NextAired.6.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.6.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.6.Label))</visible>
 		</item>
 		<item id="7">
 			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.7.Library)],return)</onclick>
@@ -359,7 +359,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.7.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.7.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.7.NextNumber)]$INFO[Window.Property(NextAired.7.NextTitle), ,]$INFO[Window.Property(NextAired.7.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.7.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.7.Label))</visible>
 		</item>
 		<item id="8">
 			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.8.Library)],return)</onclick>
@@ -369,7 +369,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.8.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.8.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.8.NextNumber)]$INFO[Window.Property(NextAired.8.NextTitle), ,]$INFO[Window.Property(NextAired.8.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.8.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.8.Label))</visible>
 		</item>
 		<item id="9">
 			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.9.Library)],return)</onclick>
@@ -379,7 +379,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.9.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.9.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.9.NextNumber)]$INFO[Window.Property(NextAired.9.NextTitle), ,]$INFO[Window.Property(NextAired.9.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.9.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.9.Label))</visible>
 		</item>
 		<item id="10">
 			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.10.Library)],return)</onclick>
@@ -389,7 +389,7 @@
 			<property name="Logo">$INFO[Window.Property(NextAired.10.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(NextAired.10.Label)]</label>
 			<label2>$INFO[Window.Property(NextAired.10.NextNumber)]$INFO[Window.Property(NextAired.10.NextTitle), ,]$INFO[Window.Property(NextAired.10.NextDate), • ,]</label2>
-			<visible>StringCompare(Container(300).ListItem.Property(widget),NextAired) + !IsEmpty(Window.Property(NextAired.10.Label))</visible>
+			<visible>!IsEmpty(Window.Property(NextAired.10.Label))</visible>
 		</item>
 	</include>
 	<include name="DefFavouritesWidget">

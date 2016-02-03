@@ -356,6 +356,7 @@
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) + !IntegerGreaterThan(Container(9007).NumItems,0)]">$VAR[ThumbImage]</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [!IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)]">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">$VAR[ThumbImage]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">$INFO[ListItem.Property(Fanart)]</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
 	</variable>

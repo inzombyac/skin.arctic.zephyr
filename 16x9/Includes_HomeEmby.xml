@@ -700,6 +700,7 @@
 			<ondown>4013</ondown>
 			<onleft>4012</onleft>
 			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
 			<preloaditems>6</preloaditems>
 			<orientation>horizontal</orientation>
 			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
@@ -754,6 +755,7 @@
 			<ondown>4013</ondown>
 			<onleft>4012</onleft>
 			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
 			<preloaditems>2</preloaditems>
 			<orientation>horizontal</orientation>
 			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
@@ -774,6 +776,7 @@
 			<ondown>4013</ondown>
 			<onleft>4012</onleft>
 			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
 			<preloaditems>2</preloaditems>
 			<orientation>horizontal</orientation>
 			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
@@ -794,6 +797,7 @@
 			<onup>300</onup>
 			<ondown>4013</ondown>
 			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
 			<preloaditems>2</preloaditems>
 			<orientation>horizontal</orientation>
 			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
@@ -814,6 +818,7 @@
 			<onup>300</onup>
 			<ondown>4013</ondown>
 			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
 			<orientation>horizontal</orientation>
 			<include>Animation.DelayFadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -838,6 +843,8 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget1Label]</label>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
 				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
 				<visible>!Container(40016).IsUpdating</visible>
 			</control>
@@ -875,9 +882,7 @@
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
-				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4016).ListItem.DBID])</oninfo>
-				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4016).ListItem.DBID],name=$INFO[Container(4016).ListItem.TVShowTitle])</oninfo>
-				<!--RunScript(script.skin.helper.service,action=showinfo,tvshowid=&amp;$INFO[Container(4016).ListItem.DBID])-->
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -898,8 +903,7 @@
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
-				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4016).ListItem.DBID])</oninfo>
-				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4016).ListItem.DBID],name=$INFO[Container(4016).ListItem.TVShowTitle])</oninfo>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -922,6 +926,7 @@
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -947,6 +952,7 @@
 				<onup>300</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -969,6 +975,7 @@
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1018,7 +1025,7 @@
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !StringCompare(Container(300).ListItem.Property(defaultID),radio) + !StringCompare(Container(300).ListItem.Property(defaultID),programs) + !StringCompare(Container(300).ListItem.Property(defaultID),radio)  + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<top>330</top>
 				<left>1550</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1027,8 +1034,7 @@
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>4018</onright>
-				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4017).ListItem.DBID])</oninfo>
-				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4017).ListItem.DBID],name=$INFO[Container(4017).ListItem.TVShowTitle])</oninfo>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1045,7 +1051,7 @@
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !StringCompare(Container(300).ListItem.Property(defaultID),radio) + !StringCompare(Container(300).ListItem.Property(defaultID),programs) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<top>330</top>
 				<left>1550</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1054,8 +1060,7 @@
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>4018</onright>
-				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4017).ListItem.DBID])</oninfo>
-				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4017).ListItem.DBID],name=$INFO[Container(4017).ListItem.TVShowTitle])</oninfo>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1072,7 +1077,7 @@
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !StringCompare(Container(300).ListItem.Property(defaultID),radio) + !StringCompare(Container(300).ListItem.Property(defaultID),programs) + !StringCompare(Container(300).ListItem.Property(defaultID),radio) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<top>330</top>
 				<left>1250</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1081,8 +1086,7 @@
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>4018</onright>
-				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4017).ListItem.DBID])</oninfo>
-				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4017).ListItem.DBID],name=$INFO[Container(4016).ListItem.TVShowTitle])</oninfo>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1098,7 +1102,7 @@
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !StringCompare(Container(300).ListItem.Property(defaultID),radio) + !StringCompare(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<top>330</top>
 				<left>1250</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1107,8 +1111,7 @@
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>4018</onright>
-				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4017).ListItem.DBID])</oninfo>
-				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4017).ListItem.DBID],name=$INFO[Container(4017).ListItem.TVShowTitle])</oninfo>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1121,6 +1124,80 @@
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
 				<visible>!IntegerGreaterThan(Container(40017).NumItems,3)</visible>
 				<visible>!Container(40016).IsUpdating</visible>
+			</control>
+			<control type="panel" id="4017">
+				<description>Widget</description>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<top>330</top>
+				<left>1550</left>
+				<width>$PARAM[double_widget_width]</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4017</ondown>
+				<onleft>4016</onleft>
+				<onright>4018</onright>
+				<include>EmbyHomeInfoActions</include>
+				<preloaditems>6</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include name="EmbyWidget1Content">
+					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
+				</include>
+				<content><include>DefNextAiredWidget</include></content>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>IntegerGreaterThan(Container(40017).NumItems,3)</visible>
+				<visible>!Container(40016).IsUpdating</visible>
+			</control>
+			<control type="panel" id="4017">
+				<description>Widget</description>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<top>330</top>
+				<left>1550</left>
+				<width>$PARAM[single_widget_width]</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4017</ondown>
+				<onleft>4016</onleft>
+				<onright>4018</onright>
+				<include>EmbyHomeInfoActions</include>
+				<preloaditems>6</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include name="EmbyWidget1Content">
+					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
+				</include>
+				<content><include>DefNextAiredWidget</include></content>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>!IntegerGreaterThan(Container(40017).NumItems,3)</visible>
+				<visible>!Container(40016).IsUpdating</visible>
+			</control>
+			<control type="panel" id="4017">
+				<description>Widget</description>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+				<top>330</top>
+				<left>1250</left>
+				<width>$PARAM[single_widget_width]</width>
+				<height>730</height>
+				<onup>300</onup>
+				<ondown>4017</ondown>
+				<onleft>4016</onleft>
+				<onright>4018</onright>
+				<preloaditems>6</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeOut</include>
+				<include name="EmbyWidget1Content">
+					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
+				</include>
+				<content><include>DefNextAiredWidget</include></content>
+				<visible>!Container(40016).IsUpdating</visible>
+				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>!IntegerGreaterThan(Container(40017).NumItems,3)</visible>
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
@@ -1133,6 +1210,7 @@
 				<ondown>4017</ondown>
 				<onleft>4016</onleft>
 				<onright>4017</onright>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1214,8 +1292,7 @@
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
-				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4018).ListItem.DBID])</oninfo>
-				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4018).ListItem.DBID],name=$INFO[Container(4018).ListItem.TVShowTitle])</oninfo>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1240,8 +1317,7 @@
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
-				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4018).ListItem.DBID])</oninfo>
-				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4018).ListItem.DBID],name=$INFO[Container(4018).ListItem.TVShowTitle])</oninfo>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1266,8 +1342,7 @@
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
-				<oninfo condition="Substring(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Container(4018).ListItem.DBID])</oninfo>
-				<oninfo condition="[Substring(Container(300).ListItem.Property(defaultID),tvshow) | [Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Container(4018).ListItem.DBID],name=$INFO[Container(4018).ListItem.TVShowTitle])</oninfo>
+				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
@@ -1757,6 +1832,7 @@
 		<value condition="Control.HasFocus(4016) + [StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID)) | StringCompare(Container(300).ListItem.Property(defaultID),files)]">$INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
 		<value condition="Control.HasFocus(4017) + [StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID)) | StringCompare(Container(300).ListItem.Property(defaultID),files)]">$INFO[Container(4017).ListItem.TVShowTitle,, •] $INFO[Container(4017).ListItem.Premiered,, •]</value>
 		<value condition="Control.HasFocus(4018) + [StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultID)) | StringCompare(Container(300).ListItem.Property(defaultID),files)]">$INFO[Container(4018).ListItem.TVShowTitle,, •] $INFO[Container(4018).ListItem.Premiered,, •]</value>
+		<!--<value>$INFO[Skin.String(HomeItemDBID)] / $INFO[Skin.String(HomeItemTVShowTitle)] / $INFO[Skin.String(HomeItemDBType)] / $INFO[Skin.String(HomeItemPath)]</value>-->
 	</variable>
 	<variable name="EmbyHomeClearArt">
 		<value condition="Control.HasFocus(4016) + !IsEmpty(Container(4016).ListItem.Art(tvshow.clearlogo))">$INFO[Container(4016).ListItem.Art(tvshow.clearlogo)]</value>
@@ -1766,6 +1842,41 @@
 		<value condition="Control.HasFocus(4018) + !IsEmpty(Container(4018).ListItem.Art(tvshow.clearlogo))">$INFO[Container(4018).ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
+	<include name="EmbyHomeInfoActions">
+		<!--<oninfo>PlayMedia($INFO[Container(4016).ListItem.FileNameAndPath])</onback>-->
+		<oninfo>Skin.SetString(HomeItemType,$VAR[EmbyHomeContent])</oninfo>
+		<oninfo condition="Control.HasFocus(4016)">Skin.SetString(HomeItemTVShowTitle,$INFO[Container(4016).ListItem.TVShowTitle])</oninfo>
+		<oninfo condition="Control.HasFocus(4016)">Skin.SetString(HomeItemDBID,$INFO[Container(4016).ListItem.DBID])</oninfo>
+		<oninfo condition="Control.HasFocus(4016) + [IsEmpty(Container(4016).ListItem.DBID) | !IntegerGreaterThan(Container(4016).ListItem.DBID,0)]">Skin.SetString(HomeItemDBID,$INFO[Container(4016).ListItem.Property(DBID)])</oninfo>
+		<oninfo condition="Control.HasFocus(4016)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4016).ListItem.DBTYPE])</oninfo>
+		<oninfo condition="Control.HasFocus(4016) + IsEmpty(Container(4016).ListItem.DBTYPE)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4016).ListItem.Property(type)])</oninfo>
+		<oninfo condition="Control.HasFocus(4016)">Skin.SetString(HomeItemPath,$INFO[Container(4016).ListItem.FileNameAndPath])</oninfo>
+		
+		<oninfo condition="Control.HasFocus(4017)">Skin.SetString(HomeItemTVShowTitle,$INFO[Container(4017).ListItem.TVShowTitle])</oninfo>
+		<oninfo condition="Control.HasFocus(4017)">Skin.SetString(HomeItemDBID,$INFO[Container(4017).ListItem.DBID])</oninfo>
+		<oninfo condition="Control.HasFocus(4017) + [IsEmpty(Container(4017).ListItem.DBID) | !IntegerGreaterThan(Container(4017).ListItem.DBID,0)]">Skin.SetString(HomeItemDBID,$INFO[Container(4017).ListItem.Property(DBID)])</oninfo>
+		<oninfo condition="Control.HasFocus(4017)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4017).ListItem.DBTYPE])</oninfo>
+		<oninfo condition="Control.HasFocus(4017) + IsEmpty(Container(4017).ListItem.DBTYPE)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4017).ListItem.Property(Type)])</oninfo>
+		<oninfo condition="Control.HasFocus(4017)">Skin.SetString(HomeItemPath,$INFO[Container(4017).ListItem.FileNameAndPath])</oninfo>
+		
+		<oninfo condition="Control.HasFocus(4018)">Skin.SetString(HomeItemTVShowTitle,$INFO[Container(4018).ListItem.TVShowTitle])</oninfo>
+		<oninfo condition="Control.HasFocus(4018)">Skin.SetString(HomeItemDBID,$INFO[Container(4018).ListItem.DBID])</oninfo>
+		<oninfo condition="Control.HasFocus(4018) + [IsEmpty(Container(4018).ListItem.DBID) | !IntegerGreaterThan(Container(4018).ListItem.DBID,0)]">Skin.SetString(HomeItemDBID,$INFO[Container(4018).ListItem.Property(DBID)])</oninfo>
+		<oninfo condition="Control.HasFocus(4018)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4018).ListItem.DBTYPE])</oninfo>
+		<oninfo condition="Control.HasFocus(4018) + IsEmpty(Container(4018).ListItem.DBTYPE)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4018).ListItem.Property(Type)])</oninfo>
+		<oninfo condition="Control.HasFocus(4018)">Skin.SetString(HomeItemPath,$INFO[Container(4018).ListItem.FileNameAndPath])</oninfo>
+		
+		<oninfo condition="Control.HasFocus(4012)">Skin.SetString(HomeItemTVShowTitle,$INFO[Container(4012).ListItem.TVShowTitle])</oninfo>
+		<oninfo condition="Control.HasFocus(4012)">Skin.SetString(HomeItemDBID,$INFO[Container(4012).ListItem.DBID])</oninfo>
+		<oninfo condition="Control.HasFocus(4012) + [IsEmpty(Container(4012).ListItem.DBID) | !IntegerGreaterThan(Container(4012).ListItem.DBID,0)]">Skin.SetString(HomeItemDBID,$INFO[Container(4012).ListItem.Property(DBID)])</oninfo>
+		<oninfo condition="Control.HasFocus(4012)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4012).ListItem.DBTYPE])</oninfo>
+		<oninfo condition="Control.HasFocus(4012) + IsEmpty(Container(4012).ListItem.DBTYPE)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4012).ListItem.Property(Type)])</oninfo>
+		<oninfo condition="Control.HasFocus(4012)">Skin.SetString(HomeItemPath,$INFO[Container(4012).ListItem.FileNameAndPath])</oninfo>
+		
+		<oninfo condition="StringCompare(Skin.String(HomeItemDBTYPE),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Skin.String(HomeItemDBID)],name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
+		<oninfo condition="SubString(Skin.String(HomeItemDBTYPE),episode) + !IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
+		<oninfo condition="StringCompare(Skin.String(HomeItemDBTYPE),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
+	</include>
 	<include name="EmbyFooter">
 		<control type="group">
 			<include>Animation.DelayFadeIn</include>
