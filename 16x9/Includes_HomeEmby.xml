@@ -288,6 +288,11 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="260" height="44">
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus>Skin.SetString(HomeItemType,$VAR[EmbyHomeContent])</onfocus>					
+					</control>
 					<control type="label">
 						<align>center</align>
 						<aligny>top</aligny>
@@ -359,6 +364,11 @@
 					</control>
 				</itemlayout>
 				<focusedlayout width="220" height="64">
+					<control type="button">
+						<texturefocus>-</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<onfocus>Skin.SetString(HomeItemType,$VAR[EmbyHomeContent])</onfocus>
+					</control>
 					<control type="label">
 						<align>center</align>
 						<aligny>top</aligny>
@@ -415,6 +425,11 @@
 			</control>
 		</itemlayout>
 		<focusedlayout width="300" height="74">
+			<control type="button">
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onfocus>Skin.SetString(HomeItemType,$VAR[EmbyHomeContent])</onfocus>
+			</control>
 			<control type="label">
 				<align>center</align>
 				<aligny>top</aligny>
@@ -1358,32 +1373,6 @@
 			</control>
 		</definition>
 	</include>
-	<include name="EmbyWidgetItemLayout">
-		<itemlayout width="856" height="496">
-			<control type="image">
-				<aspectratio>keep</aspectratio>
-				<texture background="true" fallback="diffuseoverlay.png">$VAR[ThumbImage]</texture>
-				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-			</control>
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>Window.IsVisible(DialogButtonMenu.xml) | Container(4012).IsUpdating</visible>
-			</control>
-		</itemlayout>
-		<focusedlayout width="856" height="496">
-			<control type="image">
-				<aspectratio>keep</aspectratio>
-				<texture background="true" fallback="diffuseoverlay.png">$VAR[ThumbImage]</texture>
-				<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
-			</control>
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>Window.IsVisible(DialogButtonMenu.xml) | Container(4012).IsUpdating</visible>
-			</control>
-		</focusedlayout>
-	</include>
 	<include name="EmbyHiddenItemLayout">
 		<itemlayout width="1" height="1">
 			<control type="image">
@@ -1443,6 +1432,15 @@
 			</control>
 		</itemlayout>
 		<focusedlayout width="856" height="496">
+			<control type="button">
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onfocus>Skin.SetString(HomeItemType,$VAR[EmbyHomeContent])</onfocus>
+				<onfocus>Skin.SetString(HomeItemTVShowTitle,$VAR[EmbyHomeTVShowTitle])</onfocus>
+				<onfocus>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</onfocus>
+				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
+				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
+			</control>
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">special://skin/extras/backgrounds/tv.jpg</texture>
@@ -1624,6 +1622,15 @@
 			</control>
 		</itemlayout>
 		<focusedlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
+			<control type="button">
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onfocus>Skin.SetString(HomeItemType,$VAR[EmbyHomeContent])</onfocus>
+				<onfocus>Skin.SetString(HomeItemTVShowTitle,$VAR[EmbyHomeTVShowTitle])</onfocus>
+				<onfocus>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</onfocus>
+				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
+				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
+			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
 				<texture background="true">$PARAM[image_type]</texture>
@@ -1843,39 +1850,16 @@
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
-		<!--<oninfo>PlayMedia($INFO[Container(4016).ListItem.FileNameAndPath])</onback>-->
-		<oninfo>Skin.SetString(HomeItemType,$VAR[EmbyHomeContent])</oninfo>
-		<oninfo condition="Control.HasFocus(4016)">Skin.SetString(HomeItemTVShowTitle,$INFO[Container(4016).ListItem.TVShowTitle])</oninfo>
-		<oninfo condition="Control.HasFocus(4016)">Skin.SetString(HomeItemDBID,$INFO[Container(4016).ListItem.DBID])</oninfo>
-		<oninfo condition="Control.HasFocus(4016) + [IsEmpty(Container(4016).ListItem.DBID) | !IntegerGreaterThan(Container(4016).ListItem.DBID,0)]">Skin.SetString(HomeItemDBID,$INFO[Container(4016).ListItem.Property(DBID)])</oninfo>
-		<oninfo condition="Control.HasFocus(4016)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4016).ListItem.DBTYPE])</oninfo>
-		<oninfo condition="Control.HasFocus(4016) + IsEmpty(Container(4016).ListItem.DBTYPE)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4016).ListItem.Property(type)])</oninfo>
-		<oninfo condition="Control.HasFocus(4016)">Skin.SetString(HomeItemPath,$INFO[Container(4016).ListItem.FileNameAndPath])</oninfo>
-		
-		<oninfo condition="Control.HasFocus(4017)">Skin.SetString(HomeItemTVShowTitle,$INFO[Container(4017).ListItem.TVShowTitle])</oninfo>
-		<oninfo condition="Control.HasFocus(4017)">Skin.SetString(HomeItemDBID,$INFO[Container(4017).ListItem.DBID])</oninfo>
-		<oninfo condition="Control.HasFocus(4017) + [IsEmpty(Container(4017).ListItem.DBID) | !IntegerGreaterThan(Container(4017).ListItem.DBID,0)]">Skin.SetString(HomeItemDBID,$INFO[Container(4017).ListItem.Property(DBID)])</oninfo>
-		<oninfo condition="Control.HasFocus(4017)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4017).ListItem.DBTYPE])</oninfo>
-		<oninfo condition="Control.HasFocus(4017) + IsEmpty(Container(4017).ListItem.DBTYPE)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4017).ListItem.Property(Type)])</oninfo>
-		<oninfo condition="Control.HasFocus(4017)">Skin.SetString(HomeItemPath,$INFO[Container(4017).ListItem.FileNameAndPath])</oninfo>
-		
-		<oninfo condition="Control.HasFocus(4018)">Skin.SetString(HomeItemTVShowTitle,$INFO[Container(4018).ListItem.TVShowTitle])</oninfo>
-		<oninfo condition="Control.HasFocus(4018)">Skin.SetString(HomeItemDBID,$INFO[Container(4018).ListItem.DBID])</oninfo>
-		<oninfo condition="Control.HasFocus(4018) + [IsEmpty(Container(4018).ListItem.DBID) | !IntegerGreaterThan(Container(4018).ListItem.DBID,0)]">Skin.SetString(HomeItemDBID,$INFO[Container(4018).ListItem.Property(DBID)])</oninfo>
-		<oninfo condition="Control.HasFocus(4018)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4018).ListItem.DBTYPE])</oninfo>
-		<oninfo condition="Control.HasFocus(4018) + IsEmpty(Container(4018).ListItem.DBTYPE)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4018).ListItem.Property(Type)])</oninfo>
-		<oninfo condition="Control.HasFocus(4018)">Skin.SetString(HomeItemPath,$INFO[Container(4018).ListItem.FileNameAndPath])</oninfo>
-		
-		<oninfo condition="Control.HasFocus(4012)">Skin.SetString(HomeItemTVShowTitle,$INFO[Container(4012).ListItem.TVShowTitle])</oninfo>
-		<oninfo condition="Control.HasFocus(4012)">Skin.SetString(HomeItemDBID,$INFO[Container(4012).ListItem.DBID])</oninfo>
-		<oninfo condition="Control.HasFocus(4012) + [IsEmpty(Container(4012).ListItem.DBID) | !IntegerGreaterThan(Container(4012).ListItem.DBID,0)]">Skin.SetString(HomeItemDBID,$INFO[Container(4012).ListItem.Property(DBID)])</oninfo>
-		<oninfo condition="Control.HasFocus(4012)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4012).ListItem.DBTYPE])</oninfo>
-		<oninfo condition="Control.HasFocus(4012) + IsEmpty(Container(4012).ListItem.DBTYPE)">Skin.SetString(HomeItemDBTYPE,$INFO[Container(4012).ListItem.Property(Type)])</oninfo>
-		<oninfo condition="Control.HasFocus(4012)">Skin.SetString(HomeItemPath,$INFO[Container(4012).ListItem.FileNameAndPath])</oninfo>
-		
-		<oninfo condition="StringCompare(Skin.String(HomeItemDBTYPE),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Skin.String(HomeItemDBID)],name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
-		<oninfo condition="SubString(Skin.String(HomeItemDBTYPE),episode) + !IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
-		<oninfo condition="StringCompare(Skin.String(HomeItemDBTYPE),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
+		<!-- Get data into skin string so that it can be used in other windows -->
+		<!--<oninfo>Skin.SetString(HomeItemType,$VAR[EmbyHomeContent])</oninfo>
+		<oninfo>Skin.SetString(HomeItemTVShowTitle,$VAR[EmbyHomeTVShowTitle])</oninfo>
+		<oninfo>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</oninfo>
+		<oninfo>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</oninfo>
+		<oninfo>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</oninfo>-->
+		<!-- Actions --> 
+		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Skin.String(HomeItemDBID)],name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
+		<oninfo condition="SubString(Skin.String(HomeItemDBType),episode) + !IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
+		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
 	</include>
 	<include name="EmbyFooter">
 		<control type="group">

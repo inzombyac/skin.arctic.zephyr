@@ -92,9 +92,41 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),RecentlyPlayedAlbums)">musicdb://recentlyplayedalbums/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Top100Albums)">musicdb://top100/albums/</value>
 	</variable>
+	<variable name="EmbyHomeItemPath">
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.FileNameAndPath]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.FileNameAndPath]</value>
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.FileNameAndPath]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4012).ListItem.FileNameAndPath]</value>
+		<value></value>
+	</variable>
+	<variable name="EmbyHomeTVShowTitle">
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.TVShowTitle]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.TVShowTitle]</value>
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.TVShowTitle]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4012).ListItem.TVShowTitle]</value>
+		<value></value>
+	</variable>
+	<variable name="EmbyHomeDBType">
+		<value condition="Control.HasFocus(4016) + !IsEmpty(Container(4016).ListItem.DBTYPE)">$INFO[Container(4016).ListItem.DBTYPE]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Property(type)]</value>
+		<value condition="Control.HasFocus(4017) + !IsEmpty(Container(4017).ListItem.DBTYPE)">$INFO[Container(4017).ListItem.DBTYPE]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Property(type)]</value>
+		<value condition="Control.HasFocus(4018) + !IsEmpty(Container(4018).ListItem.DBTYPE)">$INFO[Container(4018).ListItem.DBTYPE]</value>
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Property(type)]</value>
+		<value condition="Control.HasFocus(4012) + !IsEmpty(Container(4012).ListItem.DBTYPE)">$INFO[Container(4012).ListItem.DBTYPE]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4012).ListItem.Property(type)]</value>
+		<value>none</value>
+	</variable>
 	<variable name="EmbyHomeDBID">
-		<value condition="!IsEmpty(Container(4016).ListItem.Property(DBID) + IntegerGreaterThan(Container(4016).ListItem.Property(DBID),-1)">$INFO[Container(4016).ListItem.Property(DBID)]</value>
-		<value condition="!IsEmpty(Container(4016).ListItem.DBID)  + IntegerGreaterThan(Container(4016).ListItem.DBID,-1)">$INFO[Container(4016).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4016) + IntegerGreaterThan(Container(4016).ListItem.DBID,-1)">$INFO[Container(4016).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4017) + IntegerGreaterThan(Container(4016).ListItem.DBID,-1)">$INFO[Container(4017).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4016).ListItem.DBID,-1)">$INFO[Container(4018).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4012) + IntegerGreaterThan(Container(4016).ListItem.DBID,-1)">$INFO[Container(4012).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4012).ListItem.Property(DBID)]</value>
+		<value>-1</value>
 	</variable>
 	<variable name="EmbyHomeContent">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">tvshows</value>
