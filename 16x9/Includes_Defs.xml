@@ -54,7 +54,6 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),TopRatedTvShows)">plugin://script.extendedinfo?info=topratedtvshows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),OnAirTvShows)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),AiringTodayTvShows)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
-		<value condition="[Skin.HasSetting(home.vertical) | !Skin.HasSetting(home.classicwidgets)] + substring(Container(300).ListItem.Property(widget),Albums)">$VAR[DefWidgetContentAlbums]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),Weather) + !IsEmpty(Skin.String(weather.fanart))">$INFO[Skin.String(weather.fanart)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">pvr://channels/tv/All&amp;channels/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),bbc.popular)">plugin://plugin.video.bbciplayer/?IPID&amp;description&amp;iconimage&amp;mode=10&amp;name=Most%20Popular&amp;url=http%3a%2f%2fwww.bbc.co.uk%2fiplayer%2fgroup%2fmost-popular</value>
@@ -522,19 +521,6 @@
 		<aligny>center</aligny>
 		<width>293</width>
 		<onclick>SetFocus(301)</onclick>
-		<top>0</top>
-		<height>64</height>
-		<centerleft>50%</centerleft>
-		<textcolor>Dark3</textcolor>
-		<focusedcolor>Dark1</focusedcolor>
-		<font>WidgetSelector</font>
-		<texturefocus>noop</texturefocus>
-	</include>
-	<include name="DefNetflixWidgetSelector">
-		<align>center</align>
-		<aligny>center</aligny>
-		<width>293</width>
-		<onclick>SetFocus(775)</onclick>
 		<top>0</top>
 		<height>64</height>
 		<centerleft>50%</centerleft>

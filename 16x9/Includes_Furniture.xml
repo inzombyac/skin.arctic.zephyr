@@ -1134,7 +1134,7 @@
 				<textcolor>Dark1</textcolor>
 				<label></label>
 				<fadetime>200</fadetime>
-				<visible>[!IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]] | [!IsEmpty(Container(301).ListItem.EndTime) + Control.HasFocus(301) + Skin.HasSetting(home.vertical)] | [!IsEmpty(Container(301).ListItem.EndTime) + !Skin.HasSetting(home.vertical)]</visible>
+				<visible>[!IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]] | [!IsEmpty(Container(301).ListItem.EndTime)]</visible>
 				<visible>[!Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.hideendtime)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
 			</control>
 			<control type="label">
@@ -1171,7 +1171,7 @@
 				<angle>-90</angle>
 				<label>$INFO[Container(301).ListItem.EndTime(hh:mm)]</label>
 				<visible>!Skin.HasSetting(furniture.hideendtime)</visible>
-				<visible>[!IsEmpty(Container(301).ListItem.EndTime) + Control.HasFocus(301) + Skin.HasSetting(home.vertical)] | [!IsEmpty(Container(301).ListItem.EndTime) + !Skin.HasSetting(home.vertical)]</visible>
+				<visible>!IsEmpty(Container(301).ListItem.EndTime)</visible>
 			</control>
 			<control type="label">
 				<centertop>220</centertop>
@@ -1185,7 +1185,7 @@
 				<angle>-90</angle>
 				<fadetime>200</fadetime>
 				<visible>!Skin.HasSetting(furniture.hideendtime)</visible>
-				<visible>[!IsEmpty(Container(301).ListItem.EndTime) + Control.HasFocus(301) + Skin.HasSetting(home.vertical)] | [!IsEmpty(Container(301).ListItem.EndTime) + !Skin.HasSetting(home.vertical)]</visible>
+				<visible>!IsEmpty(Container(301).ListItem.EndTime)</visible>
 			</control>
 			<control type="label">
 				<centertop>30</centertop>
@@ -1244,7 +1244,7 @@
 				<textcolor>Dark1</textcolor>
 				<label></label>
 				<fadetime>200</fadetime>
-				<visible>[!IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]] | [!IsEmpty(Container(301).ListItem.EndTime) + Control.HasFocus(301) + Skin.HasSetting(home.vertical)] | [!IsEmpty(Container(301).ListItem.EndTime) + !Skin.HasSetting(home.vertical)]</visible>
+				<visible>[!IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]] | [!IsEmpty(Container(301).ListItem.EndTime)]</visible>
 			    <visible>[!Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.hideendtime)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
 			</control>
 			<control type="label">
@@ -1272,7 +1272,7 @@
 				<angle>-90</angle>
 				<label>$INFO[Container(301).ListItem.EndTime(hh:mm)]</label>
 				<visible>!Skin.HasSetting(furniture.hideendtime)</visible>
-				<visible>[!IsEmpty(Container(301).ListItem.EndTime) + Control.HasFocus(301) + Skin.HasSetting(home.vertical)] | [!IsEmpty(Container(301).ListItem.EndTime) + !Skin.HasSetting(home.vertical)]</visible>
+				<visible>!IsEmpty(Container(301).ListItem.EndTime)</visible>
 			</control>
 			<control type="label">
 				<centertop>220</centertop>
@@ -1286,7 +1286,7 @@
 				<angle>-90</angle>
 				<fadetime>200</fadetime>
 				<visible>!Skin.HasSetting(furniture.hideendtime)</visible>
-				<visible>[!IsEmpty(Container(301).ListItem.EndTime) + Control.HasFocus(301) + Skin.HasSetting(home.vertical)] | [!IsEmpty(Container(301).ListItem.EndTime) + !Skin.HasSetting(home.vertical)]</visible>
+				<visible>!IsEmpty(Container(301).ListItem.EndTime)</visible>
 			</control>
 			<control type="label">
 				<centertop>30</centertop>
