@@ -243,10 +243,10 @@
 								<orientation>horizontal</orientation>
 								<itemlayout width="280" height="140">
 									<control type="radiobutton">
-										<textureradioonfocus colordiffuse="FFFAFAFA">special://skin/extras/icons/trailer.png</textureradioonfocus>
-										<textureradioofffocus colordiffuse="FFFAFAFA">special://skin/extras/icons/trailer.png</textureradioofffocus>
-										<textureradiooffnofocus colordiffuse="FFFAFAFA">special://skin/extras/icons/trailer.png</textureradiooffnofocus>
-										<textureradioonnofocus colordiffuse="FFFAFAFA">special://skin/extras/icons/trailer.png</textureradioonnofocus>
+										<textureradioonfocus>special://skin/extras/icons/trailer.png</textureradioonfocus>
+										<textureradioofffocus>special://skin/extras/icons/trailer.png</textureradioofffocus>
+										<textureradiooffnofocus>special://skin/extras/icons/trailer.png</textureradiooffnofocus>
+										<textureradioonnofocus>special://skin/extras/icons/trailer.png</textureradioonnofocus>
 										<width>280</width>
 										<height>140</height>
 										<textoffsetx>0</textoffsetx>
@@ -262,12 +262,13 @@
 									</control>
 									<control type="label">
 										<textoffsetx>0</textoffsetx>
+										<width>280</width>
 										<align>center</align>
 										<font>EPGTimeline</font>
 										<textcolor>FF999999</textcolor>
 										<aligny>bottom</aligny>
 										<textoffsety>77</textoffsety>
-										<label>Trailer $INFO[Container.Position]</label>
+										<label>$VAR[ExtendedInfoTrailerLabel]</label>
 									</control>
 								</itemlayout>
 								<focusedlayout width="280" height="140">
@@ -275,10 +276,10 @@
 										<texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">special://home/addons/script.extendedinfo/resources/skins/Default/media/buttons/roundedbutton-focus.png</texture>
 									</control>
 									<control type="radiobutton">
-										<textureradioonfocus colordiffuse="FFFAFAFA">special://skin/extras/icons/trailer.png</textureradioonfocus>
-										<textureradioofffocus colordiffuse="FFFAFAFA">special://skin/extras/icons/trailer.png</textureradioofffocus>
-										<textureradiooffnofocus colordiffuse="FFFAFAFA">special://skin/extras/icons/trailer.png</textureradiooffnofocus>
-										<textureradioonnofocus colordiffuse="FFFAFAFA">special://skin/extras/icons/trailer.png</textureradioonnofocus>
+										<textureradioonfocus>special://skin/extras/icons/trailer.png</textureradioonfocus>
+										<textureradioofffocus>special://skin/extras/icons/trailer.png</textureradioofffocus>
+										<textureradiooffnofocus>special://skin/extras/icons/trailer.png</textureradiooffnofocus>
+										<textureradioonnofocus>special://skin/extras/icons/trailer.png</textureradioonnofocus>
 										<width>280</width>
 										<height>140</height>
 										<textoffsetx>0</textoffsetx>
@@ -291,12 +292,13 @@
 									</control>
 									<control type="label">
 										<textoffsetx>0</textoffsetx>
+										<width>280</width>
 										<align>center</align>
 										<font>EPGTimeline</font>
 										<textcolor>FFFAFAFA</textcolor>
 										<aligny>bottom</aligny>
 										<textoffsety>77</textoffsety>
-										<label>Trailer $INFO[Container.Position]</label>
+										<label>$VAR[ExtendedInfoTrailerLabel]</label>
 									</control>
 								</focusedlayout>
 							</control>							

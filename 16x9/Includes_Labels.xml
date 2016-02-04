@@ -934,4 +934,22 @@
 		<value condition="Substring(ListItem.Icon,Default,left) | [IsEmpty(ListItem.Title) + IsEmpty(ListItem.Icon)]">?</value>
 		<value>?</value>
 	</variable>
+	<variable name="ExtendedInfoTrailerLabel">
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 9)">Trailer 10</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 8)">Trailer 9</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 7)">Trailer 8</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 6)">Trailer 7</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 5)">Trailer 6</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 4)">Trailer 5</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 3)">Trailer 4</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 2)">Trailer 3</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 1)">Trailer 2</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 0)">Trailer 1</value>
+		<value condition="Substring(Listitem.Label, 5)">Trailer 5</value>
+		<value condition="Substring(Listitem.Label, 4)">Trailer 4</value>
+		<value condition="Substring(Listitem.Label, 3)">Trailer 3</value>
+		<value condition="Substring(Listitem.Label, 2)">Trailer 2</value>
+		<value condition="Substring(Listitem.Label, 1)">Trailer 1</value>
+		<value>Trailer</value>
+	</variable>
 </includes>

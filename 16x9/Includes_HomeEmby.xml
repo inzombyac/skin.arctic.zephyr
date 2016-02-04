@@ -428,6 +428,52 @@
 			<!-- Bottom Widgets -->
 			<include>EmbyBottomWidgetPanel</include>
 		</control>
+		<!-- Loading replacement -->
+		<control type="group">
+			<visible>Container(40016).IsUpdating</visible>
+			<include>Animation.EmbyFadeOut</include>
+			<control type="image">
+				<top>330</top>
+				<left>SidePad</left>
+				<width>856</width>
+				<height>496</height>
+				<align>center</align>
+				<texture>clear/emby.png</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>Container(40016).IsUpdating</visible>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="image">
+				<top>330</top>
+				<left>SidePad</left>
+				<width>856</width>
+				<height>496</height>
+				<aspectratio>stretch</aspectratio>
+				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+			</control>
+			<control type="image">
+				<left>SidePad</left>
+				<posy>836</posy>
+				<width>280</width>
+				<height>180</height>
+				<texture border="15" colordiffuse="$VAR[EmbyLeftColourHighlight]">common/white.png</texture>
+			</control>
+			<control type="image">
+				<left>368</left>
+				<posy>836</posy>
+				<width>280</width>
+				<height>180</height>
+				<texture border="15" colordiffuse="$VAR[EmbyMiddleColourHighlight]">common/white.png</texture>
+				</control>
+			<control type="image">
+				<left>656</left>
+				<posy>836</posy>
+				<width>280</width>
+				<height>180</height>
+				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+			</control>
+		</control>
 	</include>
 	<include name="EmbyBottomWidgetPanel">		
 		<control type="group">
