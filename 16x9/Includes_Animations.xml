@@ -113,6 +113,10 @@
 	</include>
 	<!-- Emby Home Fade  -->
 	<include name="Animation.EmbyFadeOut">
-		<animation effect="fade" end="0" start="100" time="1500" delay="500" tween="cubic" easing="inout" reversible="true">Hidden</animation>
+		<animation effect="fade" end="0" start="100" time="1000" delay="500" tween="cubic" easing="inout" reversible="true">Hidden</animation>
+	</include>
+	<include name="Animation.EmbyFadeIn">
+		<animation effect="fade" end="100" start="0" time="1000" delay="500" tween="cubic" easing="inout" reversible="true">Visible</animation>
+		<animation effect="fade" end="100" start="0" time="1000" delay="500" tween="cubic" easing="inout" reversible="true">WindowOpen</animation>
 	</include>
 </includes>

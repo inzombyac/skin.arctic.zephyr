@@ -199,6 +199,7 @@
 		<value>$LOCALIZE[31105]</value>
 	</variable>
 	<variable name="EmbyWidgetLabel">
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0))] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0))]">[CR]</value>
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">TV Spotlight</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$LOCALIZE[31127]</value>
@@ -218,12 +219,14 @@
 		<value>$LOCALIZE[31208]</value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0))] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0))]">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$INFO[Container(4012).ListItem.TVShowTitle,,]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
 		<value>$INFO[Container(4012).ListItem.Label]</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0))] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0))]">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">Unwatched Shows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">Resume</value>
@@ -254,6 +257,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetNextUp</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Label">
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0))] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0))]">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)"> </value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">Unwatched Shows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$LOCALIZE[31125]</value>
@@ -276,6 +280,7 @@
 		<value>Popular TV</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Label">
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0))] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0))]">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)"> </value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0) + IntegerGreaterThan(Container(9002).NumItems,0)">$LOCALIZE[31125]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">Recommended</value>
@@ -304,6 +309,7 @@
 		<value>620</value>
 	</variable>
 	<variable name="EmbyBottomTileLabel1">
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0))] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0))]">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[20343]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">TV Guide</value>
@@ -320,6 +326,7 @@
 		<value>Videos</value>
 	</variable>
 	<variable name="EmbyButton2Label">
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0))] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0))]">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31220]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Collections</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv) + System.HasAddon(script.hdhomerun.view)">HDHomeRun View</value>
@@ -339,6 +346,7 @@
 		<value>In Theaters</value>
 	</variable>
 	<variable name="EmbyButton3Label">
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0))] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0))]">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31193]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$LOCALIZE[31192]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Recorded TV</value>
