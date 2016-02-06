@@ -9,7 +9,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<control type="group">
 				<control type="fixedlist" id="56">
-					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://,left)] | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
+					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
 					<top>PosterPad</top>
 					<height>448</height>
 					<left>ListX</left>
@@ -39,91 +39,11 @@
 				</control>
 				<include>Furniture_Scrollbar</include>
 			</control>
-			<control type="group" description="Poster">
-				<left>SidePad</left>
-				<top>PosterPad</top>
-				<control type="image">
-					<top>PosterH</top>
-					<width>PosterW</width>
-					<height>PosterH</height>
-					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
-					<visible>Skin.HasSetting(show.reflections)</visible>
-				</control>
-				<control type="image">
-					<centertop>PosterH</centertop>
-					<width>PosterW</width>
-					<height>48</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>diffuse/shadowspot.png</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
-				</control>
-				<control type="image">
-					<width>PosterW</width>
-					<height>PosterH</height>
-					<texture border="5" colordiffuse="FF181818">common/box.png</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
-				</control>
-				<control type="image">
-					<width>PosterW</width>
-					<height>PosterH</height>
-					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
-				</control>
-				<control type="image">
-					<left>11</left>
-					<top>11</top>
-					<width>411</width>
-					<height>627</height>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" diffuse="diffuse/listposter.png">$VAR[PosterImage]</texture>
-					<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<width>PosterW</width>
-					<height>PosterH</height>
-					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" diffuse="diffuse/listposter.png">$VAR[PosterImage]</texture>
-					<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<posx>-75</posx>
-					<posy>-50</posy>
-					<width>527</width>
-					<height>730</height>
-					<fadetime>100</fadetime>
-					<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-					<aspectratio align="center" aligny="top">stretch</aspectratio>
-					<bordersize>2</bordersize>
-					<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<posx>-70</posx>
-					<posy>0</posy>
-					<width>527</width>
-					<height>680</height>
-					<fadetime>100</fadetime>
-					<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-					<aspectratio align="center" aligny="top">stretch</aspectratio>
-					<bordersize>2</bordersize>
-					<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
-				</control>
-				<control type="image">
-					<left>-24</left>
-					<top>-24</top>
-					<width>PosterShadowW</width>
-					<height>PosterShadowH</height>
-					<texture border="32">common/shadow-24.png</texture>
-					<visible>!Skin.Hassetting(views.cases)</visible>
-				</control>
-			</control>
+			<include>56PosterView</include>
+			<include>56FanartView</include>
 			<control type="group" description="Plot et al">
 				<left>ListX</left>
-				<right>SidePad</right>
+				<width>900</width>
 				<control type="grouplist">
 					<left>30</left>
 					<right>30</right>
@@ -145,10 +65,10 @@
 						<aligny>top</aligny>
 					</control>
 					<control type="textbox">
-						<font>Tiny</font>
+						<font>TwentySix</font>
 						<label>$VAR[LabelPlotBoxLong]</label>
 						<textcolor>Dark2</textcolor>
-						<height>68</height>
+						<height>212</height>
 						<align>justify</align>
 					</control>
 				</control>
@@ -162,12 +82,12 @@
 			<visible>Control.IsVisible(56)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<control type="group">
-				<control type="list" id="56">
-					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://,left)] | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
-					<top>PosterPad</top>
+				<control type="fixedlist" id="56">
+					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
+					<top>300</top>
 					<height>PosterH</height>
-					<right>731</right>
-					<width>654</width>
+					<left>30</left>
+					<width>600</width>
 					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 					<onright>60</onright>
 					<onup>56</onup>
@@ -193,10 +113,73 @@
 				</control>
 				<include>Furniture_Scrollbar</include>
 			</control>
-			<include>View_50_SidePoster</include>
-			<include name="Fanart_Info">
-				<param name="posx" value="1205" />
-			</include>
+			<control type="group" description="Poster">
+				<left>50</left>
+				<top>150</top>
+				<control type="image">
+					<height>110</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
+					<texture background="true">$VAR[ClearLogoBanner]</texture>
+				</control>
+				<control type="label">
+					<font>FakeLogo</font>
+					<height>125</height>
+					<fadetime>100</fadetime>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>IsEmpty(ListItem.Art(clearlogo))+IsEmpty(ListItem.Art(banner))</visible>
+					<visible>!Container.Content(episodes)</visible>
+				</control>
+			</control>
+			<include>56FanartView</include>
+			<control type="group">
+				<control type="group">
+					<left>650</left>
+					<right>30</right>
+					<top>275</top>
+					<height>705</height>
+					<width>700</width>
+					<control type="label">
+						<top>10</top>
+						<aligny>center</aligny>
+						<height>64</height>
+						<font>MediumBold</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelDirector]</label>
+					</control>
+					<control type="label">
+						<top>50</top>
+						<align>right</align>
+						<aligny>center</aligny>
+						<height>64</height>
+						<font>TwentyEight</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<visible>Container.Content(movies)</visible>
+						<label>$INFO[ListItem.Duration,, $LOCALIZE[31102]]</label>
+					</control>
+					<control type="label">
+						<width>700</width>
+						<top>50</top>
+						<height>64</height>
+						<aligny>center</aligny>
+						<font>TwentyEight</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelGenre]</label>
+					</control>
+					<control type="textbox">
+						<width>700</width>
+						<top>125</top>
+						<align>justify</align>
+						<font>TwentyEight</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelPlotBox]</label>
+					</control>
+				</control>
+			</control>
 		</control>
 	</include>
 	<include name="View_56_MediaInfo3">
@@ -208,7 +191,7 @@
 			<control type="group">
 				<posy>320</posy>
 				<control type="fixedlist" id="56">
-					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://,left)] | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
+					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
 					<top>PosterPad</top>
 					<height>320</height>
 					<right>731</right>
@@ -250,8 +233,46 @@
 					<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 				</control>
 			</control>
-			<include>View_50_SidePoster</include>
-			<include>LowList_Info</include>
+			<include>56PosterView</include>
+			<control type="group">
+				<right>70</right>
+				<width>645</width>
+				<top>206</top>
+				<height>800</height>
+				<control type="group">
+					<left>12</left>
+					<right>12</right>
+					<posy>319</posy>
+					<height>470</height>
+					<control type="label">
+						<top>10</top>
+						<aligny>center</aligny>
+						<height>64</height>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelDirector]</label>
+					</control>
+					<control type="label">
+						<top>50</top>
+						<height>64</height>
+						<aligny>center</aligny>
+						<font>Tiny</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelGenre]</label>
+					</control>
+					<control type="textbox">
+						<top>125</top>
+						<bottom>19</bottom>
+						<align>justify</align>
+						<font>TwentySix</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelPlotBox]</label>
+					</control>
+				</control>
+			</control>
 		</control>
 	</include>
 	<include name="56focuslayout">
@@ -282,67 +303,65 @@
 			<textcolor>Light1</textcolor>
 			<selectedcolor>Light1</selectedcolor>
 			<label>$INFO[ListItem.Label]</label>
+			<visible>!Container.Content(episodes)</visible>
 		</control>
-		<control type="image">
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<textcolor>Light1</textcolor>
+			<selectedcolor>Light1</selectedcolor>
+			<label>$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<visible>Container.Content(episodes)</visible>
+		</control>
+		<!-- <control type="image">
 			<centerright>32</centerright>
 			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
+			<width>40</width>
+			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
 			<texture>$VAR[PercentWatched]</texture>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
-		</control>
-		<control type="label">
-			<centerright>32</centerright>
+		</control> -->
+		<control type="progress">
+			<centerright>100</centerright>
 			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+			<width>70</width>
+			<height>19</height>
+			<reveal>true</reveal>
+			<texturebg>pvr/progress-back.png</texturebg>
+			<lefttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</lefttexture>
+			<midtexture colordiffuse="EmbyGreen">pvr/progress-mid.png</midtexture>
+			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
+			<info>ListItem.PercentPlayed</info>
+			<colordiffuse>Light1</colordiffuse>
+			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
 		</control>
-		<control type="label">
-			<centerright>32</centerright>
-			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+		<control type="group">
+			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<control type="image">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+			</control>
+			<control type="label">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+				<font>Tiny</font>
+				<textcolor>White</textcolor>
+			</control>
 		</control>
-		<control type="label">
-			<centerright>32</centerright>
-			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
-		</control>
-		<control type="label">
-			<centerright>32</centerright>
-			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-		</control>
-		<control type="label">
-			<centerright>32</centerright>
-			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[NewColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
-		</control>
-		<control type="label">
+		<!-- <control type="label">
 			<right>70</right>
 			<width>500</width>
 			<aligny>center</aligny>
@@ -352,9 +371,21 @@
 			<textcolor>Light1</textcolor>
 			<selectedcolor>Light1</selectedcolor>
 			<label>$INFO[ListItem.Label2]</label>
-		</control>
+		</control> -->
 	</include>
 	<include name="56itemlayout">
+		<control type="label">
+			<posx>30</posx>
+			<width max="560">auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<label>$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(episodes)</visible>
+		</control>
 		<control type="label">
 			<posx>30</posx>
 			<width max="560">auto</width>
@@ -364,67 +395,79 @@
 			<label>$INFO[ListItem.Label]</label>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
+			<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>!Container.Content(episodes)</visible>
 		</control>
-		<control type="image">
+		<control type="label">
+			<posx>30</posx>
+			<width max="560">auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<label>$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<textcolor>Dark3</textcolor>
+			<selectedcolor>Dark3</selectedcolor>
+			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(episodes)</visible>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width max="560">auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>SmallBold</font>
+			<label>$INFO[ListItem.Label]</label>
+			<textcolor>Dark3</textcolor>
+			<selectedcolor>Dark3</selectedcolor>
+			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>!Container.Content(episodes)</visible>
+		</control>
+		<!-- <control type="image">
 			<centerright>32</centerright>
 			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
+			<width>40</width>
+			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
 			<texture>$VAR[PercentWatched]</texture>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
-		</control>
-		<control type="label">
-			<centerright>32</centerright>
+		</control> -->
+		<control type="progress">
+			<centerright>100</centerright>
 			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+			<width>70</width>
+			<height>19</height>
+			<reveal>true</reveal>
+			<texturebg>pvr/progress-back.png</texturebg>
+			<lefttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</lefttexture>
+			<midtexture colordiffuse="EmbyGreen">pvr/progress-mid.png</midtexture>
+			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
+			<info>ListItem.PercentPlayed</info>
+			<colordiffuse>Light1</colordiffuse>
+			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
 		</control>
-		<control type="label">
-			<centerright>32</centerright>
-			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
+		<control type="group">
+			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<control type="image">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+			</control>
+			<control type="label">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<height>40</height>
+				<width>40</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+				<font>Tiny</font>
+				<textcolor>White</textcolor>
+			</control>
 		</control>
-		<control type="label">
-			<centerright>32</centerright>
-			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
-		</control>
-		<control type="label">
-			<centerright>32</centerright>
-			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-		</control>
-		<control type="label">
-			<centerright>32</centerright>
-			<centertop>32</centertop>
-			<width>32</width>
-			<height>32</height>
-			<font>symbolview</font>
-			<label>$VAR[PercentWatchedLabel]</label>
-			<textcolor>$VAR[NewColourHighlight]</textcolor>
-			<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
-		</control>
-		<control type="label">
+		<!-- <control type="label">
 			<right>70</right>
 			<width>500</width>
 			<aligny>center</aligny>
@@ -434,6 +477,224 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$INFO[ListItem.Label2]</label>
+			<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+		</control>
+		<control type="label">
+			<right>70</right>
+			<width>500</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<align>right</align>
+			<font>Small</font>
+			<textcolor>Dark3</textcolor>
+			<selectedcolor>Dark3</selectedcolor>
+			<label>$INFO[ListItem.Label2]</label>
+			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+		</control> -->
+	</include>
+	<include name="56FanartView">
+		<control type="group">
+			<bottom>140</bottom>
+			<right>60</right>
+			<width>PosterW</width>
+			<height>PosterH</height>
+			<control type="image">
+				<bottom>5</bottom>
+				<width>PosterW</width>
+				<height>48</height>
+				<aspectratio aligny="bottom">stretch</aspectratio>
+				<texture>diffuse/shadowspot.png</texture>
+				<visible>[Skin.HasSetting(56media.showinfo)|Skin.HasSetting(views.56.showfanart)|Container.Content(episodes)]</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<right>10</right>
+				<bottom>30</bottom>
+				<fadetime>200</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+				<visible>Skin.HasSetting(views.56.showfanart)</visible>
+				<visible>!Container.Content(episodes)</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<right>10</right>
+				<bottom>30</bottom>
+				<fadetime>200</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">stretch</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
+				<visible>!Skin.HasSetting(views.56.showfanart)</visible>
+				<visible>!Container.Content(episodes)+Skin.HasSetting(56media.showinfo)</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<right>10</right>
+				<bottom>30</bottom>
+				<fadetime>200</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+				<visible>Skin.HasSetting(views.56.showfanart)</visible>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>10</top>
+				<right>10</right>
+				<bottom>30</bottom>
+				<fadetime>200</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture background="true">$VAR[LandscapeImage]</texture>
+				<visible>!Skin.HasSetting(views.56.showfanart)</visible>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			<control type="progress">
+				<left>10</left>
+				<width>408</width>
+				<bottom>30</bottom>
+				<height>12</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable+[Container.Content(episodes) | Skin.HasSetting(56media.showinfo)]</visible>
+			</control>
+			<control type="group">
+				<visible>[Container.Content(episodes) | Skin.HasSetting(56media.showinfo)]</visible>
+				<control type="image">
+					<right>20</right>
+					<centertop>40</centertop>
+					<width>40</width>
+					<height>40</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture>$VAR[PosterPercentWatched]</texture>
+					<visible>!Skin.HasSetting(views.56.showfanart) + !Container.Content(episodes)</visible>
+				</control>
+				<control type="image">
+					<right>20</right>
+					<centertop>410</centertop>
+					<width>40</width>
+					<height>40</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture>$VAR[PosterPercentWatched]</texture>
+					<visible>Container.Content(episodes) | Skin.HasSetting(views.56.showfanart)</visible>
+				</control>
+				<control type="group">
+					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					<visible>!Skin.HasSetting(views.56.showfanart)</visible>
+					<control type="image">
+						<right>20</right>
+						<centertop>40</centertop>
+						<height>40</height>
+						<width>40</width>
+						<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+					</control>
+					<control type="label">
+						<right>15</right>
+						<centertop>39</centertop>
+						<height>40</height>
+						<width>50</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+						<font>TwentySix</font>
+						<textcolor>White</textcolor>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="56PosterView">
+		<control type="group" description="Poster">
+			<left>SidePad</left>
+			<top>PosterPad</top>
+			<control type="image">
+				<top>PosterH</top>
+				<width>PosterW</width>
+				<height>PosterH</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+				<visible>Skin.HasSetting(show.reflections)</visible>
+			</control>
+			<control type="image">
+				<centertop>PosterH</centertop>
+				<width>PosterW</width>
+				<height>48</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>diffuse/shadowspot.png</texture>
+			</control>
+			<control type="image">
+				<width>PosterW</width>
+				<height>PosterH</height>
+				<texture border="5" colordiffuse="FF181818">common/box.png</texture>
+			</control>
+			<control type="image">
+				<width>PosterW</width>
+				<height>PosterH</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+			</control>
+			<control type="image">
+				<left>-24</left>
+				<top>-24</top>
+				<width>PosterShadowW</width>
+				<height>PosterShadowH</height>
+				<texture border="32">common/shadow-24.png</texture>
+			</control>
+			<control type="progress">
+				<centertop>PosterH</centertop>
+				<width>PosterW</width>
+				<height>10</height>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+				<visible>!Container.Content(episodes)</visible>
+			</control>
+			<control type="group">
+				<visible>!stringcompare(ListItem.Label,..)</visible>
+				<visible>!Container.Content(episodes)</visible>
+				<control type="image">
+					<left>378</left>
+					<centertop>40</centertop>
+					<width>40</width>
+					<height>40</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture>$VAR[PosterPercentWatched]</texture>
+				</control>
+				<control type="group">
+					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					<control type="image">
+						<left>378</left>
+						<centertop>40</centertop>
+						<height>40</height>
+						<width>40</width>
+						<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+					</control>
+					<control type="label">
+						<left>373</left>
+						<centertop>40</centertop>
+						<height>40</height>
+						<width>50</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+						<font>Small</font>
+						<textcolor>White</textcolor>
+					</control>
+				</control>
+			</control>
 		</control>
 	</include>
 </includes>

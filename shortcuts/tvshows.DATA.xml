@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label2>tvshows</label2>
+        <label>Next Up</label>
+        <icon>special://skin/extras/icons/recentlyadded.png</icon>
+        <action>ActivateWindow(10025,library://video/inprogressshows.xml,return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>tvshows</label2>
+        <label>Recent Episodes</label>
+        <icon>special://skin/extras/icons/recentlyadded.png</icon>
+        <action>ActivateWindow(10025,videodb://recentlyaddedepisodes/,return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>tvshows</label2>
+        <label>Unwatched</label>
+        <icon>special://skin/extras/icons/eye.png</icon>
+        <action>ActivateWindow(VideoLibrary,special://skin/extras/playlists/UnwatchedShows.xsp,return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>tvshows</label2>
+        <label>31193</label>
+        <icon>special://skin/extras/icons/tv.png</icon>
+        <action>ActivateWindow(1102)</action>
+    </shortcut>
+</shortcuts>

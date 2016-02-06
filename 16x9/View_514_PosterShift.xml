@@ -5,105 +5,45 @@
 			<posx>-12</posx>
 			<posy>130</posy>
 			<width>340</width>
-			<height>490</height>
-			<aspectratio scalediffuse="false">keep</aspectratio>
-			<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
-			<bordersize>20</bordersize>
-			<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-		</control>
-		<control type="image">
-			<posx>-12</posx>
-			<posy>130</posy>
-			<width>340</width>
-			<height>490</height>
-			<aspectratio scalediffuse="false">stretch</aspectratio>
-			<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
-			<bordersize>20</bordersize>
-			<visible>!Skin.Hassetting(views.cases) + !SubString(Container.FolderPath,plugin://) + !SubString(Container.FolderPath,plugin://,left)+ !Container.Content(plugins) + !Container.Content(addons)</visible>
-		</control>
-		<control type="image">
-			<posx>-12</posx>
-			<posy>142</posy>
-			<width>356</width>
-			<height>477</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true">$VAR[ShowcaseItem0Var]</texture>
-			<bordersize>20</bordersize>
-			<fadetime>0</fadetime>
-			<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases) + !SubString(Container.FolderPath,plugin://,left)+ !Container.Content(plugins) + !Container.Content(addons)</visible>
-		</control>
-		<control type="image">
-			<posx>-12</posx>
-			<posy>130</posy>
-			<width>340</width>
-			<height>490</height>
-			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
-			<bordersize>20</bordersize>
-			<fadetime>0</fadetime>
-			<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases) + !SubString(Container.FolderPath,plugin://,left)+ !Container.Content(plugins) + !Container.Content(addons)</visible>
-		</control>
-		<control type="image">
-			<posx>-62</posx>
-			<posy>100</posy>
-			<width>390</width>
-			<height>540</height>
-			<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-			<aspectratio align="center" aligny="top">keep</aspectratio>
-			<bordersize>2</bordersize>
-			<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases) + !SubString(Container.FolderPath,plugin://,left)+ !Container.Content(plugins) + !Container.Content(addons)</visible>
-		</control>
-		<control type="image">
-			<posx>-50</posx>
-			<posy>115</posy>
-			<width>398</width>
-			<height>515</height>
-			<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-			<aspectratio align="center" aligny="top">stretch</aspectratio>
-			<bordersize>2</bordersize>
-			<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.colourcases) + !SubString(Container.FolderPath,plugin://,left)+ !Container.Content(plugins) + !Container.Content(addons)</visible>
-		</control>
-		<control type="image">
-			<posx>-49</posx>
-			<posy>115</posy>
-			<width>390</width>
 			<height>510</height>
-			<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-			<aspectratio align="center" aligny="top">stretch</aspectratio>
-			<bordersize>2</bordersize>
-			<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.bddvdcases) + !SubString(Container.FolderPath,plugin://,left)+ !Container.Content(plugins) + !Container.Content(addons)</visible>
+			<aspectratio scalediffuse="false" aligny="bottom">keep</aspectratio>
+			<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+			<bordersize>20</bordersize>
+			<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+		</control>
+		<control type="image">
+			<posx>-12</posx>
+			<posy>130</posy>
+			<width>340</width>
+			<height>510</height>
+			<aspectratio scalediffuse="false" aligny="bottom">stretch</aspectratio>
+			<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+			<bordersize>20</bordersize>
+			<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
 		</control>
 		<control type="image">
 			<posx>8</posx>
-			<posy>601</posy>
-			<width>300</width>
-			<height>450</height>
-			<aspectratio aligny="top" scalediffuse="false">stretch</aspectratio>
-			<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
-			<animation effect="fade" start="100" end="30" time="160">Focus</animation>
-			<animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
-			<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.bddvdcases) + !SubString(Container.FolderPath,plugin://,left)+ !Container.Content(plugins) + !Container.Content(addons)</visible>
-		</control>
-		<control type="image">
-			<posx>8</posx>
-			<posy>601</posy>
+			<posy>621</posy>
 			<width>300</width>
 			<height>450</height>
 			<aspectratio aligny="top" scalediffuse="false">keep</aspectratio>
-			<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+			<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true" aligny="top">$VAR[PosterImage]</texture>
 			<animation effect="fade" start="100" end="30" time="160">Focus</animation>
 			<animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
-			<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
 		</control>
 		<control type="group">
-			<control type="image">
-				<right>10</right>
-				<top>152</top>
-				<width>29</width>
-				<height>29</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-				<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
+			<control type="progress">
+				<width>300</width>
+				<height>14</height>
+				<left>8</left>
+				<top>607</top>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
 			</control>
 			<control type="image">
 				<right>10</right>
@@ -113,55 +53,38 @@
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture>$VAR[PosterPercentWatched]</texture>
 			</control>
-			<control type="label">
-				<right>5</right>
-				<top>149</top>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
+			<control type="image">
+				<right>10</right>
+				<top>152</top>
+				<width>29</width>
+				<height>29</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture>$VAR[PosterPercentWatched]</texture>
+				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			</control>
-			<control type="label">
-				<right>5</right>
-				<top>149</top>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
-			</control>
-			<control type="label">
-				<right>5</right>
-				<top>149</top>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
-			</control>
-			<control type="label">
-				<right>5</right>
-				<top>149</top>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-			</control>
-			<control type="label">
-				<right>5</right>
-				<top>149</top>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[NewColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
+			<control type="group">
+				<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<control type="image">
+					<right>10</right>
+					<top>152</top>
+					<height>29</height>
+					<width>29</width>
+					<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				</control>
+				<control type="label">
+					<right>9</right>
+					<top>152</top>
+					<height>29</height>
+					<width>30</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+					<font>Micro</font>
+					<size>18</size>
+					<scroll>false</scroll>
+					<textcolor>White</textcolor>
+				</control>
 			</control>
 		</control>
 	</include>
@@ -189,7 +112,7 @@
 					<itemlayout width="315" height="750">
 						<include>ShiftPosterThumbs</include>
 					</itemlayout>
-					<focusedlayout width="315" height="750">
+					<focusedlayout width="315" height="770">
 						<control type="group">
 							<control type="button">
 								<texturefocus>-</texturefocus>
@@ -222,7 +145,7 @@
 								<visible>Skin.HasSetting(views.discart)</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
 								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + IsEmpty(ListItem.Art(discart))</visible>
 							</control>
 							<control type="image">
 								<width>290</width>
@@ -234,7 +157,7 @@
 								<visible>Skin.HasSetting(views.discart)</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
 								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + [IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))]</visible>
 							</control>
 							<control type="image">
 								<width>290</width>
@@ -246,7 +169,7 @@
 								<visible>Skin.HasSetting(views.discart)</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
 								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)]  + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))</visible>
 							</control>
 							<control type="textbox">
 								<width>190</width>
@@ -257,7 +180,7 @@
 								<align>center</align>
 								<aligny>top</aligny>
 								<visible>Skin.HasSetting(views.discart)</visible>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(clearlogo))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(clearlogo))</visible>
 								<label> $INFO[ListItem.Label]</label>
 								<textcolor>Black</textcolor>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
@@ -265,7 +188,7 @@
 							</control>
 							<control type="group">
 								<visible>Skin.HasSetting(views.discart)</visible>
-								<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
 								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
 								<control type="image">

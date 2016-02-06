@@ -7,7 +7,7 @@
         <control type="image" description="Background">
             <include>Dimensions_Fullscreen</include>
             <texture colordiffuse="Background">common/bg.jpg</texture>
-            <animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
+            <animation effect="fade" start="1000" end="0" time="1500" tween="quadratic">WindowClose</animation>
             <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
         </control>
         <control type="button" id="9315">
@@ -17,6 +17,9 @@
             <onfocus condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(NextAired.Update) + Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onfocus>
             <onfocus condition="!Player.HasVideo + !IsEmpty(Skin.String(StartupPlaylist))">ReplaceWindow(Home)</onfocus>
             <onfocus condition="IsEmpty(Skin.String(StartupPlaylist))">AlarmClock(GoHome,ReplaceWindow(home),00:01,silent,false)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetString(SkinHelper.RandomFanartDelay,10)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.ToggleSetting(SkinHelper.EnablePVRThumbs)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">RunScript(script.skin.helper.service,action=fileexists&amp;file=special://profile/addon_data/plugin.program.advanced.launcher/launchers.xml&amp;skinstring=AdvancedLauncher)</onfocus>
         </control>
         <control type="label">
             <description>Loading</description>
@@ -24,10 +27,10 @@
             <height>100%</height>
             <align>center</align>
             <aligny>center</aligny>
-            <label>Arctic [COLOR=$VAR[ColourHighlight]]Zephyr[/COLOR]</label>
+            <label>[COLOR=EmbyGreen]Arctic Zephyr[/COLOR] emby</label>
             <font>EpisodeNumber</font>
             <textcolor>Dark1</textcolor>
-            <animation effect="fade" start="100" end="0" time="500" tween="quadratic">WindowClose</animation>
+            <animation effect="fade" start="1000" end="0" time="1500" tween="quadratic">WindowClose</animation>
             <visible>IsEmpty(Skin.String(StartupPlaylist))</visible>
         </control>
     </controls>

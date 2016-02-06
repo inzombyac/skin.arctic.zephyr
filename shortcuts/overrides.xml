@@ -2,7 +2,7 @@
 <overrides>
 
     <!-- Smart shortcuts -->
-    <widget label="Widgets" type="32010">||BROWSE||script.skin.helper.service/?action=widgets&amp;path=skinplaylists,librarydataprovider,scriptwidgets,extendedinfo,smartshortcuts,pvr,smartishwidgets</widget>
+    <widget label="Widgets" type="32010">||BROWSE||script.skin.helper.service/?action=widgets&amp;path=skinplaylists,librarydataprovider,scriptwidgets,extendedinfo,smartshortcuts,pvr,smartishwidgets,favourites</widget>
     <!-- Playlist -->
     <widgetPlaylists>True</widgetPlaylists>
 
@@ -45,8 +45,6 @@
     <shortcut label="31192" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
     <shortcut label="31212" type="themoviedb.org episodes" grouping="common" icon="special://skin/extras/icons/director.png">ActivateWindow(1105)</shortcut>
     <shortcut label="31208" type="themoviedb.org movies" grouping="common" icon="special://skin/extras/icons/director.png">ActivateWindow(1104)</shortcut>
-    <shortcut label="Top250" type="top250" grouping="common" icon="special://skin/extras/icons/top250.png">RunScript(script.imdb250.view)</shortcut>
-    <shortcut label="Oscars" type="oscars" grouping="common" icon="special://skin/extras/icons/oscars.png">RunScript(script.oscars.view)</shortcut>
 
     <shortcut label="Smart Shortcuts" type="32010" grouping="video">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>
 
@@ -81,7 +79,7 @@
     <backgrounddefault defaultID="musicvideos">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]</backgrounddefault>
     <backgrounddefault defaultID="weather">$INFO[Skin.String(weather.fanart)]$INFO[Window(Weather).Property(Current.FanartCode)]</backgrounddefault>
     <backgrounddefault defaultID="pictures">$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</backgrounddefault>
-    <backgrounddefault defaultID="programs">special://skin/extras/backgrounds/Channels2.jpg</backgrounddefault>
+    <backgrounddefault defaultID="programs">special://skin/extras/backgrounds/programs.jpg</backgrounddefault>
     <backgrounddefault defaultID="videos">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</backgrounddefault>
     <backgrounddefault defaultID="settings">special://skin/extras/backgrounds/Motherboard.jpg</backgrounddefault>
     <backgrounddefault defaultID="power">special://skin/extras/backgrounds/kodi.jpg</backgrounddefault>

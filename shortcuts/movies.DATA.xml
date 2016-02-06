@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label2>movies</label2>
+        <label>Unwatched</label>
+        <icon>special://skin/extras/icons/eye.png</icon>
+        <action>ActivateWindow(VideoLibrary,special://skin/extras/playlists/unwatched_movies.xsp,return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>movies</label2>
+        <label>Recent Movies</label>
+        <icon>special://skin/extras/icons/recentlyadded.png</icon>
+        <action>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>movies</label2>
+        <label>Collections</label>
+        <icon>special://skin/extras/icons/sets.png</icon>
+        <action>ActivateWindow(Videos,videodb://movies/sets/,return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>movies</label2>
+        <label>135</label>
+        <icon>special://skin/extras/icons/genre.png</icon>
+        <action>ActivateWindow(Videos,videodb://movies/genres/,return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>movies</label2>
+        <label>562</label>
+        <icon>special://skin/extras/icons/year.png</icon>
+        <action>ActivateWindow(Videos,videodb://movies/years/,return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>movies</label2>
+        <label>31192</label>
+        <icon>special://skin/extras/icons/film.png</icon>
+        <action>ActivateWindow(1101)</action>
+    </shortcut>
+</shortcuts>

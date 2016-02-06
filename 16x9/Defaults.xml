@@ -11,7 +11,7 @@
     <constant name="PosterShadowH">688</constant>
     <constant name="PosterShadowW">475</constant>
     <constant name="ListX">540</constant>
-    <constant name="ListW">1300</constant>
+    <constant name="ListW">1088</constant>
     <constant name="ListSquareX">752</constant>
     <constant name="ListSquareW">1088</constant>
 
@@ -163,8 +163,8 @@
 
     <default type="progress">
         <texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-        <lefttexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</lefttexture>
-        <midtexture colordiffuse="$VAR[ColourHighlight]">osd/progress-end.png</midtexture>
+        <lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+        <midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
         <righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
         <overlaytexture>noop</overlaytexture>
     </default>

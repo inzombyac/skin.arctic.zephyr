@@ -34,29 +34,11 @@
 			</animation>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
-			<control type="image">
-				<top>178</top>
-				<right>80</right>
-				<width>222</width>
-				<height>116</height>
-				<texture fallback="movies-logo.png" diffuse="diffuse/dvinfo.png" background="true">$VAR[ClearArtOnly]</texture>
-				<aspectratio align="center" aligny="center">stretch</aspectratio>
-				<include>DialogVideoInfoAnimation</include>
-				<animation condition="Control.HasFocus(50) | Control.HasFocus(5000)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-				<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5000)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				<animation condition="Container.Content(episodes)" effect="slide" end="-243,000"  time="0">Conditional</animation>
-			</control>
 			<left>SidePad</left>
 			<top>180</top>
 			<include>DialogVideoInfoAnimation</include>
 			<animation effect="fade" end="100" start="0" time="200">WindowOpen</animation>
-			<control type="image">
-				<left>-24</left>
-				<top>-24</top>
-				<width>528</width>
-				<height>768</height>
-				<texture border="32">common/shadow-24.png</texture>
-			</control>
+		
 			<control type="image">
 				<centertop>720</centertop>
 				<width>480</width>
@@ -72,16 +54,6 @@
 				<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 				<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
 			</control>
-			<!--<control type="group"><left>1070</left><top>660</top><include>Furniture_OSDClock</include><animation effect="zoom" end="80" time="00" condition="true">Conditional</animation><include>DialogVideoInfoAnimation</include></control>-->
-			<control type="image">
-				<top>8</top>
-				<left>444</left>
-				<width>32</width>
-				<height>32</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[PosterPercentWatchedBacking]</texture>
-				<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-			</control>
 			<control type="image">
 				<top>8</top>
 				<left>444</left>
@@ -90,88 +62,38 @@
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture>$VAR[PosterPercentWatched]</texture>
 			</control>
-			<control type="label">
-				<top>8</top>
-				<left>444</left>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[UnwatchedColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)</visible>
-			</control>
-			<control type="label">
-				<top>8</top>
-				<left>444</left>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[PlayingColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + ListItem.IsPlaying</visible>
-			</control>
-			<control type="label">
-				<top>8</top>
-				<left>444</left>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[WatchedColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + stringcompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)</visible>
-			</control>
-			<control type="label">
-				<top>8</top>
-				<left>444</left>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[ResumeColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + ListItem.IsResumable</visible>
-			</control>
-			<control type="label">
-				<top>8</top>
-				<left>444</left>
-				<width>32</width>
-				<height>32</height>
-				<font>symbolview</font>
-				<label>$VAR[PercentWatchedLabel]</label>
-				<textcolor>$VAR[NewColourHighlight]</textcolor>
-				<visible>!stringcompare(ListItem.Label,..) + [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
-			</control>
 			<control type="progress">
-				<top>0</top>
+				<top>720</top>
 				<width>480</width>
-				<height>8</height>
+				<height>12</height>
 				<info>ListItem.PercentPlayed</info>
 				<overlaytexture>-</overlaytexture>
 				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="EmbyGreen">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
 			</control>
 			<control type="group">
 				<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 				<control type="image">
-					<left>400</left>
+					<left>442</left>
 					<top>5</top>
 					<height>40</height>
 					<width>40</width>
-					<texture colordiffuse="Dark1">common/circle.png</texture>
+					<texture colordiffuse="EmbyGreen">common/circle.png</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 				</control>
 				<control type="label">
-					<left>400</left>
+					<left>442</left>
 					<top>5</top>
 					<height>40</height>
 					<width>40</width>
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
-					<font>Flag</font>
-					<textcolor>Light1</textcolor>
+					<font>Small</font>
+					<textcolor>White</textcolor>
 				</control>
 			</control>
 			<control type="image">
@@ -189,16 +111,16 @@
 				<visible>!IsEmpty(ListItem.Plot) | !IsEmpty(ListItem.PlotOutline)</visible>
 				<visible>!Control.HasFocus(50) + !Control.HasFocus(5000)</visible>
 				<left>566</left>
-				<top>62</top>
+				<top>12</top>
 				<width>1194</width>
-				<height>119</height>
+				<height>169</height>
 				<control type="radiobutton"  id="132">
 					<top>-8</top>
 					<width>1194</width>
-					<height>119</height>
+					<height>169</height>
 					<radioposx>1</radioposx>
-					<radioposy>12</radioposy>
-					<radiowidth>46</radiowidth>
+					<radioposy>1</radioposy>
+					<radiowidth>1</radiowidth>
 					<onup>3443</onup>
 					<ondown>9000</ondown>
 					<textureradioonfocus colordiffuse="White70">-</textureradioonfocus>
@@ -209,200 +131,35 @@
 					<texturenofocus border="5" colordiffuse="White70">common/box.png</texturenofocus>
 					<align>left</align>
 					<aligny>top</aligny>
-					<textoffsetx>6</textoffsetx>
+					<textoffsetx>2</textoffsetx>
 					<textoffsety>4</textoffsety>
-					<font>symbol</font>
-					<label></label>
 					<onclick>SetProperty(Text,[B]$INFO[ListItem.TagLine,,[CR]][/B]$ESCINFO[ListItem.Plot],home)</onclick>
 					<onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[Window(home).Property(Text)]')</onclick>
 				</control>
 				<!-- Plot -->
 				<control type="textbox">
-					<height>110</height>
+					<height>153</height>
 					<top>-8</top>
-					<left>60</left>
+					<left>5</left>
 					<align>left</align>
-					<font>Small</font>
+					<font>TwentyEight</font>
 					<scroll>true</scroll>
-					<textcolor>Black700</textcolor>
+					<textcolor>Dark1</textcolor>
 					<label fallback="">$VAR[Plot]</label>
 					<include>DialogVideoInfoAnimation</include>
 					<visible>!ControlGroup(3444).HasFocus()</visible>
 				</control>
 				<control type="textbox">
-					<height>110</height>
+					<height>160</height>
 					<top>-8</top>
-					<left>60</left>
+					<left>5</left>
 					<align>left</align>
-					<font>Small</font>
+					<font>TwentyEight</font>
 					<scroll>true</scroll>
-					<textcolor>White70</textcolor>
+					<textcolor>Dark1</textcolor>
 					<label fallback="">$VAR[Plot]</label>
 					<include>DialogVideoInfoAnimation</include>
 					<visible>ControlGroup(3444).HasFocus()</visible>
-				</control>
-			</control>
-			<!-- Director -->
-			<control type="grouplist">
-				<left>566</left>
-				<top>0</top>
-				<width>1194</width>
-				<height>50</height>
-				<itemgap>-1129</itemgap>
-				<include>DialogVideoInfoAnimation</include>
-				<orientation>horizontal</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				<visible>!IsEmpty(ListItem.Director)</visible>
-				<animation condition="Control.HasFocus(50) | Control.HasFocus(5000)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-				<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5000)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				<control type="button" id="3443">
-					<width>1194</width>
-					<height>50</height>
-					<radioposx>1</radioposx>
-					<radioposy>12</radioposy>
-					<radiowidth>50</radiowidth>
-					<textureradioonfocus colordiffuse="White70">-</textureradioonfocus>
-					<textureradioonnofocus colordiffuse="Black100">-</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="White70">-</textureradioofffocus>
-					<textureradiooffnofocus colordiffuse="Black100">-</textureradiooffnofocus>
-					<texturefocus border="5" colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/box.png</texturefocus>
-					<texturenofocus border="5" colordiffuse="White70">common/box.png</texturenofocus>
-					<align>left</align>
-					<aligny>top</aligny>
-					<textoffsetx>6</textoffsetx>
-					<textoffsety>4</textoffsety>
-					<font>symbol</font>
-					<label></label>
-					<onup>9000</onup>
-					<ondown>3444</ondown>
-					<onclick>SetProperty(Dialog.1.Label,Extra Info)</onclick>
-					<onclick>SetProperty(Dialog.1.BuiltIn,RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Director]))</onclick>
-					<onclick>SetProperty(Dialog.2.Label,Search on Youtube)</onclick>
-					<onclick>SetProperty(Dialog.2.BuiltIn,SetProperty(listcontent,$INFO[ListItem.Director],home)||ActivateWindow(1168))</onclick>
-					<onclick>RunScript(script.toolbox,info=selectdialog,header=$INFO[ListItem.Director])</onclick>
-				</control>
-				<control type="label">
-					<top>3</top>
-					<width>260</width>
-					<height>34</height>
-					<font>Small</font>
-					<aligny>bottom</aligny>
-					<textcolor>Black700</textcolor>
-					<label>$INFO[ListItem.Director]</label>
-				</control>
-			</control>
-			<!-- Cast -->
-			<control type="grouplist">
-				<visible>!Control.HasFocus(3443)</visible>
-				<left>900</left>
-				<top>0</top>
-				<width>850</width>
-				<height>50</height>
-				<itemgap>10</itemgap>
-				<include>DialogVideoInfoAnimation</include>
-				<orientation>horizontal</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				<visible>!IsEmpty(ListItem.Cast)</visible>
-				<animation condition="Control.HasFocus(50) | Control.HasFocus(5000)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-				<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5000)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				<animation condition="IsEmpty(ListItem.Director)" effect="slide" end="-328,0" start="0,0" time="200">Conditional</animation>
-				<control type="label">
-					<align>left</align>
-					<aligny>center</aligny>
-					<top>-9</top>
-					<posx>4</posx>
-					<width>44</width>
-					<font>symbol</font>
-					<label></label>
-				</control>
-				<control type="label">
-					<top>3</top>
-					<left>3</left>
-					<width>790</width>
-					<height>34</height>
-					<font>Small</font>
-					<aligny>bottom</aligny>
-					<textcolor>Black700</textcolor>
-					<label>$VAR[CastList]</label>
-				</control>
-			</control>
-			<control type="group">
-				<visible>!Skin.HasSetting(furniture.flags)</visible>
-				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
-				<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-				<visible>!stringcompare(ListItem.Label,..)</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<left>1956</left>
-				<top>120</top>
-				<width>1920</width>
-				<height>120</height>
-				<align>left</align>
-				<animation condition="true" easing="inout" effect="rotate" end="-90" center="1956,0" time="300">conditional</animation>
-				<control type="grouplist">
-					<orientation>vertical</orientation>
-					<usecontrolcoords>true</usecontrolcoords>
-					<control type="grouplist" id="11000">
-						<posy>6</posy>
-						<width>600</width>
-						<height>24</height>
-						<align>left</align>
-						<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-						<itemgap>2</itemgap>
-						<orientation>horizontal</orientation>
-						<visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
-						<control type="label">
-							<width>auto</width>
-							<height>24</height>
-							<align>right</align>
-							<label></label>
-							<font>symbolview</font>
-							<textcolor>Black700</textcolor>
-						</control>
-						 <control type="label">
-							<width min="20" max="150">auto</width>
-							<height>48</height>
-							<align>left</align>
-							<aligny>bottom</aligny>
-							<label>N/A</label>
-							<textcolor>Black300</textcolor>
-							<font>Button</font>
-							<visible>IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
-						</control>
-					   <include>LanguageFlags</include>
-					</control>
-					<control type="grouplist" id="12000">
-						<animation effect="fade" start="100" end="80" time="40" condition="true">Conditional</animation>
-						<posy>3</posy>
-						<width>600</width>
-						<height>32</height>
-						<align>left</align>
-						<itemgap>2</itemgap>
-						<visible>Control.IsVisible(11000)</visible>
-						<orientation>horizontal</orientation>
-						<control type="label">
-							<width>auto</width>
-							<posy>3</posy>
-							<height>32</height>
-							<align>right</align>
-							<aligny>bottom</aligny>
-							<label></label>
-							<font>symbolview</font>
-							<textcolor>Black700</textcolor>
-						</control>
-						<control type="label">
-							<textoffsety>-2</textoffsety>
-							<width min="20" max="150">auto</width>
-							<height>48</height>
-							<align>left</align>
-							<aligny>bottom</aligny>
-							<label>N/A</label>
-							<textcolor>Black300</textcolor>
-							<font>EPGTimeline</font>
-							<visible>IsEmpty(Window(movieinformation).Property(SubtitleLanguage.1)) + IsEmpty(Window(movieinformation).Property(SubtitleLanguage.2))</visible>
-						</control>
-						<include>SubtitleFlags</include>
-					</control>
 				</control>
 			</control>
 			<!-- Button grouplist -->
@@ -425,18 +182,14 @@
 					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<ondown>9007</ondown>
 					<onclick>dialog.close(all,true)</onclick>
-					<font>symbol</font>
-					<label>$VAR[VideoInfoButton8]</label>
-					<altlabel></altlabel>
-					<usealttexture>Container.Content(TVShows)</usealttexture>
+					<font>Small</font>
 					<textoffsetx>20</textoffsetx>
-					<textcolor>Black700</textcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
-					<alttexturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="White70" border="5">common/box.png</alttexturenofocus>
+					<texturefocus>dialogvideo/watchnow.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
+					<alttexturefocus >dialogvideo/watchnow.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/watchnow.png</alttexturenofocus>
 				</control>
-				<!-- Cinema Experience Button <control id="21" type="button"><width>222</width><height>116</height><onup condition="Control.IsVisible(3444)">3444</onup><ondown>9007</ondown><onclick>Dialog.Close(MovieInformation)</onclick><onclick>RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick><font>symbol</font><label></label><textcolor>Black700</textcolor><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible></control> --><control id="1003" type="button">
+				<control id="1003" type="button">
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(3444)">3444</onup>
@@ -444,12 +197,12 @@
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>dialog.close(all,true)</onclick>
 					<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
-					<font>symbol</font>
-					<label></label>
-					<textcolor>Black700</textcolor>
+					<font>Small</font>
 					<visible>!IsEmpty(ListItem.Trailer)</visible>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
+					<texturefocus>dialogvideo/trailer.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
+					<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
 				</control>
 				<control id="1006" type="button">
 					<width>222</width>
@@ -459,26 +212,25 @@
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>back</onclick>
 					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
-					<font>symbol</font>
-					<label></label>
-					<textcolor>Black700</textcolor>
+					<font>Small</font>
 					<visible>IsEmpty(ListItem.Trailer)</visible>
+					<visible>!Container.Content(tvshows)+!Container.Content(episodes)</visible>
 					<visible>true</visible>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
+					<texturefocus>dialogvideo/trailer.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
+					<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
 				</control>
-				<!-- Refresh button <control id="6" type="button"><width>222</width><height>116</height><onup condition="Control.IsVisible(3444)">3444</onup><ondown>9007</ondown><font>symbol</font><label></label><textcolor>Black700</textcolor><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus><texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus></control> --><!-- Get Thumb Button -->
 				<control id="10" type="button">
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<ondown>9007</ondown>
-					<font>symbol</font>
-					<label></label>
-					<textcolor>Black700</textcolor>
-					<visible>Control.IsEnabled(10)</visible>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
+					<font>Small</font>
+					<texturefocus>dialogvideo/thumb.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/thumb.png</texturenofocus>
+					<alttexturefocus >dialogvideo/thumb.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/thumb.png</alttexturenofocus>
 				</control>
 				<!-- Artwork Downloader Button -->
 				<control id="20" type="button">
@@ -486,15 +238,14 @@
 					<height>116</height>
 					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<ondown>9007</ondown>
+					<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 					<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader, mode=gui,mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
 					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mode=gui,mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-					<font>symbol</font>
-					<label></label>
-					<textoffsetx>20</textoffsetx>
-					<textcolor>Black700</textcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
-					<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
+					<font>Small</font>
+					<texturefocus>dialogvideo/artwork.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/artwork.png</texturenofocus>
+					<alttexturefocus >dialogvideo/artwork.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/artwork.png</alttexturenofocus>
 				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="19">
@@ -502,17 +253,14 @@
 					<height>116</height>
 					<onup condition="Control.IsVisible(3444)">3444</onup>
 					<ondown>9007</ondown>
-					<font>symbol</font>
-					<label></label>
 					<textcolor>Black700</textcolor>
-					<focusedcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</focusedcolor>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">-</texturefocus>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
+					<focusedcolor>White</focusedcolor>
+					<texturefocus colordiffuse="White" border="5">dialogvideo/info.png</texturefocus>
+					<texturenofocus colordiffuse="White70" border="5">dialogvideo/info.png</texturenofocus>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
 					<onclick condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
 					<onclick condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
 					<onclick condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
-					<animation condition="Control.HasFocus(19)" effect="slide" end="00,105"  time="100">Conditional</animation>
 				</control>
 			</control>
 			<!-- Button grouplist Focus  -->
@@ -533,7 +281,7 @@
 					<width>222</width>
 					<height>116</height>
 					<usealttexture>Container.Content(TVShows)</usealttexture>
-					<textcolor>White70</textcolor>
+					<textcolor>White</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<font>EPGTimeline</font>
 					<label>$VAR[VideoInfoButton8T]</label>
@@ -541,11 +289,10 @@
 					<animation condition="Control.HasFocus(8)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(8)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
-				<!-- Cinema Experience Button <control id="21" type="button"><width>222</width><height>116</height><visible>System.HasAddon(script.cinema.experience) + Container.Content(movies)</visible><visible>false</visible><font>EPGTimeline</font><label>Cine Exp</label><textcolor>White70</textcolor><textoffsetx>0</textoffsetx><animation condition="Control.HasFocus(21)" effect="fade" end="100" start="0" time="10">Conditional</animation><animation condition="!Control.HasFocus(21)" effect="fade" end="0" start="100" time="10">Conditional</animation></control> -->
 				<control id="1003" type="button">
 					<width>222</width>
 					<height>116</height>
-					<textcolor>White70</textcolor>
+					<textcolor>White</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<visible>!IsEmpty(ListItem.Trailer)</visible>
 					<label>Watch Trailer</label>
@@ -556,21 +303,21 @@
 				<control id="1006" type="button">
 					<width>222</width>
 					<height>116</height>
-					<textcolor>White70</textcolor>
+					<textcolor>White</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<visible>IsEmpty(ListItem.Trailer)</visible>
+					<visible>!Container.Content(tvshows)+!Container.Content(episodes)</visible>
 					<visible>true</visible>
 					<font>EPGTimeline</font>
 					<label>Search YouTube</label>
 					<animation condition="Control.HasFocus(1006)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(1006)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
-				<!-- Refresh Button <control id="6" type="button"><width>222</width><height>116</height><textcolor>White70</textcolor><textoffsetx>0</textoffsetx><visible>Control.IsEnabled(6)</visible><visible>Container.Content(episodes)</visible><font>EPGTimeline</font><label>184</label><animation condition="Control.HasFocus(6)" effect="fade" end="100" start="0" time="10">Conditional</animation><animation condition="!Control.HasFocus(6)" effect="fade" end="0" start="100" time="10">Conditional</animation></control> --><!-- Get Thumb Button -->
 				<control id="10" type="button">
 					<width>222</width>
 					<height>116</height>
 					<textoffsetx>0</textoffsetx>
-					<textcolor>White70</textcolor>
+					<textcolor>White</textcolor>
 					<visible>Control.IsEnabled(10)</visible>
 					<font>EPGTimeline</font>
 					<label>13405</label>
@@ -582,7 +329,7 @@
 					<width>222</width>
 					<height>116</height>
 					<textoffsetx>0</textoffsetx>
-					<textcolor>White70</textcolor>
+					<textcolor>White</textcolor>
 					<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
 					<font>EPGTimeline</font>
 					<label>13511</label>
@@ -596,9 +343,8 @@
 					<height>116</height>
 					<font>EPGTimeline</font>
 					<label>Extended Info</label>
-					<textcolor>$INFO[Window(home).Property(VideoInfo.ImageColor)]</textcolor>
+					<textcolor>White</textcolor>
 					<animation condition="Control.HasFocus(19)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-					<animation condition="Control.HasFocus(19)" effect="slide" end="00,35"  time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(19)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 				</control>
 			</control>
@@ -644,23 +390,6 @@
 					<label>Similar Titles</label>
 					<include>DefDialogInfoButtons</include>
 				</control>
-				<control id="7002" type="button">
-					<top>557</top>
-					<width>222</width>
-					<height>66</height>
-					<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
-					<texturefocus colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="5">common/box.png</texturefocus>
-					<onup>9000</onup>
-					<ondown condition="Control.IsVisible(5000)">5000</ondown>
-					<ondown condition="Control.IsVisible(50)">50</ondown>
-					<font>EPGTimeline</font>
-					<textcolor>Black700</textcolor>
-					<label>Search YouTube</label>
-					<include>DefDialogInfoButtons</include>
-					<onclick condition="!IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.TVShowTitle],home)</onclick>
-					<onclick condition="IsEmpty(ListItem.TVShowTitle)">SetProperty(listcontent,$INFO[ListItem.Title],home)</onclick>
-					<onclick>ActivateWindow(1168)</onclick>
-				</control>
 				<control id="6" type="button">
 					<top>557</top>
 					<width>222</width>
@@ -701,32 +430,32 @@
 				<width>1000</width>
 				<height>32</height>
 				<font>MediumSmall</font>
-				<textcolor>Black300</textcolor>
+				<textcolor>Dark1</textcolor>
 				<label>Cast and Role</label>
 				<visible>IsEmpty(Window(home).Property(Similar)) + !IsEmpty(Container(50).ListItem.Label) + !Control.HasFocus(50)</visible>
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			</control>
 			<!-- No similar videos -->
-			<control type="label">
+			<!-- <control type="label">
 				<top>544</top>
 				<left>600</left>
 				<width>1000</width>
 				<height>32</height>
 				<font>Large</font>
 				<textcolor>Black700</textcolor>
-				<label>Sorry, we have no cast for this title.</label>
+				<label></label>
 				<visible>IsEmpty(Window(home).Property(Similar)) + IsEmpty(Container(50).ListItem.Label)</visible>
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 				<animation condition="Control.HasFocus(5000)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(5000)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-			</control>
+			</control> -->
 			<!-- Cast -->
 			<control id="50" type="fixedlist">
 				<left>0</left>
 				<top>0</top>
 				<width>2600</width>
-				<height>616</height>
+				<height>640</height>
 				<onup>9007</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</ondown>
 				<onleft>7000</onleft>
@@ -778,9 +507,8 @@
 							<top>412</top>
 							<width>290</width>
 							<height>42</height>
-							<font>MediumBold</font>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<font>SmallBold</font>
+							<textcolor>Dark1</textcolor>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="label">
@@ -790,8 +518,7 @@
 							<height>28</height>
 							<font>Small</font>
 							<scroll>false</scroll>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<textcolor>Dark2</textcolor>
 							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
 						</control>
 						<control type="image">
@@ -822,7 +549,7 @@
 							<left>-7</left>
 							<width>334</width>
 							<height>490</height>
-							<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]" border="20">common/selectbox.png</texture>
+							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 							<animation type="Focus">
 								<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto"/>
 								<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in"/>
@@ -865,10 +592,10 @@
 							<top>412</top>
 							<width>290</width>
 							<height>42</height>
-							<font>MediumBold</font>
+							<font>SmallBold</font>
 							<scroll>false</scroll>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<textcolor>Dark1</textcolor>
+							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label]</label>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
@@ -880,8 +607,8 @@
 							<height>28</height>
 							<font>Small</font>
 							<scroll>false</scroll>
-							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<textcolor>Dark2</textcolor>
+							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label2,$LOCALIZE[20347] ,]</label>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
@@ -897,8 +624,18 @@
 						</control>
 						<!-- More -->
 						<control type="image">
-							<left>125</left>
-							<top>586</top>
+							<top>592</top>
+							<width>320</width>
+							<height>60</height>
+							<aspectratio>scale</aspectratio>
+							<texture colordiffuse="Black300">common/box.png</texture>
+							<visible>Control.HasFocus(50)</visible>
+							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
+							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>594</top>
 							<width>37</width>
 							<height>23</height>
 							<texture colordiffuse="Black300">views/more_fo.png</texture>
@@ -906,13 +643,11 @@
 							<animation condition="!Control.HasFocus(50)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">conditional</animation>
 						</control>
 						<control type="label">
-							<left>164</left>
-							<top>586</top>
+							<align>center</align>
+							<top>594</top>
 							<aligny>top</aligny>
-							<width>36</width>
-							<height>36</height>
-							<font>symbolview</font>
-							<label></label>
+							<font>Tiny</font>
+							<label>Biography</label>
 							<textcolor>Black700</textcolor>
 							<animation condition="!Control.HasFocus(50)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">conditional</animation>
 						</control>
@@ -970,9 +705,9 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(1).Label]</label>
 					</control>
 					<control type="label">
@@ -982,8 +717,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(1).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -1017,9 +752,9 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(2).Label]</label>
 					</control>
 					<control type="label">
@@ -1029,8 +764,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(2).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -1064,9 +799,9 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(3).Label]</label>
 					</control>
 					<control type="label">
@@ -1076,8 +811,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(3).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -1111,9 +846,9 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+					<!-- 	<shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(4).Label]</label>
 					</control>
 					<control type="label">
@@ -1123,8 +858,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(4).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -1158,9 +893,9 @@
 						<top>412</top>
 						<width>290</width>
 						<height>42</height>
-						<font>MediumBold</font>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<font>SmallBold</font>
+						<textcolor>Dark1</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(5).Label]</label>
 					</control>
 					<control type="label">
@@ -1170,8 +905,8 @@
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
-						<textcolor>Black700</textcolor>
-						<shadowcolor>80000000</shadowcolor>
+						<textcolor>Dark2</textcolor>
+						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(5).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -1195,7 +930,7 @@
 				<height>32</height>
 				<font>Large</font>
 				<textcolor>Black700</textcolor>
-				<label>Sorry, we have no items for this title.</label>
+				<label></label>
 				<visible>!IsEmpty(Window(home).Property(Similar)) + IsEmpty(Container(5000).ListItem.Label)</visible>
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 				<animation condition="Control.HasFocus(5000)" effect="fade" end="0" start="100" time="0">Conditional</animation>
@@ -1252,7 +987,7 @@
 							<height>42</height>
 							<font>MediumBold</font>
 							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label]</label>
 							<visible>IsEmpty(ListItem.Art(poster))</visible>
 						</control>
@@ -1337,7 +1072,7 @@
 							<height>42</height>
 							<font>MediumBold</font>
 							<textcolor>Black700</textcolor>
-							<shadowcolor>80000000</shadowcolor>
+							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label]</label>
 							<visible>IsEmpty(ListItem.Art(poster))</visible>
 						</control>
@@ -1546,7 +1281,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<font>SmallBold</font>
-					<textcolor>Black700</textcolor>
+					<textcolor>Dark1</textcolor>
 					<label>$INFO[Container(5000).ListItem.Property(Title)]</label>
 					<visible>Control.HasFocus(5000)</visible>
 				</control>
@@ -1557,7 +1292,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<font>Mini</font>
-					<textcolor>Black700</textcolor>
+					<textcolor>Dark2</textcolor>
 					<label>$INFO[Container(50).ListItem.Label2,$LOCALIZE[20347] ,]</label>
 					<visible>Control.HasFocus(50)</visible>
 				</control>
@@ -1610,7 +1345,7 @@
 				<centertop>50%</centertop>
 				<width>973</width>
 				<height>760</height>
-				<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+				<texture border="16" colordiffuse="Dark1">common/rounded-shadow8.png</texture>
 			</control>
 			<!-- Arrow up -->
 			<control type="image">

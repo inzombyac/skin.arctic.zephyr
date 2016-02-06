@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label2>settings</label2>
+        <label>33060</label>
+        <icon>special://skin/extras/icons/power.png</icon>
+        <action>ActivateWindow(shutdownmenu)</action>
+    </shortcut>
+    <shortcut>
+        <label2>settings</label2>
+        <label>7</label>
+        <action>ActivateWindow(FileManager)</action>
+        <icon>special://skin/extras/icons/files.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>settings</label2>
+        <label>13200</label>
+        <action>ActivateWindow(Profiles)</action>
+        <icon>special://skin/extras/icons/actor.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>settings</label2>
+        <label>10007</label>
+        <action>ActivateWindow(SystemInfo)</action>
+        <icon>special://skin/extras/icons/sysinfo.png</icon>
+    </shortcut>
+</shortcuts>

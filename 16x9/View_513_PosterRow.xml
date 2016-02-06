@@ -33,22 +33,10 @@
 									<posy>4</posy>
 									<width>200</width>
 									<height>282</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem9Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>7</posx>
-									<posy>4</posy>
-									<width>200</width>
-									<height>282</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem9Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>27</posx>
@@ -86,22 +74,10 @@
 									<posy>8</posy>
 									<width>234</width>
 									<height>331</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>13</posx>
-									<posy>8</posy>
-									<width>234</width>
-									<height>331</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>33</posx>
@@ -139,22 +115,10 @@
 									<posy>13</posy>
 									<width>266</width>
 									<height>380</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>19</posx>
-									<posy>13</posy>
-									<width>266</width>
-									<height>380</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>39</posx>
@@ -192,22 +156,10 @@
 									<posy>19</posy>
 									<width>300</width>
 									<height>427</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>25</posx>
-									<posy>19</posy>
-									<width>300</width>
-									<height>427</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>45</posx>
@@ -245,22 +197,10 @@
 									<posy>24</posy>
 									<width>332</width>
 									<height>478</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>30</posx>
-									<posy>24</posy>
-									<width>332</width>
-									<height>478</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>50</posx>
@@ -298,22 +238,10 @@
 									<posy>28</posy>
 									<width>366</width>
 									<height>528</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>36</posx>
-									<posy>28</posy>
-									<width>366</width>
-									<height>528</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>56</posx>
@@ -351,22 +279,10 @@
 									<posy>32</posy>
 									<width>398</width>
 									<height>577</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>42</posx>
-									<posy>32</posy>
-									<width>398</width>
-									<height>577</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>62</posx>
@@ -404,22 +320,10 @@
 									<posy>37</posy>
 									<width>432</width>
 									<height>626</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>48</posx>
-									<posy>37</posy>
-									<width>432</width>
-									<height>626</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>68</posx>
@@ -457,22 +361,10 @@
 									<posy>42</posy>
 									<width>466</width>
 									<height>676</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>54</posx>
-									<posy>42</posy>
-									<width>466</width>
-									<height>676</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>74</posx>
@@ -513,63 +405,10 @@
 									<posy>42</posy>
 									<width>466</width>
 									<height>676</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>54</posx>
-									<posy>42</posy>
-									<width>466</width>
-									<height>676</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!Skin.Hassetting(views.cases)+ !SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
-								</control>
-								<control type="label">
-									<posx>457</posx>
-									<posy>64</posy>
-									<width>45</width>
-									<height>45</height>
-									<font>symbolview</font>
-									<label>$VAR[IconOverlay0Var]</label>
-									<textcolor>$VAR[ColourHighlight2]</textcolor>
-								</control>
-								<control type="image">
-									<posx>65</posx>
-									<posy>54</posy>
-									<width>450</width>
-									<height>663</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true">$VAR[ShowcaseItem0Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
-								</control>
-								<control type="image">
-									<posx>54</posx>
-									<posy>42</posy>
-									<width>466</width>
-									<height>676</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
-								</control>
-								<control type="image">
-									<posx>4</posx>
-									<posy>12</posy>
-									<width>516</width>
-									<height>726</height>
-									<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-									<aspectratio align="center" aligny="top">keep</aspectratio>
-									<bordersize>2</bordersize>
-									<visible>Skin.Hassetting(views.cases)</visible>
 								</control>
 								<control type="image">
 									<posx>74</posx>
@@ -614,22 +453,10 @@
 									<posy>4</posy>
 									<width>200</width>
 									<height>282</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>7</posx>
-									<posy>4</posy>
-									<width>200</width>
-									<height>282</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>27</posx>
@@ -671,22 +498,10 @@
 									<posy>4</posy>
 									<width>200</width>
 									<height>282</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>7</posx>
-									<posy>4</posy>
-									<width>200</width>
-									<height>282</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>27</posx>
@@ -724,22 +539,10 @@
 									<posy>8</posy>
 									<width>234</width>
 									<height>331</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>13</posx>
-									<posy>8</posy>
-									<width>234</width>
-									<height>331</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>33</posx>
@@ -777,22 +580,10 @@
 									<posy>13</posy>
 									<width>266</width>
 									<height>380</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>19</posx>
-									<posy>13</posy>
-									<width>266</width>
-									<height>380</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>39</posx>
@@ -830,22 +621,10 @@
 									<posy>19</posy>
 									<width>300</width>
 									<height>427</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>25</posx>
-									<posy>19</posy>
-									<width>300</width>
-									<height>427</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>45</posx>
@@ -883,22 +662,10 @@
 									<posy>24</posy>
 									<width>332</width>
 									<height>478</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>30</posx>
-									<posy>24</posy>
-									<width>332</width>
-									<height>478</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>50</posx>
@@ -936,22 +703,10 @@
 									<posy>28</posy>
 									<width>366</width>
 									<height>528</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>36</posx>
-									<posy>28</posy>
-									<width>366</width>
-									<height>528</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>56</posx>
@@ -989,22 +744,10 @@
 									<posy>32</posy>
 									<width>398</width>
 									<height>577</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>42</posx>
-									<posy>32</posy>
-									<width>398</width>
-									<height>577</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>62</posx>
@@ -1042,54 +785,10 @@
 									<posy>37</posy>
 									<width>432</width>
 									<height>626</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>48</posx>
-									<posy>37</posy>
-									<width>432</width>
-									<height>626</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!Skin.Hassetting(views.cases)</visible>
-								</control>
-								<control type="image">
-									<posx>59</posx>
-									<posy>48</posy>
-									<width>416</width>
-									<height>613</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true">$VAR[ShowcaseItem0Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
-								</control>
-								<control type="image">
-									<posx>48</posx>
-									<posy>37</posy>
-									<width>432</width>
-									<height>626</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
-								</control>
-								<control type="image">
-									<posx>-2</posx>
-									<posy>7</posy>
-									<width>482</width>
-									<height>676</height>
-									<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-									<aspectratio align="center" aligny="top">keep</aspectratio>
-									<bordersize>2</bordersize>
-									<visible>Skin.Hassetting(views.cases)</visible>
 								</control>
 								<control type="image">
 									<posx>68</posx>
@@ -1130,22 +829,10 @@
 									<posy>-20</posy>
 									<width>466</width>
 									<height>676</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>0</posx>
-									<posy>-20</posy>
-									<width>466</width>
-									<height>676</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<!--<control type="image"> <posx>500</posx> <posy>88</posy> <width>100</width> <height>588</height> <texture flipx="true" border="1">side_shadow.png</texture> </control> -->
 								<control type="image">
@@ -1164,15 +851,7 @@
 									<font>symbolview</font>
 									<label>$VAR[IconOverlay-1Var]</label>
 									<textcolor>$VAR[ColourHighlight2]</textcolor>
-								</control>
-								<control type="image">
-									<posx>457</posx>
-									<width>45</width>
-									<height>45</height>
-									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay-1VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-								</control>
+								</control>								
 								<control type="image">
 									<posx>457</posx>
 									<width>45</width>
@@ -1199,22 +878,10 @@
 									<posy>4</posy>
 									<width>200</width>
 									<height>282</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>7</posx>
-									<posy>4</posy>
-									<width>200</width>
-									<height>282</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>27</posx>
@@ -1241,15 +908,6 @@
 									<width>32</width>
 									<height>32</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay8VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-								</control>
-								<control type="image">
-									<posx>154</posx>
-									<posy>23</posy>
-									<width>32</width>
-									<height>32</height>
-									<aspectratio aligny="top">keep</aspectratio>
 									<texture>$VAR[IconOverlay8VarOrig]</texture>
 								</control>
 							</control>
@@ -1267,22 +925,10 @@
 									<posy>8</posy>
 									<width>234</width>
 									<height>331</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>13</posx>
-									<posy>8</posy>
-									<width>234</width>
-									<height>331</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>33</posx>
@@ -1309,15 +955,6 @@
 									<width>33</width>
 									<height>33</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay7VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-								</control>
-								<control type="image">
-									<posx>193</posx>
-									<posy>28</posy>
-									<width>33</width>
-									<height>33</height>
-									<aspectratio aligny="top">keep</aspectratio>
 									<texture>$VAR[IconOverlay7VarOrig]</texture>
 								</control>
 							</control>
@@ -1335,22 +972,10 @@
 									<posy>13</posy>
 									<width>266</width>
 									<height>380</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>19</posx>
-									<posy>13</posy>
-									<width>266</width>
-									<height>380</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>39</posx>
@@ -1377,15 +1002,6 @@
 									<width>34</width>
 									<height>34</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay6VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-								</control>
-								<control type="image">
-									<posx>230</posx>
-									<posy>33</posy>
-									<width>34</width>
-									<height>34</height>
-									<aspectratio aligny="top">keep</aspectratio>
 									<texture>$VAR[IconOverlay6VarOrig]</texture>
 								</control>
 							</control>
@@ -1403,22 +1019,10 @@
 									<posy>19</posy>
 									<width>300</width>
 									<height>427</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>25</posx>
-									<posy>19</posy>
-									<width>300</width>
-									<height>427</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>45</posx>
@@ -1445,15 +1049,6 @@
 									<width>35</width>
 									<height>35</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay5VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-								</control>
-								<control type="image">
-									<posx>268</posx>
-									<posy>41</posy>
-									<width>35</width>
-									<height>35</height>
-									<aspectratio aligny="top">keep</aspectratio>
 									<texture>$VAR[IconOverlay5VarOrig]</texture>
 								</control>
 							</control>
@@ -1471,22 +1066,10 @@
 									<posy>24</posy>
 									<width>332</width>
 									<height>478</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>30</posx>
-									<posy>24</posy>
-									<width>332</width>
-									<height>478</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>50</posx>
@@ -1513,15 +1096,6 @@
 									<width>36</width>
 									<height>36</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay4VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-								</control>
-								<control type="image">
-									<posx>304</posx>
-									<posy>46</posy>
-									<width>36</width>
-									<height>36</height>
-									<aspectratio aligny="top">keep</aspectratio>
 									<texture>$VAR[IconOverlay4VarOrig]</texture>
 								</control>
 							</control>
@@ -1539,22 +1113,10 @@
 									<posy>28</posy>
 									<width>366</width>
 									<height>528</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>36</posx>
-									<posy>28</posy>
-									<width>366</width>
-									<height>528</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>56</posx>
@@ -1581,15 +1143,6 @@
 									<width>37</width>
 									<height>37</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay3VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-								</control>
-								<control type="image">
-									<posx>343</posx>
-									<posy>49</posy>
-									<width>37</width>
-									<height>37</height>
-									<aspectratio aligny="top">keep</aspectratio>
 									<texture>$VAR[IconOverlay3VarOrig]</texture>
 								</control>
 							</control>
@@ -1607,22 +1160,10 @@
 									<posy>32</posy>
 									<width>398</width>
 									<height>577</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>42</posx>
-									<posy>32</posy>
-									<width>398</width>
-									<height>577</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>62</posx>
@@ -1649,15 +1190,6 @@
 									<width>38</width>
 									<height>38</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay2VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
-								</control>
-								<control type="image">
-									<posx>380</posx>
-									<posy>52</posy>
-									<width>38</width>
-									<height>38</height>
-									<aspectratio aligny="top">keep</aspectratio>
 									<texture>$VAR[IconOverlay2VarOrig]</texture>
 								</control>
 							</control>
@@ -1675,22 +1207,10 @@
 									<posy>37</posy>
 									<width>432</width>
 									<height>626</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>48</posx>
-									<posy>37</posy>
-									<width>432</width>
-									<height>626</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
 									<posx>68</posx>
@@ -1710,15 +1230,6 @@
 									<label>$VAR[IconOverlay1Var]</label>
 									<textcolor>$VAR[ColourHighlight2]</textcolor>
 									<animation effect="zoom" end="95" time="200" reversible="false" condition="true">conditional</animation>
-								</control>
-								<control type="image">
-									<posx>420</posx>
-									<posy>59</posy>
-									<width>39</width>
-									<height>39</height>
-									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay1VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 								</control>
 								<control type="image">
 									<posx>420</posx>
@@ -1813,54 +1324,19 @@
 									<posy>42</posy>
 									<width>466</width>
 									<height>676</height>
-									<aspectratio scalediffuse="false">keep</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
-								</control>
-								<control type="image">
-									<posx>54</posx>
-									<posy>42</posy>
-									<width>466</width>
-									<height>676</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
-									<visible>!Skin.Hassetting(views.cases) + !SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 								</control>
 								<control type="image">
-									<posx>65</posx>
-									<posy>54</posy>
-									<width>450</width>
-									<height>663</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true">$VAR[ShowcaseItem0Var]</texture>
-									<bordersize>20</bordersize>
+									<posx>74</posx>
+									<posy>698</posy>
+									<width>426</width>
+									<height>636</height>
+									<aspectratio aligny="top" align="right" scalediffuse="false">stretch</aspectratio>
+									<texture background="true" flipy="true" diffuse="diffuse/listposter-ref.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<fadetime>0</fadetime>
-									<visible>Skin.Hassetting(views.cases) + !Skin.Hassetting(views.clearcases)</visible>
-								</control>
-								<control type="image">
-									<posx>54</posx>
-									<posy>42</posy>
-									<width>466</width>
-									<height>676</height>
-									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/listposter.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
-									<bordersize>20</bordersize>
-									<fadetime>0</fadetime>
-									<visible>Skin.Hassetting(views.cases) + Skin.Hassetting(views.clearcases)</visible>
-								</control>
-								<control type="image">
-									<posx>4</posx>
-									<posy>12</posy>
-									<width>516</width>
-									<height>726</height>
-									<texture background="true">boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
-									<aspectratio align="center" aligny="top">keep</aspectratio>
-									<bordersize>2</bordersize>
-									<visible>Skin.Hassetting(views.cases)</visible>
 								</control>
 								<control type="image">
 									<posx>74</posx>
@@ -1879,15 +1355,6 @@
 									<font>symbolview</font>
 									<label>$VAR[IconOverlay0Var]</label>
 									<textcolor>$VAR[ColourHighlight2]</textcolor>
-								</control>
-								<control type="image">
-									<posx>457</posx>
-									<posy>64</posy>
-									<width>40</width>
-									<height>40</height>
-									<aspectratio aligny="top">keep</aspectratio>
-									<texture colordiffuse="$VAR[PercentColourHighlight]">$VAR[IconOverlay0VarOrigWatchedBacking]</texture>
-									<visible>!Skin.HasSetting(furniture.alternateindicators)</visible>
 								</control>
 								<control type="image">
 									<posx>457</posx>
@@ -2091,144 +1558,77 @@
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(-1).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(-1).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(-1).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(-1).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(-1).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(-1).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(-1).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(-1).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(-1).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay0VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(0).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(0).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(0).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(0).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(0).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(0).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay1VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(1).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(1).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(1).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(1).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(1).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(1).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(1).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(1).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(1).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay2VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(2).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(2).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(2).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(2).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(2).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(2).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(2).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(2).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(2).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay3VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(3).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(3).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(3).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(3).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(3).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(3).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(3).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(3).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(3).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay4VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(4).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(4).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(4).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(4).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(4).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(4).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(4).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(4).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(4).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay5VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(5).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(5).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(5).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(5).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(5).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(5).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(5).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(5).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(5).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay6VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(6).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(6).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(6).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(6).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(6).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(6).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(6).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(6).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(6).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay7VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(7).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(7).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(7).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(7).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(7).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(7).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(7).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(7).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(7).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay8VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(8).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(8).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(8).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(8).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(8).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(8).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(8).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(8).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(8).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 	<variable name="IconOverlay9VarOrig">
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + ListItem(9).IsPlaying">indicator/play.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(9).IsResumable">indicator/poster-inprogress.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(9).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(9).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(9).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(9).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(9).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/poster-checkmark.png</value>
+		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(9).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(9).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
-	</variable>
-
-	<variable name="IconOverlay-1VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(-1).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(-1).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(-1).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(-1).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(-1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(-1).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(-1).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(-1).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(-1).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(-1).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay0VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(0).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(0).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(0).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(0).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay1VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(1).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(1).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(1).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(1).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(1).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(1).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(1).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(1).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(1).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(1).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay2VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(2).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(2).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(2).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(2).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(2).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(2).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(2).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(2).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(2).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(2).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay3VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(3).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(3).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(3).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(3).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(3).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(3).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(3).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(3).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(3).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(3).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay4VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(4).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(4).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(4).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(4).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(4).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(4).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(4).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(4).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(4).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(4).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay5VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(5).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(5).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(5).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(5).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(5).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(5).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(5).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(5).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(5).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(5).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay6VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(6).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(6).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(6).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(6).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(6).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(6).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(6).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(6).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(6).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(6).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay7VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(7).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(7).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(7).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(7).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(7).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(7).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(7).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(7).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(7).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(7).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay8VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(8).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(8).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(8).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(8).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(8).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(8).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(8).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(8).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(8).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(8).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-	</variable>
-	<variable name="IconOverlay9VarOrigWatchedBacking">
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(9).IsResumable">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [SubString(ListItem(9).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(9).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(9).Label)]] | [[Container.Content(tvshows)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(9).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(9).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(9).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(9).Title)]]]]">iindicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(9).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
-		<value condition="!Skin.HasSetting(furniture.alternateindicators) + !Skin.HasSetting(furniture.hideindicators) + StringCompare(ListItem(9).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/backing.png</value>
 	</variable>
 </includes>

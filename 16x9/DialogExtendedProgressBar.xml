@@ -41,13 +41,12 @@
                         <colordiffuse>Dark1</colordiffuse>
                         <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
                     </control>
-                    
                     <control type="image">
                         <centerleft>50%</centerleft>
                         <centertop>50%</centertop>
                         <width>100</width>
                         <height>100</height>
-                        <texture>$INFO[Control.GetLabel(32),dialog/progress/p,.png]</texture>
+                        <texture>$INFO[Control.GetLabel(32),progress/circle/p,.png]</texture>
                         <aspectratio align="center">keep</aspectratio>
                     </control>
                 </control>

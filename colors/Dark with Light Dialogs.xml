@@ -23,6 +23,9 @@
     <color name="FloorFade">BF181818</color>   
     
     <color name="Panel">FF333333</color>
+	<color name="EmbyLeft">ff26619c</color>
+	<color name="EmbyCenter">ff50c878</color>
+	<color name="EmbyRight">ffe62020</color>
     
     
 </colors>

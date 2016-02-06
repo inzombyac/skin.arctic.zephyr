@@ -40,9 +40,7 @@
                 </control>
                 <include>Furniture_Scrollbar</include>
             </control>
-            <include name="Fanart_Info">
-                <param name="posx" value="70" />
-            </include>
+            <include>57Info</include>
         </control>
     </include>
     <include name="View_57_ExtraInfo_LowList">
@@ -97,25 +95,98 @@
                     <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
                 </control>
             </control>
-            <include>LowList_Info</include>
+            <include>57Info</include>
         </control>
     </include>
-    <include name="LowList_Info">
+    <include name="57Info">
         <control type="group">
-            <right>70</right>
-            <width>645</width>
-            <top>206</top>
-            <height>660</height>
+            <left>70</left>
+            <width>587</width>
+            <top>150</top>
+            <height>950</height>
             <control type="group">
-                <left>12</left>
-                <right>12</right>
-                <posy>319</posy>
                 <height>330</height>
+                <visible>!Skin.HasSetting(57list.low)</visible>
+                <control type="image">
+                    <width>100%</width>
+                    <height>100%</height>
+                    <texture border="10">common/nofocus-shadow10.png</texture>
+                     <visible>!Container.Content(episodes)</visible>
+                </control>
+                <control type="image">
+                    <fadetime>200</fadetime>
+                    <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+                    <texture background="true">$VAR[LandscapeImage]</texture>
+                    <visible>!Container.Content(episodes) + !Skin.HasSetting(views.57.showfanart)</visible>
+                </control>
+                <control type="image">
+                    <fadetime>200</fadetime>
+                    <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+                    <texture background="true">$VAR[FanartImage]</texture>
+                    <visible>!Container.Content(episodes) + Skin.HasSetting(views.57.showfanart)</visible>
+                </control>
+                <control type="image">
+                    <aspectratio align="left" aligny="center" scalediffuse="false">stretch</aspectratio>
+                    <texture background="true">$VAR[LandscapeImage]</texture>
+                    <visible>Container.Content(episodes)</visible>
+                </control>
+				<control type="progress">
+					<width>586</width>
+					<height>12</height>
+					<bottom>0</bottom>
+					<info>ListItem.PercentPlayed</info>
+					<overlaytexture>-</overlaytexture>
+					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+					<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+					<visible>ListItem.IsResumable</visible>
+				</control>
+				<control type="group">
+					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<control type="image">
+						<right>20</right>
+						<centertop>40</centertop>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture>$VAR[PosterPercentWatched]</texture>
+					</control>
+					<control type="group">
+						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<control type="image">
+							<right>20</right>
+							<centertop>40</centertop>
+							<height>40</height>
+							<width>40</width>
+							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+						</control>
+						<control type="label">
+							<right>15</right>
+							<centertop>38</centertop>
+							<width>50</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+							<font>TwentySix</font>
+							<scroll>false</scroll>
+							<textcolor>White</textcolor>
+						</control>
+					</control>
+				</control>
+            </control>
+            <control type="group">
+                <left>20</left>
+                <right>20</right>
+                <posy>330</posy>
+                <height>478</height>
+                
                 <control type="label">
                     <top>10</top>
                     <aligny>center</aligny>
                     <height>64</height>
-                    <font>SmallBold</font>
+                    <font>MediumBold</font>
                     <textcolor>Dark1</textcolor>
                     <selectedcolor>Dark1</selectedcolor>
                     <label>$VAR[LabelDirector]</label>
@@ -124,83 +195,23 @@
                     <top>50</top>
                     <height>64</height>
                     <aligny>center</aligny>
-                    <font>Tiny</font>
+                    <font>TwentyEight</font>
                     <textcolor>Dark1</textcolor>
                     <selectedcolor>Dark1</selectedcolor>
                     <label>$VAR[LabelGenre]</label>
                 </control>
                 <control type="textbox">
-                    <top>125</top>
-                    <bottom>17</bottom>
+                    <top>125</top>			
                     <align>justify</align>
-                    <font>Tiny</font>
+                    <font>TwentyEight</font>
                     <textcolor>Dark1</textcolor>
                     <selectedcolor>Dark1</selectedcolor>
                     <label>$VAR[LabelPlotBox]</label>
                 </control>
             </control>
+        
         </control>
-    </include>
-
-    <include name="Fanart_Info">
-        <control type="group">
-            <left>$PARAM[posx]</left>
-            <width>645</width>
-            <top>206</top>
-            <height>660</height>
-            <control type="group">
-                <height>370</height>
-                <visible>[!Skin.HasSetting(57list.low) + Control.IsVisible(57)] | !Control.IsVisible(57)</visible>
-                <visible>[!Skin.HasSetting(56media.low) + Control.IsVisible(56)] | !Control.IsVisible(56)</visible>
-                <control type="image">
-                    <width>100%</width>
-                    <height>100%</height>
-                    <texture border="10">common/nofocus-shadow10.png</texture>
-                </control>
-                <control type="image">
-                    <left>10</left>
-                    <top>10</top>
-                    <right>10</right>
-                    <bottom>10</bottom>
-                    <fadetime>200</fadetime>
-                    <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-                    <texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[LandscapeImage]</texture>
-                </control>
-            </control>
-            <control type="group">
-                <left>20</left>
-                <right>20</right>
-                <posy>370</posy>
-                <height>290</height>
-                <control type="label">
-                    <top>8</top>
-                    <aligny>center</aligny>
-                    <height>64</height>
-                    <font>SmallBold</font>
-                    <textcolor>Dark1</textcolor>
-                    <selectedcolor>Dark1</selectedcolor>
-                    <label>$VAR[LabelDirector]</label>
-                </control>
-                <control type="label">
-                    <top>48</top>
-                    <height>64</height>
-                    <aligny>center</aligny>
-                    <font>Tiny</font>
-                    <textcolor>Dark1</textcolor>
-                    <selectedcolor>Dark1</selectedcolor>
-                    <label>$VAR[LabelGenre]</label>
-                </control>
-                <control type="textbox">
-                    <top>116</top>
-                    <bottom>17</bottom>
-                    <align>justify</align>
-                    <font>Tiny</font>
-                    <textcolor>Dark1</textcolor>
-                    <selectedcolor>Dark1</selectedcolor>
-                    <label>$VAR[LabelPlotBox]</label>
-                </control>
-            </control>
-        </control>
+        
     </include>
 
 </includes>

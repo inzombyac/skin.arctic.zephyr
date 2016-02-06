@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label2>programs</label2>
+        <label>Emby</label>
+        <icon>special://skin/extras/icons/emby2.png</icon>
+        <action>ActivateWindow(10025,"plugin://plugin.video.emby",return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>programs</label2>
+        <label>Advanced Launcher</label>
+        <icon>special://skin/extras/icons/addtile.png</icon>
+        <action>ActivateWindow(10001,"plugin://plugin.program.advanced.launcher",return)</action>
+    </shortcut>
+</shortcuts>

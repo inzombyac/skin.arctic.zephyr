@@ -33,10 +33,6 @@
                 <width>510</width>
                 <height max="839">auto</height>
                 <itemgap>0</itemgap>
-				<onleft>back</onleft>
-				<onleft condition="!Skin.HasSetting(global.kioskmode)">setfocus(9000)</onleft>
-				<onright>back</onright>
-				<onright>60</onright>
                 <control type="button" id="1000">
                     <description>Buttons</description>
                     <include>DefContextButton</include>

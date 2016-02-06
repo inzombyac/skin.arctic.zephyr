@@ -5,12 +5,14 @@
 	<color name="Red">FFFF0000</color>
 	<color name="Blue">FF0000FF</color>
 	<color name="Green">FF00FF00</color>
-	<color name="MediaBrowserGreen">FF42EE3A</color>
+	<color name="EmbyGreen">FF52B54B</color>
 	<color name="Grey">FFC0C2C2</color>
 	<color name="SelectedRed">FFE10101</color>
 	<color name="SelectedOrange">ffD6A51E</color>
-	<color name="Highlight">ffee7b0a</color>
-	<color name="Highlight2">FFF507B9</color>
+	<!-- <color name="Highlight">ffee7b0a</color>
+	<color name="Highlight2">FFF507B9</color> -->
+	<color name="Highlight">FF52B54B</color>
+	<color name="Highlight2">ff4285F4</color>
 	<color name="Selected">FF000000</color>
 	<color name="OSDBack">df000000</color>
 	<color name="OSDBackSolid">ff000000</color>
@@ -824,4 +826,7 @@
 	<color name="yellow orange">ffffae42</color>
 	<color name="zaffre">ff0014a8</color>
 	<color name="zinnwaldite brown">ff2c1608</color>
+	<color name="EmbyLeft">ff26619c</color>
+	<color name="EmbyCenter">ff50c878</color>
+	<color name="EmbyRight">ffe62020</color>
 </colors>
