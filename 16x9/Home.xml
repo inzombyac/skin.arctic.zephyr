@@ -17,7 +17,6 @@
 			<include>HomeEmbyRow</include>
 			<include>HomeEmbyWidgetInfo</include>
 			<include>HomeEmbySubMenu</include>
-			<include>HomeEmbySubMenu2</include>
 		</control>
 	</controls>
 </window>

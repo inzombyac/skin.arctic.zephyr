@@ -127,26 +127,61 @@
 		<value condition="Control.HasFocus(4012)">$INFO[Container(4012).ListItem.Property(DBID)]</value>
 		<value>-1</value>
 	</variable>
+	<variable name="EmbyWidgetFocusBoxHeight">
+		<value>221</value>
+	</variable>
+	<variable name="EmbyWidgetFocusBoxWidth">
+		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">190</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">190</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">300</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">300</value>
+		<value>300</value>
+	</variable>
+	<variable name="EmbyWidgetItemHeight">
+		<value>180</value>
+	</variable>
+	<variable name="EmbyWidgetHeight">
+		<value>253</value>
+	</variable>
+	<variable name="EmbyWidgetItemHeight">
+		<value>180</value>
+	</variable>
+	<variable name="EmbyWidgetWidth">
+		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">200</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">200</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">310</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">310</value>
+		<value>310</value>
+	</variable>
+	<variable name="EmbyWidgetItemWidth">
+		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">180</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">180</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">290</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">290</value>
+		<value>290</value>
+	</variable>
 	<variable name="EmbyHomeContent">
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">tvshows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">movies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">movies</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">embytv</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">embymovies</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">livetv</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),script.hdhomerun.view)">livetv</value>
-		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">music</value>
+		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">music</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">music</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">pictures</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">pictures</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">videos</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">videos</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">embynode</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),pictures)">pictures</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">emby</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">weather</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs)">programs</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),plugin://,Left)">programs</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">settings</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">videos</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">videos</value>
 		<value>videos</value>
+	</variable>
+	<variable name="EmbyHomeRightWidgetContent">
+		<value>EmbyWidget1Content</value>
 	</variable>
 	<!-- Main Widget Selection -->
 	<variable name="DefWidgetMainContent">
@@ -162,10 +197,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">plugin://script.extendedinfo?info=incinemas</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">plugin://script.extendedinfo?info=incinemas</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">plugin://plugin.video.emby</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
 		<value condition="[StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)]+System.HasAddon(plugin.program.advanced.launcher)">plugin://plugin.program.advanced.launcher/?default</value>
 		<value condition="[StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)]">addons://sources/executable</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">SysInfoWidgetMain</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">$INFO[Container(300).ListItem.Property(list)]</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">$INFO[Container(300).ListItem.Property(list)]</value>
 		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">plugin://script.extendedinfo?info=incinemas</value>
