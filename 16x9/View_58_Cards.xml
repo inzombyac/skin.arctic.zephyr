@@ -45,7 +45,7 @@
 							<top>10</top>
 							<width>230</width>
 							<height>360</height>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<aspectratio scalediffuse="false">scale</aspectratio>
 							<texture diffuse="diffuse/cardposter.png" background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="group">
@@ -264,7 +264,7 @@
 							<top>10</top>
 							<width>230</width>
 							<height>360</height>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<aspectratio scalediffuse="false">scale</aspectratio>
 							<texture diffuse="diffuse/cardposter.png" background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="progress">

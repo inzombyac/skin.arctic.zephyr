@@ -347,7 +347,7 @@
 	</variable>
 	<!-- Center Widget Selection -->
 	<variable name="EmbyWidget1Icon">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4016).IsUpdating">common/null.png</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(40016).IsUpdating">common/null.png</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0)">$VAR[ThumbImage]</value>
@@ -356,13 +356,13 @@
 		<value>$VAR[FanartImage]</value>
 	</variable>
 	<variable name="EmbyWidget2Icon">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4017).IsUpdating">common/null.png</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">common/null.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + !IntegerGreaterThan(Container(8999).NumItems,0) + IntegerGreaterThan(Container(9002).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0) + !IntegerGreaterThan(Container(9002).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) + !IntegerGreaterThan(Container(9007).NumItems,0)]">$VAR[ThumbImage]</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [!IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)]">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">$VAR[ThumbImage]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">$INFO[ListItem.Property(Fanart)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">$VAR[FanartImage]</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
 	</variable>
@@ -419,8 +419,8 @@
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+IntegerGreaterThan(Container(9004).NumItems,0)">clear/collections.png</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">clear/tvhub.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Window.Property(NextAired.2.Art(fanart)))">$INFO[Window.Property(NextAired.2.Art(fanart))]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Window.Property(NextAired.3.Art(fanart)))">$INFO[Window.Property(NextAired.3.Art(fanart))]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.2.Art(fanart))]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.3.Art(fanart))]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">clear/airing.png</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left) + !IsEmpty(Window(Home).Property(LatestAlbum.1.Thumb))">$INFO[Window(Home).Property(LatestAlbum.1.Thumb)]</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">clear/music.png</value>

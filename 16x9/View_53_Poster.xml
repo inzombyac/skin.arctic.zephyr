@@ -27,7 +27,7 @@
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+					<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
 					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
 					<visible>Skin.HasSetting(show.reflections)</visible>
 					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
@@ -53,7 +53,7 @@
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="bottom" scalediffuse="false">stretch</aspectratio>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">scale</aspectratio>
 					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
 					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
 				</control>
@@ -128,7 +128,7 @@
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
+					<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
 					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
 					<visible>Skin.HasSetting(show.reflections)</visible>
 					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
@@ -162,7 +162,7 @@
 					<width>PosterW</width>
 					<height>PosterH</height>
 					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="bottom" scalediffuse="false">stretch</aspectratio>
+					<aspectratio align="center" aligny="bottom" scalediffuse="false">scale</aspectratio>
 					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
 					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
 				</control>

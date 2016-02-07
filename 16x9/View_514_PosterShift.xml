@@ -16,7 +16,7 @@
 			<posy>130</posy>
 			<width>340</width>
 			<height>510</height>
-			<aspectratio scalediffuse="false" aligny="bottom">stretch</aspectratio>
+			<aspectratio scalediffuse="false" aligny="bottom">scale</aspectratio>
 			<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
 			<bordersize>20</bordersize>
 			<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>

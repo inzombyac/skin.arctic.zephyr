@@ -213,7 +213,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">videodb://recentlyaddedmovies/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">special://skin/extras/playlists/InProgressMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd)">videodb://recentlyaddedmovies/</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">pvr://recordings/</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)+IntegerGreaterThan(Pvr.BackendRecordings,0)">pvr://recordings/</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),musicvideos)">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</value>
@@ -224,6 +225,10 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">addons://sources/executable</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)"><include>SysInfoWidget</include></value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">$INFO[Container(300).ListItem.Property(list)]</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(300).ListItem.label]%22%5D%7D%2C%7B%22field%22%3A%22inprogress%22%2C%22operator%22%3A%22true%22%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0)">plugin://plugin.video.emby/?id=$INFO[Container(300).ListItem.label]&amp;mode=nextup&amp;limit=10</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[Container(300).ListItem.label]%22%5d%7d%2c%7b%22field%22%3a%22numwatched%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0)">videodb://movies/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22descending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22dateadded%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[Container(300).ListItem.label]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0)">plugin://plugin.video.emby/?id=$INFO[Container(300).ListItem.label]&amp;mode=nextup&amp;limit=10</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[Container(300).ListItem.label]%22%5d%7d%2c%7b%22field%22%3a%22numwatched%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">videodb://recentlyaddedepisodes/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22descending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22dateadded%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(300).ListItem.label]%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</value>
@@ -245,7 +250,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">special://skin/extras/playlists/RecommendedMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">videodb://recentlyaddedmovies/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd)">special://skin/extras/playlists/RecommendedMovies.xsp</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)"><include>DefNextAiredWidget</include></value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv) + IntegerGreaterThan(Container(9010).NumItems,0)">plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">plugin://script.extendedinfo?info=populartvshows</value>
@@ -253,7 +259,9 @@
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">plugin://plugin.video.emby</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">WeatherWidget</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[Container(300).ListItem.label]%22%5d%7d%2c%7b%22field%22%3a%22numwatched%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22rating%22%2C%22direction%22%3A%22descending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(300).ListItem.label]%22%5D%7D%2C%7B%22field%22%3A%22rating%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%227%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">library://video/Emby - $INFO[Container(300).ListItem.label] - tvshows/$INFO[Container(300).ListItem.label]_recentepisodes.xml</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0)">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22rating%22%2C%22direction%22%3A%22descending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(300).ListItem.label]%22%5D%7D%2C%7B%22field%22%3A%22rating%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%227%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">library://video/Emby - $INFO[Container(300).ListItem.label]/$INFO[Container(300).ListItem.label]_recentepisodes.xml</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">videodb://tvshows/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22rating%22%2C%22direction%22%3A%22descending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(300).ListItem.label]%22%5D%7D%2C%7B%22field%22%3A%22rating%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%227%22%5D%7D%5D%7D%2C%22type%22%3A%22tvshows%22%7D</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">library://video/Emby - $INFO[Container(300).ListItem.label]/$INFO[Container(300).ListItem.label]_recent.xml</value>
@@ -280,6 +288,9 @@
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)"></value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">plugin://plugin.video.emby</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"></value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">library://video/Emby - $INFO[Container(300).ListItem.label] - movies/$INFO[Container(300).ListItem.label]_random.xml</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">library://video/Emby - $INFO[Container(300).ListItem.label] - tvshows/$INFO[Container(300).ListItem.label]_random.xml</value>
+		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0)">library://video/Emby - $INFO[Container(300).ListItem.label] - movies/$INFO[Container(300).ListItem.label]_random.xml</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">library://video/Emby - $INFO[Container(300).ListItem.label]/$INFO[Container(300).ListItem.label]_recentepisodes.xml</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">videodb://tvshows/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22rating%22%2C%22direction%22%3A%22descending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(300).ListItem.label]%22%5D%7D%2C%7B%22field%22%3A%22rating%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%227%22%5D%7D%5D%7D%2C%22type%22%3A%22tvshows%22%7D</value>
 		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">plugin://script.skin.helper.service/?action=similarshows&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
@@ -355,107 +366,110 @@
 		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/box.png</texturefocus>
 	</include>
 	<include name="DefNextAiredWidget">
-		<item id="1">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.1.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.1.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.1.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.1.AirTime)]$INFO[Window.Property(NextAired.1.Network), - ,]$INFO[Window.Property(NextAired.1.Status), - ,]$INFO[Window.Property(NextAired.1.Classification),[CR],]$INFO[Window.Property(NextAired.1.Genre), - ,]$INFO[Window.Property(NextAired.1.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.1.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.1.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.1.NextNumber)]$INFO[Window.Property(NextAired.1.NextTitle), ,]$INFO[Window.Property(NextAired.1.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.1.Label))</visible>
-		</item>
-		<item id="2">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.2.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.2.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.2.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.2.AirTime),, - ]$INFO[Window.Property(NextAired.2.Network)]$INFO[Window.Property(NextAired.2.Status), - ,]$INFO[Window.Property(NextAired.2.Classification),[CR],]$INFO[Window.Property(NextAired.2.Genre), - ,]$INFO[Window.Property(NextAired.2.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.2.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.2.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.2.NextNumber)]$INFO[Window.Property(NextAired.2.NextTitle), ,]$INFO[Window.Property(NextAired.2.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.2.Label))</visible>
-		</item>
-		<item id="3">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.3.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.3.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.3.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.3.AirTime),, - ]$INFO[Window.Property(NextAired.3.Network)]$INFO[Window.Property(NextAired.3.Status), - ,]$INFO[Window.Property(NextAired.3.Classification),[CR],]$INFO[Window.Property(NextAired.3.Genre), - ,]$INFO[Window.Property(NextAired.3.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.3.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.3.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.3.NextNumber)]$INFO[Window.Property(NextAired.3.NextTitle), ,]$INFO[Window.Property(NextAired.3.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.3.Label))</visible>
-		</item>
-		<item id="4">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.4.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.4.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.4.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.4.AirTime),, - ]$INFO[Window.Property(NextAired.4.Network)]$INFO[Window.Property(NextAired.4.Status), - ,]$INFO[Window.Property(NextAired.4.Classification),[CR],]$INFO[Window.Property(NextAired.4.Genre), - ,]$INFO[Window.Property(NextAired.4.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.4.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.4.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.4.NextNumber)]$INFO[Window.Property(NextAired.4.NextTitle), ,]$INFO[Window.Property(NextAired.4.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.4.Label))</visible>
-		</item>
-		<item id="5">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.5.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.5.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.5.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.5.AirTime),, - ]$INFO[Window.Property(NextAired.5.Network)]$INFO[Window.Property(NextAired.5.Status), - ,]$INFO[Window.Property(NextAired.5.Classification),[CR],]$INFO[Window.Property(NextAired.5.Genre), - ,]$INFO[Window.Property(NextAired.5.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.5.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.5.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.5.NextNumber)]$INFO[Window.Property(NextAired.5.NextTitle), ,]$INFO[Window.Property(NextAired.5.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.5.Label))</visible>
-		</item>
-		<item id="6">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.6.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.6.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.6.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.6.AirTime),, - ]$INFO[Window.Property(NextAired.6.Network)]$INFO[Window.Property(NextAired.6.Status), - ,]$INFO[Window.Property(NextAired.6.Classification),[CR],]$INFO[Window.Property(NextAired.6.Genre), - ,]$INFO[Window.Property(NextAired.6.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.6.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.6.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.6.NextNumber)]$INFO[Window.Property(NextAired.6.NextTitle), ,]$INFO[Window.Property(NextAired.6.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.6.Label))</visible>
-		</item>
-		<item id="7">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.7.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.7.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.7.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.7.AirTime),, - ]$INFO[Window.Property(NextAired.7.Network)]$INFO[Window.Property(NextAired.7.Status), - ,]$INFO[Window.Property(NextAired.7.Classification),[CR],]$INFO[Window.Property(NextAired.7.Genre), - ,]$INFO[Window.Property(NextAired.7.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.7.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.7.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.7.NextNumber)]$INFO[Window.Property(NextAired.7.NextTitle), ,]$INFO[Window.Property(NextAired.7.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.7.Label))</visible>
-		</item>
-		<item id="8">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.8.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.8.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.8.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.8.AirTime),, - ]$INFO[Window.Property(NextAired.8.Network)]$INFO[Window.Property(NextAired.8.Status), - ,]$INFO[Window.Property(NextAired.8.Classification),[CR],]$INFO[Window.Property(NextAired.8.Genre), - ,]$INFO[Window.Property(NextAired.8.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.8.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.8.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.8.NextNumber)]$INFO[Window.Property(NextAired.8.NextTitle), ,]$INFO[Window.Property(NextAired.8.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.8.Label))</visible>
-		</item>
-		<item id="9">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.9.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.9.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.9.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.9.AirTime),, - ]$INFO[Window.Property(NextAired.9.Network)]$INFO[Window.Property(NextAired.9.Status), - ,]$INFO[Window.Property(NextAired.9.Classification),[CR],]$INFO[Window.Property(NextAired.9.Genre), - ,]$INFO[Window.Property(NextAired.9.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.9.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.9.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.9.NextNumber)]$INFO[Window.Property(NextAired.9.NextTitle), ,]$INFO[Window.Property(NextAired.9.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.9.Label))</visible>
-		</item>
-		<item id="10">
-			<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.10.Library)],return)</onclick>
-			<property name="Fanart">$INFO[Window.Property(NextAired.10.Art(fanart))]</property>
-			<icon>$INFO[Window.Property(NextAired.10.Art(poster))]</icon>
-			<property name="Plot">$INFO[Window.Property(NextAired.10.AirTime),, - ]$INFO[Window.Property(NextAired.10.Network)]$INFO[Window.Property(NextAired.10.Status), - ,]$INFO[Window.Property(NextAired.10.Classification),[CR],]$INFO[Window.Property(NextAired.10.Genre), - ,]$INFO[Window.Property(NextAired.10.Runtime),[CR], $LOCALIZE[12391]]</property>
-			<property name="Logo">$INFO[Window.Property(NextAired.10.Art(clearlogo))]</property>
-			<label>$INFO[Window.Property(NextAired.10.Label)]</label>
-			<label2>$INFO[Window.Property(NextAired.10.NextNumber)]$INFO[Window.Property(NextAired.10.NextTitle), ,]$INFO[Window.Property(NextAired.10.NextDate), • ,]</label2>
-			<visible>!IsEmpty(Window.Property(NextAired.10.Label))</visible>
-		</item>
+		<content>
+			<item id="1">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.1.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.1.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.1.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.1.AirTime)]$INFO[Window.Property(NextAired.1.Network), - ,]$INFO[Window.Property(NextAired.1.Status), - ,]$INFO[Window.Property(NextAired.1.Classification),[CR],]$INFO[Window.Property(NextAired.1.Genre), - ,]$INFO[Window.Property(NextAired.1.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.1.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.1.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.1.NextNumber)]$INFO[Window.Property(NextAired.1.NextTitle), ,]$INFO[Window.Property(NextAired.1.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.1.Label))</visible>
+			</item>
+			<item id="2">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.2.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.2.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.2.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.2.AirTime),, - ]$INFO[Window.Property(NextAired.2.Network)]$INFO[Window.Property(NextAired.2.Status), - ,]$INFO[Window.Property(NextAired.2.Classification),[CR],]$INFO[Window.Property(NextAired.2.Genre), - ,]$INFO[Window.Property(NextAired.2.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.2.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.2.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.2.NextNumber)]$INFO[Window.Property(NextAired.2.NextTitle), ,]$INFO[Window.Property(NextAired.2.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.2.Label))</visible>
+			</item>
+			<item id="3">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.3.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.3.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.3.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.3.AirTime),, - ]$INFO[Window.Property(NextAired.3.Network)]$INFO[Window.Property(NextAired.3.Status), - ,]$INFO[Window.Property(NextAired.3.Classification),[CR],]$INFO[Window.Property(NextAired.3.Genre), - ,]$INFO[Window.Property(NextAired.3.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.3.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.3.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.3.NextNumber)]$INFO[Window.Property(NextAired.3.NextTitle), ,]$INFO[Window.Property(NextAired.3.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.3.Label))</visible>
+			</item>
+			<item id="4">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.4.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.4.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.4.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.4.AirTime),, - ]$INFO[Window.Property(NextAired.4.Network)]$INFO[Window.Property(NextAired.4.Status), - ,]$INFO[Window.Property(NextAired.4.Classification),[CR],]$INFO[Window.Property(NextAired.4.Genre), - ,]$INFO[Window.Property(NextAired.4.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.4.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.4.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.4.NextNumber)]$INFO[Window.Property(NextAired.4.NextTitle), ,]$INFO[Window.Property(NextAired.4.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.4.Label))</visible>
+			</item>
+			<item id="5">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.5.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.5.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.5.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.5.AirTime),, - ]$INFO[Window.Property(NextAired.5.Network)]$INFO[Window.Property(NextAired.5.Status), - ,]$INFO[Window.Property(NextAired.5.Classification),[CR],]$INFO[Window.Property(NextAired.5.Genre), - ,]$INFO[Window.Property(NextAired.5.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.5.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.5.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.5.NextNumber)]$INFO[Window.Property(NextAired.5.NextTitle), ,]$INFO[Window.Property(NextAired.5.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.5.Label))</visible>
+			</item>
+			<item id="6">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.6.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.6.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.6.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.6.AirTime),, - ]$INFO[Window.Property(NextAired.6.Network)]$INFO[Window.Property(NextAired.6.Status), - ,]$INFO[Window.Property(NextAired.6.Classification),[CR],]$INFO[Window.Property(NextAired.6.Genre), - ,]$INFO[Window.Property(NextAired.6.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.6.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.6.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.6.NextNumber)]$INFO[Window.Property(NextAired.6.NextTitle), ,]$INFO[Window.Property(NextAired.6.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.6.Label))</visible>
+			</item>
+			<item id="7">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.7.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.7.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.7.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.7.AirTime),, - ]$INFO[Window.Property(NextAired.7.Network)]$INFO[Window.Property(NextAired.7.Status), - ,]$INFO[Window.Property(NextAired.7.Classification),[CR],]$INFO[Window.Property(NextAired.7.Genre), - ,]$INFO[Window.Property(NextAired.7.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.7.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.7.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.7.NextNumber)]$INFO[Window.Property(NextAired.7.NextTitle), ,]$INFO[Window.Property(NextAired.7.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.7.Label))</visible>
+			</item>
+			<item id="8">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.8.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.8.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.8.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.8.AirTime),, - ]$INFO[Window.Property(NextAired.8.Network)]$INFO[Window.Property(NextAired.8.Status), - ,]$INFO[Window.Property(NextAired.8.Classification),[CR],]$INFO[Window.Property(NextAired.8.Genre), - ,]$INFO[Window.Property(NextAired.8.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.8.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.8.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.8.NextNumber)]$INFO[Window.Property(NextAired.8.NextTitle), ,]$INFO[Window.Property(NextAired.8.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.8.Label))</visible>
+			</item>
+			<item id="9">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.9.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.9.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.9.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.9.AirTime),, - ]$INFO[Window.Property(NextAired.9.Network)]$INFO[Window.Property(NextAired.9.Status), - ,]$INFO[Window.Property(NextAired.9.Classification),[CR],]$INFO[Window.Property(NextAired.9.Genre), - ,]$INFO[Window.Property(NextAired.9.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.9.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.9.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.9.NextNumber)]$INFO[Window.Property(NextAired.9.NextTitle), ,]$INFO[Window.Property(NextAired.9.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.9.Label))</visible>
+			</item>
+			<item id="10">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.10.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.10.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.10.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.10.AirTime),, - ]$INFO[Window.Property(NextAired.10.Network)]$INFO[Window.Property(NextAired.10.Status), - ,]$INFO[Window.Property(NextAired.10.Classification),[CR],]$INFO[Window.Property(NextAired.10.Genre), - ,]$INFO[Window.Property(NextAired.10.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.10.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.10.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.10.NextNumber)]$INFO[Window.Property(NextAired.10.NextTitle), ,]$INFO[Window.Property(NextAired.10.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.10.Label))</visible>
+			</item>
+		</content>
 	</include>
+	
 	<include name="DefFavouritesWidget">
 		<item id="11" description="AutoFavourite">
 			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !IsEmpty(Window(Home).Property(favourite.1.path))</visible>
