@@ -3,6 +3,24 @@
 <fonts>
 	<fontset id="Default" unicode="true">
 		<font>
+			<name>font10</name>
+			<filename>segoe-media-center.ttf</filename>
+			<size>22</size>
+			<style />
+		</font>
+		<font>
+			<name>font12</name>
+			<filename>segoe-media-center.ttf</filename>
+			<size>26</size>
+			<style />
+		</font>
+		<font>
+			<name>font13</name>
+			<filename>segoe-media-center.ttf</filename>
+			<size>24</size>
+			<style />
+		</font>
+		<font>
 			<name>TwentySix</name>
 			<filename>segoe-media-center.ttf</filename>
 			<size>26</size>
