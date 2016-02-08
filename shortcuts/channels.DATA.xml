@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label2>Emby Channels</label2>
+        <label>Emby Channels</label>
+        <icon>special://skin/extras/icons/emby_diff.png</icon>
+        <action>ActivateWindow(10025,"plugin://plugin.video.emby?id=0&amp;mode=channels",return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>In Theaters</label2>
+        <label>In Theaters</label>
+        <icon>special://skin/extras/icons/film.png</icon>
+        <action>RunScript(script.extendedinfo,info=incinemas)</action>
+    </shortcut>
+	<shortcut>
+        <label2>Upcoming</label2>
+        <label>Upcoming</label>
+        <icon>special://skin/extras/icons/film.png</icon>
+        <action>RunScript(script.extendedinfo,info=upcoming)</action>
+    </shortcut>
+	<shortcut>
+        <label2>Popular</label2>
+        <label>Popular</label>
+        <icon>special://skin/extras/icons/film.png</icon>
+        <action>RunScript(script.extendedinfo,info=popularmovies)</action>
+    </shortcut>
+	<shortcut>
+        <label2>Top Rated</label2>
+        <label>Top Rated</label>
+        <icon>special://skin/extras/icons/film.png</icon>
+        <action>RunScript(script.extendedinfo,info=topratedmovies)</action>
+    </shortcut>
+</shortcuts>

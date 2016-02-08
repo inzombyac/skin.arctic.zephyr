@@ -445,7 +445,7 @@ msgid "themoviedb.org"
 msgstr ""
 
 msgctxt "#31208"
-msgid "In Cinemas"
+msgid "In Theaters"
 msgstr ""
 
 msgctxt "#31209"

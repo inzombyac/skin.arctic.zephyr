@@ -29,6 +29,13 @@
         <action>ActivateWindow(tvguide)</action>
     </shortcut>
     <shortcut>
+        <label>Channels</label>
+        <label2>Extended Info</label2>
+        <defaultID>channels</defaultID>
+        <icon>special://skin/extras/icons/addons.png</icon>
+        <action>RunScript(script.extendedinfo)</action>
+    </shortcut>
+	<shortcut>
         <label>0</label>
         <label2>Common Shortcut</label2>
         <defaultID>programs</defaultID>
