@@ -523,7 +523,8 @@
 		</item>
 	</include>
 	<include name="DefWeatherMaps">
-		<item id="1">
+		<content>
+		<item>
 			<label>$INFO[Window(weather).Property(Map.1.Heading)]</label>
 			<label2>$INFO[Window(weather).Property(Map.1.Legend)]</label2>
 			<icon>$INFO[Window(weather).Property(Map.1.Area)]</icon>
@@ -531,7 +532,7 @@
 			<onclick>ShowPicture(Window(weather).Property(Map.1.Area))</onclick>
 			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.1.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
 		</item>
-		<item id="2">
+		<item>
 			<label>$INFO[Window(weather).Property(Map.2.Heading)]</label>
 			<label2>$INFO[Window(weather).Property(Map.2.Legend)]</label2>
 			<icon>$INFO[Window(weather).Property(Map.2.Area)]</icon>
@@ -539,7 +540,7 @@
 			<onclick>ShowPicture(Window(weather).Property(Map.2.Area))</onclick>
 			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.2.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
 		</item>
-		<item id="3">
+		<item>
 			<label>$INFO[Window(weather).Property(Map.3.Heading)]</label>
 			<label2>$INFO[Window(weather).Property(Map.3.Legend)]</label2>
 			<icon>$INFO[Window(weather).Property(Map.3.Area)]</icon>
@@ -547,7 +548,7 @@
 			<onclick>ShowPicture(Window(weather).Property(Map.3.Area))</onclick>
 			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.3.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
 		</item>
-		<item id="4">
+		<item>
 			<label>$INFO[Window(weather).Property(Map.4.Heading)]</label>
 			<label2>$INFO[Window(weather).Property(Map.4.Legend)]</label2>
 			<icon>$INFO[Window(weather).Property(Map.4.Area)]</icon>
@@ -555,7 +556,7 @@
 			<onclick>ShowPicture(Window(weather).Property(Map.4.Area))</onclick>
 			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.4.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
 		</item>
-		<item id="5">
+		<item>
 			<label>$INFO[Window(weather).Property(Map.5.Heading)]</label>
 			<label2>$INFO[Window(weather).Property(Map.5.Legend)]</label2>
 			<icon>$INFO[Window(weather).Property(Map.5.Area)]</icon>
@@ -563,6 +564,7 @@
 			<onclick>ShowPicture(Window(weather).Property(Map.5.Area))</onclick>
 			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.5.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
 		</item>
+		</content>
 	</include>
 	<include name="DefWidgetSelector">
 		<align>center</align>

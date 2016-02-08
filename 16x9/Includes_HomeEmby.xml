@@ -897,7 +897,7 @@
 			<orientation>horizontal</orientation>
 			<include>Animation.DelayFadeIn</include>
 			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
+			<include>WeatherTodayMainWidget</include>
 			<!--weather widgets -->
 			<include>WeatherWidgetToday</include>
 			<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
@@ -1414,7 +1414,7 @@
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible><visible>StringCompare(Skin.String(HomeItemType),tvshows)</visible></visible>
+				<visible>StringCompare(Skin.String(HomeItemType),tvshows)</visible>
 				<top>330</top>
 				<left>1550</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1842,7 +1842,7 @@
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible><visible>StringCompare(Skin.String(HomeItemType),movies)</visible></visible>
+				<visible>StringCompare(Skin.String(HomeItemType),movies)</visible>
 				<top>330</top>
 				<left>1550</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1947,7 +1947,7 @@
 			</control>
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible><visible>StringCompare(Skin.String(HomeItemType),videos)</visible></visible>
+				<visible>StringCompare(Skin.String(HomeItemType),videos)</visible>
 				<top>330</top>
 				<left>1550</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -2222,7 +2222,6 @@
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
-			<include>WeatherTodayMainWidget</include>
 			<control type="progress">
 				<bottom>80</bottom>
 				<height>8</height>
@@ -2256,7 +2255,6 @@
 				<aspectratio>stretch</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[EmbyMainWidgetIcon]</texture>
 			</control>
-			<include>WeatherTodayMainWidget</include>
 			<control type="progress">
 				<bottom>80</bottom>
 				<height>8</height>
@@ -2782,9 +2780,7 @@
 		</control>
 	</include>
 	<include name="WeatherTodayMainWidget">
-		<control type="group">
-		<visible>StringCompare(Container(300).ListItem.Property(defaultID),weather)</visible>
-		<visible>!Window.IsVisible(DialogButtonMenu.xml)</visible>
+		<itemlayout width="856" height="496">
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">special://skin/extras/backgrounds/space.jpg</texture>
@@ -2835,7 +2831,59 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.Property(plot)]</label>
 			</control>
-		</control>
+		</itemlayout>
+		<focusedlayout width="856" height="496">
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">special://skin/extras/backgrounds/space.jpg</texture>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<posy>0</posy>
+				<width>856</width>
+				<height>496</height>
+				<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+			</control>
+			<control type="image">
+				<top>100</top>
+				<right>10</right>
+				<height>400</height>
+				<width>500</width>
+				<aspectratio>keep</aspectratio>
+				<texture background="true">$VAR[LandscapeImage]</texture>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<height>100</height>
+				<aligny>center</aligny>
+				<font>SmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<right>4</right>
+				<width>460</width>
+				<aligny>center</aligny>
+				<height>100</height>
+				<align>right</align>
+				<font>Mini</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.Label2]</label>
+			</control>
+			<control type="textbox">
+				<left>12</left>
+				<top>200</top>
+				<right>12</right>
+				<bottom>10</bottom>
+				<align>left</align>
+				<font>TwentySix</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.Property(plot)]</label>
+			</control>
+		</focusedlayout>
 	</include>
 	<include name="PVRChannelWidget">
 		<itemlayout width="856" height="496">
