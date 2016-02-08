@@ -401,6 +401,7 @@
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
+			<animation effect="fade" start="0" end="100" time="1000" tween="cubic" easing="inout">WindowOpen</animation>
 			<!-- Main menu item -->
 			<control type="label">
 				<left>SidePad</left>
@@ -2321,25 +2322,7 @@
 			<font>Small</font>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
-			<label>$INFO[Container(4012).ListItem.Year]</label>
-			<visible>Substring(Container(300).ListItem.Property(defaultID),music,Left)</visible>
-			<visible>!Container(4016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-			<include>Animation.DelayFadeIn</include>
-			<include>Animation.FadeOut</include>
-		</control>
-		<control type="label">
-			<left>736</left>
-			<posy>748</posy>
-			<width>190</width>
-			<right>45</right>
-			<aligny>center</aligny>
-			<height>64</height>
-			<align>right</align>
-			<font>Small</font>
-			<textcolor>Dark1</textcolor>
-			<selectedcolor>Dark1</selectedcolor>
-			<label>$VAR[LabelDuration]</label>
-			<visible>!StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+			<label>$VAR[EmbyWidgetContentLabel2]</label>
 			<visible>!Container(4016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 			<include>Animation.DelayFadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -2652,6 +2635,7 @@
 		<!-- Actions --> 
 		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Skin.String(HomeItemDBID)],name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
 		<oninfo condition="SubString(Skin.String(HomeItemDBType),episode) + !IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
+		<oninfo condition="IsEmpty(Skin.String(HomeItemDBType)) + !IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
 		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
 	</include>
 	<include name="EmbyFooter">

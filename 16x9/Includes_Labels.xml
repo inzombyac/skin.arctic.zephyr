@@ -216,11 +216,18 @@
 		<value>$LOCALIZE[31208]</value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4012).IsUpdating">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$INFO[Container(4012).ListItem.TVShowTitle,,]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
+		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
 		<value>$INFO[Container(4012).ListItem.Label]</value>
+	</variable>
+	<variable name="EmbyWidgetContentLabel2">
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4012).IsUpdating">[CR]</value>
+		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">$INFO[Container(4012).ListItem.Year]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">$INFO[Container(4012).ListItem.Year]</value>
+		<value condition="!StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$VAR[LabelDuration]</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4016).IsUpdating">[CR]</value>
