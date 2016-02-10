@@ -1001,4 +1001,9 @@
 		<value condition="Substring(Listitem.Label, 1)">Trailer 1</value>
 		<value>Trailer</value>
 	</variable>
+	<variable name="ListItemLabel">
+		<value condition="Container.Content(episodes)">$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(tvshows)">$INFO[ListItem.TVShowTitle]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
 </includes>

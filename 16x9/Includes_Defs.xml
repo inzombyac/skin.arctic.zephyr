@@ -1125,7 +1125,7 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(52)</visible>
 		</control>
-		<control type="radiobutton" id="9015" description="Big List Circles (52)">
+		<!--<control type="radiobutton" id="9015" description="Big List Circles (52)">
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>Circle Icons</label>
@@ -1133,7 +1133,7 @@
 			<onclick>Skin.ToggleSetting(global.hidecirles)</onclick>
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(52)</visible>
-		</control>
+		</control>-->
 		<control type="radiobutton" id="9016" description="Discart (513,514)">
 			<include>DefContextButton2</include>
 			<align>left</align>
