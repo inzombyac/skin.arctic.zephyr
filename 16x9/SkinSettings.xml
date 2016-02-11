@@ -70,12 +70,12 @@
 						<include>DefSettingsButton2</include>
 						<label>31745</label>
 					</control>
-					<!--<control type="togglebutton" id="9109" description="Views">
+					<control type="togglebutton" id="9109" description="Views">
 						<usealttexture>ControlGroup(9100).HasFocus(9109)</usealttexture>
 						<alttexturenofocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturenofocus>
 						<include>DefSettingsButton</include>
 						<label>Views</label>
-					</control> -->
+					</control>
 				</control>
 				<control type="image"> <!--focused background left edge -->
 					<top>140</top>
@@ -209,25 +209,6 @@
 						<include>DefSettingsButton2</include>
 						<label>31132</label>
 						<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
-					</control>
-					<control type="radiobutton" id="9216" description="Always Show Weather Widget">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9101)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31145</label>
-						<enable>!Skin.HasSetting(furniture.weather)</enable>
-						<selected>Skin.HasSetting(home.showweatherfanart)</selected>
-						<onclick>Skin.ToggleSetting(home.showweatherfanart)</onclick>
-					</control>
-					<control type="button" id="9219" description="Set Slideshow Path">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9101)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31131</label>
-						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(home.slideshowpath)][/COLOR]</label2>
-						<onclick condition="IsEmpty(Skin.String(home.slideshowpath))">Skin.SetPath(home.slideshowpath)</onclick>
-						<onclick condition="!IsEmpty(Skin.String(home.slideshowpath))">Skin.Reset(home.dontshowfanart)</onclick>
-						<onclick condition="!IsEmpty(Skin.String(home.slideshowpath))">Skin.Reset(home.slideshowpath)</onclick>
 					</control>
 					<control type="button" id="92181" description="Select Movies Hub Widget">
 						<width>1310</width>
@@ -678,14 +659,6 @@
 						<visible>ControlGroup(9100).HasFocus(9106)</visible>
 					</control>
 					<!-- Extras -->
-					<control type="radiobutton" id="92722" description="Next Up Poster">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9107)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Show episode poster for next up</label>
-						<selected>Skin.HasSetting(nextup.poster)</selected>
-						<onclick>Skin.ToggleSetting(nextup.poster)</onclick>
-					</control>
 					<control type="button" id="9271" description="Startup Video">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9107)</visible>
