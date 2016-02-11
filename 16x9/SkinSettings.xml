@@ -70,12 +70,12 @@
 						<include>DefSettingsButton2</include>
 						<label>31745</label>
 					</control>
-					<control type="togglebutton" id="9109" description="Views">
+					<!--<control type="togglebutton" id="9109" description="Views">
 						<usealttexture>ControlGroup(9100).HasFocus(9109)</usealttexture>
 						<alttexturenofocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturenofocus>
-						<include>DefSettingsButton</include>
+						<include>DefSettingsButton2</include>
 						<label>Views</label>
-					</control>
+					</control>-->
 				</control>
 				<control type="image"> <!--focused background left edge -->
 					<top>140</top>
@@ -863,13 +863,13 @@
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
 					<!-- Views -->
-					<control type="button" id="9291" description="Enable or Disable views">
+					<!--<control type="button" id="9291" description="Enable or Disable views">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
 						<onclick>RunScript(script.skin.helper.service,action=enableviews)</onclick>
 						<label>31769</label>
 						<visible>ControlGroup(9100).HasFocus(9109)</visible>
-					</control>
+					</control>-->
 				</control>
 				<!-- Lines -->
 				<control type="image">
