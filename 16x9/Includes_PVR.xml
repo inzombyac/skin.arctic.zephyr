@@ -171,6 +171,14 @@
 					<align>left</align>
 					<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
 				</control>
+				<control type="button" id="9092">
+					<description>Set Custom Widget</description>
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<label>31222</label>
+					<onclick>Back</onclick>
+					<onclick>ActivateWindow(1106)</onclick>
+				</control>
 			</control>
 		</control>
 	</include>

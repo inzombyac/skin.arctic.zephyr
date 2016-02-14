@@ -357,8 +357,8 @@
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(40016).IsUpdating">common/null.png</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">$VAR[ThumbImage]</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">$VAR[ThumbImage]</value>
-		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0)">$VAR[ThumbImage]</value>
-		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + !IntegerGreaterThan(Container(9005).NumItems,0) + !IntegerGreaterThan(Container(9007).NumItems,0)">$VAR[ThumbImage]</value>
+		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0)">$VAR[ThumbImage]</value>
+		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + !IntegerGreaterThan(Container(9005).NumItems,0) + !IntegerGreaterThan(Container(9007).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
 	</variable>
@@ -366,8 +366,8 @@
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">common/null.png</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + !IntegerGreaterThan(Container(8999).NumItems,0) + IntegerGreaterThan(Container(9002).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0) + !IntegerGreaterThan(Container(9002).NumItems,0)">$VAR[ThumbImage]</value>
-		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) + !IntegerGreaterThan(Container(9007).NumItems,0)]">$VAR[ThumbImage]</value>
-		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [!IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)]">$VAR[ThumbImage]</value>
+		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) + !IntegerGreaterThan(Container(9007).NumItems,0)]">$VAR[ThumbImage]</value>
+		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [!IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)]">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">$VAR[FanartImage]</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">$VAR[ThumbImage]</value>
@@ -375,8 +375,8 @@
 	</variable>
 	<variable name="EmbyWidget3Icon">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4018).IsUpdating">common/null.png</value>
-		<value condition="!Skin.HasSetting(osd.hidespoilers)+ Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">$VAR[ThumbImage]</value>
-		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">$VAR[ThumbImage]</value>
+		<value condition="!Skin.HasSetting(osd.hidespoilers)+ Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">$VAR[ThumbImage]</value>
+		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0) + IntegerGreaterThan(Container(9002).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
@@ -384,7 +384,7 @@
 	<variable name="EmbyWidget1Aspect">
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">scale</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">scale</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">scale</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">scale</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">scale</value>
 		<value>stretch</value>
 	</variable>
@@ -393,7 +393,7 @@
 		<value>scale</value>
 	</variable>
 	<variable name="EmbyBottomTileImage1">
-		<value condition="[Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !IsEmpty(Window(Home).Property(SkinHelper.PicturesBackground))">$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</value>
+		<value condition="StringCompare(Skin.String(HomeItemType),pictures) + !IsEmpty(Window(Home).Property(SkinHelper.PicturesBackground))">$INFO[Window(Home).Property(SkinHelper.PicturesBackground)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">special://skin/extras/backgrounds/space.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + System.HasAddon(script.skin.helper.service) + IntegerGreaterThan(Window(Home).Property(TVShows.Count),0)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + System.HasAddon(script.skin.helper.service) + IntegerGreaterThan(Window(Home).Property(Movies.Count),0)">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
@@ -402,9 +402,9 @@
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)+ System.HasAddon(script.skin.helper.service) + IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio) + System.HasAddon(script.skin.helper.service) + IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">special://skin/extras/backgrounds/Motherboard.jpg</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+!IsEmpty(Container(4017).ListItem(0).Art(fanart))">$INFO[Container(4017).ListItem.Art(fanart)]</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+!IsEmpty(Container(4016).ListItem(0).Art(fanart))">$INFO[Container(4016).ListItem(0).Art(fanart)]</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">clear/movie.png</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+!IsEmpty(Container(4017).ListItem(0).Art(fanart))">$INFO[Container(4017).ListItem.Art(fanart)]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+!IsEmpty(Container(4016).ListItem(0).Art(fanart))">$INFO[Container(4016).ListItem(0).Art(fanart)]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">clear/movie.png</value>
 		<value condition="!IsEmpty(Container(300).ListItem.Property(background))">$INFO[Container(300).ListItem.Property(background)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">clear/TV.png</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultid),music,Left)">clear/musicartists.png</value>
@@ -414,18 +414,18 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">clear/movie.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">clear/movie.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">special://skin/extras/backgrounds/Channels2.jpg</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">special://skin/extras/backgrounds/Photos.jpg</value>
+		<value condition="StringCompare(Skin.String(HomeItemType),pictures)">special://skin/extras/backgrounds/Photos.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">clear/programs.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">clear/programs.png</value>
 		<value>special://skin/extras/backgrounds/Channels2.jpg</value>
 	</variable>
 	<variable name="EmbyBottomTileImage2">
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)+ !IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)+ !IsEmpty(Window.Property(NextAired.2.Art(fanart)))">$INFO[Window.Property(NextAired.2.Art(fanart))]</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">clear/airing.png</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) + IntegerGreaterThan(Container(9003).NumItems,0)">$INFO[Container(9003).ListItem(0).Art(fanart)]</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+IntegerGreaterThan(Container(9004).NumItems,0)">clear/collections.png</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">clear/tvhub.png</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)+ !IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)+ !IsEmpty(Window.Property(NextAired.2.Art(fanart)))">$INFO[Window.Property(NextAired.2.Art(fanart))]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">clear/airing.png</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) + IntegerGreaterThan(Container(9003).NumItems,0)">$INFO[Container(9003).ListItem(0).Art(fanart)]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+IntegerGreaterThan(Container(9004).NumItems,0)">clear/collections.png</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">clear/tvhub.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.2.Art(fanart))]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + !IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.3.Art(fanart))]</value>
@@ -444,7 +444,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">clear/collections.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">special://skin/extras/backgrounds/Theater.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">special://skin/extras/backgrounds/Theater.jpg</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">clear/addons.png</value>
+		<value condition="StringCompare(Skin.String(HomeItemType),pictures)">clear/addons.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">clear/emby2.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),plugin.video.emby)">clear/addons.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">clear/addons.png</value>
@@ -463,10 +463,10 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">clear/moviehub.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),videos)">special://skin/extras/backgrounds/Trailers.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),files)">special://skin/extras/backgrounds/Trailers.jpg</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)">clear/addons.png</value>
+		<value condition="StringCompare(Skin.String(HomeItemType),pictures)">clear/addons.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">clear/addons.png</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">clear/tvhub.png</value>
-		<value condition="Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)">clear/moviehub.png</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">clear/tvhub.png</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">clear/moviehub.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">clear/addons.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">clear/power.png</value>
 		<value>special://skin/extras/backgrounds/Trailers.jpg</value>

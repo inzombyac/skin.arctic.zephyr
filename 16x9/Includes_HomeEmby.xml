@@ -324,7 +324,7 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<include>skinshortcuts-submenu</include>
+					<include>EmbyHomeSubMenu</include>
 				</content>
 			</control>
 	</include>
@@ -488,7 +488,7 @@
 				<width>280</width>
 				<height>220</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Skin.String(HomeItemType),pictures)</visible>
 			</control>
 			<control type="image">
 				<left>954</left>
@@ -606,8 +606,8 @@
 				<posy>836</posy>
 				<width>280</width>
 				<height>180</height>
-				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),weather) + ![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]">4014</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),weather) | [Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]">4016</onright>
+				<onright condition="!StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Skin.String(HomeItemType),pictures)">4014</onright>
+				<onright condition="StringCompare(Container(300).ListItem.Property(defaultID),weather) | StringCompare(Skin.String(HomeItemType),pictures)">4016</onright>
 				<onclick>$VAR[EmbyBottomTileAction2]</onclick>
 			</control>
 			<control type="image">
@@ -682,7 +682,7 @@
 				<onright condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onright>
 				<onright condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4017</onright>
 				<onclick>$VAR[EmbyBottomTileAction3]</onclick>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Skin.String(HomeItemType),pictures)</visible>
 			</control>
 			<control type="image">
 				<left>656</left>
@@ -690,7 +690,7 @@
 				<width>280</width>
 				<height>180</height>
 				<texture border="15" colordiffuse="$VAR[EmbyRightColourHighlight]">common/white.png</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Skin.String(HomeItemType),pictures)</visible>
 			</control>
 			<control type="image">
 				<left>656</left>
@@ -699,7 +699,7 @@
 				<height>180</height>
 				<texture>$VAR[EmbyBottomTileImage3]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>				
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Skin.String(HomeItemType),pictures)</visible>				
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
@@ -708,7 +708,7 @@
 				<width>280</width>
 				<height>40</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Skin.String(HomeItemType),pictures)</visible>
 			</control>
 			<control type="label">
 				<left>656</left>
@@ -721,7 +721,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyButton3Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Skin.String(HomeItemType),pictures)</visible>
 			</control>
 			<control type="image">
 				<left>652</left>
@@ -730,13 +730,13 @@
 				<height>224</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4014)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)]</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather)+!StringCompare(Skin.String(HomeItemType),pictures)</visible>
 			</control>
 		</control>
 	</include>
 	<include name="EmbyMainWidgetContent">
 		<control type="list" id="4012">
-			<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !StringCompare(Container(300).ListItem.Property(defaultID),settings) +  !StringCompare(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),plugin,Left) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
+			<visible>!StringCompare(Skin.String(HomeItemType),pictures) + !StringCompare(Container(300).ListItem.Property(defaultID),settings) +  !StringCompare(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),plugin,Left) + !StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
 			<top>330</top>
 			<left>SidePad</left>
 			<width>856</width>
@@ -803,6 +803,51 @@
 		<control type="list" id="9012">
 			<content target="video" limit="1">plugin://plugin.video.emby?id=0&amp;mode=channels</content>
 		</control>
+		<!-- Emby Nodes -->
+		<control type="list" id="9015">
+			<itemlayout>
+			</itemlayout>
+			<focusedlayout>
+			</focusedlayout>
+			<content>
+				<include>skinshortcuts-submenu</include>
+			</content>
+		</control>
+		<control type="list" id="9020">
+			<content>$INFO[Container(9015).ListItem(0).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9021">
+			<content>$INFO[Container(9015).ListItem(1).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9022">
+			<content>$INFO[Container(9015).ListItem(2).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9023">
+			<content>$INFO[Container(9015).ListItem(3).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9024">
+			<content>$INFO[Container(9015).ListItem(4).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9025">
+			<content>$INFO[Container(9015).ListItem(5).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9026">
+			<content>$INFO[Container(9015).ListItem(6).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9027">
+			<content>$INFO[Container(9015).ListItem(7).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9028">
+			<content>$INFO[Container(9015).ListItem(8).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9029">
+			<content>$INFO[Container(9015).ListItem(9).Property(widgetPath)]</content>
+		</control>
+		<control type="list" id="9030">
+			<content>$INFO[Container(9015).ListItem(10).Property(widgetPath)]</content>
+		</control>
+		
+		
 		<!-- Live TV -->
 		<control type="list" id="4012">
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -870,7 +915,7 @@
 			<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 		</control>
 		<control type="list" id="4012">
-			<visible>Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)</visible>
+			<visible>StringCompare(Skin.String(HomeItemType),pictures)</visible>
 			<top>330</top>
 			<left>SidePad</left>
 			<width>856</width>
@@ -1303,7 +1348,7 @@
 				<include name="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
-				<content>$INFO[Container(300).ListItem.Property(list)]</content>
+				<content>$VAR[DefWidgetRightContentPictures]</content>
 				<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
 			</control>
 			<!-- Weather -->
@@ -1369,7 +1414,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
+				<visible>!StringCompare(Skin.String(HomeItemType),pictures) + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
 				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
@@ -1385,7 +1430,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
+				<visible>!StringCompare(Skin.String(HomeItemType),pictures) + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3)</visible>
 				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
@@ -2074,7 +2119,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultID),music,Left) + ! StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<visible>!StringCompare(Skin.String(HomeItemType),pictures) + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultID),music,Left) + ! StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,3)+IntegerGreaterThan(Container(40017).NumItems,3)</visible>
 				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
@@ -2090,7 +2135,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultID),music,Left) + ! StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<visible>!StringCompare(Skin.String(HomeItemType),pictures) + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultID),music,Left) + ! StringCompare(Container(300).ListItem.Property(defaultID),radio)</visible>
 				<visible>[IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,3)] | [!IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,3)]</visible>
 				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
@@ -2106,7 +2151,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
+				<visible>!StringCompare(Skin.String(HomeItemType),pictures) + ! Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),settings)</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,0)+!IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,3)</visible>
 				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
@@ -2114,7 +2159,7 @@
 			</control>
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<visible>!StringCompare(Skin.String(HomeItemType),pictures) + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
 				<top>330</top>
 				<left>2155</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -2139,7 +2184,7 @@
 			</control>
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<visible>!StringCompare(Skin.String(HomeItemType),pictures) + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
 				<top>330</top>
 				<left>1855</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -2164,7 +2209,7 @@
 			</control>
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>![Substring(Container(300).ListItem.Property(translatedPath),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(translatedPath),type=photos)] + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
+				<visible>!StringCompare(Skin.String(HomeItemType),pictures) + !Substring(Container(300).ListItem.Property(defaultID),weather) + !Substring(Container(300).ListItem.Property(defaultID),settings) + !Substring(Container(300).ListItem.Property(defaultid),music,Left) + !Substring(Container(300).ListItem.Property(defaultID),radio) + !Substring(Container(300).ListItem.Property(defaultID),programs) + !Substring(Container(300).ListItem.Property(defaultID),radio)</visible>
 				<top>330</top>
 				<left>1555</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -2696,7 +2741,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar1].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2704,7 +2749,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar2].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left)| StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left)| StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2712,7 +2757,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar3].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2720,7 +2765,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar4].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2728,7 +2773,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar5].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(translatedPath),library://video/Emby)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | Substring(Container(300).ListItem.Property(defaultID),music,Left) | StringCompare(Container(300).ListItem.Property(defaultID),videos) | IsEmpty(Container(300).ListItem.Property(defaultid)) | StringCompare(Container(300).ListItem.Property(defaultID),files) | Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
 			</control>
 			<control type="group">
 				<centertop>50%</centertop>

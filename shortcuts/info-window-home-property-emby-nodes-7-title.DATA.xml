@@ -1,0 +1,55 @@
+<shortcuts>
+		<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-7-nextepisodes-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.7.nextepisodes.title)]</label>
+		<label2>Emby Node</label2>
+		<icon>special://home/addons/plugin.video.emby/icon.png</icon>
+		<thumb>$INFO[Window(Home).Property(emby.nodes.7.nextepisodes.image)]</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.7.nextepisodes.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.7.nextepisodes.path))</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-7-recentepisodes-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.7.recentepisodes.title)]</label>
+		<label2>Emby Node</label2>
+		<icon>special://home/addons/plugin.video.emby/icon.png</icon>
+		<thumb>$INFO[Window(Home).Property(emby.nodes.7.recentepisodes.image)]</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.7.recentepisodes.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.7.recentepisodes.path))</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-7-recommended-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.7.recommended.title)]</label>
+		<label2>Emby Node</label2>
+		<icon>special://home/addons/plugin.video.emby/icon.png</icon>
+		<thumb>$INFO[Window(Home).Property(emby.nodes.7.recommended.image)]</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.7.recommended.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.7.recommended.path))</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-7-recent-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.7.recent.title)]</label>
+		<label2>Emby Node</label2>
+		<icon>special://home/addons/plugin.video.emby/icon.png</icon>
+		<thumb>$INFO[Window(Home).Property(emby.nodes.7.recent.image)]</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.7.recent.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.7.recent.path))</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-7-unwatched-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.7.unwatched.title)]</label>
+		<label2>Emby Node</label2>
+		<icon>special://home/addons/plugin.video.emby/icon.png</icon>
+		<thumb>$INFO[Window(Home).Property(emby.nodes.7.unwatched.image)]</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.7.unwatched.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.7.unwatched.path))</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-7-random-title</defaultID>
+		<label>Random</label>
+		<label2>Emby Node</label2>
+		<icon>special://home/addons/plugin.video.emby/icon.png</icon>
+		<thumb>$INFO[Window(Home).Property(emby.nodes.7.recommended.image)]</thumb>
+		<action>$VAR[DefEmbyNodeRandomAction]</action>
+	</shortcut>
+</shortcuts>
