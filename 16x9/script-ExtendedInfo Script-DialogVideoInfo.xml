@@ -2548,7 +2548,7 @@
                             <control type="group">
                                 <posx>0</posx>
                                 <width>155</width>
-                                <visible>!Stringcompare(Window.Property(duration),0) + !IsEmpty(Window.Property(duration))</visible>
+                                <visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItemDuration))</visible>
                                 <control type="image">
                                     <posx>0</posx>
                                     <height>79</height>
@@ -2561,7 +2561,7 @@
                                     <width>155</width>
                                     <height>38</height>
                                     <align>center</align>
-                                    <label>[B]$INFO[Window.Property(duration)][/B]</label>
+                                    <label>[B]$INFO[Window(Home).Property(SkinHelper.ListItemDuration)][/B]</label>
                                     <font>font13</font>
                                 </control>
                                 <control type="label">
@@ -2571,7 +2571,7 @@
                                     <height>38</height>
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                    <label>$LOCALIZE[12391]</label>
+                                    <label>Length</label>
                                     <font>font10</font>
                                 </control>
                             </control>

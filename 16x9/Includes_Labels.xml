@@ -244,7 +244,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">Airing Today</value>
 		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Recent Albums</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">Recent Albums</value>
-		<value condition="StringCompare(Skin.String(HomeItemType),pictures)">Random</value>
+		<value condition="StringCompare(Skin.String(HomeItemType),pictures)">Recent Photos</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)">Extended Forecast</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Add-Ons</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">System Information</value>
@@ -258,7 +258,6 @@
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">Resume</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">$LOCALIZE[31124]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Emby</value>
-		<value condition="IntegerGreaterThan(Container(9012).NumItems,0)">Emby Channels</value>
 		<value>Trending Movies</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Source">
@@ -289,7 +288,6 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"> </value>
 		<value condition="StringCompare(Skin.String(HomeItemType),pictures)"> </value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Channels</value>
-		<value condition="IntegerGreaterThan(Container(9012).NumItems,0)">Trending Movies</value>
 		<value>Popular TV</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Label">
@@ -310,7 +308,6 @@
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">Random</value>
 		<value condition="StringCompare(Skin.String(HomeItemType),pictures)"> </value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Recommended</value>
-		<value condition="IntegerGreaterThan(Container(9012).NumItems,0)">Popular TV</value>
 		<value>Top Rated TV</value>
 	</variable>
 	<variable name="EmbyWidget1ContentLabel">
@@ -375,8 +372,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">Upcoming</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">$LOCALIZE[31193]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$LOCALIZE[31192]</value>
-		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Upcoming</value>
-		<value>Upcoming</value>
+		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Emby Channels</value>
+		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
@@ -938,11 +935,13 @@
 		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
 	<variable name="DurationLong">
-        <value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(videolibrary).Property(Duration), ,min]</value>
+        <value condition="!Skin.HasSetting(furniture.alternate.duration) + !StringCompare(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours),,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
+		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes),,min]</value>
 		<value>$INFO[ListItem.Duration,,min]</value>
 	</variable>
 	<variable name="DurationLongVideoInfo">
-		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(movieinformation).Property(Duration), ,min]</value>
+		<value condition="!Skin.HasSetting(furniture.alternate.duration) + !StringCompare(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours), ,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
+		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes),,min]</value>
 		<value>$INFO[ListItem.Duration,,min]</value>
 	</variable>
 	<variable name="DurationHomeLong">

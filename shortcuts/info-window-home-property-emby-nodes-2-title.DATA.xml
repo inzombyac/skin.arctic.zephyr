@@ -1,5 +1,5 @@
 <shortcuts>
-		<shortcut>
+	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-2-nextepisodes-title</defaultID>
 		<label>$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.title)]</label>
 		<label2>Emby Node</label2>
@@ -28,15 +28,6 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.2.recentepisodes.path))</visible>
 	</shortcut>
 	<shortcut>
-		<defaultID>info-window-home-property-emby-nodes-2-recommended-title</defaultID>
-		<label>$INFO[Window(Home).Property(emby.nodes.2.recommended.title)]</label>
-		<label2>Emby Node</label2>
-		<icon>special://home/addons/plugin.video.emby/icon.png</icon>
-		<thumb>$INFO[Window(Home).Property(emby.nodes.2.recommended.image)]</thumb>
-		<action>$INFO[Window(Home).Property(emby.nodes.2.recommended.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.2.recommended.path))</visible>
-	</shortcut>
-	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-2-recent-title</defaultID>
 		<label>$INFO[Window(Home).Property(emby.nodes.2.recent.title)]</label>
 		<label2>Emby Node</label2>
@@ -44,6 +35,15 @@
 		<thumb>$INFO[Window(Home).Property(emby.nodes.2.recent.image)]</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.2.recent.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.2.recent.path))</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-2-recommended-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.2.recommended.title)]</label>
+		<label2>Emby Node</label2>
+		<icon>special://home/addons/plugin.video.emby/icon.png</icon>
+		<thumb>$INFO[Window(Home).Property(emby.nodes.2.recommended.image)]</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.2.recommended.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.2.recommended.path))</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-2-unwatched-title</defaultID>

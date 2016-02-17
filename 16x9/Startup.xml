@@ -18,7 +18,7 @@
             <onfocus condition="!Player.HasVideo + !IsEmpty(Skin.String(StartupPlaylist))">ReplaceWindow(Home)</onfocus>
             <onfocus condition="IsEmpty(Skin.String(StartupPlaylist))">AlarmClock(GoHome,ReplaceWindow(home),00:01,silent,false)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetString(SkinHelper.RandomFanartDelay,10)</onfocus>
-			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.ToggleSetting(SkinHelper.EnablePVRThumbs)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnablePVRThumbs)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service) + System.HasAddon(plugin.video.emby)">Skin.SetBool(SmartShortcuts.emby)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service) + System.HasAddon(plugin.video.emby)">Skin.SetBool(SmartShortcuts.favorites)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service) + System.HasAddon(plugin.video.emby)">Skin.SetBool(SmartShortcuts.playlists)</onfocus>
