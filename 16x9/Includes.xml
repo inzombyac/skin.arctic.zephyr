@@ -218,6 +218,12 @@
 			<animation effect="slide" start="-10,-10" end="20,20" time="14000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
 			<animation effect="rotate" center="360,640" start="-2" end="3" time="27000" tween="back" easing="inout" pulse="true"  condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
 		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio align="center">scale</aspectratio>
+			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(Home.ImageFilter)]</texture>
+			<visible>Window.IsVisible(home)</visible>
+		</control>
             <control id="8328" type="image">
                 <include>Dimensions_Fullscreen</include>
                 <colordiffuse>DialogFanartFade</colordiffuse>

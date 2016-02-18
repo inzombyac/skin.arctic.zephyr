@@ -59,7 +59,7 @@
 		<value>$LOCALIZE[19055]</value>
 	</variable>
 	<variable name="LabelDuration">
-		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">$INFO[Container(4012).ListItem.Year]</value>
+		
 		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[20368])">$INFO[ListItem.Date]</value>
 		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[552])">$INFO[ListItem.Date]</value>
 		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[20074])">$INFO[ListItem.MPAA]</value>
@@ -69,8 +69,8 @@
 		<value condition="!IsEmpty(Container(4012).ListItem.Duration)">$INFO[Container(4012).ListItem.Duration,, $LOCALIZE[31102]]</value>
 		<value condition="!IsEmpty(Container(4012).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4012).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
 		<value condition="[Container.Content(tvshows) + !Control.IsVisible(54)] | Container.Content(episodes)">$VAR[LabelYear]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)+!Stringcompare(Skin.String(widget4),LiveTV)+!Stringcompare(Skin.String(widget4),Recordings)">$INFO[Container(4012).ListItem.Property(Rating)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)+[Stringcompare(Skin.String(widget4),LiveTV) | Stringcompare(Skin.String(widget4),Recordings)]"></value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(4012).ListItem.Property(Rating)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),videos)">$INFO[Container(4012).ListItem.Year]</value>
 		<value></value>
 	</variable>
 	<variable name="LabelPlotBox">
@@ -212,101 +212,82 @@
 		<value condition="StringCompare(Skin.String(HomeItemType),videos)">$LOCALIZE[31208]</value>
 		<value condition="StringCompare(Skin.String(HomeItemType),pictures)">$INFO[Container(300).ListItem.label]</value>
 		<value condition="StringCompare(Skin.String(HomeItemType),weather)">Weather</value>
-		<value condition="StringCompare(Skin.String(HomeItemType),programs) + System.HasAddon(plugin.program.advanced.launcher)">Advanced Launcher</value>
+		<value condition="StringCompare(Skin.String(HomeItemType),programs) + System.HasAddon(plugin.program.advanced.launcher) + StringCompare(Window(Home).Property(HasAdvancedLauncherConfig),exists)">Advanced Launcher</value>
 		<value condition="StringCompare(Skin.String(HomeItemType),programs)">Add-Ons</value>
 		<value condition="StringCompare(Skin.String(HomeItemType),settings)">Kodi Information</value>
-		<value condition="StringCompare(Skin.String(HomeItemType),embynode)">$INFO[Container(300).ListItem.label]</value>
+		<value condition="StringCompare(Skin.String(HomeItemType),embytv)">$INFO[Container(300).ListItem.label]</value>
+		<value condition="StringCompare(Skin.String(HomeItemType),embymovies)">$INFO[Container(300).ListItem.label]</value>
+		<value condition="StringCompare(Skin.String(HomeItemType),emby)">$INFO[Container(300).ListItem.label]</value>
 		<value>$LOCALIZE[31208]</value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4012).IsUpdating">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$INFO[Container(4012).ListItem.TVShowTitle,,]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
-		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(4012).ListItem.TVShowTitle,,]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
 		<value>$INFO[Container(4012).ListItem.Label]</value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel2">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4012).IsUpdating">[CR]</value>
-		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">$INFO[Container(4012).ListItem.Year]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">$INFO[Container(4012).ListItem.Year]</value>
-		<value condition="!StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$VAR[LabelDuration]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4012).ListItem.Year]</value>
+		<value condition="!StringCompare(Container(300).ListItem.Property(type),livetv)">$VAR[LabelDuration]</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4016).IsUpdating">[CR]</value>
+		<value condition="!IntegerGreaterThan(Container(4016).NumItems,0)">[CR]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9005).NumItems,0)">Next Up</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9007).NumItems,0)">Unwatched Shows</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31125]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9008).NumItems,0)">Resume</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">$LOCALIZE[31124]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Emby</value>
 		<value condition="StringCompare(Skin.String(HomeItemType),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
 		<value condition="StringCompare(Skin.String(HomeItemType),tvshows)">Unwatched Shows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">Resume</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$LOCALIZE[31124]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">Resume</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">$LOCALIZE[31124]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + IntegerGreaterThan(Pvr.BackendRecordings,0)">Recorded TV</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">Airing Today</value>
-		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Recent Albums</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">Recent Albums</value>
-		<value condition="StringCompare(Skin.String(HomeItemType),pictures)">Recent Photos</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)">Extended Forecast</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Add-Ons</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">System Information</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">Resume</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0)">Next Up</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">Unwatched</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0)">Recent</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0)">Next Up</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">Unwatched Shows</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">$LOCALIZE[31125]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">Resume</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">$LOCALIZE[31124]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Emby</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">Resume</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">$LOCALIZE[31124]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + IntegerGreaterThan(Pvr.BackendRecordings,0)">Recorded TV</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Airing Today</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Recent Albums</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">Recent Photos</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">Extended Forecast</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">Add-Ons</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">System Information</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">Recent Videos</value>
 		<value>Trending Movies</value>
-	</variable>
-	<variable name="EmbyHomeWidget1Source">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+IntegerGreaterThan(Container(8999).NumItems,0)">TVWidgetNextUp</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)+!IntegerGreaterThan(Container(8999).NumItems,0)+IntegerGreaterThan(Container(4016).NumItems,0)">TVWidgetRecent</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">TVWidgetNextUp</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)"> </value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">Unwatched Shows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$LOCALIZE[31125]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">$LOCALIZE[31124]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">$LOCALIZE[31124]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv) + IntegerGreaterThan(Container(9006).NumItems,0)">Next Aired</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">On Air</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),music)">Recommended</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">$LOCALIZE[31124]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">Recent</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0)">Recommended</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">Unwatched Shows</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">$LOCALIZE[31125]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">Recommended</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">$LOCALIZE[31124]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)"> </value>
-		<value condition="StringCompare(Skin.String(HomeItemType),pictures)"> </value>
+		<value condition="!IntegerGreaterThan(Container(4017).NumItems,0)">[CR]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">Unwatched Shows</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">$LOCALIZE[31125]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">Recommended</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9008).NumItems,0)">$LOCALIZE[31124]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">Recommended</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">Unwatched Shows</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31125]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">$LOCALIZE[31124]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Recommended</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + IntegerGreaterThan(Container(9006).NumItems,0)">Next Aired</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">On Air</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Recommended</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">Recommended</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Channels</value>
 		<value>Popular TV</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)"> </value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0) + IntegerGreaterThan(Container(9002).NumItems,0)">$LOCALIZE[31125]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),dvd) + IntegerGreaterThan(Container(9006).NumItems,0)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies) | StringCompare(Container(300).ListItem.Property(defaultid),dvd)">Oldest</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">Most Viewed</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">$LOCALIZE[31125]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">Recommended</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9011).NumItems,0)">Random</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">Random</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) + IntegerGreaterThan(Container(9008).NumItems,0)">Recommended</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0) + IntegerGreaterThan(Container(9009).NumItems,0)">Oldest</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">Random</value>
-		<value condition="StringCompare(Skin.String(HomeItemType),pictures)"> </value>
+		<value condition="!IntegerGreaterThan(Container(4018).NumItems,0)">[CR]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">$LOCALIZE[31125]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">Recommended</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">Random</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9008).NumItems,0)">Recommended</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9009).NumItems,0)">Oldest</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">Random</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0) + IntegerGreaterThan(Container(9002).NumItems,0)">$LOCALIZE[31125]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">Recommended</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">Recommended</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Oldest</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Most Viewed</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Recommended</value>
 		<value>Top Rated TV</value>
 	</variable>
@@ -325,81 +306,74 @@
 	</variable>
 	<variable name="EmbyBottomTileLabel1">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[20343]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Movies</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">TV Guide</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),music)">Artists</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">Artists</value>
-		<value condition="StringCompare(Skin.String(HomeItemType),pictures)">Pictures</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">Videos</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">Videos</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Programs</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Settings</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)">Weather</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$INFO[Container(300).ListItem.label]</value>
-		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Videos</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[20343]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Movies</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">TV Guide</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Artists</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">Pictures</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">Programs</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">Settings</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">Weather</value>
 		<value>Videos</value>
 	</variable>
 	<variable name="EmbyButton2Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31220]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">Collections</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv) + System.HasAddon(script.hdhomerun.view)">HDHomeRun View</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Channels</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),radio)">Albums</value>
-		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Albums</value>
-		<value condition="StringCompare(Skin.String(HomeItemType),pictures)">Picture Add-Ons</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Emby</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Log Out</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">In Theaters</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">In Theaters</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),weather)">Settings</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">$LOCALIZE[31220]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+IntegerGreaterThan(Container(9004).NumItems,0)">Collections</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31220]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9003).NumItems,0)">Collections</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">Genres</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$LOCALIZE[31193]</value>
-		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">In Theaters</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31220]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Collections</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + System.HasAddon(script.hdhomerun.view)">HDHomeRun View</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Channels</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Albums</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">Picture Add-Ons</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">Emby</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">Log Out</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">Settings</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">Recommended</value>
 		<value>In Theaters</value>
 	</variable>
 	<variable name="EmbyButton3Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),tvshows)">$LOCALIZE[31193]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),movies)">$LOCALIZE[31192]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),livetv)">Recorded TV</value>
-		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">Genres</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),programs) | Substring(Container(300).ListItem.Property(defaultID),plugin,Left)">Add-Ons</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),settings)">Power Menu</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),videos)">Upcoming</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultid),files)">Upcoming</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+IntegerGreaterThan(Container(9001).NumItems,0)">$LOCALIZE[31193]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$LOCALIZE[31192]</value>
-		<value condition="IsEmpty(Container(300).ListItem.Property(defaultid))">Emby Channels</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">Favorites</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31193]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">$LOCALIZE[31192]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Recorded TV</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Genres</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">Add-Ons</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">Power Menu</value>
 		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),dvd)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Pvr.BackendChannels] channels • [COLOR=$VAR[ColourHighlight]]$INFO[Pvr.BackendRecordings] recordings[/COLOR]</value>
-		<value condition="Substring(Container(300).ListItem.Property(defaultID),music,Left)">$INFO[Window(Home).Property(Music.ArtistsCount)] artists • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Music.AlbumsCount)] albums[/COLOR] • $INFO[Window(Home).Property(Music.SongsCount)] songs</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),radio)">$INFO[Window(Home).Property(Music.ArtistsCount)] artists • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Music.AlbumsCount)] albums[/COLOR] • $INFO[Window(Home).Property(Music.SongsCount)] songs</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
-		<value></value>
+		<!--<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">$INFO[Pvr.BackendChannels] channels • [COLOR=$VAR[ColourHighlight]]$INFO[Pvr.BackendRecordings] recordings[/COLOR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Window(Home).Property(Music.ArtistsCount)] artists • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Music.AlbumsCount)] albums[/COLOR] • $INFO[Window(Home).Property(Music.SongsCount)] songs</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
+		<value></value>-->
 		<!--<value>$INFO[Container(9015).ListItem.Property(widgetPath)] / $INFO[Container(9015).NumItems] / $INFO[Container(9015).ListItem(0).Path]</value>-->
+		<!--<value>|$INFO[Window(Home).Property(EmbyHomeLabelStripped)]|</value>-->
+		<value> $INFO[Window(Home).Property(HasAdvancedLauncherConfig)]</value>
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
-		<value condition="Control.HasFocus(4016) + [StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]] + [StringCompare(Container(4016).ListItem.DBTYPE,tvshow)]">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,,][/COLOR]$INFO[Container(4016).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4016) + [StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">[COLOR=$VAR[ColourHighlight2]]$INFO[Container(4016).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4016).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4016).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4016).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Title][/COLOR]</value>
-		<value condition="Control.HasFocus(4017) + [StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]] + [StringCompare(Container(4017).ListItem.DBTYPE,tvshow)]">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,,][/COLOR]$INFO[Container(4017).ListItem.Season, • , Seasons]$INFO[Container(4017).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4017) + [StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">[COLOR=$VAR[ColourHighlight2]]$INFO[Container(4017).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4017).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4017).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4017).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Title][/COLOR]</value>
-		<value condition="Control.HasFocus(4018) + [StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]] + [StringCompare(Container(4018).ListItem.DBTYPE,tvshow)]">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,,][/COLOR]$INFO[Container(4018).ListItem.Season, • , Seasons]$INFO[Container(4018).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4018) + [StringCompare(Container(300).ListItem.Property(defaultID),tvshows)|[Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9001).NumItems,0)]]">[COLOR=$VAR[ColourHighlight2]]$INFO[Container(4018).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4018).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4018).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4018).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Title][/COLOR]</value>
-		<value condition="Control.HasFocus(4016) + [StringCompare(Container(300).ListItem.Property(defaultID),movies)|[Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]]">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,, •][/COLOR] $INFO[Container(4016).ListItem.Year]</value>
-		<value condition="Control.HasFocus(4017) + [StringCompare(Container(300).ListItem.Property(defaultID),movies)|[Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]]">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,, •][/COLOR] $INFO[Container(4017).ListItem.Year]</value>
-		<value condition="Control.HasFocus(4018) + [StringCompare(Container(300).ListItem.Property(defaultID),movies)|[Substring(Container(300).ListItem.Property(Path),library://video/Emby) + IntegerGreaterThan(Container(9004).NumItems,0)]]">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,, •][/COLOR] $INFO[Container(4018).ListItem.Year]</value>
-		<value condition="Control.HasFocus(4017) + Substring(Container(300).ListItem.Property(defaultID),music,Left)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Artist,, •][/COLOR] $INFO[Container(4017).ListItem.Label,,]$INFO[Container(4017).ListItem.Year, • ,]</value>
-		<value condition="Control.HasFocus(4016) + Substring(Container(300).ListItem.Property(defaultID),music,Left)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Artist,, •][/COLOR] $INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
+		<!-- Tv Shows -->
+		<value condition="Control.HasFocus(4016) + [StringCompare(Container(300).ListItem.Property(type),tvshows) + [StringCompare(Container(4016).ListItem.DBTYPE,tvshow)]">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,,][/COLOR]$INFO[Container(4016).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight2]]$INFO[Container(4016).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4016).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4016).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4016).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4017).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,,][/COLOR]$INFO[Container(4017).ListItem.Season, • , Seasons]$INFO[Container(4017).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight2]]$INFO[Container(4017).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4017).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4017).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4017).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4018) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4018).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,,][/COLOR]$INFO[Container(4018).ListItem.Season, • , Seasons]$INFO[Container(4018).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4018) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight2]]$INFO[Container(4018).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4018).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4018).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4018).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Title][/COLOR]</value>
+		<!-- Movies -->
+		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,, •][/COLOR] $INFO[Container(4016).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,, •][/COLOR] $INFO[Container(4017).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4018) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,, •][/COLOR] $INFO[Container(4018).ListItem.Year]</value>
+		<!-- Music -->
+		<value condition="Control.HasFocus(4017) + Substring(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Artist,, •][/COLOR] $INFO[Container(4017).ListItem.Label,,]$INFO[Container(4017).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4016) + Substring(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Artist,, •][/COLOR] $INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
 		<!-- Default -->
 		<value condition="Control.HasFocus(4016) + !IsEmpty(Container(4016).ListItem.TVShowTitle)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,,][/COLOR]$INFO[Container(4016).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
 		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
@@ -408,6 +382,10 @@
 		<value condition="Control.HasFocus(4018) + !IsEmpty(Container(4018).ListItem.TVShowTitle)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,,][/COLOR]$INFO[Container(4018).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Label,,]$INFO[Container(4018).ListItem.Year, • ,]</value>
 		<!--<value>$INFO[Skin.String(HomeItemDBID)] / $INFO[Skin.String(HomeItemTVShowTitle)] / $INFO[Skin.String(HomeItemDBType)] / $INFO[Skin.String(HomeItemPath)]</value>-->
+	</variable>
+	<variable name="EmbyHomeSelectedMenu">
+		<value condition="!IsEmpty(Window(Home).Property(EmbyHomeLabelStripped))">$INFO[Window(Home).Property(EmbyHomeLabelStripped)]</value>
+		<value>$INFO[Container(300).ListItem.label]</value>
 	</variable>
 	<variable name="WidgetTitle">
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.Title]</value>

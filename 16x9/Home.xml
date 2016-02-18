@@ -8,6 +8,8 @@
 	<onload condition="System.HasAddon(script.grab.fanart)">RunScript(script.grab.fanart,mode=random,refresh=10)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">SetProperty(SkinHelper.WidgetContainer,300)</onload>
+	<onload>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onload>
+	<onload>RunScript(script.skin.helper.service,action=fileexists,file=special://profile/addon_data/plugin.program.advanced.launcher/launchers.xml,windowprop=HasAdvancedLauncherConfig)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include>GlobalOverlay</include>

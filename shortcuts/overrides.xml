@@ -185,6 +185,21 @@
 	<propertydefault defaultID="info-window-home-property-emby-nodes-10-title" property="type">$INFO[Window(Home).Property(emby.nodes.10.type)]</propertydefault>
 	<propertydefault defaultID="info-window-home-property-emby-nodes-10-title" property="list">$INFO[Window(Home).Property(emby.nodes.10.content)]</propertydefault>
 	
+	<propertydefault defaultID="movies" property="type">movies</propertydefault>
+    <propertydefault defaultID="tvshows" property="type">tvshows</propertydefault>
+    <propertydefault defaultID="livetv" property="type">livetv</propertydefault>
+    <propertydefault defaultID="music" property="type">music</propertydefault>
+	<propertydefault defaultID="radio" property="type">music</propertydefault>
+    <propertydefault defaultID="musicvideos" property="type">music</propertydefault>
+    <propertydefault defaultID="weather" property="type">weather</propertydefault>
+    <propertydefault defaultID="pictures" property="type">photos</propertydefault>
+    <propertydefault defaultID="programs" property="type">programs</propertydefault>
+    <propertydefault defaultID="videos" property="type">videos</propertydefault>
+    <propertydefault defaultID="settings" property="type">settings</propertydefault>
+    <propertydefault defaultID="power" property="type">power</propertydefault>
+	<propertydefault defaultID="channels" property="type">channels</propertydefault>
+	
+	<propertyfallback property="type">videos</propertyfallback>
 	
     <!-- Override Actions Because Im A Dummy Who Doesnt Know The Correct Window IDs To Use -->
     <override action="ActivateWindow(3201)">
