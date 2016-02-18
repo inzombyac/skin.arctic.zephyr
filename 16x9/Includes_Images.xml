@@ -354,7 +354,7 @@
 	</variable>
 	<!-- Center Widget Selection -->
 	<variable name="EmbyWidget1Icon">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(40016).IsUpdating">common/null.png</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious ">common/null.png</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9005).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + !IntegerGreaterThan(Container(9005).NumItems,0) + !IntegerGreaterThan(Container(9007).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
@@ -372,7 +372,7 @@
 		<value>$VAR[FanartImage]</value>
 	</variable>
 	<variable name="EmbyWidget3Icon">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4018).IsUpdating">common/null.png</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">common/null.png</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9005).NumItems,0) + IntegerGreaterThan(Container(9007).NumItems,0)">$VAR[ThumbImage]</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0) + IntegerGreaterThan(Container(9002).NumItems,0)">$VAR[ThumbImage]</value>
@@ -427,7 +427,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)+!IsEmpty(Window(Home).Property(EmbyUserImage))">$INFO[Window(Home).Property(EmbyUserImage)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)+!IsEmpty(System.ProfileThumb)">$INFO[System.ProfileThumb]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">clear/musicartists.png</value>
-		<value>special://skin/extras/backgrounds/Theater.jpg</value>
+		<value>special://skin/extras/backgrounds/Channels2.jpg</value>
 	</variable>
 	<variable name="EmbyBottomTileImage3">
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">clear/trending.png</value>

@@ -114,6 +114,33 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.10.title)) + !Substring(Window(Home).Property(emby.nodes.10.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.10.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-11-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.11.title)]</label>
+		<label2>$INFO[Window(Home).Property(emby.nodes.11.content)]</label2>
+		<icon>special://skin/extras/icons/emby_diff.png</icon>
+		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.11.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.11.title)) + !Substring(Window(Home).Property(emby.nodes.11.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.11.content),emby_Favorite)</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-12-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.12.title)]</label>
+		<label2>$INFO[Window(Home).Property(emby.nodes.12.content)]</label2>
+		<icon>special://skin/extras/icons/emby_diff.png</icon>
+		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.12.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.12.title)) + !Substring(Window(Home).Property(emby.nodes.12.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.12.content),emby_Favorite)</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-13-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.13.title)]</label>
+		<label2>$INFO[Window(Home).Property(emby.nodes.13.content)]</label2>
+		<icon>special://skin/extras/icons/emby_diff.png</icon>
+		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.13.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.13.title)) + !Substring(Window(Home).Property(emby.nodes.13.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.13.content),emby_Favorite)</visible>
+	</shortcut>
+	<shortcut>
         <label>Music</label>
         <label2>Common Shortcut</label2>
         <defaultID>music</defaultID>

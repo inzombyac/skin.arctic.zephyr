@@ -232,7 +232,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">RunAddon(plugin.video.emby)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">System.LogOff</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weathersettings)</value>
-		<value>ActivateWindow(10025,plugin://script.extendedinfo/?info=incinemas,return)</value>
+		<value>RunScript(script.extendedinfo)</value>
 	</variable>
 	<variable name="EmbyBottomTileAction3">
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">ActivateWindow(1102)</value>
@@ -1019,15 +1019,6 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(52)</visible>
 		</control>
-		<!--<control type="radiobutton" id="9015" description="Big List Circles (52)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>Circle Icons</label>
-			<selected>!Skin.HasSetting(global.hidecirles)</selected>
-			<onclick>Skin.ToggleSetting(global.hidecirles)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(52)</visible>
-		</control>-->
 		<control type="radiobutton" id="9016" description="Discart (513,514)">
 			<include>DefContextButton2</include>
 			<align>left</align>
@@ -1406,141 +1397,6 @@
 			</control>
 		</control>
 	</include>
-	<include name="EmbyHomeSubMenu">
-		<!--$INFO[Container(9015).ListItem.Property(widgetPath)] / $INFO[Container(9015).ListItem(0).Label] / $INFO[Container(9015).ListItem(0).Property(Path)]-->
-		<item id="1">
-			<label>$INFO[Container(9015).ListItem(0).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(0).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(0).Icon]</icon>
-			<property name="numItems">$INFO[Container(9020).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(0).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(0).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(0).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(0).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,0)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(0).Property(widgetPath)) | IntegerGreaterThan(Container(9020).NumItems,0)</visible>
-		</item>
-		<item id="2">
-			<label>$INFO[Container(9015).ListItem(1).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(1).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(1).Icon]</icon>
-			<property name="numItems">$INFO[Container(9021).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(1).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(1).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(1).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(1).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,1)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(1).Property(widgetPath)) | IntegerGreaterThan(Container(9021).NumItems,0)</visible>
-		</item>
-		<item id="3">
-			<label>$INFO[Container(9015).ListItem(2).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(2).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(2).Icon]</icon>
-			<property name="numItems">$INFO[Container(9022).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(2).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(2).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(2).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(2).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,2)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(2).Property(widgetPath)) | IntegerGreaterThan(Container(9022).NumItems,0)</visible>
-		</item>
-		<item id="4">
-			<label>$INFO[Container(9015).ListItem(3).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(3).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(3).Icon]</icon>
-			<property name="numItems">$INFO[Container(9023).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(3).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(3).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(3).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(3).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,3)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(3).Property(widgetPath)) | IntegerGreaterThan(Container(9023).NumItems,0)</visible>
-		</item>
-		<item id="5">
-			<label>$INFO[Container(9015).ListItem(4).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(4).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(4).Icon]</icon>
-			<property name="numItems">$INFO[Container(9024).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(4).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(4).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(4).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(4).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,4)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(4).Property(widgetPath)) | IntegerGreaterThan(Container(9024).NumItems,0)</visible>
-		</item>
-		<item id="6">
-			<label>$INFO[Container(9015).ListItem(5).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(5).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(5).Icon]</icon>
-			<property name="numItems">$INFO[Container(9025).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(5).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(5).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(5).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(5).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,5)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(5).Property(widgetPath)) | IntegerGreaterThan(Container(9025).NumItems,0)</visible>
-		</item>
-		<item id="7">
-			<label>$INFO[Container(9015).ListItem(6).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(6).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(6).Icon]</icon>
-			<property name="numItems">$INFO[Container(9026).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(6).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(6).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(6).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(6).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,6)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(6).Property(widgetPath)) | IntegerGreaterThan(Container(9026).NumItems,0)</visible>
-		</item>
-		<item id="8">
-			<label>$INFO[Container(9015).ListItem(7).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(7).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(7).Icon]</icon>
-			<property name="numItems">$INFO[Container(9027).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(7).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(7).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(7).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(7).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,7)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(7).Property(widgetPath)) | IntegerGreaterThan(Container(9027).NumItems,0)</visible>
-		</item>
-		<item id="9">
-			<label>$INFO[Container(9015).ListItem(8).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(8).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(8).Icon]</icon>
-			<property name="numItems">$INFO[Container(9028).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(8).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(8).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(8).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(8).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,8)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(8).Property(widgetPath)) | IntegerGreaterThan(Container(9028).NumItems,0)</visible>
-		</item>
-		<item id="10">
-			<label>$INFO[Container(9015).ListItem(9).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(9).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(9).Icon]</icon>
-			<property name="numItems">$INFO[Container(9029).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(9).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(9).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(9).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(9).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,9)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(9).Property(widgetPath)) | IntegerGreaterThan(Container(9029).NumItems,0)</visible>
-		</item>
-		<item id="11">
-			<label>$INFO[Container(9015).ListItem(10).Label]</label>
-			<label2>$INFO[Container(9015).ListItem(10).Label]</label2>
-			<icon>$INFO[Container(9015).ListItem(10).Icon]</icon>
-			<property name="numItems">$INFO[Container(9030).NumItems]</property>
-			<property name="widgetPath">$INFO[Container(9015).ListItem(10).Property(widgetPath)]</property>
-			<property name="path">$INFO[Container(9015).ListItem(10).Property(Path)]</property>
-			<onclick>$INFO[Container(9015).ListItem(10).Property(Path)]</onclick>
-			<visible>!IsEmpty(Container(9015).ListItem(10).Property(Path))</visible>
-			<visible>IntegerGreaterThan(Container(9015).NumItems,10)</visible>
-			<visible>IsEmpty(Container(9015).ListItem(10).Property(widgetPath)) | IntegerGreaterThan(Container(9030).NumItems,0)</visible>
-		</item>
-	</include>
 	<!-- Archived Emby Home defs -->
 	<variable name="DefWidgetRightContent">
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),homevideos)">library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_recent.xml</value>
@@ -1585,7 +1441,7 @@
 		<value>plugin://script.extendedinfo?info=populartvshows</value>
 	</variable>
 	<variable name="DefEmbyNodeRandomAction">
-		<value condition="StringCompare(Skin.String(HomeItemType),embytv)">ActivateWindow(Videos,special://skin/extras/playlists/RandomEpisodes.xsp,return)</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">ActivateWindow(Videos,special://skin/extras/playlists/RandomEpisodes.xsp,return)</value>
 		<value>ActivateWindow(videos,library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_random.xml,return)</value>
 	</variable>
 </includes>

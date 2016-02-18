@@ -1317,6 +1317,25 @@
 				<visible>Skin.HasSetting(furniture.weather)</visible>
 				<label>[COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
 			</control>
+			<control type="image">
+				<top>-50</top>
+				<width>35</width>
+				<height>67</height>
+				<aspectratio>keep</aspectratio>
+				<texture>indicator/recording.png</texture>
+				<visible>Pvr.HasTimer</visible>
+				<align>right</align>
+				<right>SidePad</right>
+			</control>			
+			<control type="label">
+				<top>-50</top>
+				<font>Flag</font>
+				<textcolor>Dark1</textcolor>
+				<label>$VAR[LabelNextRecording]</label>
+				<align>right</align>
+				<right>120</right>
+				<visible>Pvr.HasTimer</visible>
+			</control>	
 		</control>
 	</include>
 	<include name="Furniture_Home_Flags">

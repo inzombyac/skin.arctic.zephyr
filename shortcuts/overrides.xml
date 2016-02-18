@@ -59,7 +59,10 @@
 	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-7-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.7.title)]" type="$INFO[Window(Home).Property(emby.nodes.7.type)]" path="$INFO[Window(Home).Property(emby.nodes.7.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.7.title)</widgetdefaultnode>
 	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-8-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.8.title)]" type="$INFO[Window(Home).Property(emby.nodes.8.type)]" path="$INFO[Window(Home).Property(emby.nodes.8.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.8.title)</widgetdefaultnode>
 	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-9-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.9.title)]" type="$INFO[Window(Home).Property(emby.nodes.9.type)]" path="$INFO[Window(Home).Property(emby.nodes.9.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.9.title)</widgetdefaultnode>
-	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-10-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.10.title)]" type="$INFO[Window(Home).Property(emby.nodes.10.type)]" path="$INFO[Window(Home).Property(emby.nodes.10.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.10.title)</widgetdefaultnode>	
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-10-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.10.title)]" type="$INFO[Window(Home).Property(emby.nodes.10.type)]" path="$INFO[Window(Home).Property(emby.nodes.10.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.10.title)</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-11-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.11.title)]" type="$INFO[Window(Home).Property(emby.nodes.11.type)]" path="$INFO[Window(Home).Property(emby.nodes.11.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.11.title)</widgetdefaultnode>	
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-12-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.12.title)]" type="$INFO[Window(Home).Property(emby.nodes.12.type)]" path="$INFO[Window(Home).Property(emby.nodes.12.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.12.title)</widgetdefaultnode>	
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-13-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.13.title)]" type="$INFO[Window(Home).Property(emby.nodes.13.type)]" path="$INFO[Window(Home).Property(emby.nodes.13.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.13.title)</widgetdefaultnode>	
 
 	<!-- Emby Node subwidgets -->
 	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-0-title" group="info-window-home-property-emby-nodes-0-title" label="$INFO[Window(Home).Property(emby.nodes.0.title)]" type="$INFO[Window(Home).Property(emby.nodes.0.type)]" path="$INFO[Window(Home).Property(emby.nodes.0.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.0.title)]</widgetdefaultnode>
@@ -160,6 +163,33 @@
 	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-10-recentepisodes-title" group="info-window-home-property-emby-nodes-10-title" label="Recent Episodes" type="episodes" path="$INFO[Window(Home).Property(emby.nodes.10.recentepisodes.content)]" target="video">Recent Episodes</widgetdefaultnode>
 	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-10-recommended-title" group="info-window-home-property-emby-nodes-10-title" label="Recommended" type="$INFO[Window(Home).Property(emby.nodes.10.type)]" path="$INFO[Window(Home).Property(emby.nodes.10.recommended.content)]" target="video">Recommended</widgetdefaultnode>
 	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-10-random-title" group="info-window-home-property-emby-nodes-10-title" label="Random" type="$INFO[Window(Home).Property(emby.nodes.10.type)]" path="library://video/Emby - $INFO[Window(Home).Property(emby.nodes.10.title)]/$INFO[Window(Home).Property(emby.nodes.10.title)].ListItem.label]_random.xml" target="video">Random</widgetdefaultnode>
+	
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-11-title" group="info-window-home-property-emby-nodes-11-title" label="$INFO[Window(Home).Property(emby.nodes.11.title)]" type="$INFO[Window(Home).Property(emby.nodes.11.type)]" path="$INFO[Window(Home).Property(emby.nodes.11.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.11.title)]</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-11-inprogress-title" group="info-window-home-property-emby-nodes-11-title" label="Resume" type="$INFO[Window(Home).Property(emby.nodes.11.type)]" path="$INFO[Window(Home).Property(emby.nodes.11.inprogress.content)]" target="video">In Progress</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-11-recent-title" group="info-window-home-property-emby-nodes-11-title" label="Recent Items" type="$INFO[Window(Home).Property(emby.nodes.11.type)]" path="$INFO[Window(Home).Property(emby.nodes.11.recent.content)]" target="video">Recent Items</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-11-nextepisodes-title" group="info-window-home-property-emby-nodes-11-title" label="Next Up" type="episodes" path="$INFO[Window(Home).Property(emby.nodes.11.nextepisodes.content)]" target="video">Next Up</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-11-unwatched-title" group="info-window-home-property-emby-nodes-11-title" label="Unwatched" type="$INFO[Window(Home).Property(emby.nodes.11.type)]" path="$INFO[Window(Home).Property(emby.nodes.11.unwatched.content)]" target="video">Unwatched</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-11-recentepisodes-title" group="info-window-home-property-emby-nodes-11-title" label="Recent Episodes" type="episodes" path="$INFO[Window(Home).Property(emby.nodes.11.recentepisodes.content)]" target="video">Recent Episodes</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-11-recommended-title" group="info-window-home-property-emby-nodes-11-title" label="Recommended" type="$INFO[Window(Home).Property(emby.nodes.11.type)]" path="$INFO[Window(Home).Property(emby.nodes.11.recommended.content)]" target="video">Recommended</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-11-random-title" group="info-window-home-property-emby-nodes-11-title" label="Random" type="$INFO[Window(Home).Property(emby.nodes.11.type)]" path="library://video/Emby - $INFO[Window(Home).Property(emby.nodes.11.title)]/$INFO[Window(Home).Property(emby.nodes.11.title)].ListItem.label]_random.xml" target="video">Random</widgetdefaultnode>
+	
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-12-title" group="info-window-home-property-emby-nodes-12-title" label="$INFO[Window(Home).Property(emby.nodes.12.title)]" type="$INFO[Window(Home).Property(emby.nodes.12.type)]" path="$INFO[Window(Home).Property(emby.nodes.12.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.12.title)]</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-12-inprogress-title" group="info-window-home-property-emby-nodes-12-title" label="Resume" type="$INFO[Window(Home).Property(emby.nodes.12.type)]" path="$INFO[Window(Home).Property(emby.nodes.12.inprogress.content)]" target="video">In Progress</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-12-recent-title" group="info-window-home-property-emby-nodes-12-title" label="Recent Items" type="$INFO[Window(Home).Property(emby.nodes.12.type)]" path="$INFO[Window(Home).Property(emby.nodes.12.recent.content)]" target="video">Recent Items</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-12-nextepisodes-title" group="info-window-home-property-emby-nodes-12-title" label="Next Up" type="episodes" path="$INFO[Window(Home).Property(emby.nodes.12.nextepisodes.content)]" target="video">Next Up</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-12-unwatched-title" group="info-window-home-property-emby-nodes-12-title" label="Unwatched" type="$INFO[Window(Home).Property(emby.nodes.12.type)]" path="$INFO[Window(Home).Property(emby.nodes.12.unwatched.content)]" target="video">Unwatched</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-12-recentepisodes-title" group="info-window-home-property-emby-nodes-12-title" label="Recent Episodes" type="episodes" path="$INFO[Window(Home).Property(emby.nodes.12.recentepisodes.content)]" target="video">Recent Episodes</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-12-recommended-title" group="info-window-home-property-emby-nodes-12-title" label="Recommended" type="$INFO[Window(Home).Property(emby.nodes.12.type)]" path="$INFO[Window(Home).Property(emby.nodes.12.recommended.content)]" target="video">Recommended</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-12-random-title" group="info-window-home-property-emby-nodes-12-title" label="Random" type="$INFO[Window(Home).Property(emby.nodes.12.type)]" path="library://video/Emby - $INFO[Window(Home).Property(emby.nodes.12.title)]/$INFO[Window(Home).Property(emby.nodes.12.title)].ListItem.label]_random.xml" target="video">Random</widgetdefaultnode>
+	
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-13-title" group="info-window-home-property-emby-nodes-13-title" label="$INFO[Window(Home).Property(emby.nodes.13.title)]" type="$INFO[Window(Home).Property(emby.nodes.13.type)]" path="$INFO[Window(Home).Property(emby.nodes.13.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.13.title)]</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-13-inprogress-title" group="info-window-home-property-emby-nodes-13-title" label="Resume" type="$INFO[Window(Home).Property(emby.nodes.13.type)]" path="$INFO[Window(Home).Property(emby.nodes.13.inprogress.content)]" target="video">In Progress</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-13-recent-title" group="info-window-home-property-emby-nodes-13-title" label="Recent Items" type="$INFO[Window(Home).Property(emby.nodes.13.type)]" path="$INFO[Window(Home).Property(emby.nodes.13.recent.content)]" target="video">Recent Items</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-13-nextepisodes-title" group="info-window-home-property-emby-nodes-13-title" label="Next Up" type="episodes" path="$INFO[Window(Home).Property(emby.nodes.13.nextepisodes.content)]" target="video">Next Up</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-13-unwatched-title" group="info-window-home-property-emby-nodes-13-title" label="Unwatched" type="$INFO[Window(Home).Property(emby.nodes.13.type)]" path="$INFO[Window(Home).Property(emby.nodes.13.unwatched.content)]" target="video">Unwatched</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-13-recentepisodes-title" group="info-window-home-property-emby-nodes-13-title" label="Recent Episodes" type="episodes" path="$INFO[Window(Home).Property(emby.nodes.13.recentepisodes.content)]" target="video">Recent Episodes</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-13-recommended-title" group="info-window-home-property-emby-nodes-13-title" label="Recommended" type="$INFO[Window(Home).Property(emby.nodes.13.type)]" path="$INFO[Window(Home).Property(emby.nodes.13.recommended.content)]" target="video">Recommended</widgetdefaultnode>
+	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-13-random-title" group="info-window-home-property-emby-nodes-13-title" label="Random" type="$INFO[Window(Home).Property(emby.nodes.13.type)]" path="library://video/Emby - $INFO[Window(Home).Property(emby.nodes.13.title)]/$INFO[Window(Home).Property(emby.nodes.13.title)].ListItem.label]_random.xml" target="video">Random</widgetdefaultnode>
 		
 	<!-- Emby Node properties -->
 	<propertydefault defaultID="info-window-home-property-emby-nodes-0-title" property="type">$INFO[Window(Home).Property(emby.nodes.0.type)]</propertydefault>
@@ -184,6 +214,9 @@
 	<propertydefault defaultID="info-window-home-property-emby-nodes-9-title" property="list">$INFO[Window(Home).Property(emby.nodes.9.content)]</propertydefault>
 	<propertydefault defaultID="info-window-home-property-emby-nodes-10-title" property="type">$INFO[Window(Home).Property(emby.nodes.10.type)]</propertydefault>
 	<propertydefault defaultID="info-window-home-property-emby-nodes-10-title" property="list">$INFO[Window(Home).Property(emby.nodes.10.content)]</propertydefault>
+	<propertydefault defaultID="info-window-home-property-emby-nodes-11-title" property="list">$INFO[Window(Home).Property(emby.nodes.11.content)]</propertydefault>
+	<propertydefault defaultID="info-window-home-property-emby-nodes-12-title" property="list">$INFO[Window(Home).Property(emby.nodes.12.content)]</propertydefault>
+	<propertydefault defaultID="info-window-home-property-emby-nodes-13-title" property="list">$INFO[Window(Home).Property(emby.nodes.13.content)]</propertydefault>
 	
 	<propertydefault defaultID="movies" property="type">movies</propertydefault>
     <propertydefault defaultID="tvshows" property="type">tvshows</propertydefault>
@@ -197,7 +230,7 @@
     <propertydefault defaultID="videos" property="type">videos</propertydefault>
     <propertydefault defaultID="settings" property="type">settings</propertydefault>
     <propertydefault defaultID="power" property="type">power</propertydefault>
-	<propertydefault defaultID="channels" property="type">channels</propertydefault>
+	<propertydefault defaultID="channels" property="type">videos</propertydefault>
 	
 	<propertyfallback property="type">videos</propertyfallback>
 	
@@ -250,6 +283,10 @@
 	<backgrounddefault defaultID="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.recent.image)]</backgrounddefault>
 	<backgrounddefault defaultID="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.recent.image)]</backgrounddefault>
 	<backgrounddefault defaultID="info-window-home-property-emby-nodes-10-title">$INFO[Window(Home).Property(emby.nodes.10.recent.image)]</backgrounddefault>
+	<backgrounddefault defaultID="info-window-home-property-emby-nodes-10-title">$INFO[Window(Home).Property(emby.nodes.10.recent.image)]</backgrounddefault>
+	<backgrounddefault defaultID="info-window-home-property-emby-nodes-11-title">$INFO[Window(Home).Property(emby.nodes.11.recent.image)]</backgrounddefault>
+	<backgrounddefault defaultID="info-window-home-property-emby-nodes-12-title">$INFO[Window(Home).Property(emby.nodes.12.recent.image)]</backgrounddefault>
+	<backgrounddefault defaultID="info-window-home-property-emby-nodes-13-title">$INFO[Window(Home).Property(emby.nodes.13.recent.image)]</backgrounddefault>
 
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
@@ -266,6 +303,9 @@
 	<icon labelID="info-window-home-property-emby-nodes-8-title">special://skin/extras/icons/emby_diff.png.png</icon>
 	<icon labelID="info-window-home-property-emby-nodes-9-title">special://skin/extras/icons/emby_diff.png.png</icon>
 	<icon labelID="info-window-home-property-emby-nodes-10-title">special://skin/extras/icons/emby_diff.png.png</icon>
+	<icon labelID="info-window-home-property-emby-nodes-11-title">special://skin/extras/icons/emby_diff.png.png</icon>
+	<icon labelID="info-window-home-property-emby-nodes-12-title">special://skin/extras/icons/emby_diff.png.png</icon>
+	<icon labelID="info-window-home-property-emby-nodes-13-title">special://skin/extras/icons/emby_diff.png.png</icon>
 	
 	<icon labelID="tvhub">special://skin/extras/icons/tv.png</icon>
     <icon labelID="moviehub">special://skin/extras/icons/film.png</icon>
@@ -357,6 +397,9 @@
 	<thumbnail labelID="info-window-home-property-emby-nodes-8-title">special://skin/extras/icons/emby_diff.png.png</thumbnail>
 	<thumbnail labelID="info-window-home-property-emby-nodes-9-title">special://skin/extras/icons/emby_diff.png.png</thumbnail>
 	<thumbnail labelID="info-window-home-property-emby-nodes-10-title">special://skin/extras/icons/emby_diff.png.png</thumbnail>
+	<thumbnail labelID="info-window-home-property-emby-nodes-11-title">special://skin/extras/icons/emby_diff.png.png</thumbnail>
+	<thumbnail labelID="info-window-home-property-emby-nodes-12-title">special://skin/extras/icons/emby_diff.png.png</thumbnail>
+	<thumbnail labelID="info-window-home-property-emby-nodes-13-title">special://skin/extras/icons/emby_diff.png.png</thumbnail>
 	
 	<icon labelID="tvhub">special://skin/extras/icons/tv.png</icon>
 	
