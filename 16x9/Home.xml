@@ -10,6 +10,7 @@
 	<onload condition="System.HasAddon(script.skin.helper.service)">SetProperty(SkinHelper.WidgetContainer,300)</onload>
 	<onload>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onload>
 	<onload>RunScript(script.skin.helper.service,action=fileexists,file=special://profile/addon_data/plugin.program.advanced.launcher/launchers.xml,windowprop=HasAdvancedLauncherConfig)</onload>
+	<onload condition="Pvr.HasTimer">RunScript(script.toolbox,info=notification,header=Next Recording,text=$VAR[LabelNextRecording],icon=indicator/recording.png,time=15,sound=FALSE)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include>GlobalOverlay</include>

@@ -20,7 +20,6 @@
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
             <centerbottom>94</centerbottom>
-            <visible>!Skin.HasSetting(furniture.clock)</visible>
             <include>Animation.FurnitureFadeInOut</include>
             <height>84</height>
             <right>20</right>

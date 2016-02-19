@@ -406,7 +406,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">special://skin/extras/backgrounds/Photos.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">special://skin/extras/backgrounds/programs.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">special://skin/extras/backgrounds/space.jpg</value>
-		<value>special://skin/extras/backgrounds/Channels2.jpg</value>
+		<value>special://skin/extras/backgrounds/Channels.jpg</value>
 	</variable>
 	<variable name="EmbyBottomTileImage2">
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">clear/trending.png</value>

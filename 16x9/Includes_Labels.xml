@@ -345,6 +345,8 @@
 		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $INFO[Container(300).ListItem.Property(widgetPath)]</value>
+		<!--<value>|$INFO[Window(Home).Property(EmbyHomeLabelStripped)]|</value>-->
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4016).IsUpdating + !IntegerGreaterThan(Container(4016).NumItems,0)] | [Container(4012).IsUpdating + !IntegerGreaterThan(Container(4012).NumItems,0)]">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
@@ -353,8 +355,6 @@
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
 		<value></value>
-		<!--<value>|$INFO[Window(Home).Property(EmbyHomeLabelStripped)]|</value>-->
-		<!-- <value> $INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
 		<!-- Tv Shows -->
