@@ -657,27 +657,6 @@
 		</control>
 	</include>
 	<include name="EmbyMainWidgetContent">
-		<control type="list" id="4012">
-			<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),settings) +  !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
-			<preloaditems>6</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.DelayFadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
-			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-		</control>
 		<!--- Containers to test content-->
 		<control type="list" id="8999">
 			<content limit="1">plugin://script.skin.helper.service/?action=nextepisodes&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
@@ -718,7 +697,116 @@
 		<control type="list" id="9012">
 			<content target="video" limit="1">plugin://plugin.video.emby?id=0&amp;mode=channels</content>
 		</control>
-		
+		<!-- Movies -->		
+		<control type="list" id="4012">
+			<visible>StringCompare(Container(300).ListItem.Property(type),movies)</visible>
+			<top>330</top>
+			<left>SidePad</left>
+			<width>856</width>
+			<height>496</height>
+			<onup>300</onup>
+			<ondown>4013</ondown>
+			<onleft>4012</onleft>
+			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<include>Animation.DelayFadeIn</include>
+			<include>Animation.FadeOut</include>
+			<include>EmbyMainWidgetItemLayout</include>
+			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
+			<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+		</control>
+		<!-- TV Shows -->
+		<control type="list" id="4012">
+			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows)</visible>
+			<top>330</top>
+			<left>SidePad</left>
+			<width>856</width>
+			<height>496</height>
+			<onup>300</onup>
+			<ondown>4013</ondown>
+			<onleft>4012</onleft>
+			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<include>Animation.DelayFadeIn</include>
+			<include>Animation.FadeOut</include>
+			<include>EmbyMainWidgetItemLayout</include>
+			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
+			<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+		</control>
+		<!-- Videos -->
+		<control type="list" id="4012">
+			<visible>StringCompare(Container(300).ListItem.Property(type),videos)</visible>
+			<top>330</top>
+			<left>SidePad</left>
+			<width>856</width>
+			<height>496</height>
+			<onup>300</onup>
+			<ondown>4013</ondown>
+			<onleft>4012</onleft>
+			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<include>Animation.DelayFadeIn</include>
+			<include>Animation.FadeOut</include>
+			<include>EmbyMainWidgetItemLayout</include>
+			<content target="video" sortby="random">$VAR[DefWidgetMainContent]</content>
+			<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+		</control>
+		<!-- Music -->
+		<control type="list" id="4012">
+			<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
+			<top>330</top>
+			<left>SidePad</left>
+			<width>856</width>
+			<height>496</height>
+			<onup>300</onup>
+			<ondown>4013</ondown>
+			<onleft>4012</onleft>
+			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<include>Animation.DelayFadeIn</include>
+			<include>Animation.FadeOut</include>
+			<include>EmbyMainWidgetItemLayout</include>
+			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
+			<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+		</control>
+		<!-- Home Videos -->
+		<control type="list" id="4012">
+			<visible>StringCompare(Container(300).ListItem.Property(type),homevideos)</visible>
+			<top>330</top>
+			<left>SidePad</left>
+			<width>856</width>
+			<height>496</height>
+			<onup>300</onup>
+			<ondown>4013</ondown>
+			<onleft>4012</onleft>
+			<onright>4016</onright>
+			<include>EmbyHomeInfoActions</include>
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<include>Animation.DelayFadeIn</include>
+			<include>Animation.FadeOut</include>
+			<include>EmbyMainWidgetItemLayout</include>
+			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
+			<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+		</control>
 		<!-- Live TV -->
 		<control type="list" id="4012">
 			<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
