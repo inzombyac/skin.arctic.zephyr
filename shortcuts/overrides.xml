@@ -48,7 +48,7 @@
 
     <shortcut label="Smart Shortcuts" type="32010"  grouping="video">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>
 
-	<widgetdefaultnode defaultID="channels" group="mainmenu" label="In Theaters" type="movies" path="plugin://script.extendedinfo?info=incinemas" target="video">In Theaters</widgetdefaultnode>
+	<widgetdefaultnode defaultID="channels" group="mainmenu" label="In Theaters" type="movies" path="plugin://script.extendedinfo?info=incinemamovies" target="video">In Theaters</widgetdefaultnode>
 	
 	<!-- Emby Node mainmenu widgets -->
 	<widgetdefaultnode defaultID="info-window-home-property-emby-nodes-0-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.0.title)]" type="$INFO[Window(Home).Property(emby.nodes.0.type)]" path="$INFO[Window(Home).Property(emby.nodes.0.content)]" target="video">$INFO[Window(Home).Property(emby.nodes.0.title)]</widgetdefaultnode>
