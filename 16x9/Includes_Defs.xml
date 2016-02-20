@@ -173,7 +173,6 @@
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9009).NumItems,0) + IntegerGreaterThan(Container(9015).NumItems,0)">library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_recommended.xml</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9009).NumItems,0)">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22descending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22year%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22playcount%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%220%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9015).NumItems,0)">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22rating%22%2C%22direction%22%3A%22descending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22rating%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%227%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</value>
-		<value>library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_random.xml</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentMovie">
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">videodb://recentlyaddedmovies/</value>
@@ -185,7 +184,7 @@
 	<variable name="DefWidgetRight2ContentHomeVideo">
 		<value>plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=homevideos&amp;folderid=recommended</value>
 	</variable>
-	<!-- Right Widget 2 Selection -->
+	<!-- Right Widget 3 Selection -->
 	<variable name="DefWidgetRight3Content">
 		<value condition="StringCompare(Container(300).ListItem.Property(type),channels)">plugin://script.extendedinfo?info=topratedtvshows</value>
 		<!-- Emby TV -->
@@ -193,17 +192,13 @@
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + [IntegerGreaterThan(Container(9005).NumItems,0) | IntegerGreaterThan(Container(9007).NumItems,0)]">videodb://tvshows/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22rating%22%2C%22direction%22%3A%22descending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22rating%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%227%22%5D%7D%5D%7D%2C%22type%22%3A%22tvshows%22%7D</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_random.xml</value>
 		<!-- Emby Movies -->
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9008).NumItems,0) + [IntegerGreaterThan(Container(9009).NumItems,0) | IntegerGreaterThan(Container(9015).NumItems,0)]">library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_recommended.xml</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9009).NumItems,0) + IntegerGreaterThan(Container(9015).NumItems,0)">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22descending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22year%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22playcount%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%220%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + [IntegerGreaterThan(Container(9009).NumItems,0) | IntegerGreaterThan(Container(9015).NumItems,0)]">library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_random.xml</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)"></value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_random.xml</value>
 		<!-- Standard -->
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)"> </value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)"> </value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0) + IntegerGreaterThan(Container(9002).NumItems,0)">videodb://recentlyaddedepisodes/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">special://skin/extras/playlists/RecommendedShows.xsp</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">special://skin/extras/playlists/RecommendedMovies.xsp</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">special://skin/extras/playlists/OldUnwatchedMovies.xsp</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">special://skin/extras/playlists/RandomMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">pvr://channels/tv/Most%20Viewed</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)"> </value>
