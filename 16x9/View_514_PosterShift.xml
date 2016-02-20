@@ -51,7 +51,7 @@
 				<width>29</width>
 				<height>29</height>
 				<aspectratio aligny="top">keep</aspectratio>
-				<texture>$VAR[PosterPercentWatched]</texture>
+				<texture background="true">$VAR[PosterPercentWatched]</texture>
 			</control>
 			<control type="image">
 				<right>10</right>
@@ -59,7 +59,7 @@
 				<width>29</width>
 				<height>29</height>
 				<aspectratio aligny="top">keep</aspectratio>
-				<texture>$VAR[PosterPercentWatched]</texture>
+				<texture background="true">$VAR[PosterPercentWatched]</texture>
 				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			</control>
 			<control type="group">
@@ -152,7 +152,7 @@
 								<height>290</height>
 								<posy>20</posy>
 								<posx>15</posx>
-								<texture>$VAR[FakeDiscArtOverlay]</texture>
+								<texture background="true">$VAR[FakeDiscArtOverlay]</texture>
 								<aspectratio aligny="center">keep</aspectratio>
 								<visible>Skin.HasSetting(views.discart)</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
@@ -164,7 +164,7 @@
 								<height>290</height>
 								<posy>20</posy>
 								<posx>15</posx>
-								<texture>$VAR[FakeDischandcolor]</texture>
+								<texture background="true">$VAR[FakeDischandcolor]</texture>
 								<aspectratio aligny="center">keep</aspectratio>
 								<visible>Skin.HasSetting(views.discart)</visible>
 								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>

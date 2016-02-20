@@ -23,7 +23,7 @@
 				<posy>-4</posy>
 				<width>128</width>
 				<height>128</height>
-				<texture>special://skin/extras/icons/livetv.png</texture>
+				<texture background="true">special://skin/extras/icons/livetv.png</texture>
 				<colordiffuse>$VAR[OSDPanelWhite100]</colordiffuse>
 			</control>
 			<control type="label">
@@ -65,7 +65,7 @@
 					<control type="image">
 						<width>667</width>
 						<height>109</height>
-						<texture>common/selected.png</texture>
+						<texture background="true">common/selected.png</texture>
 						<aspectratio aligny="top">center</aspectratio>
 						<animation effect="fade" start="100" end="15" condition="true">Conditional</animation>
 						<visible>ListItem.IsPlaying</visible>
@@ -76,7 +76,7 @@
 						<posy>12</posy>
 						<width>85</width>
 						<height>85</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
@@ -152,7 +152,7 @@
 					<control type="image">
 						<width>667</width>
 						<height>109</height>
-						<texture>common/selected.png</texture>
+						<texture background="true">common/selected.png</texture>
 						<aspectratio aligny="top">center</aspectratio>
 						<animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
 						<visible>ListItem.IsPlaying</visible>
@@ -163,7 +163,7 @@
 						<posy>12</posy>
 						<width>85</width>
 						<height>85</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">

@@ -150,35 +150,35 @@
                                     <width>64</width>
                                     <height>64</height>
                                     <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
-                                    <texture>flags/$VAR[OSDMusicFlagstar1].png</texture>
+                                    <texture background="true">flags/$VAR[OSDMusicFlagstar1].png</texture>
                                 </control>
                                 <control type="image">
                                     <posx>-48</posx>
                                     <width>64</width>
                                     <height>64</height>
                                     <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
-                                    <texture>flags/$VAR[OSDMusicFlagstar2].png</texture>
+                                    <texture background="true">flags/$VAR[OSDMusicFlagstar2].png</texture>
                                 </control>
                                 <control type="image">
                                     <posx>-48</posx>
                                     <width>64</width>
                                     <height>64</height>
                                     <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
-                                    <texture>flags/$VAR[OSDMusicFlagstar3].png</texture>
+                                    <texture background="true">flags/$VAR[OSDMusicFlagstar3].png</texture>
                                 </control>
                                 <control type="image">
                                     <posx>-48</posx>
                                     <width>64</width>
                                     <height>64</height>
                                     <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
-                                    <texture>flags/$VAR[OSDMusicFlagstar4].png</texture>
+                                    <texture background="true">flags/$VAR[OSDMusicFlagstar4].png</texture>
                                 </control>
                                 <control type="image">
                                     <posx>-48</posx>
                                     <width>64</width>
                                     <height>64</height>
                                     <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
-                                    <texture>flags/$VAR[OSDMusicFlagstar5].png</texture>
+                                    <texture background="true">flags/$VAR[OSDMusicFlagstar5].png</texture>
                                 </control> -->
                                 <control type="image">
                                     <centertop>14</centertop>

@@ -322,7 +322,7 @@
 			<width>40</width>
 			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
-			<texture>$VAR[PercentWatched]</texture>
+			<texture background="true">$VAR[PercentWatched]</texture>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 		</control> -->
 		<control type="progress">
@@ -428,7 +428,7 @@
 			<width>40</width>
 			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
-			<texture>$VAR[PercentWatched]</texture>
+			<texture background="true">$VAR[PercentWatched]</texture>
 			<visible>!stringcompare(ListItem.Label,..)</visible>
 		</control> -->
 		<control type="progress">
@@ -503,7 +503,7 @@
 				<width>PosterW</width>
 				<height>48</height>
 				<aspectratio aligny="bottom">stretch</aspectratio>
-				<texture>diffuse/shadowspot.png</texture>
+				<texture background="true">diffuse/shadowspot.png</texture>
 				<visible>[Skin.HasSetting(56media.showinfo)|Skin.HasSetting(views.56.showfanart)|Container.Content(episodes)]</visible>
 			</control>
 			<control type="image">
@@ -571,7 +571,7 @@
 					<width>40</width>
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture>$VAR[PosterPercentWatched]</texture>
+					<texture background="true">$VAR[PosterPercentWatched]</texture>
 					<visible>!Skin.HasSetting(views.56.showfanart) + !Container.Content(episodes)</visible>
 				</control>
 				<control type="image">
@@ -580,7 +580,7 @@
 					<width>40</width>
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture>$VAR[PosterPercentWatched]</texture>
+					<texture background="true">$VAR[PosterPercentWatched]</texture>
 					<visible>Container.Content(episodes) | Skin.HasSetting(views.56.showfanart)</visible>
 				</control>
 				<control type="group">
@@ -627,7 +627,7 @@
 				<width>PosterW</width>
 				<height>48</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>diffuse/shadowspot.png</texture>
+				<texture background="true">diffuse/shadowspot.png</texture>
 			</control>
 			<control type="image">
 				<width>PosterW</width>
@@ -670,7 +670,7 @@
 					<width>40</width>
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture>$VAR[PosterPercentWatched]</texture>
+					<texture background="true">$VAR[PosterPercentWatched]</texture>
 				</control>
 				<control type="group">
 					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>

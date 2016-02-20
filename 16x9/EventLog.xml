@@ -22,7 +22,7 @@
 			<width>35</width>
 			<height>35</height>
 			<aspectratio>keep</aspectratio>
-			<texture>icon_events.png</texture>
+			<texture background="true">icon_events.png</texture>
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(570)</visible>
@@ -59,7 +59,7 @@
 						<top>2</top>
 						<width>80</width>
 						<height>76</height>
-						<texture>$INFO[Listitem.Icon]</texture>
+						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
@@ -114,7 +114,7 @@
 						<top>2</top>
 						<width>80</width>
 						<height>76</height>
-						<texture>$INFO[Listitem.Icon]</texture>
+						<texture background="true">$INFO[Listitem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">

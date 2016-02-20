@@ -32,7 +32,7 @@
 					<width>100</width>
 					<height>100</height>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture>progress/back.png</texture>
+					<texture background="true">progress/back.png</texture>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control> -->
 				<control type="image" description="Play">

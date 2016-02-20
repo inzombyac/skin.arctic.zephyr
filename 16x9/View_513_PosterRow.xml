@@ -857,7 +857,7 @@
 									<width>45</width>
 									<height>45</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay-1VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay-1VarOrig]</texture>
 								</control>
 							</control>
 						</control>
@@ -908,7 +908,7 @@
 									<width>32</width>
 									<height>32</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay8VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay8VarOrig]</texture>
 								</control>
 							</control>
 						</control>
@@ -955,7 +955,7 @@
 									<width>33</width>
 									<height>33</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay7VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay7VarOrig]</texture>
 								</control>
 							</control>
 						</control>
@@ -1002,7 +1002,7 @@
 									<width>34</width>
 									<height>34</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay6VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay6VarOrig]</texture>
 								</control>
 							</control>
 						</control>
@@ -1049,7 +1049,7 @@
 									<width>35</width>
 									<height>35</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay5VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay5VarOrig]</texture>
 								</control>
 							</control>
 						</control>
@@ -1096,7 +1096,7 @@
 									<width>36</width>
 									<height>36</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay4VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay4VarOrig]</texture>
 								</control>
 							</control>
 						</control>
@@ -1143,7 +1143,7 @@
 									<width>37</width>
 									<height>37</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay3VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay3VarOrig]</texture>
 								</control>
 							</control>
 						</control>
@@ -1190,7 +1190,7 @@
 									<width>38</width>
 									<height>38</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay2VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay2VarOrig]</texture>
 								</control>
 							</control>
 						</control>
@@ -1237,7 +1237,7 @@
 									<width>39</width>
 									<height>39</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay1VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay1VarOrig]</texture>
 								</control>
 							</control>
 						</control>
@@ -1277,7 +1277,7 @@
 									<height>420</height>
 									<posx>80</posx>
 									<posy>-100</posy>
-									<texture>$VAR[FakeDiscArtOverlay]</texture>
+									<texture background="true">$VAR[FakeDiscArtOverlay]</texture>
 									<aspectratio aligny="center">keep</aspectratio>
 									<visible>Skin.HasSetting(views.discart)</visible>
 									<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))</visible>
@@ -1287,7 +1287,7 @@
 									<height>420</height>
 									<posx>80</posx>
 									<posy>-100</posy>
-									<texture>$VAR[FakeDischandcolor]</texture>
+									<texture background="true">$VAR[FakeDischandcolor]</texture>
 									<aspectratio aligny="center">keep</aspectratio>
 									<visible>Skin.HasSetting(views.discart)</visible>
 									<visible>container.content(movies) + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))</visible>
@@ -1362,7 +1362,7 @@
 									<width>40</width>
 									<height>40</height>
 									<aspectratio aligny="top">keep</aspectratio>
-									<texture>$VAR[IconOverlay0VarOrig]</texture>
+									<texture background="true">$VAR[IconOverlay0VarOrig]</texture>
 								</control>
 							</control>
 						</control>

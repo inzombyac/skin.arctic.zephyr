@@ -163,7 +163,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatched]</texture>
+						<texture background="true">$VAR[PercentWatched]</texture>
 						<visible>!stringcompare(ListItem.Label,..)</visible>
 					</control>
 					<control type="group">
@@ -352,7 +352,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatchedN3]</texture>
+						<texture background="true">$VAR[PercentWatchedN3]</texture>
 						<visible>!stringcompare(ListItem(-3).Label,..)</visible>
 						<visible>!IntegerGreaterThan(ListItem(-3).Property(UnwatchedEpisodes),0)</visible>
 					</control>
@@ -440,7 +440,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatchedN2]</texture>
+						<texture background="true">$VAR[PercentWatchedN2]</texture>
 						<visible>!stringcompare(ListItem(-2).Label,..)</visible>
 					</control>
 					<control type="progress">
@@ -527,7 +527,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatchedN1]</texture>
+						<texture background="true">$VAR[PercentWatchedN1]</texture>
 						<visible>!stringcompare(ListItem(-1).Label,..)</visible>
 					</control>
 					<control type="progress">
@@ -614,7 +614,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatchedP3]</texture>
+						<texture background="true">$VAR[PercentWatchedP3]</texture>
 						<visible>!stringcompare(ListItem(3).Label,..)</visible>
 					</control>
 					<control type="progress">
@@ -701,7 +701,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatchedP2]</texture>
+						<texture background="true">$VAR[PercentWatchedP2]</texture>
 						<visible>!stringcompare(ListItem(2).Label,..)</visible>
 					</control>
 					<control type="progress">
@@ -788,7 +788,7 @@
 						<width>40</width>
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture>$VAR[PercentWatchedP1]</texture>
+						<texture background="true">$VAR[PercentWatchedP1]</texture>
 						<visible>!stringcompare(ListItem(1).Label,..)</visible>
 					</control>
 					<control type="progress">
@@ -902,7 +902,7 @@
 							<width>40</width>
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture>$VAR[PercentWatched]</texture>
+							<texture background="true">$VAR[PercentWatched]</texture>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
 							<animation effect="slide" start="0" end="64" time="0" condition="Container.Content(Seasons)">Conditional</animation>
 						</control>
@@ -1096,7 +1096,7 @@
 					<width>40</width>
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture>$VAR[PercentWatched]</texture>
+					<texture background="true">$VAR[PercentWatched]</texture>
 					<visible>!stringcompare(ListItem.Label,..)</visible>
 				</control>
 				<control type="group">

@@ -37,7 +37,7 @@
 							<width>40</width>
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture>$VAR[PercentWatched]</texture>
+							<texture background="true">$VAR[PercentWatched]</texture>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
@@ -134,7 +134,7 @@
 							<width>40</width>
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture>$VAR[PercentWatched]</texture>
+							<texture background="true">$VAR[PercentWatched]</texture>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
@@ -286,7 +286,7 @@
 							<width>40</width>
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture>$VAR[PercentWatched]</texture>
+							<texture background="true">$VAR[PercentWatched]</texture>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="group">
@@ -361,7 +361,7 @@
 							<width>40</width>
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture>$VAR[PercentWatched]</texture>
+							<texture background="true">$VAR[PercentWatched]</texture>
 							<visible>!stringcompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">

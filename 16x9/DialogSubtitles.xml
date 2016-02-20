@@ -55,7 +55,7 @@
                         <width>100</width>
                         <height>24</height>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_close_caption.png</texture>
+                        <texture background="true">subs/icon_close_caption.png</texture>
                         <visible>!ListItem.property(hearing_imp)</visible>
                         <colordiffuse>Black30</colordiffuse>
                         <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
@@ -66,7 +66,7 @@
                         <width>100</width>
                         <height>24</height>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_sync.png</texture>
+                        <texture background="true">subs/icon_sync.png</texture>
                         <visible>!ListItem.property(sync)</visible>
                         <colordiffuse>Black30</colordiffuse>
                         <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
@@ -78,7 +78,7 @@
                         <height>24</height>
                         <aspectratio align="left">keep</aspectratio>
                         <colordiffuse>Black70</colordiffuse>
-                        <texture>subs/icon_close_caption.png</texture>
+                        <texture background="true">subs/icon_close_caption.png</texture>
                         <visible>ListItem.property(hearing_imp)</visible>
                     </control>
                     <control type="image">
@@ -87,7 +87,7 @@
                         <width>100</width>
                         <height>24</height>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_sync.png</texture>
+                        <texture background="true">subs/icon_sync.png</texture>
                         <colordiffuse>Black70</colordiffuse>
                         <visible>ListItem.property(sync)</visible>
                     </control>
@@ -123,7 +123,7 @@
                         <width>100</width>
                         <height>24</height>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_close_caption.png</texture>
+                        <texture background="true">subs/icon_close_caption.png</texture>
                         <visible>!ListItem.property(hearing_imp)</visible>
                         <colordiffuse>White30</colordiffuse>
                         <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
@@ -134,7 +134,7 @@
                         <width>100</width>
                         <height>24</height>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_sync.png</texture>
+                        <texture background="true">subs/icon_sync.png</texture>
                         <visible>!ListItem.property(sync)</visible>
                         <colordiffuse>White30</colordiffuse>
                         <animation effect="fade" start="100" end="25" condition="true">Conditional</animation>
@@ -146,7 +146,7 @@
                         <height>24</height>
                         <colordiffuse>White100</colordiffuse>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_close_caption.png</texture>
+                        <texture background="true">subs/icon_close_caption.png</texture>
                         <visible>ListItem.property(hearing_imp)</visible>
                     </control>
                     <control type="image">
@@ -156,7 +156,7 @@
                         <height>24</height>
                         <colordiffuse>White100</colordiffuse>
                         <aspectratio align="left">keep</aspectratio>
-                        <texture>subs/icon_sync.png</texture>
+                        <texture background="true">subs/icon_sync.png</texture>
                         <visible>ListItem.property(sync)</visible>
                     </control>
                     <control type="label">

@@ -25,7 +25,7 @@
                 <posy>-4</posy>  
                 <width>128</width>
                 <height>128</height>
-                <texture>special://skin/extras/icons/livetv.png</texture>
+                <texture background="true">special://skin/extras/icons/livetv.png</texture>
                 <colordiffuse>$VAR[OSDPanelWhite100]</colordiffuse>
                 <visible>IsEmpty(Player.Art(thumb))</visible>
             </control>
@@ -35,7 +35,7 @@
                 <width>128</width>
                 <height>64</height>
                 <aspectratio align="right">keep</aspectratio>
-                <texture>$INFO[Player.Art(thumb)]</texture>
+                <texture background="true">$INFO[Player.Art(thumb)]</texture>
             </control>
             <control type="label">
                 <posx>33</posx>
@@ -68,7 +68,7 @@
                     <control type="image">
                         <width>667</width>
                         <height>109</height>
-                        <texture>common/selected.png</texture>
+                        <texture background="true">common/selected.png</texture>
                         <aspectratio aligny="top">center</aspectratio>
                         <animation effect="fade" start="100" end="15" condition="true">Conditional</animation>
                         <visible>StringCompare(ListItem.Title,VideoPlayer.Title) + StringCompare(ListItem.ChannelNumberLabel,VideoPlayer.ChannelNumberLabel) + StringCompare(ListItem.EndTime,VideoPlayer.EndTime)</visible>
@@ -99,7 +99,7 @@
                         <centerright>64</centerright>
                         <width>128</width>
                         <height>128</height>
-                        <texture>special://skin/extras/icons/timer.png</texture>
+                        <texture background="true">special://skin/extras/icons/timer.png</texture>
                         <colordiffuse>$VAR[OSDPanelWhite100]</colordiffuse>
                         <visible>ListItem.HasTimer | ListItem.IsRecording</visible>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
@@ -114,7 +114,7 @@
                     <control type="image">
                         <width>667</width>
                         <height>109</height>
-                        <texture>common/selected.png</texture>
+                        <texture background="true">common/selected.png</texture>
                         <aspectratio aligny="top">center</aspectratio>
                         <animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
                         <visible>StringCompare(ListItem.Title,VideoPlayer.Title) + StringCompare(ListItem.ChannelNumberLabel,VideoPlayer.ChannelNumberLabel) + StringCompare(ListItem.EndTime,VideoPlayer.EndTime)</visible>
@@ -124,7 +124,7 @@
                         <centerright>64</centerright>
                         <width>128</width>
                         <height>128</height>
-                        <texture>special://skin/extras/icons/timer.png</texture>
+                        <texture background="true">special://skin/extras/icons/timer.png</texture>
                         <colordiffuse>$VAR[ColourSelected]</colordiffuse>
                         <visible>ListItem.HasTimer | ListItem.IsRecording</visible>
                         <aspectratio aligny="center" align="center">keep</aspectratio>

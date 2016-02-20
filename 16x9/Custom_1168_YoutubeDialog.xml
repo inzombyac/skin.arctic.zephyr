@@ -123,7 +123,7 @@
                 <width>360</width>
                 <height>138</height>
                 <aspectratio>keep</aspectratio>
-                <texture>info/youtube.png</texture>
+                <texture background="true">info/youtube.png</texture>
             </control>
         </control>
     </controls>

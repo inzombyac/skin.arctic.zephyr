@@ -34,6 +34,10 @@
 		<animation effect="fade" end="0" start="100" time="350" delay="100" tween="cubic" easing="inout">Hidden</animation>
 		<animation effect="fade" end="0" start="100" time="350" delay="100" tween="cubic" easing="inout">WindowClose</animation>
 	</include>
+	<include name="Animation.LongDelayFadeOut">
+		<animation effect="fade" end="0" start="100" time="350" delay="1000" tween="cubic" easing="inout">Hidden</animation>
+		<animation effect="fade" end="0" start="100" time="350" delay="1000" tween="cubic" easing="inout">WindowClose</animation>
+	</include>
 	<include name="Animation.FadeFromHome">
 		<animation effect="fade" start="0" end="100" time="350" tween="cubic" easing="inout" condition="Window.Previous(home)">WindowOpen</animation>
 		<animation effect="fade" end="0" start="100" time="350" tween="cubic" easing="inout" condition="Window.Next(home)">WindowClose</animation>
@@ -117,6 +121,10 @@
 	</include>
 	<include name="Animation.EmbyFadeIn">
 		<animation effect="fade" end="100" start="0" time="2000" delay="1000" tween="cubic" easing="inout" reversible="false">Visible</animation>
-		<animation effect="fade" end="100" start="0" time="1000" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
+		<animation effect="fade" end="0" start="0" time="500" delay="1000" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
+	</include>
+	<include name="Animation.LongDelayFadeIn">
+		<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">Visible</animation>
+		<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 	</include>
 </includes>

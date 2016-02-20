@@ -232,7 +232,7 @@
     <propertydefault defaultID="videos" property="type">videos</propertydefault>
     <propertydefault defaultID="settings" property="type">settings</propertydefault>
     <propertydefault defaultID="power" property="type">power</propertydefault>
-	<propertydefault defaultID="channels" property="type">videos</propertydefault>
+	<propertydefault defaultID="channels" property="type">channels</propertydefault>
 	
 	<propertyfallback property="type">videos</propertyfallback>
 	

@@ -520,7 +520,7 @@
 					<height>48</height>
 					<aspectratio aligny="center">keep</aspectratio>
 					<colordiffuse>$VAR[OSDPanelWhite70]</colordiffuse>
-					<texture>kaitoast/clock.png</texture>
+					<texture background="true">kaitoast/clock.png</texture>
 				</control>
 				<control type="label">
 					<right>185</right>
@@ -539,7 +539,7 @@
 					<height>48</height>
 					<aspectratio aligny="center">keep</aspectratio>
 					<colordiffuse>$VAR[OSDPanelWhite70]</colordiffuse>
-					<texture>kaitoast/finishtime.png</texture>
+					<texture background="true">kaitoast/finishtime.png</texture>
 				</control>
 				<control type="label">
 					<right>-45</right>

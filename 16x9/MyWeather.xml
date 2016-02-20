@@ -43,7 +43,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Current.FanartCode),weather/,.png]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Current.FanartCode),weather/,.png]</texture>
                         <visible>Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="image">
@@ -52,7 +52,7 @@
                         <width>240</width>
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
                         <visible>!Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="label">
@@ -108,7 +108,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day0.FanartCode),weather/,.png]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day0.FanartCode),weather/,.png]</texture>
                         <visible>Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="image">
@@ -117,7 +117,7 @@
                         <width>240</width>
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day0.OutlookIcon)]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day0.OutlookIcon)]</texture>
                         <visible>!Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="label">
@@ -173,7 +173,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day1.FanartCode),weather/,.png]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day1.FanartCode),weather/,.png]</texture>
                         <visible>Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="image">
@@ -182,7 +182,7 @@
                         <width>240</width>
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day1.OutlookIcon)]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day1.OutlookIcon)]</texture>
                         <visible>!Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="label">
@@ -238,7 +238,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day2.FanartCode),weather/,.png]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day2.FanartCode),weather/,.png]</texture>
                         <visible>Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="image">
@@ -247,7 +247,7 @@
                         <width>240</width>
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day2.OutlookIcon)]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day2.OutlookIcon)]</texture>
                         <visible>!Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="label">
@@ -303,7 +303,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day3.FanartCode),weather/,.png]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day3.FanartCode),weather/,.png]</texture>
                         <visible>Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="image">
@@ -312,7 +312,7 @@
                         <width>240</width>
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day3.OutlookIcon)]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day3.OutlookIcon)]</texture>
                         <visible>!Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="label">
@@ -368,7 +368,7 @@
                         <width>285</width>
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day4.FanartCode),weather/,.png]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day4.FanartCode),weather/,.png]</texture>
                         <visible>Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="image">
@@ -377,7 +377,7 @@
                         <width>240</width>
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture>$INFO[Window(weather).Property(Day4.OutlookIcon)]</texture>
+                        <texture background="true">$INFO[Window(weather).Property(Day4.OutlookIcon)]</texture>
                         <visible>!Skin.HasSetting(weather.useflaticons)</visible>
                     </control>
                     <control type="label">

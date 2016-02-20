@@ -158,7 +158,7 @@
                                 <control type="image">
                                     <posx>100</posx>
                                     <posy>10</posy>
-                                    <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/dialogs/circle/$INFO[Window.Property(PercentPlayed)].png</texture>
+                                    <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/dialogs/circle/$INFO[Window.Property(PercentPlayed)].png</texture>
                                     <width>80</width>
                                     <height>80</height>
                                 </control>
@@ -318,7 +318,7 @@
                             <posy>0</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/infopanel_line.png</texture>
+                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/infopanel_line.png</texture>
                         </control>
                         <control type="grouplist">
                             <posx>20</posx>
@@ -339,7 +339,7 @@
                             <control type="image">
                                 <width>2</width>
                                 <height>71</height>
-                                <texture>info/upright.png</texture>
+                                <texture background="true">info/upright.png</texture>
                                 <visible>!IsEmpty(Window.Property(VideoCodec))</visible>
                             </control>
                             <control type="image" id="900013">
@@ -353,7 +353,7 @@
                             <control type="image">
                                 <width>2</width>
                                 <height>71</height>
-                                <texture>info/upright.png</texture>
+                                <texture background="true">info/upright.png</texture>
                                 <visible>!IsEmpty(Window.Property(AudioCodec))</visible>
                             </control>
                             <control type="image" id="900014">
@@ -367,7 +367,7 @@
                             <control type="image">
                                 <width>2</width>
                                 <height>71</height>
-                                <texture>info/upright.png</texture>
+                                <texture background="true">info/upright.png</texture>
                                 <visible>!IsEmpty(Window.Property(VideoResolution))</visible>
                             </control>
                             <control type="image" id="900015">
@@ -381,7 +381,7 @@
                             <control type="image">
                                 <width>2</width>
                                 <height>71</height>
-                                <texture>info/upright.png</texture>
+                                <texture background="true">info/upright.png</texture>
                                 <visible>!IsEmpty(Window.Property(VideoAspect))</visible>
                             </control>
                             <!-- Language flags -->
@@ -404,7 +404,7 @@
 							<control type="image">
 								<width>2</width>
 								<height>71</height>
-								<texture>info/upright.png</texture>
+								<texture background="true">info/upright.png</texture>
 								<visible>!IsEmpty(Window.Property(AudioLanguage.1)) | !IsEmpty(Window.Property(AudioLanguage.2))</visible>
 							</control>
 							<!--Subtitle flags-->
@@ -430,7 +430,7 @@
                             <posy>71</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/infopanel_line.png</texture>
+                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/infopanel_line.png</texture>
                         </control>
 					</control>
 					<!-- Actor -->
@@ -640,7 +640,7 @@
                                             <posy>10</posy>
                                             <width>224</width>
                                             <height>325</height>
-                                            <texture>$INFO[ListItem.Thumb]</texture>
+                                            <texture background="true">$INFO[ListItem.Thumb]</texture>
                                             <aspectratio aligny="center">scale</aspectratio>
                                         </control>
                                         <control type="image">
@@ -700,7 +700,7 @@
                                             <posy>10</posy>
                                             <width>224</width>
                                             <height>325</height>
-                                            <texture>$INFO[ListItem.Thumb]</texture>
+                                            <texture background="true">$INFO[ListItem.Thumb]</texture>
                                             <aspectratio aligny="center">scale</aspectratio>
                                         </control>
                                         <control type="textbox">
@@ -748,7 +748,7 @@
                             <posy>0</posy>
                             <width>70</width>
                             <height>70</height>
-                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/icons/info.png</texture>
+                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/icons/info.png</texture>
                         </control>
                         <control type="label" id="800">
                             <posx>130</posx>
@@ -833,7 +833,7 @@
                                             <posy>310</posy>
                                             <width>54</width>
                                             <height>25</height>
-                                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/common/black.png</texture>
+                                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/common/black.png</texture>
                                             <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
                                             <aspectratio aligny="center">scale</aspectratio>
                                             <visible>!IsEmpty(ListItem.Year)</visible>
@@ -853,7 +853,7 @@
                                             <height>55</height>
                                             <posy>10</posy>
                                             <posx>169</posx>
-                                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
+                                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
                                             <visible>!IsEmpty(ListItem.Property(DBID))</visible>
                                         </control>
                                         <control type="image">
@@ -913,14 +913,14 @@
                                             <height>55</height>
                                             <posy>10</posy>
                                             <posx>169</posx>
-                                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
+                                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
                                             <visible>!IsEmpty(ListItem.Property(DBID))</visible>
                                         </control>
                                         <control type="image">
                                             <posy>310</posy>
                                             <width>54</width>
                                             <height>25</height>
-                                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/common/black.png</texture>
+                                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/common/black.png</texture>
                                             <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
                                             <aspectratio aligny="center">scale</aspectratio>
                                             <visible>!IsEmpty(ListItem.Year)</visible>
@@ -960,7 +960,7 @@
                             <posx>0</posx>
                             <width>1920</width>
                             <height>325</height>
-                            <texture>$INFO[Window.Property(set.fanart)]</texture>
+                            <texture background="true">$INFO[Window.Property(set.fanart)]</texture>
                             <aspectratio aligny="center">scale</aspectratio>
                             <fadetime>0</fadetime>
                         </control>
@@ -1074,14 +1074,14 @@
                                             <height>55</height>
                                             <posy>10</posy>
                                             <posx>169</posx>
-                                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
+                                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
                                             <visible>!IsEmpty(ListItem.Property(DBID))</visible>
                                         </control>
                                         <control type="image">
                                             <posy>310</posy>
                                             <width>54</width>
                                             <height>25</height>
-                                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/</texture>
+                                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/</texture>
                                             <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
                                             <aspectratio aligny="center">scale</aspectratio>
                                             <visible>!IsEmpty(ListItem.Year)</visible>
@@ -1152,14 +1152,14 @@
                                             <height>55</height>
                                             <posy>10</posy>
                                             <posx>169</posx>
-                                            <texture>flags/local.png</texture>
+                                            <texture background="true">flags/local.png</texture>
                                             <visible>!IsEmpty(ListItem.Property(DBID))</visible>
                                         </control>
                                         <control type="image">
                                             <posy>310</posy>
                                             <width>54</width>
                                             <height>25</height>
-                                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/common/black.png</texture>
+                                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/common/black.png</texture>
                                             <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
                                             <aspectratio aligny="center">scale</aspectratio>
                                             <visible>!IsEmpty(ListItem.Year)</visible>
@@ -1625,7 +1625,7 @@
                                         <posy>28</posy>
                                         <width>200</width>
                                         <height>70</height>
-                                        <texture>$INFO[ListItem.Property(iso_3166_1),special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/language/,.png]</texture>
+                                        <texture background="true">$INFO[ListItem.Property(iso_3166_1),special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/language/,.png]</texture>
                                         <aspectratio aligny="center" align="center">keep</aspectratio>
                                     </control>
                                     <control type="textbox">
@@ -1661,7 +1661,7 @@
                                         <posy>28</posy>
                                         <width>200</width>
                                         <height>70</height>
-                                        <texture>$INFO[ListItem.Property(iso_3166_1),special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/language/,.png]</texture>
+                                        <texture background="true">$INFO[ListItem.Property(iso_3166_1),special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/language/,.png]</texture>
                                         <aspectratio aligny="center" align="center">keep</aspectratio>
                                     </control>
                                     <control type="textbox">
@@ -2214,7 +2214,7 @@
                                             <height>55</height>
                                             <posy>10</posy>
                                             <posx>169</posx>
-                                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
+                                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
                                             <visible>!IsEmpty(ListItem.Property(account))</visible>
                                         </control>
                                         <control type="image">
@@ -2283,7 +2283,7 @@
                                             <height>55</height>
                                             <posy>10</posy>
                                             <posx>169</posx>
-                                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
+                                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/flags/local.png</texture>
                                             <visible>!IsEmpty(ListItem.Property(account))</visible>
                                         </control>
                                         <control type="label">
@@ -2490,14 +2490,14 @@
                             <posy>90</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/infopanel_line.png</texture>
+                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/infopanel_line.png</texture>
                         </control>
                         <control type="image">
                             <posx>0</posx>
                             <posy>170</posy>
                             <width>1042</width>
                             <height>1</height>
-                            <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/infopanel_line.png</texture>
+                            <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/infopanel_line.png</texture>
                         </control>
                         <control type="grouplist">
                             <posx>-25</posx>
@@ -2523,7 +2523,7 @@
                                     <posx>0</posx>
                                     <height>79</height>
                                     <width>2</width>
-                                    <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
+                                    <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>0</posx>
@@ -2553,7 +2553,7 @@
                                     <posx>0</posx>
                                     <height>79</height>
                                     <width>2</width>
-                                    <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
+                                    <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>0</posx>
@@ -2581,7 +2581,7 @@
                                 <height>79</height>
                                 <width>2</width>
                                 <visible>!StringCompare(Window.Property(type),Season)</visible>
-                                <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
+                                <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
                             </control>
                             <control type="group">
                                 <width>220</width>
@@ -2615,7 +2615,7 @@
                                     <posy>1</posy>
                                     <height>79</height>
                                     <width>2</width>
-                                    <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
+                                    <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>0</posx>
@@ -2646,7 +2646,7 @@
                                     <posy>1</posy>
                                     <height>79</height>
                                     <width>2</width>
-                                    <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
+                                    <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>0</posx>
@@ -2677,7 +2677,7 @@
                                     <posy>1</posy>
                                     <height>79</height>
                                     <width>2</width>
-                                    <texture>special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
+                                    <texture background="true">special://home/addons/script.extendedinfo/resources/skins/Default/media/info/upright.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>0</posx>
@@ -2723,7 +2723,7 @@
                 <height>1080</height>
                 <fadetime>300</fadetime>
                 <aspectratio aligny="top">scale</aspectratio>
-                <texture>$INFO[Window.Property(Poster)]</texture>
+                <texture background="true">$INFO[Window.Property(Poster)]</texture>
             </control>
             <control type="image">
                 <posy>0</posy>
@@ -2732,7 +2732,7 @@
                 <fadetime>300</fadetime>
                 <aspectratio aligny="center">keep</aspectratio>
                 <visible>Stringcompare(Window.Property(type),episode)</visible>
-                <texture>$INFO[Window.Property(still_original)]</texture>
+                <texture background="true">$INFO[Window.Property(still_original)]</texture>
             </control>
         </control>
     </controls>
