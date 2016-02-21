@@ -136,7 +136,7 @@
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
-					<texture diffuse="common/circle.png">special://skin/extras/icons/actor.png</texture>
+					<texture diffuse="common/circle.png">DefaultActor.png</texture>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 					<visible>!Control.HasFocus(3634)</visible>
@@ -248,9 +248,7 @@
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</ondown>
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
 				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3635</onup>
-				<onleft>Control.Move(9011,-1)</onleft>
 				<onleft>300</onleft>
-				<onright>Control.Move(9011,1)</onright>
 				<onright>300</onright>
 				<orientation>horizontal</orientation>
 				<scrolltime>200</scrolltime>
@@ -713,13 +711,6 @@
 		<control type="list" id="9010">
 			<content target="video" limit="1">plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</content>
 		</control>
-		<control type="panel" id="9011">
-			<content>
-				<include>skinshortcuts-mainmenu</include>
-			</content>
-			<include>EmbyHiddenItemLayout</include>
-			<orientation>horizontal</orientation>
-		</control>
 		<!-- Check for Channels -->
 		<control type="list" id="9012">
 			<content target="video" limit="1">plugin://plugin.video.emby?id=0&amp;mode=channels</content>
@@ -731,15 +722,36 @@
 		</control>
 		<control type="list" id="9014">
 			<content target="video" limit="1">special://skin/extras/playlists/RecommendedShows.xsp</content>
-			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) </visible>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 		</control>
-		
-		<control type="list" id="9018">
+<!-- 		<control type="list" id="9018">
 			<content target="video" limit="1">library://video/emby_Favorite movies.xml</content>
 			<include>EmbyHiddenItemLayout</include>
+		</control> -->
+		<control type="list" id="9019">
+			<content target="video" limit="1">special://skin/extras/playlists/RecommendedMoviesAll.xsp</content>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 		</control>
-		
-		
+		<control type="list" id="9020">
+			<content target="video" limit="1">library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_recommended.xml</content>
+			<visible>[StringCompare(Container(300).ListItem.Property(type),movies) | StringCompare(Container(300).ListItem.Property(type),tvshows)] + Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
+		</control>
+		<control type="list" id="9021">
+			<content target="video" limit="1">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$VAR[EmbyHomeSelectedMenu]%22%5d%7d%2c%7b%22field%22%3a%22numwatched%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</content>
+			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) + Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
+		</control>
+		<control type="list" id="9022">
+			<content target="video" limit="1">library://video/emby_Favorite tvshows.xml</content>
+			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows)</visible>
+		</control>
+		<control type="list" id="9023">
+			<content target="video" limit="1">videodb://recentlyaddedepisodes/</content>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+		</control>
+		<control type="list" id="9024">
+			<content target="video" limit="1">special://skin/extras/playlists/OldUnwatchedMovies.xsp</content>
+			<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+		</control>
 		<!-- Movies -->		
 		<control type="list" id="4012">
 			<visible>StringCompare(Container(300).ListItem.Property(type),movies)</visible>
@@ -1599,7 +1611,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1625,7 +1638,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1651,7 +1665,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1677,7 +1692,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1704,7 +1720,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1730,7 +1747,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1756,7 +1774,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1782,7 +1801,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1809,7 +1829,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1835,7 +1856,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1861,7 +1883,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1887,7 +1910,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1914,7 +1938,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1940,7 +1965,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1966,7 +1992,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -1992,7 +2019,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -2019,7 +2047,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -2045,7 +2074,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -2071,7 +2101,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -2097,7 +2128,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -2124,7 +2156,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -2150,7 +2183,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -2176,7 +2210,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -2202,7 +2237,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
@@ -2229,7 +2265,8 @@
 				<height>730</height>
 				<onup>300</onup>
 				<ondown>4017</ondown>
-				<onleft>4016</onleft>
+				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 				<onright>4017</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>

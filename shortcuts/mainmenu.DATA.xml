@@ -6,7 +6,7 @@
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(Videos,TVShowTitles,return)</action>
-		<visible>!System.HasAddon(plugin.video.emby) </visible>
+		<!-- <visible>!System.HasAddon(plugin.video.emby) </visible> -->
     </shortcut>
 	<shortcut>
         <label>20342</label>
@@ -14,7 +14,7 @@
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
         <action>ActivateWindow(Videos,MovieTitles,return)</action>
-		<visible>!System.HasAddon(plugin.video.emby)</visible>
+		<!-- <visible>!System.HasAddon(plugin.video.emby)</visible> -->
     </shortcut>
     <shortcut>
 		<defaultID>info-window-home-property-emby-nodes-0-title</defaultID>
@@ -24,6 +24,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.0.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.0.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.0.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.0.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-1-title</defaultID>
@@ -33,6 +34,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.1.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.1.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.1.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.1.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-2-title</defaultID>
@@ -42,6 +44,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.2.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.2.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.2.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.2.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-3-title</defaultID>
@@ -51,6 +54,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.3.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.3.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.3.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.3.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-4-title</defaultID>
@@ -60,6 +64,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.4.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.4.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.4.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.4.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-5-title</defaultID>
@@ -69,6 +74,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.5.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.5.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.5.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.5.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-6-title</defaultID>
@@ -78,6 +84,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.6.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.6.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.6.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.6.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-7-title</defaultID>
@@ -87,6 +94,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.7.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.7.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.7.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.7.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-8-title</defaultID>
@@ -96,6 +104,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.8.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.8.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.8.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.8.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-9-title</defaultID>
@@ -105,6 +114,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.9.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.9.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.9.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.9.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-10-title</defaultID>
@@ -114,6 +124,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.10.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.10.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.10.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.10.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-11-title</defaultID>
@@ -123,6 +134,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.11.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.11.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.11.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.11.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-12-title</defaultID>
@@ -132,6 +144,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.12.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.12.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.12.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.12.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-13-title</defaultID>
@@ -141,6 +154,7 @@
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.13.path)]</action>
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.13.title))</visible>
+		<visible>!Substring(Window(Home).Property(emby.nodes.13.content),TV_all) + !Substring(Window(Home).Property(emby.nodes.13.content),Movies_all)</visible>
 	</shortcut>
 	<shortcut>
         <label>Music</label>
