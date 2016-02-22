@@ -63,7 +63,7 @@
                     <width>1</width>
                     <bottom>10</bottom>
                     <colordiffuse>Black12</colordiffuse>
-                    <texture background="true">common/white.png</texture>
+                    <texture>common/white.png</texture>
                 </control>
          
                 

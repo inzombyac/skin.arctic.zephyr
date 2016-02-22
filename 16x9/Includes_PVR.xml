@@ -1044,7 +1044,7 @@
 				<posx>50</posx>
 				<posy>2</posy>
 				<height>68</height>
-				<texture background="true">common/selected.png</texture>
+				<texture>common/selected.png</texture>
 				<aspectratio aligny="top">center</aspectratio>
 				<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
 				<visible>ListItem.IsPlaying</visible>
@@ -1082,7 +1082,7 @@
 				<posy>2</posy>
 				<width>375</width>
 				<height>68</height>
-				<texture background="true">common/selected.png</texture>
+				<texture>common/selected.png</texture>
 				<aspectratio aligny="top">center</aspectratio>
 				<animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
 				<visible>ListItem.IsPlaying</visible>
@@ -1138,7 +1138,7 @@
 				<posy>1</posy>
 				<width>150</width>
 				<height>69</height>
-				<texture background="true">common/selected.png</texture>
+				<texture>common/selected.png</texture>
 				<aspectratio aligny="top">center</aspectratio>
 				<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
 				<visible>ListItem.IsPlaying</visible>
@@ -1164,7 +1164,7 @@
 				<posy>1</posy>
 				<width>150</width>
 				<height>69</height>
-				<texture background="true">common/selected.png</texture>
+				<texture>common/selected.png</texture>
 				<aspectratio aligny="top">center</aspectratio>
 				<animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
 				<visible>ListItem.IsPlaying</visible>

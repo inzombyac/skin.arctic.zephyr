@@ -18,7 +18,7 @@
                     <top>110r</top>
                     <width>100%</width>
                     <height>374</height>
-                    <texture background="true">common/white.png</texture>
+                    <texture>common/white.png</texture>
                     <colordiffuse>$VAR[OSDPanel]</colordiffuse>
                     <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
                     <include>Animation.FadeOut</include>
@@ -51,7 +51,7 @@
 						<top>-226</top>
 						<width>334</width>
 						<height>486</height>
-                        <texture background="true">$VAR[PlayerPoster]</texture>
+                        <texture>$VAR[PlayerPoster]</texture>
                         <visible>!VideoPlayer.Content(LiveTV) + [!IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Player.Art(poster))]</visible>
                     </control>
 					<control type="image">
@@ -60,14 +60,14 @@
 						<width>334</width>
 						<height>486</height>
                         <aspectratio>keep</aspectratio>
-                        <texture background="true">$INFO[VideoPlayer.Cover]</texture>
+                        <texture>$INFO[VideoPlayer.Cover]</texture>
                         <visible>!VideoPlayer.Content(LiveTV)+ !IsEmpty(VideoPlayer.Cover)+ IsEmpty(Player.Art(tvshow.poster)) + IsEmpty(Player.Art(poster))</visible>
                     </control>                   
 				   <control type="image">
                         <width>260</width>
                         <height>260</height>
                         <aspectratio>keep</aspectratio>
-                        <texture background="true">$INFO[Player.Art(thumb)]</texture>
+                        <texture>$INFO[Player.Art(thumb)]</texture>
                         <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(Player.Art(thumb))</visible>
                     </control>  
                     <control type="group">

@@ -22,7 +22,7 @@
 			<width>35</width>
 			<height>35</height>
 			<aspectratio>keep</aspectratio>
-			<texture background="true">icon_events.png</texture>
+			<texture>icon_events.png</texture>
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(570)</visible>

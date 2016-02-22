@@ -18,7 +18,7 @@
 				<centertop>50%</centertop>
 				<width>800</width>
 				<height>480</height>
-				<texture background="true">dialog/song_info_back.png</texture>
+				<texture>dialog/song_info_back.png</texture>
 			</control>
 			<!-- Heading -->
 			<control type="label">
@@ -37,7 +37,7 @@
 				<top>102</top>
 				<width>300</width>
 				<height>300</height>
-				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<texture>$INFO[ListItem.Icon]</texture>
 				<aspectratio>scale</aspectratio>
 			</control>
 			<!-- Rating -->
@@ -46,7 +46,7 @@
 				<top>422</top>
 				<width>196</width>
 				<height>32</height>
-				<texture background="true">$INFO[ListItem.StarRating,stars/,]</texture>
+				<texture>$INFO[ListItem.StarRating,stars/,]</texture>
 				<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
 			</control>
 			<!-- Button grouplist -->

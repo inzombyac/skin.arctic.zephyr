@@ -184,7 +184,7 @@
 							<posy>18</posy>
 							<width>52</width>
 							<height>35</height>
-							<texture background="true">indicator/recording.png</texture>
+							<texture>indicator/recording.png</texture>
 							<aspectratio>keep</aspectratio>
 							<aligny>center</aligny>
 							<colordiffuse>PanelWhite70</colordiffuse>
@@ -237,7 +237,7 @@
 							<posy>18</posy>
 							<width>52</width>
 							<height>35</height>
-							<texture background="true">indicator/recording.png</texture>
+							<texture>indicator/recording.png</texture>
 							<aspectratio>keep</aspectratio>
 							<aligny>center</aligny>
 							<colordiffuse>PanelWhite70</colordiffuse>

@@ -54,7 +54,7 @@
                         <width>PosterW</width>
                         <height>48</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture background="true">diffuse/shadowspot.png</texture>
+                        <texture>diffuse/shadowspot.png</texture>
                         
                     </control>
                     <control type="image">
@@ -95,7 +95,7 @@
                         <width>PosterH</width>
                         <height>48</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture background="true">diffuse/shadowspot.png</texture>
+                        <texture>diffuse/shadowspot.png</texture>
                         
                     </control>
                     <control type="image">

@@ -37,7 +37,7 @@
                         <width>100</width>
                         <height>100</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
-                        <texture background="true">dialog/loading-back-busy.png</texture>
+                        <texture>dialog/loading-back-busy.png</texture>
                         <colordiffuse>Dark1</colordiffuse>
                         <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
                     </control>
@@ -46,7 +46,7 @@
                         <centertop>50%</centertop>
                         <width>100</width>
                         <height>100</height>
-                        <texture background="true">$INFO[Control.GetLabel(32),progress/circle/p,.png]</texture>
+                        <texture>$INFO[Control.GetLabel(32),progress/circle/p,.png]</texture>
                         <aspectratio align="center">keep</aspectratio>
                     </control>
                 </control>

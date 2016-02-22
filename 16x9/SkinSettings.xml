@@ -684,15 +684,6 @@
 						<selected>Skin.HasSetting(hide.busydialog)</selected>
 						<onclick>Skin.ToggleSetting(hide.busydialog)</onclick>
 					</control>
-					<control type="radiobutton" id="9276" description="Update Next Aired on Startup">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9107)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31180</label>
-						<selected>Skin.HasSetting(NextAired.Update)</selected>
-						<onclick>Skin.ToggleSetting(NextAired.Update)</onclick>
-						<enable>System.HasAddon(script.tv.show.next.aired)</enable>
-					</control>
 					<control type="button" id="9278" description="export skin settings">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9107)</visible>
@@ -870,7 +861,7 @@
 					<width>1</width>
 					<bottom>10</bottom>
 					<colordiffuse>Black12</colordiffuse>
-					<texture background="true">common/white.png</texture>
+					<texture>common/white.png</texture>
 				</control>
 				<!-- Header -->
 				<control type="label">

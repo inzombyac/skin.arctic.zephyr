@@ -2647,7 +2647,7 @@
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
-				<texture background="true">common/null.png</texture>
+				<texture>common/null.png</texture>
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>

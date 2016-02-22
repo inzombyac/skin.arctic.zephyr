@@ -353,7 +353,7 @@
                             <control type="image">
                                 <width>2</width>
                                 <height>71</height>
-                                <texture background="true">info/upright.png</texture>
+                                <texture>info/upright.png</texture>
                                 <visible>!IsEmpty(Window.Property(AudioCodec))</visible>
                             </control>
                             <control type="image" id="900014">
@@ -367,7 +367,7 @@
                             <control type="image">
                                 <width>2</width>
                                 <height>71</height>
-                                <texture background="true">info/upright.png</texture>
+                                <texture>info/upright.png</texture>
                                 <visible>!IsEmpty(Window.Property(VideoResolution))</visible>
                             </control>
                             <control type="image" id="900015">
@@ -381,7 +381,7 @@
                             <control type="image">
                                 <width>2</width>
                                 <height>71</height>
-                                <texture background="true">info/upright.png</texture>
+                                <texture>info/upright.png</texture>
                                 <visible>!IsEmpty(Window.Property(VideoAspect))</visible>
                             </control>
                             <!-- Language flags -->
@@ -404,7 +404,7 @@
 							<control type="image">
 								<width>2</width>
 								<height>71</height>
-								<texture background="true">info/upright.png</texture>
+								<texture>info/upright.png</texture>
 								<visible>!IsEmpty(Window.Property(AudioLanguage.1)) | !IsEmpty(Window.Property(AudioLanguage.2))</visible>
 							</control>
 							<!--Subtitle flags-->

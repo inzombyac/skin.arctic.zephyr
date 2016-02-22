@@ -29,7 +29,7 @@
                         <width>1122</width>
                         <top>0</top>
                         <bottom>0</bottom>
-                        <texture background="true" diffuse="diffuse/home-fanart.png">pvr/background.jpg</texture>
+                        <texture diffuse="diffuse/home-fanart.png">pvr/background.jpg</texture>
                         <visible>!IntegerGreaterThan(Container(9500).NumItems,0)</visible>
                     </control>
                     <control type="wraplist" id="9500">
@@ -51,14 +51,14 @@
                             <control type="image">
                                 <width>100%</width>
                                 <height>100%</height>
-                                <texture background="true" diffuse="diffuse/home-fanart.png">$VAR[LandscapeImage]</texture>
+                                <texture diffuse="diffuse/home-fanart.png">$VAR[LandscapeImage]</texture>
                             </control>
                         </itemlayout>
                         <focusedlayout width="1122" height="640">
                             <control type="image">
                                 <width>100%</width>
                                 <height>100%</height>
-                                <texture background="true" diffuse="diffuse/home-fanart.png">$VAR[LandscapeImage]</texture>
+                                <texture diffuse="diffuse/home-fanart.png">$VAR[LandscapeImage]</texture>
                             </control>
                         </focusedlayout>
                         <content target="video">$VAR[DefTVHubWidget]</content>
@@ -113,7 +113,7 @@
                             <width>32</width>
                             <height>32</height>
                             <aspectratio aligny="top">keep</aspectratio>
-                            <texture background="true">$VAR[PercentWatched9500]</texture>
+                            <texture>$VAR[PercentWatched9500]</texture>
                             <visible>!stringcompare(ListItem.Label,..)</visible>
                         </control>
                         <control type="label">

@@ -261,7 +261,7 @@
 	<include name="Furniture_FlagUpright">
 		<width>2</width>
 		<height>71</height>
-		<texture background="true">info/upright.png</texture>
+		<texture>info/upright.png</texture>
 	</include>
 	<variable name="RatingFlagVar">
 		<value condition="substring(ListItem.mpaa,TV-G)">TV-G_Certificate_US</value>
