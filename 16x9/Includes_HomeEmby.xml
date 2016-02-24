@@ -289,8 +289,7 @@
 				<focusedlayout width="260" height="44">
 					<control type="button">
 						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>						
+						<texturenofocus>-</texturenofocus>					
 					</control>
 					<control type="label">
 						<align>center</align>
@@ -334,7 +333,7 @@
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>	
+				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>				
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -353,7 +352,7 @@
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>	
+				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>				
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -678,7 +677,7 @@
 		</control>
 		<control type="list" id="9005">
 			<content target="video">plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=nextup&amp;limit=1</content>
-			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows)</visible>
+			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) + Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
 		</control>
 		<control type="list" id="9006">
 			<content target="video" limit="6">special://skin/extras/playlists/InProgressMovies.xsp</content>
@@ -687,12 +686,12 @@
 		<!-- Recent episodes -->
 		<control type="list" id="9007">
 			<content target="video" limit="6">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$VAR[EmbyHomeSelectedMenu]%22%5d%7d%2c%7b%22field%22%3a%22numwatched%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</content>
-			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows)</visible>
+			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) + Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
 		</control>
 		<!-- In progress movies-->
 		<control type="list" id="9008">
 			<content target="video" limit="6">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22inprogress%22%2C%22operator%22%3A%22true%22%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</content>
-			<visible>StringCompare(Container(300).ListItem.Property(type),movies)</visible>
+			<visible>StringCompare(Container(300).ListItem.Property(type),movies) + Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
 		</control>
 		<!-- Unwatched Movies (ordered by year)-->
 		<control type="list" id="9009">
@@ -1006,7 +1005,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget1Label]</label>
 				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
-				<visible>[!Container(4016).IsUpdating | System.IdleTime(7)]+ !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(4016).IsUpdating | System.IdleTime(3) | Container(4016).HasFocus | Container(4012).HasFocus | Container(4017).HasFocus | Container(4018).HasFocus]+ !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1546,7 +1545,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,3)</visible>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
-				<visible>[!Container(40016).IsUpdating | System.IdleTime(7)]+ !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(40016).IsUpdating |  System.IdleTime(3) | Container(4016).HasFocus | Container(4012).HasFocus | Container(4017).HasFocus | Container(4018).HasFocus]+ !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1563,7 +1562,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>!IntegerGreaterThan(Container(40017).NumItems,3)</visible>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
-				<visible>[!Container(40016).IsUpdating | System.IdleTime(7)]+ !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(40016).IsUpdating |  System.IdleTime(3) | Container(4016).HasFocus | Container(4012).HasFocus | Container(4017).HasFocus | Container(4018).HasFocus]+ !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -2303,7 +2302,7 @@
 				<label>$VAR[EmbyHomeWidget3Label]</label>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings) + ! StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,3)+IntegerGreaterThan(Container(40017).NumItems,3)</visible>
-				<visible>[!Container(40016).IsUpdating | System.IdleTime(7)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(40016).IsUpdating |  System.IdleTime(3) | Container(4016).HasFocus | Container(4012).HasFocus | Container(4017).HasFocus | Container(4018).HasFocus] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -2319,7 +2318,7 @@
 				<label>$VAR[EmbyHomeWidget3Label]</label>
 				<visible>!Substring(Container(300).ListItem.Property(type),photos) + !Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !Substring(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),programs)  + !Substring(Container(300).ListItem.Property(type),homevideos)</visible>
 				<visible>[IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,3)] | [!IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,3)]</visible>
-				<visible>[!Container(40016).IsUpdating | System.IdleTime(7)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(40016).IsUpdating |  System.IdleTime(3) | Container(4016).HasFocus | Container(4012).HasFocus | Container(4017).HasFocus | Container(4018).HasFocus] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -2335,7 +2334,7 @@
 				<label>$VAR[EmbyHomeWidget3Label]</label>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,0)+!IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,3)</visible>
-				<visible>[!Container(40016).IsUpdating | System.IdleTime(7)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(40016).IsUpdating |  System.IdleTime(3) | Container(4016).HasFocus | Container(4012).HasFocus | Container(4017).HasFocus | Container(4018).HasFocus] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -2422,15 +2421,13 @@
 			</control>
 			<control type="button">
 				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>	
+				<texturenofocus>-</texturenofocus>	
 			</control>
 		</itemlayout>
 		<focusedlayout width="1" height="1">
 			<control type="button">
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>	
 			</control>
 			<control type="image">
 				<aspectratio>scale</aspectratio>
@@ -2595,7 +2592,7 @@
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
-				<visible>[!Container(40016).IsUpdating | System.IdleTime(7)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(40016).IsUpdating |  System.IdleTime(3) | Container(4016).HasFocus | Container(4012).HasFocus | Container(4017).HasFocus | Container(4018).HasFocus] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.DelayFadeIn</include>
 			</control>
@@ -2628,7 +2625,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidget1ContentLabel]</label>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + [!Container(40016).IsUpdating | System.IdleTime(7)] </visible>
+				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + [!Container(40016).IsUpdating |  System.IdleTime(3) | Container(4016).HasFocus | Container(4012).HasFocus | Container(4017).HasFocus | Container(4018).HasFocus] </visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -3064,14 +3061,14 @@
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">special://skin/extras/backgrounds/Channels.jpg</texture>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4016).IsUpdating] | Container(4012).HasFocus | System.IdleTime(3)</visible>
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
 				<width>856</width>
 				<height>496</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>				
+				<visible>[!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4016).IsUpdating] | Container(4012).HasFocus | System.IdleTime(3)</visible>				
 			</control>
 			<control type="image">
 				<left>10</left>
@@ -3079,7 +3076,7 @@
 				<width>200</width>
 				<aspectratio>keep</aspectratio>
 				<texture background="true" fallback="diffuseoverlay.png">$VAR[PVRChannelsImage]</texture>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4016).IsUpdating] | Container(4012).HasFocus | System.IdleTime(3)</visible>
 			</control>
 			<control type="label">
 				<visible>IsEmpty(ListItem.Icon)</visible>
@@ -3092,7 +3089,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.ChannelName]</label>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4016).IsUpdating] | Container(4012).HasFocus | System.IdleTime(3)</visible>
 			</control>
 			<control type="label">
 				<left>250</left>
@@ -3104,7 +3101,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.ChannelNumber]</label>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4016).IsUpdating] | Container(4012).HasFocus | System.IdleTime(3)</visible>
 			</control>
 			<control type="progress">
 				<left>350</left>
@@ -3119,7 +3116,7 @@
 				<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 				<info>ListItem.Progress</info>
 				<colordiffuse>Dark1</colordiffuse>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4016).IsUpdating] | Container(4012).HasFocus | System.IdleTime(3)</visible>
 			</control>
 			<control type="label">
 				<left>10</left>
@@ -3131,7 +3128,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.ChannelName]</label>
 				<visible>IsEmpty(ListItem.Icon)</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4016).IsUpdating] | Container(4012).HasFocus | System.IdleTime(3)</visible>
 			</control>
 			<control type="label">
 				<right>4</right>
@@ -3143,7 +3140,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - , ]</label>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4016).IsUpdating] | Container(4012).HasFocus | System.IdleTime(3)</visible>
 			</control>
 			<control type="textbox">
 				<left>12</left>
@@ -3155,7 +3152,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.Title,[B],[/B]]$INFO[ListItem.EpisodeName, (,)]$INFO[ListItem.Plot,[CR],]</label>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>[!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4016).IsUpdating] | Container(4012).HasFocus | System.IdleTime(3)</visible>
 			</control>
 	
 		</itemlayout>

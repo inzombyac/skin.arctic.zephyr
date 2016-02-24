@@ -349,7 +349,7 @@
         <value>$INFO[Window(weather).Property(Day6.OutlookIcon)]</value>
 	</variable>
 	<variable name="EmbyMainWidgetIcon">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | Container(4012).IsUpdating">common/null.png</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4012).IsUpdating + !System.IdleTime(3) +!Container(4012).HasFocus]">common/null.png</value>
 		<value>$VAR[LandscapeImage]</value>
 	</variable>
 	<!-- Center Widget Selection -->
@@ -390,7 +390,7 @@
 		<value>scale</value>
 	</variable>
 	<variable name="EmbyBottomTileImage1">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious| Container(4012).IsUpdating">common/null.png</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4012).IsUpdating + !System.IdleTime(3)]">common/null.png</value>
 		<value condition="!IsEmpty(Container(300).ListItem.Property(background))">$INFO[Container(300).ListItem.Property(background)]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+!IsEmpty(Container(4017).ListItem(0).Art(fanart))">$INFO[Container(4017).ListItem(0).Art(fanart)]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)+!IsEmpty(Container(4016).ListItem(0).Art(fanart))">$INFO[Container(4016).ListItem(0).Art(fanart)]</value>
@@ -410,7 +410,7 @@
 		<value>special://skin/extras/backgrounds/Channels.jpg</value>
 	</variable>
 	<variable name="EmbyBottomTileImage2">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious| Container(4012).IsUpdating">common/null.png</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious| [Container(4012).IsUpdating + !System.IdleTime(3)]">common/null.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),channels)">special://skin/extras/backgrounds/Channels2.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/favorites.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">special://skin/extras/backgrounds/favorites.jpg</value>
@@ -434,7 +434,7 @@
 		<value>special://skin/extras/backgrounds/Channels2.jpg</value>
 	</variable>
 	<variable name="EmbyBottomTileImage3">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious| Container(4012).IsUpdating">common/null.png</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious| [Container(4012).IsUpdating + !System.IdleTime(3)]">common/null.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">special://skin/extras/backgrounds/music artist.jpg</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">special://skin/extras/backgrounds/tv.jpg</value>
