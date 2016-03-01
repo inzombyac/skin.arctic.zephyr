@@ -66,11 +66,13 @@
 		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[570])">$INFO[ListItem.DateAdded]</value>
 		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[567])">$INFO[ListItem.PlayCount]</value>
 		<value condition="!IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="!IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="!IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
 		<value condition="!IsEmpty(Container(4012).ListItem.Duration)">$INFO[Container(4012).ListItem.Duration,, $LOCALIZE[31102]]</value>
 		<value condition="!IsEmpty(Container(4012).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4012).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
 		<value condition="[Container.Content(tvshows) + !Control.IsVisible(54)] | Container.Content(episodes)">$VAR[LabelYear]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(4012).ListItem.Property(Rating)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),videos)">$INFO[Container(4012).ListItem.Year]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),videos)">$INFO[Container(4019).ListItem.Year]</value>
 		<value></value>
 	</variable>
 	<variable name="LabelPlotBox">
@@ -219,15 +221,16 @@
 		<value>$LOCALIZE[31208]</value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4012).IsUpdating + !System.IdleTime(3)]">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(4012).ListItem.TVShowTitle,,]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4012).ListItem.Artist,, • ]$INFO[Container(4012).ListItem.Label]</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4019).IsUpdating + !System.IdleTime(3)]">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(4019).ListItem.TVShowTitle,,]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4019).ListItem.Artist,, • ]$INFO[Container(4019).ListItem.Label]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="!IsEmpty(Container(4019).ListItem.Label)">$INFO[Container(4019).ListItem.Label]</value>
 		<value>$INFO[Container(4012).ListItem.Label]</value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel2">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4012).IsUpdating + !System.IdleTime(3)]">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4012).ListItem.Year]</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious | [Container(4019).IsUpdating + !System.IdleTime(3)]">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4019).ListItem.Year]</value>
 		<value condition="!StringCompare(Container(300).ListItem.Property(type),livetv)">$VAR[LabelDuration]</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
@@ -361,8 +364,10 @@
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
-		<value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(4019).ListItem.DBID] / $INFO[Container(4019).ListItem.FileNameAndPath]</value>
 		<!-- Tv Shows -->
+		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4016).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.Label,,][/COLOR]$INFO[Container(4019).ListItem.Season, • , Seasons]$INFO[Container(4019).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight2]]$INFO[Container(4019).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4019).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4019).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4019).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.Title][/COLOR]</value>
 		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4016).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,,][/COLOR]$INFO[Container(4016).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
 		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight2]]$INFO[Container(4016).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4016).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4016).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4016).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Title][/COLOR]</value>
 		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4017).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,,][/COLOR]$INFO[Container(4017).ListItem.Season, • , Seasons]$INFO[Container(4017).ListItem.Episode, • , Episodes]</value>
@@ -370,13 +375,17 @@
 		<value condition="Control.HasFocus(4018) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4018).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,,][/COLOR]$INFO[Container(4018).ListItem.Season, • , Seasons]$INFO[Container(4018).ListItem.Episode, • , Episodes]</value>
 		<value condition="Control.HasFocus(4018) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight2]]$INFO[Container(4018).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4018).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4018).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4018).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Title][/COLOR]</value>
 		<!-- Movies -->
+		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.Label,, •][/COLOR] $INFO[Container(4019).ListItem.Year]</value>
 		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,, •][/COLOR] $INFO[Container(4016).ListItem.Year]</value>
 		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,, •][/COLOR] $INFO[Container(4017).ListItem.Year]</value>
 		<value condition="Control.HasFocus(4018) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,, •][/COLOR] $INFO[Container(4018).ListItem.Year]</value>
 		<!-- Music -->
+		<value condition="Control.HasFocus(4012) + Substring(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.Artist,, •][/COLOR] $INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
 		<value condition="Control.HasFocus(4017) + Substring(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Artist,, •][/COLOR] $INFO[Container(4017).ListItem.Label,,]$INFO[Container(4017).ListItem.Year, • ,]</value>
 		<value condition="Control.HasFocus(4016) + Substring(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Artist,, •][/COLOR] $INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
 		<!-- Default -->
+		<value condition="Control.HasFocus(4012) + !IsEmpty(Container(4019).ListItem.TVShowTitle)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.Label,,][/COLOR]$INFO[Container(4019).ListItem.Season, • , Seasons]$INFO[Container(4019).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.Label,,]$INFO[Container(4019).ListItem.Year, • ,]</value>
 		<value condition="Control.HasFocus(4016) + !IsEmpty(Container(4016).ListItem.TVShowTitle)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,,][/COLOR]$INFO[Container(4016).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
 		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
 		<value condition="Control.HasFocus(4017) + !IsEmpty(Container(4017).ListItem.TVShowTitle)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,,][/COLOR]$INFO[Container(4017).ListItem.Season, • , Seasons]$INFO[Container(4017).ListItem.Episode, • , Episodes]</value>

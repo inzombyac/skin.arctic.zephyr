@@ -243,9 +243,10 @@
 				<description>Home Wraplist</description>
 				<left>SidePad</left>
 				<right>SidePad</right>
-				<ondown condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</ondown>
+				<ondown>4012</ondown>
+				<!-- <ondown condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</ondown>
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + IntegerGreaterThan(Container(4017).NumItems,0)">4017</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</ondown>
+				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</ondown> -->
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
 				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3635</onup>
 				<onleft>300</onleft>
@@ -415,32 +416,11 @@
 				<label>$VAR[EmbyWidgetLabel]</label>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4012).IsUpdating</visible>
+				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4019).IsUpdating</visible>
 			</control>
 			<!-- Loading replacement -->
 			<control type="group">
-				<include>Animation.DelayFadeOut</include>
-				<control type="image">
-					<top>330</top>
-					<left>SidePad</left>
-					<width>856</width>
-					<height>496</height>
-					<align>center</align>
-					<texture background="true">clear/emby.png</texture>
-					<aspectratio>keep</aspectratio>
-					<include>Animation.FadeIn</include>
-					<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
-				</control>
-				<control type="image">
-					<top>330</top>
-					<left>SidePad</left>
-					<width>856</width>
-					<height>496</height>
-					<align>center</align>
-					<aspectratio>stretch</aspectratio>
-					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
-					<include>Animation.FadeIn</include>
-				</control>				
+				<include>Animation.DelayFadeOut</include>		
 				<control type="image">
 					<left>SidePad</left>
 					<posy>836</posy>
@@ -685,7 +665,7 @@
 		</control>
 		<!-- Recent episodes -->
 		<control type="list" id="9007">
-			<content target="video" limit="6">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$VAR[EmbyHomeSelectedMenu]%22%5d%7d%2c%7b%22field%22%3a%22numwatched%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</content>
+			<content target="video" limit="6">library://video/Emby - $INFO[Container(300).ListItem.label]/$VAR[EmbyHomeSelectedMenu]_recentepisodes.xml</content>
 			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) + Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
 		</control>
 		<!-- In progress movies-->
@@ -751,137 +731,89 @@
 			<content target="video" limit="1">special://skin/extras/playlists/OldUnwatchedMovies.xsp</content>
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 		</control>
-		<!-- Movies -->		
-		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(type),movies)</visible>
+		<!-- Main Widget -->
+		<control type="group" >
 			<top>330</top>
 			<left>SidePad</left>
 			<width>856</width>
 			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
-			<preloaditems>6</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
-			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+			<control type="button" id="4012">
+				<onfocus>Skin.SetString(HomeItemTVShowTitle,$VAR[EmbyHomeTVShowTitle])</onfocus>
+				<onfocus>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</onfocus>
+				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
+				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
+				<onup>300</onup>
+				<ondown>4013</ondown>
+				<onleft>4012</onleft>
+				<onright>4016</onright>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<include>EmbyHomeInfoActions</include>
+				<onclick condition="IntegerGreaterThan(Container(4019).ListItem.DBID, -1) + !StringCompare(Container(300).ListItem.Property(type),music)">PlayMedia($VAR[EmbyHomeItemPath])</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + !IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
+				<onclick condition="StringCompare(Skin.String(HomeItemDBType),tvshow)">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[Container(4019).ListItem.DBID],return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,addons://sources/executable/,return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(Music,musicdb://albums/$INFO[Container(4019).ListItem.DBID],return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(type),photos)">ActivateWindow(10002,plugin://plugin.video.emby,return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings,return)</onclick>
+				
+			</control>	
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
+				<include>Animation.FadeIn</include>
+			</control>
+			<control type="image">
+				<aspectratio>keep</aspectratio>
+				<texture border="15" colordiffuse="Dark4">clear/emby.png</texture>
+				<include>Animation.FadeIn</include>
+			</control>			
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">$VAR[EmbyMainWidgetIcon]</texture>
+				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<include>Animation.LongDelayFadeIn</include>
+				<include>Animation.LongDelayFadeOut</include>
+			</control>
+			<control type="progress">
+				<bottom>80</bottom>
+				<height>8</height>
+				<info>Container(4019).ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
+				<visible>Container(4019).ListItem.IsResumable</visible>
+				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture border="15" colordiffuse="Background">common/null.png</texture>
+				<visible>Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.DelayFadeOut</include>
+			</control>
 		</control>
-		<!-- TV Shows -->
-		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(type),tvshows)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
+		<control type="list" id="4019">
+			<visible>[!StringCompare(Container(300).ListItem.Property(type),livetv) | [StringCompare(Container(300).ListItem.Property(type),livetv) + !IsEmpty(Container(300).ListItem.Property(widgetPath))]] + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 			<preloaditems>6</preloaditems>
 			<orientation>horizontal</orientation>
 			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
 			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
 			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<include>EmbyHiddenItemLayout</include>
 		</control>
-		<!-- Videos -->
-		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(type),videos) | StringCompare(Container(300).ListItem.Property(type),channels)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
-			<preloaditems>6</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
-			<content target="video" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-		</control>
-		<!-- Music -->
-		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
-			<preloaditems>6</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
-			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-		</control>
-		<!-- Favorites -->
-		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(type),favourites)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
-			<preloaditems>6</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
-			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-		</control>
-		<!-- Home Videos -->
-		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(type),homevideos)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
-			<preloaditems>6</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
-			<content target="video" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+		<!-- Settings -->
+		<control type="list" id="4019">
+			<visible>StringCompare(Container(300).ListItem.Property(type),settings)</visible>
+			<!--systeminfo widgets -->
+			<include>SysInfoWidgetMain</include>
+			<include>EmbyHiddenItemLayout</include>
 		</control>
 		<!-- Live TV -->
 		<control type="list" id="4012">
@@ -894,7 +826,6 @@
 			<ondown>4013</ondown>
 			<onleft>4012</onleft>
 			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
 			<preloaditems>6</preloaditems>
 			<orientation>horizontal</orientation>
 			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
@@ -905,71 +836,7 @@
 			<content limit="10" sortby="random">$VAR[DefWidgetMainContent]</content>
 			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 		</control>
-		<!--Program widgets -->
-		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(type),programs)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
-			<preloaditems>2</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
-			<content target="programs" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-		</control>
-		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(type),settings)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onleft>4012</onleft>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
-			<preloaditems>2</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
-			<!--systeminfo widgets -->
-			<include>SysInfoWidgetMain</include>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-		</control>
-		<control type="list" id="4012">
-			<visible>StringCompare(Container(300).ListItem.Property(type),photos)</visible>
-			<top>330</top>
-			<left>SidePad</left>
-			<width>856</width>
-			<height>496</height>
-			<onup>300</onup>
-			<ondown>4013</ondown>
-			<onright>4016</onright>
-			<include>EmbyHomeInfoActions</include>
-			<preloaditems>2</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<include>EmbyMainWidgetItemLayout</include>
-			<content type="plugin" limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
-			<onclick>ActivateWindow(10002,plugin://plugin.video.emby,return)</onclick>
-			<visible>!!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-		</control>
+		<!-- Weather -->
 		<control type="panel" id="4012">
 			<visible>StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 			<top>330</top>
@@ -1262,7 +1129,7 @@
 				<include name="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
-				<content limit="10">addons://sources/executable</content>
+				<content limit="10" target="programs">addons://sources/executable</content>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
@@ -1285,7 +1152,7 @@
 				<include name="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
-				<content limit="10">addons://sources/executable</content>
+				<content limit="10" target="programs">addons://sources/executable</content>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
@@ -1545,6 +1412,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,3)</visible>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>IntegerGreaterThan(Container(4018).NumItems,0)</visible>
 				<visible>[!Container(40016).IsUpdating |  System.IdleTime(3) | Container(4016).HasFocus | Container(4012).HasFocus | Container(4017).HasFocus | Container(4018).HasFocus]+ !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1597,7 +1465,7 @@
 				<visible>IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,3)</visible>
 				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
-				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
 			<!-- TV -->
@@ -2436,75 +2304,6 @@
 			</control>
 		</focusedlayout>
 	</include>
-	<include name="EmbyMainWidgetItemLayout">
-		<itemlayout width="856" height="496">
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture background="true" fallback="diffuseoverlay.png">$VAR[EmbyMainWidgetIcon]</texture>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<animation effect="fade" end="100" start="0" time="500" delay="5000" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-			</control>
-			<control type="progress">
-				<bottom>80</bottom>
-				<height>8</height>
-				<info>ListItem.PercentPlayed</info>
-				<overlaytexture>-</overlaytexture>
-				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
-				<visible>ListItem.IsResumable</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture border="15" colordiffuse="Background">common/null.png</texture>
-				<visible>Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.DelayFadeOut</include>
-			</control>
-		</itemlayout>
-		<focusedlayout width="856" height="496">
-			<control type="button">
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onfocus>Skin.SetString(HomeItemTVShowTitle,$VAR[EmbyHomeTVShowTitle])</onfocus>
-				<onfocus>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</onfocus>
-				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
-				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
-			</control>
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			</control>
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture background="true" fallback="diffuseoverlay.png">$VAR[EmbyMainWidgetIcon]</texture>
-			</control>
-			<control type="progress">
-				<bottom>80</bottom>
-				<height>8</height>
-				<info>ListItem.PercentPlayed</info>
-				<overlaytexture>-</overlaytexture>
-				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
-				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
-				<visible>ListItem.IsResumable</visible>
-			</control>
-		</focusedlayout>
-	</include>
 	<include name="EmbyMainWidgetOverlay">
 		<control type="image">
 			<description>Title overlay</description>
@@ -2513,7 +2312,7 @@
 			<width>856</width>
 			<height>80</height>
 			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			<visible>!Container(4012).IsUpdating + !StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -2531,7 +2330,7 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-			<visible>!Container(4012).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 		</control>
 		<control type="label">
 			<left>100</left>
@@ -2545,7 +2344,7 @@
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[EmbyWidgetContentLabel]</label>
 			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv)+!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
-			<visible>!Container(4012).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<visible>!Container(4019).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
@@ -2562,7 +2361,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[EmbyWidgetContentLabel2]</label>
-			<visible>!Container(4012).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<visible>!Container(4019).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 		</control>
@@ -2881,11 +2680,11 @@
 				<font>Tiny</font>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyFooterLabel]</label>
-				<visible>!Control.HasFocus(4016) + !Control.HasFocus(4017) + !Control.HasFocus(4018)</visible>
+				<visible>!Control.HasFocus(4012) + !Control.HasFocus(4016) + !Control.HasFocus(4017) + !Control.HasFocus(4018)</visible>
 			</control>
 		</control>
 		<control type="grouplist">
-			<visible>Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)</visible>
+			<visible>Control.HasFocus(4012) | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>SidePad</left>
@@ -2939,7 +2738,7 @@
 				<centertop>50%</centertop>
 				<height>64</height>
 				<width>1330</width>
-				<visible>Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)</visible>
+				<visible>Control.HasFocus(4012) | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)</visible>
 				<control type="label">
 					<left>10</left>
 					<font>DurationFontSmall</font>
