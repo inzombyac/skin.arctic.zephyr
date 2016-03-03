@@ -1012,7 +1012,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="10" target="videos">$VAR[DefWidgetRightContent]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) | !IntegerGreaterThan(Container(40016).NumItems,0)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1153,7 +1153,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) | !IntegerGreaterThan(Container(40016).NumItems,0)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1170,7 +1170,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) | !IntegerGreaterThan(Container(40016).NumItems,0)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1207,8 +1207,8 @@
 					<param name="progress_bottom">65</param>
 				</include>
 				<content limit="10" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) | !IntegerGreaterThan(Container(40016).NumItems,0)</visible>
-				<visible>IntegerGreaterThan(Container(40017).NumItems,2) | !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1245,7 +1245,7 @@
 					<param name="progress_bottom">65</param>
 				</include>
 				<content limit="2" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) | !IntegerGreaterThan(Container(40016).NumItems,0)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
 				<visible>!IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
@@ -1284,7 +1284,7 @@
 				</include>
 				<content limit="10" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
-				<visible>IntegerGreaterThan(Container(40017).NumItems,2)  | !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
