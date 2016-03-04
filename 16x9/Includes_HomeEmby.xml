@@ -430,6 +430,7 @@
 					<height>220</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
+					<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				</control>
 				<control type="image">
 					<left>368</left>
@@ -438,6 +439,7 @@
 					<height>220</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
+					<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				</control>
 				<control type="image">
 					<left>656</left>
@@ -445,7 +447,7 @@
 					<width>280</width>
 					<height>220</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
-					<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>
+					<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 					<include>Animation.FadeIn</include>
 				</control>
 			</control>
@@ -470,6 +472,7 @@
 	</include>
 	<include name="EmbyBottomWidgetPanel">		
 		<control type="group">
+			<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 			<!-- Bottom tile 1-->
 			<control type="button" id="4013">
@@ -732,6 +735,32 @@
 			<content>$VAR[DefWidgetMainContent]</content>
 			<visible>Substring(Container(300).ListItem.Property(Path),emby)</visible>
 		</control>
+		<!-- Collections -->
+		<control type="panel" id="4012">
+			<description>Widget</description>
+			<visible>StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+			<top>330</top>
+			<left>78</left>
+			<width>1764</width>
+			<height>766</height>
+			<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
+			<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+			<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
+			<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
+			<include>EmbyHomeInfoActions</include>
+			<orientation>horizontal</orientation>
+			<scrolltime tween="quadratic">0</scrolltime>
+			<include name="EmbyWidget1Content">
+				<param name="image_type">$VAR[EmbyWidget2Icon]</param>
+				<param name="widget_width">252</param>
+				<param name="item_width">234</param>
+				<param name="widget_height">383</param>
+				<param name="item_height">345</param>
+			</include>
+			<content target="videos">videodb://movies/sets/</content>
+			<include>Animation.FadeOut</include>
+			<include>Animation.FadeIn</include>
+		</control>
 		<!-- Main Widget -->
 		<control type="group" >
 			<top>330</top>
@@ -739,6 +768,7 @@
 			<width>856</width>
 			<height>496</height>
 			<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 			<control type="button" id="4012">
 				<onfocus>Skin.SetString(HomeItemTVShowTitle,$VAR[EmbyHomeTVShowTitle])</onfocus>
 				<onfocus>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</onfocus>
@@ -973,6 +1003,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -983,7 +1014,7 @@
 				<onleft>4012</onleft>
 				<onright>4017</onright>
 				<include>EmbyHomeInfoActions</include>
-				<preloaditems>3</preloaditems>
+				<!-- <preloaditems>3</preloaditems> -->
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
 				<include name="EmbyWidget1Content">
@@ -999,6 +1030,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1009,7 +1041,7 @@
 				<onleft>4012</onleft>
 				<onright>4017</onright>
 				<include>EmbyHomeInfoActions</include>
-				<preloaditems>6</preloaditems>
+				<!-- <preloaditems>6</preloaditems> -->
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
 				<include name="EmbyWidget1Content">
@@ -1027,7 +1059,7 @@
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
-				<height>765</height>
+				<height>670</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4016</ondown>
@@ -1038,13 +1070,14 @@
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
 				<include name="EmbyWidget1Content">
-					<param name="widget_width">200</param>
-					<param name="item_width">180</param>
-					<param name="focusbox_height">218</param>
-					<param name="focusbox_width">190</param>
+					<param name="widget_width">305</param>
+					<param name="item_width">285</param>
+					<param name="widget_height">335</param>
+					<param name="item_height">295</param>
+					<param name="scale">center</param>
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
-				<content limit="12">$VAR[DefWidgetRightContent]</content>
+				<content limit="10">$VAR[DefWidgetRightContent]</content>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1200,6 +1233,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1220,8 +1254,6 @@
 					<param name="item_width">234</param>
 					<param name="widget_height">383</param>
 					<param name="item_height">345</param>
-					<param name="focusbox_height">345</param>
-					<param name="focusbox_width">242</param>
 				</include>
 				<content limit="10" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
@@ -1235,6 +1267,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1255,8 +1288,6 @@
 					<param name="item_width">234</param>
 					<param name="widget_height">383</param>
 					<param name="item_height">345</param>
-					<param name="focusbox_height">345</param>
-					<param name="focusbox_width">242</param>
 				</include>
 				<content limit="2" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
@@ -1270,6 +1301,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1290,8 +1322,6 @@
 					<param name="item_width">234</param>
 					<param name="widget_height">383</param>
 					<param name="item_height">345</param>
-					<param name="focusbox_height">345</param>
-					<param name="focusbox_width">242</param>
 				</include>
 				<content limit="10" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
@@ -1305,6 +1335,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1325,8 +1356,6 @@
 					<param name="item_width">234</param>
 					<param name="widget_height">383</param>
 					<param name="item_height">345</param>
-					<param name="focusbox_height">345</param>
-					<param name="focusbox_width">242</param>
 				</include>
 				<content limit="2" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
@@ -1342,7 +1371,7 @@
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>759</width>
-				<height>765</height>
+				<height>670</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4017</ondown>
@@ -1354,14 +1383,14 @@
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
 				<include name="EmbyWidget1Content">
-					<param name="widget_width">200</param>
-					<param name="item_width">180</param>
-					<param name="focusbox_height">218</param>
-					<param name="focusbox_width">190</param>
+					<param name="widget_width">305</param>
+					<param name="item_width">285</param>
+					<param name="widget_height">335</param>
+					<param name="item_height">295</param>
+					<param name="scale">center</param>
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
-					<param name="aspect">scale</param>
 				</include>
-				<content limit="12">$VAR[DefWidgetRight2Content]</content>
+				<content limit="10">$VAR[DefWidgetRight2Content]</content>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1440,7 +1469,7 @@
 			<!-- Widgets -->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!Substring(Container(300).ListItem.Property(type),photos) + !Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !Substring(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),programs)  + !Substring(Container(300).ListItem.Property(type),homevideos) + !Substring(Container(300).ListItem.Property(type),favourites)</visible>
+				<visible>!Substring(Container(300).ListItem.Property(type),photos) + !Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !Substring(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),programs)  + !Substring(Container(300).ListItem.Property(type),homevideos) + !Substring(Container(300).ListItem.Property(type),favourites) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<!-- <left>2155</left> -->
 				<left>2059</left>
@@ -1467,7 +1496,7 @@
 			</control>
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!Substring(Container(300).ListItem.Property(type),photos) + !Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !Substring(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),programs)  + !Substring(Container(300).ListItem.Property(type),homevideos) + !Substring(Container(300).ListItem.Property(type),favourites)</visible>
+				<visible>!Substring(Container(300).ListItem.Property(type),photos) + !Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !Substring(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),programs)  + !Substring(Container(300).ListItem.Property(type),homevideos) + !Substring(Container(300).ListItem.Property(type),favourites) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<!-- <left>1855</left> -->
 				<left>1807</left>
@@ -1494,7 +1523,7 @@
 			</control>
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!Substring(Container(300).ListItem.Property(type),photos) + !Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !Substring(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),programs)  + !Substring(Container(300).ListItem.Property(type),homevideos) + !Substring(Container(300).ListItem.Property(type),favourites)</visible>
+				<visible>!Substring(Container(300).ListItem.Property(type),photos) + !Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !Substring(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),programs)  + !Substring(Container(300).ListItem.Property(type),homevideos) + !Substring(Container(300).ListItem.Property(type),favourites) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<!-- <left>1855</left> -->
 				<left>1759</left>
@@ -1521,7 +1550,7 @@
 			</control>
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!Substring(Container(300).ListItem.Property(type),photos) + !Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !Substring(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),programs)  + !Substring(Container(300).ListItem.Property(type),homevideos) + !Substring(Container(300).ListItem.Property(type),favourites)</visible>
+				<visible>!Substring(Container(300).ListItem.Property(type),photos) + !Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !Substring(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),programs)  + !Substring(Container(300).ListItem.Property(type),homevideos) + !Substring(Container(300).ListItem.Property(type),favourites) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<top>330</top>
 				<!-- <left>1555</left> -->
 				<left>1507</left>
@@ -1577,7 +1606,7 @@
 			<width>856</width>
 			<height>78</height>
 			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -1608,7 +1637,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[EmbyWidgetContentLabel]</label>
-			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv)+!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 			<visible>!Container(4019).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -1636,19 +1665,18 @@
 			<top>326</top>
 			<height>504</height>
 			<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-			<visible>Control.HasFocus(4012)</visible>
+			<visible>Control.HasFocus(4012) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 		</control>
 	</include>
 	<include name="EmbyWidget1Content">
 	  <param name="widget_width" default="300"/>
 	  <param name="item_width" default="290"/>
 	  <param name="widget_height" default="255"/>
-	  <param name="item_height" default="180"/>
-	  <param name="focusbox_height" default="217"/>
-	  <param name="focusbox_width" default="300"/>
+	  <param name="item_height" default="217"/>
 	  <param name="image_type" default="$VAR[FanartImage]"/>
-	  <param name="aspect" default="stretch"/>
+	  <param name="aspect" default="scale"/>
 	  <definition>
+		<scrolltime tween="quadratic">400</scrolltime>
 		<itemlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
@@ -1659,6 +1687,15 @@
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
+			</control>
+			<control type="image">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<width>32</width>
+				<height>32</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
+				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			</control>
 			<control type="image">
 				<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
@@ -1742,6 +1779,15 @@
 				<left>10</left>
 			</control>
 			<control type="image">
+				<centerright>32</centerright>
+				<centertop>32</centertop>
+				<width>32</width>
+				<height>32</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
+				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			</control>
+			<control type="image">
 				<description>Title overlay</description>
 				<bottom>38</bottom>
 				<height>38</height>
@@ -1775,9 +1821,9 @@
 				<visible>ListItem.IsResumable</visible>
 			</control>
 			<control type="image">
-				<left>5</left>
-				<width>$PARAM[focusbox_width]</width>
-				<height>$PARAM[focusbox_height]</height>
+				<left>10</left>
+				<width>$PARAM[item_width]</width>
+				<height>$PARAM[item_height]</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
 				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
 			</control>

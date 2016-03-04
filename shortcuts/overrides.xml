@@ -237,6 +237,7 @@
     <propertydefault defaultID="settings" group="mainmenu" property="type">settings</propertydefault>
     <propertydefault defaultID="power" group="mainmenu" property="type">power</propertydefault>
 	<propertydefault defaultID="channels" group="mainmenu" property="type">channels</propertydefault>
+	<propertydefault defaultID="collection" group="mainmenu" property="type">collection</propertydefault>
 	
 	<propertyfallback property="type">videos</propertyfallback>
 	

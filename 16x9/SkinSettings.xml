@@ -210,6 +210,23 @@
 						<label>31132</label>
 						<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
 					</control>
+					<control type="radiobutton" id="9889" description="Emby Mode">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9101)</visible>
+						<visible>System.HasAddon(plugin.video.emby)</visible>
+						<include>DefSettingsButton2</include>
+						<label>Use Emby Nodes</label>
+						<selected>!Skin.HasSetting(menu.noemby)</selected>
+						<onclick>Skin.ToggleSetting(menu.noemby)</onclick>
+					</control>
+					<control type="radiobutton" id="9888" description="Collections Mode">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9101)</visible>
+						<include>DefSettingsButton2</include>
+						<label>Show collection shortcut</label>
+						<selected>Skin.HasSetting(menu.collections)</selected>
+						<onclick>Skin.ToggleSetting(menu.collections)</onclick>
+					</control>
 					<control type="button" id="92181" description="Select Movies Hub Widget">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9101)</visible>

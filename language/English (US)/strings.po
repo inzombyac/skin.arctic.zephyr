@@ -563,3 +563,11 @@ msgstr "Now playing..."
 msgctxt "#31237"
 msgid "Use minimal busy loader in header"
 msgstr "Use minimal busy loader in header"
+
+msgctxt "#31791"
+msgid "Wall"
+msgstr ""
+
+msgctxt "#31792"
+msgid "Poster"
+msgstr ""

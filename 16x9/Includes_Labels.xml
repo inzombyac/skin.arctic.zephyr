@@ -209,6 +209,7 @@
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious |[Container(4019).IsUpdating + System.IdleTime(0)]">[CR]</value>
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$INFO[Container(300).ListItem.label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">Collections</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">TV Spotlight</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">$LOCALIZE[31127]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">TV Channels</value>
@@ -223,6 +224,7 @@
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">Kodi $INFO[System.BuildVersion]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(4019).ListItem.TVShowTitle,,]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4019).ListItem.Artist,, • ]$INFO[Container(4019).ListItem.Label]</value>
@@ -233,12 +235,14 @@
 	<variable name="EmbyWidgetContentLabel2">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4019).ListItem.Year]</value>
 		<value condition="!StringCompare(Container(300).ListItem.Property(type),livetv)">$VAR[LabelDuration]</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">[CR]</value>
 		<value condition="!IntegerGreaterThan(Container(4016).NumItems,0)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9005).NumItems,0)">Next Up</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9007).NumItems,0)">Unwatched Shows</value>
@@ -262,6 +266,7 @@
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">[CR]</value>
 		<value condition="!IntegerGreaterThan(Container(4017).NumItems,0)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9021).NumItems,0)">Unwatched Shows</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9020).NumItems,0)">Recommended</value>
@@ -284,6 +289,7 @@
 	<variable name="EmbyHomeWidget3Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">[CR]</value>
 		<value condition="!IntegerGreaterThan(Container(4018).NumItems,0)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">[CR]</value>
@@ -302,8 +308,8 @@
 	</variable>
 	<variable name="EmbyWidget1ContentLabel">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">[CR]</value>
-		<value condition="!StringCompare(ListItem.Label, Get more...) + !IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle]</value>
-		<value condition="!StringCompare(ListItem.Label, Get more...)">$INFO[ListItem.Label]</value>
+		<value condition="!StringCompare(ListItem.Label, Get more...) + !IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle,  ,]</value>
+		<value condition="!StringCompare(ListItem.Label, Get more...)">$INFO[ListItem.Label,  ,]</value>
 		<value>[CR]</value>
 	</variable>
 	<variable name="NextUpCount">
@@ -358,9 +364,9 @@
 		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(9025).NumItems] items • [COLOR=$VAR[ColourHighlight]]$INFO[Container(9025).TotalUnWatched] unwatched[/COLOR]</value>
+		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(9025).NumItems] items • [COLOR=$VAR[ColourHighlight]]$INFO[Container(9025).TotalUnWatched] unwatched[/COLOR]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[System.Uptime]</value> -->
-		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(list)]</value> -->
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->
 		<!--<value>|$INFO[Window(Home).Property(EmbyHomeLabelStripped)]|</value>-->
