@@ -548,9 +548,9 @@
 				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$VAR[LandscapeImage]</texture>
 				<visible>!Skin.HasSetting(views.56.showfanart)</visible>
-				<visible>Container.Content(episodes)</visible>
+				<!-- <visible>Container.Content(episodes)</visible> -->
 			</control>
-			<control type="progress">
+			<!-- <control type="progress">
 				<left>10</left>
 				<width>408</width>
 				<bottom>30</bottom>
@@ -562,7 +562,7 @@
 				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable+[Container.Content(episodes) | Skin.HasSetting(56media.showinfo)]</visible>
-			</control>
+			</control> -->
 			<control type="group">
 				<visible>[Container.Content(episodes) | Skin.HasSetting(56media.showinfo)]</visible>
 				<control type="image">
@@ -648,7 +648,7 @@
 				<height>PosterShadowH</height>
 				<texture border="32">common/shadow-24.png</texture>
 			</control>
-			<control type="progress">
+			<!-- <control type="progress">
 				<centertop>PosterH</centertop>
 				<width>PosterW</width>
 				<height>10</height>
@@ -660,7 +660,7 @@
 				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
 				<visible>!Container.Content(episodes)</visible>
-			</control>
+			</control> -->
 			<control type="group">
 				<visible>!stringcompare(ListItem.Label,..)</visible>
 				<visible>!Container.Content(episodes)</visible>

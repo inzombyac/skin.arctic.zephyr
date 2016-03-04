@@ -728,6 +728,10 @@
 			<content target="video" limit="1">special://skin/extras/playlists/OldUnwatchedMovies.xsp</content>
 			<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
 		</control>
+		<control type="list" id="9025">
+			<content>$VAR[DefWidgetMainContent]</content>
+			<visible>Substring(Container(300).ListItem.Property(Path),emby)</visible>
+		</control>
 		<!-- Main Widget -->
 		<control type="group" >
 			<top>330</top>
