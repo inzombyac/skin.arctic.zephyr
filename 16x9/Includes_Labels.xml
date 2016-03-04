@@ -357,7 +357,7 @@
 		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
-		<value condition="Skin.HasSetting(debug.mode)">$VAR[EmbyWidget3Aspect]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[System.Uptime(ss)]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->
 		<!--<value>|$INFO[Window(Home).Property(EmbyHomeLabelStripped)]|</value>-->

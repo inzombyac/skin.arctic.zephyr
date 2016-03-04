@@ -972,7 +972,7 @@
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[single_widget_width]</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4016</ondown>
@@ -998,7 +998,7 @@
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4016</ondown>
@@ -1023,7 +1023,7 @@
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4016</ondown>
@@ -1036,7 +1036,7 @@
 				<include name="EmbyWidget1Content">
 					<param name="widget_width">200</param>
 					<param name="item_width">180</param>
-					<param name="focusbox_height">221</param>
+					<param name="focusbox_height">218</param>
 					<param name="focusbox_width">190</param>
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
@@ -1052,7 +1052,7 @@
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4016</ondown>
@@ -1076,7 +1076,7 @@
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4016</ondown>
@@ -1190,7 +1190,7 @@
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
-			<!-- TV -->
+			<!-- Widgets -->
 			<control type="panel" id="4017">
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
@@ -1199,7 +1199,7 @@
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[double_widget_width]</width>
-				<height>750</height>
+				<height>766</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4017</ondown>
@@ -1214,13 +1214,10 @@
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
-					<param name="widget_height">375</param>
-					<param name="item_height">350</param>
-					<param name="focusbox_height">352</param>
+					<param name="widget_height">383</param>
+					<param name="item_height">345</param>
+					<param name="focusbox_height">345</param>
 					<param name="focusbox_width">242</param>
-					<param name="overlay_bottom">25</param>
-					<param name="title_bottom">30</param>
-					<param name="progress_bottom">65</param>
 				</include>
 				<content limit="10" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
@@ -1237,7 +1234,7 @@
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[single_widget_width]</width>
-				<height>750</height>
+				<height>766</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4017</ondown>
@@ -1252,13 +1249,10 @@
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
-					<param name="widget_height">375</param>
-					<param name="item_height">350</param>
-					<param name="focusbox_height">352</param>
+					<param name="widget_height">383</param>
+					<param name="item_height">345</param>
+					<param name="focusbox_height">345</param>
 					<param name="focusbox_width">242</param>
-					<param name="overlay_bottom">25</param>
-					<param name="title_bottom">30</param>
-					<param name="progress_bottom">65</param>
 				</include>
 				<content limit="2" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
@@ -1275,7 +1269,7 @@
 				<top>330</top>
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[double_widget_width]</width>
-				<height>750</height>
+				<height>766</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4017</ondown>
@@ -1290,13 +1284,10 @@
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
-					<param name="widget_height">375</param>
-					<param name="item_height">350</param>
-					<param name="focusbox_height">352</param>
+					<param name="widget_height">383</param>
+					<param name="item_height">345</param>
+					<param name="focusbox_height">345</param>
 					<param name="focusbox_width">242</param>
-					<param name="overlay_bottom">25</param>
-					<param name="title_bottom">30</param>
-					<param name="progress_bottom">65</param>
 				</include>
 				<content limit="10" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
@@ -1313,7 +1304,7 @@
 				<top>330</top>
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[single_widget_width]</width>
-				<height>759</height>
+				<height>766</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4017</ondown>
@@ -1328,13 +1319,10 @@
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
-					<param name="widget_height">375</param>
-					<param name="item_height">350</param>
-					<param name="focusbox_height">352</param>
+					<param name="widget_height">383</param>
+					<param name="item_height">345</param>
+					<param name="focusbox_height">345</param>
 					<param name="focusbox_width">242</param>
-					<param name="overlay_bottom">25</param>
-					<param name="title_bottom">30</param>
-					<param name="progress_bottom">65</param>
 				</include>
 				<content limit="2" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
@@ -1350,7 +1338,7 @@
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>759</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4017</ondown>
@@ -1364,7 +1352,7 @@
 				<include name="EmbyWidget1Content">
 					<param name="widget_width">200</param>
 					<param name="item_width">180</param>
-					<param name="focusbox_height">221</param>
+					<param name="focusbox_height">218</param>
 					<param name="focusbox_width">190</param>
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="aspect">scale</param>
@@ -1453,7 +1441,7 @@
 				<!-- <left>2155</left> -->
 				<left>2059</left>
 				<width>$PARAM[single_widget_width]</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4018</ondown>
@@ -1480,7 +1468,7 @@
 				<!-- <left>1855</left> -->
 				<left>1807</left>
 				<width>$PARAM[single_widget_width]</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4018</ondown>
@@ -1507,7 +1495,7 @@
 				<!-- <left>1855</left> -->
 				<left>1759</left>
 				<width>$PARAM[single_widget_width]</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4018</ondown>
@@ -1534,7 +1522,7 @@
 				<!-- <left>1555</left> -->
 				<left>1507</left>
 				<width>$PARAM[single_widget_width]</width>
-				<height>759</height>
+				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
 				<ondown>4018</ondown>
@@ -1583,7 +1571,7 @@
 			<left>SidePad</left>
 			<posy>748</posy>
 			<width>856</width>
-			<height>80</height>
+			<height>78</height>
 			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
@@ -1596,7 +1584,7 @@
 			<left>SidePad</left>
 			<posy>748</posy>
 			<width>856</width>
-			<height>80</height>
+			<height>78</height>
 			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 			<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
 			<visible>!IsEmpty(Container(300).ListItem.Property(widgetPath)) | !IsEmpty(Container(300).ListItem.Property(widget))</visible>
@@ -1650,14 +1638,11 @@
 	<include name="EmbyWidget1Content">
 	  <param name="widget_width" default="300"/>
 	  <param name="item_width" default="290"/>
-	  <param name="widget_height" default="253"/>
+	  <param name="widget_height" default="255"/>
 	  <param name="item_height" default="180"/>
-	  <param name="focusbox_height" default="221"/>
+	  <param name="focusbox_height" default="217"/>
 	  <param name="focusbox_width" default="300"/>
 	  <param name="image_type" default="$VAR[FanartImage]"/>
-	  <param name="overlay_bottom" default="33"/>
-	  <param name="title_bottom" default="40"/>
-	  <param name="progress_bottom" default="73"/>
 	  <param name="aspect" default="stretch"/>
 	  <definition>
 		<itemlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
@@ -1680,8 +1665,8 @@
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
-				<bottom>$PARAM[overlay_bottom]</bottom>
-				<height>40</height>
+				<bottom>38</bottom>
+				<height>38</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
@@ -1691,10 +1676,10 @@
 				<include>Animation.FadeIn</include>
 			</control>
 			<control type="label">
-				<bottom>$PARAM[title_bottom]</bottom>
+				<bottom>40</bottom>
 				<left>10</left>
 				<align>left</align>
-				<height>30</height>
+				<height>40</height>
 				<width>$PARAM[item_width]</width>
 				<font>Tiny</font>
 				<textcolor>Dark1</textcolor>
@@ -1705,7 +1690,7 @@
 				<include>Animation.LongDelayFadeIn</include>
 			</control>
 			<control type="progress">
-				<bottom>$PARAM[progress_bottom]</bottom>
+				<bottom>76</bottom>
 				<height>8</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -1716,7 +1701,7 @@
 				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
 				<include>Animation.LongDelayFadeIn</include>
-				<visible>ListItem.IsResumable</visible>
+				<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 			</control>
 			<control type="image">
@@ -1754,18 +1739,18 @@
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
-				<bottom>$PARAM[overlay_bottom]</bottom>
-				<height>40</height>
+				<bottom>38</bottom>
+				<height>38</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
 			</control>
 			<control type="label">
-				<bottom>$PARAM[title_bottom]</bottom>
+				<bottom>40</bottom>
 				<left>10</left>
 				<align>left</align>
-				<height>30</height>
+				<height>40</height>
 				<width>$PARAM[item_width]</width>
 				<font>Tiny</font>
 				<textcolor>Dark1</textcolor>
@@ -1773,7 +1758,7 @@
 				<label>$VAR[EmbyWidget1ContentLabel]</label>
 			</control>
 			<control type="progress">
-				<bottom>$PARAM[progress_bottom]</bottom>
+				<bottom>76</bottom>
 				<height>8</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
