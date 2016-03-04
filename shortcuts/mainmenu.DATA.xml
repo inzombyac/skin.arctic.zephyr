@@ -32,7 +32,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.1.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.1.title))</visible>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.1.title)) + !Substring(Window(Home).Property(emby.nodes.1.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.1.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-2-title</defaultID>
@@ -41,7 +41,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.2.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.2.title))</visible>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.2.title)) + !Substring(Window(Home).Property(emby.nodes.2.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.2.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-3-title</defaultID>
@@ -50,7 +50,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.3.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.3.title))</visible>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.3.title)) + !Substring(Window(Home).Property(emby.nodes.3.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.3.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-4-title</defaultID>
@@ -59,7 +59,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.4.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.4.title))</visible>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.4.title)) + !Substring(Window(Home).Property(emby.nodes.4.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.4.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-5-title</defaultID>
@@ -68,7 +68,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.5.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.5.title))</visible>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.5.title)) + !Substring(Window(Home).Property(emby.nodes.5.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.5.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-6-title</defaultID>
@@ -77,7 +77,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.6.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.6.title))</visible>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.6.title)) + !Substring(Window(Home).Property(emby.nodes.6.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.6.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-7-title</defaultID>
@@ -86,7 +86,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.7.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.7.title))</visible>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.7.title)) + !Substring(Window(Home).Property(emby.nodes.7.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.7.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-8-title</defaultID>
@@ -95,7 +95,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.8.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.8.title))</visible>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.8.title)) + !Substring(Window(Home).Property(emby.nodes.8.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.8.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-9-title</defaultID>
@@ -104,7 +104,16 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.9.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.9.title))</visible>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.9.title)) + !Substring(Window(Home).Property(emby.nodes.9.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.9.content),emby_Favorite)</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-10-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.10.title)]</label>
+		<label2>$INFO[Window(Home).Property(emby.nodes.10.content)]</label2>
+		<icon>special://skin/extras/icons/emby_diff.png</icon>
+		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.10.path)]</action>
+		<visible>!IsEmpty(Window(Home).Property(emby.nodes.10.title)) + !Substring(Window(Home).Property(emby.nodes.10.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.10.content),emby_Favorite)</visible>
 	</shortcut>
 	<shortcut>
         <label>Music</label>
