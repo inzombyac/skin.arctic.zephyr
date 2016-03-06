@@ -750,6 +750,7 @@
 			<include>EmbyHomeInfoActions</include>
 			<orientation>horizontal</orientation>
 			<scrolltime tween="quadratic">0</scrolltime>
+			<preloaditems>14</preloaditems>
 			<include name="EmbyWidget1Content">
 				<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 				<param name="widget_width">252</param>

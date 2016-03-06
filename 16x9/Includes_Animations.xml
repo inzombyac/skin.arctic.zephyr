@@ -124,7 +124,7 @@
 		<animation effect="fade" end="0" start="0" time="500" delay="1000" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 	</include>
 	<include name="Animation.LongDelayFadeIn">
-		<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">Visible</animation>
-		<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
+		<animation effect="fade" end="100" start="0" time="500" delay="1500" tween="cubic" easing="inout" reversible="false">Visible</animation>
+		<animation effect="fade" end="100" start="0" time="500" delay="1500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 	</include>
 </includes>
