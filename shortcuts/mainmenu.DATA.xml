@@ -131,12 +131,13 @@
         <action>ActivateWindow(MusicLibrary)</action>
 		<visible>IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0) + !System.HasAddon(plugin.video.emby) | !IsEmpty(Window(Home).Property(emby.nodes.0.title))</visible>
     </shortcut>
-    <shortcut>
+     <shortcut>
         <label>Live TV</label>
         <label2>Common Shortcut</label2>
         <defaultID>livetv</defaultID>
         <icon>special://skin/extras/icons/livetv.png</icon>
-        <action>ActivateWindow(tvguide) + !System.HasAddon(plugin.video.emby) | !IsEmpty(Window(Home).Property(emby.nodes.0.title))</action>
+        <action>ActivateWindow(tvguide)</action>
+		<visible>!System.HasAddon(plugin.video.emby) | !IsEmpty(Window(Home).Property(emby.nodes.0.title))</visible>
     </shortcut>
     <shortcut>
         <label>Extras</label>
