@@ -254,6 +254,11 @@
 				<orientation>horizontal</orientation>
 				<scrolltime>200</scrolltime>
 				<include>HomeEmbyContent</include>
+				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
+				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus>
+				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>
+				<onfocus>Skin.Reset(HomeShowWidgets)</onfocus>
+				<onfocus>AlarmClock(UpdateDelay,Skin.ToggleSetting(HomeShowWidgets),00:02,silent)</onfocus>
 			</control>
 		</control>
 	</include>
@@ -335,7 +340,9 @@
 				<texturenofocus>-</texturenofocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>				
+				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>
+				<onfocus>Skin.Reset(HomeShowWidgets)</onfocus>
+				<onfocus>AlarmClock(UpdateDelay,Skin.ToggleSetting(HomeShowWidgets),00:02,silent)</onfocus>
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -355,7 +362,9 @@
 				<texturenofocus>-</texturenofocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>				
+				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>
+				<onfocus>Skin.Reset(HomeShowWidgets)</onfocus>
+				<onfocus>AlarmClock(UpdateDelay,Skin.ToggleSetting(HomeShowWidgets),00:02,silent)</onfocus>
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -891,6 +900,7 @@
 				<info>Container(4019).ListItem.Progress</info>
 				<colordiffuse>Dark1</colordiffuse>
 				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>IntegerGreaterThan(Container(4019).ListItem.PercentPlayed,0)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
 			<control type="label">
@@ -1022,7 +1032,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="3" target="videos">$VAR[DefWidgetRightContent]</content>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>!IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40016).NumItems,0)</visible>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1680,6 +1690,13 @@
 		<scrolltime tween="quadratic">400</scrolltime>
 		<itemlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
 			<control type="image">
+				<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
+				<left>10</left>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
 				<texture background="true">$PARAM[image_type]</texture>
 				<height>$PARAM[item_height]</height>
@@ -1697,13 +1714,6 @@
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
 				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
-			</control>
-			<control type="image">
-				<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
-				<height>$PARAM[item_height]</height>
-				<width>$PARAM[item_width]</width>
-				<left>10</left>
-				<include>Animation.FadeOut</include>
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
@@ -2071,7 +2081,6 @@
 	</include>
 	<include name="WeatherTodayMainWidget">
 		<itemlayout width="856" height="496">
-			
 			<control type="image">
 				<description>Title overlay</description>
 				<posy>0</posy>
@@ -2120,7 +2129,6 @@
 			</control>
 		</itemlayout>
 		<focusedlayout width="856" height="496">
-			
 			<control type="image">
 				<description>Title overlay</description>
 				<posy>0</posy>

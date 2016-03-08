@@ -245,10 +245,10 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9005).NumItems,0)">Next Up</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(9007).NumItems,0)">Unwatched Shows</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31125]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9008).NumItems,0)">Resume</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">$LOCALIZE[31124]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Next Up</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Container(8999).NumItems,0)">Next Up</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">Unwatched Shows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9006).NumItems,0)">Resume</value>
@@ -365,8 +365,8 @@
 	</variable>
 	<variable name="EmbyFooterLabel">
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(9025).NumItems] items • [COLOR=$VAR[ColourHighlight]]$INFO[Container(9025).TotalUnWatched] unwatched[/COLOR]</value> -->
-		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[System.Uptime]</value> -->
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Skin.HasSetting(HomeShowWidgets)] / $VAR[DefWidgetRightContent]</value>
+		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->
 		<!--<value>|$INFO[Window(Home).Property(EmbyHomeLabelStripped)]|</value>-->
