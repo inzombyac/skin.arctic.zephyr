@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="Furniture_EmbyClock">
+		<control type="image">
+			<texture colordiffuse="Dark3">common/black.png</texture>
+			<height>160</height>
+		</control>
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -10,7 +14,7 @@
 			<height>84</height>
 			<animation effect="slide" start="0" end="0,-10" time="150" condition="Skin.HasSetting(furniture.weather)">Conditional</animation>
 			<control type="label">
-				<centertop>24</centertop>
+				<centertop>0</centertop>
 				<right>130</right>
 				<align>right</align>
 				<font>LargeBold</font>
@@ -19,7 +23,7 @@
 				<animation effect="slide" start="0" end="50" time="0" condition="IsEmpty(System.Time(xx))">Conditional</animation>
 			</control>
 			<control type="label">
-				<centertop>25</centertop>
+				<centertop>1</centertop>
 				<align>right</align>
 				<right>24</right>
 				<font>symbolview</font>
@@ -28,7 +32,7 @@
 				<fadetime>200</fadetime>
 			</control>
 			<control type="label">
-				<centertop>220</centertop>
+				<centertop>196</centertop>
 				<right>-225</right>
 				<aligny>top</aligny>
 				<width>240</width>
@@ -40,7 +44,7 @@
 				<fadetime>200</fadetime>
 			</control>
 			<control type="label">
-				<centertop>30</centertop>
+				<centertop>6</centertop>
 				<right>SidePad</right>
 				<font>SmallBold</font>
 				<textcolor>Dark3</textcolor>
@@ -50,7 +54,7 @@
 				<visible>!IsEmpty(System.Time(xx))</visible>
 			</control>
 			<control type="label">
-				<centertop>64</centertop>
+				<centertop>40</centertop>
 				<right>SidePad</right>
 				<font>Flag</font>
 				<textcolor>Dark2</textcolor>
@@ -59,7 +63,7 @@
 				<label>$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)]</label>
 			</control>
 			<control type="label">
-				<centertop>92</centertop>
+				<centertop>68</centertop>
 				<right>SidePad</right>
 				<font>Flag</font>
 				<textcolor>Dark3</textcolor>
@@ -81,11 +85,47 @@
 			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
 			<orientation>horizontal</orientation>
 			<itemgap>24</itemgap>
-			<control type="group" description="iconbox">
+			<control type="group" description="menu">
 				<width>50</width>
 				<height>50</height>
 				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
+					<texture diffuse="common/circle.png" colordiffuse="Light1">common/box.png</texture>
+				</control>
+				<control type="image">
+					<width>50</width>
+					<height>50</height>
+					<texture colordiffuse="Dark1" border="5">special://skin/extras/icons/menu.png</texture>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<visible>!Control.HasFocus(3637)</visible>
+				</control>
+				<control type="image">
+					<width>50</width>
+					<height>50</height>
+					<texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/menu.png</texture>
+					<visible>Control.HasFocus(3637)</visible>
+				</control>
+				<control type="button" id="3637">
+					<onleft>3636</onleft>
+					<onright>3635</onright>
+					<onup>7788</onup>
+					<ondown>300</ondown>
+					<onclick>ActivateWindow(shutdownmenu)</onclick>
+					<font>Button</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+				</control>
+				<!-- Hidden Power Menu -->
+				<control type="button" id="3638">
+					<onfocus>ActivateWindow(shutdownmenu)</onfocus>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+				</control>
+			</control>
+			<control type="group" description="search">
+				<width>50</width>
+				<height>50</height>
+				<control type="image">
+					<texture diffuse="common/circle.png" colordiffuse="Light1">common/box.png</texture>
 				</control>
 				<control type="image">
 					<top>-14</top>
@@ -105,9 +145,8 @@
 				</control>
 				<control type="button" id="3635">
 					<onright>3634</onright>
-					<onleft condition="System.HasAddon(plugin.video.emby)">3636</onleft>
-					<onleft condition="!System.HasAddon(plugin.video.emby)">3634</onleft>
-					<onleft>3635</onleft>
+					<onleft>3637</onleft>
+					<onleft>3636</onleft>
 					<onup>7788</onup>
 					<ondown>300</ondown>
 					<onclick>RunScript(script.globalsearch)</onclick>
@@ -116,12 +155,12 @@
 					<texturenofocus>-</texturenofocus>
 				</control>
 			</control>
-			<control type="group" description="iconbox">
+			<control type="group" description="log out">
 				<width>50</width>
 				<height>50</height>
 				<left>100</left>
 				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
+					<texture diffuse="common/circle.png" colordiffuse="Light1">common/box.png</texture>
 				</control>
 				<control id="8308" type="image">
 					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
@@ -152,7 +191,7 @@
 				<control type="button" id="3634">
 					<onleft>3635</onleft>
 					<onright condition="System.HasAddon(plugin.video.emby)">3636</onright>
-					<onright condition="!System.HasAddon(plugin.video.emby)">3635</onright>
+					<onright condition="!System.HasAddon(plugin.video.emby)">3637</onright>
 					<onup>7788</onup>
 					<ondown>300</ondown>
 					<onclick>System.LogOff</onclick>
@@ -180,12 +219,12 @@
 				<width>50</width>
 				<height>50</height>
 				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
+					<texture diffuse="common/circle.png" colordiffuse="Light1">common/box.png</texture>
 				</control>
 				<control type="image">
 					<width>50</width>
 					<height>50</height>
-					<texture colordiffuse="Dark1" border="5">special://skin/extras/icons/emby_diff.png</texture>
+					<texture colordiffuse="Dark1">special://skin/extras/icons/emby_diff.png</texture>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 					<visible>!Control.HasFocus(3636)</visible>
 				</control>
@@ -207,42 +246,7 @@
 					<texturenofocus>-</texturenofocus>
 				</control>
 			</control>
-			<control type="group" description="power">
-				<width>50</width>
-				<height>50</height>
-				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
-				</control>
-				<control type="image">
-					<width>50</width>
-					<height>50</height>
-					<texture colordiffuse="Dark1" border="5">special://skin/extras/icons/power.png</texture>
-					<visible>System.HasAddon(plugin.video.emby)</visible>
-					<visible>!Control.HasFocus(3637)</visible>
-				</control>
-				<control type="image">
-					<width>50</width>
-					<height>50</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/power.png</texture>
-					<visible>Control.HasFocus(3637)</visible>
-				</control>
-				<control type="button" id="3637">
-					<onleft>3636</onleft>
-					<onright>3635</onright>
-					<onup>7788</onup>
-					<ondown>300</ondown>
-					<onclick>ActivateWindow(shutdownmenu)</onclick>
-					<font>Button</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-				</control>
-				<!-- Hidden Power Menu -->
-				<control type="button" id="3638">
-					<onfocus>ActivateWindow(shutdownmenu)</onfocus>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-				</control>
-			</control>
+			
 		</control>
 	</include>
 	<include name="HomeEmbyRow">
@@ -284,7 +288,7 @@
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + IntegerGreaterThan(Container(4017).NumItems,0)">4017</ondown>
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</ondown> -->
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
-				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup>
 				<onright>SetProperty(UseAltWidget,,home)</onright>
 				<onleft>SetProperty(UseAltWidget,,home)</onleft>
 				<onright>SetProperty(UseAltWidget2,,home)</onright>
@@ -325,7 +329,7 @@
 				<onright>Control.Move(300,1)</onright>
 				<onright>SetFocus(300)</onright>
 				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
-				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup>
 				<ondown>4012</ondown>
 				<label></label>
 			</control>
@@ -340,8 +344,8 @@
 				<include>Animation.FadeOut</include>
 				<left>SidePad</left>
 				<right>SidePad</right>
-				<top>122</top>
-				<onup>3635</onup>
+				<top>130</top>
+				<onup>3637</onup>
 				<ondown>300</ondown>
 				<onleft>302</onleft>
 				<onright>302</onright>
@@ -381,7 +385,7 @@
 						<centerleft>50%</centerleft>
 						<width>90%</width>
 						<height>4</height>
-						<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+						<texture colordiffuse="$VAR[ColourHighlight2]">common/box.png</texture>
 						<visible>Control.HasFocus(302)</visible>
 						<include>Animation.FadeIn</include>
 						<include>Animation.FadeOut</include>
@@ -457,7 +461,7 @@
 				<width>16</width>
 				<height>16</height>
 				<texture flipy="true" colordiffuse="Dark3">common/arrow-small.png</texture>
-				<visible>Control.HasFocus(300)</visible>
+				<visible>Control.HasFocus(300) | Control.HasFocus(40019)</visible>
 				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
 				<animation effect="fade" end="100" start="0" delay="300" time="400" reversible="false">Focus</animation>
 			</control>
@@ -730,8 +734,6 @@
 				<visible>Control.HasFocus(4014)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)+!StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
 			</control>
 		</control>
 	</include>
@@ -764,7 +766,7 @@
 			<width>1764</width>
 			<height>766</height>
 			<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-			<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+			<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 			<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
 			<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
 			<include>EmbyHomeInfoActions</include>
@@ -796,7 +798,7 @@
 				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
 				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4013</ondown>
 				<onleft>4012</onleft>
 				<onright>4016</onright>
@@ -991,7 +993,7 @@
 			<width>1198</width>
 			<height>724</height>
 			<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-			<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+			<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 			<ondown>4013</ondown>
 			<onright>4016</onright>
 			<include>EmbyHomeInfoActions</include>
@@ -1033,7 +1035,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1056,7 +1058,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1079,7 +1081,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1102,7 +1104,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1135,7 +1137,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1158,7 +1160,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1181,7 +1183,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1204,7 +1206,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1227,7 +1229,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1250,7 +1252,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1274,7 +1276,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>670</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1304,7 +1306,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<include>EmbyHomeInfoActions</include>
@@ -1328,7 +1330,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<onright>4017</onright>
@@ -1455,7 +1457,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>766</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4017</ondown>
 				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
@@ -1492,7 +1494,7 @@
 				<width>$PARAM[single_widget_width]</width>
 				<height>766</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4017</ondown>
 				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
@@ -1529,7 +1531,7 @@
 				<width>$PARAM[double_widget_width]</width>
 				<height>766</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4017</ondown>
 				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
@@ -1566,7 +1568,7 @@
 				<width>$PARAM[single_widget_width]</width>
 				<height>766</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4017</ondown>
 				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
@@ -1598,7 +1600,7 @@
 				<width>759</width>
 				<height>670</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4017</ondown>
 				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
 				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
@@ -1701,7 +1703,7 @@
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
@@ -1728,7 +1730,7 @@
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
@@ -1755,7 +1757,7 @@
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
@@ -1782,7 +1784,7 @@
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3635</onup>
+				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
 				<ondown>4018</ondown>
 				<onleft>4017</onleft>
 				<onright>4018</onright>
@@ -2197,6 +2199,11 @@
 		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
 	</include>
 	<include name="EmbyFooter">
+		<!-- <control type="image">
+			<texture colordiffuse="Dark3">common/black.png</texture>
+			<height>50</height>
+			<bottom>0</bottom>
+		</control> -->
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -2209,9 +2216,9 @@
 			<itemgap>10</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
 			<control type="label">
-				<height>64</height>
+				<centertop>50%</centertop>
 				<align>left</align>
-				<font>Tiny</font>
+				<font>DurationFontSmall</font>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyFooterLabel]</label>
 				<visible>!Control.HasFocus(4012) + !Control.HasFocus(4016) + !Control.HasFocus(4017) + !Control.HasFocus(4018)</visible>

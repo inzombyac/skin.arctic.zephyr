@@ -843,7 +843,7 @@
 			<height>70</height>
 			<aspectratio>keep</aspectratio>
 			<texture>logo.png</texture>
-			<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+			<colordiffuse>$VAR[ColourHighlight2]</colordiffuse>
 		</control>
 	</include>
 	<include name="Def9000MediaMenuTop">
