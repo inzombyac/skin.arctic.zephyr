@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window type="buttonMenu" id="111">
-    <defaultcontrol always="true">3110</defaultcontrol>
+    <menucontrol>3638</menucontrol>
+	<defaultcontrol always="true">3110</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <zorder>10</zorder>
     <controls>
-
         <include>GlobalOverlay</include>
-
         <control type="group">
             <include>Animation.ZoomIn</include>
             <top>200</top>
@@ -39,7 +38,6 @@
                 <height>592</height>
                 <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
             </control>
-
             <control type="grouplist" id="3110">
                 <description>grouplist for context buttons</description>
                 <posx>18</posx>
@@ -47,7 +45,6 @@
                 <width>510</width>
                 <height>592</height>
                 <itemgap>0</itemgap>
-
                 <control type="button" id="3111">
                     <description>Exit XBMC button</description>
                     <include>DefContextButton</include>
@@ -55,7 +52,6 @@
                     <onclick>Quit()</onclick>
                     <visible>System.ShowExitButton</visible>
                 </control>
-
                 <control type="button" id="3112">
                     <description>Master mode button</description>
                     <include>DefContextButton</include>
@@ -64,7 +60,6 @@
                     <onclick>xbmc.mastermode</onclick>
                     <visible>System.HasLocks</visible>
                 </control>
-
                 <control type="button" id="3113">
                     <description>LogOff Profile</description>
                     <include>DefContextButton</include>
@@ -73,15 +68,13 @@
                     <onclick>System.LogOff</onclick>
                     <visible>System.Loggedon + System.HasLoginScreen</visible>
                 </control>
-
                 <!--<control type="button" id="3116">
                     <description>Shutdown</description>
                     <include>DefContextButton</include>
                     <label>13005</label>
                     <onclick>Powerdown()</onclick>
                     <visible>System.CanPowerDown</visible>
-                </control>-->
-                
+                </control>-->          
                 <control type="button" id="3114">
                     <description>Custom Shutdown Timer button</description>
                     <include>DefContextButton</include>
@@ -89,7 +82,6 @@
                     <onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
                     <visible>System.HasAlarm(shutdowntimer)</visible>
                 </control>
-
                 <control type="button" id="3115">
                     <description>Custom Shutdown Timer button</description>
                     <include>DefContextButton</include>
@@ -98,7 +90,6 @@
                     <visible>!System.HasAlarm(shutdowntimer)</visible>
                     <visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
                 </control>
-
                 <control type="label" id="3119">
                     <description>Alarm Time</description>
                     <include>DefContextButton</include>
@@ -106,7 +97,6 @@
                     <label>$LOCALIZE[20145] [B]$INFO[System.Alarmpos][/B]</label>
                     <visible>System.HasAlarm(shutdowntimer)</visible>
                 </control>
-
                 <!--<control type="button" id="3117">
                     <description>Suspend xbmc</description>
                     <include>DefContextButton</include>
@@ -114,43 +104,39 @@
                     <onclick>XBMC.Suspend()</onclick>
                     <visible>System.CanSuspend</visible>
                 </control>-->
-
                 <!--<control type="button" id="3118">
                     <description>Reboot button</description>
                     <include>DefContextButton</include>
                     <label>13013</label>
                     <onclick>XBMC.Reset()</onclick>
                     <visible>System.CanReboot</visible>
-                </control>-->
-                
+                </control>-->         
                 <control type="button" id="3121">
                     <include>DefContextButton</include>
                     <label>5</label>
                     <onclick>ActivateWindow(settings)</onclick>
-                </control>
-                
+                </control>       
                 <control type="button" id="3122">
                     <include>DefContextButton</include>
                     <label>130</label>
                     <onclick>ActivateWindow(systeminfo)</onclick>
-                </control>
-                
+                </control>         
                 <control type="button" id="3123">
                     <include>DefContextButton</include>
                     <label>10003</label>
                     <onclick>ActivateWindow(filemanager)</onclick>
-                </control>
-                
+                </control>        
                 <control type="button" id="3120">
                     <include>DefContextButton</include>
                     <label>31195</label>
                     <onclick>ReloadSkin()</onclick>
                 </control>
-                
             </control>
-
         </control>
-
+		<control type="button" id="3638">
+			<label></label>
+			<onfocus>Dialog.Close(all, true)</onfocus>
+			<onclick>Dialog.Close(all, true)</onclick>
+		</control>	
     </controls>
-
 </window>

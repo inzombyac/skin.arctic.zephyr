@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="6">
+	<menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">55</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<views>50,550,54,53,51,55,56,57,58,59,52,500,514,513,515</views>

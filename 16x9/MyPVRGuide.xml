@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<menucontrol>9000</menucontrol>
 	<allowoverlay>yes</allowoverlay>
 	<background>0</background>
 	<defaultcontrol always="true">10</defaultcontrol>

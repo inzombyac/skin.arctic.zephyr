@@ -2,6 +2,7 @@
 <!-- Foundation -->
 <window id="0">
 	<defaultcontrol always="true">300</defaultcontrol>
+	<menucontrol>3638</menucontrol>
 	<allowoverlay>no</allowoverlay>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 	<onload condition="IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>

@@ -92,7 +92,7 @@
 					<left>-14</left>
 					<width>78</width>
 					<height>78</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/search.png</texture>
+					<texture colordiffuse="$VAR[ColourHighlight]" border="10">special://skin/extras/icons/search.png</texture>
 					<visible>Control.HasFocus(3635)</visible>
 				</control>
 				<control type="image">
@@ -100,7 +100,7 @@
 					<left>-14</left>
 					<width>78</width>
 					<height>78</height>
-					<texture colordiffuse="PanelWhite100" border="8">special://skin/extras/icons/search.png</texture>
+					<texture colordiffuse="PanelWhite100" border="16">special://skin/extras/icons/search.png</texture>
 					<visible>!Control.HasFocus(3635)</visible>
 				</control>
 				<control type="button" id="3635">
@@ -176,7 +176,7 @@
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 			</control>
-			<control type="group" description="iconbox">
+			<control type="group" description="emby">
 				<width>50</width>
 				<height>50</height>
 				<control type="image">
@@ -185,24 +185,60 @@
 				<control type="image">
 					<width>50</width>
 					<height>50</height>
-					<texture colordiffuse="Dark1">special://skin/extras/icons/emby_diff.png</texture>
+					<texture colordiffuse="Dark1" border="5">special://skin/extras/icons/emby_diff.png</texture>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 					<visible>!Control.HasFocus(3636)</visible>
 				</control>
 				<control type="image">
 					<width>50</width>
 					<height>50</height>
-					<texture border="1">special://skin/extras/icons/emby2.png</texture>
+					<texture>special://skin/extras/icons/emby2.png</texture>
 					<visible>Control.HasFocus(3636)</visible>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 				</control>
 				<control type="button" id="3636">
 					<onleft>3634</onleft>
-					<onright>3635</onright>
+					<onright>3637</onright>
 					<onup>7788</onup>
 					<ondown>300</ondown>
 					<onclick>ActivateWindow(10025,"plugin://plugin.video.emby",return)</onclick>
 					<font>Button</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+				</control>
+			</control>
+			<control type="group" description="power">
+				<width>50</width>
+				<height>50</height>
+				<control type="image">
+					<texture diffuse="common/circle.png" colordiffuse="Panel">common/box.png</texture>
+				</control>
+				<control type="image">
+					<width>50</width>
+					<height>50</height>
+					<texture colordiffuse="Dark1" border="5">special://skin/extras/icons/power.png</texture>
+					<visible>System.HasAddon(plugin.video.emby)</visible>
+					<visible>!Control.HasFocus(3637)</visible>
+				</control>
+				<control type="image">
+					<width>50</width>
+					<height>50</height>
+					<texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/power.png</texture>
+					<visible>Control.HasFocus(3637)</visible>
+				</control>
+				<control type="button" id="3637">
+					<onleft>3636</onleft>
+					<onright>3635</onright>
+					<onup>7788</onup>
+					<ondown>300</ondown>
+					<onclick>ActivateWindow(shutdownmenu)</onclick>
+					<font>Button</font>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+				</control>
+				<!-- Hidden Power Menu -->
+				<control type="button" id="3638">
+					<onfocus>ActivateWindow(shutdownmenu)</onfocus>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
 				</control>
