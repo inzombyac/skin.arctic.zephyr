@@ -276,7 +276,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Fallback)">Like $INFO[Container(4017).ListItem.Property(similartitle)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Recent</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">Recommended</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">[CR]</value>
 		<value>Popular TV</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Label">

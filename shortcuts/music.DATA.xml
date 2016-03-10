@@ -20,6 +20,12 @@
     </shortcut>
 	<shortcut>
         <label2>music</label2>
+        <label>Genres</label>
+        <icon>special://skin/extras/icons/recentlyadded.png</icon>
+        <action>ActivateWindow(MusicLibrary,musicdb://genres/,return)</action>
+    </shortcut>
+	<shortcut>
+        <label2>music</label2>
         <label>744</label>
         <icon>special://skin/extras/icons/files.png</icon>
         <action>ActivateWindow(MusicFiles)</action>

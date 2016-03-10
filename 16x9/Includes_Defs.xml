@@ -120,8 +120,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">special://skin/extras/playlists/RandomAlbums.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs) + System.HasAddon(plugin.program.advanced.launcher) + StringCompare(Window(Home).Property(HasAdvancedLauncherConfig),exists)">plugin://plugin.program.advanced.launcher/?default</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">addons://sources/executable</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">special://</value>
+		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">special://</value> -->
 		<value>plugin://script.extendedinfo?info=incinemamovies</value>
 	</variable>
 	<!-- Right Widget 1 Selection -->
@@ -1377,11 +1377,11 @@
 	<!-- Archived Emby Home defs StringCompare(Window(Home).Property(UseAltWidget),True)  Skin.HasSetting(HomeShowWidgets)-->
 	<variable name="DefWidgetRightContent">
 		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">$VAR[DefWidgetRightContentPictures]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">special://</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">$VAR[DefWidgetRightContentHomeVideo]</value>
+		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),weather)">special://</value> -->
+		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">$VAR[DefWidgetRightContentHomeVideo]</value> -->
 		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">$INFO[Container(300).ListItem.Property(list)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">addons://sources/executable</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://</value>
+		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://</value> -->
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$VAR[DefWidgetRightContentEmbyTV]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">$VAR[DefWidgetRightContentEmbyMovie]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$VAR[DefWidgetRightContentEmbyTV]</value>
@@ -1392,12 +1392,12 @@
 		<value>$VAR[DefWidgetRightContentVideo]</value>
 	</variable>
 	<variable name="DefWidgetRight2Content">
-		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">special://</value>
+		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),photos)">special://</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">special://</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">special://</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">special://</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">special://</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://</value> -->
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$VAR[DefWidgetRight2ContentEmbyTV]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">$VAR[DefWidgetRight2ContentEmbyMovie]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$VAR[DefWidgetRight2ContentEmbyTV]</value>

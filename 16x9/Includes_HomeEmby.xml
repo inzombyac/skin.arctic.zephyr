@@ -438,7 +438,7 @@
 			<animation effect="slide" start="0" end="-240,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[IntegerGreaterThan(Container(4016).NumItems,1)+IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + ![StringCompare(Container(300).ListItem.Property(type),programs)] + !StringCompare(Container(300).ListItem.Property(type),homevideos)" time="200">Conditional</animation>
 			<animation effect="slide" start="0" end="-240,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[!IntegerGreaterThan(Container(4016).NumItems,1)+IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + ![StringCompare(Container(300).ListItem.Property(type),programs)] + !StringCompare(Container(300).ListItem.Property(type),homevideos)" time="200">Conditional</animation>
 			<animation effect="slide" start="0" end="-240,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[IntegerGreaterThan(Container(4016).NumItems,1)+!IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + ![StringCompare(Container(300).ListItem.Property(type),programs)]  + !StringCompare(Container(300).ListItem.Property(type),homevideos)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-240,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + [IntegerGreaterThan(Container(4016).NumItems,1)+IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + ![StringCompare(Container(300).ListItem.Property(type),programs)] + ![StringCompare(Container(300).ListItem.Property(type),music)]" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-240,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + [IntegerGreaterThan(Container(4016).NumItems,1)+IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + ![StringCompare(Container(300).ListItem.Property(type),programs)] + ![StringCompare(Container(300).ListItem.Property(type),music)] + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos)" time="200">Conditional</animation>
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
@@ -705,6 +705,13 @@
 			<content limit="1" sortby="random">$VAR[EmbyCollectionSource]</content>
 			<include>EmbyHiddenItemLayout</include>
 			<visible>StringCompare(Container(300).ListItem.Property(type),movies)</visible>
+			<onfocus>SetFocus(300)</onfocus>
+		</control>
+		<control type="list" id="9004">
+			<content limit="10" sortby="random">special://skin/extras/playlists/RandomAlbums.xsp</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
+			<autoscroll time="15000">!Control.HasFocus(9004)</autoscroll>
 			<onfocus>SetFocus(300)</onfocus>
 		</control>
 		<control type="list" id="9025">
@@ -1247,7 +1254,7 @@
 					<param name="scale">center</param>
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
-				<content limit="10">$VAR[DefWidgetRightContent]</content>
+				<content limit="10">$VAR[DefWidgetRightContentMusic]</content>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1404,6 +1411,9 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),photos)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),homevideos)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),programs)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1438,6 +1448,9 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),photos)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),homevideos)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),programs)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1472,6 +1485,9 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),photos)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),homevideos)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),programs)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1506,6 +1522,9 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),photos)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),homevideos)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),programs)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1560,7 +1579,7 @@
 					<param name="scale">center</param>
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 				</include>
-				<content limit="10">$VAR[DefWidgetRight2Content]</content>
+				<content limit="10">$VAR[DefWidgetRight2ContentMusic]</content>
 				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1867,6 +1886,8 @@
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
 				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
