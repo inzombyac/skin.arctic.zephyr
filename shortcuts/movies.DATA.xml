@@ -4,7 +4,7 @@
         <label2>movies</label2>
         <label>Unwatched</label>
         <icon>special://skin/extras/icons/eye.png</icon>
-        <action>ActivateWindow(VideoLibrary,special://skin/extras/playlists/unwatched_movies.xsp,return)</action>
+        <action>ActivateWindow(VideoLibrary,special://skin/extras/playlists/UnwatchedMovies.xsp,return)</action>
     </shortcut>
 	<shortcut>
         <label2>movies</label2>
