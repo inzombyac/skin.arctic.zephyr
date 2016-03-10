@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog">
     <defaultcontrol always="true">9000</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+    
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <control type="list" id="100">

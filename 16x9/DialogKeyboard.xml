@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window id="103">
     <defaultcontrol always="true">300</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+    
     <zorder>10</zorder>
 
     <coordinates>
@@ -47,6 +47,26 @@
             </control>
             <control type="edit" id="312">
                 <description>Edit Text</description>
+                <left>10</left>
+                <right>10</right>
+                <posy>11</posy>
+                <height>75</height>
+                <align>center</align>
+                <textcolor>Black70</textcolor>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+            </control>
+			 <control type="label" id="313">
+                <description>Text Input</description>
+                <left>10</left>
+                <right>10</right>
+                <posy>11</posy>
+                <height>75</height>
+                <align>center</align>
+                <textcolor>Black70</textcolor>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+            </control>
+			 <control type="label" id="314">
+                <description>List of Options</description>
                 <left>10</left>
                 <right>10</right>
                 <posy>11</posy>

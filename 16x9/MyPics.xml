@@ -3,7 +3,7 @@
 <window id="2">
     <defaultcontrol always="true">50</defaultcontrol>
 	<menucontrol>9000</menucontrol>
-    <allowoverlay>yes</allowoverlay>
+    
     <views>50,500</views>
 
     <controls>
@@ -22,8 +22,8 @@
             <visible>ControlGroup(9000).HasFocus()</visible>
             <include>GlobalOverlay</include>
         </control>
-        <control type="group">
-            <include>Def9000Background</include>
+       <control type="group">
+            <include>Def9000SideBladeLeft</include>
             <control type="grouplist" id="9000">
                 <include>Def9000GroupList</include>
 
@@ -69,7 +69,23 @@
                     <align>left</align>
                     <label>13319</label>
                 </control>
-
+				<control type="label" id="203">
+                    <width>455</width>
+                    <height>42</height>
+                    <textoffsetx>15</textoffsetx>
+                    <font>Home</font>
+                    <label>Actions</label>
+                    <textcolor>$VAR[ColourHighlight]</textcolor>
+                    <aligny>center</aligny>
+                </control>
+				<control type="button" id="9092">
+					<description>Set Custom Widget</description>
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<label>31222</label>
+					<onclick>Back</onclick>
+					<onclick>ActivateWindow(1106)</onclick>
+				</control>
             </control>
 
         </control>

@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window type="window" id="1105">
     <defaultcontrol always="true">9500</defaultcontrol>
-    <allowoverlay>false</allowoverlay>
+    
     <onunload>ClearProperty(content)</onunload>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>

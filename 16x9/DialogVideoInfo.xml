@@ -255,18 +255,33 @@
 					<ondown>9007</ondown>
 					<textcolor>Black700</textcolor>
 					<focusedcolor>White</focusedcolor>
-					<texturefocus colordiffuse="White" border="5">dialogvideo/info.png</texturefocus>
-					<texturenofocus colordiffuse="White70" border="5">dialogvideo/info.png</texturenofocus>
+					<texturefocus>dialogvideo/info.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/info.png</texturenofocus>
+					<alttexturefocus >dialogvideo/info.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/info.png</alttexturenofocus>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
 					<onclick condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
 					<onclick condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
 					<onclick condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
 				</control>
+				<!-- Kodi Rating -->
+				<control type="button" id="7">
+					<width>222</width>
+					<height>116</height>
+					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<ondown>9007</ondown>
+					<font>Small</font>
+					<texturefocus>dialogvideo/rate.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/rate.png</texturenofocus>
+					<textoffsetx>20</textoffsetx>
+					<alttexturefocus >dialogvideo/rate.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/rate.png</alttexturenofocus>
+				</control>
 			</control>
 			<!-- Button grouplist Focus  -->
 			<control id="9002" type="grouplist">
-				<left>560</left>
-				<top>213</top>
+				<left>566</left>
+				<top>178</top>
 				<width>1222</width>
 				<height>116</height>
 				<itemgap>21</itemgap>
@@ -288,6 +303,8 @@
 					<altlabel>Browse Show</altlabel>
 					<animation condition="Control.HasFocus(8)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(8)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+					<aligny>top</aligny>
+					<textoffsety>80</textoffsety>
 				</control>
 				<control id="1003" type="button">
 					<width>222</width>
@@ -299,6 +316,8 @@
 					<font>EPGTimeline</font>
 					<animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(1003)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+					<aligny>top</aligny>
+					<textoffsety>80</textoffsety>
 				</control>
 				<control id="1006" type="button">
 					<width>222</width>
@@ -312,6 +331,8 @@
 					<label>Search YouTube</label>
 					<animation condition="Control.HasFocus(1006)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(1006)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+					<aligny>top</aligny>
+					<textoffsety>80</textoffsety>
 				</control>
 				<control id="10" type="button">
 					<width>222</width>
@@ -323,6 +344,8 @@
 					<label>13405</label>
 					<animation condition="Control.HasFocus(10)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(10)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+					<aligny>top</aligny>
+					<textoffsety>80</textoffsety>
 				</control>
 				<!-- Artwork Downloader Button -->
 				<control id="20" type="button">
@@ -335,6 +358,8 @@
 					<label>13511</label>
 					<animation condition="Control.HasFocus(20)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(20)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+					<aligny>top</aligny>
+					<textoffsety>80</textoffsety>
 				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="19">
@@ -346,6 +371,21 @@
 					<textcolor>White</textcolor>
 					<animation condition="Control.HasFocus(19)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 					<animation condition="!Control.HasFocus(19)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+					<aligny>top</aligny>
+					<textoffsety>80</textoffsety>
+				</control>
+				<!-- Rating -->
+				<control type="button" id="7">
+					<width>222</width>
+					<height>116</height>
+					<focusedcolor>White</focusedcolor>
+					<font>EPGTimeline</font>
+					<label>38023</label>
+					<animation condition="Control.HasFocus(7)" effect="fade" end="100" start="0" time="10">Conditional</animation>
+					<animation condition="!Control.HasFocus(7)" effect="fade" end="0" start="100" time="10">Conditional</animation>
+					<texturefocus>dialogvideo/rate.png</texturefocus>
+					<aligny>top</aligny>
+					<textoffsety>80</textoffsety>
 				</control>
 			</control>
 			<!--Similar Overview-->

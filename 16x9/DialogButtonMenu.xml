@@ -3,7 +3,7 @@
 <window type="buttonMenu" id="111">
     <menucontrol>3638</menucontrol>
 	<defaultcontrol always="true">3110</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+    
     <zorder>10</zorder>
     <controls>
         <include>GlobalOverlay</include>

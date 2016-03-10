@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window id="146">
     <defaultcontrol always="true">9000</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+    
 
     <controls>
 
@@ -208,18 +208,17 @@
                     <label>24036</label>
                     <visible>!Skin.HasSetting(global.kioskmode)</visible>
                 </control>
-                
-                <control type="button" id="11">
-                    <description>Rollback</description>
-                    <width>450</width>
+				<control type="radiobutton" id="13">
+                    <description>Auto-Update button</description>
+                    <radioposx>400</radioposx>
+					<width>450</width>
                     <height>68</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
-                    <include>DefDialogButtons</include>
-                    <label>24048</label>
+					<include>DefDialogButtons</include>
+                    <label>21340</label>
                     <visible>!Skin.HasSetting(global.kioskmode)</visible>
                 </control>
-
             </control>
         </control>
 
