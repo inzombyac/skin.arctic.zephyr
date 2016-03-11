@@ -109,14 +109,14 @@
 					<onright>3635</onright>
 					<onup>7788</onup>
 					<ondown>300</ondown>
-					<onclick>ActivateWindow(shutdownmenu)</onclick>
+					<onclick>ActivateWindow(1111)</onclick>
 					<font>Button</font>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
 				</control>
 				<!-- Hidden Power Menu -->
 				<control type="button" id="3638">
-					<onfocus>ActivateWindow(shutdownmenu)</onfocus>
+					<onfocus>ActivateWindow(1111)</onfocus>
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
 				</control>
@@ -169,20 +169,20 @@
 				<control type="image">
 					<width>78</width>
 					<height>78</height>
-					<texture diffuse="common/circle.png" colordiffuse="PanelWhite100">$VAR[HeaderIcon]</texture>
+					<texture diffuse="common/circle.png" colordiffuse="PanelWhite100" border="1">$VAR[HeaderIcon]</texture>
 					<visible>!Container.Scrolling</visible>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !Substring(Control.GetLabel(8308),empty.png)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
-					<texture diffuse="common/circle.png">special://skin/extras/icons/artist.png</texture>
+					<texture diffuse="common/circle.png" border="1">special://skin/extras/icons/artist.png</texture>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 					<visible>!Control.HasFocus(3634)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
-					<texture diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
+					<texture diffuse="common/circle.png" border="1">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
 					<visible>System.HasAddon(plugin.video.emby)</visible>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + !IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
@@ -277,7 +277,7 @@
 				<texture colordiffuse="Dark2" flipx="false">common/arrow-small-right.png</texture>
 			</control>
 			<control type="list" id="300">
-				<animation effect="slide" end="0,24" condition="control.hasfocus(302)" time="200">Conditional</animation>
+				<!-- <animation effect="slide" end="0,24" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<description>Home Wraplist</description>
@@ -287,8 +287,9 @@
 				<!-- <ondown condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</ondown>
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + IntegerGreaterThan(Container(4017).NumItems,0)">4017</ondown>
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</ondown> -->
-				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
-				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup>
+				<!-- <onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
+				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup> -->
+				<onup>3637</onup>
 				<onright>SetProperty(UseAltWidget,,home)</onright>
 				<onleft>SetProperty(UseAltWidget,,home)</onleft>
 				<onright>SetProperty(UseAltWidget2,,home)</onright>
@@ -328,15 +329,16 @@
 				<onleft>SetFocus(300)</onleft>
 				<onright>Control.Move(300,1)</onright>
 				<onright>SetFocus(300)</onright>
-				<onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
-				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup>
+				<!-- <onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
+				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup> -->
+				<onup>3637</onup>
 				<ondown>4012</ondown>
 				<label></label>
 			</control>
 		</control>
 	</include>
-	<include name="HomeEmbySubMenu">
-		<!-- Sub Menu -->
+	<!-- Sub Menu -->
+	<!-- <include name="HomeEmbySubMenu">
 			<control type="list" id="302">
 				<width>1300</width>
 				<animation effect="slide" end="0,24" condition="control.hasfocus(302)" time="200">Conditional</animation>
@@ -404,7 +406,7 @@
 					<include>skinshortcuts-submenu</include>
 				</content>
 			</control>
-	</include>
+	</include> -->
 	<include name="HomeEmbyContent">
 		<top>177</top>
 		<itemlayout width="300" height="74">
@@ -455,7 +457,7 @@
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
-			<control type="image">
+			<!-- <control type="image">
 				<top>-2</top>
 				<centerleft>50%</centerleft>
 				<width>16</width>
@@ -464,7 +466,7 @@
 				<visible>Control.HasFocus(300) | Control.HasFocus(40019)</visible>
 				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
 				<animation effect="fade" end="100" start="0" delay="300" time="400" reversible="false">Focus</animation>
-			</control>
+			</control> -->
 		</focusedlayout>
 		<content>
 			<include>skinshortcuts-mainmenu</include>
@@ -503,27 +505,27 @@
 				<include>Animation.DelayFadeOut</include>		
 				<control type="image">
 					<left>SidePad</left>
-					<posy>836</posy>
+					<posy>840</posy>
 					<width>280</width>
-					<height>220</height>
+					<height>217</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
 					<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				</control>
 				<control type="image">
 					<left>368</left>
-					<posy>836</posy>
+					<posy>840</posy>
 					<width>280</width>
-					<height>220</height>
+					<height>217</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
 					<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				</control>
 				<control type="image">
 					<left>656</left>
-					<posy>836</posy>
+					<posy>840</posy>
 					<width>280</width>
-					<height>220</height>
+					<height>217</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 					<include>Animation.FadeIn</include>
@@ -535,7 +537,7 @@
 			<include>EmbyRightWidgetPanel2</include>
 			<include>EmbyRightWidgetPanel3</include>
 			<!-- Bottom Widgets -->
-			<include>EmbyBottomWidgetPanel</include>
+			<include>EmbyBottomSubMenuPanel</include>
 			<control type="fixedlist" id="40016">
 				<content limit="10">$VAR[DefWidgetRightContent]</content>
 				<onfocus>SetFocus(300)</onfocus>
@@ -564,6 +566,72 @@
 			</control>
 		</control>
 		
+	</include>
+	<include name="EmbyBottomSubMenuPanel">
+		<control type="panel" id="302">
+			<width>864</width>
+			<onup>4012</onup>
+			<onright condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onright>
+			<onright condition="!IntegerGreaterThan(Container(4016).NumItems,0) + IntegerGreaterThan(Container(4017).NumItems,0)">4017</onright>
+			<onright condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</onright>
+			<left>SidePad</left>
+			<posy>840</posy>
+			<width>280</width>
+			<height>224</height>
+			<orientation>horizontal</orientation>
+			<scrolltime>200</scrolltime>
+			<itemlayout width="288" height="224">
+				<control type="image">
+					<width>280</width>
+					<height>180</height>
+					<texture background="true">$VAR[SubMenuImage]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+				</control>
+				<control type="label">
+					<bottom>10</bottom>
+					<height>38</height>
+					<width>280</width>
+					<align>center</align>
+					<font>Tiny</font>
+					<textcolor>Dark1</textcolor>
+					<selectedcolor>Dark1</selectedcolor>
+					<label>$INFO[ListItem.label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="288" height="224">
+				<control type="image">
+					<width>280</width>
+					<height>180</height>
+					<texture background="true">$VAR[SubMenuImage]</texture>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+				</control>
+				<control type="label">
+					<bottom>10</bottom>
+					<height>38</height>
+					<width>280</width>
+					<align>center</align>
+					<font>Tiny</font>
+					<textcolor>Dark1</textcolor>
+					<selectedcolor>Dark1</selectedcolor>
+					<label>$INFO[ListItem.label]</label>
+				</control>
+				<control type="image">
+					<width>288</width>
+					<height>224</height>
+					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+					<visible>Control.HasFocus(302)</visible>
+				</control>
+			</focusedlayout>
+			<content>
+				<include>skinshortcuts-submenu</include>
+			</content>
+		</control>
 	</include>
 	<include name="EmbyBottomWidgetPanel">		
 		<control type="group">
@@ -799,7 +867,7 @@
 				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
 				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
-				<ondown>4013</ondown>
+				<ondown>302</ondown>
 				<onleft>4012</onleft>
 				<onright>4016</onright>
 				<texturefocus>-</texturefocus>
@@ -994,7 +1062,7 @@
 			<height>724</height>
 			<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
 			<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
-			<ondown>4013</ondown>
+			<ondown>302</ondown>
 			<onright>4016</onright>
 			<include>EmbyHomeInfoActions</include>
 			<orientation>horizontal</orientation>
@@ -2221,11 +2289,11 @@
 				<font>DurationFontSmall</font>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyFooterLabel]</label>
-				<visible>!Control.HasFocus(4012) + !Control.HasFocus(4016) + !Control.HasFocus(4017) + !Control.HasFocus(4018)</visible>
+				<visible>!Control.HasFocus(4012) + !Control.HasFocus(4016) + !Control.HasFocus(4017) + !Control.HasFocus(4018) + !Control.HasFocus(302)</visible>
 			</control>
 		</control>
 		<control type="grouplist">
-			<visible>Control.HasFocus(4012) | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)</visible>
+			<visible>Control.HasFocus(4012) | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(302)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>SidePad</left>
@@ -2279,7 +2347,7 @@
 				<centertop>50%</centertop>
 				<height>64</height>
 				<width>1330</width>
-				<visible>Control.HasFocus(4012) | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)</visible>
+				<visible>Control.HasFocus(4012) | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(302)</visible>
 				<control type="label">
 					<left>10</left>
 					<font>DurationFontSmall</font>

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="107">
-    
-
     <controls>
-
         <control type="group">
             <visible>!Window.IsVisible(DialogVolumeBar.xml)</visible>
-            <right>72</right>
-            <posy>70</posy>
+            <top>10</top>
+			<centerright>50%</centerright>
             <width>800</width>
             <height>100</height>
             <include>Animation.FadeIn.Slide</include>
             <include>Animation.FadeOut</include>
-    
             <control type="image">
                 <description>background image</description>
                 <posx>0</posx>
@@ -24,9 +20,7 @@
                 <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme) | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Conditional</animation>
                 <texture border="16">common/rounded-shadow8.png</texture>
             </control>
-
-            <control type="group">
-                
+            <control type="group">          
                 <control type="image" id="400">
                     <left>20</left>
                     <centertop>50%</centertop>
@@ -34,8 +28,7 @@
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
                     <colordiffuse>$VAR[OSDPanelWhite70]</colordiffuse>
-                </control>
-                
+                </control>                
                 <control type="label" id="401">
                     <left>104</left>
                     <width>536</width>
@@ -54,10 +47,7 @@
                     <font>Tiny</font>
                     <textcolor>$VAR[OSDPanelWhite70]</textcolor>
                 </control>
-
             </control>
-        </control>
-        
+		</control>
     </controls>
-
 </window>

@@ -5,9 +5,9 @@
     <onunload condition="!IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(UpdateArt.Enabled)">ClearProperty(UpdateArt)</onunload>
     <controls>
         <control type="group">
-            <right>72</right>
-            <posy>70</posy>
-            <width>660</width>
+            <top>10</top>
+			<centerright>50%</centerright>
+            <width>800</width>
             <height>100</height>
             <include>Animation.FadeIn.Slide</include>
             <include>Animation.FadeOut</include>
@@ -18,14 +18,12 @@
                 <description>background image</description>
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>660</width>
+                <width>800</width>
                 <height>100</height>
                 <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
                 <texture border="16" colordiffuse="Background">common/rounded-shadow8.png</texture>
             </control>
-
             <control type="group">
-
                 <control type="group">
                     <left>20</left>
                     <centertop>50%</centertop>
@@ -50,7 +48,6 @@
                         <aspectratio align="center">keep</aspectratio>
                     </control>
                 </control>
-
                 <control type="label" id="30">
                     <left>104</left>
                     <top>22</top>
@@ -67,10 +64,8 @@
                     <font>Tiny</font>
                     <textcolor>Dark1</textcolor>
                 </control>
-
             </control>
         </control>
-       
         <control type="progress" id="32">
             <texturebg>-</texturebg>
             <lefttexture>-</lefttexture>

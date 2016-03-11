@@ -147,7 +147,7 @@
 		<value>plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidgetRightContentHomeVideo">
-		<value>plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=homevideos&amp;folderid=recent</value>
+		<value>$VAR[EmbyNodeRecent]</value>
 	</variable>
 	<variable name="DefWidgetRightContentVideo">
 		<value>plugin://script.extendedinfo?info=trendingmovies</value>

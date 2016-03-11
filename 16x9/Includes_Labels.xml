@@ -266,6 +266,7 @@
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">[CR]</value>
 		<value condition="!IntegerGreaterThan(Container(4017).NumItems,0)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">[CR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Window(Home).Property(UseAltWidget2),Fallback)">Like $INFO[Container(4017).ListItem.Property(similartitle)]</value>
@@ -288,6 +289,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">[CR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IsEmpty(Window(Home).Property(UseAltWidget))">Recent</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">Random</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">Random</value>
@@ -368,7 +370,8 @@
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(4019).ListItem.DBID] / $INFO[Container(4019).ListItem.FileNameAndPath]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Conatiner(302).ListItem.Thumb]</value>
+		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(4019).ListItem.DBID] / $INFO[Container(4019).ListItem.FileNameAndPath]</value> -->
 		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColourHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
 		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
 		<!-- Tv Shows -->
