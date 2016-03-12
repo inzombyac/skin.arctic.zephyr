@@ -49,7 +49,7 @@ msgid "Current Menu"
 msgstr "Current Menu"
 
 msgctxt "#31109"
-msgid "Customise home menu"
+msgid "Customize home menu"
 msgstr "Customize home menu"
 
 msgctxt "#31110"
@@ -141,8 +141,8 @@ msgid "Set slideshow path"
 msgstr "Set slideshow path"
 
 msgctxt "#31132"
-msgid "Reset home menu shortcuts to defaults"
-msgstr "Reset home menu shortcuts to defaults"
+msgid "Reset menu to default"
+msgstr "Reset menu to default"
 
 msgctxt "#31133"
 msgid "Hide watched"

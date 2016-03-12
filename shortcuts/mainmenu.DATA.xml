@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
     <shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -9,7 +9,7 @@
 		<visible>[!System.HasAddon(plugin.video.emby) | Skin.HasSetting(menu.noemby)] </visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -26,7 +26,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.0.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.0.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -34,7 +34,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.0.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -51,7 +51,7 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.1.title)) + !Substring(Window(Home).Property(emby.nodes.1.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.1.content),emby_Favorite) + !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.1.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.1.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -59,7 +59,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.1.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -76,7 +76,7 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.2.title)) + !Substring(Window(Home).Property(emby.nodes.2.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.2.content),emby_Favorite) + !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.2.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.2.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -84,7 +84,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.2.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -101,7 +101,7 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.3.title)) + !Substring(Window(Home).Property(emby.nodes.3.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.3.content),emby_Favorite) + !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.3.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.3.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -109,7 +109,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.3.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -126,7 +126,7 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.4.title)) + !Substring(Window(Home).Property(emby.nodes.4.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.4.content),emby_Favorite) + !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.4.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.4.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -134,7 +134,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.4.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -151,7 +151,7 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.5.title)) + !Substring(Window(Home).Property(emby.nodes.5.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.5.content),emby_Favorite) + !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.5.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.5.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -159,7 +159,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.5.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -176,7 +176,7 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.6.title)) + !Substring(Window(Home).Property(emby.nodes.6.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.6.content),emby_Favorite) + !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.6.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.6.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -184,7 +184,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.6.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -201,7 +201,7 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.7.title)) + !Substring(Window(Home).Property(emby.nodes.7.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.7.content),emby_Favorite) + !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.7.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.7.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -209,7 +209,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.7.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -226,7 +226,7 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.8.title)) + !Substring(Window(Home).Property(emby.nodes.8.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.8.content),emby_Favorite) + !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.8.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.8.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -234,7 +234,7 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.8.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
@@ -251,7 +251,7 @@
 		<visible>!IsEmpty(Window(Home).Property(emby.nodes.9.title)) + !Substring(Window(Home).Property(emby.nodes.9.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.9.content),emby_Favorite) + !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.9.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.9.title),Movies)</visible>
 	</shortcut>
 	<shortcut>
-        <label>20343</label>
+        <label>tvshows</label>
         <label2>Common Shortcut</label2>
         <defaultID>tvshows</defaultID>
         <icon>special://skin/extras/icons/tv.png</icon>
@@ -259,37 +259,12 @@
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.9.title),TV)</visible>
     </shortcut>
 	<shortcut>
-        <label>20342</label>
+        <label>movies</label>
         <label2>Common Shortcut</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
         <action>ActivateWindow(Videos,MovieTitles,return)</action>
 		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.9.title),Movies)</visible>
-    </shortcut>
-	<shortcut>
-		<defaultID>info-window-home-property-emby-nodes-10-title</defaultID>
-		<label>$INFO[Window(Home).Property(emby.nodes.10.title)]</label>
-		<label2>$INFO[Window(Home).Property(emby.nodes.10.content)]</label2>
-		<icon>special://skin/extras/icons/emby_diff.png</icon>
-		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
-		<action>$INFO[Window(Home).Property(emby.nodes.10.path)]</action>
-		<visible>!IsEmpty(Window(Home).Property(emby.nodes.10.title)) + !Substring(Window(Home).Property(emby.nodes.10.content),emby_channels.xml)  + !Substring(Window(Home).Property(emby.nodes.10.content),emby_Favorite)+ !Skin.HasSetting(menu.noemby) + !StringCompare(Window(Home).Property(emby.nodes.10.title),TV) + !StringCompare(Window(Home).Property(emby.nodes.10.title),Movies)</visible>
-	</shortcut>
-	<shortcut>
-        <label>20343</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>tvshows</defaultID>
-        <icon>special://skin/extras/icons/tv.png</icon>
-        <action>ActivateWindow(Videos,TVShowTitles,return)</action>
-		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.10.title),TV)</visible>
-    </shortcut>
-	<shortcut>
-        <label>20342</label>
-        <label2>Common Shortcut</label2>
-        <defaultID>movies</defaultID>
-        <icon>special://skin/extras/icons/film.png</icon>
-        <action>ActivateWindow(Videos,MovieTitles,return)</action>
-		<visible>!Skin.HasSetting(menu.noemby) + StringCompare(Window(Home).Property(emby.nodes.10.title),Movies)</visible>
     </shortcut>
 	<shortcut>
         <label>Collections</label>

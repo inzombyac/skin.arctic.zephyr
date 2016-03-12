@@ -8,7 +8,7 @@
         <include>GlobalOverlay</include>
         <control type="group">
             <include>Animation.ZoomIn</include>
-            <top>400</top>
+            <top>302</top>
             <centerleft>50%</centerleft>
             <width>466</width>
             <control type="image">
@@ -32,19 +32,25 @@
                 </control>
 				<control type="button" id="3122">
 					<include>DefContextButton</include>
-					<label>Emby Preferences</label>
+					<label>Emby preferences</label>
 					<onclick>RunPlugin("plugin://plugin.video.emby?mode=userprefs")</onclick>
 				</control>
-                <control type="button" id="3123">
-                    <include>DefContextButton</include>
-                    <label>130</label>
-                    <onclick>ActivateWindow(systeminfo)</onclick>
-                </control>         
-                <control type="button" id="3124">
-                    <include>DefContextButton</include>
-                    <label>10003</label>
-                    <onclick>ActivateWindow(filemanager)</onclick>
-                </control>        
+                <control type="button" id="9212" description="Customise Home">
+					<include>DefContextButton</include>
+					<label>31109</label>
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+				</control>
+				<!-- <control type="button" id="9213" description="Reset Home to Defaults">
+					<include>DefContextButton</include>
+					<label>31132</label>
+					<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+				</control>    -->  
+				<control type="radiobutton" id="9262" description="Debug mode">
+					<include>DefContextButton</include>
+					<label>Debug Mode</label>
+					<selected>Skin.HasSetting(debug.mode)</selected>
+					<onclick>Skin.ToggleSetting(debug.mode)</onclick>
+				</control>
                 <control type="button" id="3125">
                     <include>DefContextButton</include>
                     <label>31195</label>

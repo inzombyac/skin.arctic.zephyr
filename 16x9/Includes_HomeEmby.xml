@@ -510,7 +510,7 @@
 					<height>217</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
-					<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+					<visible>IntegerGreaterThan(Container(302).NumItems, 0)</visible>
 				</control>
 				<control type="image">
 					<left>368</left>
@@ -519,7 +519,7 @@
 					<height>217</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
-					<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+					<visible>IntegerGreaterThan(Container(302).NumItems, 1)</visible>
 				</control>
 				<control type="image">
 					<left>656</left>
@@ -527,7 +527,7 @@
 					<width>280</width>
 					<height>217</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
-					<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+					<visible>IntegerGreaterThan(Container(302).NumItems, 2)</visible>
 					<include>Animation.FadeIn</include>
 				</control>
 			</control>
@@ -584,7 +584,7 @@
 				<control type="image">
 					<width>280</width>
 					<height>180</height>
-					<texture background="true">$VAR[SubMenuImage]</texture>
+					<texture>$VAR[EmbySubMenuImage]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 					<include>Animation.FadeIn</include>
@@ -605,9 +605,8 @@
 				<control type="image">
 					<width>280</width>
 					<height>180</height>
-					<texture background="true">$VAR[SubMenuImage]</texture>
+					<texture>$VAR[EmbySubMenuImage]</texture>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>

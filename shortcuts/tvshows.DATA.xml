@@ -1,52 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
     <shortcut>
-        <defaultID>NextUp</defaultID>
+        <defaultID>TV Hub</defaultID>
 		<label2>tvshows</label2>
-        <label>Next Up</label>
-        <icon>special://skin/extras/icons/recentlyadded.png</icon>
-		<thumb>$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</thumb>
-        <action>ActivateWindow(10025,library://video/inprogressshows.xml,return)</action>
-    </shortcut>
-	<shortcut>
-		<defaultID>RecentEpisode</defaultID>
-        <label2>tvshows</label2>
-        <label>Recent Episodes</label>
-        <icon>special://skin/extras/icons/recentlyadded.png</icon>
-		<thumb>$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</thumb>
-        <action>ActivateWindow(10025,videodb://recentlyaddedepisodes/,return)</action>
-    </shortcut>
-	<shortcut>
-        <defaultID>UnwatchedShow</defaultID>
-		<label2>tvshows</label2>
-        <label>Unwatched</label>
-        <icon>special://skin/extras/icons/eye.png</icon>
-		<thumb>$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</thumb>
-        <action>ActivateWindow(VideoLibrary,special://skin/extras/playlists/UnwatchedShows.xsp,return)</action>
-		<thumb>$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</thumb>
-    </shortcut>
-	<shortcut>
-		<defaultID>RecommendedShow</defaultID>
-        <label2>tvshows</label2>
-        <label>Recommended Shows</label>
-        <icon>special://skin/extras/icons/tv.png</icon>
-       <action>ActivateWindow(VideoLibrary,special://skin/extras/playlists/RecommendedShows.xsp,return)</action>
-	   <thumb>$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</thumb>
-    </shortcut>
-	<shortcut>
-		<defaultID>TVHub</defaultID>
-        <label2>tvshows</label2>
         <label>31193</label>
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(1102)</action>
-		<thumb>special://skin/extras/backgrounds/tv.jpg</thumb>
     </shortcut>
 	<shortcut>
-        <defaultID>RandomEpisode</defaultID>
+        <defaultID>nextaired</defaultID>
+		<label2>tvshows</label2>
+        <label>31220</label>
+        <icon>special://skin/extras/icons/tv.png</icon>
+		<action>RunAddon(script.tv.show.next.aired)</action>
+    </shortcut>
+	<shortcut>
+        <defaultID>random</defaultID>
 		<label2>tvshows</label2>
         <label>Random Episode</label>
-		<icon>special://skin/extras/icons/tv.png</icon>
-		<action>ActivateWindow(VideoLibrary,special://skin/extras/playlists/RandomEpisodes.xsp,return)</action>
-		<thumb>special://skin/extras/backgrounds/Channels2.jpg</thumb>
+        <icon>special://skin/extras/icons/tv.png</icon>
+       <action>PlayMedia(special://skin/extras/playlists/RandomEpisode.xsp,return)</action>
     </shortcut>
 </shortcuts>
