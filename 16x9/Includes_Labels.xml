@@ -270,7 +270,7 @@
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Window(Home).Property(UseAltWidget2),Fallback) + Skin.HasSetting(menu.usealtwidgets)">Like $INFO[Container(4017).ListItem.Property(similartitle)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)">Unwatched Shows</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + [[StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)] | !Skin.HasSetting(menu.usealtwidgets)]">Unwatched Shows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">Recommended</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)">On Air</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Next Aired</value>
@@ -354,7 +354,7 @@
 	</variable>
 	<variable name="EmbyFooterLabel">
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(9025).NumItems] items • [COLOR=$VAR[ColourHighlight]]$INFO[Container(9025).TotalUnWatched] unwatched[/COLOR]</value> -->
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(9005).NumItems]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRightContent]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->

@@ -223,7 +223,7 @@
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9101)</visible>
 						<include>DefSettingsButton2</include>
-						<label>Show collection shortcut</label>
+						<label>Use alternate widgets when original is empty</label>
 						<selected>Skin.HasSetting(menu.usealtwidgets)</selected>
 						<onclick>Skin.ToggleSetting(menu.usealtwidgets)</onclick>
 					</control>
