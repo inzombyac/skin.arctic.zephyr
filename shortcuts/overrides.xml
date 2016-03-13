@@ -395,6 +395,17 @@
 	<backgrounddefault defaultID="info-window-home-property-emby-nodes-8-recommended-title" group="info-window-home-property-emby-nodes-8-title">pvr/background.jpg</backgrounddefault>
 	<backgrounddefault defaultID="info-window-home-property-emby-nodes-9-recommended-title" group="info-window-home-property-emby-nodes-9-title">pvr/background.jpg</backgrounddefault>
 	
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-0-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-1-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-2-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-3-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-4-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-5-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-6-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-7-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-8-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-9-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
+	
 
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
