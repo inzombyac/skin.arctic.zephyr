@@ -134,16 +134,16 @@
 		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">videodb://recentlyaddedepisodes/</value> -->
 	</variable>
 	<variable name="DefWidgetRightContentEmbyTV">
-		<value condition="!IsEmpty(Window(Home).Property(UseAltWidget))">videodb://recentlyaddedepisodes/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22descending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22dateadded%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</value>
+		<value condition="!IsEmpty(Window(Home).Property(UseAltWidget)) + Skin.HasSetting(menu.usealtwidgets)">videodb://recentlyaddedepisodes/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22descending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22dateadded%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</value>
 		<value>$VAR[EmbyNodeNextEpisodes]</value>
 	</variable>
 	<variable name="DefWidgetRightContentEmbyMovie">
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback)">$VAR[EmbyNodeUnwatched]</value>
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Alternate)">$VAR[EmbyNodeRecommended]</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets)">$VAR[EmbyNodeUnwatched]</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Alternate) + Skin.HasSetting(menu.usealtwidgets)">$VAR[EmbyNodeRecommended]</value>
 		<value>$VAR[EmbyNodeInProgress]</value>
 	</variable>
 	<variable name="DefWidgetRightContentMovie">
-		<value condition="!IsEmpty(Window(Home).Property(UseAltWidget))">special://skin/extras/playlists/UnwatchedMovies.xsp</value>
+		<value condition="!IsEmpty(Window(Home).Property(UseAltWidget)) + Skin.HasSetting(menu.usealtwidgets)">special://skin/extras/playlists/UnwatchedMovies.xsp</value>
 		<value>plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidgetRightContentHomeVideo">
@@ -164,25 +164,25 @@
 		<value>plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentTVShows">
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Alternate)">special://skin/extras/playlists/UnwatchedShows.xsp</value>
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Fallback)">plugin://script.skin.helper.service/?action=similarshows&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)">special://skin/extras/playlists/UnwatchedShows.xsp</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Fallback) + Skin.HasSetting(menu.usealtwidgets)">plugin://script.skin.helper.service/?action=similarshows&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>special://skin/extras/playlists/RecommendedShows.xsp</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentEmbyTV">
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Alternate)">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$VAR[EmbyHomeSelectedMenu]%22%5d%7d%2c%7b%22field%22%3a%22numwatched%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</value>
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Fallback)">plugin://script.skin.helper.service/?action=similarshows&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$VAR[EmbyHomeSelectedMenu]%22%5d%7d%2c%7b%22field%22%3a%22numwatched%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Fallback) + Skin.HasSetting(menu.usealtwidgets)">plugin://script.skin.helper.service/?action=similarshows&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>$VAR[EmbyNodeRecommended]</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentLiveTV">
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Alternate)">plugin://script.extendedinfo?info=onairtvshows</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value>plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentEmbyMovie">
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + IntegerGreaterThan(Window(Home).Property(Movies.Watched),0)">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets) + IntegerGreaterThan(Window(Home).Property(Movies.Watched),0)">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>$VAR[EmbyNodeRecent]</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentMovie">
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + IntegerGreaterThan(Window(Home).Property(Movies.Watched),0)">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets) + IntegerGreaterThan(Window(Home).Property(Movies.Watched),0)">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>videodb://recentlyaddedmovies/</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentVideo">
@@ -1414,17 +1414,17 @@
 	<variable name="DefWidgetRight3Content">
 		<value condition="StringCompare(Container(300).ListItem.Property(type),channels)">plugin://script.extendedinfo?info=topratedtvshows</value>
 		<!-- Emby TV -->
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IsEmpty(Window(Home).Property(UseAltWidget))">$VAR[EmbyNodeRecentEpisodes]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + [IsEmpty(Window(Home).Property(UseAltWidget)) |  !Skin.HasSetting(menu.usealtwidgets)]">$VAR[EmbyNodeRecentEpisodes]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(300).ListItem.Property(list)]</value>
 		<!-- Emby Movies -->
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IsEmpty(Window(Home).Property(UseAltWidget))">videodb://movies/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$VAR[EmbyHomeSelectedMenu]%22%5d%7d%2c%7b%22field%22%3a%22playcount%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + [IsEmpty(Window(Home).Property(UseAltWidget)) | !Skin.HasSetting(menu.usealtwidgets)]">videodb://movies/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$VAR[EmbyHomeSelectedMenu]%22%5d%7d%2c%7b%22field%22%3a%22playcount%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">$INFO[Container(300).ListItem.Property(list)]</value>
 		<!-- Standard -->
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)"> </value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)"> </value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + IsEmpty(Window(Home).Property(UseAltWidget))">videodb://recentlyaddedepisodes/</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + [IsEmpty(Window(Home).Property(UseAltWidget)) | !Skin.HasSetting(menu.usealtwidgets)]">videodb://recentlyaddedepisodes/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">special://skin/extras/playlists/RandomEpisodes.xsp</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + IsEmpty(Window(Home).Property(UseAltWidget))">special://skin/extras/playlists/OldUnwatchedMovies.xsp</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies) + [IsEmpty(Window(Home).Property(UseAltWidget)) | !Skin.HasSetting(menu.usealtwidgets)]">special://skin/extras/playlists/OldUnwatchedMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),movies)">special://skin/extras/playlists/RandomMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">pvr://channels/tv/Most%20Viewed</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
@@ -1432,8 +1432,8 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),videos)">plugin://script.extendedinfo?info=topratedtvshows</value>
 	</variable>
 	<variable name="WidgetRight3Sort">
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + !IsEmpty(Window(Home).Property(UseAltWidget))">random</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + !IsEmpty(Window(Home).Property(UseAltWidget))">random</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + !IsEmpty(Window(Home).Property(UseAltWidget)) + Skin.HasSetting(menu.usealtwidgets)">random</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + !IsEmpty(Window(Home).Property(UseAltWidget)) + Skin.HasSetting(menu.usealtwidgets)">random</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">year</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">episode</value>
 		<value>none</value>

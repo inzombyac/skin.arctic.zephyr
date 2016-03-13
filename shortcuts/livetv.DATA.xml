@@ -1,33 +1,36 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
     <shortcut>
-        <label2>livetv</label2>
+        <defaultID>hdhomerun</defaultID>
+		<label2>livetv</label2>
+        <label>HDHomerun View</label>
+        <action>RunAddon(script.hdhomerun.view)</action>
+        <icon>special://skin/extras/backgrounds/HDHomeRun.jpg</icon>
+		<thumb>special://skin/extras/backgrounds/HDHomeRun.jpg</thumb>
+		<visible>System.HasAddon(script.hdhomerun.view)</visible>
+    </shortcut>
+	<shortcut>
+        <defaultID>tvguide</defaultID>
+		<label2>livetv</label2>
         <label>19069</label>
         <action>ActivateWindow(tvguide)</action>
         <icon>special://skin/extras/icons/tvguide.png</icon>
+		<thumb>special://skin/extras/backgrounds/Channels.jpg</thumb>
     </shortcut>
     <shortcut>
-        <label2>livetv</label2>
+        <defaultID>recordings</defaultID>
+		<label2>livetv</label2>
         <label>19163</label>
         <action>ActivateWindow(tvrecordings)</action>
         <icon>special://skin/extras/icons/bookmark.png</icon>
+		<thumb>special://skin/extras/backgrounds/Family.jpg</thumb>
     </shortcut>
     <shortcut>
-        <label2>livetv</label2>
-        <label>19023</label>
-        <action>ActivateWindow(tvchannels)</action>
-        <icon>special://skin/extras/icons/3dtv.png</icon>
-    </shortcut>
-    <shortcut>
-        <label2>livetv</label2>
-        <label>137</label>
-        <action>ActivateWindow(tvsearch)</action>
-        <icon>special://skin/extras/icons/search.png</icon>
-    </shortcut>
-    <shortcut>
-        <label2>livetv</label2>
+        <defualtID>timers</defualtID>
+		<label2>livetv</label2>
         <label>19040</label>
         <action>ActivateWindow(tvtimers)</action>
         <icon>special://skin/extras/icons/timer.png</icon>
+		<thumb>special://skin/extras/backgrounds/Channels.jpg</thumb>
     </shortcut>
 </shortcuts>

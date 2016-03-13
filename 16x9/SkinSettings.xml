@@ -219,6 +219,14 @@
 						<selected>!Skin.HasSetting(menu.noemby)</selected>
 						<onclick>Skin.ToggleSetting(menu.noemby)</onclick>
 					</control>
+					<control type="radiobutton" id="99998" description="Use alternate widgets">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9101)</visible>
+						<include>DefSettingsButton2</include>
+						<label>Show collection shortcut</label>
+						<selected>Skin.HasSetting(menu.usealtwidgets)</selected>
+						<onclick>Skin.ToggleSetting(menu.usealtwidgets)</onclick>
+					</control>
 					<control type="radiobutton" id="9888" description="Collections Mode">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9101)</visible>

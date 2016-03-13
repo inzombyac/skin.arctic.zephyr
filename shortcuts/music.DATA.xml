@@ -1,39 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
     <shortcut>
-        <label2>music</label2>
+        <defaultID>artists</defaultID>
+		<label2>music</label2>
         <label>133</label>
         <icon>special://skin/extras/icons/artist.png</icon>
         <action>ActivateWindow(MusicLibrary,musicdb://artists/,return)</action>
+		<thumb>special://skin/extras/backgrounds/music artist.jpg</thumb>
     </shortcut>
 	<shortcut>
-        <label2>music</label2>
+        <defaultID>albums</defaultID>
+		<label2>music</label2>
         <label>132</label>
         <icon>special://skin/extras/icons/songs.png</icon>
         <action>ActivateWindow(MusicLibrary,musicdb://albums/,return)</action>
+		<thumb>special://skin/extras/backgrounds/music.jpg</thumb>
     </shortcut>
 	<shortcut>
-        <label2>music</label2>
-        <label>134</label>
-        <icon>special://skin/extras/icons/recentlyadded.png</icon>
-        <action>ActivateWindow(MusicLibrary,musicdb://songs/,return)</action>
-    </shortcut>
-	<shortcut>
-        <label2>music</label2>
-        <label>Genres</label>
-        <icon>special://skin/extras/icons/recentlyadded.png</icon>
-        <action>ActivateWindow(MusicLibrary,musicdb://genres/,return)</action>
-    </shortcut>
-	<shortcut>
-        <label2>music</label2>
-        <label>744</label>
-        <icon>special://skin/extras/icons/files.png</icon>
-        <action>ActivateWindow(MusicFiles)</action>
-    </shortcut>
-	<shortcut>
-        <label2>music</label2>
+        <defaultID>addons</defaultID>
+		<label2>music</label2>
         <label>1038</label>
         <icon>special://skin/extras/icons/songs.png</icon>
         <action>ActivateWindow(MusicLibrary,Addons,return)</action>
+		<thumb>special://skin/extras/backgrounds/Settings.jpg</thumb>
     </shortcut>
 </shortcuts>

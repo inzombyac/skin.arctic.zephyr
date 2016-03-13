@@ -244,14 +244,14 @@
 		<value condition="!IntegerGreaterThan(Container(4016).NumItems,0)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IsEmpty(Window(Home).Property(UseAltWidget))">Next Up</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + [IsEmpty(Window(Home).Property(UseAltWidget)) | !Skin.HasSetting(menu.usealtwidgets)]">Next Up</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31125]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Alternate)">Recommended</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Fallback)">Unwatched</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Alternate) + Skin.HasSetting(menu.usealtwidgets)">Recommended</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets)">Unwatched</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">Resume</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Next Up</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">Next Up</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + !IsEmpty(Window(Home).Property(UseAltWidget))">Unwatched</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + !IsEmpty(Window(Home).Property(UseAltWidget)) + Skin.HasSetting(menu.usealtwidgets)">Unwatched</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Recommended</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + IntegerGreaterThan(Pvr.BackendRecordings,0)">Recorded TV</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Airing Today</value>
@@ -269,12 +269,12 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">[CR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Window(Home).Property(UseAltWidget2),Fallback)">Like $INFO[Container(4017).ListItem.Property(similartitle)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Window(Home).Property(UseAltWidget2),Alternate)">Unwatched Shows</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Window(Home).Property(UseAltWidget2),Fallback) + Skin.HasSetting(menu.usealtwidgets)">Like $INFO[Container(4017).ListItem.Property(similartitle)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)">Unwatched Shows</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">Recommended</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + StringCompare(Window(Home).Property(UseAltWidget2),Alternate)">On Air</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)">On Air</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Next Aired</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Fallback)">Like $INFO[Container(4017).ListItem.Property(similartitle)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets)">Like $INFO[Container(4017).ListItem.Property(similartitle)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Recent</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Recommended</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">[CR]</value>
@@ -290,14 +290,14 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">[CR]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + IsEmpty(Window(Home).Property(UseAltWidget))">Recent</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + [IsEmpty(Window(Home).Property(UseAltWidget)) | !Skin.HasSetting(menu.usealtwidgets)]">Recent</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">Random</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">Random</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IsEmpty(Window(Home).Property(UseAltWidget))">Oldest</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + [IsEmpty(Window(Home).Property(UseAltWidget)) |  Skin.HasSetting(menu.usealtwidgets)]">Oldest</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">Random</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + IsEmpty(Window(Home).Property(UseAltWidget))">Recent</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows) + [IsEmpty(Window(Home).Property(UseAltWidget)) | Skin.HasSetting(menu.usealtwidgets)]">Recent</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),tvshows)">Random</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + IsEmpty(Window(Home).Property(UseAltWidget))">Oldest</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + [IsEmpty(Window(Home).Property(UseAltWidget)) | Skin.HasSetting(menu.usealtwidgets)]">Oldest</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Random</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Most Viewed</value>
 		<value>Top Rated TV</value>
@@ -354,7 +354,7 @@
 	</variable>
 	<variable name="EmbyFooterLabel">
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(9025).NumItems] items • [COLOR=$VAR[ColourHighlight]]$INFO[Container(9025).TotalUnWatched] unwatched[/COLOR]</value> -->
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Window(Home).Property(UseAltWidget)] / $INFO[Window(Home).Property(UseAltWidget2)] / $VAR[DefWidgetRightContent]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(9005).NumItems]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->
@@ -370,7 +370,7 @@
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)]:$INFO[Container(302).ListItem.Property(defaultID)] / $INFO[ListItem.Property(background)]\$VAR[EmbySubMenuImage]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(302).ListItem.Property(defaultID)] / $INFO[Container(302).ListItem.Property(Background)] / $INFO[Container(302).ListItem.Thumb]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(4019).ListItem.DBID] / $INFO[Container(4019).ListItem.FileNameAndPath]</value> -->
 		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColourHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
 		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>

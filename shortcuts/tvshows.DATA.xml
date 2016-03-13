@@ -6,6 +6,7 @@
         <label>31193</label>
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(1102)</action>
+		<thumb>special://skin/extras/backgrounds/tv.jpg</thumb>
     </shortcut>
 	<shortcut>
         <defaultID>nextaired</defaultID>
@@ -13,6 +14,7 @@
         <label>31220</label>
         <icon>special://skin/extras/icons/tv.png</icon>
 		<action>RunAddon(script.tv.show.next.aired)</action>
+		<thumb>special://skin/extras/backgrounds/Airing.jpg</thumb>
     </shortcut>
 	<shortcut>
         <defaultID>random</defaultID>
@@ -20,5 +22,6 @@
         <label>Random Episode</label>
         <icon>special://skin/extras/icons/tv.png</icon>
        <action>PlayMedia(special://skin/extras/playlists/RandomEpisode.xsp,return)</action>
+	   <thumb>special://skin/extras/backgrounds/Splash.jpg</thumb>
     </shortcut>
 </shortcuts>
