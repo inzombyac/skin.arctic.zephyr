@@ -54,7 +54,7 @@
 		<label>Random</label>
 		<label2>Emby Node</label2>
 		<icon>special://home/addons/plugin.video.emby/icon.png</icon>
-		<thumb>$INFO[Window(Home).Property(emby.nodes.1.recommended.image)]</thumb>
+		<thumb>special://skin/extras/backgrounds/Splash.jpg</thumb>
 		<action>ActivateWindow(Video,$VAR[DefEmbyNodeRandomAction],return)</action>
 		<visible>!StringCompare(Window(Home).Property(emby.nodes.1.type),photos) + !StringCompare(Window(Home).Property(emby.nodes.1.type),homevideos)</visible>
 	</shortcut>
@@ -63,7 +63,7 @@
 		<label>$INFO[Window(Home).Property(emby.nodes.1.title)]</label>
 		<label2>$INFO[Window(Home).Property(emby.nodes.1.content)]</label2>
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
-		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
+		<thumb>special://skin/extras/backgrounds/Splash.jpg</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.1.path)]</action>
 		<visible>Substring(Window(Home).Property(emby.nodes.1.type),homevideo)</visible>
 	</shortcut>

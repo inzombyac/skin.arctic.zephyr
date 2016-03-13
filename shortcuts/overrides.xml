@@ -249,126 +249,26 @@
 	
 	<backgrounddefault defaultID="tvguide" group="livetv">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</backgrounddefault>
 	
-	<backgrounddefault defaultID="TV Hub" group="tv">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--0">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--1">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--2">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--3">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--4">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--5">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--6">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--7">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--8">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="tv--9">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
+	<backgrounddefault defaultID="TV Hub" group="tvshows">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
 
-	<backgrounddefault defaultID="nextup" group="tv">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--0">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--1">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--2">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--3">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--4">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--5">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--6">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--7">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--8">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="nextup" group="tv--9">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
+	<backgrounddefault defaultID="nextup" group="tvshows">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
 	
-	<backgrounddefault defaultID="inprogressshows" group="tv">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--0">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--1">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--2">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--3">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--4">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--5">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--6">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--7">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--8">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="inprogressshows" group="tv--9">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
+	<backgrounddefault defaultID="inprogressshows" group="tvshows">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
 	
-	<backgrounddefault defaultID="recentepisodes" group="tv">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--0">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--1">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--2">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--3">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--4">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--5">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--6">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--7">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--8">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentepisodes" group="tv--9">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
+	<backgrounddefault defaultID="recentepisodes" group="tvshows">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
 	
-	<backgrounddefault defaultID="nextaired" group="tv" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--0" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>
-	<backgrounddefault defaultID="nextaired" group="tv--0" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--1" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--1" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--2" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--2" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--3" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--3" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--4" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--4" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--5" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--5" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--6" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--6" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--7" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--7" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--8" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--8" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--9" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="tv--9" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>
+	<backgrounddefault defaultID="nextaired" group="tvshows" condition="!IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
+	<backgrounddefault defaultID="nextaired" group="tvshows" condition="IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
 		
 	<!-- Not available: unwatchedshows, recommendedshows, randomepisode, nextaired -->
 	
 	<backgrounddefault defaultID="recentmovies" group="movies">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--0">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--1">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--2">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--3">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--4">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--5">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--6">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--7">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--8">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="recentmovies" group="movies--9">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
 	
 	<backgrounddefault defaultID="unwatchedmovies" group="movies">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--0">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--1">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--2">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--3">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--4">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--5">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--6">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--7">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--8">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="unwatchedmovies" group="movies--9">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
 	
 	<backgrounddefault defaultID="collections" group="movies">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--0">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--1">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--2">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--3">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--4">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--5">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--6">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--7">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--8">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="movies--9">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
 	
 	<backgrounddefault defaultID="Movie Hub" group="movies">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--0">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--1">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--2">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--3">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--4">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--5">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--6">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--7">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--8">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="movies--9">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
 	
 	<!-- Emby Nodes -->
 	
