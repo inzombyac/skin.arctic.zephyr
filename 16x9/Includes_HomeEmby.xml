@@ -8,7 +8,7 @@
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation>
+			<!-- <animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
 			<top>SidePad</top>
 			<include>Animation.FurnitureFadeInOut</include>
 			<height>84</height>
@@ -257,7 +257,7 @@
 			<control type="image">
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
-				<animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation>
+				<!-- <animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
 				<visible>IntegerGreaterThan(Container(300).NumItems,8)</visible>
 				<bottom>893</bottom>
 				<left>32</left>
@@ -268,7 +268,7 @@
 			<control type="image">
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
-				<animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation>
+				<!-- <animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
 				<visible>IntegerGreaterThan(Container(300).NumItems,8)</visible>
 				<bottom>893</bottom>
 				<right>32</right>
@@ -357,7 +357,7 @@
 				<textcolor>Dark3</textcolor>
 				<font>HomeEmby</font>
 				<label>$INFO[ListItem.Label]</label>
-				<animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation>
+				<!-- <animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
 			</control>
 		</itemlayout>
 		<focusedlayout width="300" height="74">
@@ -384,7 +384,7 @@
 				<width>90%</width>
 				<height>4</height>
 				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-				<visible>Control.HasFocus(300) | Control.HasFocus(40019)</visible>
+				<!-- <visible>Control.HasFocus(300) | Control.HasFocus(40019)</visible> -->
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
