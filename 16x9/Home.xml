@@ -2,8 +2,7 @@
 <!-- Foundation -->
 <window id="0">
 	<defaultcontrol always="true">300</defaultcontrol>
-	<menucontrol>3638</menucontrol>
-	
+	<menucontrol>9000</menucontrol>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 	<onload condition="IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
 	<onload condition="System.HasAddon(script.grab.fanart)">RunScript(script.grab.fanart,mode=random,refresh=10)</onload>
@@ -14,11 +13,146 @@
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include>GlobalOverlay</include>
-		<control type="group">
-			<include>Furniture_NowPlaying</include>
+		<include>Furniture_Header</include>
+		<include>Furniture_Clock</include>
+		<include>Furniture_NowPlaying</include>
+		<include>Furniture_RSS</include>
+		<control type="group">	
 			<include>HomeEmbyRow</include>
 			<include>HomeEmbyWidgetInfo</include>
 			<include>HomeEmbySubMenu</include>
+		</control>
+		<control type="group" description="Side Menu">
+			<include>Def9000SideBladeLeft</include>
+			<control type="grouplist" id="9000">
+				<top>100</top>
+				<height>1080</height>
+				<onright>300</onright>
+				<onleft>SetFocus(300,$INFO[Container(300).NumItems])</onleft>
+				<control type="label" id="201">
+					<top>200</top>
+					<width>455</width>
+					<height>42</height>
+					<textoffsetx>15</textoffsetx>
+					<font>Home</font>
+					<label>Actions</label>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<aligny>center</aligny>
+				</control>
+				<control type="grouplist" id="3110">
+					<description>grouplist for context buttons</description>
+					<posx>18</posx>
+					<posy>0</posy>
+					<width>455</width>
+					<height>1080</height>
+					<control type="group" id="9090">
+						<height>50</height>
+						<ondown>9212</ondown>
+						<control type="button" id="9091">
+							<description>Global Search</description>
+							<include>DefContextButton2</include>
+							<align>left</align>
+							<label>137</label>
+							<onclick>RunScript(script.globalsearch)</onclick>
+							<onup>9000</onup>
+							<ondown>9212</ondown>
+							<onright>300</onright>
+							<onleft>SetFocus(300,$INFO[Container(300).NumItems])</onleft>
+						</control>
+						<control type="image">
+							<right>20</right>
+							<width>50</width>
+							<height>50</height>
+							<aligny>center</aligny>
+							<texture background="true" colordiffuse="Dark1">special://skin/extras/icons/search.png</texture>
+							<aspectratio>keep</aspectratio>
+							<visible>!Control.HasFocus(9091)</visible>
+						</control>
+						<control type="image">
+							<right>20</right>
+							<width>50</width>
+							<height>50</height>
+							<aligny>center</aligny>
+							<texture background="true" colordiffuse="Light1">special://skin/extras/icons/search.png</texture>
+							<aspectratio>keep</aspectratio>
+							<visible>Control.HasFocus(9091)</visible>
+						</control>
+					</control>
+					<control type="button" id="9212" description="Customise Home">
+						<include>DefContextButton</include>
+						<label>31109</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+						<align>left</align>
+					</control>
+					<control type="button" id="3121">
+						<include>DefContextButton</include>
+						<label>5</label>
+						<align>left</align>
+						<onclick>ActivateWindow(settings)</onclick>
+					</control>
+					<control type="button" id="3122">
+						<include>DefContextButton</include>
+						<label>Emby preferences</label>
+						<onclick>RunPlugin("plugin://plugin.video.emby?mode=userprefs")</onclick>
+						<align>left</align>
+					</control>
+					<control type="label" id="9259">
+						<textoffsetx>15</textoffsetx>
+						<font>Home</font>
+						<label>Home Options</label>
+						<textcolor>$VAR[ColourHighlight]</textcolor>
+						<aligny>center</aligny>
+					</control> 
+					<control type="radiobutton" id="9260" description="Use alternate widgets">
+						<include>DefContextButton</include>
+						<label>Use alternate widgets</label>
+						<selected>Skin.HasSetting(menu.usealtwidgets)</selected>
+						<onclick>Skin.ToggleSetting(menu.usealtwidgets)</onclick>
+						<align>left</align>
+					</control>
+<!-- 					<control type="radiobutton" id="9261" description="Show RSS">
+						<include>DefContextButton</include>
+						<label>Show RSS feed</label>
+						<selected>syste.getbool(lookandfeel.enablerssfeeds)</selected>
+						<onclick>system.setbool(lookandfeel.enablerssfeeds)</onclick>
+						<align>left</align>
+					</control> -->
+					<control type="radiobutton" id="9262" description="Debug mode">
+						<include>DefContextButton</include>
+						<label>Debug Mode</label>
+						<selected>Skin.HasSetting(debug.mode)</selected>
+						<onclick>Skin.ToggleSetting(debug.mode)</onclick>
+						<align>left</align>
+					</control>
+					<control type="label"  id="9263">
+						<textoffsetx>15</textoffsetx>
+						<font>Home</font>
+						<label>Other</label>
+						<textcolor>$VAR[ColourHighlight]</textcolor>
+						<aligny>center</aligny>
+					</control>
+					<control type="button"  id="9264">
+						<include>DefContextButton</include>
+						<label>31195</label>
+						<onclick>ReloadSkin()</onclick>
+						<align>left</align>
+					</control>
+					<control type="button" id="9265">
+						<onclick>System.LogOff</onclick>
+						<include>DefContextButton</include>
+						<label>Log Off</label>
+						<align>left</align>
+					</control>				
+					<control type="button"  id="9266">
+						<description>Exit XBMC button</description>
+						<include>DefContextButton</include>
+						<label>13012</label>
+						<onclick>Quit()</onclick>
+						<visible>System.ShowExitButton</visible>
+						<align>left</align>
+					</control> 
+				</control>
+			</control>
 		</control>
 	</controls>
 </window>

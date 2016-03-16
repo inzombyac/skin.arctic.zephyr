@@ -835,7 +835,7 @@
 			<texturenofocus border="12">common/rounded-shadow8.png</texturenofocus>
 			<colordiffuse>White100</colordiffuse>
 		</control>
-		<control type="image">
+		<!-- <control type="image">
 			<description>LOGO</description>
 			<left>0</left>
 			<top>25</top>
@@ -844,6 +844,36 @@
 			<aspectratio>keep</aspectratio>
 			<texture>logo.png</texture>
 			<colordiffuse>$VAR[ColourHighlight2]</colordiffuse>
+		</control> -->
+		<control type="group">
+			<control type="image">
+				<left>10</left>
+				<top>25</top>
+				<width>70</width>
+				<height>70</height>
+				<aligny>center</aligny>
+				<texture diffuse="common/circle.png" border="1">$VAR[SystemAvatar]</texture>
+				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				<aspectratio>keep</aspectratio>
+				<align>left</align>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>25</top>
+				<width>70</width>
+				<height>70</height>
+				<aligny>center</aligny>
+				<texture colordiffuse="$VAR[ColourHighlight]" border="0">special://skin/extras/icons/logout.png</texture>
+				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				<aspectratio>keep</aspectratio>
+				<align>left</align>
+				<visible>Control.HasFocus(9265)</visible>
+			</control>
+			<control type="label">
+				<label>$INFO[System.ProfileName]</label>
+				<left>100</left>
+				<top>25</top>
+			</control>
 		</control>
 	</include>
 	<include name="Def9000MediaMenuTop">
@@ -1383,6 +1413,7 @@
 		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),weather)">special://</value> -->
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">$VAR[DefWidgetRightContentHomeVideo]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">$INFO[Container(300).ListItem.Property(list)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs) + Substring(System.KernelVersion,android)">androidapp://sources/apps/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">addons://sources/executable</value>
 		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://</value> -->
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(300).ListItem.Label,TV)">$VAR[DefWidgetRightContentTVShows]</value>

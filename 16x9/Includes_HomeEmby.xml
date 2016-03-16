@@ -1,266 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="Furniture_EmbyClock">
-		<control type="image">
-			<texture colordiffuse="Dark3">common/black.png</texture>
-			<height>160</height>
-		</control>
-		<control type="group">
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<!-- <animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
-			<top>SidePad</top>
-			<include>Animation.FurnitureFadeInOut</include>
-			<height>84</height>
-			<animation effect="slide" start="0" end="0,-10" time="150" condition="Skin.HasSetting(furniture.weather)">Conditional</animation>
-			<control type="label">
-				<centertop>0</centertop>
-				<right>130</right>
-				<align>right</align>
-				<font>LargeBold</font>
-				<textcolor>Dark1</textcolor>
-				<label>$INFO[System.Time(hh:mm)]</label>
-				<animation effect="slide" start="0" end="50" time="0" condition="IsEmpty(System.Time(xx))">Conditional</animation>
-			</control>
-			<control type="label">
-				<centertop>1</centertop>
-				<align>right</align>
-				<right>24</right>
-				<font>symbolview</font>
-				<textcolor>Dark1</textcolor>
-				<label>$VAR[EmbyEndTimeSymbol]</label>
-				<fadetime>200</fadetime>
-			</control>
-			<control type="label">
-				<centertop>196</centertop>
-				<right>-225</right>
-				<aligny>top</aligny>
-				<width>240</width>
-				<height>333</height>
-				<font>SmallBold</font>
-				<textcolor>Dark1</textcolor>
-				<label>$VAR[EmbyEndTimeLabel]</label>
-				<angle>-90</angle>
-				<fadetime>200</fadetime>
-			</control>
-			<control type="label">
-				<centertop>6</centertop>
-				<right>SidePad</right>
-				<font>SmallBold</font>
-				<textcolor>Dark3</textcolor>
-				<align>right</align>
-				<width>120</width>
-				<label>$INFO[System.Time(xx)]</label>
-				<visible>!IsEmpty(System.Time(xx))</visible>
-			</control>
-			<control type="label">
-				<centertop>40</centertop>
-				<right>SidePad</right>
-				<font>Flag</font>
-				<textcolor>Dark2</textcolor>
-				<align>right</align>
-				<width>50%</width>
-				<label>$INFO[System.Date(DDD)]$COMMA $INFO[System.Date(d MMM yyyy)]</label>
-			</control>
-			<control type="label">
-				<centertop>68</centertop>
-				<right>SidePad</right>
-				<font>Flag</font>
-				<textcolor>Dark3</textcolor>
-				<align>right</align>
-				<width>50%</width>
-				<visible>Skin.HasSetting(furniture.weather)</visible>
-				<label>[COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
-			</control>
-		</control>
-	</include>
-	<include name="Furniture_HeaderEmby">
-		<control type="grouplist">
-			<top>SidePad</top>
-			<left>SidePad</left>
-			<visible>!ControlGroup(303).HasFocus()</visible>
-			<visible>!Control.HasFocus(515)</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
-			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
-			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
-			<orientation>horizontal</orientation>
-			<itemgap>24</itemgap>
-			<control type="group" description="menu">
-				<width>50</width>
-				<height>50</height>
-				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Light1">common/box.png</texture>
-				</control>
-				<control type="image">
-					<width>50</width>
-					<height>50</height>
-					<texture colordiffuse="Dark1" border="5">special://skin/extras/icons/menu.png</texture>
-					<visible>System.HasAddon(plugin.video.emby)</visible>
-					<visible>!Control.HasFocus(3637)</visible>
-				</control>
-				<control type="image">
-					<width>50</width>
-					<height>50</height>
-					<texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/menu.png</texture>
-					<visible>Control.HasFocus(3637)</visible>
-				</control>
-				<control type="button" id="3637">
-					<onleft>3636</onleft>
-					<onright>3635</onright>
-					<onup>7788</onup>
-					<ondown>300</ondown>
-					<onclick>ActivateWindow(1111)</onclick>
-					<font>Button</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-				</control>
-				<!-- Hidden Power Menu -->
-				<control type="button" id="3638">
-					<onfocus>ActivateWindow(1111)</onfocus>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-				</control>
-			</control>
-			<control type="group" description="search">
-				<width>50</width>
-				<height>50</height>
-				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Light1">common/box.png</texture>
-				</control>
-				<control type="image">
-					<top>-14</top>
-					<left>-14</left>
-					<width>78</width>
-					<height>78</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="10">special://skin/extras/icons/search.png</texture>
-					<visible>Control.HasFocus(3635)</visible>
-				</control>
-				<control type="image">
-					<top>-14</top>
-					<left>-14</left>
-					<width>78</width>
-					<height>78</height>
-					<texture colordiffuse="PanelWhite100" border="16">special://skin/extras/icons/search.png</texture>
-					<visible>!Control.HasFocus(3635)</visible>
-				</control>
-				<control type="button" id="3635">
-					<onright>3634</onright>
-					<onleft>3637</onleft>
-					<onleft>3636</onleft>
-					<onup>7788</onup>
-					<ondown>300</ondown>
-					<onclick>RunScript(script.globalsearch)</onclick>
-					<font>Button</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-				</control>
-			</control>
-			<control type="group" description="log out">
-				<width>50</width>
-				<height>50</height>
-				<left>100</left>
-				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Light1">common/box.png</texture>
-				</control>
-				<control id="8308" type="image">
-					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
-					<visible>false</visible>
-				</control>
-				<control type="image">
-					<width>78</width>
-					<height>78</height>
-					<texture diffuse="common/circle.png" colordiffuse="PanelWhite100" border="1">$VAR[HeaderIcon]</texture>
-					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !Substring(Control.GetLabel(8308),empty.png)</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
-				<control type="image">
-					<texture diffuse="common/circle.png" border="1">special://skin/extras/icons/artist.png</texture>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
-					<visible>System.HasAddon(plugin.video.emby)</visible>
-					<visible>!Control.HasFocus(3634)</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
-				<control type="image">
-					<texture diffuse="common/circle.png" border="1">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
-					<visible>System.HasAddon(plugin.video.emby)</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + !IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-					<visible>!Control.HasFocus(3634)</visible>
-				</control>
-				<control type="button" id="3634">
-					<onleft>3635</onleft>
-					<onright condition="System.HasAddon(plugin.video.emby)">3636</onright>
-					<onright condition="!System.HasAddon(plugin.video.emby)">3637</onright>
-					<onup>7788</onup>
-					<ondown>300</ondown>
-					<onclick>System.LogOff</onclick>
-					<font>Button</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png)</visible>
-				</control>
-				<control type="image">
-					<top>-14</top>
-					<left>-14</left>
-					<width>78</width>
-					<height>78</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/logout.png</texture>
-					<visible>Control.HasFocus(3634)</visible>
-				</control>
-				<control type="image">
-					<texture diffuse="common/circle.png">$INFO[System.ProfileThumb]</texture>
-					<visible>!System.HasAddon(plugin.video.emby)</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + !IsEmpty(System.ProfileThumb)</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
-			</control>
-			<control type="group" description="emby">
-				<width>50</width>
-				<height>50</height>
-				<control type="image">
-					<texture diffuse="common/circle.png" colordiffuse="Light1">common/box.png</texture>
-				</control>
-				<control type="image">
-					<width>50</width>
-					<height>50</height>
-					<texture colordiffuse="Dark1">special://skin/extras/icons/emby_diff.png</texture>
-					<visible>System.HasAddon(plugin.video.emby)</visible>
-					<visible>!Control.HasFocus(3636)</visible>
-				</control>
-				<control type="image">
-					<width>50</width>
-					<height>50</height>
-					<texture>special://skin/extras/icons/emby2.png</texture>
-					<visible>Control.HasFocus(3636)</visible>
-					<visible>System.HasAddon(plugin.video.emby)</visible>
-				</control>
-				<control type="button" id="3636">
-					<onleft>3634</onleft>
-					<onright>3637</onright>
-					<onup>7788</onup>
-					<ondown>300</ondown>
-					<onclick>ActivateWindow(10025,"plugin://plugin.video.emby",return)</onclick>
-					<font>Button</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-				</control>
-			</control>
-			
-		</control>
-	</include>
 	<include name="HomeEmbyRow">
+		<control type="image">
+			<top>200</top>
+			<texture colordiffuse="Dark3">common/black.png</texture>
+			<height>80</height>
+		</control>
 		<!-- Home Row -->
 		<control type="group">
-			<include>Furniture_EmbyClock</include>
-			<include>Furniture_HeaderEmby</include>
+			<top>70</top>
 			<control type="image">
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<!-- <animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
-				<visible>IntegerGreaterThan(Container(300).NumItems,8)</visible>
-				<bottom>893</bottom>
-				<left>32</left>
+				<visible>IntegerGreaterThan(Container(300).NumItems,6)</visible>
+				<bottom>885</bottom>
+				<left>52</left>
 				<width>16</width>
 				<height>16</height>
 				<texture colordiffuse="Dark2" flipx="true">common/arrow-small-right.png</texture>
@@ -269,27 +24,29 @@
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<!-- <animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
-				<visible>IntegerGreaterThan(Container(300).NumItems,8)</visible>
-				<bottom>893</bottom>
-				<right>32</right>
+				<visible>IntegerGreaterThan(Container(300).NumItems,6)</visible>
+				<bottom>885</bottom>
+				<right>52</right>
 				<width>16</width>
 				<height>16</height>
 				<texture colordiffuse="Dark2" flipx="false">common/arrow-small-right.png</texture>
 			</control>
 			<control type="list" id="300">
 				<!-- <animation effect="slide" end="0,24" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
-				<include>Animation.LongDelayFadeIn</include>
+				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<description>Home Wraplist</description>
 				<left>SidePad</left>
 				<right>SidePad</right>
+				<top>120</top>
 				<ondown>4012</ondown>
+				<onleft>9000</onleft>
 				<!-- <ondown condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</ondown>
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + IntegerGreaterThan(Container(4017).NumItems,0)">4017</ondown>
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</ondown> -->
 				<!-- <onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
 				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup> -->
-				<onup>3637</onup>
+				<onup>7788</onup>
 				<onright>SetProperty(UseAltWidget,,home)</onright>
 				<onleft>SetProperty(UseAltWidget,,home)</onleft>
 				<onright>SetProperty(UseAltWidget2,,home)</onright>
@@ -357,7 +114,6 @@
 				<textcolor>Dark3</textcolor>
 				<font>HomeEmby</font>
 				<label>$INFO[ListItem.Label]</label>
-				<!-- <animation effect="fade" start="100" end="25" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
 			</control>
 		</itemlayout>
 		<focusedlayout width="300" height="74">
@@ -384,20 +140,9 @@
 				<width>90%</width>
 				<height>4</height>
 				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
-				<!-- <visible>Control.HasFocus(300) | Control.HasFocus(40019)</visible> -->
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
-			<!-- <control type="image">
-				<top>-2</top>
-				<centerleft>50%</centerleft>
-				<width>16</width>
-				<height>16</height>
-				<texture flipy="true" colordiffuse="Dark3">common/arrow-small.png</texture>
-				<visible>Control.HasFocus(300) | Control.HasFocus(40019)</visible>
-				<visible>IntegerGreaterThan(Container(302).NumItems,0)</visible>
-				<animation effect="fade" end="100" start="0" delay="300" time="400" reversible="false">Focus</animation>
-			</control> -->
 		</focusedlayout>
 		<content>
 			<include>skinshortcuts-mainmenu</include>
@@ -1028,7 +773,7 @@
 			</control>
 			<!-- Videos -->
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),tvshows) | [Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(300).ListItem.Label,TV)]</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1051,7 +796,7 @@
 				<include>Animation.DelayFadeIn</include>
 			</control>
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) + Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + !StringCompare(Container(300).ListItem.Label,TV)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1074,7 +819,7 @@
 				<include>Animation.DelayFadeIn</include>
 			</control>
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(defaultID),movies) | [Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Container(300).ListItem.Label,Movies)]</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1097,7 +842,7 @@
 				<include>Animation.DelayFadeIn</include>
 			</control>
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(type),movies) + Substring(Container(300).ListItem.Property(Path),library://video/Emby)</visible>
+				<visible>StringCompare(Container(300).ListItem.Property(type),movies) + Substring(Container(300).ListItem.Property(Path),library://video/Emby) + !StringCompare(Container(300).ListItem.Label,Movies)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1369,7 +1114,7 @@
 				<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,0)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
 			<control type="label">
@@ -1387,7 +1132,7 @@
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,1)</visible>
 				<visible>IntegerGreaterThan(Container(4018).NumItems,0)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
 			<control type="label">
@@ -1404,7 +1149,7 @@
 				<visible>!IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,1)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
 			<control type="label">
@@ -1421,7 +1166,7 @@
 				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,1)</visible>
-				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
 			<control type="label">
@@ -2198,33 +1943,8 @@
 		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
 	</include>
 	<include name="EmbyFooter">
-		<!-- <control type="image">
-			<texture colordiffuse="Dark3">common/black.png</texture>
-			<height>50</height>
-			<bottom>0</bottom>
-		</control> -->
-		<control type="group">
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<left>SidePad</left>
-			<centerbottom>30</centerbottom>
-			<width>1920</width>
-			<height>40</height>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<itemgap>10</itemgap>
-			<usecontrolcoords>true</usecontrolcoords>
-			<control type="label">
-				<centertop>50%</centertop>
-				<align>left</align>
-				<font>DurationFontSmall</font>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyFooterLabel]</label>
-				<visible>!Control.HasFocus(4012) + !Control.HasFocus(4016) + !Control.HasFocus(4017) + !Control.HasFocus(4018) + !Control.HasFocus(302)</visible>
-			</control>
-		</control>
 		<control type="grouplist">
-			<visible>Control.HasFocus(4012) | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(302)</visible>
+			<visible>Control.HasFocus(4012) | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<left>SidePad</left>

@@ -354,7 +354,7 @@
 	</variable>
 	<variable name="EmbyFooterLabel">
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(9025).NumItems] items • [COLOR=$VAR[ColourHighlight]]$INFO[Container(9025).TotalUnWatched] unwatched[/COLOR]</value> -->
-		<value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRightContent]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] /  $INFO[Window(Home).Property(UseAltWidget)] / $VAR[DefWidgetRightContent]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->

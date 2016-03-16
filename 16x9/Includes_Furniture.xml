@@ -910,6 +910,7 @@
 		<value>$LOCALIZE[10000]</value>
 	</variable>
 	<variable name="SubHeaderLabel">
+		<value condition="Window.IsVisible(home)">$VAR[EmbyFooterLabel]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$INFO[Window.Property(Filter_Label),, ]$INFO[Window.Property(TotalItems),, $LOCALIZE[31101]]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31242]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(movies)">$INFO[ListItem.TagLine]</value>
@@ -942,10 +943,10 @@
 				<control type="image">
 					<width>80</width>
 					<height>80</height>
-					<texture colordiffuse="Panel" border="8">common/box.png</texture>
+					<texture colordiffuse="Panel" border="0">common/circle.png</texture>
 				</control>
 				<control id="8308" type="image">
-					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
+					<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png">$VAR[HeaderIcon]</texture>
 					<visible>false</visible>
 				</control>
 				<control type="image">
@@ -953,7 +954,7 @@
 					<left>-14</left>
 					<width>108</width>
 					<height>108</height>
-					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
+					<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
 					<visible>!Container.Scrolling</visible>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !Substring(Control.GetLabel(8308),empty.png)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
@@ -961,7 +962,7 @@
 				<control type="image">
 					<width>80</width>
 					<height>80</height>
-					<texture border="8">special://skin/extras/icons/emby2.png</texture>
+					<texture border="0" diffuse="common/circle.png">special://skin/extras/icons/emby2.png</texture>
 					<visible>!Container.Scrolling</visible>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
@@ -969,7 +970,7 @@
 				<control type="image">
 					<width>80</width>
 					<height>80</height>
-					<texture border="8">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
+					<texture border="0" diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
 					<visible>!Container.Scrolling</visible>
 					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + !IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
@@ -994,7 +995,7 @@
 					<left>-14</left>
 					<width>108</width>
 					<height>108</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="8">special://skin/extras/icons/configure.png</texture>
+					<texture colordiffuse="$VAR[ColourHighlight]" border="0" diffuse="common/circle.png">special://skin/extras/icons/configure.png</texture>
 					<visible>Control.HasFocus(3634)</visible>
 				</control>
 				<control type="label">
@@ -1053,14 +1054,14 @@
 				<control type="image">
 					<width>80</width>
 					<height>80</height>
-					<texture colordiffuse="Panel" border="8">common/box.png</texture>
+					<texture colordiffuse="Panel" border="0">common/circle.png</texture>
 				</control>
 				<control type="image">
 					<top>-14</top>
 					<left>-14</left>
 					<width>108</width>
 					<height>108</height>
-					<texture colordiffuse="PanelWhite100" border="8">$VAR[HeaderIcon]</texture>
+					<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
 					<visible>!Container.Scrolling</visible>
 					<visible>!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
@@ -1217,6 +1218,10 @@
 		</control>
 	</include>
 	<include name="Furniture_Clock">
+		<control type="image">
+			<texture colordiffuse="Dark3">common/black.png</texture>
+			<height>160</height>
+		</control>
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -1252,11 +1257,32 @@
 				<height>333</height>
 				<font>SmallBold</font>
 				<textcolor>Dark1</textcolor>
-				<label>$INFO[ListItem.EndTime(hh:mm)]</label>
+				<label>$VAR[ListItem.EndTime(hh:mm)]</label>
 				<angle>-90</angle>
 				<fadetime>200</fadetime>
 				<visible>[!IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]]</visible>
 				<visible>[!Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.hideendtime)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
+			</control>
+			<control type="label">
+				<centertop>25</centertop>
+				<align>right</align>
+				<right>24</right>
+				<font>symbolview</font>
+				<textcolor>Dark1</textcolor>
+				<label>$VAR[EmbyEndTimeSymbol]</label>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="label">
+				<centertop>220</centertop>
+				<right>-225</right>
+				<aligny>top</aligny>
+				<width>240</width>
+				<height>333</height>
+				<font>SmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<label>$VAR[EmbyEndTimeLabel]</label>
+				<angle>-90</angle>
+				<fadetime>200</fadetime>
 			</control>
 			<control type="label">
 				<centertop>220</centertop>
