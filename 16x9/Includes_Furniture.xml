@@ -1222,6 +1222,12 @@
 			<texture colordiffuse="Dark3">common/black.png</texture>
 			<height>160</height>
 		</control>
+		<control type="image">
+			<top>160</top>
+			<texture colordiffuse="Dark3">common/black.png</texture>
+			<height>80</height>
+			<visible>Window.IsVisible(Home.xml)</visible>
+		</control>
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -1260,7 +1266,7 @@
 				<label>$VAR[ListItem.EndTime(hh:mm)]</label>
 				<angle>-90</angle>
 				<fadetime>200</fadetime>
-				<visible>[!IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]]</visible>
+				<visible>[!IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]] | [!IsEmpty(Container(301).ListItem.EndTime)]</visible>
 				<visible>[!Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(furniture.hideendtime)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
 			</control>
 			<control type="label">

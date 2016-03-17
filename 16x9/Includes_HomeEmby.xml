@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="HomeEmbyRow">
-		<control type="image">
-			<top>200</top>
-			<texture colordiffuse="Dark3">common/black.png</texture>
-			<height>80</height>
-		</control>
 		<!-- Home Row -->
 		<control type="group">
 			<top>70</top>
