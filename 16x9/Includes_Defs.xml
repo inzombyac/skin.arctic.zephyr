@@ -108,13 +108,18 @@
 	<!-- Main Widget Selection -->
 	<variable name="DefWidgetMainContent">
 		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">videodb://movies/sets/</value>
+		<value condition="Substring(Container(300).ListItem.Property(widgetPath),library://video/Emby) + Substring(Container(300).ListItem.Property(widgetPath),all.xml) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(300).ListItem.Label,TV) + IntegerGreaterThan(Window(Home).Property(TVShows.UnWatched),0)">special://skin/extras/playlists/UnwatchedShows.xsp</value>
+		<value condition="Substring(Container(300).ListItem.Property(widgetPath),library://video/Emby) + Substring(Container(300).ListItem.Property(widgetPath),all.xml) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Container(300).ListItem.Label,Movies) + IntegerGreaterThan(Window(Home).Property(Movies.UnWatched),0)">special://skin/extras/playlists/UnwatchedMovies.xsp</value>
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
 		<value condition="!IsEmpty(Container(300).ListItem.Property(widget))">$INFO[Container(300).ListItem.Property(widget)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">$INFO[Container(300).ListItem.Property(list)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">$INFO[Container(300).ListItem.Property(list)]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(300).ListItem.Label,TV)">special://skin/extras/playlists/RandomShows.xsp</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Container(300).ListItem.Label,Movies)">special://skin/extras/playlists/RandomMovies.xsp</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$INFO[Container(300).ListItem.Property(list)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows) + IntegerGreaterThan(Window(Home).Property(TVShows.UnWatched),0)">special://skin/extras/playlists/UnwatchedShows.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">special://skin/extras/playlists/RandomShows.xsp</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Window(Home).Property(Movies.UnWatched),0)">special://skin/extras/playlists/UnwatchedMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">special://skin/extras/playlists/RandomMovies.xsp</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">pvr://channels/tv/All&amp;channels/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">special://skin/extras/playlists/RandomAlbums.xsp</value>

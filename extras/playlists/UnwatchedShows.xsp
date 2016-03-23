@@ -2,8 +2,7 @@
 <smartplaylist type="tvshows">
     <name>Unwatched Shows</name>
     <match>all</match>
-    <order direction="ascending">year</order>
-	<rule field="numwatched" operator="lessthan">
+    <rule field="numwatched" operator="lessthan">
         <value>1</value>
     </rule>
 </smartplaylist>

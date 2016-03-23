@@ -46,21 +46,22 @@
 					<width>455</width>
 					<height>1080</height>
 					<control type="group" id="9090">
-						<height>50</height>
-						<ondown>9212</ondown>
+						<height>70</height>
+						<ondown>9092</ondown>
 						<control type="button" id="9091">
 							<description>Global Search</description>
-							<include>DefContextButton2</include>
+							<include>DefContextButton</include>
 							<align>left</align>
 							<label>137</label>
 							<onclick>RunScript(script.globalsearch)</onclick>
 							<onup>9000</onup>
-							<ondown>9212</ondown>
+							<ondown>9092</ondown>
 							<onright>300</onright>
 							<onleft>SetFocus(300,$INFO[Container(300).NumItems])</onleft>
 						</control>
 						<control type="image">
 							<right>20</right>
+							<top>10</top>
 							<width>50</width>
 							<height>50</height>
 							<aligny>center</aligny>
@@ -70,6 +71,7 @@
 						</control>
 						<control type="image">
 							<right>20</right>
+							<top>10</top>
 							<width>50</width>
 							<height>50</height>
 							<aligny>center</aligny>
@@ -78,6 +80,13 @@
 							<visible>Control.HasFocus(9091)</visible>
 						</control>
 					</control>
+					<control type="button" id ="9092" description="Emby Manual Sync">
+						<include>DefContextButton</include>
+						<label>Manual Sync Emby</label>
+						<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+						<align>left</align>
+					</control>
+					
 					<control type="button" id="9212" description="Customise Home">
 						<include>DefContextButton</include>
 						<label>31109</label>
