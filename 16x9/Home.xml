@@ -84,6 +84,7 @@
 						<include>DefContextButton</include>
 						<label>Manual Sync Emby</label>
 						<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+						<onclick>right</onclick>
 						<align>left</align>
 					</control>
 					
