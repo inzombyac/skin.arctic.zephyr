@@ -35,13 +35,13 @@
 				<right>SidePad</right>
 				<top>120</top>
 				<ondown>4012</ondown>
-				<onleft>9000</onleft>
 				<!-- <ondown condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</ondown>
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + IntegerGreaterThan(Container(4017).NumItems,0)">4017</ondown>
 				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</ondown> -->
 				<!-- <onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
 				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup> -->
-				<onup>7788</onup>
+				<onup condition="Player.HasMedia">7788</onup>
+				<onup condition="!Player.HasMedia">9000</onup>
 				<onright>SetProperty(UseAltWidget,,home)</onright>
 				<onleft>SetProperty(UseAltWidget,,home)</onleft>
 				<onright>SetProperty(UseAltWidget2,,home)</onright>
@@ -83,7 +83,8 @@
 				<onright>SetFocus(300)</onright>
 				<!-- <onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
 				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup> -->
-				<onup>3637</onup>
+				<onup condition="Player.HasMedia">7788</onup>
+				<onup condition="!Player.HasMedia">9000</onup>
 				<ondown>4012</ondown>
 				<label></label>
 			</control>

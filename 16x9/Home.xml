@@ -57,7 +57,6 @@
 							<onup>9000</onup>
 							<ondown>9092</ondown>
 							<onright>300</onright>
-							<onleft>SetFocus(300,$INFO[Container(300).NumItems])</onleft>
 						</control>
 						<control type="image">
 							<right>20</right>
@@ -82,7 +81,7 @@
 					</control>
 					<control type="button" id ="9092" description="Emby Manual Sync">
 						<include>DefContextButton</include>
-						<label>Manual Sync Emby</label>
+						<label>Perform Manual Emby Sync</label>
 						<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
 						<onclick>right</onclick>
 						<align>left</align>
@@ -91,6 +90,7 @@
 					<control type="button" id="9212" description="Customise Home">
 						<include>DefContextButton</include>
 						<label>31109</label>
+						<onclick>right</onclick>
 						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 						<align>left</align>
 					</control>
@@ -98,14 +98,22 @@
 						<include>DefContextButton</include>
 						<label>5</label>
 						<align>left</align>
+						<onclick>right</onclick>
 						<onclick>ActivateWindow(settings)</onclick>
 					</control>
-					<control type="button" id="3122">
+					<control type="button" id="3123">
+						<include>DefContextButton</include>
+						<label>10003</label>
+						<align>left</align>
+						<onclick>right</onclick>
+						<onclick>ActivateWindow(filemanager)</onclick>
+					</control>   
+					<!-- <control type="button" id="3122">
 						<include>DefContextButton</include>
 						<label>Emby preferences</label>
 						<onclick>RunPlugin("plugin://plugin.video.emby?mode=userprefs")</onclick>
 						<align>left</align>
-					</control>
+					</control> -->
 					<control type="label" id="9259">
 						<textoffsetx>15</textoffsetx>
 						<font>Home</font>
@@ -118,6 +126,7 @@
 						<label>Use alternate widgets</label>
 						<selected>Skin.HasSetting(menu.usealtwidgets)</selected>
 						<onclick>Skin.ToggleSetting(menu.usealtwidgets)</onclick>
+						<onclick>right</onclick>
 						<align>left</align>
 					</control>
 <!-- 					<control type="radiobutton" id="9261" description="Show RSS">
@@ -132,6 +141,7 @@
 						<label>Debug Mode</label>
 						<selected>Skin.HasSetting(debug.mode)</selected>
 						<onclick>Skin.ToggleSetting(debug.mode)</onclick>
+						<onclick>right</onclick>
 						<align>left</align>
 					</control>
 					<control type="label"  id="9263">
