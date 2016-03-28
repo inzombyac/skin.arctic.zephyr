@@ -170,7 +170,7 @@
 				<label>$VAR[EmbyWidgetLabel]</label>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious + !Container(4019).IsUpdating</visible>
+				<visible>!Container(300).Scrolling + !Container(4019).IsUpdating</visible>
 			</control>
 			<!-- Loading replacement -->
 			<control type="group">
@@ -326,7 +326,7 @@
 				<height>180</height>
 				<texture background="true">$VAR[EmbyBottomTileImage1]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -337,7 +337,7 @@
 				<width>280</width>
 				<height>40</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -380,7 +380,7 @@
 				<height>180</height>
 				<texture background="true">$VAR[EmbyBottomTileImage2]</texture>
 				<aspectratio scalediffuse="true">scale</aspectratio>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious </visible>
+				<visible>!Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -391,7 +391,7 @@
 				<width>280</width>
 				<height>40</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -436,7 +436,7 @@
 				<texture background="true">$VAR[EmbyBottomTileImage3]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>	
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -448,7 +448,7 @@
 				<height>40</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -473,7 +473,7 @@
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4014)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)+!StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 			</control>
 		</control>
 	</include>
@@ -567,9 +567,9 @@
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">$VAR[EmbyMainWidgetIcon]</texture>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
-				<include>Animation.LongDelayFadeIn</include>
-				<include>Animation.LongDelayFadeOut</include>
+				<visible>!Container(300).Scrolling</visible>
+				<include>Animation.DelayFadeIn</include>
+				<include>Animation.DelayFadeOut</include>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
 			</control>
 			<control type="progress">
@@ -582,7 +582,7 @@
 				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
 				<visible>Container(4019).ListItem.IsResumable</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
@@ -700,7 +700,7 @@
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture border="15" colordiffuse="Background">common/null.png</texture>
-				<visible>Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious</visible>
+				<visible>Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.DelayFadeOut</include>
 			</control>
@@ -743,7 +743,7 @@
 			<include>WeatherTodayMainWidget</include>
 			<!--weather widgets -->
 			<include>WeatherWidgetToday</include>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<visible>!Container(300).Scrolling</visible>
 		</control>
 		<include>EmbyMainWidgetOverlay</include>
 	</include>
@@ -763,7 +763,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget1Label]</label>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,0)</visible>
-				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1033,7 +1033,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="10">$VAR[DefWidgetRightContentMusic]</content>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1058,7 +1058,7 @@
 					<param name="aspect">keep</param>
 				</include>
 				<include>WeatherWidget</include>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1082,7 +1082,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<include>SysInfoWidget</include>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1109,7 +1109,7 @@
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,0)</visible>
-				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1127,7 +1127,7 @@
 				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,1)</visible>
 				<visible>IntegerGreaterThan(Container(4018).NumItems,0)</visible>
-				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1144,7 +1144,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings) + !StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,1)</visible>
-				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1160,7 +1160,7 @@
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings) + !StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,1)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1177,7 +1177,7 @@
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),photos) + ! Substring(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),programs) + !StringCompare(Container(300).ListItem.Property(type),settings) + !StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(40016).IsUpdating + !Container(300).Scrolling</visible>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,1)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1216,7 +1216,7 @@
 				<content limit="10" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,1)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1253,7 +1253,7 @@
 				<content limit="2" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,1)</visible>
 				<visible>!IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1290,7 +1290,7 @@
 				<content limit="10" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,1)</visible>
 				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1327,7 +1327,7 @@
 				<content limit="2" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,1)</visible>
 				<visible>!IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1358,7 +1358,7 @@
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 				</include>
 				<content limit="10">$VAR[DefWidgetRight2ContentMusic]</content>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1381,7 +1381,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,1)+IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1397,7 +1397,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
 				<visible>[IntegerGreaterThan(Container(40016).NumItems,1) + !IntegerGreaterThan(Container(40017).NumItems,2)]</visible>
-				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1413,7 +1413,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
 				<visible>[!IntegerGreaterThan(Container(40016).NumItems,1) + IntegerGreaterThan(Container(40017).NumItems,2)]</visible>
-				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1429,7 +1429,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,0)+!IntegerGreaterThan(Container(40016).NumItems,1) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1457,7 +1457,7 @@
 				</include>
 				<content limit="10" target="videos" sortby="$VAR[WidgetRight3Sort]">$VAR[DefWidgetRight3Content]</content>
 				<visible>IntegerGreaterThan(Container(40016).NumItems,1) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1484,7 +1484,7 @@
 				</include>
 				<content limit="10" target="videos" sortby="$VAR[WidgetRight3Sort]">$VAR[DefWidgetRight3Content]</content>
 				<visible>[IntegerGreaterThan(Container(40016).NumItems,1) + !IntegerGreaterThan(Container(40017).NumItems,2)]</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1511,7 +1511,7 @@
 				</include>
 				<content limit="10" target="videos" sortby="$VAR[WidgetRight3Sort]">$VAR[DefWidgetRight3Content]</content>
 				<visible>[!IntegerGreaterThan(Container(40016).NumItems,1) + IntegerGreaterThan(Container(40017).NumItems,2)]</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1568,7 +1568,7 @@
 			<height>78</height>
 			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<visible>!Container(300).Scrolling</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
@@ -1585,7 +1585,7 @@
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-			<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<visible>!Container(300).Scrolling</visible>
 		</control>
 		<control type="label">
 			<left>100</left>
@@ -1599,7 +1599,7 @@
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[EmbyWidgetContentLabel]</label>
 			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-			<visible>!Container(4019).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
@@ -1616,7 +1616,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[EmbyWidgetContentLabel2]</label>
-			<visible>!Container(4019).IsUpdating + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+			<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 		</control>
@@ -1652,7 +1652,7 @@
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1675,7 +1675,7 @@
 				<left>10</left>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.LongDelayFadeIn</include>
 			</control>
@@ -1689,7 +1689,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidget1ContentLabel]</label>
-				<visible>!Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.LongDelayFadeIn</include>
 			</control>
@@ -1706,7 +1706,7 @@
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
 				<include>Animation.DelayFadeIn</include>
 				<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
-				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling + !Container(300).OnNext + !Container(300).OnPrevious</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
