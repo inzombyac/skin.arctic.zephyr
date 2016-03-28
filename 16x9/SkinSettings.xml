@@ -1,6 +1,6 @@
 <window>
 	<defaultcontrol>30</defaultcontrol>
-	
+	<menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">9101</defaultcontrol>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>

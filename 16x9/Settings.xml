@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window id="4">
     <defaultcontrol always="true">9100</defaultcontrol>
-    
+    <menucontrol>9000</menucontrol>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
@@ -70,7 +70,6 @@
                     <height>1</height>
                     <texture colordiffuse="Black12">common/white.png</texture>
                 </control>-->
-               
             </control>
             <control type="Panel" id="9100">
                 <left>0</left>
@@ -103,7 +102,6 @@
                         <height>96</height>
                         <texture colordiffuse="PanelWhite100">$INFO[ListItem.Icon]</texture>
                     </control>
-                
                 </itemlayout>
                 <focusedlayout width="575" height="107">
                     <control type="image">
@@ -147,7 +145,6 @@
                         <icon>special://skin/extras/icons/eye.png</icon>
                         <onclick>activatewindow(AppearanceSettings)</onclick>
                     </item>
-                    
                     <item id="2">
                         <label>3</label>
                         <label2>31157</label2>
@@ -160,8 +157,6 @@
                         <icon>special://skin/extras/icons/songs.png</icon>
                         <onclick>activatewindow(MusicSettings)</onclick>
                     </item>
-                    
-                    
                     <item id="5">
                         <label>1</label>
                         <label2>31159</label2>
@@ -174,7 +169,6 @@
                         <icon>special://skin/extras/icons/sun.png</icon>
                         <onclick>activatewindow(WeatherSettings)</onclick>
                     </item>
-                    
                     <item id="12">
                         <label>20077</label>
                         <label2>31166</label2>
@@ -193,7 +187,6 @@
                         <icon>special://skin/extras/icons/network.png</icon>
                         <onclick>activatewindow(NetworkSettings)</onclick>
                     </item>
-                    
                     <item id="9">
                         <label>13200</label>
                         <label2>31165</label2>
@@ -205,8 +198,7 @@
                         <label2>31162</label2>
                         <icon>special://skin/extras/icons/addons.png</icon>
                         <onclick>activatewindow(AddonBrowser)</onclick>
-                    </item>
-                    
+                    </item>                
                     <item id="10">
                         <label>130</label>
                         <label2>31167</label2>
@@ -219,12 +211,9 @@
                         <icon>special://skin/extras/icons/livetv.png</icon>
                         <onclick>activatewindow(pvrsettings)</onclick>
                     </item>
-                    
-                    
                 </content>
             </control>
-            
         </control>
+		 <include>Def9000SettingsMenu</include>
     </controls>
-
 </window>

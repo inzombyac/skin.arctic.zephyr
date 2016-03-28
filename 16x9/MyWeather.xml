@@ -2,10 +2,9 @@
 <!-- Foundation -->
 <window id="2600">
     <defaultcontrol always="true">9100</defaultcontrol>
-    
+    <menucontrol>9000</menucontrol>
     <background>0</background>
     <controls>
-
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
         <include>Furniture_NowPlaying</include>
@@ -410,8 +409,6 @@
                     </control>
                 </control>
             </control>
-
-
         </control>
         <control type="button" id="9100" description="Fake Button">
             <visible allowhiddenfocus="true">false</visible>
@@ -433,7 +430,7 @@
             <include>GlobalOverlay</include>
         </control>
         <control type="group">
-            <include>Def9000Background</include>
+            <include>Def9000SideBladeLeft</include>
             <control type="grouplist" id="9000">
                 <onright>9100</onright>
                 <onleft>9100</onleft>

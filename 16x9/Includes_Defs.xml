@@ -148,8 +148,9 @@
 		<value>$VAR[EmbyNodeInProgress]</value>
 	</variable>
 	<variable name="DefWidgetRightContentMovie">
-		<value condition="!IsEmpty(Window(Home).Property(UseAltWidget)) + Skin.HasSetting(menu.usealtwidgets)">special://skin/extras/playlists/UnwatchedMovies.xsp</value>
-		<value>plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets)">special://skin/extras/playlists/UnwatchedMovies.xsp</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Alternate) + Skin.HasSetting(menu.usealtwidgets)">plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value>special://skin/extras/playlists/InProgressMovies.xsp</value>
 	</variable>
 	<variable name="DefWidgetRightContentHomeVideo">
 		<value>$VAR[EmbyNodeRecent]</value>
@@ -671,32 +672,18 @@
 			<label>View Options</label>
 			<textcolor>$VAR[ColourHighlight]</textcolor>
 			<aligny>center</aligny>
+			<align>left</align>
 		</control>
 	</include>
 	<include name="Def9000SettingsMenu">
 		<control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
 			<visible>ControlGroup(9000).HasFocus()</visible>
 			<include>GlobalOverlay</include>
 		</control>
 		<control type="group">
-			<height>732</height>
-			<include>Def9000Background</include>
-			<control type="image">
-				<description>arrow image</description>
-				<centerleft>50%</centerleft>
-				<posy>-16</posy>
-				<width>16</width>
-				<height>16</height>
-				<texture colordiffuse="White70" flipy="true">common/arrow-small.png</texture>
-			</control>
-			<control type="image">
-				<description>arrow image</description>
-				<centerleft>50%</centerleft>
-				<posy>732</posy>
-				<width>16</width>
-				<height>16</height>
-				<texture colordiffuse="White70" flipy="false">common/arrow-small.png</texture>
-			</control>
+			<include>Def9000SideBladeLeft</include>
 			<control type="grouplist" id="9000">
 				<onleft condition="Window.IsVisible(SettingsCategory.xml)">3</onleft>
 				<onleft condition="!Window.IsVisible(SettingsCategory.xml)">9101</onleft>
@@ -704,73 +691,89 @@
 				<onright condition="!Window.IsVisible(SettingsCategory.xml)">9101</onright>
 				<onback condition="Window.IsVisible(SettingsCategory.xml)">3</onback>
 				<onback condition="!Window.IsVisible(SettingsCategory.xml)">9101</onback>
-				<height>700</height>
 				<include>Def9000GroupList</include>
 				<control type="button" id="9001">
 					<onclick>ReplaceWindow(AppearanceSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>480</label>
+					<align>left</align>
 				</control>
 				<control type="button" id="9002">
 					<onclick>ReplaceWindow(VideosSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>3</label>
+					<align>left</align>
 				</control>
 				<control type="button" id="9003">
 					<onclick>ReplaceWindow(MusicSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>2</label>
+					<align>left</align>
 				</control>
 				<control type="button" id="9004">
 					<onclick>ReplaceWindow(AddonBrowser)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>24001</label>
+					<align>left</align>
 				</control>
 				<control type="button" id="9005">
 					<onclick>ReplaceWindow(PicturesSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>1</label>
+					<align>left</align>
 				</control>
 				<control type="button" id="9006">
 					<onclick>ReplaceWindow(WeatherSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>8</label>
+					<align>left</align>
 				</control>
 				<control type="button" id="9007">
 					<onclick>ReplaceWindow(NetworkSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>705</label>
+					<align>left</align>
 				</control>
 				<control type="button" id="9008">
 					<onclick>ReplaceWindow(SystemSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>13000</label>
+					<align>left</align>
 				</control>
-				<!--<control type="button" id="9009"> <onclick>ReplaceWindow(Profiles)</onclick> <onclick>SetFocus(3)</onclick> <include>DefContextButton</include> <label>13200</label> </control> -->
+				<control type="button" id="9009">
+					<onclick>ReplaceWindow(Profiles)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<align>left</align>
+					<label>13200</label>
+				</control>
 				<control type="button" id="9010">
 					<onclick>ReplaceWindow(PVRSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>19191</label>
+					<align>left</align>
 				</control>
 				<control type="button" id="9011">
 					<onclick>ReplaceWindow(7)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>130</label>
+					<align>left</align>
 				</control>
 				<control type="button" id="9012">
 					<onclick>ReplaceWindow(SkinSettings)</onclick>
 					<include>DefContextButton</include>
 					<label>20077</label>
+					<align>left</align>
 				</control>
 			</control>
 		</control>
