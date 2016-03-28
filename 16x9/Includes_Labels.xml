@@ -939,7 +939,6 @@
 	</variable>
 	<variable name="DurationLongVideoInfo">
 		<value condition="!Skin.HasSetting(furniture.alternate.duration) + !StringCompare(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours), ,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
-		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes),,min]</value>
 		<value>$INFO[ListItem.Duration,,min]</value>
 	</variable>
 	<variable name="DurationHomeLong">

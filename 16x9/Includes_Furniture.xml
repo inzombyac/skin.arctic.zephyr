@@ -1263,7 +1263,7 @@
 				<height>333</height>
 				<font>SmallBold</font>
 				<textcolor>Dark1</textcolor>
-				<label>$VAR[ListItem.EndTime(hh:mm)]</label>
+				<label>$INFO[ListItem.EndTime(hh:mm)]</label>
 				<angle>-90</angle>
 				<fadetime>200</fadetime>
 				<visible>[!IsEmpty(ListItem.EndTime) + [Container.Content(movies) | Container.Content(episodes)]] | [!IsEmpty(Container(301).ListItem.EndTime)]</visible>

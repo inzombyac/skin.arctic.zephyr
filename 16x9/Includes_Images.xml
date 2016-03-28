@@ -389,7 +389,7 @@
 	</variable>
 		
 	<variable name="EmbySubMenuImage">
-		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious]">common/null.png</value>
+		<value condition="Container(300).Scrolling | Container(300).OnNext | Container(300).OnPrevious">common/null.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos) + Substring(ListItem.Thumb, emby_diff)">special://skin/extras/backgrounds/video.jpg</value>
 		<value condition="!IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
 		<value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
