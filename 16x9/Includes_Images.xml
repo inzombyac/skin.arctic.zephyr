@@ -474,4 +474,9 @@
 		<value condition="System.HasAddon(plugin.video.emby) + !IsEmpty(Window(Home).Property(EmbyUserImage))">$INFO[Window(Home).Property(EmbyUserImage)]</value>
 		<value>$INFO[System.ProfileThumb]</value>
 	</variable>
+	<variable name="RottenTomato">
+		<value condition="IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesMeter)">common/null.png</value>
+		<value condition="!IntegerGreaterThan(Window(Home).Property(SkinHelper.RottenTomatoesMeter),59)">flags/rottentomatoesrotten.png</value>
+		<value>flags/rottentomatoes.png</value>
+	</variable>
 </includes>

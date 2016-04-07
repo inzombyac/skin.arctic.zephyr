@@ -492,6 +492,12 @@
 			<autoscroll time="15000">!Control.HasFocus(9004)</autoscroll>
 			<onfocus>SetFocus(300)</onfocus>
 		</control>
+		<control type="list" id="9005">
+			<content limit="1" sortby="random">special://skin/extras/playlists/InProgressMovies.xsp</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>StringCompare(Container(300).ListItem.Property(type),movies)</visible>
+			<onfocus>SetFocus(300)</onfocus>
+		</control>
 		<control type="list" id="9025">
 			<content>$VAR[DefWidgetMainContent]</content>
 			<visible>Substring(Container(300).ListItem.Property(Path),emby)</visible>

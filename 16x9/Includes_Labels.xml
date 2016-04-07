@@ -248,12 +248,14 @@
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31125]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Alternate) + Skin.HasSetting(menu.usealtwidgets)">Recommended</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets)">Unwatched</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">Resume</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9005).NumItems,0)">Resume</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">Recommended</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">Next Up</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">Next Up</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9005).NumItems,0)">Resume</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Alternate) + Skin.HasSetting(menu.usealtwidgets)">Recommended</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets)">Unwatched</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Resume</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Recommended</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + IntegerGreaterThan(Pvr.BackendRecordings,0)">Recorded TV</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Airing Today</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Recent Albums</value>
