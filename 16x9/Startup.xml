@@ -29,7 +29,7 @@
             <height>100%</height>
             <align>center</align>
             <aligny>center</aligny>
-            <label>[COLOR=EmbyGreen]Arctic Zephyr[/COLOR] emby</label>
+            <label>[COLOR=EmbyGreen]Emby[/COLOR] For Kodi</label>
             <font>EpisodeNumber</font>
             <textcolor>Dark1</textcolor>
             <animation effect="fade" start="750" end="0" time="1250" tween="quadratic">WindowClose</animation>

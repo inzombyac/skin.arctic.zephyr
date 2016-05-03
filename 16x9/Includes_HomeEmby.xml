@@ -86,7 +86,9 @@
 				<onup condition="Player.HasMedia">7788</onup>
 				<onup condition="!Player.HasMedia">9000</onup>
 				<ondown>4012</ondown>
-				<label></label>
+				<onclick>Menu</onclick>
+				<label>AltWidget</label>
+				<visible allowhiddenfocus="true">false</visible>
 			</control>
 		</control>
 	</include>

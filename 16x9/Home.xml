@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="0">
-	<defaultcontrol always="true">300</defaultcontrol>
+	<defaultcontrol always="true">9945</defaultcontrol>
 	<menucontrol>9000</menucontrol>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 	<onload condition="IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
@@ -12,6 +12,9 @@
 	<onload condition="Pvr.HasTimer">RunScript(script.toolbox,info=notification,header=Next Recording,text=$VAR[LabelNextRecording],icon=indicator/recording.png,time=15,sound=FALSE)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<controls>
+		<control type="button" id="9945">
+           <onfocus condition="IsEmpty(System.CurrentControl)">AlarmClock(UpdateDelay,SetFocus(300),00:01,silent)</onfocus>
+        </control>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include>GlobalOverlay</include>
 		<include>Furniture_Header</include>
@@ -80,6 +83,12 @@
 							<visible>Control.HasFocus(9091)</visible>
 						</control>
 					</control>
+					<!-- <control type="button" id="3122">
+						<include>DefContextButton</include>
+						<label>Emby</label>
+						<onclick>RunPlugin("plugin://plugin.video.emby")</onclick>
+						<align>left</align>
+					</control> -->
 					<control type="button" id ="9092" description="Emby Manual Sync">
 						<include>DefContextButton</include>
 						<label>Perform Manual Emby Sync</label>
@@ -137,14 +146,14 @@
 						<onclick>system.setbool(lookandfeel.enablerssfeeds)</onclick>
 						<align>left</align>
 					</control> -->
-					<control type="radiobutton" id="9262" description="Debug mode">
+					<!-- <control type="radiobutton" id="9262" description="Debug mode">
 						<include>DefContextButton</include>
 						<label>Debug Mode</label>
 						<selected>Skin.HasSetting(debug.mode)</selected>
 						<onclick>Skin.ToggleSetting(debug.mode)</onclick>
 						<onclick>right</onclick>
 						<align>left</align>
-					</control>
+					</control> -->
 					<control type="label"  id="9263">
 						<textoffsetx>15</textoffsetx>
 						<font>Home</font>
