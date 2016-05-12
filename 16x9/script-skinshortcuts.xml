@@ -3,7 +3,6 @@
     <defaultcontrol always="true">401</defaultcontrol>
     <controls>
         <include>GlobalOverlay</include>
-
         <control type="group">
             <include>Animation.FadeIn.Slide</include>
             <centerleft>50%</centerleft>
@@ -18,7 +17,6 @@
                 <right>-8</right>
                 <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
             </control>
-
             <control type="label" id="500">
                 <description>header label</description>
                 <posy>10</posy>
@@ -28,7 +26,6 @@
                 <align>left</align>
                 <textcolor>Black70</textcolor>
             </control>
-            
             <!-- Left List: Current Shortcuts -->
             <control type="list" id="211">
                 <description>Rules List Control</description>
@@ -95,7 +92,6 @@
                     </control>
                 </focusedlayout>
             </control>
-            
             <!-- Right Buttons -->
             <control type="grouplist" id="9100">
                 <onleft>211</onleft>
@@ -107,10 +103,7 @@
                 <width>420</width>
                 <height>759</height>
                 <orientation>vertical</orientation>
-                <itemgap>3</itemgap>
-                
-                
-                
+                <itemgap>3</itemgap>       
                 <control type="button" id="401" description="Alt chooser">
                     <width>100%</width>
                     <height>66</height>
@@ -129,14 +122,43 @@
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
-                
-                <control type="button" id="309" description="Widget">
+                <control type="button" id="312" description="Widget">
                     <width>100%</width>
                     <height>66</height>
                     <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                     <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+                </control>
+				<control type="button" id="8777" description="Right Widget1">
+                    <label>Right Widget 1</label>
+					<width>100%</width>
+                    <height>66</height>
+                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+					<onclick>SetProperty(widgetID,2)</onclick>
+					<onclick>SendClick(312)</onclick>
+                </control>
+				<control type="button" id="8778" description="Right Widget2">
+                    <label>Right Widget 2</label>
+					<width>100%</width>
+                    <height>66</height>
+                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+					<onclick>SetProperty(widgetID,3)</onclick>
+					<onclick>SendClick(312)</onclick>
+                </control>
+				<control type="button" id="8779" description="Right Widget3">
+                    <label>Right Widget 3</label>
+					<width>100%</width>
+                    <height>66</height>
+                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+					<onclick>SetProperty(widgetID,4)</onclick>
+					<onclick>SendClick(312)</onclick>
                 </control>
                 <control type="button" id="310" description="Background">
                     <width>100%</width>
@@ -151,7 +173,6 @@
                     <label>31181</label>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>stringcompare(Window.Property(groupname),movieshub) | stringcompare(Window.Property(groupname),episodeshub)</visible>
                 </control>
                 <control type="button" id="405" description="Set Submenu">
                     <width>100%</width>
@@ -205,8 +226,7 @@
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                </control>
-                
+                </control> 
                 <control type="button" id="308" description="Reset">
                     <width>100%</width>
                     <height>66</height>
@@ -214,10 +234,7 @@
                     <include>DefDialogButtons</include>
                     <visible>!stringcompare(Window.Property(groupname),mainmenu)</visible>
                 </control>
-            </control>
-        
-            
-           
+            </control> 
         </control>
     </controls>
 </window>
