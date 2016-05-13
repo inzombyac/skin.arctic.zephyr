@@ -27,7 +27,7 @@
                     <width>64</width>
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
-                    <colordiffuse>$VAR[OSDPanelWhite70]</colordiffuse>
+                    <!-- <colordiffuse>$VAR[OSDPanelWhite70]</colordiffuse> -->
                 </control>                
                 <control type="label" id="401">
                     <left>104</left>

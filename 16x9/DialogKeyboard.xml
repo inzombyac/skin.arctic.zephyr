@@ -479,7 +479,7 @@
                         <ondown condition="Control.IsVisible(5000)">5000</ondown>
                     </control>
                 </control>
-                <control type="group">
+                <!-- <control type="group">
                     <visible>System.HasAddon(script.extendedinfo) + !IsEmpty(Control.GetLabel(312).index(1)) + !Window.IsVisible(1130)</visible>
                     <top>480</top>
                     <centerleft>50%</centerleft>
@@ -546,7 +546,7 @@
                         </focusedlayout>
                         <content>plugin://script.extendedinfo?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=10</content>
                     </control>
-                </control>
+                </control> -->
             </control>
         </control>
     </controls>
