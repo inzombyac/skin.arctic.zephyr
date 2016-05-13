@@ -241,8 +241,11 @@
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="Container(300).Scrolling">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather) + IsEmpty(Container(300).ListItem.Property(widgetPath.2))">Extended Forecast</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings) + IsEmpty(Container(300).ListItem.Property(widgetPath.2))">System Information</value>
 		<value condition="!IntegerGreaterThan(Container(4016).NumItems,0)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.2))">$INFO[Container(300).ListItem.Property(widgetName.2)]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + [IsEmpty(Window(Home).Property(UseAltWidget)) | !Skin.HasSetting(menu.usealtwidgets)]">Next Up</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31125]</value>
@@ -269,6 +272,7 @@
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="Container(300).Scrolling">[CR]</value>
 		<value condition="!IntegerGreaterThan(Container(4017).NumItems,0)">[CR]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.3))">$INFO[Container(300).ListItem.Property(widgetName.3)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">[CR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
@@ -281,11 +285,16 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Recent</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Recommended</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">[CR]</value>
 		<value>Popular TV</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Label">
 		<value condition="Container(300).Scrolling">[CR]</value>
 		<value condition="!IntegerGreaterThan(Container(4018).NumItems,0)">[CR]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.4))">$INFO[Container(300).ListItem.Property(widgetName.4)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">[CR]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">[CR]</value>
@@ -356,7 +365,7 @@
 		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[System.CurrentControl] / $INFO[Container.Content]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRightContent]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] /  $INFO[Window(Home).Property(UseAltWidget)] / $VAR[DefWidgetRightContent]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->

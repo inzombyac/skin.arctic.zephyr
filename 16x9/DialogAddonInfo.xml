@@ -2,16 +2,10 @@
 <!-- Foundation -->
 <window id="146">
     <defaultcontrol always="true">9000</defaultcontrol>
-    
-
     <controls>
-
         <include>GlobalOverlay</include>
-
         <control type="group">
-            <include>DefDialogInfoPanel</include>
-
-           
+            <include>DefDialogInfoPanel</include>  
             <control type="image">
                 <posx>30</posx>
                 <top>100</top>
@@ -19,21 +13,18 @@
                 <height>274</height>
                 <aspectratio scalediffuse="false">scale</aspectratio>
                 <texture diffuse="diffuse/pvrinfo.png" fallback="pvr/background.jpg">$INFO[ListItem.Art(fanart)]</texture>
-            </control>
-            
+            </control>           
             <control type="label">
                 <description>Header Label</description>
                 <include>DefDialogInfoHeader</include>
                 <label>$INFO[ListItem.Label]</label>
             </control>
-            
             <control type="grouplist">
                 <left>510</left>
                 <right>30</right>
                 <posy>112</posy>
                 <orientation>vertical</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
-                
                 <!-- Channel Name -->
                 <control type="label">
                     <width>100%</width>
@@ -207,6 +198,7 @@
                     <include>DefDialogButtons</include>
                     <label>24036</label>
                     <visible>!Skin.HasSetting(global.kioskmode)</visible>
+					<ondown>13</ondown>
                 </control>
 				<control type="radiobutton" id="13">
                     <description>Auto-Update button</description>

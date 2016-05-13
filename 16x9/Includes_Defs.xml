@@ -131,72 +131,119 @@
 	</variable>
 	<!-- Right Widget 1 Selection -->
 	<variable name="DefWidgetRightContentLiveTV">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)+IntegerGreaterThan(Pvr.BackendRecordings,0)">pvr://recordings/</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">plugin://script.extendedinfo?info=airingtodaytvshows</value>
 	</variable>
 	<variable name="DefWidgetRightContentTVShows">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value>plugin://script.skin.helper.service/?action=nextepisodes&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">videodb://recentlyaddedepisodes/</value> -->
 	</variable>
 	<variable name="DefWidgetRightContentEmbyTV">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value condition="!IsEmpty(Window(Home).Property(UseAltWidget)) + Skin.HasSetting(menu.usealtwidgets)">videodb://recentlyaddedepisodes/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22descending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22dateadded%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</value>
 		<value>$VAR[EmbyNodeNextEpisodes]</value>
 	</variable>
 	<variable name="DefWidgetRightContentEmbyMovie">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets)">$VAR[EmbyNodeUnwatched]</value>
 		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Alternate) + Skin.HasSetting(menu.usealtwidgets)">$VAR[EmbyNodeRecommended]</value>
 		<value>$VAR[EmbyNodeInProgress]</value>
 	</variable>
 	<variable name="DefWidgetRightContentMovie">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value condition="IntegerGreaterThan(Container(9005).NumItems,0)">special://skin/extras/playlists/InProgressMovies.xsp</value>
 		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets)">special://skin/extras/playlists/UnwatchedMovies.xsp</value>
 		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Alternate) + Skin.HasSetting(menu.usealtwidgets)">plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 		<value>plugin://script.skin.helper.service/?action=recommendedmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidgetRightContentHomeVideo">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value>$VAR[EmbyNodeRecent]</value>
 	</variable>
 	<variable name="DefWidgetRightContentVideo">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value>plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>
 	<variable name="DefWidgetRightContentPictures">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Label2,type=photos)">plugin://plugin.video.emby/?folderid=recent&amp;id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=photos</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),plugin://plugin.video.emby/) + Substring(Container(300).ListItem.Property(Path),type=photos)">plugin://plugin.video.emby/?folderid=recent&amp;id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=photos</value>
 	</variable>
 	<variable name="DefWidgetRightContentMusic">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value>plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</value>
 	</variable>
+	<variable name="DefWidgetRightContentWeather">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
+	</variable>
+	<variable name="DefWidgetRightContentSettings">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
+	</variable>
+	<variable name="DefWidgetRightContentPrograms">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
+		<value condition="Substring(System.KernelVersion,android)">androidapp://sources/apps/</value>
+		<value>addons://sources/executable</value>
+	</variable>
+	<variable name="DefWidgetRightContentFavourites">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
+		<value>$INFO[Container(300).ListItem.Property(list)]</value>
+	</variable>
 	<!-- Right Widget 2 Selection -->
-	<variable name="DefWidgetRight2ContentMusic">
-		<value>plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
+	<variable name="DefWidgetRight2ContentLiveTV">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
+		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)">plugin://script.extendedinfo?info=onairtvshows</value>
+		<value>plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentTVShows">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
 		<value condition="[StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)] | !Skin.HasSetting(menu.usealtwidgets)">special://skin/extras/playlists/UnwatchedShows.xsp</value>
 		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Fallback) + Skin.HasSetting(menu.usealtwidgets)">plugin://script.skin.helper.service/?action=similarshows&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>special://skin/extras/playlists/RecommendedShows.xsp</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentEmbyTV">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
 		<value condition="[StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)] | !Skin.HasSetting(menu.usealtwidgets)">videodb://tvshows/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$VAR[EmbyHomeSelectedMenu]%22%5d%7d%2c%7b%22field%22%3a%22numwatched%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%220%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</value>
 		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Fallback) + Skin.HasSetting(menu.usealtwidgets)">plugin://script.skin.helper.service/?action=similarshows&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>$VAR[EmbyNodeRecommended]</value>
 	</variable>
-	<variable name="DefWidgetRight2ContentLiveTV">
-		<value condition="StringCompare(Window(Home).Property(UseAltWidget2),Alternate) + Skin.HasSetting(menu.usealtwidgets)">plugin://script.extendedinfo?info=onairtvshows</value>
-		<value>plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-	</variable>
 	<variable name="DefWidgetRight2ContentEmbyMovie">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
 		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets) + IntegerGreaterThan(Window(Home).Property(Movies.Watched),0)">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>$VAR[EmbyNodeRecent]</value>
 	</variable>
 	<variable name="DefWidgetRight2ContentMovie">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
 		<value condition="StringCompare(Window(Home).Property(UseAltWidget),Fallback) + Skin.HasSetting(menu.usealtwidgets) + IntegerGreaterThan(Window(Home).Property(Movies.Watched),0)">plugin://script.skin.helper.service/?action=similarmovies&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>videodb://recentlyaddedmovies/</value>
 	</variable>
+	<variable name="DefWidgetRight2ContentHomeVideo">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
+		<value>$VAR[EmbyNodeRecommended]</value>
+	</variable>
 	<variable name="DefWidgetRight2ContentVideo">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
 		<value>plugin://script.extendedinfo?info=populartvshows</value>
 	</variable>
-	<variable name="DefWidgetRight2ContentHomeVideo">
-		<value>$VAR[EmbyNodeRecommended]</value>
+	<variable name="DefWidgetRight2ContentMusic">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
+		<value>plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</value>
+	</variable>
+	<variable name="DefWidgetRight2ContentPictures">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
+	</variable>
+	<variable name="DefWidgetRight2ContentWeather">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
+	</variable>
+	<variable name="DefWidgetRight2ContentSettings">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
+	</variable>
+	<variable name="DefWidgetRight2ContentPrograms">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
+	</variable>
+	<variable name="DefWidgetRight2ContentFavourites">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
 	</variable>
 	<variable name="EmbyBottomTileAction1">
 		<!-- Home videos -->
@@ -1418,13 +1465,10 @@
 	</include>
 	<!-- Archived Emby Home defs StringCompare(Window(Home).Property(UseAltWidget),True)  Skin.HasSetting(HomeShowWidgets)-->
 	<variable name="DefWidgetRightContent">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.2))">$INFO[Container(300).ListItem.Property(widgetPath.2)]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">$VAR[DefWidgetRightContentPictures]</value>
-		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),weather)">special://</value> -->
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">$VAR[DefWidgetRightContentHomeVideo]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">$INFO[Container(300).ListItem.Property(list)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),programs) + Substring(System.KernelVersion,android)">androidapp://sources/apps/</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">addons://sources/executable</value>
-		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://</value> -->
+		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">$VAR[DefWidgetRightContentFavourites]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(300).ListItem.Label,TV)">$VAR[DefWidgetRightContentTVShows]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$VAR[DefWidgetRightContentEmbyTV]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Container(300).ListItem.Label,Movies)">$VAR[DefWidgetRightContentMovie]</value>
@@ -1434,15 +1478,16 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">$VAR[DefWidgetRightContentMovie]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">$VAR[DefWidgetRightContentLiveTV]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$VAR[DefWidgetRightContentMusic]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">$VAR[DefWidgetRightContentWeather]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">$VAR[DefWidgetRightContentSettings]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">$VAR[DefWidgetRightContentPrograms]</value>
 		<value>$VAR[DefWidgetRightContentVideo]</value>
 	</variable>
 	<variable name="DefWidgetRight2Content">
-		<!-- <value condition="StringCompare(Container(300).ListItem.Property(type),photos)">special://</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">special://</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">special://</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">special://</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">special://</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://</value> -->
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.3))">$INFO[Container(300).ListItem.Property(widgetPath.3)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">$VAR[DefWidgetRight2ContentPictures]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">$VAR[DefWidgetRight2ContentHomeVideo]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">$VAR[DefWidgetRight2ContentFavourites]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(300).ListItem.Label,TV)">$VAR[DefWidgetRight2ContentTVShows]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$VAR[DefWidgetRight2ContentEmbyTV]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + StringCompare(Container(300).ListItem.Label,Movies)">$VAR[DefWidgetRight2ContentMovie]</value>
@@ -1452,6 +1497,9 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">$VAR[DefWidgetRight2ContentMovie]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">$VAR[DefWidgetRight2ContentLiveTV]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$VAR[DefWidgetRight2ContentMusic]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">$VAR[DefWidgetRight2ContentWeather]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">$VAR[DefWidgetRight2ContentSettings]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">$VAR[DefWidgetRight2ContentPrograms]</value>
 		<value>$VAR[DefWidgetRight2ContentVideo]</value>
 	</variable>
 	<!-- Right Widget 3 Selection -->
