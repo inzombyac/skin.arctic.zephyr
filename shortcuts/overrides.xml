@@ -6,6 +6,9 @@
     <!-- Playlist -->
     <widgetPlaylists>True</widgetPlaylists>
 
+	<!--Lazy TV-->
+	 <widget label="Lazy TV" condition="System.HasAddon(script.lazytv)" type="episodes" target="videos" path="special://profile/playlists/video/LazyTV.xsp" icon="special://skin/extras/icons/lazytv.png">Lazy TV</widget>
+	
 	<!--Advanced Launcher -->
 	 <widget label="Advanced Launcher" condition="System.HasAddon(plugin.program.advanced.launcher)" type="programs" target="videos" path="plugin://plugin.program.advanced.launcher/?default" icon="special://skin/extras/icons/xbox.png">Launchers</widget>
 	 		
