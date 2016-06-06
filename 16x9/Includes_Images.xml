@@ -118,6 +118,7 @@
 		<value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 	</variable>
 	<variable name="FanartImage">
+		<!-- <value condition="Container(4019).IsUpdating + Window.IsVisible(Home.xml)">common/null.png</value> -->
 		<value condition="Skin.HasSetting(osd.hidespoilers) + substring(Container.FolderPath,plugin://plugin.video.emby,left) + Substring(Container.FolderPath,nextup)">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="Skin.HasSetting(osd.hidespoilers) + substring(Container.FolderPath,plugin://plugin.video.emby,left) + Substring(Container.FolderPath,episode)">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="substring(Container.FolderPath,plugin://plugin.program.advanced.launcher/,left)">$INFO[ListItem.Icon]</value>
@@ -353,8 +354,8 @@
         <value>$INFO[Window(weather).Property(Day6.OutlookIcon)]</value>
 	</variable>
 	<variable name="EmbyMainWidgetIcon">
-		<value condition="Container(300).Scrolling | [Container(4019).IsUpdating + System.IdleTime(0)]">common/null.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">special://skin/extras/backgrounds/jarvis.png</value>
+		<value condition="Container(4019).IsUpdating + System.IdleTime(0)">common/null.png</value>
 		<value condition="Container(4019).Content(episodes) + [!Skin.HasSetting(osd.hidespoilers) | [Skin.HasSetting(osd.hidespoilers) + stringcompare(Container(4019).ListItem.Overlay,OverlayWatched.png)]]">$INFO[Container(4019).ListItem.Icon]</value>
 		<value condition="Skin.HasSetting(osd.hidespoilers) + Container(4019).Content(episodes) + [stringcompare(Container(4019).ListItem.Overlay,OverlayUnWatched.png) | Container(4019).ListItem.IsResumable]">$INFO[Container(4019).ListItem.Art(tvshow.landscape)]</value>
 		<value condition="Skin.HasSetting(osd.hidespoilers) + Container(4019).Content(episodes) + ![stringcompare(Container(4019).ListItem.Overlay,OverlayUnWatched.png) + Container(4019).ListItem.IsResumable]">$INFO[Container(4019).ListItem.Icon]</value>
@@ -379,15 +380,10 @@
 	</variable>
 	<variable name="EmbyWidget3Icon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
-		<value condition="!Skin.HasSetting(osd.hidespoilers) + StringCompare(Container(300).ListItem.Property(type),tvshows) + [IsEmpty(Window(Home).Property(UseAltWidget)) | Skin.HasSetting(menu.usealtwidgets)]">$VAR[ThumbImage]</value>
+		<value condition="!Skin.HasSetting(osd.hidespoilers) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
-	</variable>
-	<variable name="EmbyWidget3Aspect">
-		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">keep</value>
-		<value>scale</value>
-	</variable>
-		
+	</variable>	
 	<variable name="EmbySubMenuImage">
 		<value condition="Container(300).Scrolling">common/null.png</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos) + Substring(ListItem.Thumb, emby_diff)">special://skin/extras/backgrounds/video.jpg</value>

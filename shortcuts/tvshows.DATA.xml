@@ -6,7 +6,7 @@
         <label>31193</label>
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(1102)</action>
-		<thumb>special://skin/extras/backgrounds/tv.jpg</thumb>
+		<thumb>$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</thumb>
     </shortcut>
 	<shortcut>
         <defaultID>nextaired</defaultID>

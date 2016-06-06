@@ -7,8 +7,8 @@
             <include>Animation.FadeIn.Slide</include>
             <centerleft>50%</centerleft>
             <centertop>50%</centertop>
-            <width>1065</width>
-            <height>864</height>
+            <width>1550</width>
+            <height>914</height>
             <control type="image">
                 <description>background image</description>
                 <top>-8</top>
@@ -19,25 +19,43 @@
             </control>
             <control type="label" id="500">
                 <description>header label</description>
-                <posy>10</posy>
                 <left>22</left>
                 <right>22</right>
                 <font>SmallBold</font>
                 <align>left</align>
                 <textcolor>Black70</textcolor>
             </control>
+			<control type="label">
+                <description>header label</description>
+                <left>22</left>
+                <right>22</right>
+                <font>SmallBold</font>
+                <align>left</align>
+                <textcolor>Black70</textcolor>
+				<visible>IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<label>Loading Menu...</label>
+            </control>
+			<control type="label">
+                <description>Current Path</description>
+                <bottom>10</bottom>
+				<left>10</left>
+                <font>Tiny</font>
+                <align>left</align>
+                <textcolor>Black70</textcolor>
+				<label>$VAR[SkinShortcutPath]</label>
+            </control>
             <!-- Left List: Current Shortcuts -->
             <control type="list" id="211">
                 <description>Rules List Control</description>
                 <left>15</left>
-                <bottom>15</bottom>
-                <width>600</width>
+                <top>65</top>
+                <width>640</width>
                 <height>759</height>
                 <onup>211</onup>
                 <onleft>211</onleft>
                 <onright>9100</onright>
                 <ondown>211</ondown>
-                <itemlayout width="600" height="69">
+                <itemlayout width="640" height="69">
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -59,7 +77,7 @@
 						<visible>substring(ListItem.Icon,icons)</visible>
                     </control>
                 </itemlayout>
-                <focusedlayout width="600" height="69">
+                <focusedlayout width="640" height="69">
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -92,14 +110,118 @@
                     </control>
                 </focusedlayout>
             </control>
+			<!-- Testing -->
+			<control type="group" id="9876">
+				<height>759</height>
+				<onleft>9100</onleft>
+				<right>15</right>
+				<width>420</width>	
+				<control type="grouplist" >
+					<height>450</height>
+					<onleft>9100</onleft>
+					<visible>!IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+					<control type="label">
+						<description>header label</description>
+						<left>22</left>
+						<right>22</right>
+						<font>SmallBold</font>
+						<align>center</align>
+						<textcolor>Black70</textcolor>
+						<label>Widgets</label>
+					</control>
+					<!-- Main widget -->
+					 <control type="button" id="312" description="Main Widget">
+						<width>100%</width>
+						<height>66</height>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<include>DefDialogButtons</include>
+						<visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),weather) + !StringCompare(Container(211).ListItem.Property(defaultID),settings) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
+					</control>
+					<control type="button" id="8777" description="Right Widget1">
+						<label>Right Widget 1</label>
+						<width>100%</width>
+						<height>66</height>
+						<visible>!IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),weather) + !StringCompare(Container(211).ListItem.Property(defaultID),settings) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<include>DefDialogButtons</include>
+						<onclick>SetProperty(widgetID,right1)</onclick>
+						<onclick>SendClick(312)</onclick>
+					</control>
+					<control type="button" id="8778" description="Right Widget2">
+						<label>Right Widget 2</label>
+						<width>100%</width>
+						<height>66</height>
+						<visible>!IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),weather) + !StringCompare(Container(211).ListItem.Property(defaultID),settings) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<include>DefDialogButtons</include>
+						<onclick>SetProperty(widgetID,right2)</onclick>
+						<onclick>SendClick(312)</onclick>
+					</control>
+					<control type="button" id="8779" description="Right Widget3">
+						<label>Right Widget 3</label>
+						<width>100%</width>
+						<height>66</height>
+						<visible>!IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),weather) + !StringCompare(Container(211).ListItem.Property(defaultID),settings) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<include>DefDialogButtons</include>
+						<onclick>SetProperty(widgetID,right3)</onclick>
+						<onclick>SendClick(312)</onclick>
+					</control>
+				</control>
+				<control type="group">
+					<top>460</top>
+					<height>299</height>
+					<control type="label">
+						<description>header label</description>
+						<left>22</left>
+						<right>22</right>
+						<height>69</height>
+						<font>SmallBold</font>
+						<align>center</align>
+						<textcolor>Black70</textcolor>
+						<label>Background</label>
+						<visible>!IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
+					<control type="label">
+						<description>header label</description>
+						<left>22</left>
+						<right>22</right>
+						<height>69</height>
+						<font>SmallBold</font>
+						<align>center</align>
+						<textcolor>Black70</textcolor>
+						<label>Thumbnail</label>
+						<visible>!IsEmpty(Container(211).ListItem.Label) + !StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
+					<!-- background -->
+					<control type="image">
+						<top>69</top>
+						<height>220</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[Container(211).ListItem.Property(background)]</texture>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
+					<control type="image">
+						<top>69</top>
+						<height>220</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[Container(211).ListItem.Thumb]</texture>
+						<visible>!StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
+				</control>
+			</control>
             <!-- Right Buttons -->
             <control type="grouplist" id="9100">
                 <onleft>211</onleft>
-                <onright>111</onright>
+                <onright>312</onright>
                 <onup>9100</onup>
                 <ondown>9100</ondown>
-                <right>15</right>
-                <bottom>15</bottom>
+                <left>675</left>
+                <top>65</top>
                 <width>420</width>
                 <height>759</height>
                 <orientation>vertical</orientation>
@@ -122,44 +244,13 @@
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
-                <control type="button" id="312" description="Widget">
+               <!--  <control type="button" id="312" description="Widget">
                     <width>100%</width>
                     <height>66</height>
-                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                     <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
-                </control>
-				<control type="button" id="8777" description="Right Widget1">
-                    <label>Right Widget 1</label>
-					<width>100%</width>
-                    <height>66</height>
-                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-					<onclick>SetProperty(widgetID,2)</onclick>
-					<onclick>SendClick(312)</onclick>
-                </control>
-				<control type="button" id="8778" description="Right Widget2">
-                    <label>Right Widget 2</label>
-					<width>100%</width>
-                    <height>66</height>
-                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-					<onclick>SetProperty(widgetID,3)</onclick>
-					<onclick>SendClick(312)</onclick>
-                </control>
-				<control type="button" id="8779" description="Right Widget3">
-                    <label>Right Widget 3</label>
-					<width>100%</width>
-                    <height>66</height>
-                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-					<onclick>SetProperty(widgetID,4)</onclick>
-					<onclick>SendClick(312)</onclick>
-                </control>
+                </control> -->
                 <control type="button" id="310" description="Background">
                     <width>100%</width>
                     <height>66</height>
@@ -167,12 +258,14 @@
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
-                <control type="button" id="311" description="Browse for Thumb">
+                <control type="button" id="311" description="Select Icon">
                     <width>100%</width>
                     <height>66</height>
                     <label>31181</label>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
+					<visible>!IsEmpty(Container(211).ListItem.Label)</visible>
+					<visible>!stringcompare(Window.Property(groupname),mainmenu)</visible>
                 </control>
                 <control type="button" id="405" description="Set Submenu">
                     <width>100%</width>
@@ -181,7 +274,7 @@
                     <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!stringcompare(Container(211).ListItem.Label2,MovieHub) + !stringcompare(Container(211).ListItem.Label2,TVHub)</visible>
+                    <visible>!stringcompare(Container(211).ListItem.Label2,MovieHub) + !stringcompare(Container(211).ListItem.Label2,TVHub) + !IsEmpty(Container(211).ListItem.Label) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
                 </control>
                 <control type="button" id="9301" description="Set MovieHub">
                     <width>100%</width>
@@ -232,7 +325,6 @@
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!stringcompare(Window.Property(groupname),mainmenu)</visible>
                 </control>
             </control> 
         </control>

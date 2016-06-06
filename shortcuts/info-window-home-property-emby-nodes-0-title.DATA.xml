@@ -22,6 +22,7 @@
 		<label2>movies</label2>
         <label>Movie Hub</label>
         <icon>special://skin/extras/icons/film.png</icon>
+		<thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</thumb>
         <action>ActivateWindow(1101)</action>
 		<visible>StringCompare(Container(300).ListItem.Property(type),movies)</visible>
     </shortcut>
@@ -30,6 +31,7 @@
 		<label2>movies</label2>
         <label>Collections</label>
         <icon>special://skin/extras/icons/film.png</icon>
+		<thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall)]</thumb>
         <action>ActivateWindow(Videos,videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds)</action>
 		<visible>StringCompare(Container(300).ListItem.Property(type),movies) </visible>
     </shortcut>
@@ -38,6 +40,7 @@
 		<label2>tvshows</label2>
         <label>TV Hub</label>
         <icon>special://skin/extras/icons/tv.png</icon>
+		<thumb>$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</thumb>
         <action>ActivateWindow(1102)</action>
 		<visible>StringCompare(Container(300).ListItem.Property(type),tvshows)</visible>
     </shortcut>
@@ -46,6 +49,7 @@
 		<label2>tvshows</label2>
         <label>31220</label>
         <icon>special://skin/extras/icons/tv.png</icon>
+		<thumb>special://skin/extras/backgrounds/Airing.jpg</thumb>
 		<action>RunAddon(script.tv.show.next.aired)</action>
 		<visible>StringCompare(Container(300).ListItem.Property(type),tvshows)</visible>
     </shortcut>
