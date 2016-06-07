@@ -978,12 +978,10 @@
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="SkinShortcutPath">
-		<value condition="Control.HasFocus(9100)">$INFO[Container(211).ListItem.Label]</value>
-		<value condition="Control.HasFocus(211)">$INFO[Container(211).ListItem.Label]</value>
 		<value condition="Control.HasFocus(312)">$VAR[WidgetMainSelectionLabel]: $VAR[DefWidgetMainSelection]</value>
 		<value condition="Control.HasFocus(8777)">$VAR[WidgetRight1SelectionLabel]: $VAR[DefWidgetRight1Selection]</value>
 		<value condition="Control.HasFocus(8778)">$VAR[WidgetRight2SelectionLabel]: $VAR[DefWidgetRight2Selection]</value>
 		<value condition="Control.HasFocus(8779)">$VAR[WidgetRight3SelectionLabel]: $VAR[DefWidgetRight3Selection]</value>
-		<value>$INFO[ListItem.Label]</value>
+		<value>$INFO[Container(211).ListItem.Property(path)]</value>
 	</variable>
 </includes>
