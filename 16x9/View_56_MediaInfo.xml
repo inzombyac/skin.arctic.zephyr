@@ -494,58 +494,49 @@
 	</include>
 	<include name="56FanartView">
 		<control type="group">
-			<bottom>140</bottom>
+			<top>700</top>
 			<right>60</right>
 			<width>PosterW</width>
 			<height>PosterH</height>
-			<control type="image">
-				<bottom>5</bottom>
+			<!-- <control type="image">
 				<width>PosterW</width>
 				<height>48</height>
 				<aspectratio aligny="bottom">stretch</aspectratio>
 				<texture background="true">diffuse/shadowspot.png</texture>
 				<visible>[Skin.HasSetting(56media.showinfo)|Skin.HasSetting(views.56.showfanart)|Container.Content(episodes)]</visible>
-			</control>
+			</control> -->
 			<control type="image">
 				<left>10</left>
-				<top>10</top>
 				<right>10</right>
-				<bottom>30</bottom>
 				<fadetime>200</fadetime>
-				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 				<visible>Skin.HasSetting(views.56.showfanart)</visible>
 				<visible>!Container.Content(episodes)</visible>
 			</control>
-			<control type="image">
+<!-- 			<control type="image">
 				<left>10</left>
-				<top>10</top>
 				<right>10</right>
-				<bottom>30</bottom>
 				<fadetime>200</fadetime>
-				<aspectratio align="center" aligny="bottom" scalediffuse="false">scale</aspectratio>
+				<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
 				<visible>!Skin.HasSetting(views.56.showfanart)</visible>
-				<visible>!Container.Content(episodes)+Skin.HasSetting(56media.showinfo)</visible>
-			</control>
+				<visible>!Container.Content(episodes)+Skin.HasSetting(56media.showinfo)+!Container.Content(seasons)+!Container.Content(tvshows)</visible>
+			</control> -->
 			<control type="image">
 				<left>10</left>
-				<top>10</top>
 				<right>10</right>
-				<bottom>30</bottom>
 				<fadetime>200</fadetime>
-				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 				<visible>Skin.HasSetting(views.56.showfanart)</visible>
 				<visible>Container.Content(episodes)</visible>
 			</control>
 			<control type="image">
 				<left>10</left>
-				<top>10</top>
 				<right>10</right>
-				<bottom>30</bottom>
 				<fadetime>200</fadetime>
-				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$VAR[LandscapeImage]</texture>
 				<visible>!Skin.HasSetting(views.56.showfanart)</visible>
 				<!-- <visible>Container.Content(episodes)</visible> -->
@@ -567,7 +558,7 @@
 				<visible>[Container.Content(episodes) | Skin.HasSetting(56media.showinfo)]</visible>
 				<control type="image">
 					<right>20</right>
-					<centertop>40</centertop>
+					<top>5</top>
 					<width>40</width>
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
@@ -576,7 +567,7 @@
 				</control>
 				<control type="image">
 					<right>20</right>
-					<centertop>410</centertop>
+					<top>5</top>
 					<width>40</width>
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
@@ -588,7 +579,7 @@
 					<visible>!Skin.HasSetting(views.56.showfanart)</visible>
 					<control type="image">
 						<right>20</right>
-						<centertop>40</centertop>
+						<top>5</top>
 						<height>40</height>
 						<width>40</width>
 						<texture colordiffuse="EmbyGreen">common/circle.png</texture>
@@ -596,7 +587,7 @@
 					</control>
 					<control type="label">
 						<right>15</right>
-						<centertop>39</centertop>
+						<top>5</top>
 						<height>40</height>
 						<width>50</width>
 						<align>center</align>
