@@ -48,16 +48,19 @@
 					<posy>0</posy>
 					<width>455</width>
 					<height>1080</height>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
 					<control type="group" id="9090">
 						<height>70</height>
 						<ondown>3122</ondown>
+						<onup>9267</onup>
 						<control type="button" id="9091">
 							<description>Global Search</description>
 							<include>DefContextButton</include>
 							<align>left</align>
 							<label>137</label>
 							<onclick>RunScript(script.globalsearch)</onclick>
-							<onup>9000</onup>
+							<onup>9267</onup>
 							<ondown>3122</ondown>
 							<onright>300</onright>
 						</control>
@@ -164,11 +167,12 @@
 						<label>Log Off</label>
 						<align>left</align>
 					</control>				
-					<control type="button"  id="9266">
+					<control type="button"  id="9267">
 						<description>Exit XBMC button</description>
 						<include>DefContextButton</include>
 						<label>13012</label>
 						<onclick>Quit()</onclick>
+						<ondown>3110</ondown>
 						<visible>System.ShowExitButton</visible>
 						<align>left</align>
 					</control> 

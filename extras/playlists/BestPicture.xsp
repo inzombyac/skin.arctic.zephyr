@@ -2,7 +2,5 @@
 <smartplaylist type="movies">
     <name>Best Picture</name>
     <match>all</match>
-    <rule field="playlist" operator="is">Best1</rule>
-    <rule field="playlist" operator="is">Best2</rule>
-	<order direction="ascending">year</order>
+    <rule field="rating" operator="greaterthan"><value>7.0</value></rule>
 </smartplaylist>
