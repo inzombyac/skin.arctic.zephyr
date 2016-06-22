@@ -34,21 +34,13 @@
 				<left>SidePad</left>
 				<right>SidePad</right>
 				<top>120</top>
-				<ondown>4012</ondown>
-				<!-- <ondown condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + IntegerGreaterThan(Container(4017).NumItems,0)">4017</ondown>
-				<ondown condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</ondown> -->
-				<!-- <onup condition="IntegerGreaterThan(Container(302).NumItems,0)">SetFocus(302,0)</onup>
-				<onup condition="!IntegerGreaterThan(Container(302).NumItems,0)">3637</onup> -->
+				<ondown condition="Control.IsVisible(4016)">4016</ondown>
+				<ondown condition="!Control.IsVisible(4016) + Control.IsVisible(4017)">4017</ondown>
+				<ondown condition="!Control.IsVisible(4016) + !Control.IsVisible(4017)">4012</ondown>
 				<onup condition="Player.HasMedia">7788</onup>
 				<onup condition="!Player.HasMedia">9000</onup>
 				<onleft>300</onleft>
 				<onright>300</onright>
-				<onup>CancelAlarm(UpdateDelay,silent)</onup>
-				<onup>CancelAlarm(UpdateDelay,silent)</onup>
-				<ondown>CancelAlarm(UpdateDelay,silent)</ondown>
-				<onright>CancelAlarm(UpdateDelay,silent)</onright>
-				<onleft>CancelAlarm(UpdateDelay,silent)</onleft>
 				<orientation>horizontal</orientation>
 				<scrolltime>200</scrolltime>
 				<include>HomeEmbyContent</include>
@@ -200,9 +192,9 @@
 		<control type="panel" id="302">
 			<width>864</width>
 			<onup>4012</onup>
-			<onright condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onright>
-			<onright condition="!IntegerGreaterThan(Container(4016).NumItems,0) + IntegerGreaterThan(Container(4017).NumItems,0)">4017</onright>
-			<onright condition="!IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4017).NumItems,0)">4012</onright>
+			<onright condition="Control.IsVisible(4016)">4016</onright>
+			<onright condition="!Control.IsVisible(4016) + Control.IsVisible(4017)">4017</onright>
+			<onright condition="!Control.IsVisible(4016) + !Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
 			<left>SidePad</left>
 			<posy>840</posy>
 			<width>280</width>
@@ -262,178 +254,6 @@
 			</content>
 		</control>
 	</include>
-	<include name="EmbyBottomWidgetPanel">		
-		<control type="group">
-			<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-			<!-- Bottom tile 1-->
-			<control type="button" id="4013">
-				<onup>4012</onup>
-				<onright>4015</onright>
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<onclick>$VAR[EmbyBottomTileAction1]</onclick>
-			</control>
-			<control type="image">
-				<left>SidePad</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture background="true">$VAR[EmbyBottomTileImage1]</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>!Container(300).Scrolling</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<left>SidePad</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!Container(300).Scrolling</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="label">
-				<left>SidePad</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<align>center</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyBottomTileLabel1]</label>
-			</control>
-			<control type="image">
-				<left>76</left>
-				<width>288</width>
-				<posy>832</posy>
-				<height>224</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4013)</visible>
-			</control>
-			
-			<!-- Bottom tile 2-->
-			<control type="button" id="4015">
-				<onup>4012</onup>
-				<onleft>4013</onleft>
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<onright condition="!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos)">4014</onright>
-				<onright condition="StringCompare(Container(300).ListItem.Property(type),weather) | StringCompare(Container(300).ListItem.Property(type),photos)">4016</onright>
-				<onclick>$VAR[EmbyBottomTileAction2]</onclick>
-			</control>
-			<control type="image">
-				<left>368</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture background="true">$VAR[EmbyBottomTileImage2]</texture>
-				<aspectratio scalediffuse="true">scale</aspectratio>
-				<visible>!Container(300).Scrolling </visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<left>368</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!Container(300).Scrolling</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="label">
-				<left>368</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<align>center</align>
-				<height>40</height>
-				<font>Small</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyButton2Label]</label>
-			</control>
-			<control type="image">
-				<left>364</left>
-				<width>288</width>
-				<posy>832</posy>
-				<height>224</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4015)</visible>
-			</control>
-			
-			<!-- Bottom tile 3-->
-			<control type="button" id="4014">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<onup>4012</onup>
-				<onleft>4015</onleft>
-				<onright condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onright>
-				<onright condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4017</onright>
-				<onclick>$VAR[EmbyBottomTileAction3]</onclick>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>
-			</control>
-			<control type="image">
-				<left>656</left>
-				<posy>836</posy>
-				<width>280</width>
-				<height>180</height>
-				<texture background="true">$VAR[EmbyBottomTileImage3]</texture>
-				<aspectratio scalediffuse="false">scale</aspectratio>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>	
-				<visible>!Container(300).Scrolling</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<left>656</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<height>40</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>
-				<visible>!Container(300).Scrolling</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="label">
-				<left>656</left>
-				<posy>1016</posy>
-				<width>280</width>
-				<align>center</align>
-				<height>40</height>
-				<align>right</align>
-				<font>Small</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyButton3Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>
-			</control>
-			<control type="image">
-				<left>652</left>
-				<width>288</width>
-				<posy>832</posy>
-				<height>224</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4014)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),weather)+!StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos) + !StringCompare(Container(300).ListItem.Property(type),favourites)</visible>
-				<visible>!Container(300).Scrolling</visible>
-			</control>
-		</control>
-	</include>
 	<include name="EmbyMainWidgetContent">
 		<!--- Containers to test content-->
 		<control type="list" id="9003">
@@ -468,10 +288,8 @@
 			<left>78</left>
 			<width>1764</width>
 			<height>766</height>
-			<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-			<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
-			<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-			<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
+			<onup>300</onup>
+			
 			<include>EmbyHomeInfoActions</include>
 			<orientation>horizontal</orientation>
 			<scrolltime tween="quadratic">0</scrolltime>
@@ -500,11 +318,13 @@
 				<onfocus>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</onfocus>
 				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
 				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>302</ondown>
 				<onleft>4012</onleft>
-				<onright>4016</onright>
+				<onright condition="Control.IsVisible(4016)">4016</onright>
+				<onright condition="!Control.IsVisible(4016) + Control.IsVisible(4017)">4017</onright>
+				<onright condition="!Control.IsVisible(4016) + !Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
 				<include>EmbyHomeInfoActions</include>
@@ -665,11 +485,12 @@
 			<orientation>horizontal</orientation>
 			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
 			<scrolltime tween="quadratic">100</scrolltime>
-			<onup>SetFocus(300)</onup>
-			<ondown>SetFocus(300)</ondown>
-			<onright>SetFocus(300)</onright>
-			<onleft>SetFocus(300)</onleft>
-			<onfocus>SetFocus(300)</onfocus>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
 			<content limit="10" sortby="random">$VAR[DefWidgetMainContent]</content>
 			<include>EmbyHiddenItemLayout</include>
 			<visible>!StringCompare(Container(300).ListItem.Property(type),settings)+ !StringCompare(Container(300).ListItem.Property(type),weather)</visible>
@@ -687,10 +508,12 @@
 			<left>SidePad</left>
 			<width>1198</width>
 			<height>724</height>
-			<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-			<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+			<onup>300</onup>
+			
 			<ondown>302</ondown>
-			<onright>4016</onright>
+			<onright condition="Control.IsVisible(4016)">4016</onright>
+			<onright condition="!Control.IsVisible(4016) + Control.IsVisible(4017)">4017</onright>
+			<onright condition="!Control.IsVisible(4016) + !Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
 			<include>EmbyHomeInfoActions</include>
 			<orientation>horizontal</orientation>
 			<include>Animation.FadeIn</include>
@@ -744,11 +567,12 @@
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
-				<onright>4017</onright>
+				<onright condition="Control.IsVisible(4017)">4017</onright>
+				<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
@@ -761,31 +585,6 @@
 				<include>Animation.FadeOut</include>
 				<include>Animation.DelayFadeIn</include>
 			</control>
-			<!-- Use Right 2 widget when widget 1 is empty --> 
-			<!-- 
-			<control type="panel" id="4016">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),settings) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
-				<top>330</top>
-				<left>944</left>
-				<width>$PARAM[triple_widget_width]</width>
-				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
-				<ondown>4016</ondown>
-				<onleft>4012</onleft>
-				<onright>4018</onright>
-				<include>EmbyHomeInfoActions</include>
-				<preloaditems>6</preloaditems>
-				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
-					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
-				</include>
-				<content limit="10" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + !Container(40016).IsUpdating + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
-				<include>Animation.FadeOut</include>
-				<include>Animation.DelayFadeIn</include>
-			</control> -->
 			<!-- Music -->
 			<control type="panel" id="4016">
 				<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
@@ -793,11 +592,12 @@
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>670</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
-				<onright>4017</onright>
+				<onright condition="Control.IsVisible(4017)">4017</onright>
+				<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>9</preloaditems>
 				<orientation>vertical</orientation>
@@ -823,8 +623,8 @@
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
 				<include>EmbyHomeInfoActions</include>
@@ -847,11 +647,12 @@
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4016</ondown>
 				<onleft>4012</onleft>
-				<onright>4017</onright>
+				<onright condition="Control.IsVisible(4017)">4017</onright>
+				<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
@@ -996,12 +797,12 @@
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[triple_widget_width]</width>
 				<height>766</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>4</preloaditems>
 				<orientation>vertical</orientation>
@@ -1029,12 +830,12 @@
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>766</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>4</preloaditems>
 				<orientation>vertical</orientation>
@@ -1062,12 +863,12 @@
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>766</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
@@ -1094,12 +895,12 @@
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[triple_widget_width]</width>
 				<height>766</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
@@ -1127,12 +928,12 @@
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>766</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
@@ -1160,12 +961,12 @@
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>766</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
@@ -1192,12 +993,12 @@
 				<left>$PARAM[widget_left_0]</left>
 				<width>$PARAM[triple_widget_width]</width>
 				<height>766</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
@@ -1223,12 +1024,12 @@
 				<left>$PARAM[widget_left_0]</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>766</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
@@ -1254,12 +1055,12 @@
 				<left>$PARAM[widget_left_0]</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>766</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
@@ -1286,12 +1087,11 @@
 				<left>$PARAM[widget_left_2]</left>
 				<width>759</width>
 				<height>670</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4017</ondown>
-				<onleft condition="IntegerGreaterThan(Container(4016).NumItems,0)">4016</onleft>
-				<onleft condition="!IntegerGreaterThan(Container(4016).NumItems,0)">4012</onleft>
-				<onright>4017</onright>
+				<onleft condition="Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4016)">4012</onleft>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>9</preloaditems>
 				<orientation>vertical</orientation>
@@ -1455,11 +1255,13 @@
 				<left>2059</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4018</ondown>
-				<onleft>4017</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
@@ -1486,11 +1288,13 @@
 				<left>1807</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4018</ondown>
-				<onleft>4017</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
@@ -1517,11 +1321,13 @@
 				<left>1759</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4018</ondown>
-				<onleft>4017</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
@@ -1548,11 +1354,13 @@
 				<left>1507</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4018</ondown>
-				<onleft>4017</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
@@ -1576,11 +1384,13 @@
 				<left>1195</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4018</ondown>
-				<onleft>4017</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
@@ -1603,11 +1413,13 @@
 				<left>1447</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4018</ondown>
-				<onleft>4017</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
@@ -1630,11 +1442,13 @@
 				<left>1699</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
-				<onup condition="IntegerGreaterThan(Container(300).NumItems,0)">300</onup>
-				<onup condition="!IntegerGreaterThan(Container(300).NumItems,0)">3637</onup>
+				<onup>300</onup>
+				
 				<ondown>4018</ondown>
-				<onleft>4017</onleft>
-				<onright>4018</onright>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
 				<include>EmbyHomeInfoActions</include>
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
