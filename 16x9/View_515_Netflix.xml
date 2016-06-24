@@ -6,7 +6,8 @@
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(515)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<control type="image">
+			<!-- MAD - Fake Logos -->
+			<!-- <control type="image">
 				<left>85</left>
 				<top>25</top>
 				<width>387</width>
@@ -16,7 +17,6 @@
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
 			</control>
-			<!-- MAD - Fake Logos -->
 			<control type="textbox">
 				<left>85</left>
 				<top>25</top>
@@ -106,14 +106,14 @@
 				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
 				<visible>[Container.Content(movies) | Container.Content(sets) + IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
 				<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,u,Left) | SubString(ListItem.Title,v,Left) | SubString(ListItem.Title,w,Left) | SubString(ListItem.Title,x,Left) | SubString(ListItem.Title,y,Left) | SubString(ListItem.Title,z,Left)]</visible>
-			</control>
+			</control> -->
 			<!--MAD - End of Fake Logo -->
 			<!-- New Plot Info -->
 			<control type="group">
 				<left>70</left>
-				<top>180</top>
+				<top>150</top>
 				<width>1050</width>
-				<height>130</height>
+				<height>160</height>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
 				<control type="grouplist">

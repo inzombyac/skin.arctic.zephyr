@@ -670,7 +670,7 @@ msgid "  -- Show Genre Colours"
 msgstr ""
 
 msgctxt "#31741"
-msgid "Banner Plex"
+msgid "Banner"
 msgstr ""
 
 msgctxt "#31742"

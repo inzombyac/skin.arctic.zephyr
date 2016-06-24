@@ -8,7 +8,7 @@
     <view id="Big list" value="52" languageid="537" type="all" />
 	<view id="Wide" value="54" languageid="539" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
     <view id="Cards" value="58" languageid="31198" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
-	<view id="Banner Plex" value="59" languageid="31741" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
+	<view id="Banner" value="59" languageid="31741" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
     <view id="Thumbnail" value="500" languageid="21371" type="all" />
     <view id="Poster Row" value="513" languageid="31756" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
     <view id="Poster Shift" value="514" languageid="31757" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,programs" />

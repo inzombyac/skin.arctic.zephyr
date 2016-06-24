@@ -651,8 +651,8 @@ msgid "  -- Show Genre Colours"
 msgstr "  -- Toon Genre Kleuren"
 
 msgctxt "#31741"
-msgid "Banner Plex"
-msgstr "Banner Plex"
+msgid "Banner"
+msgstr "Banner"
 
 msgctxt "#31742"
 msgid "Gallery"

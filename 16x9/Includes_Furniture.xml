@@ -703,7 +703,6 @@
 	<include name="Furniture_Logo">
 		<control type="group">
 			<visible>Skin.HasSetting(furniture.logo)</visible>
-			<visible>!Control.HasFocus(515)</visible>
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1622</left>
@@ -895,6 +894,7 @@
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(musicvideos) + !IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes) + !IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31241]</value>		
+		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + StringCompare(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + StringCompare(Container.FolderPath,videodb://tvshows/titles/)">$LOCALIZE[20343]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + SubString(Container.FolderPath,videodb://movies/,Left)">$INFO[Container.FolderName]</value>
@@ -934,6 +934,7 @@
 	</variable>
 	<variable name="SubHeaderLabel">
 		<value condition="Window.IsVisible(home)">$VAR[EmbyFooterLabel]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Year]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$INFO[Window.Property(Filter_Label),, ]$INFO[Window.Property(TotalItems),, $LOCALIZE[31101]]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31242]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(movies)">$INFO[ListItem.TagLine]</value>
@@ -954,7 +955,6 @@
 			<top>40</top>
 			<left>SidePad</left>
 			<visible>!ControlGroup(303).HasFocus()</visible>
-			<visible>!Control.HasFocus(515)</visible>
 			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
 			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
