@@ -328,7 +328,7 @@
 		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
-		<value condition="Skin.HasSetting(debug.mode)">$VAR[DefEmbyNodeRandomAction]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Window(Home).Property(emby.nodes.0.recent.image)]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->
@@ -979,7 +979,8 @@
 	</variable>
 	<variable name="SkinShortcutPath">
 		<value condition="Control.HasFocus(312)">$VAR[WidgetMainSelectionLabel]: $VAR[DefWidgetMainSelection]</value>
-		<value condition="Control.HasFocus(310)">$VAR[SkinShortcutsSubMenuThumb]</value>
+		<value condition="Control.HasFocus(310) + !StringCompare(Window.Property(groupname),mainmenu)">$VAR[SkinShortcutsSubMenuThumb]</value>
+		<value condition="Control.HasFocus(310)">$INFO[Container(211).ListItem.Property(background)]</value>
 		<value condition="Control.HasFocus(8777)">$VAR[WidgetRight1SelectionLabel]: $VAR[DefWidgetRight1Selection]</value>
 		<value condition="Control.HasFocus(8778)">$VAR[WidgetRight2SelectionLabel]: $VAR[DefWidgetRight2Selection]</value>
 		<value condition="Control.HasFocus(8779)">$VAR[WidgetRight3SelectionLabel]: $VAR[DefWidgetRight3Selection]</value>
