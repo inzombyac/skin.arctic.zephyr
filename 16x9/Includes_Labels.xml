@@ -328,7 +328,7 @@
 		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Window(Home).Property(emby.nodes.0.recent.image)]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Window(Home).Property(playlist.0.label)]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->

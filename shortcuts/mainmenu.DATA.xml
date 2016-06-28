@@ -21,7 +21,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.0.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]z</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-1-title</defaultID>
