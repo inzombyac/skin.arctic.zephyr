@@ -381,6 +381,7 @@
 	<variable name="EmbyWidget3Icon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
 		<value condition="!Skin.HasSetting(osd.hidespoilers) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
+		<value condition="StringCompare(Container(4018).ListItem.Property(DBTYPE),episode)">$INFO[ListItem.Icon]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
 	</variable>	

@@ -109,10 +109,14 @@
 		<include>EmbyFooter</include>
 		<!-- Widget Info -->
 		<control type="group">
-			<animation effect="slide" start="0" end="-240,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[IntegerGreaterThan(Container(4016).NumItems,3)+IntegerGreaterThan(Container(4017).NumItems,2)]" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-240,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[!IntegerGreaterThan(Container(4016).NumItems,3)+IntegerGreaterThan(Container(4017).NumItems,2)]" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-240,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[IntegerGreaterThan(Container(4016).NumItems,3)+!IntegerGreaterThan(Container(4017).NumItems,2)]" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-240,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + [IntegerGreaterThan(Container(4016).NumItems,0)+IntegerGreaterThan(Container(4017).NumItems,2)]" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [IntegerGreaterThan(Container(4016).NumItems,3)+IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4016).NumItems,3) + IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[IntegerGreaterThan(Container(4016).NumItems,3)+!IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4016).NumItems,3) + !IntegerGreaterThan(Container(4017).NumItems,2) + IntegerGreaterThan(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4016).NumItems,3) + !IntegerGreaterThan(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<!-- <animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + [IntegerGreaterThan(Container(4016).NumItems,0)+IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation> -->
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-300,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017)] + StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
@@ -546,19 +550,7 @@
 				<include>Animation.FadeOut</include>
 			</control>
 			<control type="scrollbar" id="40160">
-				<left>1550</left>
-				<top>330</top>
-				<height>728</height>
-				<width>8</width>
-				<onup>4016</onup>
-				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-				<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-				<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4016) + !Container(4016).Scrolling">Conditional</animation>
-				<visible>Control.HasFocus(4016) + IntegerGreaterThan(Container(40016).NumItems,3)</visible>
-			</control>
-			 <control type="scrollbar" id="40160">
-                <left>1550</left>
+                <left>1552</left>
 				<top>330</top>
 				<height>728</height>
 				<width>8</width>
@@ -566,7 +558,19 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4016) + !Control.HasFocus(4016) + IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>Control.IsVisible(4016) + !StringCompare(Container(300).ListItem.Property(type),music)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4016)">Conditional</animation>
+            </control>
+			<control type="scrollbar" id="40160">
+                <left>1552</left>
+				<top>330</top>
+				<height>632</height>
+				<width>8</width>
+				<onup>4016</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4016) + StringCompare(Container(300).ListItem.Property(type),music)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4016)">Conditional</animation>
             </control>
 			<!-- Use Right 2 widget when widget 1 is empty --> 
@@ -719,12 +723,17 @@
 		<param name="triple_widget_width" default="930"/>
 		<param name="double_widget_width" default="620"/>
 		<param name="single_widget_width" default="310"/>
-		<param name="widget_left_0" default="944"/>
-		<param name="widget_left_1" default="1250"/>
-		<param name="widget_left_2" default="1560"/>
-		<param name="widget_label_left_0" default="954"/>
-		<param name="widget_label_left_1" default="1260"/>
-		<param name="widget_label_left_2" default="1570"/>
+		<param name="widget_left_0" default="954"/>
+		<param name="widget_left_1" default="1275"/>
+		<param name="widget_left_2" default="1573"/>
+		<param name="widget_label_left_0" default="964"/>
+		<param name="widget_label_left_1" default="1285"/>
+		<param name="widget_label_left_2" default="1583"/>
+		<param name="scroll_left_0" default="1715"/>
+		<param name="scroll_left_1" default="2032"/>
+		<param name="scroll_left_2" default="2077"/>
+		<param name="scroll_left_3" default="2183"/>
+		<param name="scroll_left_4" default="2332"/>
 		<definition>
 			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 			<control type="label">
@@ -745,6 +754,7 @@
 				<visible>Control.IsVisible(4017)</visible>
 			</control>
 			<!-- Non-Music -->
+			<!-- Right 1: Single, Right 2: Double, Triple -->
 			<control type="label">
 				<left>$PARAM[widget_label_left_1]</left>
 				<top>290</top>
@@ -763,6 +773,26 @@
 				<include>Animation.FadeOut</include>
 				<visible>Control.IsVisible(4017)</visible>
 			</control>
+			<!-- Right 1: Single, Right 2: Single -->
+			<control type="label">
+				<left>$PARAM[widget_label_left_1]</left>
+				<top>290</top>
+				<width>$PARAM[single_widget_width]</width>
+				<align>left</align>
+				<height>40</height>
+				<font>Small</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyHomeWidget2Label]</label>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<visible>Control.IsVisible(4017)</visible>
+			</control>
+			<!-- Right 1: Double, Right 2: Double, Triple -->
 			<control type="label">
 				<left>$PARAM[widget_label_left_2]</left>
 				<top>290</top>
@@ -781,6 +811,7 @@
 				<include>Animation.FadeOut</include>
 				<visible>Control.IsVisible(4017)</visible>
 			</control>
+			<!-- Right 1: Double, Right 2: Single -->
 			<control type="label">
 				<left>$PARAM[widget_label_left_2]</left>
 				<top>290</top>
@@ -799,6 +830,7 @@
 				<include>Animation.FadeOut</include>
 				<visible>Control.IsVisible(4017)</visible>
 			</control>
+			<!-- Right 1: None, Right 2: Single, Double, Triple -->
 			<control type="label">
 				<left>$PARAM[widget_label_left_0]</left>
 				<top>290</top>
@@ -818,21 +850,23 @@
 				<visible>Control.IsVisible(4017)</visible>
 			</control>
 			<!-- Scrollbars -->
+			<!-- Right 1: Double, Right 2: Triple -->
+			 <control type="scrollbar" id="40170">
+                <left>$PARAM[scroll_left_4]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4017) + IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,6)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+            </control>
 			<!-- Right 1: Double, Right 2: Double -->
-			<control type="scrollbar" id="40170">
-				<left>2060</left>
-				<top>330</top>
-				<height>728</height>
-				<width>8</width>
-				<onup>4017</onup>
-				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-				<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-				<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017) + !Container(4017).Scrolling">Conditional</animation>
-				<visible>Control.HasFocus(4017) + IntegerGreaterThan(Container(40017).NumItems,4) + IntegerGreaterThan(Container(40016).NumItems,3)</visible>
-			</control>
 			 <control type="scrollbar" id="40170">
-                <left>2060</left>
+                <left>$PARAM[scroll_left_2]</left>
 				<top>330</top>
 				<height>728</height>
 				<width>8</width>
@@ -840,24 +874,13 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4017) + !Control.HasFocus(4017) + IntegerGreaterThan(Container(40017).NumItems,4) + IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>Control.IsVisible(4017) + IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,6)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
             </control>
-			<!-- Right 1: Single, Right 2: Double -->
-			<control type="scrollbar" id="40170">
-				<left>2005</left>
-				<top>330</top>
-				<height>728</height>
-				<width>8</width>
-				<onup>4017</onup>
-				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-				<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-				<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017) + !Container(4017).Scrolling">Conditional</animation>
-				<visible>Control.HasFocus(4017) + IntegerGreaterThan(Container(40017).NumItems,4) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40016).NumItems,0)</visible>
-			</control>
+			<!-- Right 1: Single, Right 2: Triple -->
 			 <control type="scrollbar" id="40170">
-                <left>2005</left>
+                <left>$PARAM[scroll_left_1]</left>
 				<top>330</top>
 				<height>728</height>
 				<width>8</width>
@@ -865,24 +888,13 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4017) + !Control.HasFocus(4017) + IntegerGreaterThan(Container(40017).NumItems,4) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40016).NumItems,0)</visible>
+				<visible>Control.IsVisible(4017) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40016).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
             </control>
-			<!-- Right 1: None, Right 2: Double -->
-			<control type="scrollbar" id="40170">
-				<left>1695</left>
-				<top>330</top>
-				<height>728</height>
-				<width>8</width>
-				<onup>4017</onup>
-				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-				<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-				<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017) + !Container(4017).Scrolling">Conditional</animation>
-				<visible>Control.HasFocus(4017) + IntegerGreaterThan(Container(40017).NumItems,4) + !IntegerGreaterThan(Container(40016).NumItems,0)</visible>
-			</control>
+			<!-- Right 1: None, Right 2: Triple -->
 			 <control type="scrollbar" id="40170">
-                <left>1695</left>
+                <left>$PARAM[scroll_left_0]</left>
 				<top>330</top>
 				<height>728</height>
 				<width>8</width>
@@ -890,8 +902,23 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4017) + !Control.HasFocus(4017) + IntegerGreaterThan(Container(40017).NumItems,4) + !IntegerGreaterThan(Container(40016).NumItems,0)</visible>
+				<visible>Control.IsVisible(4017) + !IntegerGreaterThan(Container(40016).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+            </control>
+			<!-- Music -->
+			 <control type="scrollbar" id="40170">
+                <left>$PARAM[scroll_left_3]</left>
+				<top>330</top>
+				<height>632</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4017)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
+				<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
             </control>
 			<!-- Widgets -->
 			<!-- Right 1: Double, Right 2: Triple -->
@@ -1049,7 +1076,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2) + !IntegerGreaterThan(Container(40017).NumItems,4)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -1215,14 +1242,50 @@
 		</definition>
 	</include>
 	<include name="EmbyRightWidgetPanel3">
+		<param name="quadruple_widget_width" default="1240"/>
+		<param name="triple_widget_width" default="930"/>
 		<param name="double_widget_width" default="620"/>
 		<param name="single_widget_width" default="310"/>
+		<param name="widget_left_0" default="1742"/>
+		<param name="widget_left_1" default="2057"/>
+		<param name="widget_left_2" default="1802"/>
+		<param name="widget_left_3" default="2095"/>
+		<param name="widget_left_4" default="1477"/>
+		<param name="widget_left_5" default="1220"/>
+		<param name="widget_left_6" default="1477"/>
+		<param name="widget_left_7" default="1545"/>
+		<param name="widget_left_8" default="1846"/>
+		<param name="widget_left_9" default="1276"/>
+		<param name="widget_left_10" default="1586"/>
+		<param name="widget_left_11" default="954"/>
+		<param name="widget_label_left_0" default="1752"/>
+		<param name="widget_label_left_1" default="2067"/>
+		<param name="widget_label_left_2" default="1812"/>
+		<param name="widget_label_left_3" default="2105"/>
+		<param name="widget_label_left_4" default="1487"/>
+		<param name="widget_label_left_5" default="1230"/>
+		<param name="widget_label_left_6" default="1487"/>
+		<param name="widget_label_left_7" default="1555"/>
+		<param name="widget_label_left_8" default="1856"/>
+		<param name="widget_label_left_9" default="1286"/>
+		<param name="widget_label_left_10" default="1596"/>
+		<param name="widget_label_left_11" default="964"/>
+		<param name="scroll_left_0" default="2057"/>
+		<param name="scroll_left_1" default="2366"/>
+		<param name="scroll_left_2" default="2412"/>
+		<param name="scroll_left_3" default="2403"/>
+		<param name="scroll_left_4" default="2093"/>
+		<param name="scroll_left_5" default="2132"/>
+		<param name="scroll_left_6" default="2093"/>
+		<param name="scroll_left_7" default="2157"/>
+		<param name="scroll_left_8" default="2459"/>
+		<param name="scroll_left_9" default="2191"/>
+		<param name="scroll_left_10" default="2199"/>
 		<definition>
 			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 			<!-- Right 1: Double / Right 2: Double / Right 3: Single-->
 			<control type="label">
-				<!-- <left>1966</left> -->
-				<left>2082</left>
+				<left>$PARAM[widget_label_left_3]</left>
 				<top>290</top>
 				<width>$PARAM[double_widget_width]</width>
 				<align>left</align>
@@ -1231,25 +1294,24 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3)+IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>Control.IsVisible(4018)</visible>
 			</control>
-			<!-- Right 1: Double / Right 2: Single / Right 3: Double-->
+			<!-- Right 1: Double / Right 2: Single / Right 3: Single-->
 			<control type="label">
-				<!-- <left>1714</left> -->
-				<left>1820</left>
+				<left>$PARAM[widget_label_left_8]</left>
 				<top>290</top>
-				<width>$PARAM[double_widget_width]</width>
+				<width>$PARAM[single_widget_width]</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>[IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2)]</visible>
+				<visible>[IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)]</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1257,7 +1319,7 @@
 			</control>
 			<!-- Right 1: Single / Right 2: Triple / Right 3: Single-->
 			<control type="label">
-				<left>2022</left>
+				<left>$PARAM[widget_label_left_1]</left>
 				<top>290</top>
 				<width>$PARAM[single_widget_width]</width>
 				<align>left</align>
@@ -1274,8 +1336,7 @@
 			</control>
 			<!-- Right 1: Single / Right 2: Double / Right 3: Double-->
 			<control type="label">
-				<!-- <left>1714</left> -->
-				<left>1772</left>
+				<left>$PARAM[widget_label_left_2]</left>
 				<top>290</top>
 				<width>$PARAM[double_widget_width]</width>
 				<align>left</align>
@@ -1292,8 +1353,7 @@
 			</control>
 			<!-- Right 1: Single / Right 2: Single / Right 3: Double-->
 			<control type="label">
-				<!-- <left>1462</left> -->
-				<left>1510</left>
+				<left>$PARAM[widget_label_left_7]</left>
 				<top>290</top>
 				<width>$PARAM[double_widget_width]</width>
 				<align>left</align>
@@ -1302,16 +1362,15 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0)+!IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>Control.IsVisible(4018)</visible>
 			</control>
-			<!-- Right 1: None / Right 2: Triple / Right 3: Single-->
+			<!-- Right 1: None / Right 2: Triple / Right 3: Single/Double-->
 			<control type="label">
-				<!-- <left>1462</left> -->
-				<left>1719</left>
+				<left>$PARAM[widget_label_left_0]</left>
 				<top>290</top>
 				<width>$PARAM[single_widget_width]</width>
 				<align>left</align>
@@ -1328,8 +1387,7 @@
 			</control>
 			<!-- Right 1: None / Right 2: Double / Right 3: Double-->
 			<control type="label">
-				<!-- <left>1462</left> -->
-				<left>1457</left>
+				<left>$PARAM[widget_label_left_4]</left>
 				<top>290</top>
 				<width>$PARAM[double_widget_width]</width>
 				<align>left</align>
@@ -1346,10 +1404,9 @@
 			</control>
 			<!-- Right 1: None / Right 2: Single / Right 3: Double-->
 			<control type="label">
-				<!-- <left>1462</left> -->
-				<left>1205</left>
+				<left>$PARAM[widget_label_left_5]</left>
 				<top>290</top>
-				<width>$PARAM[double_widget_width]</width>
+				<width>$PARAM[triple_widget_width]</width>
 				<align>left</align>
 				<height>40</height>
 				<font>Small</font>
@@ -1362,21 +1419,61 @@
 				<include>Animation.FadeOut</include>
 				<visible>Control.IsVisible(4018)</visible>
 			</control>
-			<!-- Scrollbars -->
-			<!--<control type="scrollbar" id="40180">
-				<right>10</right>
-				<top>330</top>
-				<height>728</height>
-				<width>8</width>
-				<onup>4017</onup>
-				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-				<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-				<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018) + !Container(4018).Scrolling">Conditional</animation>
-				<visible>Control.HasFocus(4018) + IntegerGreaterThan(Container(40018).NumItems,3)</visible>
+			<!-- Right 1: Double / Right 2: None / Right 3: Double-->
+			<control type="label">
+				<left>$PARAM[widget_label_left_10]</left>
+				<top>290</top>
+				<width>$PARAM[triple_widget_width]</width>
+				<align>left</align>
+				<height>40</height>
+				<font>Small</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyHomeWidget3Label]</label>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
+				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeOut</include>
+				<visible>Control.IsVisible(4016)</visible>
 			</control>
+			<!-- Right 1: Single / Right 2: None / Right 3: Triple-->
+			<control type="label">
+				<left>$PARAM[widget_label_left_9]</left>
+				<top>290</top>
+				<width>$PARAM[triple_widget_width]</width>
+				<align>left</align>
+				<height>40</height>
+				<font>Small</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyHomeWidget3Label]</label>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
+				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeOut</include>
+				<visible>Control.IsVisible(4016)</visible>
+			</control>
+			<!-- Right 1: None / Right 2: None / Right 3: Quad -->
+			<control type="label">
+				<left>$PARAM[widget_label_left_11]</left>
+				<top>290</top>
+				<width>$PARAM[quadruple_widget_width]</width>
+				<align>left</align>
+				<height>40</height>
+				<font>Small</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyHomeWidget3Label]</label>
+				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
+				<include>Animation.DelayFadeIn</include>
+				<include>Animation.FadeOut</include>
+				<visible>Control.IsVisible(4018)</visible>
+			</control>
+			<!-- Scrollbars -->
+			<!-- Right 1: Double / Right 2: Double / Right 3: Single-->
 			 <control type="scrollbar" id="40180">
-               <right>10</right>
+				<left>$PARAM[scroll_left_3]</left>
 				<top>330</top>
 				<height>728</height>
 				<width>8</width>
@@ -1384,9 +1481,126 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + !Control.HasFocus(4018) + IntegerGreaterThan(Container(40018).NumItems,3)</visible>
+				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
-            </control>-->
+            </control>
+			<!-- Right 1: Double / Right 2: Single / Right 3: Double-->
+			 <control type="scrollbar" id="40180">
+				<left>$PARAM[scroll_left_8]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
+            </control>
+			<!-- Right 1: Single / Right 2: Triple / Right 3: Single-->
+			 <control type="scrollbar" id="40180">
+				<left>$PARAM[scroll_left_1]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
+            </control>
+			<!-- Right 1: Single / Right 2: Double / Right 3: Double-->
+			 <control type="scrollbar" id="40180">
+				<left>$PARAM[scroll_left_2]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,4) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
+            </control>
+			<!-- Right 1: Single / Right 2: Single / Right 3: Double-->
+			 <control type="scrollbar" id="40180">
+				<left>$PARAM[scroll_left_7]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
+            </control>
+			<!-- Right 1: None / Right 2: Triple / Right 3: Single-->
+			 <control type="scrollbar" id="40180">
+				<left>$PARAM[scroll_left_0]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4018) + !IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
+            </control>
+			<!-- Right 1: None / Right 2: Double / Right 3: Double-->
+			 <control type="scrollbar" id="40180">
+				<left>$PARAM[scroll_left_4]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4018) + !IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,4) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
+            </control>
+			<!-- Right 1: None / Right 2: Double / Right 3: Double-->
+			 <control type="scrollbar" id="40180">
+				<left>$PARAM[scroll_left_5]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4018) + !IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
+            </control>
+			<!-- Right 1: Double / Right 2: None / Right 3: Double-->
+			 <control type="scrollbar" id="40180">
+				<left>$PARAM[scroll_left_10]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
+            </control>
+			<!-- Right 1: Single / Right 2: None / Right 3: Triple-->
+			 <control type="scrollbar" id="40180">
+				<left>$PARAM[scroll_left_9]</left>
+				<top>330</top>
+				<height>728</height>
+				<width>8</width>
+				<onup>4017</onup>
+                <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+                <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+                <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
+            </control>
 			<!-- Widgets -->
 			<!-- Right 1: Double / Right 2: Double / Right 3: Single-->
 			<control type="panel" id="4018">
@@ -1395,8 +1609,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
 				<top>330</top>
-				<!-- <left>2155</left> -->
-				<left>2074</left>
+				<left>$PARAM[widget_left_3]</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
 				<onup>300</onup>
@@ -1428,9 +1641,8 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
 				<top>330</top>
-				<!-- <left>1855</left> -->
-				<left>1817</left>
-				<width>$PARAM[single_widget_width]</width>
+				<left>$PARAM[widget_left_8]</left>
+				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup>300</onup>
 				<ondown>4018</ondown>
@@ -1461,7 +1673,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
 				<top>330</top>
-				<left>2014</left>
+				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
 				<onup>300</onup>
@@ -1479,23 +1691,21 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>[!IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,4)]</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
 				<visible>!Container(300).Scrolling</visible>
-				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 				<visible>Control.IsVisible(4016) + Control.IsVisible(4017)</visible>
 			</control>
-			<!-- Right 1: Single / Right 2: Double / Right 3: Single-->
+			<!-- Right 1: Single / Right 2: Double / Right 3: Double/Single-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
 				<top>330</top>
-				<!-- <left>1855</left> -->
-				<left>1759</left>
-				<width>$PARAM[single_widget_width]</width>
+				<left>$PARAM[widget_left_2]</left>
+				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup>300</onup>
 				<ondown>4018</ondown>
@@ -1512,23 +1722,21 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>[!IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,4)]</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2) + !IntegerGreaterThan(Container(40017).NumItems,4)</visible>
 				<visible>!Container(300).Scrolling</visible>
-				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 				<visible>Control.IsVisible(4016) + Control.IsVisible(4017)</visible>
 			</control>
-			<!-- Right 1: Single / Right 2: Single / Right 3: Single-->
+			<!-- Right 1: Single / Right 2: Single / Right 3: Triple-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
 				<top>330</top>
-				<!-- <left>1555</left> -->
-				<left>1507</left>
-				<width>$PARAM[single_widget_width]</width>
+				<left>$PARAM[widget_left_7]</left>
+				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup>300</onup>
 				<ondown>4018</ondown>
@@ -1545,8 +1753,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
 				<visible>Control.IsVisible(4016) + Control.IsVisible(4017)</visible>
 			</control>
 			<!-- Right 1: None / Right 2: Single / Right 3: Double-->
@@ -1556,9 +1763,8 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
 				<top>330</top>
-				<!-- <left>1555</left> -->
-				<left>1195</left>
-				<width>$PARAM[double_widget_width]</width>
+				<left>$PARAM[widget_left_5]</left>
+				<width>$PARAM[triple_widget_width]</width>
 				<height>765</height>
 				<onup>300</onup>
 				<ondown>4018</ondown>
@@ -1585,8 +1791,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
 				<top>330</top>
-				<!-- <left>1555</left> -->
-				<left>1447</left>
+				<left>$PARAM[widget_left_4]</left>
 				<width>$PARAM[double_widget_width]</width>
 				<height>765</height>
 				<onup>300</onup>
@@ -1614,8 +1819,7 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
 				<top>330</top>
-				<!-- <left>1555</left> -->
-				<left>1709</left>
+				<left>$PARAM[widget_left_0]</left>
 				<width>$PARAM[single_widget_width]</width>
 				<height>765</height>
 				<onup>300</onup>
@@ -1635,6 +1839,90 @@
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
 				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
 				<visible>Control.IsVisible(4017)</visible>
+			</control>
+			<!-- Right 1: Double / Right 2: None / Right 3: Double-->
+			<control type="panel" id="4018">
+				<description>Widget</description>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<top>330</top>
+				<left>$PARAM[widget_left_10]</left>
+				<width>$PARAM[double_widget_width]</width>
+				<height>765</height>
+				<onup>300</onup>
+				<ondown>4018</ondown>
+				<pagecontrol>40180</pagecontrol>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
+				<include>EmbyHomeInfoActions</include>
+				<preloaditems>6</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include name="EmbyWidget1Content">
+					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
+				</include>
+				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Control.IsVisible(4016)</visible>
+			</control>
+			<!-- Right 1: Single / Right 2: None / Right 3: Triple-->
+			<control type="panel" id="4018">
+				<description>Widget</description>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<top>330</top>
+				<left>$PARAM[widget_left_9]</left>
+				<width>$PARAM[triple_widget_width]</width>
+				<height>765</height>
+				<onup>300</onup>
+				<ondown>4018</ondown>
+				<pagecontrol>40180</pagecontrol>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
+				<include>EmbyHomeInfoActions</include>
+				<preloaditems>6</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include name="EmbyWidget1Content">
+					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
+				</include>
+				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
+				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Control.IsVisible(4016)</visible>
+			</control>
+			<!-- Right 1: None / Right 2: None / Right 3: Quad -->
+			<control type="panel" id="4018">
+				<description>Widget</description>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<top>330</top>
+				<left>$PARAM[widget_left_11]</left>
+				<width>$PARAM[quadruple_widget_width]</width>
+				<height>765</height>
+				<onup>300</onup>
+				<ondown>4018</ondown>
+				<pagecontrol>40180</pagecontrol>
+				<onleft condition="Control.IsVisible(4017)">4017</onleft>
+				<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+				<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+				<onright condition="Control.IsVisible(4018)">4018</onright>
+				<include>EmbyHomeInfoActions</include>
+				<preloaditems>6</preloaditems>
+				<orientation>vertical</orientation>
+				<scrolltime tween="quadratic">0</scrolltime>
+				<include name="EmbyWidget1Content">
+					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
+				</include>
+				<content limit="12" target="videos">$VAR[DefWidgetRight3Content]</content>
+				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>!Control.IsVisible(4016) + !Control.IsVisible(4017)</visible>
 			</control>
 		</definition>
 	</include>
