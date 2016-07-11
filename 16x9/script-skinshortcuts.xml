@@ -338,6 +338,16 @@
 					 <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
 					<label>Add Emby Nodes</label>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.0.path))">Skin.ToggleSetting(menu.ShowEmbyNode0)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.1.path))">Skin.ToggleSetting(menu.ShowEmbyNode1)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.2.path))">Skin.ToggleSetting(menu.ShowEmbyNode2)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.3.path))">Skin.ToggleSetting(menu.ShowEmbyNode3)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.4.path))">Skin.ToggleSetting(menu.ShowEmbyNode4)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.5.path))">Skin.ToggleSetting(menu.ShowEmbyNode5)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.6.path))">Skin.ToggleSetting(menu.ShowEmbyNode6)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.7.path))">Skin.ToggleSetting(menu.ShowEmbyNode7)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.8.path))">Skin.ToggleSetting(menu.ShowEmbyNode8)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.9.path))">Skin.ToggleSetting(menu.ShowEmbyNode9)</onclick>
 					<onclick>Skin.ToggleSetting(menu.noemby)</onclick>
 					<onclick>Back</onclick>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
@@ -349,6 +359,16 @@
 					 <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
 					<label>Hide Emby Nodes</label>
+					<onclick>Skin.Reset(menu.ShowEmbyNode0)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode1)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode2)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode3)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode4)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode5)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode6)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode7)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode8)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode9)</onclick>
 					<onclick>Skin.ToggleSetting(menu.noemby)</onclick>
 					<onclick>Back</onclick>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>

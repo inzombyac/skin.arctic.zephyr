@@ -21,7 +21,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.0.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode0)]</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-1-title</defaultID>
@@ -30,7 +30,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.1.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode1)]</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-2-title</defaultID>
@@ -39,7 +39,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.2.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode2)]</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-3-title</defaultID>
@@ -48,7 +48,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.3.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby)  + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode3)]</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-4-title</defaultID>
@@ -57,7 +57,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.4.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode4)]</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-5-title</defaultID>
@@ -66,7 +66,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.5.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode5)]</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-6-title</defaultID>
@@ -75,7 +75,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.6.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode6)]</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-7-title</defaultID>
@@ -84,7 +84,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.7.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode7)]</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-8-title</defaultID>
@@ -93,7 +93,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.8.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode8)]</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-9-title</defaultID>
@@ -102,7 +102,7 @@
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/icons/emby_diff.png</thumb>
 		<action>$INFO[Window(Home).Property(emby.nodes.9.path)]</action>
-		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby)]</visible>
+		<visible>[System.HasAddon(plugin.video.emby) + !Skin.HasSetting(menu.noemby) + Skin.HasSetting(menu.ShowEmbyNode9)]</visible>
 	</shortcut>
 	<shortcut>
         <label>Collections</label>
