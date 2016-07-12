@@ -208,7 +208,7 @@
 						<top>69</top>
 						<height>220</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$INFO[Container(211).ListItem.Property(background)]</texture>
+						<texture>$VAR[GlobalFanart]</texture>
 						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 					</control>
 					<control type="image">

@@ -69,7 +69,7 @@
 				<centerleft>50%</centerleft>
 				<textcolor>Dark3</textcolor>
 				<font>HomeEmby</font>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[EmbyHomeMenuLabel]</label>
 			</control>
 		</itemlayout>
 		<focusedlayout width="300" height="74">
@@ -88,7 +88,7 @@
 				<centerleft>50%</centerleft>
 				<textcolor>Dark1</textcolor>
 				<font>HomeEmby</font>
-				<label>$INFO[ListItem.Label]</label>
+				<label>$VAR[EmbyHomeMenuLabel]</label>
 			</control>
 			<control type="image">
 				<top>65</top>

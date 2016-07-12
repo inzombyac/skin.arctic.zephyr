@@ -328,7 +328,7 @@
 		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Window(Home).Property(playlist.0.label)]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$VAR[GlobalFanart]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->
@@ -381,6 +381,10 @@
 	<variable name="EmbyHomeSelectedMenu">
 		<value condition="!IsEmpty(Window(Home).Property(EmbyHomeLabelStripped)) + Substring(Container(300).ListItem.label,-)">$INFO[Window(Home).Property(EmbyHomeLabelStripped)]</value>
 		<value>$INFO[Container(300).ListItem.label]</value>
+	</variable>
+	<variable name="EmbyHomeMenuLabel">
+		<value condition="!IsEmpty(ListItem.label)">$INFO[ListItem.label]</value>
+		<value>$INFO[ListItem.label2]</value>
 	</variable>
 	<variable name="WidgetTitle">
 		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.Title]</value>
