@@ -72,16 +72,6 @@
 			</control>
 		</control>
 		<include>Furniture_Clock</include>
-		<control id="8308" type="image">
-			<top>59</top>
-			<right>40</right>
-			<width>258</width>
-			<height>130</height>
-			<texture fallback="empty.png">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist]/logo.png</texture>
-			<aspectratio align="center" aligny="top">keep</aspectratio>
-			<visible>Skin.HasSetting(furniture.logo) + !IsEmpty(Skin.String(cdartlocation))</visible>
-			<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
-		</control>
 		<control type="image">
 			<top>59</top>
 			<right>40</right>
@@ -89,7 +79,7 @@
 			<height>130</height>
 			<texture>$INFO[Window(Home).Property(logo)]</texture>
 			<aspectratio align="center" aligny="top">keep</aspectratio>
-			<visible>Skin.HasSetting(furniture.logo) + Substring(Control.GetLabel(8308),empty.png)</visible>
+			<visible>Skin.HasSetting(furniture.logo)</visible>
 			<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
 		</control>
 		<control type="image">
@@ -785,18 +775,6 @@
 					<height>374</height>
 					<texture>$VAR[MusicFanart]</texture>
 					<visible>IsEmpty(Window(Home).Property(Fanart))</visible>
-				</control>
-				<control type="multiimage">
-					<top>504</top>
-					<width>665</width>
-					<height>374</height>
-					<fadetime>600</fadetime>
-					<timeperimage>20000</timeperimage>
-					<randomize>true</randomize>
-					<aspectratio>scale</aspectratio>
-					<imagepath background="true">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
-					<visible>!SubString(ListItem.Artist,/)</visible>
-					<visible>IsEmpty(Control.GetLabel(4324))</visible>
 				</control>
 				<!-- Banner -->
 				<control type="image">

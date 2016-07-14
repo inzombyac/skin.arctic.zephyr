@@ -550,8 +550,8 @@ msgid "Use flat icons"
 msgstr "Gebruik vlakke iconen"
 
 msgctxt "#31234"
-msgid "Fanart overlay"
-msgstr "Fan-art overlay"
+msgid "Set weather icons"
+msgstr "Set weather icons"
 
 msgctxt "#31235"
 msgid "Double pane list"

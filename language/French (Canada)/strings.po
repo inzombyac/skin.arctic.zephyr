@@ -549,8 +549,8 @@ msgid "Use flat icons"
 msgstr "Utiliser des icônes plates"
 
 msgctxt "#31234"
-msgid "Fanart overlay"
-msgstr "Surcouche de fanart"
+msgid "Set weather icons"
+msgstr ""
 
 msgctxt "#31235"
 msgid "Double pane list"

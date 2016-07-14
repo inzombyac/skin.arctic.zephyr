@@ -549,8 +549,8 @@ msgid "Use flat icons"
 msgstr "Naudoti plokščias piktogramas"
 
 msgctxt "#31234"
-msgid "Fanart overlay"
-msgstr "Fanart perdanga"
+msgid "Set weather icons"
+msgstr ""
 
 msgctxt "#31235"
 msgid "Double pane list"

@@ -70,12 +70,6 @@
 						<include>DefSettingsButton2</include>
 						<label>31745</label>
 					</control>
-					<!--<control type="togglebutton" id="9109" description="Views">
-						<usealttexture>ControlGroup(9100).HasFocus(9109)</usealttexture>
-						<alttexturenofocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturenofocus>
-						<include>DefSettingsButton2</include>
-						<label>Views</label>
-					</control>-->
 				</control>
 				<control type="image"> <!--focused background left edge -->
 					<top>140</top>
@@ -210,15 +204,6 @@
 						<label>31132</label>
 						<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
 					</control>
-					<control type="radiobutton" id="9889" description="Emby Mode">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9101)</visible>
-						<visible>System.HasAddon(plugin.video.emby)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Use Emby Nodes</label>
-						<selected>!Skin.HasSetting(menu.noemby)</selected>
-						<onclick>Skin.ToggleSetting(menu.noemby)</onclick>
-					</control>
 					<control type="button" id="92181" description="Select Movies Hub Widget">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9101)</visible>
@@ -320,22 +305,21 @@
 						<onclick condition="!IsEmpty(Skin.String(fanart.fallback))">Skin.Reset(fanart.fallback)</onclick>
 						<visible>!Skin.HasSetting(lights.out)</visible>
 					</control>
-					<!-- <control type="button" id="9229" description="Set Weather Fanart">
+					<control type="button" id="9229" description="Set Weather Icons">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31234</label>
+						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(weathericons.name)][/COLOR]</label2>
+						<onclick>RunScript(script.image.resource.select,property=weathericons&amp;type=resource.images.weathericons)</onclick>
+					</control>
+					<control type="button" id="9230" description="Set Weather Fanart">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9102)</visible>
 						<include>DefSettingsButton2</include>
 						<label>31143</label>
-						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(weather.fanart)][/COLOR]</label2>
-						<onclick condition="IsEmpty(Skin.String(weather.fanart))">Skin.SetPath(weather.fanart)</onclick>
-						<onclick condition="!IsEmpty(Skin.String(weather.fanart))">Skin.Reset(weather.fanart)</onclick>
-					</control> -->
-					<control type="button" id="9227" description="Set Music Dir">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9102)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Path to Music Directory</label>
-						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(cdartlocation)][/COLOR]</label2>
-						<onclick>Skin.SetPath(cdartlocation)</onclick>
+						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(weatherfanart.name)][/COLOR]</label2>
+						<onclick>RunScript(script.image.resource.select,property=weatherfanart&amp;type=resource.images.weatherfanart)</onclick>
 					</control>
 					<control type="radiobutton" id="9221" description="Show video in background">
 						<width>1310</width>
@@ -408,15 +392,6 @@
 						<onclick>Skin.ToggleSetting(osd.hidespoilers)</onclick>
 					</control>
 					<!-- Widgets -->
-					<control type="radiobutton" id="9243" description="Show slideshow instead of fanart">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9104)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Replace widget with global fanart</label>
-						<selected>Skin.HasSetting(home.dontshowfanart)</selected>
-						<onclick>Skin.ToggleSetting(home.dontshowfanart)</onclick>
-						<visible>System.HasAddon(script.grab.fanart)</visible>
-					</control>
 					<control type="button" id="9246" description="Custom Widget 1">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9104)</visible>
@@ -698,7 +673,7 @@
 						<selected>Skin.HasSetting(debug.mode)</selected>
 						<onclick>Skin.ToggleSetting(debug.mode)</onclick>
 					</control>
-					<!-- Colours -->
+					<!-- Colors -->
 					<control type="radiobutton" id="9281">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
@@ -786,65 +761,6 @@
 						<visible>Skin.HasSetting(PosterBackingColour)</visible>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
-					<!-- <control type="radiobutton" id="92869">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<selected>Skin.HasSetting(emby.left.colour)</selected>
-						<onclick>Skin.ToggleSetting(emby.left.colour)</onclick>
-						<label>Change Emby home left icon color</label>
-						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-					</control>
-					<control type="button" id="92870">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.left.colour.name)</onclick>
-						<label> - Set left colour</label>
-						<label2>[COLOR=$INFO[Skin.String(emby.left.colour.name)]]$INFO[Skin.String(emby.left.colour.name)][/COLOR]</label2>
-						<visible>Skin.HasSetting(emby.left.colour)</visible>
-						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-					</control>
-					<control type="radiobutton" id="92873">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<selected>Skin.HasSetting(emby.middle.colour)</selected>
-						<onclick>Skin.ToggleSetting(emby.middle.colour)</onclick>
-						<label>Change Emby home middle icon color</label>
-						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-					</control>
-					<control type="button" id="92874">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.middle.colour.name)</onclick>
-						<label> - Set middle colour</label>
-						<label2>[COLOR=$INFO[Skin.String(emby.middle.colour.name)]]$INFO[Skin.String(emby.middle.colour.name)][/COLOR]</label2>
-						<visible>Skin.HasSetting(emby.middle.colour)</visible>
-						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-					</control>
-					<control type="radiobutton" id="92871">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<selected>Skin.HasSetting(emby.right.colour)</selected>
-						<onclick>Skin.ToggleSetting(emby.right.colour)</onclick>
-						<label>Change Emby home right icon color</label>
-						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-					</control>
-					<control type="button" id="92872">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=emby.right.colour.name)</onclick>
-						<label> - Set right colour</label>
-						<label2>[COLOR=$INFO[Skin.String(emby.right.colour.name)]]$INFO[Skin.String(emby.right.colour.name)][/COLOR]</label2>
-						<visible>Skin.HasSetting(emby.right.colour)</visible>
-						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-					</control> -->
-					<!-- Views -->
-					<!--<control type="button" id="9291" description="Enable or Disable views">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.skin.helper.service,action=enableviews)</onclick>
-						<label>31769</label>
-						<visible>ControlGroup(9100).HasFocus(9109)</visible>
-					</control>-->
 				</control>
 				<!-- Lines -->
 				<control type="image">

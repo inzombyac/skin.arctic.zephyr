@@ -717,24 +717,6 @@
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 			</control>
 		</control>
-		<control type="group">
-			<visible>Skin.HasSetting(furniture.logo)</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<visible>!Player.HasMedia</visible>
-			<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible>
-			<left>1622</left>
-			<top>960</top>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<control id="8308" type="image">
-				<width>258</width>
-				<height>120</height>
-				<texture fallback="empty.png">$VAR[MusicClearLogo]</texture>
-				<aspectratio align="center" aligny="center">keep</aspectratio>
-				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				<visible>Skin.HasSetting(furniture.logo) + !IsEmpty(Skin.String(cdartlocation))</visible>
-			</control>
-		</control>
 	</include>
 	<include name="Furniture_Adv_Launcher">
 		<control type="group">

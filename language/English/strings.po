@@ -549,7 +549,7 @@ msgid "Use flat icons"
 msgstr ""
 
 msgctxt "#31234"
-msgid "Fanart overlay"
+msgid "Set weather icons"
 msgstr ""
 
 msgctxt "#31235"

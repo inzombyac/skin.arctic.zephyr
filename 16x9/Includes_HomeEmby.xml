@@ -114,8 +114,7 @@
 			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[IntegerGreaterThan(Container(4016).NumItems,3)+!IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
 			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4016).NumItems,3) + !IntegerGreaterThan(Container(4017).NumItems,2) + IntegerGreaterThan(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
 			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4016).NumItems,3) + !IntegerGreaterThan(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<!-- <animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + [IntegerGreaterThan(Container(4016).NumItems,0)+IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation> -->
-			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + !StringCompare(Container(300).ListItem.Property(type),music) + [Control.IsVisible(4017) | Control.IsVisible(4018)]" time="200">Conditional</animation>
 			<animation effect="slide" start="0" end="-300,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017)] + StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
@@ -135,37 +134,6 @@
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>!Container(300).Scrolling + !Container(4019).IsUpdating</visible>
-			</control>
-			<!-- Loading replacement -->
-			<control type="group">
-				<include>Animation.DelayFadeOut</include>		
-				<control type="image">
-					<left>SidePad</left>
-					<posy>840</posy>
-					<width>280</width>
-					<height>217</height>
-					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
-					<include>Animation.FadeIn</include>
-					<visible>IntegerGreaterThan(Container(302).NumItems, 0)</visible>
-				</control>
-				<control type="image">
-					<left>368</left>
-					<posy>840</posy>
-					<width>280</width>
-					<height>217</height>
-					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
-					<include>Animation.FadeIn</include>
-					<visible>IntegerGreaterThan(Container(302).NumItems, 1)</visible>
-				</control>
-				<control type="image">
-					<left>656</left>
-					<posy>840</posy>
-					<width>280</width>
-					<height>217</height>
-					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
-					<visible>IntegerGreaterThan(Container(302).NumItems, 2)</visible>
-					<include>Animation.FadeIn</include>
-				</control>
 			</control>
 			<include>EmbyMainWidgetContent</include>
 			<!-- Side Widgets  -->
@@ -190,7 +158,6 @@
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 			</control>
 		</control>
-		
 	</include>
 	<include name="EmbyBottomSubMenuPanel">
 		<control type="panel" id="302">
@@ -210,24 +177,11 @@
 			<itemlayout width="288" height="224">				
 				<control type="image">
 					<width>280</width>
-					<height>180</height>
-					<aspectratio scalediffuse="false">scale</aspectratio>
-					<texture background="true">$VAR[EmbySubMenuImage]</texture>
+					<height>224</height>
+					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
-				<control type="label">
-					<bottom>10</bottom>
-					<height>38</height>
-					<width>280</width>
-					<align>center</align>
-					<font>Tiny</font>
-					<textcolor>Dark1</textcolor>
-					<selectedcolor>Dark1</selectedcolor>
-					<label>$INFO[ListItem.label]</label>
-				</control>
-			</itemlayout>
-			<focusedlayout width="288" height="224">
 				<control type="image">
 					<width>280</width>
 					<height>180</height>
@@ -237,20 +191,55 @@
 					<include>Animation.FadeOut</include>
 				</control>
 				<control type="label">
-					<bottom>10</bottom>
-					<height>38</height>
+					<top>180</top>
+					<height>40</height>
 					<width>280</width>
 					<align>center</align>
 					<font>Tiny</font>
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
 					<label>$INFO[ListItem.label]</label>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+				</control>
+			</itemlayout>
+			<focusedlayout width="288" height="224">
+				<control type="image">
+					<width>280</width>
+					<height>224</height>
+					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<include>Animation.Focus</include>
+				</control>
+				<control type="image">
+					<width>280</width>
+					<height>180</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true">$VAR[EmbySubMenuImage]</texture>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<include>Animation.Focus</include>
+				</control>
+				<control type="label">
+					<top>184</top>
+					<height>40</height>
+					<width>280</width>
+					<align>center</align>
+					<font>Tiny</font>
+					<textcolor>Dark1</textcolor>
+					<selectedcolor>Dark1</selectedcolor>
+					<label>$INFO[ListItem.label]</label>
+					<include>Animation.FadeIn</include>
+					<include>Animation.FadeOut</include>
+					<include>Animation.Focus</include>
 				</control>
 				<control type="image">
 					<width>284</width>
 					<height>224</height>
 					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 					<visible>Control.HasFocus(302)</visible>
+					<include>Animation.Focus</include>
 				</control>
 			</focusedlayout>
 			<content>
@@ -293,10 +282,11 @@
 			<width>1764</width>
 			<height>766</height>
 			<onup>300</onup>
-			
+			<ondown>40120</ondown>
 			<include>EmbyHomeInfoActions</include>
 			<orientation>horizontal</orientation>
 			<scrolltime tween="quadratic">0</scrolltime>
+			<pagecontrol>40120</pagecontrol>
 			<preloaditems>14</preloaditems>
 			<include name="EmbyWidget1Content">
 				<param name="image_type">$VAR[EmbyWidget2Icon]</param>
@@ -309,6 +299,20 @@
 			<include>Animation.FadeOut</include>
 			<include>Animation.FadeIn</include>
 		</control>
+		<control type="scrollbar" id="40120">
+			<left>78</left>
+			<width>1764</width>
+			<bottom>35</bottom>
+			<orientation>horizontal</orientation>
+			<height>8</height>
+			<onup>4012</onup>
+			<orientation>horizontal</orientation>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<visible>StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+		</control>
 		<!-- Main Widget -->
 		<control type="group" >
 			<top>330</top>
@@ -317,13 +321,13 @@
 			<height>496</height>
 			<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 			<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+			<include>Animation.FocusSmall</include>
 			<control type="button" id="4012">
 				<onfocus>Skin.SetString(HomeItemTVShowTitle,$VAR[EmbyHomeTVShowTitle])</onfocus>
 				<onfocus>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</onfocus>
 				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
 				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
 				<onup>300</onup>
-				
 				<ondown>302</ondown>
 				<onleft>4012</onleft>
 				<onright condition="Control.IsVisible(4016)">4016</onright>
@@ -497,23 +501,24 @@
 			<onfocus>300</onfocus>
 			<content limit="25" sortby="random">$VAR[DefWidgetMainContent]</content>
 			<include>EmbyHiddenItemLayout</include>
-			<visible>!StringCompare(Container(300).ListItem.Property(type),settings)+ !StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+			<visible>!StringCompare(Container(300).ListItem.Property(type),settings)+ !StringCompare(Container(300).ListItem.Property(type),weather)+ !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 		</control>
 		<!-- Settings -->
 		<control type="list" id="4019">
-			<visible>StringCompare(Container(300).ListItem.Property(type),settings) | StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+			<include>Animation.FocusSmall</include>
+			<visible>StringCompare(Container(300).ListItem.Property(type),settings) | StringCompare(Container(300).ListItem.Property(type),weather) | StringCompare(Container(300).ListItem.Property(type),collection)</visible>
 			<!--systeminfo widgets -->
 			<include>SysInfoWidgetMain</include>
 		</control>
 		<!-- Weather -->
 		<control type="panel" id="4012">
+			<include>Animation.FocusSmall</include>
 			<visible>StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 			<top>330</top>
 			<left>SidePad</left>
 			<width>1198</width>
 			<height>724</height>
 			<onup>300</onup>
-			
 			<ondown>302</ondown>
 			<onright condition="Control.IsVisible(4016)">4016</onright>
 			<onright condition="!Control.IsVisible(4016) + Control.IsVisible(4017)">4017</onright>
@@ -1951,73 +1956,76 @@
 		</focusedlayout>
 	</include>
 	<include name="EmbyMainWidgetOverlay">
-		<control type="image">
-			<description>Title overlay</description>
+		<control type="group">
+			<top>330</top>
 			<left>SidePad</left>
-			<posy>748</posy>
 			<width>856</width>
-			<height>78</height>
-			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-			<visible>!Container(300).Scrolling</visible>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-		</control>
-		<control type="image">
-			<description>Title overlay</description>
-			<left>SidePad</left>
-			<posy>748</posy>
-			<width>856</width>
-			<height>78</height>
-			<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-			<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
-			<visible>!IsEmpty(Container(300).ListItem.Property(widgetPath)) | !IsEmpty(Container(300).ListItem.Property(widget))</visible>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-			<visible>!Container(300).Scrolling</visible>
-		</control>
-		<control type="label">
-			<left>100</left>
-			<posy>748</posy>
-			<width>655</width>
-			<align>left</align>
-			<aligny>center</aligny>
-			<height>64</height>
-			<font>SmallBold</font>
-			<textcolor>Dark1</textcolor>
-			<selectedcolor>Dark1</selectedcolor>
-			<label>$VAR[EmbyWidgetContentLabel]</label>
-			<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-			<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-		</control>
-		<control type="label">
-			<left>736</left>
-			<posy>748</posy>
-			<width>190</width>
-			<right>45</right>
-			<aligny>center</aligny>
-			<height>64</height>
-			<align>right</align>
-			<font>Small</font>
-			<textcolor>Dark1</textcolor>
-			<selectedcolor>Dark1</selectedcolor>
-			<label>$VAR[EmbyWidgetContentLabel2]</label>
-			<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-		</control>
-		<control type="image">
-			<left>76</left>
-			<width>864</width>
-			<top>326</top>
-			<height>504</height>
-			<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-			<visible>Control.HasFocus(4012) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+			<height>496</height>
+			<include>Animation.EmbyMainZoom</include>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<width>100%</width>
+				<height>78</height>
+				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!Container(300).Scrolling</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<width>100%</width>
+				<height>78</height>
+				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>!IsEmpty(Container(300).ListItem.Property(widgetPath)) | !IsEmpty(Container(300).ListItem.Property(widget))</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
+				<visible>!Container(300).Scrolling</visible>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<bottom>5</bottom>
+				<width>655</width>
+				<align>left</align>
+				<aligny>center</aligny>
+				<height>64</height>
+				<font>SmallBold</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyWidgetContentLabel]</label>
+				<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
+			</control>
+			<control type="label">
+				<left>646</left>
+				<bottom>5</bottom>
+				<width>190</width>
+				<right>45</right>
+				<aligny>center</aligny>
+				<height>64</height>
+				<align>right</align>
+				<font>Small</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyWidgetContentLabel2]</label>
+				<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="image">
+				<width>100%</width>
+				<height>100%</height>
+				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+				<visible>Control.HasFocus(4012) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+			</control>
 		</control>
 	</include>
 	<include name="EmbyWidget1Content">
@@ -2129,6 +2137,7 @@
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<visible>StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+				<include>Animation.Focus</include>
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
@@ -2136,6 +2145,7 @@
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
+				<include>Animation.Focus</include>
 			</control>
 			<control type="image">
 				<centerright>32</centerright>
@@ -2145,15 +2155,17 @@
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
 				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<include>Animation.Focus</include>
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
-				<bottom>38</bottom>
+				<bottom>36</bottom>
 				<height>38</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
+				<include>Animation.Focus</include>
 			</control>
 			<control type="label">
 				<bottom>40</bottom>
@@ -2165,6 +2177,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidget1ContentLabel]</label>
+				<include>Animation.Focus</include>
 			</control>
 			<control type="progress">
 				<bottom>76</bottom>
@@ -2178,6 +2191,7 @@
 				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
+				<include>Animation.Focus</include>
 			</control>
 			<control type="image">
 				<left>10</left>
@@ -2185,6 +2199,7 @@
 				<height>$PARAM[item_height]</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
 				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
+				<include>Animation.Focus</include>
 			</control>
 		</focusedlayout>
 		</definition>

@@ -521,8 +521,8 @@ msgid "Use flat icons"
 msgstr "Использовать плоские иконки"
 
 msgctxt "#31234"
-msgid "Fanart overlay"
-msgstr "Наложение фан-арта"
+msgid "Set weather icons"
+msgstr ""
 
 msgctxt "#31236"
 msgid "Now playing..."

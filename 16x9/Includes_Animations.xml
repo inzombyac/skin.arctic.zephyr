@@ -127,4 +127,13 @@
 		<animation effect="fade" end="100" start="0" time="500" delay="1500" tween="cubic" easing="inout" reversible="false">Visible</animation>
 		<animation effect="fade" end="100" start="0" time="500" delay="1500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 	</include>
+	<include name="Animation.Focus">
+		<animation effect="zoom" end="107" time="50" center="auto">Focus</animation>
+	</include>
+	<include name="Animation.FocusSmall">
+		<animation effect="zoom" end="103" time="50" center="auto">Focus</animation>
+	</include>
+	<include name="Animation.EmbyMainZoom">
+		<animation effect="zoom" end="103" time="50" center="auto" condition="Control.HasFocus(4012)">Conditional</animation>
+	</include>
 </includes>
