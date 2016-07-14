@@ -168,7 +168,6 @@
 			<onright condition="!Control.IsVisible(4016) + !Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
 			<left>SidePad</left>
 			<posy>840</posy>
-			<width>280</width>
 			<height>224</height>
 			<orientation>horizontal</orientation>
 			<scrolltime>200</scrolltime>
@@ -191,7 +190,7 @@
 					<include>Animation.FadeOut</include>
 				</control>
 				<control type="label">
-					<top>180</top>
+					<bottom>5</bottom>
 					<height>40</height>
 					<width>280</width>
 					<align>center</align>
@@ -222,8 +221,8 @@
 					<include>Animation.Focus</include>
 				</control>
 				<control type="label">
-					<top>184</top>
-					<height>40</height>
+					<bottom>5</bottom>
+					<height>30</height>
 					<width>280</width>
 					<align>center</align>
 					<font>Tiny</font>
@@ -516,8 +515,8 @@
 			<visible>StringCompare(Container(300).ListItem.Property(type),weather)</visible>
 			<top>330</top>
 			<left>SidePad</left>
-			<width>1198</width>
-			<height>724</height>
+			<width>856</width>
+			<height>496</height>
 			<onup>300</onup>
 			<ondown>302</ondown>
 			<onright condition="Control.IsVisible(4016)">4016</onright>
@@ -1989,7 +1988,7 @@
 			</control>
 			<control type="label">
 				<left>10</left>
-				<bottom>5</bottom>
+				<bottom>8</bottom>
 				<width>655</width>
 				<align>left</align>
 				<aligny>center</aligny>
@@ -2006,7 +2005,7 @@
 			</control>
 			<control type="label">
 				<left>646</left>
-				<bottom>5</bottom>
+				<bottom>8</bottom>
 				<width>190</width>
 				<right>45</right>
 				<aligny>center</aligny>
@@ -2159,7 +2158,7 @@
 			</control>
 			<control type="image">
 				<description>Title overlay</description>
-				<bottom>36</bottom>
+				<bottom>32</bottom>
 				<height>38</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -2168,7 +2167,7 @@
 				<include>Animation.Focus</include>
 			</control>
 			<control type="label">
-				<bottom>40</bottom>
+				<bottom>34</bottom>
 				<left>10</left>
 				<align>left</align>
 				<height>40</height>
