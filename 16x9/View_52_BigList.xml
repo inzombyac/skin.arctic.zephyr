@@ -12,8 +12,8 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<control type="list" id="52">
 				<top>PosterPad</top>
-				<left>SidePad</left>
-				<width>ListW</width>
+				<left>200</left>
+				<width>1520</width>
 				<height>650</height>
 				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 				<onright>60</onright>
@@ -25,7 +25,7 @@
 				<orientation>vertical</orientation>
 				<viewtype label="537">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
-				<itemlayout height="130" width="ListW">
+				<itemlayout height="130" width="1520">
 					<control type="group">
 						<include>View_52_BigList_ItemLayout_Icon</include>
 						<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(sets) + !Container.Content(seasons)</visible>
@@ -35,7 +35,7 @@
 						<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout height="130" width="ListW">
+				<focusedlayout height="130" width="1520">
 					<control type="group">
 						<include>View_52_BigList_FocusLayout_Icon</include>
 						<visible>!Container.Content(movies) + !Container.Content(tvshows) + !Container.Content(sets) + !Container.Content(seasons)</visible>
@@ -50,7 +50,7 @@
 				<animation effect="slide" start="-100" end="-100" condition="true">Conditional</animation>
 				<include>Furniture_Scrollbar</include>
 			</control>
-			<include>View_52_SidePoster</include>
+			<!-- <include>View_52_SidePoster</include> -->
 		</control>
 	</include>
 	<include name="View_52_BigList_DoublePane">
@@ -97,11 +97,24 @@
 			<top>10</top>
 			<right>40</right>
 			<height>100</height>
-			<width>675</width>
+			<width>660</width>
+			<aligny>center</aligny>
+			<font>SmallBold</font>
+			<textcolor>Dark1</textcolor>
+			<label>$INFO[ListItem.Label]</label>
+			<visible>StringCompare(ListItem.Label,..)</visible>
+		</control>
+		<control type="label">
+			<left>25</left>
+			<top>10</top>
+			<right>40</right>
+			<height>100</height>
+			<width>660</width>
 			<aligny>center</aligny>
 			<font>SmallBold</font>
 			<textcolor>Dark1</textcolor>
 			<label>$VAR[ListItemLabel]</label>
+			<visible>!container.content(seasons)</visible>
 		</control>
 		<control type="image">
 			<left>8</left>
@@ -113,6 +126,16 @@
 			<texture background="true">$VAR[BannerImageOnly]</texture>
 		</control>
 		<control type="label">
+			<left>700</left>
+			<width>200</width>
+			<height>120</height>
+			<font>Small</font>
+			<aligny>center</aligny>
+			<label>$VAR[LabelYear] • $VAR[LabelDuration]</label>
+			<textcolor>Dark1</textcolor>
+			<visible>Container.Content(movies)</visible>
+		</control>
+		<control type="label">
 			<left>830</left>
 			<top>10</top>
 			<right>100</right>
@@ -122,10 +145,23 @@
 			<font>Small</font>
 			<textcolor>Dark1</textcolor>
 			<label>$INFO[ListItem.Label2]</label>
+			<visible>!container.content(seasons)</visible>
+		</control>
+		<control type="label">
+			<left>750</left>
+			<top>10</top>
+			<right>100</right>
+			<align>right</align>
+			<height>100</height>
+			<aligny>center</aligny>
+			<font>Small</font>
+			<textcolor>Dark1</textcolor>
+			<label>$INFO[ListItem.Label]</label>
+			<visible>container.content(seasons)  + !StringCompare(ListItem.Label,..)</visible>
 		</control>
 		<control type="image">
-			<centerright>58</centerright>
-			<centertop>60</centertop>
+			<centerleft>660</centerleft>
+			<centertop>30</centertop>
 			<width>40</width>
 			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
@@ -135,16 +171,16 @@
 		<control type="group">
 			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			<control type="image">
-				<centerright>58</centerright>
-				<centertop>60</centertop>
+				<centerleft>660</centerleft>
+				<centertop>30</centertop>
 				<height>40</height>
 				<width>40</width>
 				<texture colordiffuse="EmbyGreen">common/circle.png</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 			</control>
 			<control type="label">
-				<centerright>58</centerright>
-				<centertop>60</centertop>
+				<centerleft>660</centerleft>
+				<centertop>30</centertop>
 				<height>40</height>
 				<width>40</width>
 				<align>center</align>
@@ -197,11 +233,24 @@
 			<top>10</top>
 			<right>40</right>
 			<height>100</height>
-			<width>675</width>
+			<width>660</width>
+			<aligny>center</aligny>
+			<font>SmallBold</font>
+			<textcolor>Light1</textcolor>
+			<label>$INFO[ListItem.Label]</label>
+			<visible>StringCompare(ListItem.Label,..)</visible>
+		</control>
+		<control type="label">
+			<left>25</left>
+			<top>10</top>
+			<right>40</right>
+			<height>100</height>
+			<width>660</width>
 			<aligny>center</aligny>
 			<font>SmallBold</font>
 			<textcolor>Light1</textcolor>
 			<label>$VAR[ListItemLabel]</label>
+			<visible>!container.content(seasons)</visible>
 		</control>
 		<control type="image">
 			<left>8</left>
@@ -213,6 +262,16 @@
 			<texture background="true">$VAR[BannerImageOnly]</texture>
 		</control>
 		<control type="label">
+			<left>700</left>
+			<width>200</width>
+			<height>120</height>
+			<font>Small</font>
+			<aligny>center</aligny>
+			<label>$VAR[LabelYear] • $VAR[LabelDuration]</label>
+			<textcolor>Light1</textcolor>
+			<visible>Container.Content(movies)</visible>
+		</control>
+		<control type="label">
 			<left>830</left>
 			<top>10</top>
 			<right>100</right>
@@ -222,10 +281,23 @@
 			<font>Small</font>
 			<textcolor>Light1</textcolor>
 			<label>$INFO[ListItem.Label2]</label>
+			<visible>!container.content(seasons)</visible>
+		</control>
+		<control type="label">
+			<left>750</left>
+			<top>10</top>
+			<right>100</right>
+			<align>right</align>
+			<height>100</height>
+			<aligny>center</aligny>
+			<font>Small</font>
+			<textcolor>Light1</textcolor>
+			<label>$INFO[ListItem.Label]</label>
+			<visible>container.content(seasons)  + !StringCompare(ListItem.Label,..)</visible>
 		</control>
 		<control type="image">
-			<centerright>58</centerright>
-			<centertop>60</centertop>
+			<centerleft>660</centerleft>
+			<centertop>30</centertop>
 			<width>40</width>
 			<height>40</height>
 			<aspectratio aligny="top">keep</aspectratio>
@@ -235,16 +307,16 @@
 		<control type="group">
 			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			<control type="image">
-				<centerright>58</centerright>
-				<centertop>60</centertop>
+				<centerleft>660</centerleft>
+				<centertop>30</centertop>
 				<height>40</height>
 				<width>40</width>
 				<texture colordiffuse="EmbyGreen">common/circle.png</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 			</control>
 			<control type="label">
-				<centerright>58</centerright>
-				<centertop>60</centertop>
+				<centerleft>660</centerleft>
+				<centertop>30</centertop>
 				<height>40</height>
 				<width>40</width>
 				<align>center</align>
